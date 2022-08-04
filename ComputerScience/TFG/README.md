@@ -2,7 +2,7 @@
 
 ## Computer Science: Bachelor's Thesis
 
-[Es]
+[ES]
 
 Aquí puedes encontrar mi TFG para el grado en Ingeniería Informática, así como una presentación del trabajo realizado.
 
@@ -12,7 +12,7 @@ La calificación obtenida fue de 9.9/10 Matrícula de Honor.
 
 Cualquier duda, no dudes en consultarme por mensaje en GitHub o por email.
 
-[En]
+[EN]
 
 Here you can find my Bachelor's Thesis for the BSc in Computer Science, as well as a presentation of the work.
 
