@@ -1,5 +1,6 @@
-#Matemáticas: Trabajo de Fin de Grado
-##Mathematics: Bachelor's Thesis
+# Matemáticas: Trabajo de Fin de Grado
+## Mathematics: Bachelor's Thesis
+
 [ES]
 
 Aquí puedes encontrar mi TFG para el grado en Matemáticas, así como una presentación del trabajo realizado.
