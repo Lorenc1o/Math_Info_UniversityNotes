@@ -1,6 +1,6 @@
-#Ingeniería Informática: Trabajo de Fin de Grado
+# Ingeniería Informática: Trabajo de Fin de Grado
 
-##Computer Science: Bachelor's Thesis
+## Computer Science: Bachelor's Thesis
 
 [Es]
 
