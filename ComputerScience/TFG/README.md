@@ -18,6 +18,6 @@ Here you can find my Bachelor's Thesis for the BSc in Computer Science, as well 
 
 It is called **A finite element model to study the deformations of the mammary tissues** and it is written in Spanish, but in the section *Extended Abstract* you can read a fairly deep explanation of the work done.
 
-The obtained mark was 9.9/10 with Distinction.
+The obtained mark was 9.9/10 with Honours Distinction.
 
 If you have any doubts, do not hesitate to message me either in GitHub or by email.
