@@ -1,6 +1,6 @@
-* Grado en Matemáticas
-** BSc in Mathematics - Diplôme en Mathématiques
-*** Universidad de Murcia - University of Murcia - Université de Murcia
+# Grado en Matemáticas
+## BSc in Mathematics - Diplôme en Mathématiques
+### Universidad de Murcia - University of Murcia - Université de Murcia
 
 [ES]
 
