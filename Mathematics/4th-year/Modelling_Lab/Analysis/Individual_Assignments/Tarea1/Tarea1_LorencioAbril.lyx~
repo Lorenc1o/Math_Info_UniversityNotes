@@ -1,0 +1,449 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{makecell}
+\end_preamble
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 1: Ejercicio 1.1
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+En el trabajo original de P.
+ F.
+ Verhulst, el autor aplica su ecuación a los datos de la población de Francia
+ (ver la Tabla 1.), con los datos de la población desde 1817 hasta 1831,
+ tomando los valores conocidos para los años 1817, 1824 y 1831.
+ Con estas premisas, calcular la solución de la ecuación logística, y comparar
+ su gráfica con los datos de la tabla.
+ Buscar los datos de la población de Francia y ver hasta qué momento la
+ estimación de Verhulst para la población de Francia fue aceptable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[h]   
+\backslash
+centering
+\backslash
+begin{tabular}{|c|r|r|r|r|}     
+\backslash
+hline     
+\backslash
+thead{Año} & 
+\backslash
+thead{Según el 
+\backslash
+
+\backslash
+ estado civil} & 
+\backslash
+thead{Según la 
+\backslash
+
+\backslash
+ fórmula} & 
+\backslash
+thead{Error 
+\backslash
+
+\backslash
+ proporcional} & 
+\backslash
+thead{Logaritmo de 
+\backslash
+
+\backslash
+ la población 
+\backslash
+
+\backslash
+ calculada} 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1817 & 
+\backslash
+makecell[r]{29,981,336 
+\backslash
+
+\backslash
+ 195,902} & 
+\backslash
+makecell[r]{29,981,336 
+\backslash
+
+\backslash
+ 208,281} & 0.0000 & 7.4768490 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1818 & 
+\backslash
+makecell[r]{30,177,238 
+\backslash
+
+\backslash
+ 161,948} & 
+\backslash
+makecell[r]{30,189,500 
+\backslash
+
+\backslash
+ 204,500} & +0.0004 & 7.4798565 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1819 & 
+\backslash
+makecell[r]{30,339,186 
+\backslash
+
+\backslash
+ 199,863} & 
+\backslash
+makecell[r]{30,394,000 
+\backslash
+
+\backslash
+ 200,500} & +0.0018 & 7.4827875 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1820 & 
+\backslash
+makecell[r]{30,539,049 
+\backslash
+
+\backslash
+ 188,227} & 
+\backslash
+makecell[r]{30,594,500 
+\backslash
+
+\backslash
+ 197,300} & +0.0018 & 7.4856461 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1821 & 
+\backslash
+makecell[r]{30,727,276 
+\backslash
+
+\backslash
+ 212,144} & 
+\backslash
+makecell[r]{30,791,800 
+\backslash
+
+\backslash
+ 192,700} & +0.0021 & 7.4884310 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1822 & 
+\backslash
+makecell[r]{30,939,420 
+\backslash
+
+\backslash
+ 198,634} & 
+\backslash
+makecell[r]{30,984,500 
+\backslash
+
+\backslash
+ 189,500} & +0.0014 & 7.4911453 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1823 & 
+\backslash
+makecell[r]{31,138,054 
+\backslash
+
+\backslash
+ 221,286} & 
+\backslash
+makecell[r]{31,174,000 
+\backslash
+
+\backslash
+ 185,223} & +0.0012 & 7.4937907 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1824 & 
+\backslash
+makecell[r]{31,359,340 
+\backslash
+
+\backslash
+ 220,546} & 
+\backslash
+makecell[r]{31,359,340 
+\backslash
+
+\backslash
+ 182,777} & 0.0000 & 7.4963719 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1825 & 
+\backslash
+makecell[r]{31,579,886 
+\backslash
+
+\backslash
+ 175,974} & 
+\backslash
+makecell[r]{31,542,000 
+\backslash
+
+\backslash
+ 178,000} & -0.0012 & 7.4988859 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1826 & 
+\backslash
+makecell[r]{31,755,860 
+\backslash
+
+\backslash
+ 157,533} & 
+\backslash
+makecell[r]{31,720,000 
+\backslash
+
+\backslash
+ 175,000} & -0.0011 & 7.5013366 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1827 & 
+\backslash
+makecell[r]{31,913,393 
+\backslash
+
+\backslash
+ 189,071} & 
+\backslash
+makecell[r]{31,895,000 
+\backslash
+
+\backslash
+ 172,000} & -0.0005 & 7.5037257 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1828 & 
+\backslash
+makecell[r]{32,102,464 
+\backslash
+
+\backslash
+ 139,402} & 
+\backslash
+makecell[r]{32,067,000 
+\backslash
+
+\backslash
+ 168,000} & -0.0011 & 7.5060547 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1829 & 
+\backslash
+makecell[r]{32,241,866 
+\backslash
+
+\backslash
+ 161,074} & 
+\backslash
+makecell[r]{32,235,000 
+\backslash
+
+\backslash
+ 164,500} & -0.0002 & 7.5083251 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1830 & 
+\backslash
+makecell[r]{32,402,940 
+\backslash
+
+\backslash
+ 157,994} & 
+\backslash
+makecell[r]{32,399,500 
+\backslash
+
+\backslash
+ 161,434} & 0.0000 & 7.5105385 
+\backslash
+
+\backslash
+     
+\backslash
+hline     1831 & 32,560,934 & 32,560,934 & 0.0000 & 7.5126965 
+\backslash
+
+\backslash
+     
+\backslash
+hline   
+\backslash
+end{tabular}   
+\backslash
+caption{Tabla de Verhulst traducida.}   
+\backslash
+label{table:data-traducida} 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

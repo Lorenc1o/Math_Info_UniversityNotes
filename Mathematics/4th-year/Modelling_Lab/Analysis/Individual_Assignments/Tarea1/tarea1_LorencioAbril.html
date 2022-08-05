@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>tarea1_LorencioAbril</title>
+    <meta name="generator" content="wxMaxima"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/x-mathjax-config">  MathJax.Hub.Config({
+    displayAlign: "left",
+    context: "MathJax",
+    TeX: {TagSide: "left"}
+  })
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async="async">  // A comment that hinders wxWidgets from optimizing this tag too much.
+</script>
+    <link rel="stylesheet" type="text/css" href="tarea1_LorencioAbril_htmlimg/tarea1_LorencioAbril.css"/>
+  </head>
+  <body>
+    <!-- ****************************************************** -->
+    <!-- *        Created with wxMaxima version 21.05.2       * -->
+    <!-- ****************************************************** -->
+    <noscript>
+      <div class="error message">
+        <p>Please enable JavaScript in order to get a 2d display of the equations embedded in this web page.</p>
+      </div>
+    </noscript>
+    <p hidden="hidden">\(      \DeclareMathOperator{\abs}{abs}
+      \newcommand{\ensuremath}[1]{\mbox{$#1$}}
+\)</p>
+    <!-- Title cell -->
+    <div class="title">
+      <p>Ejercicio 1.1
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">Comenzamos introduciendo los datos del problema:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i3)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">Ano</span>
+            <span class="code_operator">:</span>
+            <span class="code_operator">[</span>
+            <span class="code_endofline">
+              <br/>
+            </span>
+            <span class="code_number">1817</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1818</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1819</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1820</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1821</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1822</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1823</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1824</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1825</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1826</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1827</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1828</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1829</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1830</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1831</span>
+            <span class="code_endofline">
+              <br/>
+            </span>
+            <span class="code_operator">]</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\left[ 1817\operatorname{,}1818\operatorname{,}1819\operatorname{,}1820\operatorname{,}1821\operatorname{,}1822\operatorname{,}1823\operatorname{,}1824\operatorname{,}1825\operatorname{,}1826\operatorname{,}1827\operatorname{,}1828\operatorname{,}1829\operatorname{,}1830\operatorname{,}1831\right] \]
+</p>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i4)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">Pobl</span>
+            <span class="code_operator">:</span>
+            <span class="code_operator">[</span>
+            <span class="code_endofline">
+              <br/>
+            </span>
+            <span class="code_number">29981336</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">30177238</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">30339186</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">30539049</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">30727276</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">30939420</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">31138054</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">31359340</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">31579886</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">31755860</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">31913393</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">32102464</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">32241866</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">32402940</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">32560934</span>
+            <span class="code_endofline">
+              <br/>
+            </span>
+            <span class="code_operator">]</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\]
+</p>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i5)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">AnoPob</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">transpose</span>
+            <span class="code_operator">(</span>
+            <span class="code_function">matrix</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">Ano</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">Pobl</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\begin{pmatrix}1817 &amp; 29981336\\
+1818 &amp; 30177238\\
+1819 &amp; 30339186\\
+1820 &amp; 30539049\\
+1821 &amp; 30727276\\
+1822 &amp; 30939420\\
+1823 &amp; 31138054\\
+1824 &amp; 31359340\\
+1825 &amp; 31579886\\
+1826 &amp; 31755860\\
+1827 &amp; 31913393\\
+1828 &amp; 32102464\\
+1829 &amp; 32241866\\
+1830 &amp; 32402940\\
+1831 &amp; 32560934\end{pmatrix}\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Ahora tomamos un modelo logístico general, cuyos coeficientes estimaremos a partir de los datos del problema:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i6)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">t</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">r</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">K</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">P0</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">:</span>
+            <span class="code_operator">=</span>
+            <span class="code_operator">−</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">%e</span>
+            <span class="code_operator">^</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">r</span>
+            <span class="code_operator">·</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">t</span>
+            <span class="code_operator">−</span>
+            <span class="code_number">1817</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">K</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">P0</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">/</span>
+            <span class="code_operator">(</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">1</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">%e</span>
+            <span class="code_operator">^</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">r</span>
+            <span class="code_operator">·</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">t</span>
+            <span class="code_operator">−</span>
+            <span class="code_number">1817</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">P0</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">K</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\operatorname{V}\left( t\operatorname{,}r\operatorname{,}K\operatorname{,}\ensuremath{\mathrm{P0}}\right) \operatorname{:=}\frac{-{{\% e}^{r\, \left( t-1817\right) }} K\, \ensuremath{\mathrm{P0}}}{\left( 1-{{\% e}^{r\, \left( t-1817\right) }}\right) \, \ensuremath{\mathrm{P0}}-K}\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">El procedimiento que vamos a seguir, tal y como indica el enunciado del problema, es el de estimar los tres coeficientes del modelo a partir de 3 puntos de los datos.
+      <br/>Para t=1817, queda V = K*P0/K = P0, y esto no aporta nada, la población inicial debe ser 29981336. De todas formas, lo vemos:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i7)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">solve</span>
+            <span class="code_operator">(</span>
+            <span class="code_operator">[</span>
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">1817</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">r</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">K</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">]</span>
+            <span class="code_endofline">,</span>
+            <span class="code_operator">[</span>
+            <span class="code_variable">r</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">K</span>
+            <span class="code_operator">]</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\ensuremath{\mathrm{all}}\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Ahora usamos los otros dos puntos, correspondientes a 1824 y 1831: (1824, 31359340) y (1831, 32560934), para estimar r y K.
+      <br/>Este paso lo he dividido en dos, en lugar de resolver un sistema de dos ecuaciones, porque de esta última forma Maxima no encontraba solución.
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i8)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">solve</span>
+            <span class="code_operator">(</span>
+            <span class="code_operator">[</span>
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">1824</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">r</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">K</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">31359340</span>
+            <span class="code_operator">]</span>
+            <span class="code_endofline">,</span>
+            <span class="code_operator">[</span>
+            <span class="code_variable">r</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">K</span>
+            <span class="code_operator">]</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\left[ \left[ r=\ensuremath{\mathrm{\% r1}}\operatorname{,}K=\frac{235048727319560 {{\% e}^{7 \ensuremath{\mathrm{\% r1}}}}-235048727319560}{7495334 {{\% e}^{7 \ensuremath{\mathrm{\% r1}}}}-7839835}\right] \right] \]
+</p>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i9)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">solve</span>
+            <span class="code_operator">(</span>
+            <span class="code_operator">[</span>
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">1831</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">r</span>
+            <span class="code_endofline">,</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">235048727319560</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">%e</span>
+            <span class="code_operator">^</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">7</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">r</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">−</span>
+            <span class="code_number">235048727319560</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">/</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">7495334</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">%e</span>
+            <span class="code_operator">^</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">7</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">r</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">−</span>
+            <span class="code_number">7839835</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">32560934</span>
+            <span class="code_operator">]</span>
+            <span class="code_endofline">,</span>
+            <span class="code_operator">[</span>
+            <span class="code_variable">r</span>
+            <span class="code_operator">]</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Ahora ya tenemos los coeficientes del modelo, que podemos tratar de expresar de forma algo más sencilla:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i10)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">R</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">log</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">13580235259</span>
+            <span class="code_operator">^</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">1</span>
+            <span class="code_operator">/</span>
+            <span class="code_number">7</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">/</span>
+            <span class="code_number">10903569446</span>
+            <span class="code_operator">^</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">1</span>
+            <span class="code_operator">/</span>
+            <span class="code_number">7</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\log{\left( \frac{{{13580235259}^{\frac{1}{7}}}}{{{10903569446}^{\frac{1}{7}}}}\right) }\]
+</p>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i11)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">K</span>
+            <span class="code_operator">:</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">235048727319560</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">%e</span>
+            <span class="code_operator">^</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">7</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">R</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">−</span>
+            <span class="code_number">235048727319560</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">/</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">7495334</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">%e</span>
+            <span class="code_operator">^</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">7</span>
+            <span class="code_operator">·</span>
+            <span class="code_variable">R</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">−</span>
+            <span class="code_number">7839835</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\frac{146892328268425985}{3807151752}\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Como comenté antes, el sistema no daba ninguna solución, como puede verse en la siguiente línea:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i13)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">solve</span>
+            <span class="code_operator">(</span>
+            <span class="code_operator">[</span>
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">1824</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">n</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">m</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">31359340</span>
+            <span class="code_endofline">,</span>
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_number">1831</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">n</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">m</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">32560934</span>
+            <span class="code_operator">]</span>
+            <span class="code_endofline">,</span>
+            <span class="code_operator">[</span>
+            <span class="code_variable">n</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">m</span>
+            <span class="code_operator">]</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}[]\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Por tanto, el modelo que tenemos es:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i15)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">t</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">R</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">K</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}-\frac{550503531204747205926995 {{\% e}^{\log{\left( \frac{{{13580235259}^{\frac{1}{7}}}}{{{10903569446}^{\frac{1}{7}}}}\right) } \left( t-1817\right) }}}{475893969 \left( 29981336 \left( 1-{{\% e}^{\log{\left( \frac{{{13580235259}^{\frac{1}{7}}}}{{{10903569446}^{\frac{1}{7}}}}\right) } \left( t-1817\right) }}\right) -\frac{146892328268425985}{3807151752}\right) }\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Ahora dibujamos la gráfica de este modelo sobre los puntos de datos para observar el ajuste:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i16)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">wxdraw2d</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">color</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">red</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">point_type</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">circle</span>
+            <span class="code_endofline">,</span>
+            <span class="code_function">points</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">AnoPob</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">color</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">blue</span>
+            <span class="code_endofline">,</span>
+            <span class="code_function">explicit</span>
+            <span class="code_operator">(</span>
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">t</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">R</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">K</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">t</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1810</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1840</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\]
+</p>
+    <img src="tarea1_LorencioAbril_htmlimg/tarea1_LorencioAbril_12.png" width="1198" style="max-width:90%;" loading="lazy" alt=" (Graphics) "/>
+    <br/>
+    <p>\[\operatorname{	}\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Y vemos como funciona considerablemente bien, para estos datos. 
+      <br/>Pasamos ahora a ver qué sucede a largo plazo, con los siguientes datos obtenidos de Wikipedia, como sugiere el enunciado:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i17)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">T</span>
+            <span class="code_operator">:</span>
+            <span class="code_operator">[</span>
+            <span class="code_number">1821</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1831</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1841</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1851</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1872</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1881</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1891</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1901</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1911</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1921</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1931</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1946</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1950</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1960</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1970</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1980</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1990</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">2000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">2010</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">2020</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">2021</span>
+            <span class="code_operator">]</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\left[ 1821\operatorname{,}1831\operatorname{,}1841\operatorname{,}1851\operatorname{,}1872\operatorname{,}1881\operatorname{,}1891\operatorname{,}1901\operatorname{,}1911\operatorname{,}1921\operatorname{,}1931\operatorname{,}1946\operatorname{,}1950\operatorname{,}1960\operatorname{,}1970\operatorname{,}1980\operatorname{,}1990\operatorname{,}2000\operatorname{,}2010\operatorname{,}2020\operatorname{,}2021\right] \]
+</p>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i18)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">P</span>
+            <span class="code_operator">:</span>
+            <span class="code_operator">[</span>
+            <span class="code_number">30462000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">32569000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">34230000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">35783000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">36103000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">37672000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">38343000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">38962000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_endofline">
+              <br/>
+            </span>    
+            <span class="code_number">39605000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">39108000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">41524000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">40125230</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">41647258</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">45464797</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">50528219</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">53731387</span>
+            <span class="code_endofline">,</span>
+            <span class="code_endofline">
+              <br/>
+            </span>    
+            <span class="code_number">56577000</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">58858198</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">62765235</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">67287241</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">67422241</span>
+            <span class="code_operator">]</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\]
+</p>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i19)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">TP</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">transpose</span>
+            <span class="code_operator">(</span>
+            <span class="code_function">matrix</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">T</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">P</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\begin{pmatrix}1821 &amp; 30462000\\
+1831 &amp; 32569000\\
+1841 &amp; 34230000\\
+1851 &amp; 35783000\\
+1872 &amp; 36103000\\
+1881 &amp; 37672000\\
+1891 &amp; 38343000\\
+1901 &amp; 38962000\\
+1911 &amp; 39605000\\
+1921 &amp; 39108000\\
+1931 &amp; 41524000\\
+1946 &amp; 40125230\\
+1950 &amp; 41647258\\
+1960 &amp; 45464797\\
+1970 &amp; 50528219\\
+1980 &amp; 53731387\\
+1990 &amp; 56577000\\
+2000 &amp; 58858198\\
+2010 &amp; 62765235\\
+2020 &amp; 67287241\\
+2021 &amp; 67422241\end{pmatrix}\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Por último, dibujamos la gráfica comparativa del modelo y los datos a largo plazo:
+</div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i20)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">wxdraw2d</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">color</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">red</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">point_type</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">circle</span>
+            <span class="code_endofline">,</span>
+            <span class="code_function">points</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">TP</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">color</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">blue</span>
+            <span class="code_endofline">,</span>
+            <span class="code_function">explicit</span>
+            <span class="code_operator">(</span>
+            <span class="code_function">V</span>
+            <span class="code_operator">(</span>
+            <span class="code_variable">t</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">R</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">K</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">29981336</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">,</span>
+            <span class="code_variable">t</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">1800</span>
+            <span class="code_endofline">,</span>
+            <span class="code_number">2050</span>
+            <span class="code_operator">)</span>
+            <span class="code_operator">)</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>\[\operatorname{	}\]
+</p>
+    <img src="tarea1_LorencioAbril_htmlimg/tarea1_LorencioAbril_18.png" width="1198" style="max-width:90%;" loading="lazy" alt=" (Graphics) "/>
+    <br/>
+    <p>\[\operatorname{	}\]
+</p>
+    <!-- Text cell -->
+    <div class="comment">Observamos como en la primera mitad del siglo XX la población francesa entró en una nueva etapa de crecimiento exponencial, pero el modelo logístico ya estaba estabilizado, por lo que dejó de ser adecuado.
+      <br/>La nueva etapa de crecimiento exponencial se puede explicar por la industrialización y los grandes cambios tecnológicos que  se experimentaron a finales del siglo XIX y principios del XX. De alguna forma, podemos entender que el efecto de estos hechos puede equipararse a que aumentan los recursos disponibles del medio, de forma que K aumenta, y puede que r también lo haga.
+</div>
+    <hr/>
+    <p>
+      <small> Created with 
+        <a href="https://wxMaxima-developers.github.io/wxmaxima/">wxMaxima</a>.</small>
+    </p>
+    <small> The source of this Maxima session can be downloaded 
+      <a href="tarea1_LorencioAbril_htmlimg/tarea1_LorencioAbril.wxmx">here</a>.</small>
+  </body>
+</html>
