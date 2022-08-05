@@ -1,0 +1,546 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea Opcional: Prueba de Von Neumann del Teorema de Radon-Nikodym
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Date
+10/2021
+\end_layout
+
+\begin_layout Standard
+John Von Neumann fue un gran matemático (además de físico, economista e
+ incluso estratega militar) del siglo XX.
+ A él le debemos la arquitectura básica de los procesadores con los que
+ funcionan la mayoría de ordenadores del mundo, la teoría de juegos y otros
+ muchos avances e investigaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+Von Neumann destacó por su habilidad matemática durante toda su vida, y
+ ahora vamos a estudiar la prueba que propuso para el teorema de Radon-Nikodym.
+\end_layout
+
+\begin_layout Standard
+Realmente, se apoya en el Teorema de Descomposición de Lebesgue, a partir
+ del cual el teorema de Radon-Nikodym es casi trivial, y que reza así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+
+\series bold
+Teorema de descomposición de Lebesgue
+\end_layout
+
+\begin_layout Theorem
+Si 
+\begin_inset Formula $\mu$
+\end_inset
+
+ y 
+\begin_inset Formula $\nu$
+\end_inset
+
+ son dos medidas finitas en 
+\begin_inset Formula $\left(\Omega,{\cal F}\right)$
+\end_inset
+
+ entonces existe una función medible (respecto a ambas medidas) no negativa
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ y un conjunto 
+\begin_inset Formula $\mu$
+\end_inset
+
+-nulo 
+\begin_inset Formula $B$
+\end_inset
+
+, tal que
+\begin_inset Formula 
+\[
+\nu\left(A\right)=\int_{A}fd\mu+\nu\left(A\cap B\right)
+\]
+
+\end_inset
+
+ para cada 
+\begin_inset Formula $A\in{\cal F}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+
+\series bold
+Demostración de Von Neumann
+\end_layout
+
+\begin_layout Proof
+Sea 
+\begin_inset Formula $\pi=\mu+\nu$
+\end_inset
+
+ y consideremos el siguiente operador
+\begin_inset Formula 
+\[
+T\left(f\right)=\int fd\nu
+\]
+
+\end_inset
+
+ que es obviamente lineal, pues lo es la integral.
+ Más aún, para 
+\begin_inset Formula $f\in L^{2}\left(\pi\right)$
+\end_inset
+
+, tenemos
+\begin_inset Formula 
+\[
+\left|T\left(f\right)\right|=\left|\int fd\nu\right|=\sqrt{\left|\int fd\nu\right|^{2}}\leq\sqrt{\int\left|f\right|^{2}d\nu}=\left\Vert f\right\Vert _{L^{2}}
+\]
+
+\end_inset
+
+ por tanto, es un operador lineal en 
+\begin_inset Formula $L^{2}\left(\pi\right)$
+\end_inset
+
+, que es de Hilbert.
+\end_layout
+
+\begin_layout Proof
+Por el Teorema de Representación de Reisz para espacios de Hilbert (visto
+ en la asignatura), existe 
+\begin_inset Formula $h\in L^{2}\left(\pi\right)$
+\end_inset
+
+ tal que
+\begin_inset Formula 
+\[
+T\left(f\right)=\int fd\nu=\int fhd\pi=\int fh\left(d\mu+d\nu\right)=\int fhd\mu+\int fhd\nu\qquad\left(*\right)
+\]
+
+\end_inset
+
+ Ahora, consideramos los siguientes conjuntos:
+\begin_inset Formula 
+\[
+N=\left\{ h<0\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+M=\left\{ 0\leq h<1\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+B=\left\{ h\geq1\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Entonces, por 
+\begin_inset Formula $\left(*\right)$
+\end_inset
+
+, se tiene
+\begin_inset Formula 
+\[
+0\geq\int_{N}hd\pi=\int h{\cal X}_{N}d\pi=\int_{N}hd\mu+\int_{N}hd\nu
+\]
+
+\end_inset
+
+ y
+\begin_inset Formula 
+\[
+\int h{\cal X}_{N}d\pi=T\left({\cal X}_{N}\right)=\int{\cal X}_{N}d\nu=\nu\left(N\right)
+\]
+
+\end_inset
+
+ Entonces 
+\begin_inset Formula $\nu\left(N\right)\leq0\implies\nu\left(N\right)=0$
+\end_inset
+
+, además esto hace que 
+\begin_inset Formula $\int_{N}hd\mu=0$
+\end_inset
+
+ y por tanto ha de ser 
+\begin_inset Formula $\mu\left(N\right)=0$
+\end_inset
+
+, pues en otro casi sería 
+\begin_inset Formula $\int_{N}hd\mu<0$
+\end_inset
+
+ y obtendríamos una contradicción.
+\end_layout
+
+\begin_layout Proof
+Ahora, tenemos que
+\begin_inset Formula 
+\[
+\nu\left(B\right)=T\left({\cal X}_{B}\right)=\int_{B}hd\mu+\int_{B}hd\nu\geq\nu\left(B\right)+\mu\left(B\right)\implies\mu\left(B\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Para el conjunto restanto, consideremos 
+\begin_inset Formula 
+\[
+M_{n}=\left\{ 0\leq h\leq1-\frac{1}{n}\right\} 
+\]
+
+\end_inset
+
+ y entonces, por 
+\begin_inset Formula $\left(*\right)$
+\end_inset
+
+ tenemos
+\begin_inset Formula 
+\[
+\int fd\nu=\int fhd\nu+\int fhd\mu\implies\int\left(1-h\right)fd\nu=\int fhd\mu
+\]
+
+\end_inset
+
+y, en particular, es
+\begin_inset Formula 
+\[
+\nu\left(M_{n}\right)=\int{\cal X}_{M_{n}}d\nu=\int\frac{{\cal X}_{M_{n}}}{\left(1-h\right)}\left(1-h\right)d\nu=\int\frac{{\cal X}_{M_{n}}}{\left(1-h\right)}hd\mu
+\]
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $f=\frac{h}{1-h}$
+\end_inset
+
+, entonces, dado que 
+\begin_inset Formula $\mu\left(B\right)=\mu\left(N\right)=0$
+\end_inset
+
+ (entonces toda la masa de 
+\begin_inset Formula $f$
+\end_inset
+
+ está en 
+\begin_inset Formula $M$
+\end_inset
+
+, y por tanto, si aporta algo a la integral es porque está en 
+\begin_inset Formula $M$
+\end_inset
+
+) y por el teorema de la convergencia monótona (
+\begin_inset Formula ${\cal X}_{M_{n}}$
+\end_inset
+
+ es una sucesión creciente), se tiene que
+\begin_inset Formula 
+\[
+\nu\left(M\cap A\right)=\int_{A}fd\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Por tanto
+\begin_inset Formula 
+\[
+\nu\left(A\right)=\cancel{\nu\left(A\cap N\right)}+\nu\left(A\cap M\right)+\nu\left(A\cap B\right)=\int_{A}fd\mu+\nu\left(A\cap B\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Introducimos ahora una noción importante:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Una medida 
+\begin_inset Formula $\nu$
+\end_inset
+
+ es 
+\series bold
+absolutamente continua
+\series default
+ con respecto a 
+\begin_inset Formula $\mu$
+\end_inset
+
+, y se denota 
+\begin_inset Formula $\mu>>\nu$
+\end_inset
+
+, si siempre que 
+\begin_inset Formula $\mu\left(A\right)=0$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\nu\left(A\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El teorema de Radon-Nikodym trata sobre esto, y fundamentalmente dice que
+ 
+\begin_inset Formula $\nu$
+\end_inset
+
+ tiene una densidad con respecto a 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Corollary
+
+\series bold
+Teorema de Radon-Nikodym
+\end_layout
+
+\begin_layout Corollary
+Una medida (sigma) finita 
+\begin_inset Formula $\nu$
+\end_inset
+
+ es absolutamente continua con respecto a otra medida (sigma) finita 
+\begin_inset Formula $\mu$
+\end_inset
+
+ si, y solo si, existe una función medible 
+\begin_inset Formula $f$
+\end_inset
+
+ tal que
+\begin_inset Formula 
+\[
+\nu\left(A\right)=\int_{A}fd\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+para todo 
+\begin_inset Formula $A\in{\cal F}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ 
+\begin_inset Formula $\mu\left(A\right)=0\implies\int_{A}gd\mu=0,\forall g\ \mu-medible$
+\end_inset
+
+, en particular 
+\begin_inset Formula $\nu\left(A\right)=\int_{A}fd\mu=0$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $\mu>>\nu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Por el teorema anterior
+\begin_inset Formula 
+\[
+\nu\left(A\right)=\int_{A}fd\mu+\nu\left(A\cap B\right)
+\]
+
+\end_inset
+
+ pero si seguimos la demostración dada anteriormente, vemos que 
+\begin_inset Formula $\mu\left(B\right)=0$
+\end_inset
+
+, y como suponemos que 
+\begin_inset Formula $\mu>>\nu$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\nu\left(B\right)=0$
+\end_inset
+
+ y se tiene 
+\begin_inset Formula $\nu\left(A\cap B\right)=0$
+\end_inset
+
+, por lo que
+\begin_inset Formula 
+\[
+\nu\left(A\right)=\int_{A}fd\mu
+\]
+
+\end_inset
+
+ y tenemos el resultado buscado.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,1040 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Teorema de Stone-Weierstrass
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+Vamos a ver el teorema de Stone-Weierstrass, un resultado que generaliza
+ el teorema de Weierstrass de aproximación polinómica de aplicaciones continuas
+ definidas en un intervalo cerrado.
+ Necesitamos la siguiente definición y algunos resultados previos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+\begin_inset Formula $C\left(X\right)$
+\end_inset
+
+ será el álgebra de las funciones reales con dominio en el espacio topológico
+ 
+\begin_inset Formula $X$
+\end_inset
+
+, con la subálgebra de las funciones acotadas en 
+\begin_inset Formula $C\left(X\right)$
+\end_inset
+
+ denotada por 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+La topología con la que trabajaremos en 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+ es la inducida por la métrica 
+\begin_inset Formula $d\left(f,g\right)=\sup_{x\in X}\left|f\left(x\right)-g\left(x\right)\right|$
+\end_inset
+
+, que se denomina la 
+\series bold
+métrica uniforme
+\series default
+, porque induce en 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+ la topología de la convergencia uniforme.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta última frase quiere decir que si 
+\begin_inset Formula $X$
+\end_inset
+
+ es compacto, entonces 
+\begin_inset Formula $C^{*}\left(X\right)=C\left(X\right)$
+\end_inset
+
+ es completo en esta métrica.
+\end_layout
+
+\begin_layout Standard
+Antes de poder probar el teorema de Stone-Weierstrass, necesitamos una versión
+ débil del teorema clásico de Weierstrass:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Lemma
+Para cada 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, hay un polinomio 
+\begin_inset Formula $P_{\varepsilon}\left(x\right)$
+\end_inset
+
+ tal que
+\begin_inset Formula 
+\[
+\left|\left|x\right|-P_{\varepsilon}\left(x\right)\right|<\varepsilon
+\]
+
+\end_inset
+
+ para cada 
+\begin_inset Formula $x\in\left[-1,1\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Por inducción:
+\end_layout
+
+\begin_layout Proof
+Definimos en 
+\begin_inset Formula $x\in\left[0,1\right]$
+\end_inset
+
+, 
+\begin_inset Formula $P_{0}\left(x\right)=0$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{k+1}\left(x\right)=P_{k}\left(x\right)+\frac{x-P_{k}^{2}\left(x\right)}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Veamos que 
+\begin_inset Formula $\forall k\geq0,$
+\end_inset
+
+ se tiene 
+\begin_inset Formula $0\leq P_{k}\left(x\right)\leq\sqrt{x}$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{k}\leq P_{k+1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[k=0\right]$
+\end_inset
+
+ Obvio
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[k+1\right]$
+\end_inset
+
+ Si es cierto para 
+\begin_inset Formula $k$
+\end_inset
+
+, entonces 
+\begin_inset Formula $0\leq P_{k}\left(x\right)^{2}\leq x\implies x-P_{k}\left(x\right)^{2}\geq0$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{k+1}\left(x\right)=P_{k}\left(x\right)+\frac{x-P_{k}\left(x\right)^{2}}{2}\geq P_{k}\left(x\right)\geq0$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+P_{k+1}\left(x\right)=P_{k}\left(x\right)+\frac{1}{2}\left(\sqrt{x}+P_{k}\left(x\right)\right)\left(\sqrt{x}-P_{k}\left(x\right)\right)\overset{*}{\leq}P_{k}\left(x\right)+\left(\sqrt{x}-P_{k}\left(x\right)\right)=\sqrt{x}
+\]
+
+\end_inset
+
+ Donde la desigualdad 
+\begin_inset Formula $*$
+\end_inset
+
+ es cierta porque 
+\begin_inset Formula $0\leq P_{k}\left(x\right)\leq\sqrt{x}\leq1$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\frac{1}{2}\left(\sqrt{x}+P_{k}\left(x\right)\right)\leq1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Por tanto, para 
+\begin_inset Formula $x\in\left[0,1\right]$
+\end_inset
+
+, 
+\begin_inset Formula $\left(P_{k}\left(x\right)\right)_{k}$
+\end_inset
+
+ es monótona creciente y acotada por 1, 
+\begin_inset Formula $\left(P_{k}\right)_{k}$
+\end_inset
+
+ converge puntualmente a cierta función 
+\begin_inset Formula $P\leq\sqrt{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Tomando límites en la ecuación recursiva, se tiene que
+\begin_inset Formula 
+\[
+P\left(x\right)=P\left(x\right)+\frac{x-P\left(x\right)^{2}}{2}\implies P\left(x\right)^{2}=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Como 
+\begin_inset Formula $P\left(x\right)\geq0$
+\end_inset
+
+, es 
+\begin_inset Formula $P\left(x\right)=\sqrt{x}$
+\end_inset
+
+, continua y la convergencia es uniforme por el teorema de Dini.
+\end_layout
+
+\begin_layout Proof
+Dado ahora 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, tomamos 
+\begin_inset Formula $k$
+\end_inset
+
+ tal qeu 
+\begin_inset Formula $\left|P_{k}\left(x\right)-\sqrt{x}\right|<\varepsilon,\ \forall x\in\left[0,1\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Definimos 
+\begin_inset Formula $q\left(y\right)=P_{k}\left(y^{2}\right)$
+\end_inset
+
+ para 
+\begin_inset Formula $y\in\left[-1,1\right],$
+\end_inset
+
+ como 
+\begin_inset Formula $P_{k}$
+\end_inset
+
+ es un polinomio, también lo es 
+\begin_inset Formula $q$
+\end_inset
+
+, y para todo 
+\begin_inset Formula $y\in\left[-1,1\right]$
+\end_inset
+
+ se verifica
+\begin_inset Formula 
+\[
+\left|q\left(y\right)-\left|y\right|\right|=\left|P_{k}\left(y^{2}\right)-\sqrt{y^{2}}\right|<\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este lema solo lo necesitamos para establecer el siguiente lema, crítico
+ para la prueba del teorema general.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Lemma
+Cualquier subálgebra uniformemente cerrada 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ de 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+ es un retículo.
+ O sea, si 
+\begin_inset Formula $f,g\in{\cal A}\implies\min\left(f,g\right),\max\left(f,g\right)\in{\cal A}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Se tiene que
+\begin_inset Formula 
+\[
+\min\left(f,g\right)=\frac{1}{2}\left(f+g\right)-\frac{1}{2}\left|f-g\right|
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\max\left(f,g\right)=\frac{1}{2}\left(f+g\right)+\frac{1}{2}\left|f-g\right|
+\]
+
+\end_inset
+
+ y entonces basta ver que, siempre que 
+\begin_inset Formula $f\in{\cal A}$
+\end_inset
+
+, se tiene 
+\begin_inset Formula $\left|f\right|\in{\cal A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Supongamos, primero, que 
+\begin_inset Formula $\left|f\right|\leq1$
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Entonces, por el Lemma 2, para cada 
+\begin_inset Formula $\varepsilon>0,$
+\end_inset
+
+existe un polinomio 
+\begin_inset Formula $P_{\varepsilon}$
+\end_inset
+
+ tal que
+\begin_inset Formula 
+\[
+\left|P_{\varepsilon}\left(f\right)-\left|f\right|\right|<\varepsilon
+\]
+
+\end_inset
+
+ y entonces 
+\begin_inset Formula $\left|f\right|$
+\end_inset
+
+ puede aproximarse uniformemente por las funciones 
+\begin_inset Formula $P_{\varepsilon}\left(f\right)$
+\end_inset
+
+, que todas están en 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ por ser polinomios en 
+\begin_inset Formula $f\in{\cal A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Si no es 
+\begin_inset Formula $\left|f\right|\leq1$
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+, no importa, ya que sabemos que es acotada porque 
+\begin_inset Formula ${\cal A}\subset C^{*}\left(X\right)$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\left|f\right|\leq A$
+\end_inset
+
+.
+ Podemos aplicar el razonamiento anterior a 
+\begin_inset Formula $\left|\frac{f}{A}\right|\in{\cal A}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Por tanto, 
+\begin_inset Formula $\left|f\right|\in{\cal A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Si 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ es una subcolección de 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+, 
+\series bold
+la subálgebra 
+\begin_inset Formula $\boldsymbol{{\cal A}\left({\cal D}\right)}$
+\end_inset
+
+ generada por 
+\begin_inset Formula ${\cal \boldsymbol{D}}$
+\end_inset
+
+
+\series default
+ es la menor subálgebra de 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+ que contiene a 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+.
+ Siempre existe, pues la intersección de subálgebras conteniendo a 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ es una subálgebra.
+ Además, la clausura uniforme 
+\begin_inset Formula ${\cal B}\left({\cal D}\right)$
+\end_inset
+
+ de 
+\begin_inset Formula ${\cal A}\left({\cal D}\right)$
+\end_inset
+
+ es una subálgebra, llamada la 
+\series bold
+subálgebra uniformemente cerrada generada por 
+\begin_inset Formula $\boldsymbol{{\cal D}}$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El teorema de Stone-Weierstrass proporciona un conjunto de condiciones para
+ 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+, bajo las cuales la subálgebra uniformemente cerrada generada por 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ es todo 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Recordemos que una colección de funciones 
+\series bold
+separa puntos
+\series default
+ si, y solo si, siempre que 
+\begin_inset Formula $x\neq y$
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+, entonces existe alguna función 
+\begin_inset Formula $f$
+\end_inset
+
+ tal que 
+\begin_inset Formula $f\left(x\right)\neq f\left(y\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+
+\series bold
+Stone-Weierstrass
+\end_layout
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $X$
+\end_inset
+
+ un espacio Hausdorff compacto.
+\end_layout
+
+\begin_layout Theorem
+Si 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ es una colección de funciones en 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+ que separa puntos en 
+\begin_inset Formula $X$
+\end_inset
+
+ y contiene la función constante 1, entonces la subálebra uniformemente
+ cerrada generada por 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ es todo 
+\begin_inset Formula $C^{*}\left(X\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Vamos a ver que toda función 
+\begin_inset Formula $f\in C^{*}\left(X\right)$
+\end_inset
+
+ puede ser aproximada uniformemente por funciones de 
+\begin_inset Formula ${\cal A}\left({\cal D}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Para esto, sin pérdida de generalidad podemos asumir que 
+\begin_inset Formula 
+\[
+\inf_{x\in X}f\left(x\right)<\sup_{x\in X}f\left(x\right)
+\]
+
+\end_inset
+
+ (Si no, 
+\begin_inset Formula $f$
+\end_inset
+
+ es constante, y como 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ contiene a 1, entonces 
+\begin_inset Formula $f\in{\cal A}\left({\cal D}\right)$
+\end_inset
+
+).
+ De esta forma, podemos asumir, sin pérdida de generalidad que 
+\begin_inset Formula $\inf_{x\in X}f\left(x\right)=-1$
+\end_inset
+
+ y 
+\begin_inset Formula $\sup_{x\in X}f\left(x\right)=1$
+\end_inset
+
+, de forma que 
+\begin_inset Formula $f:X\rightarrow\left[-1,1\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Sean 
+\begin_inset Formula $A_{1}=\left\{ x\in X|f\left(x\right)\leq-\frac{1}{3}\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $B_{1}=\left\{ x\in X|f\left(x\right)\geq\frac{1}{3}\right\} $
+\end_inset
+
+.
+ Para cada 
+\begin_inset Formula $a\in A_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $b\in B_{1}$
+\end_inset
+
+ existe una función 
+\begin_inset Formula $h_{ab}$
+\end_inset
+
+ con 
+\begin_inset Formula $h_{ab}\left(a\right)\neq h_{ab}\left(b\right)$
+\end_inset
+
+ porque 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ separa puntos.
+ Definimos 
+\begin_inset Formula $g_{ab}$
+\end_inset
+
+ por
+\begin_inset Formula 
+\[
+g_{ab}\left(x\right)=-\frac{4}{3}\frac{h_{ab}\left(x\right)-h_{ab}\left(b\right)}{h_{ab}\left(a\right)-h_{ab}\left(b\right)}+\frac{2}{3}
+\]
+
+\end_inset
+
+ Entonces 
+\begin_inset Formula $g_{ab}\left(a\right)=-\frac{2}{3},\ g_{ab}\left(b\right)=\frac{2}{3}$
+\end_inset
+
+ y 
+\begin_inset Formula $g_{ab}\in{\cal A}\left({\cal D}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Fijemos 
+\begin_inset Formula $a\in A_{1}$
+\end_inset
+
+, para cada 
+\begin_inset Formula $y\in B_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $g_{ay}\left(y\right)=\frac{2}{3}$
+\end_inset
+
+ por lo que 
+\begin_inset Formula $g_{ay}\left(z\right)\geq\frac{1}{3}$
+\end_inset
+
+ para 
+\begin_inset Formula $z\in U_{y}\in{\cal E}\left(y\right)$
+\end_inset
+
+.
+ Una cantidad finita de estos entornos, digamos 
+\begin_inset Formula $U_{y_{1}},...,U_{y_{n}}$
+\end_inset
+
+ cubre 
+\begin_inset Formula $B_{1}$
+\end_inset
+
+, y una función 
+\begin_inset Formula $g_{a}$
+\end_inset
+
+ puede ahora ser definida para cada 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ mediante
+\begin_inset Formula 
+\[
+g_{a}\left(x\right)=\min\left\{ g_{ay_{1}}\left(x\right),...,g_{ay_{n}}\left(x\right)\right\} 
+\]
+
+\end_inset
+
+ Notemos que 
+\begin_inset Formula $g_{a}\left(a\right)=-\frac{2}{3}$
+\end_inset
+
+ y que 
+\begin_inset Formula $g_{a}\geq\frac{1}{3}$
+\end_inset
+
+ en 
+\begin_inset Formula $B_{1}$
+\end_inset
+
+, además 
+\begin_inset Formula $g_{a}\in{\cal B}\left({\cal D}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Repitiendo este procedimiento en 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+, podemos encontrar una función 
+\begin_inset Formula $g\in{\cal B}\left({\cal D}\right)$
+\end_inset
+
+ de tal forma que 
+\begin_inset Formula $g\leq-\frac{1}{3}$
+\end_inset
+
+ en 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $g\geq\frac{1}{3}$
+\end_inset
+
+ en 
+\begin_inset Formula $B_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Se sigue que 
+\begin_inset Formula $\left|g\left(x\right)-g_{a}\left(x\right)\right|\leq\frac{2}{3}$
+\end_inset
+
+ para 
+\begin_inset Formula $x\in A_{1}\cup B_{1}$
+\end_inset
+
+ y si definimos
+\begin_inset Formula 
+\[
+h_{0}\left(x\right)=\min\left\{ g\left(x\right),\frac{1}{3}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+h_{1}\left(x\right)=\max\left\{ h_{0}\left(x\right),-\frac{1}{3}\right\} 
+\]
+
+\end_inset
+
+ Entonces 
+\begin_inset Formula $h_{0}\in{\cal B}\left({\cal D}\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\left|h_{1}\left(x\right)\right|\leq\frac{1}{3}$
+\end_inset
+
+ en 
+\begin_inset Formula $X\setminus\left(A_{1}\cup B_{1}\right)$
+\end_inset
+
+, mientras que 
+\begin_inset Formula $\left|f\left(x\right)\right|\leq\frac{1}{3}$
+\end_inset
+
+ en 
+\begin_inset Formula $X\setminus\left(A_{1}\cup B_{1}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Esto, junto con el hecho de que 
+\begin_inset Formula $h_{1}\left(x\right)=g\left(x\right)$
+\end_inset
+
+ en 
+\begin_inset Formula $A_{1}\cup B_{1}$
+\end_inset
+
+, nos proporciona la relación 
+\begin_inset Formula 
+\[
+\left\Vert f-h_{1}\right\Vert \leq\frac{2}{3}
+\]
+
+\end_inset
+
+ Repitiendo el proceso a la función 
+\begin_inset Formula $f-h_{1}$
+\end_inset
+
+ y el intervalo 
+\begin_inset Formula $\left[-\frac{2}{3},\frac{2}{3}\right]$
+\end_inset
+
+, podemos obtener una función 
+\begin_inset Formula $h_{2}\in{\cal B}\left({\cal D}\right)$
+\end_inset
+
+ tal que
+\begin_inset Formula 
+\[
+\left\Vert f-h_{1}-h_{2}\right\Vert \leq\left(\frac{2}{3}\right)^{2}
+\]
+
+\end_inset
+
+ Y, en general, encontraremos funciones 
+\begin_inset Formula $h_{1},...,h_{n}\in{\cal B}\left({\cal D}\right)$
+\end_inset
+
+ tales que
+\begin_inset Formula 
+\[
+\left\Vert f-\left(h_{1}+...+h_{n}\right)\right\Vert \leq\left(\frac{2}{3}\right)^{n}
+\]
+
+\end_inset
+
+ de donde 
+\begin_inset Formula $f\in{\cal B}\left({\cal D}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Y por último obtenemos el teorema clásico de Weierstrass como corolario
+ de este teorema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Corollary
+
+\series bold
+Teorema de Weierstrass
+\end_layout
+
+\begin_layout Corollary
+Toda función 
+\begin_inset Formula $f:\left[a,b\right]\rightarrow\mathbb{R}$
+\end_inset
+
+ se puede aproximar uniformemente por polinomios.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+La afirmación es que 
+\begin_inset Formula $C^{*}\left[a,b\right]$
+\end_inset
+
+ es la clausura uniformemente cerrada del álgebra 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ de los polinomios en 
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+.
+ Pero 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ es el álgebra generada por el conjunto 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ consistente en las funciones 
+\begin_inset Formula $x$
+\end_inset
+
+ (la identidad) y 1, por lo que 
+\begin_inset Formula ${\cal D}$
+\end_inset
+
+ satisface las condiciones del teorema de Stone-Weierstrass, y por lo tanto
+ la clausura uniformemente cerrada de 
+\begin_inset Formula ${\cal A}\left({\cal D}\right)$
+\end_inset
+
+ es, de hecho, todo 
+\begin_inset Formula $C^{*}\left[a,b\right]$
+\end_inset
+
+, como queríamos ver.
+\end_layout
+
+\end_body
+\end_document

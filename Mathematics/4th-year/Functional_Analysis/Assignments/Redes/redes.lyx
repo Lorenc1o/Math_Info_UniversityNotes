@@ -1,0 +1,1432 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Convergencia en Redes
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+Vamos a estudiar el concepto de 
+\series bold
+red
+\series default
+, que es la generalización del concepto de sucesión, como veremos.
+\end_layout
+
+\begin_layout Standard
+Primero, unas definiciones previas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Una relación binaria 
+\begin_inset Formula $\geqq$
+\end_inset
+
+ 
+\series bold
+dirige
+\series default
+ un conjunto 
+\begin_inset Formula $D$
+\end_inset
+
+ si es no vacía y verifica:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Transitividad:
+\series default
+ si 
+\begin_inset Formula $m,n,p\in D$
+\end_inset
+
+ tales que 
+\begin_inset Formula $m\geqq n$
+\end_inset
+
+ y 
+\begin_inset Formula $n\geqq p$
+\end_inset
+
+, entonces 
+\begin_inset Formula $m\geqq p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Reflexividad:
+\series default
+ si 
+\begin_inset Formula $m\in D\implies m\geqq m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+si 
+\begin_inset Formula $m,n\in D$
+\end_inset
+
+, entonces existe 
+\begin_inset Formula $p\in D$
+\end_inset
+
+ tal que 
+\begin_inset Formula $p\geqq m$
+\end_inset
+
+ y 
+\begin_inset Formula $p\geqq n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Y decimos que 
+\begin_inset Formula $\boldsymbol{m}$
+\end_inset
+
+ 
+\series bold
+sucede a 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ en el orden 
+\begin_inset Formula $\boldsymbol{\geqq}$
+\end_inset
+
+ 
+\series default
+y que 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ 
+\series bold
+precede a 
+\begin_inset Formula $\boldsymbol{m}$
+\end_inset
+
+ 
+\series default
+si, y solo si, 
+\begin_inset Formula $m\geqq n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Un 
+\series bold
+conjunto dirigido
+\series default
+ es un par 
+\begin_inset Formula $\left(D,\geqq\right)$
+\end_inset
+
+ de tal forma que 
+\begin_inset Formula $\geqq$
+\end_inset
+
+ dirige 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y ya podemos definir las redes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Una 
+\series bold
+red
+\series default
+ es un par 
+\begin_inset Formula $\left(S,\geqq\right)$
+\end_inset
+
+ de tal forma que 
+\begin_inset Formula $S$
+\end_inset
+
+ es una función y 
+\begin_inset Formula $\geqq$
+\end_inset
+
+ dirige el dominio de 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $S$
+\end_inset
+
+ es una función cuyo dominio contiene a 
+\begin_inset Formula $D$
+\end_inset
+
+ y 
+\begin_inset Formula $D$
+\end_inset
+
+ es dirigido por 
+\begin_inset Formula $\geqq$
+\end_inset
+
+, entonces el conjunto 
+\begin_inset Formula $\left\{ S_{n},n\in D,\geqq\right\} $
+\end_inset
+
+ es la red 
+\begin_inset Formula $\left(S|D,\geqq\right)$
+\end_inset
+
+ donde 
+\begin_inset Formula $S|D$
+\end_inset
+
+ es 
+\begin_inset Formula $S$
+\end_inset
+
+ restringido a 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Una red 
+\begin_inset Formula $\left(S|D,\geqq\right)$
+\end_inset
+
+ 
+\series bold
+está en un conjunto 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+
+\series default
+ si, y solo si, 
+\begin_inset Formula $S_{n}\in A,\forall n\in D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Se dice que 
+\series bold
+está finalmente en 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ 
+\series default
+si, y solo si, existe un elemento 
+\begin_inset Formula $m$
+\end_inset
+
+ de 
+\begin_inset Formula $D$
+\end_inset
+
+ tal que, si 
+\begin_inset Formula $n\in D$
+\end_inset
+
+ y 
+\begin_inset Formula $n\geqq m$
+\end_inset
+
+, entonces 
+\begin_inset Formula $S_{n}\in A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+La red 
+\series bold
+está frecuentemente en 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ 
+\series default
+si, y solo si, para cada 
+\begin_inset Formula $m\in D,\exists n\in D:n\geqq m\ y\ S_{n}\in A$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $\left(S|D,\geqq\right)$
+\end_inset
+
+ está frecuentemente en 
+\begin_inset Formula $A$
+\end_inset
+
+, entonces el conjunto 
+\begin_inset Formula $E$
+\end_inset
+
+ de todos los 
+\begin_inset Formula $n\in D$
+\end_inset
+
+ tales que 
+\begin_inset Formula $S_{n}\in A$
+\end_inset
+
+ tiene la siguiente propiedad: para cada 
+\begin_inset Formula $m\in D,\exists p\in E:p\geqq m$
+\end_inset
+
+.
+ Tales subconjuntos de 
+\begin_inset Formula $D$
+\end_inset
+
+ se denominan 
+\series bold
+cofinales
+\series default
+.
+ Cada subconjunto cofinal 
+\begin_inset Formula $E$
+\end_inset
+
+ de 
+\begin_inset Formula $D$
+\end_inset
+
+ también es dirigido por 
+\begin_inset Formula $\geqq$
+\end_inset
+
+ porque para elementos 
+\begin_inset Formula $m,n\in E,\exists p\in D|p\geqq m,p\geqq n$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $\exists q\in E|q\geqq p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Y estamos ya en condiciones de definir el concepto de convergencia para
+ redes, de forma similar a como se define para sucesiones en espacios topológico
+s:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Una red 
+\begin_inset Formula $\left(S,\geqq\right)$
+\end_inset
+
+ en un espacio topológico 
+\begin_inset Formula $\left(X,{\cal F}\right)$
+\end_inset
+
+ 
+\series bold
+converge a 
+\begin_inset Formula $\boldsymbol{s}$
+\end_inset
+
+ relativamente a 
+\begin_inset Formula $\boldsymbol{{\cal F}}$
+\end_inset
+
+ 
+\series default
+si, y solo si, está finalmente en cualquier 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+-entorno de 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El siguiente teorema es una generalización de una caracterización que ya
+ conocemos usando sucesiones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $X$
+\end_inset
+
+ un espacio topológico.
+ Entonces
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $s\in X$
+\end_inset
+
+ es un punto de acumulación de un subconjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ de 
+\begin_inset Formula $X$
+\end_inset
+
+ si, y solo s, hay una red en 
+\begin_inset Formula $A\setminus\left\{ s\right\} $
+\end_inset
+
+ que converge a 
+\begin_inset Formula $s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $s\in X$
+\end_inset
+
+ pertenece a la clausura de un subconjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ de 
+\begin_inset Formula $X$
+\end_inset
+
+ si, y solo si, existe una red en 
+\begin_inset Formula $A$
+\end_inset
+
+ convergente a 
+\begin_inset Formula $s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\subset X$
+\end_inset
+
+ es cerrado si, y solo si, ninguna red de 
+\begin_inset Formula $A$
+\end_inset
+
+ converge a un punto de 
+\begin_inset Formula $X\setminus A$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay espacios en los que la convergencia es única, en el sentido de que si
+ una red converge a 
+\begin_inset Formula $s$
+\end_inset
+
+ y también converge a 
+\begin_inset Formula $t$
+\end_inset
+
+, entonces 
+\begin_inset Formula $s=t$
+\end_inset
+
+.
+ Un espacio topológico es un 
+\series bold
+espacio de Hausdorff
+\series default
+ si, y solo si, cada vez que 
+\begin_inset Formula $x\neq y$
+\end_inset
+
+, existen entornos 
+\begin_inset Formula $U\in\varepsilon\left(x\right),V\in\varepsilon\left(y\right)$
+\end_inset
+
+ tales que 
+\begin_inset Formula $U\cap V=\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Un espacio topológico es de Hausdorff si, y solo si, cada red en el espacio
+ converge, a lo sumo, a un punto.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Si 
+\begin_inset Formula $x\neq y$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\exists U\in\varepsilon\left(x\right),V\in\varepsilon\left(y\right)$
+\end_inset
+
+ tales que 
+\begin_inset Formula $U\cap V=\emptyset$
+\end_inset
+
+.
+ Como una red no puede estar finalmente en cada uno de los dos conjuntos
+ disjuntos, entonces ninguna red en 
+\begin_inset Formula $X$
+\end_inset
+
+ puede converger a ambos 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $X$
+\end_inset
+
+ no es de Hausdorff.
+ Entonces 
+\begin_inset Formula $\exists x,y\in X|\forall U\in\varepsilon\left(x\right),V\in\varepsilon\left(y\right),U\cap V\neq\emptyset$
+\end_inset
+
+.
+ Notemos que 
+\begin_inset Formula $\varepsilon\left(x\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\varepsilon\left(y\right)$
+\end_inset
+
+ están dirigidos por 
+\begin_inset Formula $\subset$
+\end_inset
+
+.
+ Ordenamos, entonces, su producto cartesiano 
+\begin_inset Formula $\varepsilon\left(x\right)\times\varepsilon\left(y\right)$
+\end_inset
+
+ definiendo que 
+\begin_inset Formula $\left(U,V\right)\geqq\left(U',V'\right)\iff U\subset U',V\subset V'$
+\end_inset
+
+.
+ Entonces el producto cartesiano está dirigido por 
+\begin_inset Formula $\geqq$
+\end_inset
+
+.
+ Para cada 
+\begin_inset Formula $\left(U,V\right)$
+\end_inset
+
+ la intersección 
+\begin_inset Formula $U\cap V\neq\emptyset$
+\end_inset
+
+, y entonces podemos tomar 
+\begin_inset Formula $S_{U,V}\in U\cap V$
+\end_inset
+
+.
+ Y si 
+\begin_inset Formula $\left(U,V\right)\geqq\left(U',V'\right)$
+\end_inset
+
+ entonces 
+\begin_inset Formula $S_{\left(U,V\right)}\in U\cap V\subset U'\cap V'$
+\end_inset
+
+ y por tanto la red 
+\begin_inset Formula $\left\{ S_{U,V},\left(U,V\right)\in\varepsilon\left(x\right)\times\varepsilon\left(y\right),\geqq\right\} $
+\end_inset
+
+ converge tanto a 
+\begin_inset Formula $s$
+\end_inset
+
+ como a 
+\begin_inset Formula $t$
+\end_inset
+
+, y hemos probado el contrarrecíproco del resultado.
+\end_layout
+
+\begin_layout Standard
+Hemos visto en esta prueba cómo la noción de ordenar el producto cartesiano
+ puede ser útil.
+ Este tipo de construcciones se denominan 
+\series bold
+productos dirigidos
+\series default
+, y pueden extenederse al producto de familias enteras de conjuntos dirigidos.
+\end_layout
+
+\begin_layout Standard
+Consideremos ahora la clase de todas las funciones 
+\begin_inset Formula $S$
+\end_inset
+
+ tales que 
+\begin_inset Formula $S\left(m,n\right)$
+\end_inset
+
+ está definida siempre que 
+\begin_inset Formula $m$
+\end_inset
+
+ pertenece a un conjunto dirigido 
+\begin_inset Formula $D$
+\end_inset
+
+ y 
+\begin_inset Formula $n$
+\end_inset
+
+ pertenece a un conjunto dirigido 
+\begin_inset Formula $E_{m}$
+\end_inset
+
+.
+ Queremos encontrar una red 
+\begin_inset Formula $R$
+\end_inset
+
+ con valores en este dominio, de forma que 
+\begin_inset Formula $S\circ R$
+\end_inset
+
+ converja a 
+\begin_inset Formula $\lim_{m}\lim_{n}S\left(m,n\right)$
+\end_inset
+
+ siempre que 
+\begin_inset Formula $S$
+\end_inset
+
+ sea una función a un espacio topológico y este límite iterado exista.
+ Para solventar esta cuestión, tenemos el siguiente teorema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+
+\series bold
+Teorema de los límites iterados
+\end_layout
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $D$
+\end_inset
+
+ un conjunto dirigido, sea 
+\begin_inset Formula $E_{m}$
+\end_inset
+
+ un conjunto dirigido para cada 
+\begin_inset Formula $m\in D$
+\end_inset
+
+, sea 
+\begin_inset Formula $F=D\times\left(\prod_{m\in D}E_{m}\right)$
+\end_inset
+
+ y para cada 
+\begin_inset Formula $\left(m,f\right)\in F$
+\end_inset
+
+ sea 
+\begin_inset Formula $R\left(m,f\right)=\left(m,f\left(m\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Si 
+\begin_inset Formula $S\left(m,n\right)$
+\end_inset
+
+ es un miembro de un espacio topológico para cada 
+\begin_inset Formula $m\in D,n\in E_{m}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $S\circ R$
+\end_inset
+
+ converge a 
+\begin_inset Formula $\lim_{m}\lim_{n}S\left(m,n\right)$
+\end_inset
+
+ siempre que este límite iterado exista.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Supongamos que 
+\begin_inset Formula $\lim_{m}\lim_{n}S\left(m,n\right)=s$
+\end_inset
+
+ y que 
+\begin_inset Formula $U\in\varepsilon\left(s\right)$
+\end_inset
+
+.
+ Debemos encontrar 
+\begin_inset Formula $\left(m,f\right)\in F:\left(p,g\right)\geqq\left(m,f\right)\implies S\circ R\left(p,g\right)\in U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Sea 
+\begin_inset Formula $m\in D$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\lim_{n}S\left(p,n\right)\in U,\forall p\geqq m$
+\end_inset
+
+ y entonces, para cada 
+\begin_inset Formula $p$
+\end_inset
+
+ sea 
+\begin_inset Formula $f\left(p\right)\in E_{p}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $S\left(p,n\right)\in U,\forall n\geqq f\left(p\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Si 
+\begin_inset Formula $p\in D$
+\end_inset
+
+ no sucede a 
+\begin_inset Formula $m$
+\end_inset
+
+, sea 
+\begin_inset Formula $f\left(p\right)$
+\end_inset
+
+ un elemento arbitrario de 
+\begin_inset Formula $E_{p}$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $\left(p,g\right)\geqq\left(m,f\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $p\geqq m$
+\end_inset
+
+ y por tanto 
+\begin_inset Formula $\lim_{n}S\left(p,n\right)\in U$
+\end_inset
+
+ y como 
+\begin_inset Formula $g\left(p\right)\geqq f\left(p\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $S\circ R\left(p,g\right)=S\left(p,g\left(p\right)\right)\in U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Y al igual que en el estudio de sucesiones es muy útil el concepto de subsucesió
+n, vamos a definir el de subred:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Una red 
+\begin_inset Formula $\left\{ T_{m},m\in E\right\} $
+\end_inset
+
+ es una 
+\series bold
+subred de una red 
+\begin_inset Formula $\left\{ S_{n},n\in D\right\} $
+\end_inset
+
+ 
+\series default
+si, solo si, existe una función 
+\begin_inset Formula $N:E\rightarrow D$
+\end_inset
+
+ tal que
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $T=S\circ N$
+\end_inset
+
+ o equivalentemente, 
+\begin_inset Formula $T_{i}=S_{N_{i}},\forall i\in E$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall m\in D,\exists n\in E:p\geqq n\implies N_{p}\geqq m$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+Esta segunda condición, intuitivamente, nos dice que cuando crece 
+\begin_inset Formula $p$
+\end_inset
+
+, también lo hace 
+\begin_inset Formula $N_{p}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es obvio que si 
+\begin_inset Formula $S$
+\end_inset
+
+ está finalmente en 
+\begin_inset Formula $A$
+\end_inset
+
+, entonces la subred 
+\begin_inset Formula $S\circ N$
+\end_inset
+
+ también está finalmente en 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Notemos también que cada subconjunto cofinal 
+\begin_inset Formula $E\subset D$
+\end_inset
+
+ es dirigido por el mismo orden, y que 
+\begin_inset Formula $\left\{ S_{n},n\in E\right\} $
+\end_inset
+
+ es una subred suya.
+\end_layout
+
+\begin_layout Standard
+Supongamos ahora que 
+\begin_inset Formula $N:E\rightarrow D$
+\end_inset
+
+ con 
+\begin_inset Formula $E,D$
+\end_inset
+
+ dirigidos, es una función isotona, es decir, que 
+\begin_inset Formula $i\geqq j\implies N_{i}\geqq N_{j}$
+\end_inset
+
+ y tal que la imagen de 
+\begin_inset Formula $N$
+\end_inset
+
+ es cofinal en 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $S\circ N$
+\end_inset
+
+ es una subred de 
+\begin_inset Formula $S$
+\end_inset
+
+, para cada red 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Lemma
+Sea 
+\begin_inset Formula $S$
+\end_inset
+
+ una red y 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ una familia de conjuntos tal que 
+\begin_inset Formula $S$
+\end_inset
+
+ está frecuentmente en cada miembro de 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+, y de tal forma que 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ es cerrada para intersecciones.
+ Entonces hay una subred de 
+\begin_inset Formula $S$
+\end_inset
+
+ que está finalmente en cada miembro de 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este lema lo vamos a aplicar a la convergencia en espacios topológicos.
+ Decimos que 
+\begin_inset Formula $s$
+\end_inset
+
+ es un 
+\series bold
+punto de acumulación de la red 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ 
+\series default
+si, y solo si, 
+\begin_inset Formula $S$
+\end_inset
+
+ está frecuentemente en cada entorno de 
+\begin_inset Formula $s$
+\end_inset
+
+.
+ Nótese que una red puede tener uno, muchos, o ningún punto de acumulación.
+ Aunque si una red converge a un punto, entonces este podemos asegurar que
+ es un punto de acumulación.
+ No obstante, una red puede tener un punto de acumulación.
+ pero no converger a este.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Un punto 
+\begin_inset Formula $s$
+\end_inset
+
+ en un espacio topológico es un punto de acumulación de una red 
+\begin_inset Formula $S$
+\end_inset
+
+ si, y solo si, alguna subred de 
+\begin_inset Formula $S$
+\end_inset
+
+ converge a 
+\begin_inset Formula $s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Sea 
+\begin_inset Formula $s$
+\end_inset
+
+ un punto de acumulación de 
+\begin_inset Formula $S$
+\end_inset
+
+ y sea 
+\begin_inset Formula ${\cal U}$
+\end_inset
+
+ la familia de sus entornos.
+ Entonces 
+\begin_inset Formula ${\cal U}$
+\end_inset
+
+ es cerrado para intersecciones y 
+\begin_inset Formula $S$
+\end_inset
+
+ está frecuentemente en cada miembro de 
+\begin_inset Formula ${\cal U}$
+\end_inset
+
+ por la definición de punto de acumulación.
+ Por tanto, podemos aplicar el lema y hay una subred de 
+\begin_inset Formula $S$
+\end_inset
+
+ que está finalmente en cada miembro de 
+\begin_inset Formula ${\cal U}$
+\end_inset
+
+, por lo que esta subred converge a 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $s$
+\end_inset
+
+ no es un punto de acumulación de 
+\begin_inset Formula $S$
+\end_inset
+
+, entonces hay un entorno 
+\begin_inset Formula $U$
+\end_inset
+
+ de 
+\begin_inset Formula $s$
+\end_inset
+
+ tal que 
+\begin_inset Formula $S$
+\end_inset
+
+ no está frecuentemente en 
+\begin_inset Formula $U,$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $S$
+\end_inset
+
+ está frecuentemente en el complementario de 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Por tanto, cada subred de 
+\begin_inset Formula $S$
+\end_inset
+
+ está frecuentemente en el complementario de 
+\begin_inset Formula $U$
+\end_inset
+
+ y no puede converger a 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por último, establecemos una caracterización de los puntos de acumulación
+ en términos de la clausura.
+ Esta caracterización, de nuevo, ya la conocíamos en el contexto de las
+ sucesiones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $\left\{ S_{n},n\in D\right\} $
+\end_inset
+
+ una red en un espacio topológico y para cada 
+\begin_inset Formula $n\in D$
+\end_inset
+
+ sea 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ el conjunto de todos los puntos 
+\begin_inset Formula $S_{m}$
+\end_inset
+
+, para 
+\begin_inset Formula $m\geqq n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Theorem
+Entonces 
+\begin_inset Formula $s$
+\end_inset
+
+ es un punto de acumulación de 
+\begin_inset Formula $\left\{ S_{n},n\in D\right\} $
+\end_inset
+
+ si, y solo si, 
+\begin_inset Formula $s$
+\end_inset
+
+ pertenece a la clausura de 
+\begin_inset Formula $A_{n},\forall n\in D$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Para cada 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ intersecta cada entorno de 
+\begin_inset Formula $s$
+\end_inset
+
+ por que 
+\begin_inset Formula $S$
+\end_inset
+
+ está frecuentemente en cada entorno.
+ Por tanto, 
+\begin_inset Formula $s$
+\end_inset
+
+ está en la clausura de cada 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Si 
+\begin_inset Formula $s$
+\end_inset
+
+ no es un punto de acumulación de 
+\begin_inset Formula $S$
+\end_inset
+
+, entonces hay un entorno 
+\begin_inset Formula $U$
+\end_inset
+
+ de 
+\begin_inset Formula $s$
+\end_inset
+
+ tal que 
+\begin_inset Formula $S$
+\end_inset
+
+ no está frecuentemente en 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Por tanto, para algún 
+\begin_inset Formula $n\in D$
+\end_inset
+
+, si 
+\begin_inset Formula $m\geqq n$
+\end_inset
+
+, entonces 
+\begin_inset Formula $S_{m}\notin U$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $U\cap A_{n}=\emptyset$
+\end_inset
+
+ y por tanto 
+\begin_inset Formula $s$
+\end_inset
+
+ no pertenece a la clausura de 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

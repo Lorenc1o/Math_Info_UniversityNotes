@@ -1,0 +1,1597 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Teorema de compacidad de Rellich-Kondrachov
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Section
+Definiciones y resultados previos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Supongamos que 
+\begin_inset Formula $u,v\in L_{loc}^{1}\left(U\right)$
+\end_inset
+
+ y que 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ es un multiíndice.
+ Decimos que 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ 
+\series bold
+es la 
+\begin_inset Formula $\boldsymbol{\alpha}$
+\end_inset
+
+-ésima derivada parcial débil de 
+\begin_inset Formula $\boldsymbol{u}$
+\end_inset
+
+ 
+\series default
+y se denota 
+\begin_inset Formula $D^{\alpha}u=v$
+\end_inset
+
+, si
+\begin_inset Formula 
+\[
+\int_{U}uD^{\alpha}\phi dx=\left(-1\right)^{\left|\alpha\right|}\int_{U}v\phi dx
+\]
+
+\end_inset
+
+ para toda función 
+\begin_inset Formula $\phi\in C_{c}^{\infty}\left(U\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+El 
+\series bold
+espacio de Sobolev
+\series default
+, 
+\begin_inset Formula $W^{k,p}\left(U\right)$
+\end_inset
+
+ consiste en todas las funciones localmente sumables 
+\begin_inset Formula $u:U\rightarrow\mathbb{R}$
+\end_inset
+
+ tales que, para cada multiíndice 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ con 
+\begin_inset Formula $\left|\alpha\right|\leq k$
+\end_inset
+
+, existe 
+\begin_inset Formula $D^{\alpha}u$
+\end_inset
+
+ en sentido débil y pertenece a 
+\begin_inset Formula $L^{p}\left(U\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Notas:
+\end_layout
+
+\begin_layout Enumerate
+Si 
+\begin_inset Formula $p=2$
+\end_inset
+
+, suele escribirse
+\begin_inset Formula 
+\[
+H^{k}\left(U\right)=W^{k,2}\left(U\right),\ k=0,1,...
+\]
+
+\end_inset
+
+ donde se usa la letra 
+\begin_inset Formula $H$
+\end_inset
+
+ porque 
+\begin_inset Formula $H^{k}\left(U\right)$
+\end_inset
+
+ es un espacio de Hilbert.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $H^{0}=L^{2}\left(U\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Identificamos funciones en 
+\begin_inset Formula $W^{k,p}\left(U\right)$
+\end_inset
+
+ que coinciden en casi todo punto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Si 
+\begin_inset Formula $u\in W^{k,p}\left(U\right)$
+\end_inset
+
+, definimos su 
+\series bold
+norma
+\series default
+ como
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{W^{k,p}\left(U\right)}=\begin{cases}
+\left(\sum_{\left|\alpha\right|\leq k}\int_{U}\left|D^{\alpha}u\right|^{p}dx\right)^{\frac{1}{p}} & 1\leq p<\infty\\
+\sum_{\left|\alpha\right|\leq k}ess\sup_{U}\left|D^{\alpha}u\right| & p=\infty
+\end{cases}
+\]
+
+\end_inset
+
+ donde 
+\begin_inset Formula $ees\sup_{U}$
+\end_inset
+
+ denota el 
+\series bold
+supremo esencial
+\series default
+, que es un supremo obviando los conjuntos de medida 0.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ejemplo de supremo esencial:
+\series default
+ supongamos la función 
+\begin_inset Formula $f\left(x\right)=\begin{cases}
+0 & x\neq0\\
+1 & x=0
+\end{cases}$
+\end_inset
+
+, su supremo (y máximo) es claramente 
+\begin_inset Formula $1$
+\end_inset
+
+, pero su supremo esencial es 0.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Sea 
+\begin_inset Formula $\left\{ u_{m}\right\} _{m}$
+\end_inset
+
+ una sucesión en 
+\begin_inset Formula $W^{k,p}\left(U\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $u\in W^{k,p}\left(U\right)$
+\end_inset
+
+.
+ Decimos que 
+\begin_inset Formula $\boldsymbol{u_{m}}$
+\end_inset
+
+ 
+\series bold
+converge a 
+\begin_inset Formula $\boldsymbol{u}$
+\end_inset
+
+ en 
+\begin_inset Formula $\boldsymbol{W^{k,p}\left(U\right)}$
+\end_inset
+
+ 
+\series default
+y se denota
+\begin_inset Formula 
+\[
+u_{m}\rightarrow u,\ en\ W^{k,p}\left(U\right)
+\]
+
+\end_inset
+
+ si
+\begin_inset Formula 
+\[
+\lim_{m}\left\Vert u_{m}-u\right\Vert _{W^{k,p}\left(U\right)}=0
+\]
+
+\end_inset
+
+ Por otro lado, se escribe 
+\begin_inset Formula 
+\[
+u_{m}\rightarrow u,\ en\ W_{loc}^{k,p}\left(U\right)
+\]
+
+\end_inset
+
+ cuando
+\begin_inset Formula 
+\[
+u_{m}\rightarrow u,\ en\ W^{k,p}\left(V\right)
+\]
+
+\end_inset
+
+ para cada 
+\begin_inset Formula $V\subset\subset U$
+\end_inset
+
+ (
+\begin_inset Formula $V$
+\end_inset
+
+ es relativamente compacto en 
+\begin_inset Formula $U$
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+
+\series bold
+Teorema de extensión
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:Teorema-de-extensión"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $U$
+\end_inset
+
+ acotado y tal que 
+\begin_inset Formula $\partial U$
+\end_inset
+
+ es 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+.
+ Sea 
+\begin_inset Formula $V$
+\end_inset
+
+ un abierto acotado tal que 
+\begin_inset Formula $U\subset\subset V$
+\end_inset
+
+.
+ Entonces existe un operador lineal acotado
+\begin_inset Formula 
+\[
+E:W^{1,p}\left(U\right)\rightarrow W^{1,p}\left(\mathbb{R}^{n}\right)
+\]
+
+\end_inset
+
+ tal que, para cada 
+\begin_inset Formula $u\in W^{1,p}\left(U\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $Eu=u$
+\end_inset
+
+ en casi todo punto en 
+\begin_inset Formula $U$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Eu$
+\end_inset
+
+ tiene soporte en 
+\begin_inset Formula $V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Existe una constante 
+\begin_inset Formula $C$
+\end_inset
+
+, que solo depende de 
+\begin_inset Formula $p,U$
+\end_inset
+
+ y 
+\begin_inset Formula $V$
+\end_inset
+
+ tal que
+\begin_inset Formula 
+\[
+\left\Vert Eu\right\Vert _{W^{1,p}\left(\mathbb{R}^{n}\right)}\leq C\left\Vert u\right\Vert _{W^{1,p}\left(U\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+Tal 
+\begin_inset Formula $Eu$
+\end_inset
+
+ se denomina 
+\series bold
+extensión de 
+\begin_inset Formula $\boldsymbol{u}$
+\end_inset
+
+ a 
+\begin_inset Formula $\boldsymbol{\mathbb{R}^{n}}$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Para 
+\begin_inset Formula $1\leq p<n$
+\end_inset
+
+, el 
+\series bold
+conjugado de Sobolev de 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ 
+\series default
+es
+\begin_inset Formula 
+\[
+p^{*}=\frac{np}{n-p}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nota:
+\begin_inset Formula 
+\[
+\frac{1}{p^{*}}=\frac{1}{p}-\frac{1}{n},\ p^{*}>p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+
+\series bold
+Desigualdad de Galgiardo-Nirenberg-Sobolev
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:Desigualdad-de-Galgiardo-Nirenbe"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $1\leq p<n$
+\end_inset
+
+.
+ Existe una constante 
+\begin_inset Formula $C$
+\end_inset
+
+, dependiente solo de 
+\begin_inset Formula $p$
+\end_inset
+
+ y 
+\begin_inset Formula $n$
+\end_inset
+
+, tal que
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{L^{p^{*}}\left(\mathbb{R}^{n}\right)}\leq C\left\Vert Du\right\Vert _{L^{p}\left(\mathbb{R}^{n}\right)}
+\]
+
+\end_inset
+
+ para todo 
+\begin_inset Formula $u\in C_{c}^{1}\left(\mathbb{R}^{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+
+\series bold
+Estimaciones para 
+\begin_inset Formula $\boldsymbol{W^{1,p},1\leq p<n}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:Estimaciones-para"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $U\subset\mathbb{R}^{n}$
+\end_inset
+
+ abierto y acotado, y con 
+\begin_inset Formula $\partial U$
+\end_inset
+
+ 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+.
+ Asumamos 
+\begin_inset Formula $1\leq p<n$
+\end_inset
+
+ y 
+\begin_inset Formula $u\in W^{1,p}\left(U\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Entonces 
+\begin_inset Formula $u\in L^{p^{*}}\left(U\right)$
+\end_inset
+
+, con la estimación
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{L^{p^{*}}\left(U\right)}\leq C\left\Vert u\right\Vert _{W^{1,p}\left(U\right)}
+\]
+
+\end_inset
+
+ donde la constance 
+\begin_inset Formula $C$
+\end_inset
+
+ solo depende de 
+\begin_inset Formula $p,n$
+\end_inset
+
+ y 
+\begin_inset Formula $U$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Proposition
+
+\series bold
+Desigualdad de interpolación para 
+\begin_inset Formula $\boldsymbol{L^{p}}$
+\end_inset
+
+-normas
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:Desigualdad-de-interpolación"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Asumamos 
+\begin_inset Formula $1\leq s\leq r\leq t\leq\infty$
+\end_inset
+
+ y que
+\begin_inset Formula 
+\[
+\frac{1}{r}=\frac{\theta}{s}+\frac{1-\theta}{t}
+\]
+
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $u\in L^{s}\left(U\right)\cap L^{t}\left(U\right)$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $u\in L^{r}\left(U\right)$
+\end_inset
+
+ y
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{L^{r}\left(U\right)}\leq\left\Vert u\right\Vert _{L^{s}\left(U\right)}^{\theta}\left\Vert u\right\Vert _{L^{t}\left(U\right)}^{1-\theta}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Sea 
+\begin_inset Formula $\eta\in C^{\infty}\left(\mathbb{R}^{n}\right)$
+\end_inset
+
+ dada por
+\begin_inset CommandInset label
+LatexCommand label
+name "def:aproxId"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\eta\left(x\right)=\begin{cases}
+C\cdot\exp\left(\frac{1}{\left|x\right|^{2}-1}\right) & \left|x\right|<1\\
+0 & \left|x\right|\geq1
+\end{cases}
+\]
+
+\end_inset
+
+donde 
+\begin_inset Formula $C$
+\end_inset
+
+ es tal que 
+\begin_inset Formula $\int_{\mathbb{R}^{n}}\eta dx=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Ahora, para cada 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, definimos
+\begin_inset Formula 
+\[
+\eta_{\varepsilon}\left(x\right)=\frac{1}{\varepsilon^{n}}\eta\left(\frac{x}{\varepsilon}\right)
+\]
+
+\end_inset
+
+ A 
+\begin_inset Formula $\eta$
+\end_inset
+
+ se le denomina la 
+\series bold
+aproximación de la identidad estándar
+\series default
+.
+\end_layout
+
+\begin_layout Definition
+Las funciones 
+\begin_inset Formula $\eta_{\varepsilon}$
+\end_inset
+
+ son 
+\begin_inset Formula $C^{\infty}$
+\end_inset
+
+ y satisfacen
+\begin_inset Formula 
+\[
+\int_{\mathbb{R}^{n}}\eta_{\varepsilon}dx=1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+sop\left(\eta_{\varepsilon}\right)\subset B\left(0,\varepsilon\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Si 
+\begin_inset Formula $f:U\rightarrow\mathbb{R}$
+\end_inset
+
+ es localmente integrable, definimos su 
+\series bold
+suavización
+\series default
+ 
+\begin_inset Formula 
+\[
+f^{\varepsilon}=\eta_{\varepsilon}*f=\int_{U}\eta_{\varepsilon}\left(x-y\right)f\left(y\right)dy=\int_{B\left(0,\varepsilon\right)}\eta_{\varepsilon}\left(y\right)f\left(x-y\right)dy
+\]
+
+\end_inset
+
+ para 
+\begin_inset Formula $x\in U_{\varepsilon}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Propiedades de las funciones suavizadas
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f^{\varepsilon}\in C^{\infty}\left(U_{\varepsilon}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f^{\varepsilon}\overset{\varepsilon\rightarrow\infty}{\rightarrow}f$
+\end_inset
+
+ en casi todo punto
+\end_layout
+
+\begin_layout Enumerate
+si 
+\begin_inset Formula $f\in C\left(U\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $f^{\varepsilon}\rightarrow f$
+\end_inset
+
+ uniformemente sobre subconjuntos compactos de 
+\begin_inset Formula $U$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+si 
+\begin_inset Formula $1\leq p<\infty$
+\end_inset
+
+ y 
+\begin_inset Formula $f\in L_{loc}^{p}\left(U\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $f^{\varepsilon}\rightarrow f$
+\end_inset
+
+ en 
+\begin_inset Formula $L_{loc}^{p}\left(U\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Sea una sucesión de funciones 
+\begin_inset Formula $\left\{ f_{k}\right\} _{k}$
+\end_inset
+
+ reales definidas en 
+\begin_inset Formula $\mathbb{R}^{n}.$
+\end_inset
+
+ Se dice que son 
+\series bold
+uniformemente equicontinuas
+\series default
+ si para todo 
+\begin_inset Formula $\varepsilon>0,\exists\delta>0:\left|x-y\right|<\delta\implies\left|f_{k}\left(x\right)-f_{k}\left(y\right)\right|<\varepsilon,\forall x,y\in\mathbb{R}^{n},k=1,2,...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+
+\series bold
+Criterio de compacidad de Arzela-Ascoli
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:CriterioArcela-Ascoli"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Sea 
+\begin_inset Formula $\left\{ f_{k}\right\} _{k}$
+\end_inset
+
+ una sucesión de funciones reales definidas en 
+\begin_inset Formula $\mathbb{R}^{n},$
+\end_inset
+
+tal que
+\begin_inset Formula 
+\[
+\left|f_{k}\left(x\right)\right|\leq M,\ k=1,2,...;x\in\mathbb{R}^{n}
+\]
+
+\end_inset
+
+ para alguna constante 
+\begin_inset Formula $M$
+\end_inset
+
+, y que son uniformemente equicontinuas.
+\end_layout
+
+\begin_layout Proposition
+Entonces existe una subsucesión 
+\begin_inset Formula $\left\{ f_{k_{j}}\right\} _{j}$
+\end_inset
+
+ y una función continua 
+\begin_inset Formula $f$
+\end_inset
+
+, tales que
+\begin_inset Formula 
+\[
+f_{k_{j}}\rightarrow f\ \text{uniformemente sobre compactos de \ensuremath{\mathbb{R}^{n}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+El teorema de compacidad de Rellich-Kondrachov
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Sean 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ espacios de Banach con 
+\begin_inset Formula $X\subset Y$
+\end_inset
+
+.
+ Decimos que 
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\series bold
+está compactamente embebido
+\series default
+ en 
+\begin_inset Formula $Y$
+\end_inset
+
+, 
+\begin_inset Formula $X\subset\subset Y$
+\end_inset
+
+ si
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\left\Vert x\right\Vert _{Y}\leq C\left\Vert x\right\Vert _{X}$
+\end_inset
+
+ para cierta constante 
+\begin_inset Formula $C$
+\end_inset
+
+ y para todo 
+\begin_inset Formula $x\in X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+cada sucesión acotada en 
+\begin_inset Formula $X$
+\end_inset
+
+ es precompacta en 
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+colback=green!5!white,colframe=cyan!75!black,title=Teorema de compacidad
+ de Rellich-Kondrachov
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $U\subset\mathbb{R}^{n}$
+\end_inset
+
+ abierto con 
+\begin_inset Formula $\partial U$
+\end_inset
+
+ 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+, y 
+\begin_inset Formula $1\leq p<n$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+W^{1,p}\left(U\right)\subset\subset L^{q}\left(U\right)
+\]
+
+\end_inset
+
+ para cada 
+\begin_inset Formula $1\leq q<p^{*}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Vamos a hacer una prueba paso por paso:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Fijemos 
+\begin_inset Formula $1\leq q<p^{*}$
+\end_inset
+
+ y notemos que, como 
+\begin_inset Formula $U$
+\end_inset
+
+ es acotado, entonces el teorema 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Estimaciones-para"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ implica que
+\begin_inset Formula 
+\[
+W^{1,p}\left(U\right)\subset L^{q}\left(U\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{L^{q}\left(U\right)}\leq C\left\Vert u\right\Vert _{W^{1,p}\left(U\right)}
+\]
+
+\end_inset
+
+ Falta demostrar, por tanto, que si 
+\begin_inset Formula $\left\{ u_{m}\right\} _{m}$
+\end_inset
+
+ es una sucesión acotada en 
+\begin_inset Formula $W^{1,p}\left(U\right)$
+\end_inset
+
+, entonces existe una subsucesión 
+\begin_inset Formula $\left\{ u_{m_{j}}\right\} _{j}$
+\end_inset
+
+ convergente en 
+\begin_inset Formula $L^{1}\left(U\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+En vista del teorema de extensión (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Teorema-de-extensión"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), podemos asumir, sin pérdida de generalidad que 
+\begin_inset Formula $U=\mathbb{R}^{n}$
+\end_inset
+
+ y que las funciones 
+\begin_inset Formula $\left\{ u_{m}\right\} _{m}$
+\end_inset
+
+ tiene todas soporte compacto en algún abierto 
+\begin_inset Formula $V\subset\mathbb{R}^{n}$
+\end_inset
+
+.
+ También podemos asumir que
+\begin_inset Formula 
+\begin{equation}
+\sup_{m}\left\Vert u_{m}\right\Vert _{W^{1,p}\left(V\right)}<\infty
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Estudiemos, primero, las funciones suavizadas
+\begin_inset Formula 
+\[
+u_{m}^{\varepsilon}=\eta_{\varepsilon}*u_{m}
+\]
+
+\end_inset
+
+ para 
+\begin_inset Formula $\varepsilon>0,m=1,2,...$
+\end_inset
+
+, donde 
+\begin_inset Formula $\eta_{\varepsilon}$
+\end_inset
+
+ denota la aproximación de la identidad usual (ver 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:aproxId"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Podemos suponer también que las funciones 
+\begin_inset Formula $\left\{ u_{m}^{\varepsilon}\right\} _{m}$
+\end_inset
+
+ tienen todas soporte en 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Afirmamos que
+\begin_inset Formula 
+\begin{equation}
+u_{m}^{\varepsilon}\overset{\varepsilon\rightarrow0}{\rightarrow}u_{m},\ en\ L^{q}\left(V\right),\ uniformemente\ en\ m
+\end{equation}
+
+\end_inset
+
+ Para probarlo, notemos que como 
+\begin_inset Formula $u_{m}$
+\end_inset
+
+ es diferenciable, entonces
+\begin_inset Formula 
+\[
+u_{m}^{\varepsilon}\left(x\right)-u_{m}\left(x\right)=\int_{B\left(0,1\right)}\eta\left(y\right)\left(u_{m}\left(x-\varepsilon y\right)-u_{m}\left(x\right)\right)dy=\int_{B\left(0,1\right)}\eta\left(y\right)\int_{0}^{1}\frac{d}{dt}\left(u_{m}\left(x-\varepsilon ty\right)\right)dtdy=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-\varepsilon\int_{B\left(0,1\right)}\eta\left(y\right)\int_{0}^{1}Du_{m}\left(x-\varepsilon ty\right)\cdot ydtdy
+\]
+
+\end_inset
+
+ Por tanto
+\begin_inset Formula 
+\[
+\int_{V}\left|u_{m}^{\varepsilon}\left(x\right)-u_{m}\left(x\right)\right|dx\leq\varepsilon\int_{B\left(0,1\right)}\eta\left(y\right)\int_{0}^{1}\int_{V}\left|Du_{m}\left(x-\varepsilon ty\right)\right|dxdtdy\leq\varepsilon\int_{V}\left|Du_{m}\left(z\right)\right|dz
+\]
+
+\end_inset
+
+ Por aproximación esta desigualdad se verifica si 
+\begin_inset Formula $u_{m}\in W^{1,p}\left(V\right)$
+\end_inset
+
+.
+ Por tanto
+\begin_inset Formula 
+\[
+\left\Vert u_{m}^{\varepsilon}-u_{m}\right\Vert _{L^{1}\left(V\right)}\leq\varepsilon\left\Vert Du_{m}\right\Vert _{L^{1}\left(V\right)}\leq\varepsilon C\left\Vert Du_{m}\right\Vert _{L^{p}\left(V\right)}
+\]
+
+\end_inset
+
+ donde la última desigualdad se verifica porque 
+\begin_inset Formula $V$
+\end_inset
+
+ es acotado.
+ Junto con lo visto en el paso 2, tenemos que
+\begin_inset Formula 
+\[
+u_{m}^{\varepsilon}\rightarrow u_{m},\ en\ L^{1}\left(V\right),\ uniformemente\ en\ m
+\]
+
+\end_inset
+
+ Pero, como 
+\begin_inset Formula $1\leq q<p^{*}$
+\end_inset
+
+, vemos que usando la desigualdad de interpolación para 
+\begin_inset Formula $L^{p}$
+\end_inset
+
+-normas (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:Desigualdad-de-interpolación"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) tenemos
+\begin_inset Formula 
+\[
+\left\Vert u_{m}^{\varepsilon}-u_{m}\right\Vert _{L^{q}\left(V\right)}\leq\left\Vert u_{m}^{\varepsilon}-u_{m}\right\Vert _{L^{1}\left(V\right)}^{\theta}\left\Vert u_{m}^{\varepsilon}-u_{m}\right\Vert _{L^{p^{*}}\left(V\right)}^{1-\theta}
+\]
+
+\end_inset
+
+ donde 
+\begin_inset Formula $\frac{1}{q}=\theta+\frac{1-\theta}{p^{*}},\ 0<\theta<1$
+\end_inset
+
+.
+ Por tanto, por 
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+ y la desigualdad de Gagliardo-Niernberg-Sobolev (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Desigualdad-de-Galgiardo-Nirenbe"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) implican
+\begin_inset Formula 
+\begin{equation}
+\left\Vert u_{m}^{\varepsilon}-u_{m}\right\Vert _{L^{q}\left(V\right)}\leq C\left\Vert u_{m}^{\varepsilon}-u_{m}\right\Vert _{L^{1}\left(V\right)}^{\theta}
+\end{equation}
+
+\end_inset
+
+y entonces tenemos 
+\begin_inset Formula $\left(2\right)$
+\end_inset
+
+ por 
+\begin_inset Formula $\left(3\right)$
+\end_inset
+
+, como queríamos.
+\end_layout
+
+\begin_layout Enumerate
+Afirmamos ahora que
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+\text{para cada \ensuremath{\varepsilon>0}, la sucesión \ensuremath{\left\{ u_{m}^{\varepsilon}\right\} _{m}} es uniformemente acotada y equicontinua}\end{cases}
+\end{equation}
+
+\end_inset
+
+ Para verlo, si 
+\begin_inset Formula $x\in\mathbb{R}^{n}$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+\left|u_{m}^{\varepsilon}\left(x\right)\right|\leq\int_{B\left(x,\varepsilon\right)}\eta_{\varepsilon}\left(x-y\right)\left|u_{m}\left(y\right)\right|dy\leq\left\Vert \eta_{\varepsilon}\right\Vert _{L^{\infty}\left(\mathbb{R}^{n}\right)}\left\Vert u_{m}\right\Vert _{L^{1}\left(V\right)}\leq\frac{C}{\varepsilon^{n}}<\infty
+\]
+
+\end_inset
+
+ para 
+\begin_inset Formula $m=1,2,...$
+\end_inset
+
+.
+ De forma análoga
+\begin_inset Formula 
+\[
+\left|Du_{m}^{\varepsilon}\left(x\right)\right|\leq\int_{B\left(x,\varepsilon\right)}\left|D\eta_{\varepsilon}\left(x-y\right)\right|\left|u_{m}\left(y\right)\right|dy\leq\left\Vert D\eta_{\varepsilon}\right\Vert _{L^{\infty}\left(\mathbb{R}^{n}\right)}\left\Vert u_{m}\right\Vert _{L^{1}\left(V\right)}\leq\frac{C}{\varepsilon^{n+1}}<\infty
+\]
+
+\end_inset
+
+para 
+\begin_inset Formula $m=1,2,...$
+\end_inset
+
+ De ests dos desigualdades se deriva 
+\begin_inset Formula $\left(4\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Fijemos ahora 
+\begin_inset Formula $\delta>0$
+\end_inset
+
+.
+ Vamos a ver que existe una subsucesión 
+\begin_inset Formula $\left\{ u_{m_{j}}\right\} _{j}$
+\end_inset
+
+ tal que 
+\begin_inset Formula 
+\begin{equation}
+\limsup_{j,k\rightarrow\infty}\left\Vert u_{m_{j}}-u_{m_{k}}\right\Vert _{L^{q}\left(V\right)}\leq\delta
+\end{equation}
+
+\end_inset
+
+ Para ver esto, usamos 
+\begin_inset Formula $\left(2\right)$
+\end_inset
+
+ para elegir 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ suficientemente pequeño para que
+\begin_inset Formula 
+\begin{equation}
+\left\Vert u_{m}^{\varepsilon}-u_{m}\right\Vert _{L^{q}\left(V\right)}\leq\frac{\delta}{2}
+\end{equation}
+
+\end_inset
+
+ para 
+\begin_inset Formula $m=1,2,...$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Ahora, observamos que como las funciones 
+\begin_inset Formula $\left\{ u_{m}\right\} _{m}$
+\end_inset
+
+, y por tanto las 
+\begin_inset Formula $\left\{ u_{m}^{\varepsilon}\right\} _{m}$
+\end_inset
+
+, tienen soporte en un conjunto acotado 
+\begin_inset Formula $V\subset\mathbb{R}^{n}$
+\end_inset
+
+ fijo, entonces podemos usar 
+\begin_inset Formula $\left(4\right)$
+\end_inset
+
+ y el criterio de compacidad de Arzela-Ascoli (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:CriterioArcela-Ascoli"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), para obtener una subsucesión 
+\begin_inset Formula $\left(u_{m_{j}}^{\varepsilon}\right)_{j}$
+\end_inset
+
+ que converge uniformemente en 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ En particular, tenemos
+\begin_inset Formula 
+\begin{equation}
+\limsup_{j,k\rightarrow\infty}\left\Vert u_{m_{j}}^{\varepsilon}-u_{m_{k}}^{\varepsilon}\right\Vert _{L^{q}\left(V\right)}=0
+\end{equation}
+
+\end_inset
+
+ Pero entonces, 
+\begin_inset Formula $\left(6\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\left(7\right)$
+\end_inset
+
+ implican que
+\begin_inset Formula 
+\[
+\limsup_{j,k\rightarrow\infty}\left\Vert u_{m_{j}}-u_{m_{k}}\right\Vert _{L^{q}\left(V\right)}\leq\delta
+\]
+
+\end_inset
+
+ y tenemos 
+\begin_inset Formula $\left(5\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Por último, utilizamos 
+\begin_inset Formula $\left(5\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $\delta=1,\frac{1}{2},\frac{1}{3},...$
+\end_inset
+
+ y el típico argumento de la subsucesión diagonal, para extraer una subsucesión
+ 
+\begin_inset Formula $\left\{ u_{m_{i}}\right\} _{i}\subset\left\{ u_{m}\right\} _{m}$
+\end_inset
+
+ que satisface
+\begin_inset Formula 
+\[
+\limsup_{i,k\rightarrow}\left\Vert u_{m_{i}}-u_{m_{k}}\right\Vert _{L^{q}\left(V\right)}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

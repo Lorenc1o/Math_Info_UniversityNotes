@@ -1,0 +1,1386 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Filtros
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+Los filtros, como las redes, son un concepto usado para describir la convergenci
+a en un espacio topológico.
+ La idea es que los entornos de un punto pueden pensarse como convergentes
+ a este.
+ Empezamos con unas definiciones básicas y algunas propiedades obvias:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Un 
+\series bold
+filtro 
+\begin_inset Formula $\boldsymbol{{\cal F}}$
+\end_inset
+
+ en un conjunto 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ 
+\series default
+es una colección no vacía de subconjuntos no vacíos de 
+\begin_inset Formula $S$
+\end_inset
+
+, con las siguientes propiedades:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $F_{1},F_{2}\in{\cal F}\implies F_{1}\cap F_{2}\in{\cal F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $F\in{\cal F},F\subset F'\implies F'\in{\cal F}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+Una subfamilia 
+\begin_inset Formula ${\cal F}_{0}$
+\end_inset
+
+ de 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ es una
+\series bold
+ base para el filtro 
+\begin_inset Formula $\boldsymbol{{\cal F}}$
+\end_inset
+
+ 
+\series default
+si, y solo si, cada elemento de 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ contiene algún elemento de 
+\begin_inset Formula ${\cal F}_{0}$
+\end_inset
+
+, o sea, si, y solo si,
+\begin_inset Formula 
+\[
+{\cal F}=\left\{ F\subset S|\exists F_{0}\in{\cal F}_{0}:F_{0}\subset F\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Además, una colección no vacía 
+\begin_inset Formula ${\cal C}$
+\end_inset
+
+ de subconjuntos no vacíos de 
+\begin_inset Formula $S$
+\end_inset
+
+ es una base para algún filtro en 
+\begin_inset Formula $S$
+\end_inset
+
+ si, y solo si, 
+\begin_inset Formula $\forall C_{1},C_{2}\in{\cal C},\exists C_{3}\in{\cal C}:C_{3}\subset C_{1}\cap C_{2}$
+\end_inset
+
+, y en este caso denominamos 
+\series bold
+filtro generado por 
+\begin_inset Formula $\boldsymbol{{\cal C}}$
+\end_inset
+
+ 
+\series default
+a la familia formada por todos los subconjuntos de 
+\begin_inset Formula $S$
+\end_inset
+
+ que contienen algún elemento de 
+\begin_inset Formula ${\cal C}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Si 
+\begin_inset Formula ${\cal F}_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula ${\cal F}_{2}$
+\end_inset
+
+ son filtros en 
+\begin_inset Formula $X$
+\end_inset
+
+, decimos que 
+\begin_inset Formula $\boldsymbol{{\cal F}_{1}}$
+\end_inset
+
+ 
+\series bold
+es más fino que 
+\begin_inset Formula $\boldsymbol{{\cal F}_{2}}$
+\end_inset
+
+ 
+\series default
+(o que 
+\begin_inset Formula ${\cal F}_{2}$
+\end_inset
+
+ es más grueso que 
+\begin_inset Formula ${\cal F}_{1}$
+\end_inset
+
+) si, y solo si, 
+\begin_inset Formula ${\cal F}_{1}\supset{\cal F}_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Un filtro 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+ es 
+\series bold
+fijo
+\series default
+ si, y solo si, 
+\begin_inset Formula $\bigcap_{F\in{\cal F}}F\neq\emptyset$
+\end_inset
+
+ y es 
+\series bold
+libre
+\series default
+ si, y solo si, 
+\begin_inset Formula $\cap_{F\in{\cal F}}F=\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como ejemplo evidente de filtro podemos tomar la familia 
+\begin_inset Formula $\varepsilon\left(x\right)$
+\end_inset
+
+ de todos los entornos de 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ Por las propiedades de la topología, esto es un filtro, y cualquier base
+ de entornos de 
+\begin_inset Formula $x$
+\end_inset
+
+ es también una base para el filtro 
+\begin_inset Formula $\varepsilon\left(x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pasamos ahora a definir la convergencia en un espacio topológico en términos
+ de filtros:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Un filtro 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ en un espacio topológico 
+\begin_inset Formula $X$
+\end_inset
+
+ se dice que 
+\series bold
+converge a 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ 
+\series default
+
+\begin_inset Formula $\left({\cal F}\rightarrow x\right)$
+\end_inset
+
+ si, y solo si, 
+\begin_inset Formula $\varepsilon\left(x\right)\subset{\cal F}$
+\end_inset
+
+, i.e., si, y solo si, 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ es más fino que el filtro de los entornos de 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Se dice que 
+\begin_inset Formula $\boldsymbol{{\cal F}}$
+\end_inset
+
+ 
+\series bold
+tiene a 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ como punto de acumulación
+\series default
+ si, solo si, todo 
+\begin_inset Formula $F\in{\cal F}$
+\end_inset
+
+ se interseca con cada 
+\begin_inset Formula $U\in\varepsilon\left(x\right)$
+\end_inset
+
+.
+ Equivalentemente, podemos decir que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ tiene a 
+\begin_inset Formula $x$
+\end_inset
+
+ como punto de acumulación si, y solo si, 
+\begin_inset Formula $x\in\bigcap_{F\in{\cal F}}\overline{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Además, es obvio que si 
+\begin_inset Formula ${\cal F}\rightarrow x$
+\end_inset
+
+, entonces 
+\begin_inset Formula $x$
+\end_inset
+
+ es un punto de acumulación de 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Una
+\series bold
+ base 
+\begin_inset Formula $\boldsymbol{{\cal C}}$
+\end_inset
+
+ converge a 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ 
+\series default
+si, y solo si, 
+\begin_inset Formula $\forall U\in\varepsilon\left(x\right),\exists C\in{\cal C}:C\subset U$
+\end_inset
+
+.
+ Y que 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ 
+\series bold
+es un punto de acumulación del filtro base 
+\begin_inset Formula $\boldsymbol{{\cal C}}$
+\end_inset
+
+ 
+\series default
+si, y solo si, cada 
+\begin_inset Formula $U\in\varepsilon\left(x\right)$
+\end_inset
+
+ interseca a todo 
+\begin_inset Formula $C\in{\cal C}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ tiene a 
+\begin_inset Formula $x$
+\end_inset
+
+ como punto de acumulación si, y sol si, hay un filtro 
+\begin_inset Formula ${\cal G}$
+\end_inset
+
+ más fino que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ que converge a 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Si 
+\begin_inset Formula $x$
+\end_inset
+
+ es punto de acumulación de 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+, entonces la colección 
+\begin_inset Formula ${\cal C}=\left\{ U\cap F|U\in\varepsilon\left(x\right),F\in{\cal F}\right\} $
+\end_inset
+
+ es una base para un filtro 
+\begin_inset Formula ${\cal G}$
+\end_inset
+
+ más fino que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ y que converge a 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Si 
+\begin_inset Formula ${\cal F}\subset{\cal G}\rightarrow x$
+\end_inset
+
+, entonces cada 
+\begin_inset Formula $F\in{\cal F}$
+\end_inset
+
+ y cada 
+\begin_inset Formula $U\in\varepsilon\left(x\right)$
+\end_inset
+
+ verifican que 
+\begin_inset Formula $F\in{\cal G}$
+\end_inset
+
+ y 
+\begin_inset Formula $U\in{\cal G}$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $F\cap U\in{\cal G}\implies F\cap U\neq\emptyset$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Si 
+\begin_inset Formula $E\subset X$
+\end_inset
+
+, entonces 
+\begin_inset Formula $x\in\overline{E}$
+\end_inset
+
+ si, y solo si, existe un filtro 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $E\in{\cal F}$
+\end_inset
+
+ y 
+\begin_inset Formula ${\cal F}\rightarrow x$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Si 
+\begin_inset Formula $x\in\overline{E}$
+\end_inset
+
+, entonces 
+\begin_inset Formula ${\cal C}=\left\{ U\cap E|U\in\varepsilon\left(x\right)\right\} $
+\end_inset
+
+ es una base para un filtro que contiene a 
+\begin_inset Formula $E$
+\end_inset
+
+ porque 
+\begin_inset Formula $U\cap E\subset E$
+\end_inset
+
+ y converge a 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Si 
+\begin_inset Formula $E\in{\cal F}$
+\end_inset
+
+ y 
+\begin_inset Formula ${\cal F}\rightarrow x$
+\end_inset
+
+, entonces 
+\begin_inset Formula $x$
+\end_inset
+
+ es un punto de acumulación de 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $x\in\bigcap_{F\in{\cal F}}\overline{F}\subset\overline{E}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Si 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ es un filtro en 
+\begin_inset Formula $X$
+\end_inset
+
+ y 
+\begin_inset Formula $f:X\rightarrow Y$
+\end_inset
+
+, entonces 
+\begin_inset Formula $f\left({\cal F}\right)$
+\end_inset
+
+ es el 
+\series bold
+filtro en 
+\begin_inset Formula $\boldsymbol{Y}$
+\end_inset
+
+ que tiene como base los conjuntos 
+\begin_inset Formula $\boldsymbol{f\left(F\right):F\in{\cal F}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Sea 
+\begin_inset Formula $f:X\rightarrow Y$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $f$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ si, y solo si, 
+\begin_inset Formula $\left[{\cal F}\rightarrow x\implies f\left({\cal F}\right)\rightarrow f\left(x\right)\right]$
+\end_inset
+
+ en 
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $f$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $x$
+\end_inset
+
+ y que 
+\begin_inset Formula ${\cal F}\rightarrow x$
+\end_inset
+
+.
+ Sea 
+\begin_inset Formula $V\in\varepsilon\left(f\left(x\right)\right)\overset{f\ cta\ en\ x}{\implies}f^{-1}\left(V\right)\in\varepsilon\left(x\right)\implies f^{-1}\left(V\right)\in{\cal F}\implies V\in f\left({\cal F}\right)$
+\end_inset
+
+, y esto se verifica para cualquier entorno de 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+, luego 
+\begin_inset Formula $f\left({\cal F}\right)\rightarrow f\left(x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Sea el filtro 
+\begin_inset Formula ${\cal F}=\varepsilon\left(x\right)$
+\end_inset
+
+.
+ Entonces cada entorno 
+\begin_inset Formula $V\in\varepsilon\left(f\left(x\right)\right)$
+\end_inset
+
+ está en 
+\begin_inset Formula $f\left({\cal F}\right)$
+\end_inset
+
+, porque 
+\begin_inset Formula $f\left({\cal F}\right)\rightarrow f\left(x\right)$
+\end_inset
+
+.
+ Así, 
+\begin_inset Formula $f^{-1}\left(V\right)\in{\cal F}$
+\end_inset
+
+ y 
+\begin_inset Formula $f$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El siguiente es un resultado en el espacio producto, que es muy sencillo
+ con razonamientos similares a los que hemos usado hasta ahora, y que concuerda
+ con nuestros conocimientos sobre convergencia en términos de sucesiones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Un filtro 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ converge a 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ en 
+\begin_inset Formula $\prod X_{i}$
+\end_inset
+
+ si, y solo si, 
+\begin_inset Formula $\pi_{i}\left({\cal F}\right)\rightarrow\pi_{i}\left(x_{0}\right)$
+\end_inset
+
+ en 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+, para cada 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pasamos ahora a una definición que facilita la aplicación de la convergencia
+ en términos de filtros:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Un filtro 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ es un 
+\series bold
+ultrafiltro
+\series default
+ si, y solo si, no hay ningún filtro más fino que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+.
+ Por tanto, los ultrafiltros son filtros maximales.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Un filtro 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+ es un ultrafiltro si, y solo si, para cada 
+\begin_inset Formula $E\subset X$
+\end_inset
+
+, o bien 
+\begin_inset Formula $E\in{\cal F}$
+\end_inset
+
+, o bien 
+\begin_inset Formula $X\setminus E\in{\cal F}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ es un ultrafiltro y que 
+\begin_inset Formula $E\subset X$
+\end_inset
+
+.
+ Cada elemento 
+\begin_inset Formula $F$
+\end_inset
+
+ de 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ se interseca bien con 
+\begin_inset Formula $E$
+\end_inset
+
+ o bien con 
+\begin_inset Formula $X\setminus E$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $\emptyset\neq F\cap E\in{\cal F}\overset{F\cap E\subset E}{\implies}E\in{\cal F}$
+\end_inset
+
+, e igual sucede con 
+\begin_inset Formula $X\setminus E$
+\end_inset
+
+.
+ Pero ambos no pueden estar en 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+, pues en tal caso 
+\begin_inset Formula $\emptyset=E\cap\left(X\setminus E\right)\in{\cal F}$
+\end_inset
+
+, pero esto no puede suceder, por definición de filtro.
+ Entonces, todos los elementos de 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ intersecan bien a 
+\begin_inset Formula $E$
+\end_inset
+
+, bien a 
+\begin_inset Formula $X\setminus E$
+\end_inset
+
+.
+ Podemos suponer que 
+\begin_inset Formula $F\cap E\neq\emptyset,\forall F\in{\cal F}$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $\left\{ F\cap E|F\in{\cal F}\right\} $
+\end_inset
+
+ es una base para un filtro 
+\begin_inset Formula ${\cal G}$
+\end_inset
+
+ que es más fino que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ que contiene a 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Pero como 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ es un ultrafiltro, entonces 
+\begin_inset Formula ${\cal G}$
+\end_inset
+
+ no puede ser más fino que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+, y entonces 
+\begin_inset Formula ${\cal G}={\cal F}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $E\in{\cal F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ contiene a 
+\begin_inset Formula $E$
+\end_inset
+
+ o a 
+\begin_inset Formula $X\setminus E$
+\end_inset
+
+ para cada 
+\begin_inset Formula $E\subset X$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula ${\cal G}$
+\end_inset
+
+ es un filtro estrictamente más fino que 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+, entonces para algún 
+\begin_inset Formula $A\in{\cal G},A\notin{\cal F}\implies X\setminus A\in{\cal F}\implies X\setminus A\in{\cal G}\implies\emptyset\in{\cal G}\#$
+\end_inset
+
+ Por tanto, 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ tiene que ser maximal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Todo filtro 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ está contenido en algún ultrafiltro.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los parecidos entre redes y filtros es evidente.
+ Cada uno de estos conceptos describe la topología en un espacio topológico
+ con igual facilidad, y los 'filtros más finos' son una analogía conceptual
+ a las 'subredes'.
+ Así, es esperable que podamos establecer entre estos conceptos una relación
+ formal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Definition
+Si 
+\begin_inset Formula $\left(S_{n}\right)$
+\end_inset
+
+ es una red en 
+\begin_inset Formula $X$
+\end_inset
+
+, el filtro generado por la base 
+\begin_inset Formula ${\cal C}$
+\end_inset
+
+ consistente en los conjuntos 
+\begin_inset Formula $B_{n_{0}}=\left\{ S_{n}|n\geq n_{0}\right\} ,n_{0}\in D$
+\end_inset
+
+, se denomina 
+\series bold
+filtro generado por 
+\begin_inset Formula $\boldsymbol{\left(S_{n}\right)}$
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\begin_layout Definition
+Si 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ es un filtro en 
+\begin_inset Formula $X$
+\end_inset
+
+, sea 
+\begin_inset Formula $D_{{\cal F}}=\left\{ \left(x,F\right)|x\in F\in{\cal F}\right\} $
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $D_{{\cal F}}$
+\end_inset
+
+ está dirigido por la relación 
+\begin_inset Formula $\left(x_{1},F_{1}\right)\leqq\left(x_{2},F_{2}\right)\iff F_{2}\subset F_{1}$
+\end_inset
+
+, así que la aplicación 
+\begin_inset Formula $P:D_{{\cal F}}\rightarrow X$
+\end_inset
+
+ definida por 
+\begin_inset Formula $P\left(x,F\right)=x$
+\end_inset
+
+ es una red en 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Esta red se denomina 
+\series bold
+red basada en 
+\begin_inset Formula $\boldsymbol{{\cal F}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y el siguiente teorema parece un resultado natural:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+Se verifica:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Un filtro 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ converge a 
+\begin_inset Formula $x$
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+ si, y solo si, la red basada en 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ converge a 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Una red 
+\begin_inset Formula $\left(S_{n}\right)$
+\end_inset
+
+ converge a 
+\begin_inset Formula $x$
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+ si, y solo si, el filtro generado por 
+\begin_inset Formula $\left(S_{n}\right)$
+\end_inset
+
+ converge a 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Veamos cada una de las equivalencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula ${\cal F}\rightarrow x$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $U\in\varepsilon\left(x\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $U\in{\cal F}$
+\end_inset
+
+, por la convergencia.
+ Sea 
+\begin_inset Formula $p\in U$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\left(p,U\right)\in D_{{\cal F}}$
+\end_inset
+
+ y si 
+\begin_inset Formula $\left(q,F\right)\geqq\left(p,U\right)\implies q\in F\subset U$
+\end_inset
+
+, por lo que para cualquier entorno 
+\begin_inset Formula $U$
+\end_inset
+
+ de 
+\begin_inset Formula $x$
+\end_inset
+
+, la red basada en 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ está finalmente en 
+\begin_inset Formula $U$
+\end_inset
+
+, y eso quiere decir que esta red converge a 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Supongamos que la red basada en 
+\begin_inset Formula ${\cal F}$
+\end_inset
+
+ converge a 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Sea 
+\begin_inset Formula $U\in\varepsilon\left(x\right)$
+\end_inset
+
+.
+ Entonces para algún 
+\begin_inset Formula $\left(p_{0},F_{0}\right)\in D_{{\cal F}}$
+\end_inset
+
+, se tiene 
+\begin_inset Formula $\left(p,F\right)\geqq\left(p_{0},F_{0}\right)\implies p\in U\overset{*}{\implies}F_{0}\subset U$
+\end_inset
+
+.
+ La implicación 
+\begin_inset Formula $*$
+\end_inset
+
+ se debe a que si existiese 
+\begin_inset Formula $q\in F_{0}\setminus U$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\left(q,F_{0}\right)\geqq\left(p_{0},F_{0}\right)$
+\end_inset
+
+, pero 
+\begin_inset Formula $q\notin U\#$
+\end_inset
+
+.
+ Por tanto, 
+\begin_inset Formula $U\in{\cal F}$
+\end_inset
+
+ y esto para cualquier entorno de 
+\begin_inset Formula $x$
+\end_inset
+
+, por lo que 
+\begin_inset Formula ${\cal F}\rightarrow x$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+La red 
+\begin_inset Formula $\left(S_{n}\right)$
+\end_inset
+
+ converge a 
+\begin_inset Formula $x$
+\end_inset
+
+ si, y solo si, 
+\begin_inset Formula $\left(S_{n}\right)$
+\end_inset
+
+ está finalmente en 
+\begin_inset Formula $U,\forall U\in\varepsilon\left(x\right)$
+\end_inset
+
+.
+ Visto de otra forma, si, y solo si, cualquier entorno de 
+\begin_inset Formula $x$
+\end_inset
+
+ contiene una cola de 
+\begin_inset Formula $\left(S_{n}\right)$
+\end_inset
+
+.
+ Como las colas de 
+\begin_inset Formula $\left(S_{n}\right)$
+\end_inset
+
+ son la base para el filtro generado por 
+\begin_inset Formula $\left(S_{n}\right)$
+\end_inset
+
+, tenemos el resultado.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Como nota final, notamos que los filtros son preferidos a las redes para
+ tratar cuestiones de convergencia en espacios topológicos.
+ La razón es que las redes son, y deberían permanecer así, formuladas en
+ base a la teoría de conjuntos por naturaleza, y por tanto pasivas.
+ Pero los filtros, al añadir las restricciones topológicas a sus conjuntos,
+ pueden quedar íntimamente unidaas a la estructura misma del espacio sobre
+ el que se trabaja.
+\end_layout
+
+\end_body
+\end_document

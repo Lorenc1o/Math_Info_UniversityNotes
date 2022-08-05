@@ -1,0 +1,991 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea Opcional: El teorema de completación de espacios normados
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Theorem
+(Theorem 3.
+ en P.
+ Lax, Functional Analysis, Ch 5.
+ Normed Linear Spaces)
+\end_layout
+
+\begin_layout Theorem
+Dado 
+\begin_inset Formula $X=\left(S,d\right)$
+\end_inset
+
+ un espacio métrico no completo, existe una 
+\series bold
+completación
+\series default
+ 
+\begin_inset Formula $\overline{X}=\left(\overline{S},\overline{d}\right)$
+\end_inset
+
+, de tal forma que
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\left(S,d\right) & \overset{i}{\longrightarrow} & \left(\overline{S},\overline{d}\right)\end{array}
+\]
+
+\end_inset
+
+ es una aplicación inyectiva, 
+\begin_inset Formula $\overline{X}$
+\end_inset
+
+ es un espacio métrico completo, 
+\begin_inset Formula $i\left(S\right)$
+\end_inset
+
+ es denso en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+ y 
+\begin_inset Formula 
+\[
+d\left(x,y\right)=\overline{d}\left(i\left(x\right),i\left(y\right)\right),\ \forall x,y\in S
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Además, 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+ es único salvo isometrías.
+\end_layout
+
+\begin_layout Proof
+Primero, definimos en 
+\begin_inset Formula $S^{\mathbb{N}}$
+\end_inset
+
+ la siguiente relación de equivalencia
+\begin_inset Formula 
+\[
+\left(x_{n}\right)\sim\left(y_{n}\right)\iff\lim_{n}d\left(x_{n},y_{n}\right)=0
+\]
+
+\end_inset
+
+y definimos
+\begin_inset Formula 
+\[
+\overline{S}=\left\{ \left[\left(x_{n}\right)\right]:\left(x_{n}\right)\ es\ de\ Cauchy\ en\ d\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\overline{d}\left(\left[x_{n}\right],\left[y_{n}\right]\right)=\lim_{n}d\left(x_{n},y_{n}\right)
+\]
+
+\end_inset
+
+Primero, veamos que 
+\begin_inset Formula $\overline{d}$
+\end_inset
+
+ es una distancia:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\overline{d}\left(\left[x_{n}\right],\left[y_{n}\right]\right)$
+\end_inset
+
+ es convergente: 
+\begin_inset Formula 
+\[
+d\left(x_{n},y_{n}\right)\leq d\left(x_{n},x_{m}\right)+d\left(x_{m},y_{m}\right)+d\left(y_{m},y_{n}\right)\iff d\left(x_{n},y_{n}\right)-d\left(x_{m},y_{m}\right)\leq d\left(x_{n},x_{m}\right)+d\left(y_{n},y_{m}\right)
+\]
+
+\end_inset
+
+ y, como 
+\begin_inset Formula $\left(x_{n}\right)$
+\end_inset
+
+ e 
+\begin_inset Formula $\left(y_{n}\right)$
+\end_inset
+
+ son de Cauchy, para 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, podemos tomar 
+\begin_inset Formula $n,m$
+\end_inset
+
+ suficientemente grandes, de forma que 
+\begin_inset Formula 
+\[
+d\left(x_{n},y_{n}\right)-d\left(x_{m},y_{m}\right)\leq\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+
+\end_inset
+
+ de forma que 
+\begin_inset Formula $\left(d\left(x_{n},y_{n}\right)\right)$
+\end_inset
+
+ es de Cauchy en 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+, por lo que es convergente.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\overline{d}$
+\end_inset
+
+ está bien definida: sean 
+\begin_inset Formula $x_{n}\sim x_{n}'$
+\end_inset
+
+ e 
+\begin_inset Formula $y_{n}\sim y_{n}'$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+\overline{d}\left(\left[x_{n}\right],\left[y_{n}\right]\right)=\lim_{n}d\left(x_{n},y_{n}\right)\leq\lim_{n}d\left(x_{n},x_{n}'\right)+\lim_{n}d\left(x_{n}',y_{n}'\right)+\lim_{n}d\left(y_{n}',y_{n}\right)\overset{*}{=}\lim_{n}d\left(x_{n}',y_{n}'\right)=\overline{d}\left(\left[x_{n}'\right],\left[y_{n}'\right]\right)
+\]
+
+\end_inset
+
+ donde 
+\begin_inset Formula $*$
+\end_inset
+
+ se debe a que 
+\begin_inset Formula $x_{n}\sim x_{n}'\iff\lim_{n}d\left(x_{n},x_{n}'\right)=0$
+\end_inset
+
+.
+ Para ver la otra desigualdad y comprobar la igualdad el razonamiento es
+ exactamente igual.
+\end_layout
+
+\begin_layout Itemize
+Es no negativa: 
+\begin_inset Formula $\overline{d}\left(\left[x_{n}\right],\left[y_{n}\right]\right)=\lim_{n}d\left(x_{n},y_{n}\right)\geq0$
+\end_inset
+
+, por ser límite de números no negativos.
+ Además, 
+\begin_inset Formula $\overline{d}\left(\left[x_{n}\right],\left[y_{n}\right]\right)=0\iff\lim_{n}d\left(x_{n},y_{n}\right)=0\iff\left(x_{n}\right)\sim\left(y_{n}\right)\iff\left[x_{n}\right]=\left[y_{n}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Es simétrica: 
+\begin_inset Formula $\overline{d}\left(\left[x_{n}\right],\left[y_{n}\right]\right)=\lim_{n}d\left(x_{n},y_{n}\right)=\lim d\left(y_{n},x_{n}\right)=\overline{d}\left(\left[y_{n}\right],\left[x_{n}\right]\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Verifica la desigualdad triangular: 
+\begin_inset Formula $\overline{d}\left(\left[x_{n}\right],\left[y_{n}\right]\right)=\lim_{n}d\left(x_{n},y_{n}\right)\leq\lim_{n}d\left(x_{n},z_{n}\right)+d\left(z_{n},y_{n}\right)=\lim_{n}d\left(x_{n},z_{n}\right)+\lim_{n}d\left(z_{n},y_{n}\right)=\overline{d}\left(\left[x_{n}\right],\left[z_{n}\right]\right)+\overline{d}\left(\left[z_{n}\right],\left[y_{n}\right]\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+Ahora, veamos que 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+ es una compleción de 
+\begin_inset Formula $S$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $S$
+\end_inset
+
+ es denso en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+: sea 
+\begin_inset Formula $\emptyset\neq A\subset\overline{S}$
+\end_inset
+
+ un abierto de 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+S\cap A=\left\{ \left[x_{n}\right]\in A:x_{n}=x\in S,\forall n\right\} 
+\]
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $\left[x_{n}\right]\in A$
+\end_inset
+
+ y tomemos 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ de forma que 
+\begin_inset Formula $B=B_{\overline{d}}\left(\left[x_{n}\right],\varepsilon\right)\subset A$
+\end_inset
+
+.
+ Supongamos que 
+\begin_inset Formula $S\cap A$
+\end_inset
+
+ es vacío, de forma que lo es 
+\begin_inset Formula $S\cap B$
+\end_inset
+
+, en particular.
+ Eso quiere decir que, 
+\begin_inset Formula $\forall s\in S,\overline{d}\left(\left[x_{n}\right],\left[s\right]\right)\geq\varepsilon,$
+\end_inset
+
+ o sea
+\begin_inset Formula 
+\[
+\lim_{n}d\left(x_{n},s\right)\geq\varepsilon,\ \forall s\in S
+\]
+
+\end_inset
+
+ no obstante, por la definición de 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+, sabemos que 
+\begin_inset Formula $\left(x_{n}\right)$
+\end_inset
+
+ es de Cauchy en 
+\begin_inset Formula $S$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\exists n_{0}|\forall n,m>n_{0},d\left(x_{n},x_{m}\right)<\varepsilon,$
+\end_inset
+
+ lo cual es una contradicción (pues encontramos un elemento 
+\begin_inset Formula $x_{m}\in S$
+\end_inset
+
+ con 
+\begin_inset Formula $\lim_{n}d\left(x_{n},x_{m}\right)<\varepsilon$
+\end_inset
+
+), que surge de suponer que 
+\begin_inset Formula $S\cap A=\emptyset$
+\end_inset
+
+.
+ Por tanto, ha de ser 
+\begin_inset Formula $S\cap A\neq\emptyset$
+\end_inset
+
+ y 
+\begin_inset Formula $S$
+\end_inset
+
+ es denso en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+ es completo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Lema:
+\series default
+ sea 
+\begin_inset Formula $\left(M,d\right)$
+\end_inset
+
+ un espacio métrico, 
+\begin_inset Formula $\left(b_{n}\right)$
+\end_inset
+
+ una sucesión de Cauchy en 
+\begin_inset Formula $M$
+\end_inset
+
+ y sea 
+\begin_inset Formula $\left(a_{n}\right)$
+\end_inset
+
+ una sucesión en 
+\begin_inset Formula $M$
+\end_inset
+
+ tal que 
+\begin_inset Formula $d\left(a_{n},b_{n}\right)<\frac{1}{n},\forall n$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $\left(i\right)$
+\end_inset
+
+ 
+\begin_inset Formula $\left(a_{n}\right)$
+\end_inset
+
+ es de Cauchy en 
+\begin_inset Formula $M$
+\end_inset
+
+ y 
+\begin_inset Formula $\left(ii\right)$
+\end_inset
+
+ 
+\begin_inset Formula $\lim_{n}a_{n}=p\in M\iff\lim_{n}b_{n}=p\in M$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Dem:
+\series default
+ 
+\begin_inset Formula $\left(i\right)$
+\end_inset
+
+ 
+\begin_inset Formula $d\left(a_{m},a_{n}\right)\leq d\left(a_{m},b_{m}\right)+\left(b_{m},b_{n}\right)+d\left(b_{n},a_{n}\right)$
+\end_inset
+
+ y para 
+\begin_inset Formula $\varepsilon>0,\exists n_{1}|\frac{1}{n_{1}}<\frac{\varepsilon}{3}$
+\end_inset
+
+ y para 
+\begin_inset Formula $n,m>n_{1}$
+\end_inset
+
+ es
+\begin_inset Formula 
+\[
+d\left(a_{m},a_{n}\right)\leq\frac{2\varepsilon}{3}+d\left(b_{n},b_{m}\right)
+\]
+
+\end_inset
+
+ y por ser 
+\begin_inset Formula $b_{n}$
+\end_inset
+
+ de Cauchy, 
+\begin_inset Formula $\exists n_{2}|n,m>n_{2}\implies d\left(b_{m},b_{m}\right)<\frac{\varepsilon}{3}$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $n_{0}=\max\left\{ n_{1},n_{2}\right\} $
+\end_inset
+
+, entonces, para 
+\begin_inset Formula $n,m>n_{0}$
+\end_inset
+
+ se tiene
+\begin_inset Formula 
+\[
+d\left(a_{m},a_{n}\right)<\varepsilon
+\]
+
+\end_inset
+
+ y 
+\begin_inset Formula $\left(a_{n}\right)$
+\end_inset
+
+ es de Cauchy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(ii\right)$
+\end_inset
+
+
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+Se tiene que 
+\begin_inset Formula $\lim_{n}d\left(a_{n},p\right)=0$
+\end_inset
+
+, y 
+\begin_inset Formula $0\leq d\left(b_{n},a_{n}\right)\leq\frac{1}{n}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\lim_{n}d\left(a_{n},b_{n}\right)=0$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+0\leq d\left(b_{n},p\right)\leq d\left(b_{n},a_{n}\right)+d\left(a_{n},p\right)
+\]
+
+\end_inset
+
+ y tomando límites tenemos 
+\begin_inset Formula $\lim_{n}d\left(b_{n},p\right)=0\iff\lim_{n}b_{n}=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Igual.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sea 
+\begin_inset Formula $\left(\alpha_{n}\right)\subset\overline{S}$
+\end_inset
+
+ una sucesión de Cauchy en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+, tenemos que ver que es convergente.
+ Como 
+\begin_inset Formula $S$
+\end_inset
+
+ es denso en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+, para todo 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+,
+\begin_inset Formula $\exists y_{n}\in S$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\overline{d}\left(\left[y_{n}\right],\alpha_{n}\right)<\frac{1}{n}$
+\end_inset
+
+.
+ Entonces, por 
+\begin_inset Formula $\left(i\right)$
+\end_inset
+
+ del lema, la sucesión 
+\begin_inset Formula $\left(y_{n}\right)$
+\end_inset
+
+ es también de Cauchy en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+, pero es una sucesión de sucesiones constantes, por lo que también es de
+ Cauchy en 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ Por ser 
+\begin_inset Formula $S$
+\end_inset
+
+ denso en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $\lim_{n}\left(\left[y_{n}\right]\right)=y\in\overline{S}$
+\end_inset
+
+, y por 
+\begin_inset Formula $\left(ii\right)$
+\end_inset
+
+ del lema se tiene 
+\begin_inset Formula $\lim_{n}\alpha_{n}=y$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $i\left(S\right)\subset\overline{S}$
+\end_inset
+
+: obvio, tomando, para cada 
+\begin_inset Formula $x\in S$
+\end_inset
+
+ la sucesión 
+\begin_inset Formula $x_{n}=x,\forall n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $i\left(S\right)$
+\end_inset
+
+ es denso en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+: sea 
+\begin_inset Formula $\emptyset\neq A\subset\overline{S}$
+\end_inset
+
+ un abierto de 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+S\cap A=\left\{ \left[x_{n}\right]\in A:x_{n}=x\in S,\forall n\right\} 
+\]
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $\left[x_{n}\right]\in A$
+\end_inset
+
+ y tomemos 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ de forma que 
+\begin_inset Formula $B=B_{\overline{d}}\left(\left[x_{n}\right],\varepsilon\right)\subset A$
+\end_inset
+
+.
+ Supongamos que 
+\begin_inset Formula $S\cap A$
+\end_inset
+
+ es vacío, de forma que lo es 
+\begin_inset Formula $S\cap B$
+\end_inset
+
+, en particular.
+ Eso quiere decir que, 
+\begin_inset Formula $\forall s\in S,\overline{d}\left(\left[x_{n}\right],\left[s\right]\right)\geq\varepsilon,$
+\end_inset
+
+ o sea
+\begin_inset Formula 
+\[
+\lim_{n}d\left(x_{n},s\right)\geq\varepsilon,\ \forall s\in S
+\]
+
+\end_inset
+
+ no obstante, por la definición de 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+, sabemos que 
+\begin_inset Formula $\left(x_{n}\right)$
+\end_inset
+
+ es de Cauchy en 
+\begin_inset Formula $S$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\exists n_{0}|\forall n,m>n_{0},d\left(x_{n},x_{m}\right)<\varepsilon,$
+\end_inset
+
+ lo cual es una contradicción (pues encontramos un elemento 
+\begin_inset Formula $x_{m}\in S$
+\end_inset
+
+ con 
+\begin_inset Formula $\lim_{n}d\left(x_{n},x_{m}\right)<\varepsilon$
+\end_inset
+
+), que surge de suponer que 
+\begin_inset Formula $S\cap A=\emptyset$
+\end_inset
+
+.
+ Por tanto, ha de ser 
+\begin_inset Formula $S\cap A\neq\emptyset$
+\end_inset
+
+ y 
+\begin_inset Formula $S$
+\end_inset
+
+ es denso en 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $d\left(x,y\right)=\overline{d}\left(i\left(x\right),i\left(y\right)\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\overline{d}\left(i\left(x\right),i\left(y\right)\right)=\overline{d}\left(\left[x_{n}=x\right],\left[y_{n}=y\right]\right)=\lim_{n}d\left(x_{n},y_{n}\right)=\lim_{n}d\left(x,y\right)=d\left(x,y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+Falta ver la unicidad salvo isometrías.
+ 
+\end_layout
+
+\begin_layout Proof
+Para ello, sea 
+\begin_inset Formula $\overline{R}$
+\end_inset
+
+ una completación de 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $S$
+\end_inset
+
+ es isométrico a un subespacio denso de 
+\begin_inset Formula $\overline{R}$
+\end_inset
+
+.
+ Podemos asumir que 
+\begin_inset Formula $S$
+\end_inset
+
+ es subespacio de 
+\begin_inset Formula $\overline{R}$
+\end_inset
+
+.
+ Al ser 
+\begin_inset Formula $S$
+\end_inset
+
+ denso en 
+\begin_inset Formula $\overline{R},\forall r\in\overline{R},\exists\left(x_{n}\right)\subset X$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\lim_{n}x_{n}=y$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\left(x_{n}\right)$
+\end_inset
+
+ es de Cauchy.
+\end_layout
+
+\begin_layout Proof
+Definimos
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+g:\overline{R} & \longrightarrow & \overline{S}\\
+y & \mapsto & \left[\left(x_{n}\right)\right]
+\end{array}
+\]
+
+\end_inset
+
+ La aplicación está bien definida, porque si otra sucesión tiene a 
+\begin_inset Formula $y$
+\end_inset
+
+ como límite, entonces el límite de las distancias entre las dos sucesiones
+ será 0, y estarán en la misma clase de equivalencia.
+\end_layout
+
+\begin_layout Proof
+Ahora
+\begin_inset Formula 
+\[
+g\left(y\right)=g\left(y'\right)\iff\left[\left(x_{n}\right)\right]=\left[\left(x_{n}'\right)\right]\implies\lim_{n}d\left(x_{n},x_{n}'\right)=0\implies y=y'
+\]
+
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ es inyectiva.
+\end_layout
+
+\begin_layout Proof
+Ahora, si 
+\begin_inset Formula $\left[\left(x_{n}\right)\right]\in\overline{S}$
+\end_inset
+
+, la sucesión es de Cauchy en 
+\begin_inset Formula $X\subset\overline{R}$
+\end_inset
+
+, por lo que converge a 
+\begin_inset Formula $y\in\overline{R}$
+\end_inset
+
+, luego 
+\begin_inset Formula $g\left(y\right)=\left[\left(x_{n}\right)\right]$
+\end_inset
+
+, y 
+\begin_inset Formula $g$
+\end_inset
+
+ es sobreyectiva.
+\end_layout
+
+\begin_layout Proof
+Falta comprobar que conserva distancias:
+\begin_inset Formula 
+\[
+\overline{d}\left(g\left(y\right),g\left(y'\right)\right)=\overline{d}\left(\left[\left(x_{n}\right)\right],\left[\left(x_{n}'\right)\right]\right)=\lim_{n}d\left(x_{n},x_{n}'\right)=d\left(\lim_{n}x_{n},\lim_{n}x_{n}'\right)=d\left(y,y'\right)
+\]
+
+\end_inset
+
+ Por tanto, 
+\begin_inset Formula $g$
+\end_inset
+
+ es una isometría, y 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+ único salvo isometrías.
+\end_layout
+
+\begin_layout Standard
+Tomemos el espacio 
+\begin_inset Formula $S=C\left(\left[0,1\right]\right)$
+\end_inset
+
+ con la métrica 
+\begin_inset Formula $\left\Vert f\right\Vert _{1}=\int_{0}^{1}\left|f\left(t\right)\right|dt$
+\end_inset
+
+, entonces su completación es
+\begin_inset Formula 
+\[
+\overline{S}=\left\{ \left[\left(f_{n}\right)\right]:\left(f_{n}\right)\ de\ Cauchy\ en\ \left\Vert \cdot\right\Vert _{1}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\overline{d}\left(\left[\left(f_{n}\right)\right],\left[\left(g_{n}\right)\right]\right)=\lim_{n}d\left(f_{n},g_{n}\right)
+\]
+
+\end_inset
+
+ ¿Es 
+\begin_inset Formula $\overline{S}=L^{1}\left(\left[0,1\right]\right)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[\subset\right]$
+\end_inset
+
+Sea 
+\begin_inset Formula $\left[\left(f_{n}\right)\right]\in S$
+\end_inset
+
+, entonces podemos tomar un representante 
+\begin_inset Formula $\left(f_{n}\right)$
+\end_inset
+
+ y el valor de la integral es independiente del que escojamos pues 
+\begin_inset Formula $\left(f_{n}\right)\sim\left(g_{n}\right)\iff\lim_{n}\int_{0}^{1}\left|f_{n}\left(t\right)-g_{n}\left(t\right)\right|dt=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+y entonces es 
+\begin_inset Formula 
+\[
+\overline{\left\Vert \left[\left(f_{n}\right)\right]\right\Vert }_{1}=\overline{d}\left(\left[\left(f_{n}\right)\right],0\right)=\lim_{n}d\left(f_{n},0\right)=\lim_{n}\int_{0}^{1}\left|f_{n}\left(t\right)\right|dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
