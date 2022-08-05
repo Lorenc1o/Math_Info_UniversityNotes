@@ -20,3 +20,15 @@ It is called **Willmore surfaces in the euclidean space** and it is written in S
 The obtained mark was 9.8/10 with Honours Distinction.
 
 If you have any doubts, do not hesitate to message me either in GitHub or by email.
+
+[FR]
+
+Ici vous pouvez trouver mon mémoire de licence pour le BSc en mathématiques, ainsi qu'une présentation du travail.
+
+Il s'appelle **Surfaces de Willmore dans l'espace euclidien** et il est écrit en espagnol, mais dans la section *Abstract* vous pouvez lire une brève explication en anglais du travail effectué.
+
+La note obtenue est de 9,8/10 avec Honneurs.
+
+Si vous avez des doutes, n'hésitez pas à m'envoyer un message soit dans GitHub soit par email.
+
+Traduit avec www.DeepL.com/Translator (version gratuite)
