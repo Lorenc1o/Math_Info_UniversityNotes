@@ -1,5 +1,6 @@
-#Matemáticas: Trabajo de Fin de Grado
-##Mathematics: Bachelor's Thesis
+# Matemáticas: Trabajo de Fin de Grado
+## Mathematics: Bachelor's Thesis
+
 [ES]
 
 Aquí puedes encontrar mi TFG para el grado en Matemáticas, así como una presentación del trabajo realizado.
@@ -16,6 +17,6 @@ Here you can find my Bachelor's Thesis for the BSc in Mathematics, as well as a 
 
 It is called **Willmore surfaces in the euclidean space** and it is written in Spanish, but in the section *Abstract* you can read a brief explanation of the work done.
 
-The obtained mark was 9.8/10 with Distinction.
+The obtained mark was 9.8/10 with Honours Distinction.
 
 If you have any doubts, do not hesitate to message me either in GitHub or by email.
