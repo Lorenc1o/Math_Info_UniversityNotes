@@ -1,0 +1,280 @@
+---
+title: "Ejercicio Práctico"
+author: "Jose Antonio Lorencio Abril"
+date: "9/12/2021"
+output:
+  html_document:
+    df_print: paged
+    highlight: kate
+    number_sections: yes
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    highlight: kate
+    number_sections: yes
+    includes:
+      in_header: includes.sty
+bibliography: bibInferencia.bib
+link-citations: yes
+linkcolor: red
+csl: 3d-printing-in-medicine.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'H', warning = FALSE)
+library(latex2exp)
+```
+
+# Introducción
+
+En este documento voy a detallar el proceso de comparación entre dos muestras de datos, siguiendo las indicaciones de los guiones de prácticas. Las muestras a estudiar constan de la cantidad de peces pescados en el Mediterráneo por España y por Grecia, desde el año 2009 hasta el 2019. Los datos han sido obtenidos de la web de Eurostat, el organismo de estadísticas oficiales de la Unión Europea [@Eurostat], concretamente de [@EurostatFish].
+
+Así, vamos a analizar los siguientes datos:
+
+```{r, echo = FALSE}
+datos = read.csv("pescaos.csv",sep = ";")
+colnames(datos) <- c("Grecia", "España")
+```
+
+```{r echo = FALSE}
+datos
+```
+Estos datos corresponden a toneladas de peso vivo al ser recogido del mar, excluyendo cualquier producto que, por algún motivo, no se lleva a tierra.
+
+Así, las variables sobre las que vamos a realizar inferencia son:
+
+G = "Toneladas anuales de pesca en el Mediterráneo por barcos griegos"
+
+```{r, echo = FALSE}
+G = datos$Grecia
+G
+```
+
+
+E = "Toneladas anuales de pesca en el Mediterráneo por barcos españoles"
+
+```{r, echo = FALSE}
+E = datos$España
+E
+```
+Estas dos variables, además, podemos considerarlas independientes, ya que, si bien es cierto que puede haber algunos factores que afecten a la cantidad de pesca de ambos países, es razonable pensar que lo determinante son las demandas internas de cada país.
+
+
+# Distribución de las muestras
+
+Comenzamos haciendo inferencia sobre cada una de estas variables por separado.
+
+## Inferencia sobre G
+
+Calculamos la media y la cuasi-varianza muestral:
+
+```{r}
+muG = mean(G)
+sG = var(G)
+muG
+sG
+```
+Por lo que es
+\[\overline{G} = 69744.04\]
+\[S^2 = 74929415\]
+
+Y podemos también ver su función de distribución empírica, así como sobreponer la distribución de una normal y visualizar el ajuste:
+```{r}
+mG <- min(G)
+MG <- max(G)
+Gn <- ecdf(G)
+
+curve(Gn(x), mG, MG)
+curve(pnorm(x, m=muG, sd=sG), add=TRUE, lty=2)
+```
+
+Viendo esta gráfica parece que la distribución no será normal. No obstante, vamos a agrandar el intervalo hasta poder ver la forma de la normal completa:
+
+```{r}
+curve(Gn(x), -500000000, 500000000)
+curve(pnorm(x, m=muG, sd=sG), add=TRUE, lty=2)
+```
+
+Ahora no parece tan descabellado pensar que es una normal, solo que la escala es muy grande. Vamos a visualizar el gráfico Q-Q para indagar un poco más en la normalidad de la variable:
+
+
+```{r}
+qqnorm(G)
+qqline(G)
+```
+
+Vemos como los cuartiles empíricos no se alejan demasiado de los teóricos, y que es posible que, finalmente, la distribución sí sea normal. Para asegurarnos, vamos a contrastarlo mediante el contraste de Shapiro-Wilk.
+
+Definimos nuestras hipótesis:
+
+\[\begin{array}{cc}
+H_{0}: & G\ sigue\ una\ distribución\ normal\\
+H_{1}: & G\ no\ sigue\ una\ distribución\ normal
+\end{array}\]
+
+Y hacemos el test:
+
+```{r}
+shapiro.test(G)
+```
+Observamos un valor para el estadístico de $W=008854$ y un p-valor $p = 0.1218>0.01$, por lo que aceptamos $H_0$ y, efectivamente, G sigue una distribución normal.
+
+## Inferencia sobre E
+
+Vamos a repetir el mismo estudio sobre la variable E, que, en principio, debería ser también normal.
+
+Calculamos media y cuasi-varianza muestrales:
+
+```{r}
+muE <- mean(E)
+sE <- sd(E)
+muE
+sE
+```
+Por lo que 
+\[\overline{E} = 87134.3\]
+\[S^2 = 11037.12\]
+
+Realizamos los mismos plots para visualizar su distribución respecto a la normal con misma media y varianza:
+```{r, echo=FALSE}
+mE <- min(E)
+ME <- max(E)
+En <- ecdf(E)
+
+curve(En(x), mE, ME)
+curve(pnorm(x, m=muE, sd=sE), add=TRUE, lty=2)
+```
+```{r}
+qqnorm(E)
+qqline(E)
+```
+
+Y esta vez se parece más a una normal. Realizamos, no obstante, el test de Shapiro-Wilk para el contraste:
+
+\[\begin{array}{cc}
+H_{0}: & E\ sigue\ una\ distribución\ normal\\
+H_{1}: & E\ no\ sigue\ una\ distribución\ normal
+\end{array}\]
+
+```{r}
+shapiro.test(E)
+```
+
+Obtenemos, así, que el estadístico del constraste vale $W=085209$ con p-valor $p=0.04544>0.01$, por lo que podríamos aceptar H0 con una significancia de 0.01, y E seguiría una distribución normal.
+
+## Yendo un poco más allá
+
+Hemos obtenido la normalidad satisfactoriamente, pero dada la magnitud de los datos (especialmente llamativa es la varianza de G), podemos tratar de aplicar logaritmos y estudiar la log-normalidad.
+
+Definmos, entonces
+\[E_1 = \log E\qquad G_1 =\log G\]
+
+```{r}
+G1 = log(G)
+G1
+```
+```{r}
+E1 = log(E)
+E1
+```
+
+
+Y podemos ver la función de distribución empírica de G1:
+
+```{r}
+curve(ecdf(G1)(x), min(G1), max(G1))
+curve(pnorm(x, m=mean(G1), sd=var(G1)), add=TRUE, lty=2)
+```
+
+Así como el estadístico de Shapiro-Wilk ante el contraste:
+
+\[\begin{array}{cc}
+H_{0}: & G_1\ sigue\ una\ distribución\ normal\\
+H_{1}: & G_1\ no\ sigue\ una\ distribución\ normal
+\end{array}\]
+
+```{r}
+shapiro.test(G1)
+```
+
+Vemos como obtenemos un estadístico $W=0.88469$ con un p-valor $p=0.1193$ y aceptamos H0, de forma que $G_1$ es normal, y por tanto $G$ es log-normal.
+
+Por último, contrastamos:
+
+\[\begin{array}{cc}
+H_{0}: & E_1\ sigue\ una\ distribución\ normal\\
+H_{1}: & E_1\ no\ sigue\ una\ distribución\ normal
+\end{array}\]
+```{r}
+shapiro.test(E1)
+```
+Y de nuevo, aceptamos H0, y nos creemos que $E_1$ sigue una distribución normal, y, así, $E$ sigue una log-normal.
+
+A partir de ahora vamos a trabajar con las variables $E_1$ y $G_1$, pues son más cómodas y han superado, incluso con mayor significación, los test de normalidad.
+
+# Inferencia como variables independientes
+
+Como he comentado en la introducción, estas variables son independientes, y así es como las voy a analizar.
+
+En un principio, parece que España pesca más peces que Grecia, por lo que nuestra atención se centrará en ver si esto es cierto, o sea, queremos verificar que
+\[\mu_E>\mu_G\]
+
+Primero, contrastamos la igualdad de las varianzas de ambas variables:
+\[\begin{array}{cc}
+H_{0}: & \sigma_{E_1}^2=\sigma_{G_1}^2\\
+H_{1}: & \sigma_{E_1}^2\neq\sigma_{G_1}^2
+\end{array}\]
+
+Y lo haremos mediante el contraste de la $\cal F$ de Snédecor:
+
+```{r}
+var.test(G1,E1)
+```
+Y observamos que nos da un estadístico $F=1.0273$ con un p-valor $p=0.9669>0.01$, por lo que aceptamos H0 y asumimos
+la igualdad de las varianzas.
+
+Ahora podemos pasar a la comparación de las medias, teniendo en cuenta que nos encontramos en el caso de igualdad entre varianzas. Definimos el contraste:
+
+\[\begin{array}{cc}
+H_{0}: & \mu_{E_1}\geq\mu_{G_1}\\
+H_{1}: & \mu_{E_1}<\mu_{G_1}
+\end{array}\]
+
+Y hacemos el contraste de la t, indicando la igualdad de las varianzas:
+```{r}
+t.test(E1, G1, alternative = "less", var.equal = TRUE)
+```
+Nos da un valor para el estadístico $t=4.2369$ y un p-valor $p=0.9998>0.01$, por lo que aceptamos H0: $\mu_{E_1}\geq\mu{G_1}$
+
+Por último, si queremos llegar a la conclusión que buscábamos, debemos verificar que no son iguales. Es decir, debemos de hacer el contraste:
+
+\[\begin{array}{cc}
+H_{0}: & \mu_{E_1}=\mu_{G_1}\\
+H_{1}: & \mu_{E_1}\neq\mu_{G_1}
+\end{array}\]
+
+donde, para poder concluir lo que anunciábamos en un principio, debemos rechazar H0. Procedemos con el contraste de la t:
+
+```{r}
+t.test(E1,G1,alternative = "two.sided",var.equal = TRUE)
+```
+Y... ¡estamos de enhorabuena! Hemos obtenido un estadístico con valor $t=4.2369$ y con p-valor $0.0004043<0.01$. Por tanto, rechazamos la igualdad de las medias y, juntando esto con lo anterior, comprobamos que $\mu_{E_1}>\mu_{G_1}$, tal y como esperábamos.
+
+Para terminar, podemos obtener el intervalo de confianza al 99% para la diferencia de las medias, que, según hemos visto, debería estar contenido en $\mathbb{R}^+$:
+
+```{r}
+t.test(E1, G1, conf.level = 0.99, var.equal = TRUE)
+```
+El intervalo obtenido es \[\left(0.07313,0.37217\right)\subset\mathbb{R}^{+}\] contenido en los positivos, como era de esperar.
+
+# Conclusión
+
+Tras este estudio, podemos concluir que España realizó un mayor volumen de pesca que Grecia en el Mediterráneo durante el período 2009-2019. Podría ser interesante ampliar este estudio a cantidades per cápita, y ver si se mantienen las conclusiones, o la diferencia solo se debe a la mayor población española (aunque a este estudio deberíamos de añadir del lado de España la pesca en el Atlántico, pues el Mediterráneo constituye toda la zona de pesca de Grecia, pero no toda la de España).
+
+
+
+# Bibliografía
+<div id="refs"></div>
+
+
