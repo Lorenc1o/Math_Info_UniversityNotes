@@ -12,6 +12,8 @@ Martínez Bastida, Julio
 Miralles González, Pablo @pablomiralles22
 Tárraga Navarro, Pablo 
 
+Nota obtenida: 9.4/10
+
 [EN]
 
 This subject consists of two parts, one of **analysis** in which different models to represent real problems are studied, and another of **optimisation** in which ways of solving optimisation problems are studied. In each part there are individual and group tasks. The individual ones consist of solving problems proposed by the teachers, while the group ones consist of applying what you have learnt in class to real problems.
@@ -23,4 +25,4 @@ Martínez Bastida, Julio
 Miralles González, Pablo @pablomiralles22
 Tárraga Navarro, Pablo 
 
-Translated with www.DeepL.com/Translator (free version)
+Grade obtained: 9.4/10
