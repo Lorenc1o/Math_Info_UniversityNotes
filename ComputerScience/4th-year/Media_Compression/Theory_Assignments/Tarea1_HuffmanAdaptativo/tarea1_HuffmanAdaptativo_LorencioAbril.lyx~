@@ -1,0 +1,879 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Codificación Huffman Adaptativa
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Date
+09/2021
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Me voy a basar en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vitter1987"
+literal "false"
+
+\end_inset
+
+ para la explicación.
+ Fue en este artículo en el que J.
+ S.
+ Vitter describió el algoritmo que él planteaba para mejorar la implementación
+ de la codificación Huffman.
+ Vitter describe la forma de crear códigos Huffman estudiada en clase, a
+ la que llama 
+\series bold
+método de dos fases de Huffman
+\series default
+, puesto que se necesita recorrer dos veces la cadena de texto para poder
+ codificarla: el primer recorrido sirve para efectuar un conteo de las ocurrenci
+as de cada caracter, y el segundo para codificar el mensaje una vez construido
+ el árbol de Huffman.
+ Esto es uno de los grandes inconvenientes de este algoritmo, además del
+ overhead que requiere para transmitir el árbol.
+\end_layout
+
+\begin_layout Standard
+Explica, además, el 
+\series bold
+algoritmo FGK
+\series default
+, pensado para sustituir al algoritmo de Huffman original e ideado para
+ que solo necesite recorrer una vez la cadena de texto.
+ La idea es que el árbol se puede ir construyendo sobre la marcha, haciendo
+ que, para cada caracter procesado, el árbol originado desde el inicio hasta
+ el momento actual, sea un árbol de Huffman para la subcadena recorrida,
+ pero no necesariamente lo será para el resto de la cadena.
+ Por tanto, el árbol deberá ser modificado en cada paso.
+\end_layout
+
+\begin_layout Standard
+Para este propósito, se define la siguiente propiedad, que caracteriza los
+ árboles Huffman:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Propiedad de los hermanos:
+\series default
+ un árbol binario con 
+\begin_inset Formula $p$
+\end_inset
+
+ hojas de peso no negativo es un árbol de Huffman si, y solo si,
+\end_layout
+
+\begin_layout Enumerate
+las 
+\begin_inset Formula $p$
+\end_inset
+
+ hojas tienen pesos no negativos 
+\begin_inset Formula $w_{1},...,w_{p}$
+\end_inset
+
+ y el peso de cada nodo interno es la suma de los pesos de sus hijos; y
+\end_layout
+
+\begin_layout Enumerate
+los nodos pueden ser numerados en orden no decreciente por peso, de forma
+ que los nodos 
+\begin_inset Formula $2j-1$
+\end_inset
+
+ y 
+\begin_inset Formula $2j$
+\end_inset
+
+ son hermanos, 
+\begin_inset Formula $1\leq j\leq p-1$
+\end_inset
+
+, y su nodo padre común es superior en la enumeración
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado que he elegido explicar el algoritmo de Vitter, respecto a FGK solo
+ voy a mostrar un ejemplo, para que la idea quede clara.
+\end_layout
+
+\begin_layout Standard
+Supongamos que disponemos del siguiente árbol, que es de Huffman:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este árbol representa que hemos recorrido una cadena de 32 caracteres, y
+ ha habido 2 ocurrencias de a, 3 de b, 5 de c, 5 de d, 6 de e y 11 de f.
+ Es fácil comprobar que se verifica la propiedad de los hermanos.
+\end_layout
+
+\begin_layout Standard
+Supongamos, ahora, que nos encontramos con una ocurrencia nueva de una b,
+ entonces querremos actualizar los pesos de los nodos.
+ Pero, si lo hacemos directamente, obtenemos el siguiente árbol:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Que no es de Huffman, pues no cumple la propiedad de los hermanos.
+ La solución aportada en el algoritmo FGK es que, si queremos incrementar
+ en 1 el peso de una hoja, debemos recorrer la rama que llega hasta dicha
+ hoja, y, si encontramos algún nodo cuyo peso no sea único en el árbol,
+ debemos sustituir ese nodo (con todo lo que de él cuelga) por el aquel
+ nodo con el mismo peso y con el mayor valor en la enumeración de los nodos,
+ hasta llegar a la raíz.
+ En nuestro ejemplo, los pasos serían los siguientes:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado4.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pegado5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por último, aumentamos el peso de la hoja b y actualizamos los pesos necesarios:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado6.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este último árbol verifica la propiedad de los gemelos y, por tanto, es
+ de Huffman.
+ Notemos que la codificación de b ha pasado de ser 1011 a 001.
+ 
+\end_layout
+
+\begin_layout Standard
+Falta notar que se usa un nodo-0 para representar los caracteres que aún
+ no han aparecido.
+ Este nodo se bifurca en dos cuando un nuevo caracter se encuentra, y se
+ procede como en el ejemplo.
+\end_layout
+
+\begin_layout Standard
+Se denota 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ cuando se intercambia un nodo por otro de un nivel superior, y 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ cuando se intercambia por un nodo del mismo nivel.
+ Es importante notar que dos nodos del mismo peso no pueden distanciarse
+ más de un nivel en el árbol, a no ser que uno de ellos sea el hermano del
+ nodo-0.
+ En tal caso, un intercambio que haga subir un nodo 2 niveles es posible,
+ y se denota 
+\begin_inset Formula $\uparrow\uparrow$
+\end_inset
+
+.
+ Por último, los intercambios que mueven un nodo hacia abajo se denominan
+ 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Tras todo esto, Vitter propone un nuevo algoritmo, que el denomina 
+\begin_inset Formula $\varLambda$
+\end_inset
+
+, pero que ha terminado en denominarse 
+\series bold
+algoritmo de Vitter
+\series default
+.
+ Este algoritmo es óptimo dentro de los algoritmos de Huffman de una fase,
+ y lo describo en detalle en la siguiente sección.
+\end_layout
+
+\begin_layout Section
+Algoritmo Vitter
+\end_layout
+
+\begin_layout Standard
+Vamos ahora a describir el algoritmo que propone Vitter, que consta de una
+ única pasada y demuestra que es óptimo dentro de los algoritmos de Huffman
+ de una única fase.
+\end_layout
+
+\begin_layout Standard
+Para ello, se define una nueva forma de numeración de los nodos, que ayuda
+ a la ejecución del algoritmo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Numeración implícita:
+\series default
+ la numeración de un nodo se corresponde con la representación visual del
+ árbol.
+ Es decir, los nodos son numerados en orden creciente por nivel; los nodos
+ de un nivel están numerados más bajos que los nodos en el siguiente nivel
+ más alto.
+ Los nodos en el mismo nivel se numeran en orden creciente de izquierda
+ a derecha.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vitter demuestra que usando esta numeración, se eliminan los intercambios
+ de tipo 
+\begin_inset Formula $\downarrow$
+\end_inset
+
+, y que si el nodo que se mueve hacia arriba en un 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+, entonces el nodo que se mueve hacia abajo debe ser una hoja.
+\end_layout
+
+\begin_layout Standard
+El punto clave para minimizar 
+\begin_inset Formula $D_{t}-S_{t}$
+\end_inset
+
+ (donde 
+\begin_inset Formula $S_{t}$
+\end_inset
+
+ es el coste de comunicación para una codificación Huffman estática del
+ mensaje procesado hasta ahora, usando el árbol Huffman construido hasta
+ ese momento, y 
+\begin_inset Formula $D_{t}$
+\end_inset
+
+ es el coste total de comunicación para las 
+\begin_inset Formula $t$
+\end_inset
+
+ letras) es hacer los cambios 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ imposibles, excepto en la primera iteración el bucle while al actualizar.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto se puede conseguir manteniendo la siguiente propiedad invariante:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(*\right)$
+\end_inset
+
+ Para cada peso 
+\begin_inset Formula $w$
+\end_inset
+
+, todas las hojas de peso 
+\begin_inset Formula $w$
+\end_inset
+
+ preceden, en la numeración implícita, a todos los nodos internos con ese
+ mismo peso 
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede demostrar que si un árbol Huffman satisface 
+\begin_inset Formula $\left(*\right)$
+\end_inset
+
+, entonces también minimiza 
+\begin_inset Formula $\sum_{j}l_{j}$
+\end_inset
+
+ y 
+\begin_inset Formula $\max_{j}\left\{ l_{j}\right\} $
+\end_inset
+
+ (
+\begin_inset Formula $l_{j}$
+\end_inset
+
+ representa la distancia en el árbol desde la raíz hasta la hoja 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+También demuestra Vitter que si mantenemos 
+\begin_inset Formula $\left(*\right)$
+\end_inset
+
+, entonces los intercambios 
+\begin_inset Formula $\uparrow\uparrow$
+\end_inset
+
+ son imposibles, y que los 
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ solo pueden ocurrir al mover hacia arriba una hoja.
+\end_layout
+
+\begin_layout Standard
+Llegamos ahora al teorema importante, el que demuestra la optimalidad del
+ algoritmo de Vitter
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Theorem
+El algoritmo de Vitter minimiza la diferencia 
+\begin_inset Formula $D_{t}-S_{t}$
+\end_inset
+
+ del peor caso, sobre todos los mensajes de longitud 
+\begin_inset Formula $t$
+\end_inset
+
+, entre todos los algoritmos Huffman de una fase.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+El algoritmo
+\end_layout
+
+\begin_layout Standard
+Se definen los 
+\series bold
+bloques
+\series default
+ como clases de equivalencia de nodos definidos por 
+\begin_inset Formula $x\sim y$
+\end_inset
+
+ sii los nodos 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+ tienen el mismo peso y ambos son internos o ambos son hojas.
+ El 
+\series bold
+líder de un bloque
+\series default
+ es el nodo del bloque con numeración implícita mayor.
+\end_layout
+
+\begin_layout Standard
+Para mantener 
+\begin_inset Formula $\left(*\right)$
+\end_inset
+
+, se usa la operación 
+\begin_inset Formula $DeslizarEIncrementar$
+\end_inset
+
+, que básicamente consiste en que:
+\end_layout
+
+\begin_layout Itemize
+Si se va a incrementar un nodo hoja, antes se mueve a la derecha, hasta
+ tener a la izquierda a todos los nodos internos que tienen su mismo peso.
+\end_layout
+
+\begin_layout Itemize
+Si se va a incrementar un nodo interno, antes se mueve a la derecha, hasta
+ tener a la derecha a todos los nodos hoja que tienen su mismo peso +1 (su
+ peso actualizado).
+\end_layout
+
+\begin_layout Standard
+La siguiente imagen es el ejemplo proporcionado en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vitter1987"
+literal "false"
+
+\end_inset
+
+ , que hace justo lo comentado ahora mismo:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado7.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además, se utiliza una estructura de datos que tiene las siguientes característi
+cas:
+\end_layout
+
+\begin_layout Itemize
+Representa un árbol Huffman con pesos no negativos que mantiene 
+\begin_inset Formula $\left(*\right)$
+\end_inset
+
+ invariante.
+\end_layout
+
+\begin_layout Itemize
+Guarda una lista contigua de nodos internos en orden no decreciente por
+ peso.
+ Los nodos internos con mismo peso se ordenan con respecto a la numeración
+ implícita.
+ Otra lista similar se guarda para las hojas.
+\end_layout
+
+\begin_layout Itemize
+Debe encontrar el líder de un bloque de nodos dado basándose en la numeración
+ implícita.
+\end_layout
+
+\begin_layout Itemize
+Debe intercambiar los contenidos de dos hojas del mismo peso.
+\end_layout
+
+\begin_layout Itemize
+Debe incrementar el peso del líder de un bloque por 1, lo que pueda causar
+ que la numeración implícita se 
+\begin_inset Quotes eld
+\end_inset
+
+deslice
+\begin_inset Quotes erd
+\end_inset
+
+ a lo largo de la numración de los nodos del siguiente bloque, haciendo
+ que cada uno decrezca en una unidad.
+\end_layout
+
+\begin_layout Itemize
+Debe representar la correspondencia entre las 
+\begin_inset Formula $k$
+\end_inset
+
+ letras del alfabeto que han aparecido en el mensaje y las hojas con peso
+ positivo del árbol.
+\end_layout
+
+\begin_layout Itemize
+Debe representar las 
+\begin_inset Formula $n-k$
+\end_inset
+
+ letras que no han aparecido aún con un nodo-0.
+\end_layout
+
+\begin_layout Standard
+La estructura de datos usada se denomina 
+\series bold
+árbol flotante 
+\series default
+porque los punteros al padre y al hijo de un nodo no se mantienen explícitamente.
+ En su lugar, cada bloque tiene un puntero 
+\begin_inset Formula $parent$
+\end_inset
+
+ y un puntero 
+\begin_inset Formula $right\_child$
+\end_inset
+
+ que apuntan al padre y al hijo derecho del líder del bloque.
+ La localización de los padres e hijos de los otros nodos en el bloque se
+ pueden calcular mediante un cálculo del offset desde el padre del bloque
+ y el puntero 
+\begin_inset Formula $right\_child$
+\end_inset
+
+.
+ Esto permite a un nodo deslizarse a través de un bloque entero sin tener
+ que actualizar más que una cantidad constante de punteros.
+\end_layout
+
+\begin_layout Standard
+Así, el algoritmo consiste en hacer como en FGK, pero con las consideraciones
+ mencionadas.
+ Veamos un ejemplo.
+ Supongamos que queremos construir el árbol Huffman del mensaje aabbccdd.
+ El proceso sería el siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado11.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así, el mensaje aabbcc, se codificaría como 1 1 01 11 101 01 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 11011110101, pues cada caracter se codifica al vuelo, cuando le toca.
+ Entonces, enviamos el mensaje codificado, y una lista con los caracteres
+ ordenada por orden de aparición en el mensaje (sin repetir, o estaríamos
+ mandando todo el mensaje).
+\end_layout
+
+\begin_layout Standard
+Para decodificar, la mejor explicación la he encontrado en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sayood2000"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado10.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para nuestro ejemplo, sería el proceso siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado12.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nótese cómo el árbol obtenido es el mismo.
+\end_layout
+
+\begin_layout Section
+Consideraciones prácticas
+\end_layout
+
+\begin_layout Standard
+La mayor ventaja del algoritmo de Vitter frente al de Huffman y al FGK es
+ que utiliza menos bits para mensajes cortos, donde las ligeras eficiencias
+ de codificación son relativamente más significativas.
+ Además, cuando la longitud de los mensajes crece, el coste de comunicación
+ de los Algoritmos de una fase es asintóticamente igual al de dos fases.
+ Esto lo justifica Vitter con diferentes tablas que, en general, muestran
+ cómo funcionan los 3 algoritmos usados en diferentes fuentes de mensajes,
+ y en todos los casos el algoritmo de Vitter actúa mejor, o como mínimo
+ igual, que los otros dos.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, en la siguiente tabla se muestran los resultados obtenidos
+ al codificar un libro técnico escrito en 
+\begin_inset Formula $TeX$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado9.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $t$
+\end_inset
+
+ es la longitud del mensaje, 
+\begin_inset Formula $k$
+\end_inset
+
+ el tamaño del alfabeto, 
+\begin_inset Formula $S_{t}$
+\end_inset
+
+ es el coste de comunicación con Huffman clásico, 
+\begin_inset Formula $D_{t}^{\varLambda}$
+\end_inset
+
+ es el coste de comunicación para el algoritmo de Vitter, y 
+\begin_inset Formula $D_{t}^{FGK}$
+\end_inset
+
+ para el FGK.
+ 
+\begin_inset Formula $b/l$
+\end_inset
+
+ representa los bits por caracter en cada codificación.
+\end_layout
+
+\begin_layout Standard
+Como hemos mencionado, vemos como el que proporciona mejores resultados
+ es el algoritmo de Vitter, especialmente con los tamaños menores.
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+Tras este análisis, podemos concluir que los algoritmos adaptativos son
+ mucho más útiles para la transmisión de mensajes codificados para telecomunicac
+iones, en los que normalmente transmitiremos mensajes cortos, al dividirlos
+ en paquetes.
+ Al hacerlo en una única fase, puede hacerse con más velocidad y eficiencia,
+ además de que los códigos generados ocupan menos espacio al necesitar una
+ cantidad media de bits por caracter menor.
+ Por si fuera poco, el algoritmo de dos fases necesita transmitir el árbol
+ completo, mientras que los algoritmos de una única fase no, pues la decodificac
+ión consiste en la construcción del árbol.
+ Esto reduce la información que se necesita añadir a un mensaje para que
+ este sea decodificable.
+\end_layout
+
+\begin_layout Standard
+Vitter menciona, además, que en muchas ocasiones puede resultar de utilidad
+ realizar la codificación por bloques de caracteres, en lugar de hacer caracter
+ a caracter.
+ No obstante, se debe ser cauto al hacer esto y restringir la cantidad posible
+ de palabras, pues si no el tamaño del árbol podría dispararse.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "C:/Users/Jose/Desktop/Jose/myBibTex"
+options "ACM-Reference-Format"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

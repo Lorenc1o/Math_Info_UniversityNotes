@@ -1,0 +1,1096 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Estimación y Compensación del Movimiento
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Date
+12/21
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Sabemos que un vídeo es una sucesión ordenada de imágenes, que evoluciona
+ suficientemente rápido como para que nuestro cerebro no perciba la estaticidad
+ de lo que vemos, parece realmente una imagen en movimiento.
+ Según 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HealthLine"
+literal "false"
+
+\end_inset
+
+ el ojo humano es capaz de detectar hasta 75 FPS, es decir, hasta 75 imágenes
+ en un segundo.
+ Aunque la ilusión de movimiento puede conseguirse con una tasa menor de
+ imágenes, el problema sigue siendo el mismo: debemos de guardar 75 imágenes
+ por cada segundo de vídeo.
+ Si quisiéramos guardar una película de una hora, hecha con imágenes de
+ calidad HD (720p), lo que equivale a algo más de 900.000 px, necesitaríamos
+\begin_inset Formula 
+\[
+1\ h\times3600\ s/h\times75\ imágenes/s\times900000\ px/imagen\times3\ B/px\sim2.43\cdot10^{11}B=243\negthickspace GB
+\]
+
+\end_inset
+
+ Esta cantidad es demasiado grande.
+ Supongamos ahora, no obstante, que conseguimos comprimir cada una de las
+ imágenes de la película hasta un 25% de su tamaño original.
+ Esto se traduciría en un tamaño final de 
+\begin_inset Formula $60.75\ GB$
+\end_inset
+
+, lo cual sigue siendo una cantidad demasiado elevada, y esto suponiendo
+ la gran compresión que hemos supuesto.
+\end_layout
+
+\begin_layout Standard
+Así, en la búsqueda de una solución para este problema surge la brillante
+ idea de DPCM, 
+\series bold
+Differential Pulse-Code Modulation
+\series default
+, que se basa en que imágenes sucesivas de un vídeo serán, generalmente,
+ muy similares, puesto que el movimiento se entiende como algo continuo,
+ que obliga a que la sucesión de imágenes que lo emula deba evolucionar
+ lentamente, con cambios pequeños entre imágenes consecutivas.
+ De esta observación nace la idea de, en lugar de guardar cada una de las
+ imágenes del vídeo, guardar únicamente una imagen, y a partir de ella calcular
+ la diferencia entre la segunda imagen y esta primera.
+ Esta diferencia es lo que almacenamos y transmitimos, y a partir de la
+ primera imagen y la diferencia, reconstruimos la segunda imagen.
+ Esto se hace con todas las imágenes del vídeo, y se consigue una tasa mucho
+ más grande de compresión, con tamaños mucho más asequibles.
+ El proceso no es tal cual así, ya que en el proceso se va acumulando error,
+ pero hay técnicas para solventar este problema, con la misma idea básica.
+ Hoy en día, una película con las características anteriores puede ocupar
+ unos 3.6 GB.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+DPCM
+\end_layout
+
+\begin_layout Standard
+Vamos ahora a explicar detenidamente cómo funciona esta técnica.
+ El desarrollo seguido viene de los apuntes de la asignatura 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HernandezMolinero"
+literal "false"
+
+\end_inset
+
+ y de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AbuAlSaud"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Consideremos una señal 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+ muestreada por 
+\begin_inset Formula $x\left(kT_{s}\right)$
+\end_inset
+
+, donde 
+\begin_inset Formula $T_{s}$
+\end_inset
+
+ es el período de muestreo (diferencia temporal entre la toma de dos muestras
+ consecutivas) y 
+\begin_inset Formula $k$
+\end_inset
+
+ es un entero que indica el índice de cada muestra.
+ Si acordamos 
+\begin_inset Formula $T_{s}$
+\end_inset
+
+ de antemano, podemos escribir las muestras como 
+\begin_inset Formula $x\left(k\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Sea, ahora, 
+\begin_inset Formula $d\left(k\right)$
+\end_inset
+
+ la diferencia entre la muestra actual y la anterior:
+\begin_inset Formula 
+\[
+d\left(k\right)=x\left(k\right)-x\left(k-1\right)
+\]
+
+\end_inset
+
+ Que podemos cuantizar en lugar de 
+\begin_inset Formula $x\left(k\right)$
+\end_inset
+
+, obteniendo una señal cuantizada 
+\begin_inset Formula $d_{q}\left(k\right)$
+\end_inset
+
+.
+ Si la señal 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+ es muestreada a una tasa suficientemente alta como para que se cumpla la
+ hipótesis de parecido de las imágenes mencionada en la introducción, entonces
+ el rango de valores de 
+\begin_inset Formula $d\left(k\right)$
+\end_inset
+
+ será menor que el de 
+\begin_inset Formula $x\left(k\right)$
+\end_inset
+
+, por lo que su compresión será mayor.
+\end_layout
+
+\begin_layout Standard
+Tras transmitir 
+\begin_inset Formula $d_{q}\left(k\right)$
+\end_inset
+
+, teóricamente podemos reconstruir la señal original invirtiendo la operación
+ anterior, obteniendo una aproximación de 
+\begin_inset Formula $x\left(k\right)$
+\end_inset
+
+ mediante:
+\begin_inset Formula 
+\[
+\hat{x}\left(k\right)=\hat{x}\left(k-1\right)+d_{q}\left(k\right)
+\]
+
+\end_inset
+
+ De forma que si 
+\begin_inset Formula $\hat{x}\left(k-1\right)\sim x\left(k-1\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $d_{q}\left(k\right)\sim d\left(k\right)$
+\end_inset
+
+, entonces obtendremos una buena aproximación de 
+\begin_inset Formula $\hat{x}\left(k\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como adelantábamos en la introducción, este proceso idílico no funciona
+ en la vida real, pues presenta distintos problemas:
+\end_layout
+
+\begin_layout Subsection
+Acumulación de ruido de cuantización
+\end_layout
+
+\begin_layout Standard
+Si en lugar de usar este método, transmitiésemos cada imagen por separado,
+ siendo estas las que cuantizamos, cada una de ellas tendría un ruido de
+ cuantización, obtenido únicamente del proceso de cuantización para cada
+ imagen.
+\end_layout
+
+\begin_layout Standard
+No obstante, al hacer el proceso descrito, notamos que los errores de cuantizaci
+ón existentes entre 
+\begin_inset Formula $d\left(k\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $d_{q}\left(k\right)$
+\end_inset
+
+, se van acumulando en 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ conforme avanzamos en el proceso.
+ Esto puede hacer que terminemos obteniendo una imagen final muy distinta
+ de la que deseamos transmitir.
+\end_layout
+
+\begin_layout Subsection
+Solución
+\end_layout
+
+\begin_layout Standard
+En lugar de cuantizar 
+\begin_inset Formula $d\left(k\right)$
+\end_inset
+
+, definimos ahora
+\begin_inset Formula 
+\[
+g\left(k\right)=x\left(k\right)-x_{q}\left(k-1\right)
+\]
+
+\end_inset
+
+ y cuantizamos esta cantidad.
+\end_layout
+
+\begin_layout Standard
+Aparentemente necesitaríamos cuantizar 
+\begin_inset Formula $x\left(k-1\right)$
+\end_inset
+
+, que es justo lo que queremos evitar, pero en realidad no es necesario.
+ Veamos el caso de las 3 primeras imágenes.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Tenemos 
+\begin_inset Formula $x\left(1\right),x\left(2\right),x\left(3\right)$
+\end_inset
+
+ y las queremos transmitir.
+ Calculamos 
+\begin_inset Formula $x_{q}\left(1\right)$
+\end_inset
+
+, 
+\begin_inset Formula $g\left(2\right)=x\left(2\right)-x_{q}\left(1\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $g_{k}\left(2\right)$
+\end_inset
+
+.
+ Transmitimos 
+\begin_inset Formula $x_{q}\left(1\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $g_{q}\left(2\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Sea 
+\begin_inset Formula $g_{q}\left(2\right)=g\left(2\right)+q\left(2\right)$
+\end_inset
+
+, de forma que
+\begin_inset Formula 
+\[
+g_{q}\left(2\right)=x\left(2\right)-x_{q}\left(1\right)+q\left(2\right)
+\]
+
+\end_inset
+
+ y entonces
+\begin_inset Formula 
+\[
+x_{q}\left(2\right)=g_{q}\left(2\right)+x_{q}\left(1\right)=x\left(2\right)-x_{q}\left(1\right)+q\left(2\right)+x_{q}\left(1\right)=x\left(2\right)+q\left(2\right)
+\]
+
+\end_inset
+
+ De forma que podemos ahora obtener
+\begin_inset Formula 
+\[
+g\left(3\right)=x\left(3\right)-x_{q}\left(2\right)
+\]
+
+\end_inset
+
+ y transmitirlo.
+\end_layout
+
+\begin_layout Enumerate
+Este proceso se repite hasta terminar.
+ Para recuperar la imagen se hace de la misma forma que antes.
+\end_layout
+
+\begin_layout Standard
+Esto evita la acumulación de error por ruido.
+\end_layout
+
+\begin_layout Subsection
+Errores de transmisión
+\end_layout
+
+\begin_layout Standard
+De nuevo, en el escenario en que transmitimos cada imagen por separado,
+ un error en la trasmisión de una imagen solo afectará a esta.
+ Pero en DPCM, un error de este tipo haría que todas las imagenes tras la
+ que sufre el error también sufriesen cambios.
+\end_layout
+
+\begin_layout Subsection
+Solución
+\end_layout
+
+\begin_layout Standard
+El mejor método para evitar este problema es dividir la muestra en subconjuntos
+ y cada cierto tiempo, enviar una imagen cuantizada directamente, reiniciando
+ el proceso de DPCM.
+ De esta forma, un error de transmisión solo afectará a las muestras siguientes
+ a la del error, hasta que se reinicie el proceso, y no hasta el final de
+ la transmisión.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Estimación y Compensación del Movimiento
+\end_layout
+
+\begin_layout Standard
+Como se explica en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Woods2011"
+literal "false"
+
+\end_inset
+
+, la 
+\series bold
+estimación del movimiento
+\series default
+ trata de predecir donde estarán ciertos elementos de una imagen, a partir
+ de las anteriores.
+ Para ello, podemos ver el movimiento como un vector de desplazamiento de
+ un objeto desde una posición inicial hasta una final.
+ El flujo óptico es el campo de vectores del desplazamiento aparente 
+\begin_inset Formula $d=\left(d_{1},d_{2}\right)$
+\end_inset
+
+ que obtenemos a partir de la ecuación de restricción:
+\begin_inset Formula 
+\[
+x\left(n_{1},n_{2},n\right)=x\left(n_{1}-d_{1},n_{2}-d_{2},n-1\right)
+\]
+
+\end_inset
+
+ Es decir, que si en la muestra 
+\begin_inset Formula $x\left(n-1\right)$
+\end_inset
+
+, un pixel tiene posición 
+\begin_inset Formula $\left(n_{1},n_{2}\right)$
+\end_inset
+
+, entonces el campo del desplazamiento aparente debe cumplir que en la muestra
+ 
+\begin_inset Formula $x\left(n\right)$
+\end_inset
+
+ ese píxel debe estar en la posición 
+\begin_inset Formula $\left(n_{1}+d_{1},n_{2}+d_{2}\right)$
+\end_inset
+
+.
+ Esto no puede hacerse de forma exacta, pero si de forma aproximada, normalmente
+ con MCO.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el movimiento no puede ser determinado píxel a píxel, ya
+ que hay dos componentes de movimiento por píxel, de forma que tenemos el
+ doble de incógnitas que de ecuaciones.
+ Un enfoque usad normalmente es asumir que el movimiento es constante en
+ una pequeña región, la 
+\series bold
+apertura
+\series default
+.
+ Si esta es demasiado grande, entonces perderemos detalle del movimiento
+ y solo obtendremos una media de cómo se mueven los objetos en pantalla.
+ Si es demasiado pequeña, entonces estaremos estimando muy poco.
+ Así, la determinación de la apertura es un punto importante del proceso
+ de estimación del movimiento.
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+compensación del movimiento
+\series default
+ es la técnica que se vale de los vectores calculados gracias a la estimación
+ del movimiento, para reconstruir una frame a partir de los anteriores.
+\end_layout
+
+\begin_layout Subsection
+Relación con la compresión de vídeo y DPCM
+\end_layout
+
+\begin_layout Standard
+La relación es bastante sencilla de ver, si podemos estimar cómo será un
+ frame a partir del anterior, entonces podemos transmitir menos datos para
+ recomponer una misma información.
+ Como vimos en clase, MPEG1 se basa en las ideas de DPCM, y además utiliza
+ las técnicas de estimación y compensación del movimiento, por lo que constituye
+n un buen ejemplo de la relación existente entre todos estos conceptos.
+\end_layout
+
+\begin_layout Itemize
+MPEG1 usa 
+\series bold
+frames I
+\series default
+, que son aquellos que se envía directamente su cuantización; 
+\series bold
+frames P
+\series default
+, que son predecidos utilizando los I; y 
+\series bold
+frames B
+\series default
+, que se predicen usando tanto los I como los P
+\end_layout
+
+\begin_layout Itemize
+La disposición es de la forma
+\begin_inset Formula 
+\[
+\begin{array}{cccccccccc}
+I_{i} & B & B & P & B & B & P & B & B & I_{i+1}\end{array}
+\]
+
+\end_inset
+
+ de manera que los P se predicen a partir de 
+\begin_inset Formula $I_{i}$
+\end_inset
+
+ y los 
+\begin_inset Formula $B$
+\end_inset
+
+ a partir de un 
+\begin_inset Formula $I$
+\end_inset
+
+ y un 
+\begin_inset Formula $P$
+\end_inset
+
+ o a partir de dos 
+\begin_inset Formula $P$
+\end_inset
+
+, dependiendo de qué entre qué dos de estos tipos se encuentren.
+\end_layout
+
+\begin_layout Itemize
+Por tanto, solo es necesario transmitir los frames 
+\begin_inset Formula $I_{i}$
+\end_inset
+
+, los demás pueden ser reconstruidos mediante estimaciones.
+\end_layout
+
+\begin_layout Itemize
+Si fuese importante que el error fuese muy pequeño, podría hacerse como
+ en DPCM y enviar la diferencia entre 
+\begin_inset Formula $P$
+\end_inset
+
+ e 
+\begin_inset Formula $I$
+\end_inset
+
+, reduciendo el error que podría darse en la predicción.
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Técnicas de estimación y compensación del movimiento
+\end_layout
+
+\begin_layout Subsection
+Block Matching
+\end_layout
+
+\begin_layout Standard
+Las imágenes se dividen en bloques.
+ Es el movimiento conjunto de los píxeles de los bloques lo que se trata
+ de estimar.
+ Los bloques del frame actual se comparan con los bloques del frame de referenci
+a, deslizando el actual a lo largo de una región concreta de píxeles del
+ frame destino.
+ Hay que seleccionar un criterio de semejanza, o distancia, que normalmente
+ será MCO.
+ De entre los candidatos entre los que elegir, se determina aquél que minimiza
+ esta distancia, y se calcula el vector de desplazamiento como el vector
+ diferencia entre ambos bloques.
+ Obviamente, el resultado no es siempre exactamente el original, ya que
+ hay presencia de ruido y la forma de los objetos también varía, no solo
+ su posición.
+ Por ejemplo los giros no son estimables mediante este tipo de técnicas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pegado1.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema de Block Matching
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Block Matching Jerárquico
+\end_layout
+
+\begin_layout Standard
+Este método se basa en la utilización de núcleos de funciones para estimar
+ los vectores de desplazamiento utilizando poca resolución espacial.
+\end_layout
+
+\begin_layout Standard
+Se comienza creando una pirámide espacial, con los niveles de resolución
+ fijados como una potencia de dos.
+ Normalmente basta con tres o cuatro etapas.
+ Comenzamos con el menor nivel de resolución, la cima de la pirámide y hacemos
+ de esta forma block matching.
+ Después, descendemos en la pirámide, aumentando la resolución en un factor
+ de 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ en cada nivel.
+ Doblamos el vector de desplazamiento del nivel anterior, para obtener la
+ posición inicial de búsqueda en el nivel actual.
+ Terminamos en el nivel más bajo de la pirámide, que contemplaría la máxima
+ resolución.
+\end_layout
+
+\begin_layout Standard
+Es decir, lo que se hace es aplicar Block Matching a varios niveles, estimando
+ el movimiento en cada uno de ellos, como unas muñecas matrioskas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pegado2.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema de Block Matching Jerárquica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Compensación de movimiento mediante Overlapped Block
+\end_layout
+
+\begin_layout Standard
+La idea es efectuar block-matching pero de forma que no se toman los bloques
+ de forma disjunta, sino que se permite el solapamiento entre distintos
+ bloques.
+ Se efectúa, entonces, block maching en los distintos bloques, y el vector
+ de desplazamiento de las zonas de solapamiento se determina mediante algún
+ tipo de media.
+\end_layout
+
+\begin_layout Standard
+No obstante, este enfoque sería demasiado costoso computacionalmente, por
+ lo que, en realidad, lo que se hace es solapar los vectores de velocidad,
+ sin solapar los propios bloques.
+ 
+\end_layout
+
+\begin_layout Standard
+La estimación inicial puede mejorarse mediante la actualización iterada
+ de las estimaciones de las velocidades de diferentes bloques, uno cada
+ vez, usando los resultados de las estimaciones resultantes en el cálculo
+ del error.
+\end_layout
+
+\begin_layout Standard
+De esta forma se suaviza el campo de velocidad y se elimina la estructura
+ de bloques creada artificialmente.
+\end_layout
+
+\begin_layout Subsection
+Estimación del movimiento Pel-Rescursive
+\end_layout
+
+\begin_layout Standard
+Es un método iterativo que calcula recursivamente un vector de desplazamiento
+ para cada pixel (pel) en el frame actual.
+ Comenzamos con una estimación 
+\begin_inset Formula $d=\left(d_{1},d_{2}\right)$
+\end_inset
+
+, y usamos el método iterativo:
+\begin_inset Formula 
+\[
+\hat{d}_{1}^{\left(k+1\right)}=\hat{d}_{1}^{\left(k\right)}-\varepsilon\frac{\partial{\cal E}}{\partial d_{1}}|_{d=\hat{d}^{\left(k\right)}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{d}_{2}^{\left(k+1\right)}=\hat{d}_{2}^{\left(k\right)}-\varepsilon\frac{\partial{\cal E}}{\partial d_{2}}|_{d=\hat{d}^{\left(k\right)}}
+\]
+
+\end_inset
+
+ con valor inicial el proporcionado por el valor final del pixel anterior.
+ O sea, se usa algo similar al método del gradiente para acercar una primera
+ estimación del vector de distancia hasta el real.
+ La derivada calculada es la del error, por lo que nos estamos desplazando
+ en la dirección de mayor decrecimiento del error de estimación del desplazamien
+to.
+\end_layout
+
+\begin_layout Standard
+Este método suele funcionar bien con unas pocas iteraciones cuando el movimiento
+ es pequeño, pero le cuesta converger cuando se encuentra ante grandes movimient
+os.
+\end_layout
+
+\begin_layout Standard
+Este enfoque puede extenderse al enfoque jerárquico, mediante la utilización
+ de interpolación de frames de secuencias de imágenes.
+\end_layout
+
+\begin_layout Subsection
+Métodos de Flujo Óptico
+\end_layout
+
+\begin_layout Standard
+Este método trata de estimar las derivadas del campo de desplazamiento,
+ en lugar del propio campo.
+ Lo hace mediante la resolución usando MCO de
+\begin_inset Formula 
+\[
+v_{x}\frac{\partial f}{\partial x}+v_{y}\frac{\partial f}{\partial y}+\frac{\partial f}{\partial t}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir de esta ecuación se utilizan conceptos de geometría diferencial
+ y cáculo de variaciones para calcular un óptimo de la función del error
+ en términos de 
+\begin_inset Formula $v_{x}$
+\end_inset
+
+ y 
+\begin_inset Formula $v_{y}$
+\end_inset
+
+ para cada 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ Se obtienen ciertas ecuaciones que se aproximan por aproximaciones de primer
+ orden para las distintas derivadas.
+ Esto se resuelve iterativamente mediante el método de Gauss-Seidel, método
+ numérico de aproximación funcional.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pegado3.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representación del campo de flujo óptico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Métodos basados en mallas
+\end_layout
+
+\begin_layout Standard
+Se establece una malla de puntos de velocidad denominados 
+\series bold
+puntos de control
+\series default
+ en el frame destino y los correspondientes puntos en el frame de referencia.
+ A diferencia de en el método de block matching, el movimiento no se considera
+ constante entre los puntos de control, sino que estos puntos se utilizan
+ para establecer un modelo de movimiento afín.
+ Esto es, un modelo con 6 parámetros que representa rotaciones y traslaciones
+ en el plano.
+ Matricialmente
+\begin_inset Formula 
+\[
+d=\left(\begin{array}{c}
+d_{1}\\
+d_{2}
+\end{array}\right)=\left(\begin{array}{cc}
+a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)+\left(\begin{array}{c}
+a_{13}\\
+a_{23}
+\end{array}\right)
+\]
+
+\end_inset
+
+ Es decir, se busca la transformación afín de la imagen de referencia que
+ mejor aproxima la imagen destino.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+\begin_inset Graphics
+	filename pegado5.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema de la estimación basada en mallas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se observa en esta ilustración, los puntos de control no sufren todos
+ el mismo movimiento, al contrario que en la estimación medianto block matching.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Hemos visto en el desarrollo de este documento la utilidad de las técnicas
+ de estimación y compensación, que nos ofrecen un método para poder guardar
+ vídeos de larga duración, una cuestión de alta importancia estos últimos
+ años, en los que encontramos enormes mejoras en la calidad de imagen y,
+ por tanto, en la cantidad de información necesaria para su codificación.
+ Por otro lado, las plataformas de streaming son cada vez más populares
+ y está claro que si no se dispusieran de este tipo de métodos para poder
+ transmitir tales cantidades de información de video de forma eficiente
+ no podrían llevar a cabo su labor tan cómodamente.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, vemos que hay no solo distintos métodos para hacer esto,
+ sino que hay también diferentes enfoques, que atacan el problema desde
+ diferentes perspectivas, y que proporcionan diferentes contextos de utilización
+ de las técnicas, en las que unos enfoques son más efectivos que otros.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "tarea3_cmul"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

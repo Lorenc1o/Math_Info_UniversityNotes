@@ -1,0 +1,19 @@
+% Encoding: UTF-8
+
+@Misc{HealthLine,
+  author = {HealthLine},
+  note   = {https://www.healthline.com/health/human-eye-fps},
+  title  = {How many FPS can the human eye see?},
+}
+
+@Unpublished{HernandezMolinero,
+  author = {Hernandez Molinero, Luis Daniel},
+  title  = {Compresion de Video},
+}
+
+@Booklet{AbuAlSaud,
+  title  = {Sampling And Pulse Code Mod. DPCM},
+  author = {Abu-Al-Saud, Wajih},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
