@@ -1,0 +1,411 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 6
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a) 
+\series default
+Calculemos la base del tangente:
+\begin_inset Formula 
+\[
+\frac{\partial X}{\partial\theta}\left(\theta,t\right)=\left(-\cosh t\sin\theta,\cosh t\cos\theta,0\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial X}{\partial t}\left(\theta,t\right)=\left(\sinh t\cos\theta,\sinh t\sin\theta,1\right)
+\]
+
+\end_inset
+
+ por lo que obtenemos los coeficientes de la primera forma fundamental:
+\begin_inset Formula 
+\[
+E=\cosh^{2}t,\ F=0,\ G=\cosh^{2}t
+\]
+
+\end_inset
+
+ De modo que 
+\begin_inset Formula $X$
+\end_inset
+
+ es una parametrización isoterma de 
+\begin_inset Formula $S$
+\end_inset
+
+, y se verifica
+\begin_inset Formula 
+\[
+S\ minimal\iff\frac{\partial^{2}X}{\partial\theta^{2}}+\frac{\partial^{2}X}{\partial t^{2}}=0\iff\left(-\cosh t\cos\theta,-\cosh t\sin\theta,0\right)+\left(\cosh t\cos\theta,\cosh t\sin\theta,0\right)=0\checkmark
+\]
+
+\end_inset
+
+ Y vemos que 
+\begin_inset Formula $S$
+\end_inset
+
+ es minimal.
+\end_layout
+
+\begin_layout Standard
+Ahora, como 
+\begin_inset Formula $S$
+\end_inset
+
+ es minimal, entonces 
+\begin_inset Formula $H\equiv0$
+\end_inset
+
+, y las curvaturas principales son 
+\begin_inset Formula $\lambda_{1}=-\lambda_{2}$
+\end_inset
+
+.
+ De esta forma, un punto será umbilical si, y solo si, 
+\begin_inset Formula $\lambda_{1}=\lambda_{2}=0$
+\end_inset
+
+, si, y solo si, 
+\begin_inset Formula $K\equiv0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Calculemos, entonces 
+\begin_inset Formula $K$
+\end_inset
+
+ (como la parametrización es isoterma, en particular es ortogonal):
+\begin_inset Formula 
+\[
+K=\frac{-1}{2\sqrt{EG}}\left[\left(\frac{E_{t}}{\sqrt{EG}}\right)_{t}+\left(\frac{G_{\theta}}{\sqrt{EG}}\right)_{\theta}\right]=-\frac{1}{2\cdot\cosh^{2}t}\left[\left(\frac{2\cosh t\sinh t}{\cosh^{2}t}\right)_{t}+\left(\frac{0}{\cosh^{2}t}\right)_{\theta}\right]=-\frac{1}{2\cosh^{2}t}\cdot\left(\frac{2\sinh t}{\cosh t}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-\frac{1}{\cosh^{2}t}\frac{\cosh^{2}t-\sinh^{2}t}{\cosh^{2}t}=-\frac{1}{\cosh^{4}t}\neq0
+\]
+
+\end_inset
+
+ Y no hay puntos umbilicales.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b)
+\series default
+ 
+\begin_inset Formula 
+\[
+A\left(S_{a}\right)=\int\int_{X^{-1}\left(S_{a}\right)}\sqrt{EG-F^{2}}d\theta dt=\int_{-a}^{a}\int_{0}^{2\pi}\sqrt{\cosh^{4}t}d\theta dt=2\pi\int_{-a}^{a}\cosh^{2}tdt=4\pi\int_{0}^{a}\cosh^{2}tdt
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\int_{0}^{a}\cosh^{2}tdt=\left.\cosh t\sinh t\right]_{0}^{a}-\int_{0}^{a}\sinh^{2}tdt=\cosh\left(a\right)\sinh\left(a\right)-\int_{0}^{a}\left(\cosh^{2}t-1\right)dt=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\cosh\left(a\right)\sinh\left(a\right)+a-\int_{0}^{a}\cosh^{2}tdt
+\]
+
+\end_inset
+
+ Por tanto
+\begin_inset Formula 
+\[
+2\int_{0}^{a}\cosh^{2}tdt=\cosh\left(a\right)\sinh\left(a\right)+a\implies\int_{0}^{a}\cosh^{2}tdt=\frac{\cosh\left(a\right)\sinh\left(a\right)+a}{2}
+\]
+
+\end_inset
+
+ O sea
+\begin_inset Formula 
+\[
+A\left(S_{a}\right)=2\pi\left(\cosh\left(a\right)\sinh\left(a\right)+a\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c)
+\series default
+ Para hallar el área de las circunferencias, observamos que, tomando 
+\begin_inset Formula $z$
+\end_inset
+
+ con 
+\begin_inset Formula $\left|z\right|=a$
+\end_inset
+
+, obtenemos un triángulo rectángulo de altura 
+\begin_inset Formula $a$
+\end_inset
+
+, hipotenusa 
+\begin_inset Formula $\left\Vert X\left(\theta_{z},t_{z}\right)\right\Vert $
+\end_inset
+
+ y el cateto que falta tiene longitud el radio buscado.
+ Podemos tomar, por ejemplo, 
+\begin_inset Formula $z=a$
+\end_inset
+
+, de modo que es 
+\begin_inset Formula $t=a$
+\end_inset
+
+, y el punto es
+\begin_inset Formula 
+\[
+X\left(\theta,a\right)=\left(\cosh\left(a\right)\cos\theta,\cosh\left(a\right)\sin\theta,a\right)\implies\left\Vert X\left(\theta,a\right)\right\Vert =\sqrt{\cosh^{2}a+a^{2}}
+\]
+
+\end_inset
+
+ Así, por el teorema de pitágoras y llamando 
+\begin_inset Formula $r$
+\end_inset
+
+ al radio, es
+\begin_inset Formula 
+\[
+r^{2}+a^{2}=\cosh^{2}a+a^{2}\implies r^{2}=\cosh^{2}a\overset{r>0}{\implies}r=\cosh a
+\]
+
+\end_inset
+
+ Por tanto
+\begin_inset Formula 
+\[
+A\left(\overline{S}_{a}\right)=2A\left(\mathbb{D}_{\cosh\left(a\right)}\right)=2\pi\cosh^{2}a
+\]
+
+\end_inset
+
+ Y, entonces, 
+\begin_inset Formula 
+\[
+A\left(\overline{S}_{a}\right)<A\left(S_{a}\right)\iff2\pi\cosh^{2}a<2\pi\left(\cosh a\sinh a+a\right)\iff\cosh^{2}a<\cosh a\sinh a+a
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff\left(\frac{e^{a}+e^{-a}}{2}\right)^{2}<\frac{e^{a}+e^{-a}}{2}\frac{e^{a}-e^{-a}}{2}+a\iff\frac{e^{2a}+2+e^{-2a}}{4}<\frac{e^{2a}-1+1-e^{-2a}}{4}+a
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff\frac{2+e^{-2a}}{4}<\frac{-e^{-2a}}{4}+a\iff1+e^{-2a}<2a
+\]
+
+\end_inset
+
+ Y, cuando 
+\begin_inset Formula $a\rightarrow\infty$
+\end_inset
+
+, el primer miembro de la desigualdad tiende a 1, mientras que el segundo
+ tiende a 
+\begin_inset Formula $\infty$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\exists a_{0}|\forall a>a_{0}\rightarrow A\left(\overline{S}_{a}\right)<A\left(S_{a}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Analicemos ahora qué ocurre para valores pequeños de 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Tomando 
+\begin_inset Formula $a=0$
+\end_inset
+
+, vemos como 
+\begin_inset Formula $A\left(\overline{S}_{a}\right)=2\pi>0=A\left(S_{a}\right)$
+\end_inset
+
+, por lo que el 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+ mencionado antes, será 
+\begin_inset Formula $a_{0}>0$
+\end_inset
+
+.
+ Las gráficas en función de 
+\begin_inset Formula $a$
+\end_inset
+
+ (obviando el factor 
+\begin_inset Formula $2\pi$
+\end_inset
+
+) son así:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y vemos como nuestras conjeturas eran correctas.
+\end_layout
+
+\begin_layout Standard
+Podemos, entonces, intentar determinar, aproximadamente este 
+\begin_inset Formula $a$
+\end_inset
+
+, lo que equivale a encontrar un 0 de 
+\begin_inset Formula $g\left(a\right)=1+e^{-2a}-2a$
+\end_inset
+
+, que Wolfram Alpha aproxima por 
+\begin_inset Formula 
+\[
+a_{0}=\frac{1}{2}\left(W_{n}\left(\frac{1}{e}\right)+1\right)\approx0.639232
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

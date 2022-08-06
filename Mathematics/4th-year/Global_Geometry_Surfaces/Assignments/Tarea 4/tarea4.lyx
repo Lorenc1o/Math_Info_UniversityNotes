@@ -1,0 +1,509 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 4
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $p_{0}\in S$
+\end_inset
+
+, considera 
+\begin_inset Formula $V$
+\end_inset
+
+ un entorno normal de 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ y sea 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ suficientemente pequeño para que la clausura del disco geodésico 
+\begin_inset Formula $\overline{D\left(p_{0},\varepsilon\right)}\subset V$
+\end_inset
+
+, de modo que 
+\begin_inset Formula $D\left(p_{0},\varepsilon\right)=\exp_{p_{0}}\left({\cal D}\left(0,\varepsilon\right)\right)$
+\end_inset
+
+ es también un entorno normal de 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ y la circunferencia geodésica 
+\begin_inset Formula $S\left(p_{0},\varepsilon\right)=\partial D\left(p_{0},\varepsilon\right)=\exp_{p_{0}}\left({\cal S}\left(0,\varepsilon\right)\right)\subset V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $p$
+\end_inset
+
+ un punto de 
+\begin_inset Formula $S$
+\end_inset
+
+ tal que 
+\begin_inset Formula $p\notin D\left(p_{0},\varepsilon\right)$
+\end_inset
+
+, considera la función continua 
+\begin_inset Formula $r:S\rightarrow\mathbb{R}$
+\end_inset
+
+ dada por 
+\begin_inset Formula $r\left(x\right)=d\left(x,p\right)$
+\end_inset
+
+.
+ Sea 
+\begin_inset Formula $m\in S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ el punto de 
+\begin_inset Formula $S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ donde 
+\begin_inset Formula $r\left(x\right)$
+\end_inset
+
+ alcanza el mínimo sobre el compacto 
+\begin_inset Formula $S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+; es decir, 
+\begin_inset Formula $r\left(m\right)=d\left(m,p\right)=\min_{x\in S\left(p_{0},\varepsilon\right)}r\left(x\right)$
+\end_inset
+
+.
+ Entonces se cumple que
+\begin_inset Formula 
+\[
+d\left(p_{0},p\right)=d\left(p_{0},m\right)+d\left(m,p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Primero, comprobamos que 
+\begin_inset Formula $S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ es compacto, ya que es la imagen por una aplicación continua (de hecho
+ un difeomorfismo, 
+\begin_inset Formula $\exp_{p_{0}}$
+\end_inset
+
+, pues estamos dentro de un entorno normal) de 
+\begin_inset Formula ${\cal S}\left(0,\varepsilon\right)$
+\end_inset
+
+, que es compacto, pues es cerrado y acotado en un espacio homeomorfo a
+ 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+.
+ Así, el mínimo del enunciado se alcanza en 
+\begin_inset Formula $S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ y el punto 
+\begin_inset Formula $m$
+\end_inset
+
+, efectivamente, existe y está contenido en 
+\begin_inset Formula $S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Pasamos ahora a la igualdad:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\leq\right]$
+\end_inset
+
+ Obvio, por la desigualdad triangular, por ser 
+\begin_inset Formula $d$
+\end_inset
+
+ una distancia
+\begin_inset Formula 
+\[
+d\left(p_{0},p\right)\leq d\left(p_{0},m\right)+d\left(m,p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left[\geq\right]$
+\end_inset
+
+ Observemos que para cualquier 
+\begin_inset Formula $\alpha\in\Omega\left(p_{0},p\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $\alpha:\left[0,b\right]\rightarrow S$
+\end_inset
+
+ (puede tomarse 0 en el extremo izquierdo reparametrizando, si este es 
+\begin_inset Formula $c$
+\end_inset
+
+, con el cambio 
+\begin_inset Formula $x\mapsto x-c$
+\end_inset
+
+), existe un valor 
+\begin_inset Formula $a\in\left(0,b\right)$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\alpha\left(a\right)\in S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\alpha\left(t\right)\in D\left(p_{0},\varepsilon\right),\ \forall t<a$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Para ver que este punto existe, observamos que, en general si 
+\begin_inset Formula $\alpha\in\Omega\left(p_{0},p\right)$
+\end_inset
+
+, dado 
+\begin_inset Formula $U\in{\cal E}\left(p_{0}\right),\ \exists t_{1}/\alpha\left(t_{1}\right)\in U$
+\end_inset
+
+ y, de igual forma, 
+\begin_inset Formula $\forall U'\in{\cal E}\left(p\right),\ \exists t_{2}/\alpha\left(t_{2}\right)\in U'$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Supongamos que existe una curva 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ sin tal punto 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Podemos entonces tomar 
+\begin_inset Formula $U=D\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $U'=S\setminus\overline{D\left(p_{0},\varepsilon\right)}$
+\end_inset
+
+ (ya que estamos en el caso en el que 
+\begin_inset Formula $p\notin D\left(p_{0},\varepsilon\right)$
+\end_inset
+
+), de tal forma que ambos entornos comparten la frontera y son abiertos
+ disjuntos, con 
+\begin_inset Formula $\alpha\left(\left[0,b\right]\right)\subset U\cup U'=S\setminus S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+, que no es conexo, pues lo hemos escrito como unión disjunta de dos abiertos
+ no vacíos.
+ Encontraríamos, entonces, 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+ tales que
+\begin_inset Formula 
+\[
+\alpha\left(t_{1}\right)\in U,\ \alpha\left(t_{2}\right)\in U'
+\]
+
+\end_inset
+
+ pero esto no puede ser, puesto que entonces estaríamos uniendo mediante
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ dos puntos de dos conjuntos inconexos.
+ Por tanto, suponer que puede existir una curva que no corte a 
+\begin_inset Formula $S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ nos lleva a una contradicción, y concluimos que existe tal punto 
+\begin_inset Formula $a$
+\end_inset
+
+ para cualquier 
+\begin_inset Formula $\alpha\in\Omega\left(p_{0},p\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Una cuestión relativamente importante es que hemos dicho que 
+\begin_inset Formula $a<b$
+\end_inset
+
+, cuando 
+\begin_inset Formula $p$
+\end_inset
+
+ podría estar en 
+\begin_inset Formula $S\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ y ser 
+\begin_inset Formula $a=b$
+\end_inset
+
+.
+ Pero este caso no nos preocupa, ya que podemos usar el caso anterior de
+ la demostración del lema original, cuando 
+\begin_inset Formula $q\in D\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ y construir una sucesión 
+\begin_inset Formula $\left\{ q_{n}\right\} _{n\in\mathbb{N}}\subset D\left(p_{0},\varepsilon\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $q_{n}\overset{n\rightarrow\infty}{\rightarrow}p$
+\end_inset
+
+ y obtenemos el resultado para ese caso, pudiendo excluirlo ahora.
+\end_layout
+
+\begin_layout Proof
+Sean ahora 
+\begin_inset Formula $\alpha_{1}=\alpha_{|\left[0,a\right]}$
+\end_inset
+
+ y 
+\begin_inset Formula $\alpha_{2}=\alpha_{|\left[a,b\right]}$
+\end_inset
+
+, de donde obtenemos
+\begin_inset Formula 
+\[
+L\left(\alpha\right)=L\left(\alpha_{1}\right)+L\left(\alpha_{2}\right)\geq d\left(p_{0},\alpha\left(a\right)\right)+d\left(\alpha\left(a\right),p\right)
+\]
+
+\end_inset
+
+ Ahora bien, dado 
+\begin_inset Formula $0<\delta<\varepsilon$
+\end_inset
+
+, se tiene que
+\begin_inset Formula 
+\[
+S\left(p_{0},\delta\right)\subset D\left(p_{0},\varepsilon\right)
+\]
+
+\end_inset
+
+ y dado 
+\begin_inset Formula $q_{\delta}\in S\left(p_{0},\delta\right)$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula 
+\[
+q_{\delta}=\exp_{p_{0}}\left(w_{q_{\delta}}\right)=\gamma_{q_{\delta}}\left(1\right),\ \left\Vert w_{q_{\delta}}\right\Vert =\delta
+\]
+
+\end_inset
+
+ y entonces, por el teorema 3.8,
+\begin_inset Formula 
+\[
+d\left(p_{0},q_{\delta}\right)=L\left(\gamma_{q_{\delta}}\right)=\int_{0}^{1}\left\Vert \gamma_{q_{\delta}}'\left(s\right)\right\Vert ds=\int_{0}^{1}\left\Vert w_{q_{\delta}}\right\Vert ds=\delta
+\]
+
+\end_inset
+
+ y haciendo tender 
+\begin_inset Formula $\delta\rightarrow\varepsilon$
+\end_inset
+
+ obtenemos que, dado 
+\begin_inset Formula $q_{\varepsilon}\in S\left(p_{0}\right)$
+\end_inset
+
+ se tiene 
+\begin_inset Formula $d\left(p_{0},q_{\varepsilon}\right)=\varepsilon$
+\end_inset
+
+.
+ En concreto tenemos
+\begin_inset Formula 
+\[
+d\left(p_{0},\alpha\left(a\right)\right)=d\left(p_{0},m\right)=\varepsilon
+\]
+
+\end_inset
+
+ Por otro lado, tenemos
+\begin_inset Formula 
+\[
+d\left(\alpha\left(a\right),p\right)=r\left(\alpha\left(a\right)\right)\overset{\alpha\left(a\right)\in S\left(p_{0},\varepsilon\right)}{\geq}\min_{x\in S\left(p_{0},\varepsilon\right)}r\left(x\right)=r\left(m\right)=d\left(m,p\right)
+\]
+
+\end_inset
+
+ Por lo que
+\begin_inset Formula 
+\[
+L\left(\alpha\right)=L\left(\alpha_{1}\right)+L\left(\alpha_{2}\right)\geq d\left(p_{0},\alpha\left(a\right)\right)+d\left(\alpha\left(a\right),p\right)=d\left(p_{0},m\right)+d\left(\alpha\left(a\right),p\right)\geq d\left(p_{0},m\right)+d\left(m,p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Tomando ínfimos en 
+\begin_inset Formula $\alpha\in\Omega\left(p_{0},p\right)\neq\emptyset$
+\end_inset
+
+ por ser 
+\begin_inset Formula $S$
+\end_inset
+
+ conexa, obtenemos
+\begin_inset Formula 
+\[
+d\left(p_{0},p\right)\geq d\left(p_{0},m\right)+d\left(m,p\right)
+\]
+
+\end_inset
+
+y tenemos con esto ambos lados de la desigualdad.
+\end_layout
+
+\end_body
+\end_document

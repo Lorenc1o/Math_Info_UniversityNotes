@@ -1,0 +1,303 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 5
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+i)
+\end_layout
+
+\begin_layout Standard
+Primero veamos qué debe ocurrir para que 
+\begin_inset Formula $\phi$
+\end_inset
+
+ sea una 
+\series bold
+variación
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Observamos que es claramente diferenciable, ya que 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ es una curva regular y 
+\begin_inset Formula $f$
+\end_inset
+
+ es diferenciable.
+ 
+\end_layout
+
+\begin_layout Standard
+Por tanto, solo resta asegurar que 
+\begin_inset Formula $\phi\left(s,0\right)=\alpha\left(s\right),\ \forall s\in I$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\phi\left(s,0\right)=\alpha\left(s\right)+\left(0,0,f\left(s,0\right)\right)=\alpha\left(s\right)\iff f\left(s,0\right)=0,\ \forall s\in I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para que sea 
+\series bold
+propia
+\series default
+:
+\begin_inset Formula 
+\[
+\alpha\left(a\right)=\phi\left(a,t\right)=\alpha\left(a\right)+\left(0,0,f\left(a,t\right)\right)\iff f\left(a,t\right)=0,\ \forall t\in\left(-\varepsilon,\varepsilon\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha\left(b\right)=\phi\left(b,t\right)=\alpha\left(b\right)+\left(0,0,f\left(b,t\right)\right)\iff f\left(b,t\right)=0,\ \forall t\in\left(-\varepsilon,\varepsilon\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y, por último, para que sea 
+\series bold
+normal
+\series default
+, calculamos 
+\begin_inset Formula $Z\left(s\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Z\left(s\right)=\frac{\partial\phi}{\partial t}\left(s,0\right)=\frac{\partial}{\partial t}|_{t=0}\phi\left(s,t\right)=\left(0,0,\frac{\partial f}{\partial t}\left(s,t\right)\right)|_{t=0}=\left(0,0,\frac{\partial}{\partial t}f\left(s,0\right)\right)\in\left[T_{\alpha\left(s\right)}S\right]^{\perp}
+\]
+
+\end_inset
+
+ por lo que es normal siempre, independientemente de 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Así, tenemos que 
+\begin_inset Formula $\phi$
+\end_inset
+
+ es una variación propia y normal si, y solo si, 
+\begin_inset Formula $f\left(s,0\right)=f\left(a,t\right)=f\left(b,t\right)=0,\ \forall s\in I,t\in\left(-\varepsilon,\varepsilon\right)$
+\end_inset
+
+, tal y como queríamos demostrar.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+ii)
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $\phi$
+\end_inset
+
+ es propia, se tiene, por el teorema 6.5:
+\begin_inset Formula 
+\[
+L'\left(0\right)=-\int_{a}^{b}\left\langle Z,\frac{D\alpha'}{ds}\right\rangle \left(s\right)ds\overset{\alpha'=X_{s}}{=}-\int_{a}^{b}\left\langle \left(0,0,f\left(s,0\right)\right),\left(\alpha_{1}'\left(s\right),\alpha_{2}'\left(s\right),0\right)\right\rangle ds=-\int_{a}^{b}0ds=0
+\]
+
+\end_inset
+
+ Ahora, por el teorema 6.6, como 
+\begin_inset Formula $L'\left(0\right)=0$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ es un segmento de geodésica.
+\end_layout
+
+\begin_layout Standard
+Por tanto, por el teorema 6.8, se tiene
+\begin_inset Formula 
+\[
+L''\left(0\right)=\int_{a}^{b}\left(\left\Vert \frac{DZ}{ds}\left(s\right)\right\Vert ^{2}-K\left(\alpha\left(s\right)\right)\left\Vert Z\left(s\right)\right\Vert ^{2}\right)ds
+\]
+
+\end_inset
+
+ Además
+\begin_inset Formula 
+\[
+Z'\left(s\right)=\left(0,0,\frac{\partial^{2}}{\partial t\partial s}f\left(s,0\right)\right)=\lambda\left(0,0,1\right)=\lambda X_{v}
+\]
+
+\end_inset
+
+ por lo que 
+\begin_inset Formula 
+\[
+\frac{DZ}{ds}\left(s\right)=Z'\left(s\right)
+\]
+
+\end_inset
+
+ Además, 
+\begin_inset Formula 
+\[
+E=\left\Vert \alpha'\left(s\right)\right\Vert ^{2}=1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+F=\left\langle \left(\alpha_{1}'\left(s\right),\alpha_{2}'\left(s\right),0\right),\left(0,0,1\right)\right\rangle =0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+G=\left\Vert \left(0,0,1\right)\right\Vert ^{2}=1
+\]
+
+\end_inset
+
+ Y vemos como 
+\begin_inset Formula $S$
+\end_inset
+
+ es localmente isométrica al plano y, por el teorema Egregium de Gauss,
+ obtenemos que 
+\begin_inset Formula $K\left(\alpha\left(s\right)\right)=0$
+\end_inset
+
+.
+ Por tanto
+\begin_inset Formula 
+\[
+L''\left(0\right)=\int_{a}^{b}\left(\frac{\partial^{2}}{\partial t\partial s}\left[f\left(s,0\right)\right]\right)^{2}ds
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,371 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 3
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+a)
+\end_layout
+
+\begin_layout Standard
+Por un lado, sabemos que 
+\begin_inset Formula $\gamma_{v}\left(t\right)$
+\end_inset
+
+ es la geodésica maximal con condiciones iniciales 
+\begin_inset Formula $\gamma_{v}\left(0\right)=p_{0}$
+\end_inset
+
+ y 
+\begin_inset Formula $\gamma_{v}'\left(0\right)=v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por otro, el lema de homogeneidad de las geodésicas nos dice que 
+\begin_inset Formula 
+\[
+\gamma_{v}\left(t\right)=\exp_{p_{0}}\left(tv\right)=\exp_{p_{0}}\left(t\left(ae_{1}+be_{2}\right)\right)=\exp_{p_{0}}\left(ate_{1}+bte_{2}\right)
+\]
+
+\end_inset
+
+ y vemos como la expresión en coordenadas de 
+\begin_inset Formula $\gamma_{v}\left(t\right)$
+\end_inset
+
+ respecto de 
+\begin_inset Formula $X\left(u,v\right)$
+\end_inset
+
+ es, efectivamente,
+\begin_inset Formula 
+\[
+\overline{\gamma_{v}}\left(t\right)=\left(at,bt\right)=\left(u\left(t\right),v\left(t\right)\right)
+\]
+
+\end_inset
+
+ pues
+\begin_inset Formula 
+\[
+X\circ\overline{\gamma_{v}}\left(t\right)=X\left(at,bt\right)=\exp_{p_{0}}\left(ate_{1}+bte_{2}\right)=\gamma_{v}\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+b)
+\end_layout
+
+\begin_layout Standard
+La ecuación diferencial intrínseca de las geodésicas nos asegura que, al
+ ser 
+\begin_inset Formula $\gamma_{v}\left(t\right)$
+\end_inset
+
+ una geodésica, su expresión en coordenadas, 
+\begin_inset Formula $\overline{\gamma_{v}}\left(t\right)$
+\end_inset
+
+ satisface el siguiente sistema:
+\begin_inset Formula 
+\[
+\begin{cases}
+u''+\left(u'\right)^{2}\Gamma_{11}^{1}\left(u,v\right)+2u'v'\Gamma_{12}^{1}\left(u,v\right)+\left(v'\right)^{2}\Gamma_{22}^{1}\left(u,v\right) & =0\\
+v''+\left(v'\right)^{2}\Gamma_{11}^{2}\left(u,v\right)+2u'v'\Gamma_{12}^{2}\left(u,v\right)+\left(v'\right)^{2}\Gamma_{22}^{2}\left(u,v\right) & =0
+\end{cases}
+\]
+
+\end_inset
+
+ Calculamos las derivadas de 
+\begin_inset Formula $u,v$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+u\left(t\right)=at\implies u'\left(t\right)=a,\ u''\left(t\right)=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+v\left(t\right)=bt\implies v'\left(t\right)=b,\ v''\left(t\right)=0
+\]
+
+\end_inset
+
+ y las sustituimos en el sistema anterior, obteniendo
+\begin_inset Formula 
+\[
+\begin{cases}
+a^{2}\Gamma_{11}^{1}\left(at,bt\right)+2ab\Gamma_{12}^{1}\left(at,bt\right)+b^{2}\Gamma_{22}^{1}\left(at,bt\right) & =0\\
+a^{2}\Gamma_{11}^{2}\left(at,bt\right)+2ab'\Gamma_{12}^{2}\left(at,bt\right)+b^{2}\Gamma_{22}^{2}\left(at,bt\right) & =0
+\end{cases}
+\]
+
+\end_inset
+
+ como queríamos ver.
+\end_layout
+
+\begin_layout Standard
+Para la segunda afirmación, basta notar que 
+\begin_inset Formula $u\left(0\right)=v\left(0\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+c)
+\end_layout
+
+\begin_layout Standard
+Como el sistema obtenido se satisface para cualquier 
+\begin_inset Formula $v\in T_{p_{0}}S$
+\end_inset
+
+, podemos tomar 
+\begin_inset Formula $v=e_{1}=\left(1,0\right)$
+\end_inset
+
+ (en la base 
+\begin_inset Formula $\left\{ e_{1},e_{2}\right\} $
+\end_inset
+
+, como venimos trabajando a lo largo del ejercicio), y sustituyendo en el
+ sistema obtenido para 
+\begin_inset Formula $t=0$
+\end_inset
+
+, obtenemos que
+\begin_inset Formula 
+\[
+\Gamma_{11}^{1}\left(0,0\right)=\Gamma_{11}^{2}\left(0,0\right)=0
+\]
+
+\end_inset
+
+ Tomando 
+\begin_inset Formula $v=e_{2}=\left(0,1\right)$
+\end_inset
+
+, obtenemos
+\begin_inset Formula 
+\[
+\Gamma_{22}^{1}\left(0,0\right)=\Gamma_{22}^{2}\left(0,0\right)=0
+\]
+
+\end_inset
+
+ Y el sistema para 
+\begin_inset Formula $t=0$
+\end_inset
+
+ queda, por tanto
+\begin_inset Formula 
+\[
+\begin{cases}
+2ab\Gamma_{12}^{1}\left(0,0\right) & =0\\
+2ab\Gamma_{12}^{2}\left(0,0\right) & =0
+\end{cases}
+\]
+
+\end_inset
+
+ por lo que, para obtener el resultado, basta utilizar un 
+\begin_inset Formula $v\in T_{p_{0}}S$
+\end_inset
+
+ tomado como 
+\begin_inset Formula $v=\left(a,b\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $a,b\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para la última afirmación, usamos el sistema matricial para calcular los
+ símbolos de Christoffel visto en Geometría de Curvas y Superficies
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccc}
+\Gamma_{11}^{1} & \Gamma_{12}^{1} & \Gamma_{22}^{1}\\
+\Gamma_{11}^{2} & \Gamma_{12}^{2} & \Gamma_{22}^{2}
+\end{array}\right)=\frac{1}{EG-F^{2}}\left(\begin{array}{cc}
+G & -F\\
+-F & E
+\end{array}\right)\left(\begin{array}{ccc}
+\frac{E_{u}}{2} & \frac{E_{v}}{2} & F_{v}-\frac{G_{u}}{2}\\
+F_{u}-\frac{E_{v}}{2} & \frac{G_{u}}{2} & \frac{G_{v}}{2}
+\end{array}\right)
+\]
+
+\end_inset
+
+ como sabemos que los símbolos de Christoffel son todos nulos en 
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+, podemos sustituirlos en ese punto, y expresar el sistema matricial como
+\begin_inset Formula 
+\[
+0=\rho A\cdot B
+\]
+
+\end_inset
+
+ y sabemos que 
+\begin_inset Formula $\rho$
+\end_inset
+
+ y 
+\begin_inset Formula $A$
+\end_inset
+
+ son no nulos, porque 
+\begin_inset Formula $EG-F^{2}>0$
+\end_inset
+
+ siempre y 
+\begin_inset Formula $\det\left(A\right)=\rho^{-1}$
+\end_inset
+
+.
+ Por tanto, debe ser 
+\begin_inset Formula $B=0$
+\end_inset
+
+, de donde obtenemos 
+\begin_inset Formula 
+\[
+E_{u}\left(0,0\right)=E_{v}\left(0,0\right)=G_{u}\left(0,0\right)=G_{v}\left(0,0\right)=0
+\]
+
+\end_inset
+
+ y
+\begin_inset Formula 
+\[
+F_{u}\left(0,0\right)=\frac{E_{v}}{2}\left(0,0\right)=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+F_{v}\left(0,0\right)=\frac{G_{u}}{2}\left(0,0\right)=0
+\]
+
+\end_inset
+
+ que es lo que queríamos probar.
+ 
+\end_layout
+
+\end_body
+\end_document

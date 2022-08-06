@@ -1,0 +1,447 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 1
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Standard
+Por un lado, tenemos que
+\begin_inset Formula 
+\[
+\left(JV\right)'\left(t\right)=\left(N\left(t\right)\land V\left(t\right)\right)'=N'\left(t\right)\land V\left(t\right)+N\left(t\right)\land V'\left(t\right)
+\]
+
+\end_inset
+
+ Por otro, sabemos que la derivada covariante es
+\begin_inset Formula 
+\[
+\frac{D\left(JV\right)}{dt}\left(t\right)=\left(JV\right)'\left(t\right)-\left\langle \left(JV\right)'\left(t\right),N\left(t\right)\right\rangle N\left(t\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=N'\left(t\right)\land V\left(t\right)+N\left(t\right)\land V'\left(t\right)-\left\langle N'\left(t\right)\land V\left(t\right)+N\left(t\right)\land V'\left(t\right),N\left(t\right)\right\rangle N\left(t\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=N'\left(t\right)\land V\left(t\right)+N\left(t\right)\land V'\left(t\right)-\left\langle N'\left(t\right)\land V\left(t\right),N\left(t\right)\right\rangle N\left(t\right)-\left\langle N\left(t\right)\land V'\left(t\right),N\left(t\right)\right\rangle N\left(t\right)
+\]
+
+\end_inset
+
+ Ahora bien, dado que 
+\begin_inset Formula $N\left(t\right)\land V'\left(t\right)\perp N\left(t\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\left\langle N\left(t\right)\land V'\left(t\right),N\left(t\right)\right\rangle =0$
+\end_inset
+
+.
+ Por tanto
+\begin_inset Formula 
+\[
+\frac{D\left(JV\right)}{dt}\left(t\right)=N'\left(t\right)\land V\left(t\right)+N\left(t\right)\land V'\left(t\right)-\left\langle N'\left(t\right)\land V\left(t\right),N\left(t\right)\right\rangle N\left(t\right)
+\]
+
+\end_inset
+
+ Como 
+\begin_inset Formula $\left\Vert N\left(t\right)\right\Vert =1\iff\left\langle N\left(t\right),N\left(t\right)\right\rangle =1\overset{\frac{d}{dt}}{\implies}2\left\langle N'\left(t\right),N\left(t\right)\right\rangle =0\implies N'\left(t\right)\perp N\left(t\right)$
+\end_inset
+
+.
+ También sabemos que 
+\begin_inset Formula $V\left(t\right)\perp N\left(t\right)$
+\end_inset
+
+, ya que 
+\begin_inset Formula $V\left(t\right)\in T_{\alpha\left(t\right)}S$
+\end_inset
+
+.
+ Esto quiere decir que 
+\begin_inset Formula 
+\[
+N'\left(t\right)\land V\left(t\right)\parallel N\left(t\right)
+\]
+
+\end_inset
+
+ O sea, que
+\begin_inset Formula 
+\[
+N'\left(t\right)\land V\left(t\right)=\lambda N\left(t\right)
+\]
+
+\end_inset
+
+ Por tanto
+\begin_inset Formula 
+\[
+\frac{D\left(JV\right)}{dt}\left(t\right)=\lambda N\left(t\right)+N\left(t\right)\land V'\left(t\right)-\left\langle \lambda N\left(t\right),N\left(t\right)\right\rangle N\left(t\right)=N\left(t\right)\land V'\left(t\right)+\lambda N\left(t\right)-\lambda N\left(t\right)=N\left(t\right)\land V'\left(t\right)
+\]
+
+\end_inset
+
+ Y, desde el otro lado
+\begin_inset Formula 
+\[
+J\frac{DV}{dt}\left(t\right)=N\left(t\right)\land\left[V'\left(t\right)-\left\langle V'\left(t\right),N\left(t\right)\right\rangle N\left(t\right)\right]\overset{*}{=}N\left(t\right)\land V'\left(t\right)=\frac{D\left(JV\right)}{dt}\left(t\right)
+\]
+
+\end_inset
+
+ Donde 
+\begin_inset Formula $*$
+\end_inset
+
+ se debe a la distributividad del producto vectorial y a que 
+\begin_inset Formula $N\left(t\right)\land N\left(t\right)=0$
+\end_inset
+
+.
+ Y tenemos el resultado buscado.
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V$
+\end_inset
+
+ es paralelo a lo largo de 
+\begin_inset Formula $\alpha\iff\frac{DV}{dt}=\overrightarrow{0}\iff J\frac{DV}{dt}=0\overset{\text{a)}}{\iff}\frac{D\left(JV\right)}{dt}=0\iff JV$
+\end_inset
+
+ es paralelo a lo largo de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Si tenemos 
+\begin_inset Formula $V\in\mathfrak{X}\left(\alpha\right)$
+\end_inset
+
+ paralelo a lo largo de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ 
+\begin_inset Formula $\left(\frac{DV}{dt}=0\right)$
+\end_inset
+
+, entonces, por b), también 
+\begin_inset Formula $JV$
+\end_inset
+
+ es paralelo a lo largo de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ 
+\begin_inset Formula $\left(\frac{D\left(JV\right)}{dt}=0\right)$
+\end_inset
+
+.
+ Así, si tenemos un campo 
+\begin_inset Formula $W=aV+bJV$
+\end_inset
+
+, claramente se tiene 
+\begin_inset Formula $W\in\mathfrak{X}\left(\alpha\right)$
+\end_inset
+
+, puesto que, en cada punto, es combinación lineal de vectores pertenecientes
+ al plano tangente.
+ Además
+\begin_inset Formula 
+\[
+\frac{DW}{dt}=a\frac{DV}{dt}+b\frac{D\left(JV\right)}{dt}=0
+\]
+
+\end_inset
+
+ Y 
+\begin_inset Formula $W$
+\end_inset
+
+ es paralelo a lo largo de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Supongamos ahora que 
+\begin_inset Formula $W$
+\end_inset
+
+ es paralelo a lo largo de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, entonces verifica la EDO
+\begin_inset Formula 
+\[
+\left(*\right)\qquad\begin{cases}
+W'+\left\langle W,N'\right\rangle N=0\\
+W\left(t_{0}\right)=\overrightarrow{w_{0}}
+\end{cases}
+\]
+
+\end_inset
+
+ para cierto 
+\begin_inset Formula $t_{0}\in I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+De igual forma, dado que 
+\begin_inset Formula $V$
+\end_inset
+
+ es paralelo a lo largo de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, también lo es 
+\begin_inset Formula $JV$
+\end_inset
+
+ (apartado b)) y estos campos verifican las respectivas EDOs
+\begin_inset Formula 
+\[
+\begin{cases}
+V'+\left\langle V,N'\right\rangle N=0\\
+V\left(t_{0}\right)=\overrightarrow{v_{0}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{cases}
+JV'+\left\langle JV,N'\right\rangle N=0\\
+JV\left(t_{0}\right)=\overrightarrow{jv_{0}}
+\end{cases}
+\]
+
+\end_inset
+
+ Ahora bien, en 
+\begin_inset Formula $T_{\alpha\left(t_{0}\right)}S$
+\end_inset
+
+, 
+\begin_inset Formula $\overrightarrow{v_{0}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\overrightarrow{jv_{0}}$
+\end_inset
+
+ son vectores linealmente independientes (ya que suponemos que 
+\begin_inset Formula $V\neq0$
+\end_inset
+
+) y podemos escribir
+\begin_inset Formula 
+\[
+\overrightarrow{w_{0}}=a\overrightarrow{v_{0}}+b\overrightarrow{jv_{0}}
+\]
+
+\end_inset
+
+ para ciertos 
+\begin_inset Formula $a,b\in\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vamos a ver que 
+\begin_inset Formula $aV+bJV$
+\end_inset
+
+ verifica 
+\begin_inset Formula $\left(*\right)$
+\end_inset
+
+ y por la unicidad de soluciones dada una condición inicial, tendremos el
+ resultado.
+\begin_inset Formula 
+\[
+\left(aV+bJV\right)'+\left\langle aV+bJV,N'\right\rangle N=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=aV'+b\left(JV\right)'+a\left\langle V,N'\right\rangle N+b\left\langle JV,N'\right\rangle N=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=a\left(V'+\left\langle V,N'\right\rangle N\right)+b\left(\left(JV\right)'+\left\langle JV,N'\right\rangle N\right)=a\cdot0+b\cdot0=0
+\]
+
+\end_inset
+
+ Y, respecto a la condición inicial
+\begin_inset Formula 
+\[
+\left(aV+bJV\right)\left(t_{0}\right)=aV\left(t_{0}\right)+bJV\left(t_{0}\right)=a\overrightarrow{v_{0}}+b\overrightarrow{jv_{0}}=\overrightarrow{w_{0}}
+\]
+
+\end_inset
+
+ Por lo que 
+\begin_inset Formula $W$
+\end_inset
+
+ y 
+\begin_inset Formula $aV+bJV$
+\end_inset
+
+ verifican la EDO con la misma condición inicial, y la unicidad de soluciones
+ nos permite asegurar que
+\begin_inset Formula 
+\[
+W=aV+bJV
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
