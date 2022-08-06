@@ -1,0 +1,6532 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Ejercicios GyA - Cap.
+ 4
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Grupos
+\end_layout
+
+\begin_layout Subsection
+Definiciones y ejemplos
+\end_layout
+
+\begin_layout Subsubsection
+Construir la tabla de multiplicación de los grupos aditivos y de unidades
+ de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{7},\mathbb{Z}_{16},\ GL_{2}\left(\mathbb{Z}_{2}\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\mathbb{Z}_{7},+\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\mathbb{Z}_{7},\cdot\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para 
+\begin_inset Formula $\left(\mathbb{Z}_{12},+/\cdot\right)$
+\end_inset
+
+ se hace igual.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(GL_{2}\left(\mathbb{Z}_{2}\right),+/\cdot\right)$
+\end_inset
+
+ tambié, pero con matrices.
+ Bastante pesado de hacer, pero no tiene dificultad.
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ un grupo.
+ Probar que son equivalentes:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es abeliano
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) 
+\begin_inset Formula $\boldsymbol{(ab)^{2}=a^{2}b^{2}\ \forall a,b\in G}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(3) 
+\begin_inset Formula $\boldsymbol{(ab)^{-1}=a^{-1}b^{-1}\ \forall a,b\in G}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(4) 
+\begin_inset Formula $\boldsymbol{(ab)^{n}=a^{n}b^{n}\ \forall n\in\mathbb{N},\ \forall a,b\in G}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $1\implies2$
+\end_inset
+
+' 
+\begin_inset Formula $(ab)^{2}=(ab)(ab)=a(ba)b=a(ab)b=(aa)(bb)=a^{2}b^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $2\implies1$
+\end_inset
+
+' 
+\begin_inset Formula $a\left(ba\right)b=\left(ab\right)^{2}=a^{2}b^{2}=a\left(ab\right)b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como todo elemento es cancelativo, entonces 
+\begin_inset Formula $\left(ba\right)b=\left(ab\right)b$
+\end_inset
+
+, y cancelando 
+\begin_inset Formula $b$
+\end_inset
+
+, 
+\begin_inset Formula $ba=ab$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $1\implies3$
+\end_inset
+
+' Por el lema 4.2, sabemos que 
+\begin_inset Formula $\left(ab\right)^{-1}=b^{-1}a^{-1}\overset{abeliano}{=}a^{-1}b^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $3\implies1$
+\end_inset
+
+' 
+\begin_inset Formula $\left(ba\right)^{-1}=b^{-1}a^{-1}=\left(ab\right)^{-1}$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+\left(ab\right)\left(ab\right)^{-1}=e=\left(ba\right)\left(ab\right)^{-1}\overset{cancelativa}{\implies}ab=ba
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $1\implies4$
+\end_inset
+
+' Inducción en 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=1$
+\end_inset
+
+: Obvio, 
+\begin_inset Formula $ab=ab$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Supongamos se verifica para 
+\begin_inset Formula $n-1$
+\end_inset
+
+ y la hipótesis de inducción:
+\begin_inset Formula 
+\[
+\left(ab\right)^{n}=\left(ab\right)^{n-1+1}=\left(ab\right)^{n-1}\left(ab\right)=a^{n-1}b^{n-1}ab\overset{abeliano}{=}a^{n-1}ab^{n-1}b=a^{n}b^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $4\implies1$
+\end_inset
+
+' Es obvio que 
+\begin_inset Formula $4\implies2$
+\end_inset
+
+, y 
+\begin_inset Formula $2\implies1$
+\end_inset
+
+ ya lo hemos visto.
+\end_layout
+
+\begin_layout Subsubsection
+Desmotrar que si 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es un grupo tal que 
+\begin_inset Formula $\boldsymbol{g^{2}=1,\ \forall g\in G}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es abeliano.
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset Formula $a,b\in G$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a^{2}=1=b^{2}\implies a^{-1}=a,\ b^{-1}=b$
+\end_inset
+
+.
+ Además, 
+\begin_inset Formula $abab=\left(ab\right)^{2}=1\implies a^{-1}ababb^{-1}=a^{-1}b^{-1}\implies ba=a^{-1}b^{-1}=ab$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Subgrupos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsubsection}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Probar que todo grupo 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ de orden menor o igual a cinco es abeliano
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left|G\right|=1$
+\end_inset
+
+.
+ Entonces, 
+\begin_inset Formula $G=\left\{ e\right\} $
+\end_inset
+
+.
+ Y así, 
+\begin_inset Formula $ee$
+\end_inset
+
+ es la única operación posible y 
+\begin_inset Formula $G$
+\end_inset
+
+ es abeliano.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left|G\right|=2,3,5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces, por el corolario del teorema de Lagrange, 
+\begin_inset Formula $G$
+\end_inset
+
+ es cíclico y cualquier elemento de 
+\begin_inset Formula $G$
+\end_inset
+
+ distinto de 
+\begin_inset Formula $1$
+\end_inset
+
+ es un generador de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces, si es 5.
+ 
+\begin_inset Formula $G=\left\langle g\right\rangle =\left\{ 1,g,g^{2},g^{3},g^{4}\right\} $
+\end_inset
+
+, pero esto es conmutativo, pues 
+\begin_inset Formula 
+\[
+g^{i}g^{j}=g^{i+j}=g^{j+i}=g^{j}g^{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para 2 y 3, el mismo argumento sirve.
+\end_layout
+
+\begin_layout Standard
+Queda 
+\begin_inset Formula $\left|G\right|=4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ es cíclico, como antes, es abeliano.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ no es cíclico, por el teorema de Lagrange, los subgrupos de 
+\begin_inset Formula $G$
+\end_inset
+
+ distintos del trivial y el total tienen orden 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es decir, dado 
+\begin_inset Formula $g\in G\setminus\left\{ 1\right\} $
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $\left|\left\langle g\right\rangle \right|=2$
+\end_inset
+
+.
+ Por tanto, 
+\begin_inset Formula $g^{2}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ahora bien, 
+\begin_inset Formula $g_{1}g_{2}$
+\end_inset
+
+ no puede dar 1, porque 
+\begin_inset Formula $Xg_{2}=1$
+\end_inset
+
+, tiene solución única, y sería 
+\begin_inset Formula $g_{1}=g_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Tampoco puede ser 
+\begin_inset Formula $g_{1}g_{2}=g_{2}$
+\end_inset
+
+, pues implicaría 
+\begin_inset Formula $g_{1}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por el mismo motivo no puede ser 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Es decir, 
+\begin_inset Formula $g_{1}g_{2}=g_{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Y, entonces, razonando análogamente con las demás multiplicaciones, la tabla
+ de multiplicación queda
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y es abeliano.
+\end_layout
+
+\begin_layout Subsubsection
+Mostrar que la unión de dos subgrupos de un grupo no es necesariamente un
+ subgrupo.
+ Aún más, probar que un grupo nunca puede expresarse como unión de dos subgrupos
+ propios.
+\end_layout
+
+\begin_layout Standard
+Tomando 
+\begin_inset Formula $G/\left|G\right|=4$
+\end_inset
+
+, como en el ejercicio anterior, que no sea cíclico, entonces 
+\begin_inset Formula 
+\[
+A=\left\langle g_{1}\right\rangle \cup\left\langle g_{2}\right\rangle =\left\{ 1,g_{1},g_{2}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero 
+\begin_inset Formula $g_{1}g_{2}=g_{3}\notin A$
+\end_inset
+
+.
+ Por tanto, no es un subgrupo.
+\end_layout
+
+\begin_layout Standard
+Para la segunda afirmación, sea 
+\begin_inset Formula $G$
+\end_inset
+
+ un grupo.
+ Supongamos que puede expresarse como unión de dos subgrupos propios.
+ O sea
+\begin_inset Formula 
+\[
+G=G_{1}\cup G_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como son propios, quiere decir que 
+\begin_inset Formula $\exists g_{1}\in G\setminus G_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $\exists g_{2}\in G\setminus G_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pero, dado que la unión es el total, debe ser 
+\begin_inset Formula $g_{1}\in G_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $g_{2}\in G_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Fijémonos ahora en 
+\begin_inset Formula $g_{1}g_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Si perteneciese a 
+\begin_inset Formula $G_{2}$
+\end_inset
+
+, entonces tendríamos que 
+\begin_inset Formula $g_{1},g_{1}g_{2}\in G_{2}$
+\end_inset
+
+.
+ Pero 
+\begin_inset Formula $g_{1}^{-1}\in G_{2}$
+\end_inset
+
+, también, por lo que 
+\begin_inset Formula $g_{1}^{-1}g_{1}g_{2}=g_{2}\in G_{2}$
+\end_inset
+
+# Esto no puede ser.
+\end_layout
+
+\begin_layout Standard
+Por tanto, 
+\begin_inset Formula $g_{1}g_{2}\notin G_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por el mismo razonamiento, 
+\begin_inset Formula $g_{1}g_{2}\notin G_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Lo que quiere decir que 
+\begin_inset Formula $g_{1}g_{2}\notin G_{1}\cup G_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero 
+\begin_inset Formula $g_{1}g_{2}\in G$
+\end_inset
+
+# 
+\begin_inset Formula $G\neq G_{1}\cup G_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Para 
+\begin_inset Formula $\boldsymbol{n=1,...,10}$
+\end_inset
+
+ determinar cuales de los grupos 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{n}^{*}}$
+\end_inset
+
+ son cíclicos.
+\end_layout
+
+\begin_layout Standard
+Claramente para 
+\begin_inset Formula $n=1$
+\end_inset
+
+ es cíclico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{2}^{*}=\left\{ 1\right\} $
+\end_inset
+
+ cíclico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{3}^{*}=\left\{ 1,2\right\} =\left\langle 2\right\rangle $
+\end_inset
+
+ cíclico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{4}^{*}=\left\{ 1,3\right\} =\left\langle 3\right\rangle $
+\end_inset
+
+ cíclico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{5}^{*}=\left\{ 1,2,3,4\right\} $
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left\langle 1\right\rangle =\left\{ 1\right\} ,\ \left\langle 2\right\rangle =\left\{ 1,2,3,4\right\} $
+\end_inset
+
+cíclico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{6}^{*}=\left\{ 1,5\right\} =\left\langle 5\right\rangle $
+\end_inset
+
+ cíclico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{7}^{*}=\left\{ 1,2,3,4,5,6\right\} $
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left\langle 1\right\rangle =\left\{ 1\right\} ,\ \left\langle 2\right\rangle =\left\{ 1,2,4\right\} ,\ \left\langle 3\right\rangle =\left\{ 1,2,3,4,5,6\right\} $
+\end_inset
+
+ cíclico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{8}^{*}=\left\{ 1,3,5,7\right\} $
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left\langle 1\right\rangle =\left\{ 1\right\} ,\ \left\langle 3\right\rangle =\left\{ 1,3\right\} ,\ \left\langle 5\right\rangle =\left\{ 1,5\right\} ,\ \left\langle 7\right\rangle =\left\{ 1,7\right\} $
+\end_inset
+
+ no cíclico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{9}^{*}=\left\{ 1,2,4,5,7,8\right\} .$
+\end_inset
+
+ 
+\begin_inset Formula $\left\langle 1\right\rangle =\left\{ 1\right\} ,\ \left\langle 2\right\rangle =\left\{ 1,2,4,5,7,8\right\} $
+\end_inset
+
+cíclico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{10}^{*}=\left\{ 1,3,7,9\right\} .$
+\end_inset
+
+ 
+\begin_inset Formula $\left\langle 1\right\rangle =\left\{ 1\right\} ,\ \left\langle 3\right\rangle =\left\{ 1,3,7,9\right\} $
+\end_inset
+
+ cíclico
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que si el grupo 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ no es abeliano, entonces existe un subgrupo abeliano de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ que contiene estrictamente al centro 
+\begin_inset Formula $\boldsymbol{Z\left(G\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $G$
+\end_inset
+
+ no es abeliano, 
+\begin_inset Formula $\exists g\in G\setminus Z\left(G\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Consideramos 
+\begin_inset Formula $\left\langle \left\{ g\right\} \cup Z\left(G\right)\right\rangle =A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces 
+\begin_inset Formula 
+\[
+Z\left(G\right)\subsetneq A\leq G
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que hay que ver que 
+\begin_inset Formula $A$
+\end_inset
+
+ es abeliano.
+\end_layout
+
+\begin_layout Standard
+Para ello, basta ver que 
+\begin_inset Formula $g$
+\end_inset
+
+ conmuta con los elementos de 
+\begin_inset Formula $Z\left(G\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $x\in Z\left(G\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $gx=xg$
+\end_inset
+
+ porque 
+\begin_inset Formula $x\in Z\left(G\right)$
+\end_inset
+
+.
+ Y lo tenemos.
+\end_layout
+
+\begin_layout Subsubsection
+Calcular los centros de 
+\begin_inset Formula $\boldsymbol{GL_{n}\left(\mathbb{R}\right),\ GL_{n}\left(\mathbb{C}\right),\ SL_{n}\left(\mathbb{R}\right),\ SL_{n}\left(\mathbb{C}\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{GL_{n}\left(\mathbb{R}\right)}$
+\end_inset
+
+: serán las matrices 
+\begin_inset Formula $A/AX=XA,\forall X\in GL_{n}\left(\mathbb{R}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+AX_{ij}=\sum_{k=0}^{n}a_{ik}x_{kj}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+XA_{ij}=\sum_{k=0}^{n}x_{ik}a_{kj}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y deben ser iguales
+\begin_inset Formula 
+\[
+\sum_{k=0}^{n}a_{ik}x_{kj}=\sum_{k=0}^{n}x_{ik}a_{kj}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero debe verificarse para cualquier matriz cuadrada no singular.
+\end_layout
+
+\begin_layout Standard
+Podemos, por tanto, ir seleccionando matrices con todo 0 excepto 
+\begin_inset Formula $x_{1j}=1$
+\end_inset
+
+ y 
+\begin_inset Formula $x_{j1}=1$
+\end_inset
+
+ y la diagonal a 
+\begin_inset Formula $1$
+\end_inset
+
+, otra todo 0 excepto 
+\begin_inset Formula $x_{2j}$
+\end_inset
+
+ y 
+\begin_inset Formula $x_{j2}$
+\end_inset
+
+ y la diagonal a 
+\begin_inset Formula $1$
+\end_inset
+
+,...
+ De forma que, para cada una obtendríamos las igualdades
+\begin_inset Formula 
+\[
+a_{ii}+a_{i1}=a_{11}+a_{1i}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a_{ii}+a_{i2}=a_{22}+a_{2i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero también podemos hacer 
+\begin_inset Formula $x_{1j}=1$
+\end_inset
+
+ y 
+\begin_inset Formula $x_{j1}=-1$
+\end_inset
+
+,...
+ siempre que 
+\begin_inset Formula $j$
+\end_inset
+
+ no sea la columna que hace que estos elementos estén en la diagonal.
+ De aquí obtenemos
+\begin_inset Formula 
+\[
+a_{ii}+a_{i1}=a_{11}-a_{1i}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a_{ii}+a_{i2}=a_{22}-a_{2i}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Juntando la información anterior con esta:
+\begin_inset Formula 
+\[
+a_{11}+a_{1i}=a_{11}-a_{1i}\implies a_{1i}=-a_{1i}\implies a_{1i}=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a_{2i}=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que todos los elementos fuera de la diagonal tienen que ser 0.
+ Por tanto, son matrices diagonales.
+ 
+\end_layout
+
+\begin_layout Standard
+Pero esto no es todo, consideremos dos elementos de la diagonal 
+\begin_inset Formula $a_{ii},\ a_{jj}$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+AX_{ij}=a_{ii}x_{ij}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+XA_{ij}=x_{ij}a_{jj}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que, tomando una matriz con 
+\begin_inset Formula $x_{ij}=1$
+\end_inset
+
+, vemos que ha de ser 
+\begin_inset Formula 
+\[
+a_{ii}=a_{jj}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir, el centro son las matrices diagonales con el mismo escalar en
+ toda la diagonal, o sea, de la forma 
+\begin_inset Formula $aI_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{GL_{n}\left(\mathbb{C}\right)}$
+\end_inset
+
+: ahora tenemos que verlo en los complejos.
+ Podemos expresarlo como
+\begin_inset Formula 
+\[
+AX=XA\iff\left(A_{r}+iA_{i}\right)\left(X_{r}+iX_{i}\right)=\left(X_{r}+iX_{i}\right)\left(A_{r}+iA_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Separando las partes reales de las imaginarias, entonces 
+\begin_inset Formula 
+\[
+\left(A_{r}+iA_{i}\right)\left(X_{r}+iX_{i}\right)=A_{r}X_{r}+iA_{r}X_{i}+iA_{i}X_{r}-A_{i}X_{i}=\left(A_{r}X_{r}-A_{i}X_{i}\right)+i\left(A_{r}X_{i}+A_{i}X_{r}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(X_{r}+iX_{i}\right)\left(A_{r}+iA_{i}\right)=\left(X_{r}A_{r}-X_{i}A_{i}\right)+i\left(X_{r}A_{i}+X_{i}A_{r}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y esto ya son matrices reales, tales que
+\begin_inset Formula 
+\[
+A_{r}X_{r}-A_{i}X_{i}=X_{r}A_{r}-X_{i}A_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto se verifica para todo 
+\begin_inset Formula $X_{r},X_{i}$
+\end_inset
+
+, por lo que tenemos que
+\begin_inset Formula 
+\[
+A_{r}X_{r}=X_{r}A_{r},\quad A_{i}X_{i}=X_{i}A_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+por lo que 
+\begin_inset Formula $A_{r}$
+\end_inset
+
+ y 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ deben ser como las anteriores, de la forma 
+\begin_inset Formula $aI_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O sea, son las matrices 
+\begin_inset Formula $A=a_{1}I_{n}+ia_{2}I_{n}=\left(a_{1}+ia_{2}\right)I_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{SL_{n}\left(\mathbb{R}\right)}$
+\end_inset
+
+: deben ser diagonales, como hemos visto antes, y tener determinante 1.
+\end_layout
+
+\begin_layout Standard
+O sea, 
+\begin_inset Formula $A=aI_{n}$
+\end_inset
+
+, con 
+\begin_inset Formula $a^{n}=1$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $n$
+\end_inset
+
+ es impar, la única matriz que verifica esto es 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $n$
+\end_inset
+
+ es impar, lo verifican 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+ y 
+\begin_inset Formula $-I_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{SL_{n}\left(\mathbb{R}\right)}$
+\end_inset
+
+: igual, diagonales tales que 
+\begin_inset Formula $a^{n}=1$
+\end_inset
+
+.
+ Pero en 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+, 1 tiene 
+\begin_inset Formula $n$
+\end_inset
+
+ raíces n-ésimas, por lo que el centro estará formado por 
+\begin_inset Formula $n$
+\end_inset
+
+ matrices con estas raíces en su diagonal y lo demás 0.
+\end_layout
+
+\begin_layout Subsection
+Subgrupos normales y grupos cociente
+\end_layout
+
+\begin_layout Subsubsection
+Construir la tabla de multiplicación del grupo cociente 
+\begin_inset Formula $\boldsymbol{\frac{G}{\left\langle -I\right\rangle }}$
+\end_inset
+
+, donde 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es cualquier de los tres primeros grupos del 4.1.1 e 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ es la matriz identidad.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $\frac{\boldsymbol{\mathbb{Z}_{7}}}{\boldsymbol{\left\langle -1\right\rangle }},+$
+\end_inset
+
+: hay una única clase de equivalencia, porque todo elemento no nulo genera
+ el conjunto, en particular el -1, y por tanto el cociente tiene un único
+ elemento.
+ La tabla de multiplicación es trivial.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $\frac{\boldsymbol{\mathbb{Z}_{7}^{*}}}{\boldsymbol{\left\langle -1\right\rangle }},\cdot$
+\end_inset
+
+: tenemos que 
+\begin_inset Formula $H=\left\langle -1\right\rangle =\left\{ 1,-1\right\} $
+\end_inset
+
+.
+ Ahora, 
+\begin_inset Formula $a\equiv b\mod H\iff ab^{-1}\in H\iff ab^{-1}=1,-1\iff b=\pm x$
+\end_inset
+
+ Entonces 
+\begin_inset Formula $H1=\left\{ 1,6\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $H2=\left\{ 2,5\right\} ,\ H3=\left\{ 3,4\right\} $
+\end_inset
+
+.
+ Es decir, hay dos clases de equivalencia.
+ La tabla queda
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $\frac{\boldsymbol{\mathbb{Z}_{16}}}{\boldsymbol{\left\langle -1\right\rangle }},+$
+\end_inset
+
+: igual, la tabla trivial.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{\frac{\mathbb{Z}_{16}^{*}}{\left\langle -1\right\rangle },\cdot}$
+\end_inset
+
+: 
+\begin_inset Formula $\mathbb{Z}_{16}^{*}=\left\{ 1,3,5,7,9,11,13,15\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $H=\left\{ 1,15\right\} $
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $H1=\left\{ 1,15\right\} ,\ H3=\left\{ 3,13\right\} ,\ H5=\left\{ 5,11\right\} \ H7=\left\{ 7,9\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Construir el diagrama de los subgrupos de cada uno de los grupos de los
+ problemas 4.1.1, 4.2.1 y 4.3.1 indicando cuáles de ellos son normales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{\left(\mathbb{Z}_{7},+\right):}$
+\end_inset
+
+ por el teorema de Lagrange, el orden subgrupos de 
+\begin_inset Formula $\mathbb{Z}_{7}$
+\end_inset
+
+ debe ser divisor de 7.
+ Es decir, su orden es 1 o 7.
+ El único elemento que no genera todo el conjunto es 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\xymatrix{\mathbb{Z}_{7}\ar@{-}[d]\\
+0
+}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{\left(\mathbb{Z}_{7}^{*},\cdot\right):}$
+\end_inset
+
+ 
+\begin_inset Formula $\left\langle 1\right\rangle =\left\{ 1\right\} ,\ \left\langle 2\right\rangle =\left\{ 1,2,4\right\} ,\ \left\langle 3\right\rangle =\mathbb{Z}_{7}^{*},\ \left\langle 4\right\rangle =\left\{ 1,2,4\right\} =\left\langle 2\right\rangle ,\ \left\langle 5\right\rangle =\left\{ 1,2,3,4,5,6\right\} =\mathbb{Z}_{7}^{*},\ \left\langle 6\right\rangle =\left\{ 1,6\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left\langle 2,6\right\rangle =\mathbb{Z}_{7}^{*}$
+\end_inset
+
+ y realmente no hay más conjuntos que generen algo que nos aporte nueva
+ información.
+ Entonces
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\xymatrix{ & \mathbb{Z}_{7}^{*}\ar@{-}[dl]\ar@{-}[dr]\\
+\left\langle 2\right\rangle \ar@{-}[dr] &  & \left\langle 6\right\rangle \ar@{-}[dl]\\
+ & \left\langle 1\right\rangle 
+}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y todos son subgrupos normales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{\left(\mathbb{Z}_{16}^{*},\cdot\right):}$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbb{Z}_{16}^{*}=\left\{ 1,3,5,7,9,11,13,15\right\} $
+\end_inset
+
+,
+\begin_inset Formula $\left\langle 1\right\rangle =\left\{ 1\right\} ,\ \left\langle 3\right\rangle =\left\{ 1,3,9,11\right\} ,\ \left\langle 5\right\rangle =\left\{ 1,5,9,13\right\} ,\ \left\langle 7\right\rangle =\left\{ 1,7\right\} ,\ \left\langle 9\right\rangle =\left\{ 1,9\right\} ,\ \left\langle 11\right\rangle =\left\{ 1,3,9,11\right\} =\left\langle 3\right\rangle ,\ \left\langle 13\right\rangle =\left\{ 1,5,9,13\right\} =\left\langle 5\right\rangle ,\ \left\langle 15\right\rangle =\left\{ 1,15\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Veamos los subgrupos generados por varios elementos, 
+\begin_inset Formula $\left\langle 3,5\right\rangle =\left\langle 3,7\right\rangle =\left\langle 3,15\right\rangle =\left\langle 5,7\right\rangle =\left\langle 5,15\right\rangle =\mathbb{Z}_{16}^{*}$
+\end_inset
+
+, porque generan conjuntos de al menos 5 elementos.
+ El teorema de Lagrange implica que deben generar el total.
+ Los únicos que quedan y podrían aportar algo de información son
+\begin_inset Formula $\left\langle 9,15\right\rangle =\left\langle 1,7,9,15\right\rangle ,\ \left\langle 7,9\right\rangle =\left\{ 1,7,9,15\right\} ,\ \left\langle 7,15\right\rangle =\left\{ 1,7,9,15\right\} $
+\end_inset
+
+.
+ Y ya está.
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\xymatrix{ & \mathbb{Z}_{7}^{*}\ar@{-}[dl]\ar@{-}[dr]\ar@{-}[d]\\
+\left\langle 3\right\rangle \ar@{-}[d] & \left\langle 5\right\rangle \ar@{-}[dl] & \left\langle 9,15\right\rangle \ar@{-}[dll]\ar@{-}[dl]\ar@{-}[d]\\
+\left\langle 9\right\rangle \ar@{-}[dr] & \left\langle 15\right\rangle \ar@{-}[d] & \left\langle 7\right\rangle \ar@{-}[dl]\\
+ & \left\langle 1\right\rangle 
+}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+todos son normales.
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que la intersección de una familia de subgrupos normales de un
+ grupo normal también es un subgrupo normal.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $N=\cap_{i\in I}N_{i}$
+\end_inset
+
+ el subgrupo intersección de subgrupos normales.
+\end_layout
+
+\begin_layout Standard
+Entonces, se tiene que 
+\begin_inset Formula $\forall x\in G$
+\end_inset
+
+, 
+\begin_inset Formula $x^{-1}N_{i}x=N_{i},\ \forall i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces, dado 
+\begin_inset Formula $a\in N$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $a\in N_{i},\forall i$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $x^{-1}ax\in N_{i},\ \forall i$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $x^{-1}ax\in N$
+\end_inset
+
+.
+ Es decir 
+\begin_inset Formula $x^{-1}Nx\subset N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por la proposición 4.9, tenemos el resultado.
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que todo subgrupo de un subgrupo cíclico normal de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es normal en 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $N$
+\end_inset
+
+ el subgrupo normal, 
+\begin_inset Formula $N=\left\langle a\right\rangle $
+\end_inset
+
+.
+ Entonces, dado 
+\begin_inset Formula $g\in G$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula $a^{g}\in N\implies a^{g}=a^{r},\ r\in\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $H$
+\end_inset
+
+ subgrupo de 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $H$
+\end_inset
+
+ es cíclico generado por algún 
+\begin_inset Formula $a^{n},\ n\in\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado 
+\begin_inset Formula $h\in H=\left\langle a^{n}\right\rangle $
+\end_inset
+
+, entonces 
+\begin_inset Formula $h=\left(a^{n}\right)^{m}=a^{nm}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula 
+\[
+h^{g}=\left(a^{nm}\right)^{g}=g^{-1}a\overset{\left(nm\right)}{...}ag=g^{-1}a\left(gg^{-1}\right)a...a\left(gg^{-1}\right)ag=\left(g^{-1}ag\right)\left(g^{-1}ag\right)\overset{nm}{...}\left(g^{-1}ag\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(g^{-1}ag\right)^{nm}=\left(a^{r}\right)^{nm}=a^{rnm}=\left(a^{n}\right)^{rm}\in H
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y 
+\begin_inset Formula $H$
+\end_inset
+
+ es normal.
+\end_layout
+
+\begin_layout Subsubsection
+Sean 
+\begin_inset Formula $\boldsymbol{N,M}$
+\end_inset
+
+ subgrupos normales de un grupo tales 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\boldsymbol{N\cap M=\left\{ 1\right\} }$
+\end_inset
+
+.
+ Probar que 
+\begin_inset Formula $\boldsymbol{nm=mn,\ \forall n\in N,m\in M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es lo mismo que demostrar que 
+\begin_inset Formula $m^{-1}nm=n$
+\end_inset
+
+, que es lo mismo que demostrar que 
+\begin_inset Formula $m^{-1}nmn^{-1}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $N$
+\end_inset
+
+ es normal, entonces 
+\begin_inset Formula $m^{-1}nm\in N$
+\end_inset
+
+, y 
+\begin_inset Formula $n\in N$
+\end_inset
+
+, entonces 
+\begin_inset Formula $m^{-1}nmn^{-1}\in N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $M$
+\end_inset
+
+ es normal, entonces 
+\begin_inset Formula $nmn^{-1}\in M$
+\end_inset
+
+ y 
+\begin_inset Formula $m^{-1}\in M$
+\end_inset
+
+, entonces 
+\begin_inset Formula $m^{-1}nmn^{-1}\in M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como en la intersección solo está el uno, entonces ha de ser 
+\begin_inset Formula $m^{-1}nmn^{-1}=1$
+\end_inset
+
+, como queríamos ver.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsubsection}{6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Si 
+\begin_inset Formula $\boldsymbol{N}$
+\end_inset
+
+ es un subgrupo normal en un grupo 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{a\in G}$
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+, probar que el orden de 
+\begin_inset Formula $\boldsymbol{Na\ en\ G/N}$
+\end_inset
+
+ es un divisor de 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $m=\left|Na\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a^{n}=1\implies\left(Na\right)^{n}=Na^{n}=N=1_{G/N}\iff m=\left|Na\right||n$
+\end_inset
+
+, como queríamos ver.
+ 
+\end_layout
+
+\begin_layout Subsection
+Homomorfismos de grupo y Teoremas de Isomorfía
+\end_layout
+
+\begin_layout Subsubsection
+Si 
+\begin_inset Formula $\boldsymbol{G,H}$
+\end_inset
+
+ son grupos, 
+\begin_inset Formula $\boldsymbol{Hom\left(G,H\right)}$
+\end_inset
+
+ denota el conjunto de los homomorfismos de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ a 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) Demostrar que si 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ es abeliano, entonces 
+\begin_inset Formula $\boldsymbol{Hom\left(G,H\right)}$
+\end_inset
+
+ es un grupo con la operación natural:
+\begin_inset Formula 
+\[
+\boldsymbol{\left(fg\right)\left(a\right)=f\left(a\right)g\left(a\right),\ a\in G}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Antes de nada tenemos que ver que el producto de dos homomorfismos es un
+ homomorfismo.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula 
+\[
+fg\left(ab\right)=f\left(ab\right)g\left(ab\right)\overset{f,g\ hom}{=}f\left(a\right)f\left(b\right)g\left(a\right)g\left(b\right)\overset{H\ abel}{=}f\left(a\right)g\left(a\right)f\left(b\right)g\left(b\right)=fg\left(a\right)fg\left(b\right)\ \checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Y ahora veamos que se forma un grupo:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Asociativa
+\begin_inset Formula 
+\[
+\left(fg\right)h\left(a\right)=fg\left(a\right)h\left(a\right)=f\left(a\right)g\left(a\right)h\left(a\right)=f\left(a\right)gh\left(a\right)=f\left(gh\right)\left(a\right)\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Neutro
+\begin_inset Formula 
+\[
+f1\left(a\right)=f\left(a\right)1\left(a\right)=f\left(a\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+1f\left(a\right)=1\left(a\right)f\left(a\right)=f\left(a\right)\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Inverso, si definimos 
+\begin_inset Formula $g\left(a\right)=f\left(a\right)^{-1}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $g\left(ab\right)=f\left(ab\right)^{-1}=\left(f\left(a\right)f\left(b\right)\right)^{-1}=f\left(b\right)^{-1}f\left(a\right)^{-1}=f\left(a\right)^{-1}f\left(b\right)^{-1}=g\left(a\right)g\left(a\right)$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $g$
+\end_inset
+
+ es un homomorfismo, y tenemos que
+\begin_inset Formula 
+\[
+fg\left(a\right)=f\left(a\right)g\left(a\right)=f\left(a\right)f\left(a\right)^{-1}=1=f\left(a\right)^{-1}f\left(a\right)=g\left(a\right)f\left(a\right)=gf\left(a\right)\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Conmutativa
+\begin_inset Formula 
+\[
+fg\left(a\right)=f\left(a\right)g\left(a\right)=g\left(a\right)f\left(a\right)=gf\left(a\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) Demostrar que si 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es abeliano, entonces 
+\begin_inset Formula $\boldsymbol{Hom\left(\mathbb{Z},G\right)\simeq G}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{Hom\left(\mathbb{Z}_{n},G\right)\simeq\left\{ g\in G:g^{n}=e\right\} }$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $\mathbb{Z}=\left\langle 1\right\rangle $
+\end_inset
+
+, por tanto, dado un homomorfismo 
+\begin_inset Formula $f$
+\end_inset
+
+, conociendo 
+\begin_inset Formula $f\left(1\right)$
+\end_inset
+
+ conocemos toda la imagen, pues (notación aditiva) 
+\begin_inset Formula $f\left(n\right)=nf\left(1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Tomamos entonces
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+Hom\left(\mathbb{Z},G\right) & \overset{\psi}{\rightarrow} & G\\
+f & \mapsto & f\left(1\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Es inyectiva porque si dos homomorfismos coinciden en el 1, entonces coinciden
+ en toda la imagen, por lo explicado antes.
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado 
+\begin_inset Formula $x\in G$
+\end_inset
+
+, definimos 
+\begin_inset Formula $f\left(n\right)=nx$
+\end_inset
+
+, ¿es un homomorfismo?
+\begin_inset Formula 
+\[
+f\left(n+m\right)=\left(n+m\right)x=nx+mx=f\left(n\right)+f\left(m\right)\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Luego 
+\begin_inset Formula $f\left(1\right)=x$
+\end_inset
+
+.
+ Y tenemos que 
+\begin_inset Formula $\psi$
+\end_inset
+
+ es una biyección y tenemos la equivalencia buscada.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora 
+\begin_inset Formula $\mathbb{Z}_{n}=\left\langle 1\right\rangle $
+\end_inset
+
+, también.
+ Vamos a tomar la misma aplicación
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+Hom\left(\mathbb{Z},G\right) & \overset{\psi}{\rightarrow} & G\\
+f & \mapsto & f\left(1\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Es inyectiva por la misma razón que antes.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea ahora 
+\begin_inset Formula $x\in Im\psi\implies\exists f\in Hom\left(\mathbb{Z},G\right)/f\left(1\right)=\psi\left(f\right)=x$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+1=f\left(0\right)=f\left(n\cdot1\right)=f\left(1+\overset{n}{...}+1\right)=f\left(1\right)\cdot\overset{n}{...}\cdot f\left(1\right)=f\left(1\right)^{n}=x^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+O sea, que 
+\begin_inset Formula $Imf\subset\left\{ x\in G:x^{n}=1\right\} =A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora, dado 
+\begin_inset Formula $x\in A$
+\end_inset
+
+, entonces 
+\begin_inset Formula $x^{n}=1$
+\end_inset
+
+, definimos 
+\begin_inset Formula $f:\mathbb{Z}_{n}\rightarrow G$
+\end_inset
+
+, de la forma 
+\begin_inset Formula $f\left(a\right)=x^{a}$
+\end_inset
+
+.
+ ¿Está bien definido?
+\end_layout
+
+\begin_layout Standard
+\align left
+Sean 
+\begin_inset Formula $a+\left(n\right)=b+\left(n\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $b-a\in\left(n\right)\implies b-a=nt,\ t\in\mathbb{Z}$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+f\left(b+\left(n\right)\right)=x^{b}=x^{a+nt}=x^{a}\left(x^{n}\right)^{t}=x^{a}=f\left(a+\left(n\right)\right)\ \checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Como queríamos ver.
+ Y claramente es homomorfismo.
+ Luego queda probado el resultado.
+\end_layout
+
+\begin_layout Subsubsection
+Un subgrupo 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ del grupo 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es característico si, para cualquier automorfismo 
+\begin_inset Formula $\boldsymbol{f}$
+\end_inset
+
+ de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+, se verifica 
+\begin_inset Formula $\boldsymbol{f\left(H\right)\subseteq H}$
+\end_inset
+
+.
+ Se pide:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) Demostrar que todo subgrupo característico de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es un subgrupo normal de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Debe ser 
+\begin_inset Formula $g^{-1}Hg\in H,\ \forall g\in G$
+\end_inset
+
+.
+ Esto son los automorfismos internos.
+ Por tanto, los subgrupos característico son normales.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) Dar un ejemplo de un grupo con un subgrupo normal que no sea característico
+\end_layout
+
+\begin_layout Standard
+En un grupo abeliano todo subgrupo es normal.
+\end_layout
+
+\begin_layout Standard
+Tomamos un grupo abeliano 
+\begin_inset Formula $G$
+\end_inset
+
+, y hacemos 
+\begin_inset Formula $G\times G$
+\end_inset
+
+.
+ Tomamos 
+\begin_inset Formula $H=G\times1$
+\end_inset
+
+, y tomamos el automorfismo 
+\begin_inset Formula $f\left(x,y\right)=\left(y,x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(3) Demostrar que si 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ es un subgrupo característico de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ es un subgrupo característico de 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ es un subgrupo característico de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $f$
+\end_inset
+
+ un automorfismo de 
+\begin_inset Formula $G$
+\end_inset
+
+, entonces 
+\begin_inset Formula $f_{H}$
+\end_inset
+
+ es un automorfismo de 
+\begin_inset Formula $H$
+\end_inset
+
+, ya que 
+\begin_inset Formula $f\left(H\right)\subset H$
+\end_inset
+
+, por ser 
+\begin_inset Formula $H$
+\end_inset
+
+ característico y 
+\begin_inset Formula $\left|f\left(H\right)\right|=\left|H\right|$
+\end_inset
+
+, por ser 
+\begin_inset Formula $f$
+\end_inset
+
+ automorfismo.
+\end_layout
+
+\begin_layout Standard
+Entonces 
+\begin_inset Formula $f_{H}\left(K\right)\subset K$
+\end_inset
+
+, por ser 
+\begin_inset Formula $K$
+\end_inset
+
+ característico en 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ Pero 
+\begin_inset Formula $f\left(K\right)=f_{H}\left(K\right)$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $K$
+\end_inset
+
+ es característico en 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(4) Si 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ es un sugrupo característico de 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ es un subgrupo normal de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ es normal en 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $g\in G,\ \text{¿}g^{-1}Hg\subset H?$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sabemos que 
+\begin_inset Formula $g^{-1}Kg=K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces 
+\begin_inset Formula $i_{g}\in Aut\left(K\right)$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $H$
+\end_inset
+
+ es subgrupo característico de 
+\begin_inset Formula $K$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $g^{-1}Hg=i_{g}\left(H\right)\subset H\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(5) Demostrar que el centro de un grupo es un subgrupo característico.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $f$
+\end_inset
+
+ un automorfismo de 
+\begin_inset Formula $G$
+\end_inset
+
+, ¿se tiene 
+\begin_inset Formula $f\left(Z\left(G)\right)\right)\subset Z\left(G\right)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Para que se dé la inclusión, ha de cumplirse que, dado 
+\begin_inset Formula $a\in Z\left(G\right)$
+\end_inset
+
+, se verifique 
+\begin_inset Formula $f\left(a\right)b=bf\left(a\right),\ \forall b\in G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $f$
+\end_inset
+
+ es automorfismo, es sobreyectiva, entonces 
+\begin_inset Formula $\exists g\in G/f\left(g\right)=b$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+f\left(a\right)b=f\left(a\right)f\left(g\right)=f\left(ag\right)=f\left(ga\right)=f\left(g\right)f\left(a\right)=bf\left(a\right)
+\]
+
+\end_inset
+
+ como queríamos ver.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(6) Supongamos que 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ es el único subgrupo de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ con el mismo cardinal que 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ es característico en 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $f\in Aut\left(G\right)\implies f\left(H\right)\subset H\ y\ \left|f\left(H\right)\right|=\left|H\right|\implies f\left(H\right)=H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que si 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es 
+\begin_inset Formula $\boldsymbol{D_{4}}$
+\end_inset
+
+ o el grupo de cuaterniones 
+\begin_inset Formula $\boldsymbol{Q_{8}}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{Z\left(G\right)\simeq\mathbb{Z}_{2}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{\frac{G}{Z\left(G\right)}\simeq\mathbb{Z}_{2}\times\mathbb{Z}_{2}}$
+\end_inset
+
+, y sin embargo 
+\begin_inset Formula $\boldsymbol{D_{4}\not\simeq Q_{8}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+D_{4}=\left\{ 1,a,a^{2},a^{3},b,ab,a^{2}b,a^{3}b\right\} ,\ a^{4}=b^{2}=1,\ ba=a^{3}b=a^{-1}b
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Q_{8}=\left\{ 1,A,A^{2},A^{3},B,AB,A^{2}B,A^{3}B\right\} ,\ A^{4}=1,\ B^{2}=A^{2},\ BA=A^{3}B
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $ba^{i}=a^{-1}ba^{i-1}=a^{-i}b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $ba^{2}=a^{-2}b=a^{2}b$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Y en 
+\begin_inset Formula $Q_{8}$
+\end_inset
+
+ ocurre lo mismo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es decir, que 
+\begin_inset Formula $a^{2}\in Z\left(D_{4}\right)=\left\{ 1,a^{2}\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $A^{2}\in Z\left(Q_{8}\right)=\left\{ 1,A^{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $a\notin Z\left(D_{4}\right)$
+\end_inset
+
+ porque 
+\begin_inset Formula $ba=a^{-1}b\neq ab$
+\end_inset
+
+, por la misma razón 
+\begin_inset Formula $a^{-1},b\notin Z\left(D_{4}\right)$
+\end_inset
+
+.
+ Y 
+\begin_inset Formula $aba=aa^{-1}b=b\neq a^{2}b$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $ab\notin Z\left(G\right)$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $a^{2}$
+\end_inset
+
+ si está en el centro y 
+\begin_inset Formula $b$
+\end_inset
+
+ no, entonces 
+\begin_inset Formula $a^{2}b$
+\end_inset
+
+ no puede estar, y de igual forma no puede estarlo 
+\begin_inset Formula $a^{3}b=a^{2}ab$
+\end_inset
+
+, pues 
+\begin_inset Formula $a^{2}$
+\end_inset
+
+ está pero 
+\begin_inset Formula $ab$
+\end_inset
+
+ no.
+\end_layout
+
+\begin_layout Standard
+\align left
+Razonando de forma análoga vemos que 
+\begin_inset Formula $Z\left(Q_{8}\right)=\left\{ 1,A^{2}\right\} .$
+\end_inset
+
+ Y tenemos trivialmente la isomorfía 
+\begin_inset Formula $Z\left(G\right)\simeq\mathbb{Z}_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora
+\begin_inset Formula 
+\[
+\frac{D_{4}}{\left\langle a^{2}\right\rangle }=\left\{ \overline{1},\overline{a},\overline{b},\overline{a}\overline{b}\right\} 
+\]
+
+\end_inset
+
+ y se tiene que 
+\begin_inset Formula $\overline{a}^{2}=\overline{a^{2}}=1$
+\end_inset
+
+ y 
+\begin_inset Formula $b^{2}=a^{2},$
+\end_inset
+
+ por lo que 
+\begin_inset Formula $\overline{b}^{2}=1$
+\end_inset
+
+.
+ Y 
+\begin_inset Formula $\overline{b}\overline{a}=\overline{ba}=\overline{a^{3}b}=\overline{ab}=\overline{a}\overline{b}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora, haciendo la asociación 
+\begin_inset Formula $\left(0,0\right)\mapsto\overline{1},\quad\left(0,1\right)\mapsto\overline{b},\quad\left(1,0\right)\mapsto\overline{a},\quad\left(1,1\right)\mapsto\overline{ab}$
+\end_inset
+
+, tenemos el isomorfismo buscado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Y en el 
+\begin_inset Formula $Q_{8}$
+\end_inset
+
+ ocurre exactamente lo mismo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Resta ver que 
+\begin_inset Formula $D_{4}\not\simeq Q_{8}$
+\end_inset
+
+.
+ Para esto, nos vamos a fijar en los órdenes de los elementos de cada grupo:
+\begin_inset Formula 
+\[
+\left|a\right|=4=\left|a^{3}\right|,\ \left|a^{2}\right|=\left|b\right|=\left|ab\right|=\left|a^{2}b\right|=\left|a^{3}b\right|=2
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|A\right|=4=\left|A^{3}\right|,\ \left|A^{2}\right|=2,\ \left|B\right|=4
+\]
+
+\end_inset
+
+ y aquí podemos parar.
+ Ya que el primer grupo tiene 2 elementos de orden 4, y el segundo tiene,
+ al menos, 3.
+ Esto implica que no pueden ser isomorfos.
+\end_layout
+
+\begin_layout Subsubsection
+Probar que, salvo isomorfismos, solo hay dos grupos no abelianos de orden
+ 8.
+ ¿Cuáles son?
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $G$
+\end_inset
+
+ un grupo no abeliano de orden 8.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Exp\left(G\right)=min\left\{ n\in\mathbb{N}/g^{n}=1,\ \forall g\in G\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Debe ser 
+\begin_inset Formula $Exp\left(G\right)|8\implies Exp\left(G\right)\in\left\{ 1,2,4,8\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+No puede ser 1, pues el único elemento sería el 1.
+\end_layout
+
+\begin_layout Standard
+No puede ser 8, porque entonces sería cíclico, y, por tanto, abeliano.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $Exp\left(G\right)=2\implies g^{2}=1\ \forall g\implies\left(gh\right)^{2}=1,\ \forall g,h\in G$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $hg=h^{-1}g^{-1}=\left(gh\right)^{-1}=gh$
+\end_inset
+
+.
+ Y 
+\begin_inset Formula $G$
+\end_inset
+
+ es abeliano.
+\end_layout
+
+\begin_layout Standard
+Por tanto, ha de ser 
+\begin_inset Formula $Exp\left(G\right)=4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G$
+\end_inset
+
+ tiene un elemento 
+\begin_inset Formula $a$
+\end_inset
+
+ de orden 4.
+ Se tiene que 
+\begin_inset Formula $\left\langle a\right\rangle _{4}\trianglelefteq G$
+\end_inset
+
+ y tiene índice 2, por lo que es normal.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $b\in G\setminus\left\langle a\right\rangle $
+\end_inset
+
+, como 
+\begin_inset Formula $a$
+\end_inset
+
+ tiene orden 4, entonces 
+\begin_inset Formula $\left\langle a,b\right\rangle =G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El orden de 
+\begin_inset Formula $b$
+\end_inset
+
+ debe ser divisor de 8, pero no puede ser 1 porque entonces 
+\begin_inset Formula $b\in\left\langle a\right\rangle $
+\end_inset
+
+, y no puede ser 8 porque entonces 
+\begin_inset Formula $G$
+\end_inset
+
+ es cíclico.
+ Es decir, 
+\begin_inset Formula $\left|b\right|=2\ ó\ 4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como el índice de 
+\begin_inset Formula $\left\langle a\right\rangle $
+\end_inset
+
+ es 2, entonces 
+\begin_inset Formula $b^{2}\in\left\langle a\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b^{2}=\begin{cases}
+1 & \left|b\right|=2\\
+a^{2} & \left|b\right|=4
+\end{cases}
+\]
+
+\end_inset
+
+ Si 
+\begin_inset Formula $\left|b\right|=4$
+\end_inset
+
+, entonces 
+\begin_inset Formula $b^{2}=a^{2}$
+\end_inset
+
+, porque 
+\begin_inset Formula $b^{2}\in\left\langle 1,a,a^{2},a^{3}\right\rangle $
+\end_inset
+
+, con 
+\begin_inset Formula $\left|1\right|=1,\ \left|a^{2}\right|=2$
+\end_inset
+
+ y 
+\begin_inset Formula $\left|a\right|=\left|a^{3}\right|=4$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $\left|b^{2}\right|=2$
+\end_inset
+
+, debe ser 
+\begin_inset Formula $b^{2}=a^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Solo falta calcular 
+\begin_inset Formula $b^{-1}ab$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Debe ser 
+\begin_inset Formula $\left|b^{-1}ab\right|=\left|a\right|=4$
+\end_inset
+
+, luego 
+\begin_inset Formula $b^{-1}ab=a\ ó\ a^{3}$
+\end_inset
+
+, pero no puede ser 
+\begin_inset Formula $a$
+\end_inset
+
+, pues en tal caso 
+\begin_inset Formula $G$
+\end_inset
+
+ sería abeliano, porque 
+\begin_inset Formula $ab=bb^{-1}ab=ba$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Luego ha de ser 
+\begin_inset Formula $a^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Recapitulando, 
+\begin_inset Formula $G$
+\end_inset
+
+ es un grupo de orden 8, que no es abeliano, tiene exponente 4, por lo que
+ 
+\begin_inset Formula $\exists a\in G/\left|a\right|=4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Además, 
+\begin_inset Formula $\forall b\notin\left\langle a\right\rangle ,$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula $b^{-1}ab=a^{-1}$
+\end_inset
+
+ y 
+\begin_inset Formula $b^{2}=\begin{cases}
+1\\
+a^{2}
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En el primer caso de esta última igualdad, el grupo será isomorfo a 
+\begin_inset Formula $D_{4}$
+\end_inset
+
+ y en el segundo lo es a 
+\begin_inset Formula $Q_{8}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Probar que todo grupo no abeliano de orden 6 es isomorfo a 
+\begin_inset Formula $\boldsymbol{S_{3}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como en el ejercicio anterior, ha de ser 
+\begin_inset Formula $Exp\left(G\right)\in\left\{ 1,2,3,6\right\} $
+\end_inset
+
+, no puede ser ni 1 ni 2 ni 6 por los mismos razonamientos que antes.
+ Por lo que debe ser 3.
+\end_layout
+
+\begin_layout Standard
+Es decir, 
+\begin_inset Formula $G$
+\end_inset
+
+ tiene, al menos, un elemento 
+\begin_inset Formula $a$
+\end_inset
+
+ de orden 3.
+ Se tiene que 
+\begin_inset Formula $\left\langle a\right\rangle _{4}\trianglelefteq G$
+\end_inset
+
+ y tiene índice 2, por lo que es normal.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $b\in G\setminus\left\langle a\right\rangle $
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $\left\langle a,b\right\rangle =G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El orden de 
+\begin_inset Formula $b$
+\end_inset
+
+ debe dividir a 6, pero no puede ser 1 porque entonces 
+\begin_inset Formula $b\in\left\langle a\right\rangle $
+\end_inset
+
+ y no puede ser 6 porque entonces 
+\begin_inset Formula $G$
+\end_inset
+
+ sería cíclico.
+ Ha de ser 
+\begin_inset Formula $\left|b\right|=2\ ó\ 3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como el índice de 
+\begin_inset Formula $\left\langle a\right\rangle $
+\end_inset
+
+ es 2, entonces 
+\begin_inset Formula $b^{2}\in\left\langle a\right\rangle =\left\{ 1,a,a^{2}\right\} $
+\end_inset
+
+, con 
+\begin_inset Formula $\left|1\right|=1,\ \left|a\right|=3,\ \left|a^{2}\right|=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si el orden de 
+\begin_inset Formula $b$
+\end_inset
+
+ es 
+\begin_inset Formula $2$
+\end_inset
+
+, entonces el orden de 
+\begin_inset Formula $b^{2}=1$
+\end_inset
+
+ es 1.
+\end_layout
+
+\begin_layout Standard
+Si el orden de 
+\begin_inset Formula $b$
+\end_inset
+
+ es 
+\begin_inset Formula $3$
+\end_inset
+
+, entonces el orden de 
+\begin_inset Formula $b^{2}$
+\end_inset
+
+ debe ser, también, 3.
+\end_layout
+
+\begin_layout Standard
+Si fuera 
+\begin_inset Formula $b^{2}=a$
+\end_inset
+
+, entonces 
+\begin_inset Formula $ab^{-1}=b=b^{-1}a\implies ab=ab^{-1}a=ba$
+\end_inset
+
+, por lo que esto no puede ser.
+\end_layout
+
+\begin_layout Standard
+Si fuera 
+\begin_inset Formula $b^{2}=a^{2}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $b=b^{2}b^{2}=a^{2}b^{2}\implies1=a^{2}b\implies b=\left(a^{2}\right)^{-1}=a\#$
+\end_inset
+
+ Esto tampoco puede ser, pues 
+\begin_inset Formula $b\notin\left\langle a\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es decir, que la única posibilidad es que 
+\begin_inset Formula $\left|b\right|=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es decir, que cualquier grupo no abeliano de orden 6 es de la forma
+\begin_inset Formula 
+\[
+\left\{ 1,a,a^{2},b,c,d\right\} 
+\]
+
+\end_inset
+
+ con 
+\begin_inset Formula $\left|b\right|=\left|c\right|=\left|d\right|=2,\ a^{3}=1$
+\end_inset
+
+, por lo que es isomorfo a 
+\begin_inset Formula $S_{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que si 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ es un subgrupo abeliano de un grupo 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\boldsymbol{HZ\left(G\right)=G}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es abeliano.
+ Deducir que si 
+\begin_inset Formula $\boldsymbol{\frac{G}{Z\left(G\right)}}$
+\end_inset
+
+ es cíclico, entonces 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es abeliano.
+\end_layout
+
+\begin_layout Standard
+\align left
+Dados 
+\begin_inset Formula $x,y\in G\implies\begin{cases}
+x=hu\\
+y=kv
+\end{cases}h,k\in H,u,v\in Z\left(G\right)\implies xy=hu\cdot kv=hkuv=khvu=kvhu=yx\implies G\ abeliano$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Para la segunda afirmación:
+\end_layout
+
+\begin_layout Standard
+\align left
+Si tenemos 
+\begin_inset Formula $H=\left\langle g\right\rangle $
+\end_inset
+
+ cíclico, entonces es abeliano.
+ Y entonces
+\begin_inset Formula 
+\[
+x\in G\implies xZ\left(G\right)=\left(gZ\left(G\right)\right)^{n}=g^{n}Z\left(G\right)
+\]
+
+\end_inset
+
+ para algún 
+\begin_inset Formula $n\in\mathbb{Z}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+x=g^{n}z,\ g^{n}\in H,z\in Z\left(G\right)\implies G=HZ\left(G\right)
+\]
+
+\end_inset
+
+ y por lo anterior es abeliano.
+\end_layout
+
+\begin_layout Subsection
+El orden de un elemento de un grupo
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ un grupo cíclico y sea 
+\begin_inset Formula $\boldsymbol{g}$
+\end_inset
+
+ un generador de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+ Demostrar:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Si 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ tiene orden infinito entonces para cada grupo 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ y cada elemento 
+\begin_inset Formula $\boldsymbol{h\in H}$
+\end_inset
+
+ existe un único homomorfismo 
+\begin_inset Formula $\boldsymbol{f:G\rightarrow H}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\boldsymbol{f\left(g\right)=h}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Supongamos que 
+\begin_inset Formula $k$
+\end_inset
+
+ es otro homomorfismo con 
+\begin_inset Formula $k\left(g\right)=h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces, como 
+\begin_inset Formula $G$
+\end_inset
+
+ es cíclico, todo elemento es de la forma 
+\begin_inset Formula $g^{j}$
+\end_inset
+
+ para cierto 
+\begin_inset Formula $j$
+\end_inset
+
+ natural.
+\end_layout
+
+\begin_layout Standard
+Por tanto, dado 
+\begin_inset Formula $a\in G,$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula 
+\[
+k\left(a\right)=k\left(g^{j}\right)=\left(k\left(g\right)\right)^{j}=\left(f\left(g\right)\right)^{j}=f\left(g^{j}\right)=f\left(a\right)
+\]
+
+\end_inset
+
+ y 
+\begin_inset Formula $k=f$
+\end_inset
+
+.
+ Por tanto, en caso de existir, es único.
+\end_layout
+
+\begin_layout Standard
+Además, existe pues la aplicación dada por 
+\begin_inset Formula $f\left(g^{j}\right)=h^{j}$
+\end_inset
+
+ es claramente un homomorfismo.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Si 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ tiene orden finito 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ entonces para cada grupo 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ y cada elemento 
+\begin_inset Formula $\boldsymbol{h\in H}$
+\end_inset
+
+ las siguientes condiciones son equivalentes:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ es múltiplo del orden de 
+\begin_inset Formula $\boldsymbol{h}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+existe un homomorfismo 
+\begin_inset Formula $\boldsymbol{f:G\rightarrow H}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\boldsymbol{f\left(g\right)=h}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+existe un único homomorfismo 
+\begin_inset Formula $\boldsymbol{f:G\rightarrow H}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\boldsymbol{f\left(g\right)=h}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\left(a\right)\implies\left(b\right)$
+\end_inset
+
+' Sea 
+\begin_inset Formula $m$
+\end_inset
+
+ el orden de 
+\begin_inset Formula $h$
+\end_inset
+
+ y 
+\begin_inset Formula $f$
+\end_inset
+
+ dada por 
+\begin_inset Formula $f\left(g^{k}\right)=h^{\left\lfloor k\right\rfloor _{m}}$
+\end_inset
+
+.
+ Entonces, dados 
+\begin_inset Formula $a,b\in G$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula $a=g^{i},\ b=g^{j}$
+\end_inset
+
+, luego
+\begin_inset Formula 
+\[
+f\left(a\right)f\left(b\right)=f\left(g^{i}\right)f\left(g^{j}\right)=h^{\left\lfloor i\right\rfloor _{m}}h^{\left\lfloor j\right\rfloor _{m}}=h^{\left\lfloor i+j\right\rfloor _{m}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f\left(ab\right)=f\left(g^{i}g^{j}\right)=f\left(g^{\left\lfloor i+j\right\rfloor _{n}}\right)=h^{\left\lfloor \left\lfloor i+j\right\rfloor _{n}\right\rfloor _{m}}=h^{\left\lfloor i+j\right\rfloor _{m}}
+\]
+
+\end_inset
+
+ esta igualdad se debe que 
+\begin_inset Formula $m|n$
+\end_inset
+
+.
+ Por lo que es un homomorfismo, y existe.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\left(b\right)\implies\left(c\right)$
+\end_inset
+
+' Supongamos que 
+\begin_inset Formula $k$
+\end_inset
+
+ es otro homomorfismo con 
+\begin_inset Formula $k\left(g\right)=h$
+\end_inset
+
+.
+ Entonces, como todo 
+\begin_inset Formula $a\in G$
+\end_inset
+
+ es 
+\begin_inset Formula $a=g^{j}$
+\end_inset
+
+, tenemos que
+\begin_inset Formula 
+\[
+k\left(a\right)=k\left(g^{j}\right)=\left(k\left(g\right)\right)^{j}=\left(f\left(g\right)\right)^{j}=f\left(g^{j}\right)=f\left(a\right)
+\]
+
+\end_inset
+
+ y el homomorfismo es único.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\left(c\right)\implies\left(a\right)$
+\end_inset
+
+' Tenemos que 
+\begin_inset Formula $h^{n}=f\left(g\right)^{n}=f\left(g^{n}\right)=f\left(1\right)=1$
+\end_inset
+
+, por lo que el orden de 
+\begin_inset Formula $h$
+\end_inset
+
+ divide a 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Demostrar que si 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es cíclico infinito entonces 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ tiene exactamente dos generadores, es decir, existen exactamente dos elementos
+ 
+\begin_inset Formula $\boldsymbol{g\in G}$
+\end_inset
+
+ que verifican 
+\begin_inset Formula $\boldsymbol{G=\left\langle g\right\rangle }$
+\end_inset
+
+.
+ Decid cuáles son en función de un generador 
+\begin_inset Formula $\boldsymbol{a\in G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado un generador 
+\begin_inset Formula $a\in G$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a^{-1}$
+\end_inset
+
+ también es generador.
+\end_layout
+
+\begin_layout Standard
+\align left
+Veámoslo, dado 
+\begin_inset Formula $g\in G$
+\end_inset
+
+, entonces 
+\begin_inset Formula $g=a^{n}$
+\end_inset
+
+, en particular, 
+\begin_inset Formula $a^{-1}=a^{m}$
+\end_inset
+
+, luego 
+\begin_inset Formula $a^{-m}=a\implies\left(a^{-1}\right)^{m}=a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $g=\left(a^{-1}\right)^{mn},\ \forall g\in G$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $a^{-1}$
+\end_inset
+
+ es generador.
+\end_layout
+
+\begin_layout Standard
+\align left
+Obsérvese que no puede haber generadores que sean su propio inverso, ya
+ que entonces 
+\begin_inset Formula $aa=a^{2}=1$
+\end_inset
+
+, por lo que el orden de 
+\begin_inset Formula $a$
+\end_inset
+
+ es 2 o 
+\begin_inset Formula $1$
+\end_inset
+
+ (si 
+\begin_inset Formula $a=1$
+\end_inset
+
+) y 
+\begin_inset Formula $a$
+\end_inset
+
+ no es generador, si excluimos, claro 
+\begin_inset Formula $\left\{ 1\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $\left\{ 1,a\right\} $
+\end_inset
+
+, que son finitos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, todo grupo cíclico tiene, al menos, dos generadores.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que hay más generadores.
+ Sea 
+\begin_inset Formula $b$
+\end_inset
+
+ uno de estos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $G$
+\end_inset
+
+ es cíclico, entonces es isomorfo a 
+\begin_inset Formula $\left(\mathbb{Z},+\right)$
+\end_inset
+
+, y sabemos que 1 es generador, también sabemos que 
+\begin_inset Formula $-1$
+\end_inset
+
+ lo es, como hemos visto.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que la isomorfía nos da la imagen de 
+\begin_inset Formula $b$
+\end_inset
+
+ como 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $\exists m/mk=1$
+\end_inset
+
+, luego 
+\begin_inset Formula $k|1$
+\end_inset
+
+ y 
+\begin_inset Formula $k\neq1$
+\end_inset
+
+.
+ Esto no puede ser.
+\end_layout
+
+\begin_layout Subsubsection
+La función 
+\begin_inset Formula $\boldsymbol{\phi:\mathbb{N}\rightarrow\mathbb{N}}$
+\end_inset
+
+ que asocia a cada número 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ el cardinal de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{n}^{*}}$
+\end_inset
+
+ se llama función de Euler.
+ Demostrar que:
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+(1) Si 
+\begin_inset Formula $\boldsymbol{n,m}$
+\end_inset
+
+ son coprimos, entonces 
+\begin_inset Formula $\boldsymbol{\phi\left(nm\right)=\phi\left(n\right)\phi\left(m\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el teorema chino de los restos:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+\mathbb{Z}_{nm}\simeq\mathbb{Z}_{n}\times\mathbb{Z}_{m}\implies\mathbb{Z}_{nm}^{*}\simeq\mathbb{Z}_{n}^{*}\times\mathbb{Z}_{m}^{*}
+\]
+
+\end_inset
+
+ Luego 
+\begin_inset Formula 
+\[
+\phi\left(nm\right)=\left|\mathbb{Z}_{nm}^{*}\right|=\left|\mathbb{Z}_{n}^{*}\right|\left|\mathbb{Z}_{m}^{*}\right|=\phi\left(n\right)\phi\left(m\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+(2) Si 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ es primo, entonces 
+\begin_inset Formula $\boldsymbol{\phi\left(p^{n}\right)=p^{n-1}\left(p-1\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+\mathbb{Z}_{p^{n}}^{*}=\left\{ a\in\mathbb{Z}_{p^{n}}:\left(a,p^{n}\right)=1\right\} 
+\]
+
+\end_inset
+
+ Los múltiplos de 
+\begin_inset Formula $p$
+\end_inset
+
+ en 
+\begin_inset Formula $\mathbb{Z}_{p^{n}}$
+\end_inset
+
+ son 
+\begin_inset Formula $0,p,2p,3p,...,\left(p-1\right)p,p^{2},...,p^{n-1},2p^{n-1},...,\left(p-1\right)p^{n-1}$
+\end_inset
+
+.
+ O sea, que para cada potencia de 
+\begin_inset Formula $p,$
+\end_inset
+
+ tenemos 
+\begin_inset Formula $p$
+\end_inset
+
+ múltiplos de 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Por tanto, hay 
+\begin_inset Formula $p^{n-1}$
+\end_inset
+
+ múltiplos de 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $\phi\left(p^{n}\right)=p^{n}-p^{n-1}=p^{n-1}\left(p-1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+(3) Si 
+\begin_inset Formula $\boldsymbol{n=p_{1}^{a_{1}}\cdot...\cdot p_{k}^{a_{k}}}$
+\end_inset
+
+ con 
+\begin_inset Formula $\boldsymbol{p_{i}}$
+\end_inset
+
+ primos entonces 
+\begin_inset Formula $\boldsymbol{\phi\left(n\right)=n\frac{p_{1}-1}{p_{1}}\cdot...\cdot\frac{p_{k}-1}{p_{k}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Aplicando 1 y después 2, sale 
+\begin_inset Formula 
+\[
+\phi\left(n\right)=\phi\left(p_{1}^{a_{1}}\right)\cdot...\cdot\phi\left(p_{k}^{a_{k}}\right)=p_{1}^{a_{1}-1}\left(p_{1}-1\right)\cdot...\cdot p_{k}^{a_{k}-1}\left(p_{k}-1\right)=p_{1}^{a_{1}}\frac{p_{1}-1}{p_{1}}\cdot...\cdot p_{k}^{a_{k}}\frac{p_{k}-1}{p_{k}}=n\frac{p_{1}-1}{p_{1}}\cdot...\cdot\frac{p_{k}-1}{p_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ un grupo cíclico de orden 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ generado por 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ tiene 
+\begin_inset Formula $\boldsymbol{\phi\left(\left|G\right|\right)}$
+\end_inset
+
+ generadores y describir cuáles son esos generadores en términos de 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $G\simeq\left(\mathbb{Z}_{n},+\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $a\in\mathbb{Z}_{n}\iff\left\langle a\right\rangle =a\mathbb{Z}_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $a$
+\end_inset
+
+ es generador de 
+\begin_inset Formula $\left(\mathbb{Z}_{n},+\right)$
+\end_inset
+
+ si, y solo si 
+\begin_inset Formula $a\mathbb{Z}_{n}=\mathbb{Z}_{n}$
+\end_inset
+
+ si, y solo si 
+\begin_inset Formula $a\in\mathbb{Z}_{n}^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Luego hay 
+\begin_inset Formula $\phi\left(\mathbb{Z}_{n}^{*}\right)=\left|\mathbb{Z}_{n}^{*}\right|$
+\end_inset
+
+ generadores.
+\end_layout
+
+\begin_layout Subsubsection
+Encontrar todos los grupos cíclicos 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+, salvo isomorfismos, que tengan exactamente dos generadores.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ es infinito, hemos visto en 1.5.2 que tiene dos generadores, y es isomorfo
+ a 
+\begin_inset Formula $\left(\mathbb{Z},+\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ es finito, por ser cíclico, es isomorfo a 
+\begin_inset Formula $\left(\mathbb{Z}_{n},+\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Por el ejercicio 1.5.3, sabemos que tendrá 
+\begin_inset Formula $\phi\left(n\right)$
+\end_inset
+
+ generadores.
+ O sea, buscamos 
+\begin_inset Formula $n/\phi\left(n\right)=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+La fórmula es 
+\begin_inset Formula 
+\[
+\phi\left(n\right)=n\prod_{p_{i}|n}\left(1-\frac{1}{p_{i}}\right)\ con\ p_{i}\ primo
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Los primos dan 
+\begin_inset Formula $\phi\left(p\right)=p-1$
+\end_inset
+
+, luego 
+\begin_inset Formula $\mathbb{Z}_{3}$
+\end_inset
+
+ sirve, y no sirve ningún 
+\begin_inset Formula $p>3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula 
+\[
+\phi\left(1\right)=1
+\]
+
+\end_inset
+
+ luego tampoco sirve.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula 
+\[
+\phi\left(4\right)=4\left(1-\frac{1}{2}\right)=4\cdot\frac{1}{2}=2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Por lo que 
+\begin_inset Formula $\mathbb{Z}_{4}$
+\end_inset
+
+ también funciona.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula 
+\[
+\phi\left(6\right)=6\left(1-\frac{1}{2}\right)\left(1-\frac{1}{3}\right)=6\frac{1}{2}\frac{2}{3}=2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Y 
+\begin_inset Formula $\mathbb{Z}_{6}$
+\end_inset
+
+ también vale.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Por otro lado, está la propiedad de que si 
+\begin_inset Formula $n=p_{1}^{a_{1}}\cdot...\cdot p_{k}^{a_{k}}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\phi\left(n\right)=n\frac{p_{1}-1}{p_{1}}\cdot...\cdot\frac{p_{k}-1}{p_{k}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Esto quiere decir que si 
+\begin_inset Formula $n>6$
+\end_inset
+
+, entonces:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Si 
+\begin_inset Formula $2|n$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $\phi\left(n\right)=n\frac{2-1}{2}\cdot...\cdot\frac{p_{k}-1}{p_{k}}=\frac{n}{2}\cdot...\cdot\frac{p_{k}-1}{p_{k}}\geq\frac{n}{2}>\frac{6}{3}=3>2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Si 
+\begin_inset Formula $3|n$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\phi\left(n\right)\geq n\frac{2}{3}>\frac{12}{3}=4>2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Y, en general si 
+\begin_inset Formula $p|n$
+\end_inset
+
+, con 
+\begin_inset Formula $p>3$
+\end_inset
+
+ y 
+\begin_inset Formula $n>6$
+\end_inset
+
+, entonces, si llamamos 
+\begin_inset Formula $k=\frac{n}{p}$
+\end_inset
+
+, tenemos 
+\begin_inset Formula $\phi\left(n\right)\geq n\frac{p-1}{p}=k\left(p-1\right)>2\cdot2>2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsubsection}{6}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+¿Es cíclico el producto directo de dos grupos cíclicos infinitos?
+\end_layout
+
+\begin_layout Standard
+No.
+ Contraejemplo: 
+\begin_inset Formula $\mathbb{Z}\times\mathbb{Z}$
+\end_inset
+
+, con la suma.
+ 
+\begin_inset Formula $\mathbb{Z}=\left\langle 1\right\rangle $
+\end_inset
+
+.
+ Pero, supongamos que 
+\begin_inset Formula $\mathbb{Z}\times\mathbb{Z}=\left\langle a,b\right\rangle $
+\end_inset
+
+, entonces, dado 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ ha de ser 
+\begin_inset Formula $\left(x,y\right)=k\left(a,b\right)=\left(ka,kb\right)$
+\end_inset
+
+, pero basta tomar 
+\begin_inset Formula $\left(x,1\right)$
+\end_inset
+
+, entonces la 
+\begin_inset Formula $k$
+\end_inset
+
+ debe ser la misma, porque 
+\begin_inset Formula $x=ka$
+\end_inset
+
+.
+ Pero no puede ser la misma, pues podemos tomar 
+\begin_inset Formula $y\neq1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Describir 
+\begin_inset Formula $\boldsymbol{Aut\left(\mathbb{Z}\right)}$
+\end_inset
+
+ y probar que 
+\begin_inset Formula $\boldsymbol{Aut\left(\mathbb{Z}_{n}\right)\simeq\mathbb{Z}_{n}^{*}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los automorfismos de 
+\begin_inset Formula $\mathbb{Z}=\left\langle 1\right\rangle $
+\end_inset
+
+ deben verificar 
+\begin_inset Formula $f\left(1\right)=1$
+\end_inset
+
+ y 
+\begin_inset Formula $f\left(ab\right)=f\left(a\right)f\left(b\right)$
+\end_inset
+
+, pero todo elemento 
+\begin_inset Formula $a=a1$
+\end_inset
+
+, entonces el único automorfismo es la identidad, pues el 1 va al 1, y este
+ genera todos los elementos.
+\end_layout
+
+\begin_layout Standard
+\align left
+En 
+\begin_inset Formula $\mathbb{Z}_{n}$
+\end_inset
+
+ ocurre algo similar, pero 
+\begin_inset Formula $\mathbb{Z}_{n}=\left\langle a\right\rangle $
+\end_inset
+
+ si 
+\begin_inset Formula $a\in\mathbb{Z}_{n}^{*}$
+\end_inset
+
+.
+ Es decir, que hay tantos automorfismos como elementos ivnertibles, y, además,
+ cada automorfismo está determinado por la imagen de un invertible, de ahí
+ la isomorfía, que vendría dada por
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\mathbb{Z}_{n}^{*} & \rightarrow & Aut\left(\mathbb{Z}_{n}\right)\\
+a & \mapsto & f:f\left(a\right)=1
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Mostrar con un ejemplo que, aun cuando 
+\series medium
+
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ 
+\series default
+sea cíclico, 
+\begin_inset Formula $\boldsymbol{Aut\left(G\right)}$
+\end_inset
+
+ no tiene por qué ser cíclico.
+\end_layout
+
+\begin_layout Subsubsection
+Probar que si 
+\begin_inset Formula $\boldsymbol{G,H}$
+\end_inset
+
+ son grupos cíclicos finitos entonces las siguientes condiciones son equivalente
+s
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+El orden de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ divide al orden de 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Existe un homomorfismo inyectivo 
+\begin_inset Formula $\boldsymbol{G\rightarrow H}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Existe homomorfismo suprayectivo 
+\begin_inset Formula $\boldsymbol{H\rightarrow G}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ un grupo abeliano finito en el que, para cada 
+\begin_inset Formula $\boldsymbol{n\in\mathbb{Z}^{+}}$
+\end_inset
+
+, la ecuación 
+\begin_inset Formula $\boldsymbol{x^{n}=e}$
+\end_inset
+
+ tiene a lo sumo 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ soluciones.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es cíclico.
+ Deducir que un subgrupo finito del grupo de unidades de un dominio es cíclico.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $g\in G$
+\end_inset
+
+ de orden máximo, llamémosle 
+\begin_inset Formula $\left|g\right|=n$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $\left\langle g\right\rangle $
+\end_inset
+
+ tiene 
+\begin_inset Formula $n$
+\end_inset
+
+ soluciones de la ecuación 
+\begin_inset Formula $x^{n}=1$
+\end_inset
+
+.
+ ¿
+\begin_inset Formula $G=\left\langle g\right\rangle $
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Supongamos que no, entonces 
+\begin_inset Formula $\exists h\in G\setminus\left\langle g\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $p$
+\end_inset
+
+ un primo que divide a 
+\begin_inset Formula $\left|h\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $p\nmid n$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\left\langle h\right\rangle $
+\end_inset
+
+ tiene un elemento 
+\begin_inset Formula $k$
+\end_inset
+
+ de orden 
+\begin_inset Formula $p$
+\end_inset
+
+ y 
+\begin_inset Formula $\left\langle k,g\right\rangle $
+\end_inset
+
+ es un cíclico de orden 
+\begin_inset Formula $pn$
+\end_inset
+
+ en contra de la maximalidad de 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por lo que 
+\begin_inset Formula $p|n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula 
+\[
+\left|g\right|=p_{1}^{a_{1}}\cdot...\cdot p_{k}^{a_{k}},\quad\left|h\right|=p_{1}^{b_{1}}\cdot...\cdot p_{k}^{b_{k}}
+\]
+
+\end_inset
+
+ Entonces 
+\begin_inset Formula 
+\[
+\left\langle h\right\rangle =C_{p_{1}^{b_{1}}}\times...\times C_{p_{k}^{b_{k}}},\quad\left\langle g\right\rangle =C_{p_{1}^{a_{1}}}\times...\times C_{p_{k}^{a_{k}}}
+\]
+
+\end_inset
+
+ En 
+\begin_inset Formula $C_{p_{1}^{a_{1}}}$
+\end_inset
+
+ hay 
+\begin_inset Formula $p_{1}^{a_{1}}$
+\end_inset
+
+ soluciones de 
+\begin_inset Formula $x^{p_{1}^{a_{1}}}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conjugación y acciones de grupos en conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsubsection}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ un número primo.
+ Demostrar las siguientes afirmaciones:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Todos los grupos de orden 
+\begin_inset Formula $\boldsymbol{p^{2}}$
+\end_inset
+
+ son abelianos
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+El centro de cualquier grupo no abeliano de orden 
+\begin_inset Formula $\boldsymbol{p^{3}}$
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar las siguientes afirmaciones para un 
+\begin_inset Formula $\boldsymbol{p-grupo}$
+\end_inset
+
+ finito 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Si 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ divide al orden de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ tiene un subgrupo de orden 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Inducción en 
+\begin_inset Formula $\left|G\right|$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|G\right|=1$
+\end_inset
+
+, es obvio
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|G\right|=p$
+\end_inset
+
+ primo, también obvio.
+ Los únicos subgrupos son el total y el 1.
+\end_layout
+
+\begin_layout Itemize
+Supongamos la hipótesis de inducción y 
+\begin_inset Formula $\left|G\right|=p^{m}>p$
+\end_inset
+
+, con 
+\begin_inset Formula $p^{k}=n|p^{m}$
+\end_inset
+
+.
+ Entonces
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ es abeliano y 
+\begin_inset Formula $H$
+\end_inset
+
+ es un subgrupo de orden 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $\left|H\right|=p\leq p^{k}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $G/H$
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $p^{m-1}$
+\end_inset
+
+ y la hipótesis de inducción nos dice que tiene subgrupos de cualquier orden
+ divisor de 
+\begin_inset Formula $p^{m-1}$
+\end_inset
+
+, en particular lo tiene de orden 
+\begin_inset Formula $n$
+\end_inset
+
+ y el teorema de correspondencia nos da el resultado, ya que 
+\begin_inset Formula $H$
+\end_inset
+
+ es normal.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ no es abeliano, consideramos 
+\begin_inset Formula $Z\left(G\right)$
+\end_inset
+
+, que no es trivial por ser un 
+\begin_inset Formula $p$
+\end_inset
+
+-grupo y 
+\begin_inset Formula $H$
+\end_inset
+
+ un subgrupo de 
+\begin_inset Formula $Z(G)$
+\end_inset
+
+ de orden 
+\begin_inset Formula $p$
+\end_inset
+
+, que será normal, y hacemos lo mismo que antes.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Existe una cadena
+\series default
+ 
+\begin_inset Formula $\boldsymbol{1=G_{0}\subset G_{1}\subset...\subset G_{n}=G}$
+\end_inset
+
+
+\series bold
+ de subgrupos normales de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ tales que cada 
+\begin_inset Formula $\boldsymbol{\boldsymbol{\frac{G_{i}}{G_{i-1}}}\subset Z\left(\frac{G}{G_{i-1}}\right),\ \forall i=1,...,n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $1=G_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Debe ser 
+\begin_inset Formula $G_{1}=G_{1}/G_{0}\subset Z\left(G/G_{0}\right)=Z\left(G\right)$
+\end_inset
+
+, tomamos 
+\begin_inset Formula $G_{1}=Z\left(G\right)$
+\end_inset
+
+, que es normal.
+\end_layout
+
+\begin_layout Standard
+Debe ser 
+\begin_inset Formula $G_{2}/G_{1}\subset Z\left(G/G_{1}\right)$
+\end_inset
+
+.
+ Elegimos el único subgrupo 
+\begin_inset Formula $G_{2}$
+\end_inset
+
+ de 
+\begin_inset Formula $G$
+\end_inset
+
+ que contiene a 
+\begin_inset Formula $G_{1}$
+\end_inset
+
+de forma que 
+\begin_inset Formula $G_{2}/G_{1}=Z\left(G/G_{1}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Procedemos por inducción en 
+\begin_inset Formula $\left|G\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $\left|G\right|=1$
+\end_inset
+
+ ó 
+\begin_inset Formula $p$
+\end_inset
+
+, entonces es trivial.
+\end_layout
+
+\begin_layout Standard
+En otro caso
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|G/G_{1}\right|<\left|G\right|
+\]
+
+\end_inset
+
+ y tenemos 
+\begin_inset Formula $H_{0}\subset H_{1}\subset...\subset H_{m-1}\subset H_{m}=G/G_{1}$
+\end_inset
+
+ por la hipótesis de inducción.
+ 
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

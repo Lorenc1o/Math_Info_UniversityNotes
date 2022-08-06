@@ -1,0 +1,5958 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+GyA - Teoría 1ª Parte
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Date
+2019/2020
+\end_layout
+
+\begin_layout Section
+Anillos
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 1.23.
+ De la Correspondencia
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $A$
+\end_inset
+
+ un anillo, e 
+\begin_inset Formula $I$
+\end_inset
+
+ un ideal de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+\left\{ Ideales\ de\ \frac{A}{I}\right\} =\left\{ \frac{J}{I}:I\subset J\trianglelefteq A\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y la siguiente aplicación es biyectiva
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\left\{ \frac{J}{I}:I\subset J\trianglelefteq A\right\}  & \rightarrow & \left\{ Ideales\ de\ \frac{A}{I}\right\} \\
+J & \mapsto & \frac{J}{I}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Sobreyectividad
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Formula $\underline{\frac{J}{I}\trianglelefteq\frac{A}{I}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $J\trianglelefteq A$
+\end_inset
+
+, entonces 
+\begin_inset Formula $0\in J\implies0+I\in\frac{J}{I}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Dados 
+\begin_inset Formula $x,y\in J$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $(x+I)+(y+I)=(x+y)+I\in\frac{J}{I},$
+\end_inset
+
+ pues 
+\begin_inset Formula $x+y\in J$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado 
+\begin_inset Formula $a\in A$
+\end_inset
+
+, entonces 
+\begin_inset Formula $(a+I)(x+I)=ax+I\in\frac{J}{I}$
+\end_inset
+
+, pues 
+\begin_inset Formula $ax\in J$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Sea ahora 
+\begin_inset Formula $K\trianglelefteq\frac{A}{I}$
+\end_inset
+
+ y sea 
+\begin_inset Formula $J=\left\{ a\in A/a+I\in K\right\} $
+\end_inset
+
+
+\bar default
+, y definimos
+\begin_inset Formula 
+\[
+\begin{array}{ccccc}
+A & \overset{f}{\rightarrow} & \frac{A}{I} & \overset{g}{\rightarrow} & \frac{\left(\frac{A}{I}\right)}{K}\\
+a & \mapsto & a+I\\
+ &  & x & \mapsto & x+K
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y sea 
+\begin_inset Formula $h=g\circ f$
+\end_inset
+
+.
+ Calculemos su núcleo:
+\begin_inset Formula 
+\[
+a\in Kerh\iff f(a)+K=g(f(a))=0_{\frac{\left(\frac{A}{I}\right)}{K}}=K=0+K\iff a+I=f(a)\in K\iff a\in J
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Es decir, 
+\begin_inset Formula $Kerh=J\overset{Def\ 1.20}{\implies}J\trianglelefteq A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, si 
+\begin_inset Formula $a\in I\implies a+I=I=0_{\frac{A}{I}}\in K\implies a\in J$
+\end_inset
+
+.
+ Es decir, 
+\begin_inset Formula $I\subset J$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+¿
+\begin_inset Formula $\frac{J}{I}=K$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\subseteq$
+\end_inset
+
+' 
+\begin_inset Formula $x\in\frac{J}{I}\implies x=a+I,\ a\in J\implies x=a+I\in K$
+\end_inset
+
+ (por la definición de 
+\begin_inset Formula $J$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\supseteq$
+\end_inset
+
+' 
+\begin_inset Formula $x\in K\subset\frac{A}{I}\implies x=a+I\in K,\ a\in A\implies a\in J\implies x=a+I\in\frac{J}{I}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Recapitulando:
+\bar default
+ dado un ideal de 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+, podemos escribir este como 
+\begin_inset Formula $\frac{J}{I}$
+\end_inset
+
+, donde 
+\begin_inset Formula $I\subset J\trianglelefteq A$
+\end_inset
+
+, por lo que nuestra aplicación es suprayectiva.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\align left
+
+\series bold
+Inyectividad
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+Sean 
+\begin_inset Formula $J_{1},J_{2}$
+\end_inset
+
+ ideales de 
+\begin_inset Formula $A$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $I$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\frac{J_{1}}{I}\subseteq\frac{J_{2}}{I}$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+x\in J_{1}\implies x+I\in\frac{J_{1}}{I}\subset\frac{J_{2}}{I}\implies x+I=y+I,\ y\in J_{2}\implies x-y\in I\subset J_{2}\implies x=x-y+y\in J_{2}\implies J_{1}\subseteq J_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, si 
+\begin_inset Formula $\frac{J_{1}}{I}=\frac{J_{2}}{I}\implies\begin{cases}
+\frac{J_{1}}{I}\subseteq\frac{J_{2}}{I}\implies J_{1}\subseteq J_{2}\\
+\frac{J_{2}}{I}\subseteq\frac{J_{1}}{I}\implies J_{2}\subseteq J_{1}
+\end{cases}\implies J_{1}=J_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y la aplicación es inyectiva.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+Es decir, que la aplicación del enunciado es biyectiva.
+ Pero esto quiere demuestra también la igualdad de los dos conjuntos de
+ ideales.
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 1.27.
+ Primer teorema de isomorfía
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $f:A\rightarrow B$
+\end_inset
+
+ un homomorfismo de anillos.
+ Entonces existe un único isomorfismo de anillos 
+\begin_inset Formula $\overline{f}:\frac{A}{Kerf}\rightarrow Imf$
+\end_inset
+
+ que hace conmutativo el diagrama
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+A & \overset{f}{\longrightarrow} & B\\
+p\downarrow &  & \uparrow i\\
+\frac{A}{Kerf} & \overset{\overline{f}}{\dashrightarrow} & Imf
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+es decir, 
+\begin_inset Formula $i\circ\overline{f}\circ p=f,$
+\end_inset
+
+ donde 
+\begin_inset Formula $i$
+\end_inset
+
+ es la inclusión y 
+\begin_inset Formula $p$
+\end_inset
+
+ es la proyección.
+\end_layout
+
+\begin_layout Standard
+\align left
+En particular
+\begin_inset Formula 
+\[
+\frac{A}{Kerf}\simeq Imf
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+La aplicación 
+\begin_inset Formula $\overline{f}:\frac{A}{Kerf}\rightarrow Imf$
+\end_inset
+
+ dada por 
+\begin_inset Formula $\overline{f}(x+Kerf)=f(x)$
+\end_inset
+
+ está 
+\bar under
+bien definida
+\bar default
+.
+ Es decir, no depende de representantes.
+ Veámoslo:
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $x+Kerf=y+Kerf$
+\end_inset
+
+ entonces 
+\begin_inset Formula $x-y\in Kerf$
+\end_inset
+
+ y así 
+\begin_inset Formula $f(x)-f(y)=f(x-y)=0\implies f(x)=f(y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Veamos ahora que es 
+\bar under
+homomorfismo
+\bar default
+:
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\overline{f}\left((x+Kerf)+(y+Kerf)\right)=\overline{f}\left((x+y)+Kerf\right)=f(x+y)=f(x)+f(y)=\overline{f}\left(x+Kerf\right)+\overline{f}\left(y+Kerf\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\overline{f}\left((x+Kerf)(y+Kerf)\right)=\overline{f}\left((xy)+Kerf\right)=f(xy)=f(x)f(y)=\overline{f}\left(x+Kerf\right)\overline{f}\left(y+Kerf\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\overline{f}\left(1+Kerf\right)=f(1)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Queda ver la biyectividad.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Comenzamos por la 
+\bar under
+supreyectividad
+\bar default
+:
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado 
+\begin_inset Formula $x\in Imf\implies\exists a\in A/x=f(a)=\overline{f}\left(a+Kerf\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Para ver que es 
+\bar under
+inyectiva
+\bar default
+ usamos la Proposición 1.21 (un homomorfismo de anillos es inyectivo sii
+ 
+\begin_inset Formula $Kerf=0$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $x+Kerf\in Ker\overline{f}\implies0=\overline{f}\left(x+K\right)=f(x)\implies x\in Kerf\implies x+Kerf=0+Kerf$
+\end_inset
+
+.
+ Es decir, 
+\begin_inset Formula $Ker\overline{f}=0$
+\end_inset
+
+ y, por tanto, 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ es inyectiva.
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ es un isomorfismo y los conjuntos 
+\begin_inset Formula $\frac{A}{Kerf}$
+\end_inset
+
+, 
+\begin_inset Formula $Imf$
+\end_inset
+
+ son isomorfos.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+¿Hace conmutativo el diagrama?
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado 
+\begin_inset Formula $x\in Kerf$
+\end_inset
+
+, se tiene que
+\begin_inset Formula 
+\[
+i\left(\overline{f}\left(p(x)\right)\right)=\overline{f}\left(x+Kerf\right)=f(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+¿Es único?
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que otro homomorfismo 
+\begin_inset Formula $\overline{g}:\frac{A}{Kerf}\rightarrow Imf$
+\end_inset
+
+ verifica 
+\begin_inset Formula $i\circ\overline{g}\circ p=f$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\forall x\in Kerf$
+\end_inset
+
+, se tiene 
+\begin_inset Formula $\overline{g}(x+Kerf)=i\left(\overline{g}\left(p(x)\right)\right)=f(x)=\overline{f}\left(x+Kerf\right)$
+\end_inset
+
+, y así 
+\begin_inset Formula $\overline{g}=\overline{f}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 1.28.
+ Segundo Teorema de Isomorfía
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $A$
+\end_inset
+
+ un anillo y sean 
+\begin_inset Formula $I,J$
+\end_inset
+
+ dos ideales tales que 
+\begin_inset Formula $I\subset J$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $\frac{J}{I}\trianglelefteq\frac{A}{I}$
+\end_inset
+
+ y existe un isomorfismo de anillos
+\begin_inset Formula 
+\[
+\frac{\left(\frac{A}{I}\right)}{\left(\frac{J}{I}\right)}\simeq\frac{A}{J}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el teorema de correspondencia, 
+\begin_inset Formula $\frac{J}{I}\trianglelefteq\frac{A}{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $f:\frac{A}{I}\rightarrow\frac{A}{J}$
+\end_inset
+
+ la aplicación definida por 
+\begin_inset Formula $f(a+I)=a+J$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+\begin_inset Formula $f$
+\end_inset
+
+ está bien definida:
+\bar default
+ si 
+\begin_inset Formula $a+I=b+I$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a-b\in I\implies a-b\in J\implies a+J=b+J\implies f(a+I)=f(b+I)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Homomorfismo:
+\bar default
+ 
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $f\left((a+I)+(b+I)\right)=f\left((a+b)+I\right)=(a+b)+J=(a+J)+(b+J)=f\left(a+I\right)+f\left(b+I\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $f\left((a+I)(b+I)\right)=f\left(ab+I\right)=ab+J=(a+J)(b+J)=f\left(a+I\right)f\left(b+I\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $f(1+I)=f(1+J)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Suprayectividad:
+\bar default
+ dado 
+\begin_inset Formula $b\in\frac{A}{J}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\exists a\in A/b=a+J\implies b=f(a+I)$
+\end_inset
+
+.
+ Al ser suprayectiva 
+\begin_inset Formula $Imf=\frac{A}{J}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Núcleo:
+\bar default
+ 
+\begin_inset Formula $f(a+I)=0=0+J\iff a+J=0+J\iff a\in J$
+\end_inset
+
+.
+ Es decir, 
+\begin_inset Formula $Kerf=\frac{J}{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el primer teorema de isomorfía, tenemos que 
+\begin_inset Formula 
+\[
+\frac{\left(\frac{A}{I}\right)}{\left(\frac{J}{I}\right)}\simeq\frac{A}{J}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 1.29.
+ Tercer Teorema de Isomorfía
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $A$
+\end_inset
+
+ un anillo con un subanillo 
+\begin_inset Formula $B$
+\end_inset
+
+ y un ideal 
+\begin_inset Formula $I$
+\end_inset
+
+.
+ Entonces:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $B\cap I\trianglelefteq B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $B+I$
+\end_inset
+
+ es un subanillo de 
+\begin_inset Formula $A$
+\end_inset
+
+ que contiene a 
+\begin_inset Formula $I$
+\end_inset
+
+ como ideal
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Se tiene un isomorfismo de anillos 
+\begin_inset Formula $\frac{B}{B\cap I}\simeq\frac{B+I}{I}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Enumerate
+\align left
+
+\bar under
+No vacío:
+\bar default
+ como 
+\begin_inset Formula $B$
+\end_inset
+
+ es subanillo de 
+\begin_inset Formula $A$
+\end_inset
+
+, entonces 
+\begin_inset Formula $0\in B$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $I\trianglelefteq A$
+\end_inset
+
+, entonces 
+\begin_inset Formula $0\in I$
+\end_inset
+
+.
+ Así, 
+\begin_inset Formula $0\in B\cap I\implies B\cap I\neq\emptyset$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+
+\bar under
+Suma:
+\bar default
+ dados 
+\begin_inset Formula $x,y\in B\cap I\implies\begin{cases}
+x,y\in B\implies x+y\in B\\
+x,y\in I\implies x+y\in I
+\end{cases}\implies x+y\in B\cap I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Producto:
+\bar default
+ dados 
+\begin_inset Formula $x\in B\cap I,\ b\in B\implies\begin{cases}
+xb\in B\\
+xb\in I
+\end{cases}\implies xb\in B\cap I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $B\cap I\trianglelefteq B$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\align left
+Por la proposición 1.7, para ver que 
+\begin_inset Formula $B+I$
+\end_inset
+
+ es subanillo de 
+\begin_inset Formula $A$
+\end_inset
+
+, basta ver que contiene al 
+\begin_inset Formula $1$
+\end_inset
+
+ y es cerrado para restas y productos
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+
+\bar under
+Contiene al 
+\begin_inset Formula $1$
+\end_inset
+
+:
+\bar default
+ Como 
+\begin_inset Formula $B$
+\end_inset
+
+ es subanillo, entonces 
+\begin_inset Formula $1\in B\implies1=1+0\in B+I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Cerrado para restas:
+\bar default
+ Sean 
+\begin_inset Formula $x,y\in B+I\implies x=x_{1}+x_{2},\ y=y_{1}+y_{2},\ x_{1},y_{1}\in B,\ x_{2},y_{2}\in I\implies x-y=(x_{1}-y_{1})+(x_{2}-y_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Pero 
+\begin_inset Formula $B$
+\end_inset
+
+ es cerrado para restas, por lo que 
+\begin_inset Formula $x_{1}-y_{1}\in B$
+\end_inset
+
+, y también 
+\begin_inset Formula $y_{2}\in I\implies-y_{2}\in I\implies x_{2}-y_{2}\in I$
+\end_inset
+
+.
+ Por tanto 
+\begin_inset Formula $x-y\in B+I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Cerrado para productos:
+\bar default
+ Sean 
+\begin_inset Formula $x,y\in B+I\implies xy=(x_{1}+x_{2})(y_{1}+y_{2})=x_{1}y_{1}+x_{1}y_{2}+x_{2}y_{1}+x_{2}y_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $B$
+\end_inset
+
+ es cerrado para productos, entonces 
+\begin_inset Formula $x_{1}y_{1}\in B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $I$
+\end_inset
+
+ es un ideal en 
+\begin_inset Formula $A$
+\end_inset
+
+, entonces 
+\begin_inset Formula $x_{1}y_{2},x_{2}y_{1},x_{2}y_{2}\in I\implies x_{1}y_{2}+x_{2}y_{1}+x_{2}y_{2}\in I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $xy\in B+I$
+\end_inset
+
+, y así, este es subanillo de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, contiene a 
+\begin_inset Formula $I$
+\end_inset
+
+ pues dado 
+\begin_inset Formula $x\in I\implies x=0+x\in B+I$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\align left
+Sea 
+\begin_inset Formula $f:B\rightarrow\frac{A}{I}$
+\end_inset
+
+ la composición de la inclusión 
+\begin_inset Formula $j:B\rightarrow A$
+\end_inset
+
+ con la proyección 
+\begin_inset Formula $p:A\rightarrow\frac{A}{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+Calculemos 
+\begin_inset Formula $\underline{Kerf}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+x\in Kerf\iff f(x)=0=0+I\iff p\circ j(x)=0+I\iff p(x)=0+I\iff x+I=0+I\iff x\in I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Pero 
+\begin_inset Formula $x\in B$
+\end_inset
+
+, por tanto 
+\begin_inset Formula $Kerf=B\cap I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $\underline{Imf}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+x\in B\implies f(x)=p\circ j(x)=p(x)=x+I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Es decir, 
+\begin_inset Formula $Imf=\frac{B}{I}$
+\end_inset
+
+, pero 
+\begin_inset Formula $\frac{B}{I}=\frac{B+I}{I}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\subseteq$
+\end_inset
+
+' 
+\begin_inset Formula $x+I\in\frac{B}{I}\implies x+I=(x+0)+I\in\frac{B+I}{I}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\supseteq$
+\end_inset
+
+' 
+\begin_inset Formula $(x+y)+I\in\frac{B+I}{I}\implies(x+y)+I=(x+I)+(y+I)=x+I\in\frac{B}{I}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, por el primer teorema de isomorfía:
+\begin_inset Formula 
+\[
+\frac{B}{B\cap I}\simeq\frac{B+I}{I}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Teorema 1.33.
+ Teorema Chino de los Restos para anillos
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $A$
+\end_inset
+
+ un anillo y sea 
+\begin_inset Formula $I_{1},...,I_{n}$
+\end_inset
+
+ ideales de 
+\begin_inset Formula $A$
+\end_inset
+
+ tales que 
+\begin_inset Formula $I_{i}+I_{j}=A$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $I_{1}\cap...\cap I_{n}=I_{1}...I_{n}$
+\end_inset
+
+.
+ Además
+\begin_inset Formula 
+\[
+\frac{A}{I_{1}\cap...\cap I_{n}}\simeq\frac{A}{I_{1}}\times...\times\frac{A}{I_{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Razonamos por inducción sobre 
+\begin_inset Formula $n$
+\end_inset
+
+, empezando por caso 
+\begin_inset Formula $n=2$
+\end_inset
+
+, pues el caso 
+\begin_inset Formula $n=1$
+\end_inset
+
+ es trivial.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\subseteq$
+\end_inset
+
+' La hipótesis 
+\begin_inset Formula $I_{1}+I_{2}=A=(1)$
+\end_inset
+
+ nos dice que existen 
+\begin_inset Formula $x_{1}\in I_{1},x_{2}\in I_{2}/x_{1}+x_{2}=1$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\forall a\in I_{1}\cap I_{2}$
+\end_inset
+
+ se tiene 
+\begin_inset Formula $a=ax_{1}+ax_{2}\in I_{1}I_{2}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $I_{1}\cap I_{2}\subseteq I_{1}I_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\supseteq$
+\end_inset
+
+' 
+\begin_inset Formula $x\in I_{1}I_{2}\implies x=\sum_{i=0}^{k}x_{i}y_{i},\ x_{i}\in I_{1},y_{i}\in I_{2}\implies x_{i}y_{i}\in I_{1}\cap I_{2}\implies x\in I_{1}\cap I_{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Veamos la 
+\bar under
+isomorfía:
+\bar default
+ sea 
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+f:A & \rightarrow & \frac{A}{I_{1}}\times\frac{A}{I_{2}}\\
+a & \mapsto & (a+I_{1},a+I_{2})
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $f(a+b)=((a+b)+I_{1},(a+b)+I_{2})=((a+I_{1})+(b+I_{1}),(a+I_{2})+(b+I_{2}))=(a+I_{1},a+I_{2})+(b+I_{1},b+I_{2})=f(a)+f(b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $f(ab)=(ab+I_{1},ab+I_{2})=((a+I_{1})(b+I_{1}),(a+I_{2})(b+I_{2}))=(a+I_{1},a+I_{2})(b+I_{1},b+I_{2})=f(a)f(b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $f(1)=(1+I_{1},1+I_{j})$
+\end_inset
+
+, que es la unidad en 
+\begin_inset Formula $\frac{A}{I_{1}}\times\frac{A}{I_{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+El núcleo:
+\begin_inset Formula 
+\[
+f(a)=0\iff(a+I_{1},a+I_{2})=(0,0)=(0+I_{1},0+I_{2})\iff a\in I_{1},a\in I_{2}\iff a\in I_{1}\cap I_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+La imagen, es todo 
+\begin_inset Formula $\frac{A}{I_{1}}\times\frac{A}{I_{2}}$
+\end_inset
+
+, pues 
+\begin_inset Formula $f$
+\end_inset
+
+ es suprayectiva.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado 
+\begin_inset Formula $(a+I_{1},b+I_{2})\in\frac{A}{I_{1}}\times\frac{A}{I_{2}}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $c=ax_{2}+bx_{1},\ x_{1},x_{2}$
+\end_inset
+
+ los de más atrás, entonces 
+\begin_inset Formula $f(c)=(ax_{2}+bx_{1}+I_{1},ax_{2}+bx_{1}+I_{2})=(ax_{2}+I_{1},bx_{1}+I_{2})=((a+I_{1})(x_{2}+I),(b+I_{2})(x_{1}+I_{2}))=(a+I_{1},b+I_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, por el primer teorema de isomorfía, tenemos que
+\begin_inset Formula 
+\[
+\frac{A}{I_{1}\cap I_{2}}\simeq\frac{A}{I_{1}}\times\frac{A}{I_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Pasemos al caso general, 
+\begin_inset Formula $n>2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Nótese que si demostramos que 
+\begin_inset Formula $(I_{1}\cap...\cap I_{n-1})+I_{n}=A$
+\end_inset
+
+ ya lo tenemos, pues, por la hipótesis de inducción
+\begin_inset Formula 
+\[
+I_{1}\cap...\cap I_{n-1}\cap I_{n}\overset{n=2}{=}(I_{1}\cap...\cap I_{n-1})I_{n}\overset{n-1}{=}I_{1}...I_{n-1}I_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+y que
+\begin_inset Formula 
+\[
+\frac{A}{I_{1}\cap...\cap I_{n}}=\frac{A}{(\cap_{i=1}^{n-1}I_{i})\cap I_{n}}\overset{n=2}{\simeq}\frac{A}{\cap_{i=1}^{n-1}I_{i}}\times\frac{A}{I_{n}}\overset{n-1}{\simeq}\frac{A}{I_{1}}\times...\times\frac{A}{I_{n-1}}\times\frac{A}{I_{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Para ver lo que necesitemos, nótese que 
+\begin_inset Formula $\forall i\leq n-1,\ \exists a_{i}\in I_{i},\ b_{i}\in I_{n}/1=a_{i}+b_{i}$
+\end_inset
+
+, entonces, multiplicando todas esas expresiones, obtenemos
+\begin_inset Formula 
+\[
+1=1\cdot1\cdot...\cdot1=\prod_{i=1}^{n-1}(a_{i}+b_{i})=a_{1}\cdot...\cdot a_{n-1}+b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+donde 
+\begin_inset Formula $b$
+\end_inset
+
+ engloba a todos los sumandos que se obtendrían desarrollando los productos,
+ excepto el que hemos dejado fuera, y está en 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+ porque en cada sumando hay al menos un 
+\series bold
+
+\begin_inset Formula $b_{i}$
+\end_inset
+
+
+\series default
+, de 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+.
+ Como, además, 
+\begin_inset Formula $a_{1}\cdot...\cdot a_{n-1}\in I_{1}\cap...\cap I_{n-1}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $1\in(I_{1}\cap...\cap I_{n-1})+I_{n}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $(I_{1}\cap...\cap I_{n-1})+I_{n}=A$
+\end_inset
+
+, como queríamos ver.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Divisibilidad en Dominios
+\end_layout
+
+\begin_layout Subsection*
+Caracterización de DFU
+\end_layout
+
+\begin_layout Subsubsection*
+Lema 2.21
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $D$
+\end_inset
+
+ es un DFU, entonces todo elemento irreducible de 
+\begin_inset Formula $D$
+\end_inset
+
+ es primo.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $p\in D$
+\end_inset
+
+ irreducible, y sean 
+\begin_inset Formula $a,b\in D$
+\end_inset
+
+ tales que 
+\begin_inset Formula $p|ab$
+\end_inset
+
+.
+ 
+\bar under
+¿
+\begin_inset Formula $p|a\ ó\ p|b$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\align left
+Si alguno de los dos es 0 es claro que sí.
+ Supongamos que ninguno es nulo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $ab=tp$
+\end_inset
+
+ para algún 
+\begin_inset Formula $t\in D$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula 
+\[
+t=up_{1}...p_{n}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a=vq_{1}...q_{m}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+b=wr_{1}...r_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+son factorizaciones en irreducibles, con 
+\begin_inset Formula $u,v,w\in D^{*}$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+upp_{1}...p_{n}=(vw)q_{1}...q_{m}r_{1}...r_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+y por la unicidad de la factorización, 
+\begin_inset Formula $p$
+\end_inset
+
+ es asociado de algún 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $p|a$
+\end_inset
+
+ o de algún 
+\begin_inset Formula $r_{i}$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $p|b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 2.22
+\end_layout
+
+\begin_layout Standard
+\align left
+Para un dominio 
+\begin_inset Formula $D$
+\end_inset
+
+, las condiciones siguientes son equivalentes:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $D$
+\end_inset
+
+ es un DFU
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Todo elemento no nulo de 
+\begin_inset Formula $D$
+\end_inset
+
+ es producto de primos
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $D$
+\end_inset
+
+ es un DF en el que todo irreducible es primo
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $1\implies2$
+\end_inset
+
+' 
+\begin_inset Formula $D$
+\end_inset
+
+ DFU
+\begin_inset Formula $\implies$
+\end_inset
+
+todo elemento no nulo de 
+\begin_inset Formula $D$
+\end_inset
+
+ es producto de irreducibles
+\begin_inset Formula $\overset{Lema\ 2.21}{\implies}$
+\end_inset
+
+todo elemento no nulo de 
+\begin_inset Formula $D$
+\end_inset
+
+ es producto de primos
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $2\implies3$
+\end_inset
+
+' En un dominio todo primo es irreducible (proposición 2.13), por lo que
+ si todo no nulo de 
+\begin_inset Formula $D$
+\end_inset
+
+ es producto de primos entonces todo no nulo es producto de irreducibles
+ y, por tanto, 
+\begin_inset Formula $D$
+\end_inset
+
+ es un DF..
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos ahora que 
+\begin_inset Formula $p$
+\end_inset
+
+ es irreducible y sea 
+\begin_inset Formula $p=q_{1}...q_{k}$
+\end_inset
+
+ con 
+\begin_inset Formula $q_{1},...,q_{k}$
+\end_inset
+
+ primos.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $p$
+\end_inset
+
+ es irreducible, entonces algún 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ debe ser asociado de 
+\begin_inset Formula $p$
+\end_inset
+
+, podemos suponer que es 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+.
+ Así, 
+\begin_inset Formula $p|q_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $q_{1}|p$
+\end_inset
+
+.
+ Entonces, como 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ es primo, también lo es 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $3\implies1$
+\end_inset
+
+' Por hipótesis, todo elemento no nulo de 
+\begin_inset Formula $D$
+\end_inset
+
+ se factoriza como un producto de primos.
+ Solo falta ver la unicidad de las factorizaciones.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sean 
+\begin_inset Formula $up_{1}...p_{n}=vq_{1}...q_{m}$
+\end_inset
+
+, con 
+\begin_inset Formula $p_{i},q_{i}$
+\end_inset
+
+ irreducibles 
+\begin_inset Formula $\forall i,\ u,v\in D^{*}$
+\end_inset
+
+.
+ Suponemos que 
+\begin_inset Formula $n\leq m$
+\end_inset
+
+ y razonamos por inducción sobre 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $n=0$
+\end_inset
+
+, entonces 
+\begin_inset Formula $m=0$
+\end_inset
+
+, ya que los divisores de las unidades son unidades.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos 
+\begin_inset Formula $n>0$
+\end_inset
+
+ y la hipótesis de inducción.
+ Tenemos entonces que 
+\begin_inset Formula $p_{n}$
+\end_inset
+
+ es primo, por hipótesis, por lo que divide a algún 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ y de hecho son asociados (porque 
+\begin_inset Formula $p_{n}$
+\end_inset
+
+ también es irreducible).
+ Reordenando si es necesario, podemos suponer 
+\begin_inset Formula $i=m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es decir, 
+\begin_inset Formula $\exists w\in D^{*}/q_{m}=wp_{n}$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+up_{1}...p_{n-1}=(vw)q_{1}...q_{m-1}
+\]
+
+\end_inset
+
+ Por la hipótesis de inducción se tiene 
+\begin_inset Formula $n-1=m-1\implies n=m$
+\end_inset
+
+ y existe una biyección
+\begin_inset Formula 
+\[
+\tau:\{1,...,n-1\}\rightarrow\{1,...,n-1\}
+\]
+
+\end_inset
+
+ tal que 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ y 
+\begin_inset Formula $q_{\tau(i)}$
+\end_inset
+
+ son asociados 
+\begin_inset Formula $\forall i=1,...,n-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+La extensión de 
+\begin_inset Formula $\tau$
+\end_inset
+
+ a una permutación 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ de 
+\begin_inset Formula $\mathbb{N}_{n}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ y 
+\begin_inset Formula $q_{\sigma(i)}$
+\end_inset
+
+ son asociados 
+\begin_inset Formula $\forall i$
+\end_inset
+
+ es la evidente:
+\begin_inset Formula 
+\[
+\sigma(i)=\begin{cases}
+\tau(i) & i<n\\
+n & i=n
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y así, obtenemos que las factorizaciones iniciales son equivalentes.
+\end_layout
+
+\begin_layout Subsection*
+DIP implica DFU
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 2.24
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $D$
+\end_inset
+
+ es un DIP y 
+\begin_inset Formula $0\neq a\in D\setminus D^{*}$
+\end_inset
+
+, las siguientes condiciones son equivalentes:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $a$
+\end_inset
+
+ es irreducible
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $(a)$
+\end_inset
+
+ es un ideal maximal
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $\frac{A}{(a)}$
+\end_inset
+
+ es un cuerpo
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $a$
+\end_inset
+
+ es primo
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $(a)$
+\end_inset
+
+ es un ideal primo
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $\frac{a}{(a)}$
+\end_inset
+
+ es un dominio
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $1\iff2$
+\end_inset
+
+' Por la proposición 2.15.(6)
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $a$
+\end_inset
+
+ irreducible si y solo si 
+\begin_inset Formula $(a)$
+\end_inset
+
+ es maximal entre los ideales principales propios no nulos de 
+\begin_inset Formula $D$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' 
+\begin_inset Formula $a$
+\end_inset
+
+ irreducible si, y solo si, 
+\begin_inset Formula $a=bc\implies b\in A^{*}\ ó\ c\in A*$
+\end_inset
+
+.
+ Entonces, supongamos que 
+\begin_inset Formula $(a)\subset(b)\iff a\in(b)\iff a=bc$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, o bien 
+\begin_inset Formula $(b)=A$
+\end_inset
+
+, o bien 
+\begin_inset Formula $b$
+\end_inset
+
+ es asociado de 
+\begin_inset Formula $a$
+\end_inset
+
+, lo que implica 
+\begin_inset Formula $a|b$
+\end_inset
+
+, y entonces 
+\begin_inset Formula $b\in(a)$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $(b)\subset(a)$
+\end_inset
+
+, y así 
+\begin_inset Formula $(a)=(b)$
+\end_inset
+
+.
+ Es decir, si 
+\begin_inset Formula $a$
+\end_inset
+
+ es irreducible, no puede haber ningún ideal principal que contenga propiamente
+ al ideal que genera.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' No existe ningún 
+\begin_inset Formula $0\neq b\in A\setminus A^{*}/(a)\subsetneq(b)$
+\end_inset
+
+, entonces, si 
+\begin_inset Formula $a=bc$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $\begin{cases}
+b|a\implies a\in(b)\implies(a)\subset(b)\implies\begin{cases}
+(a)=(b)\implies a,b\ asociados\implies c\in A^{*}\checkmark\\
+(b)=A\implies b\in A^{*}\checkmark
+\end{cases}\\
+c|a\implies a\in(c)\implies(a)\subset(c)\implies\begin{cases}
+(a)=(c)\implies a,c\ asociados\implies b\in A^{*}\checkmark\\
+(c)=A\implies c\in A^{*}\checkmark
+\end{cases}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $2\iff3$
+\end_inset
+
+' Por la proposición 2.6.(1)
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $I$
+\end_inset
+
+ es maximal si y solo si 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ es un cuerpo
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ es un cuerpo si, y solo si, sus únicos ideales son el 0 y el total.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $I$
+\end_inset
+
+ es maximal si, y solo si, no existe ningún ideal propio que lo contenga.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Por el teorema de la correspondencia, los ideales de 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ son los ideales de 
+\begin_inset Formula $A$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $I$
+\end_inset
+
+, módulo 
+\begin_inset Formula $I$
+\end_inset
+
+.
+ Como el único ideal de 
+\begin_inset Formula $A$
+\end_inset
+
+ que contiene a 
+\begin_inset Formula $I$
+\end_inset
+
+ es el total, entonces los ideales de 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ son el total y el 0 y es un cuerpo.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Si es un cuerpo, entonces los únicos ideales son el 0 y el total.
+ La biyección del teorema de correspondencia nos da los ideales de 
+\begin_inset Formula $A$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $I$
+\end_inset
+
+ como 
+\begin_inset Formula $\pi^{-1}(J)$
+\end_inset
+
+, 
+\begin_inset Formula $J$
+\end_inset
+
+ ideal de 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+.
+ Pero 
+\begin_inset Formula $\pi^{-1}(0)=0,\ \pi^{-1}(\frac{A}{I})=A$
+\end_inset
+
+.
+ Por lo que 
+\begin_inset Formula $I$
+\end_inset
+
+ es maximal.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $4\iff5$
+\end_inset
+
+' Por la proposición 2.15.(5)
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $a$
+\end_inset
+
+ primo si y solo si 
+\begin_inset Formula $(a)$
+\end_inset
+
+ es un ideal primo no nulo de 
+\begin_inset Formula $D$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Formula $a\ primo\iff\left(a|bc\implies a|b\ ó\ a|c\right)\iff\left(bc\in(a)\implies b\in(a)\ ó\ c\in(a)\right)\iff(a)\ primo$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $5\iff6$
+\end_inset
+
+' Por la proposición 2.6.(2)
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $I$
+\end_inset
+
+ es primo si y solo si 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ es un dominio
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Sean 
+\begin_inset Formula $a+I$
+\end_inset
+
+, 
+\begin_inset Formula $b+I$
+\end_inset
+
+ dos elementos no nulos de 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $a,b\notin I\overset{I\ primo}{\implies}ab\notin I$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $(a+I)(b+I)=ab+I\neq0$
+\end_inset
+
+.
+ Por la proposición 2.3.(3), 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ es un dominio.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Si 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ es un dominio, por la proposición 2.3.(3), si 
+\begin_inset Formula $(a+I),(b+I)\in\frac{A}{I}$
+\end_inset
+
+ no nulos, entonces 
+\begin_inset Formula $ab+I\neq0$
+\end_inset
+
+.
+ Es decir, que si 
+\begin_inset Formula $a,b\notin I\implies ab\notin I$
+\end_inset
+
+.
+ Usando el contrarrecíproco obtenemos 
+\begin_inset Formula $ab\in I\implies a\in I\ ó\ b\in I$
+\end_inset
+
+.
+ Por lo que 
+\begin_inset Formula $I$
+\end_inset
+
+ es primo.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $2\implies5$
+\end_inset
+
+' Por la proposición 2.6.(3)
+\end_layout
+
+\begin_layout Itemize
+\align left
+Si 
+\begin_inset Formula $I$
+\end_inset
+
+ es maximal entonces es primo
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Formula $I\ maximal\overset{2.6.(1)}{\iff}\frac{A}{I}\ cuerpo\implies\frac{A}{I}\ dominio\overset{2.6.(2)}{\iff}I\ primo$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $4\implies1$
+\end_inset
+
+' Por la proposición 2.13
+\end_layout
+
+\begin_layout Itemize
+\align left
+En un dominio todo elemento primo es irreducible
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $a=bc$
+\end_inset
+
+, entonces 
+\begin_inset Formula $b|a\ y\ c|a$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $a|a\implies a|bc\overset{a\ primo}{\implies}a|b\ ó\ a|c$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\align left
+Si 
+\begin_inset Formula $a|b$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a,b$
+\end_inset
+
+ son asociados
+\end_layout
+
+\begin_layout Itemize
+\align left
+Si 
+\begin_inset Formula $a|c$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a,c$
+\end_inset
+
+ son asociados
+\end_layout
+
+\begin_layout Standard
+\align left
+Por lo que 
+\begin_inset Formula $a$
+\end_inset
+
+ es irreducible.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Teorema 2.25
+\end_layout
+
+\begin_layout Standard
+\align left
+Todo DIP es un DFU.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Si demostramos que 
+\begin_inset Formula $D$
+\end_inset
+
+ es un DF, entonces, por la proposición 2.24, al ser 
+\begin_inset Formula $D$
+\end_inset
+
+ un DIP, tenemos que todo irreducible es primo.
+ Entonces 
+\begin_inset Formula $D$
+\end_inset
+
+ es un DF con todo irreducible primo, por la proposición 2.22.(
+\begin_inset Formula $3\implies1$
+\end_inset
+
+), tenemos el resultado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es decir, basta ver que 
+\begin_inset Formula $D$
+\end_inset
+
+ es DF.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por reducción al absurdo, supongamos que 
+\begin_inset Formula $D$
+\end_inset
+
+ no es DF.
+\end_layout
+
+\begin_layout Standard
+\align left
+Vamos a construir, por recurrencia, una sucesión 
+\begin_inset Formula $a_{1},a_{2},...$
+\end_inset
+
+ de elementos de 
+\begin_inset Formula $D$
+\end_inset
+
+ que no admiten factorización y tales que 
+\begin_inset Formula $(a_{1})\subset(a_{2})\subset...$
+\end_inset
+
+ es una cadena estrictamente creciente de ideales de 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, sea 
+\begin_inset Formula $a_{1}\in D$
+\end_inset
+
+ un elemento que no admite factorización en irreducibles, que existe pues
+ suponemos que 
+\begin_inset Formula $D$
+\end_inset
+
+ no es DF.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos, entonces, que hemos seleccionado 
+\begin_inset Formula $a_{1},...,a_{n},\ n\geq1$
+\end_inset
+
+, satisfaciendo las condiciones anteriores.
+ Entonces 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+ no es irreducible (pues en tal caso sería producto de irreducibles), luego
+ existen 
+\begin_inset Formula $x,y\in D\setminus D^{*}/a_{n}=xy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+ no es producto de irreducibles, al menos uno de los factores 
+\begin_inset Formula $x,y$
+\end_inset
+
+ no es producto de irreducibles.
+ Supongamos que es 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, haciendo 
+\begin_inset Formula $a_{n+1}=x$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $a_{n+1}|a_{n}\implies(a_{n})\subset(a_{n+1})$
+\end_inset
+
+ y la inclusión es estricta, pues 
+\begin_inset Formula $y\in D\setminus D^{*}$
+\end_inset
+
+, no es unidad.
+\end_layout
+
+\begin_layout Standard
+\align left
+Una vez construida la sucesión, tomamos 
+\begin_inset Formula 
+\[
+I=(a_{1},a_{2},...)=\cup_{i\in\mathbb{N}}(a_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Esta igualdad se debe a que 
+\begin_inset Formula $(a_{i})\subset(a_{i+1})$
+\end_inset
+
+, luego 
+\begin_inset Formula $(a_{1},...,a_{k})=(a_{k})=\cup_{i=1}^{k}(a_{i})$
+\end_inset
+
+.
+ Tomando límites la tenemos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $D$
+\end_inset
+
+ es DIP, 
+\begin_inset Formula $\exists x\in D/I=(x)$
+\end_inset
+
+.
+ En particular, 
+\begin_inset Formula $x\in I$
+\end_inset
+
+, por tanto, existe un índice, 
+\begin_inset Formula $i$
+\end_inset
+
+, tal que 
+\begin_inset Formula $x\in(a_{i})$
+\end_inset
+
+ (y de hecho pertenece a todos los posteriores también).
+ Además, dado que 
+\begin_inset Formula $(a_{i})\subset I=(x)\implies a_{i}\in(x)$
+\end_inset
+
+.
+ O sea, que 
+\begin_inset Formula $x$
+\end_inset
+
+ y 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ son asociados.
+ Pero esto quiere decir que 
+\begin_inset Formula $(a_{i})=(x)$
+\end_inset
+
+, y por lo tanto 
+\begin_inset Formula $(a_{i})=(a_{i+1})$
+\end_inset
+
+# Esto es una contradicción, ya que los hemos construido de forma que estuvieran
+ estrictamente contenidos.
+ Por tanto, 
+\begin_inset Formula $D$
+\end_inset
+
+ debe ser un DF y, como explicamos al principio, es un DFU.
+\end_layout
+
+\begin_layout Subsection*
+DE implica DIP
+\end_layout
+
+\begin_layout Subsubsection*
+Lema 2.28
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $\delta$
+\end_inset
+
+ una función euclídea en 
+\begin_inset Formula $D$
+\end_inset
+
+, sea 
+\begin_inset Formula $I$
+\end_inset
+
+ un ideal de 
+\begin_inset Formula $D$
+\end_inset
+
+ y 
+\begin_inset Formula $0\neq a\in D$
+\end_inset
+
+, 
+\begin_inset Formula $a\in I$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $I=(a)\iff\delta(a)\leq\delta(x),\ \forall x\in I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' 
+\begin_inset Formula $I=(a)\implies\forall x\in I,\ a|x\overset{DE1}{\implies}\delta(a)\leq\delta(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Como 
+\begin_inset Formula $a\in I\implies(a)\subset I$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $x\in I$
+\end_inset
+
+, por 
+\begin_inset Formula $DE2$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula $\exists q,r\in D/x=aq+r$
+\end_inset
+
+ y o bien 
+\begin_inset Formula $r=0$
+\end_inset
+
+ o bien 
+\begin_inset Formula $\delta(r)<\delta(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $r=x-aq\in I$
+\end_inset
+
+, y entonces 
+\begin_inset Formula $\delta(a)\leq\delta(r)$
+\end_inset
+
+.
+ Por tanto, ha de ser 
+\begin_inset Formula $r=0$
+\end_inset
+
+.
+ Es decir, 
+\begin_inset Formula $x=aq\implies x\in(a)$
+\end_inset
+
+.
+ Así, 
+\begin_inset Formula $I\subset(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Y deducimos que 
+\begin_inset Formula $(a)=I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 2.29
+\end_layout
+
+\begin_layout Standard
+\align left
+Todo dominio euclídeo es DIP.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $D$
+\end_inset
+
+ un DE, 
+\begin_inset Formula $\delta$
+\end_inset
+
+ un función euclídea en 
+\begin_inset Formula $D$
+\end_inset
+
+ y sea 
+\begin_inset Formula $I\triangleleft D$
+\end_inset
+
+.
+ 
+\bar under
+¿Existe 
+\begin_inset Formula $0\neq a\in I$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\delta(a)\leq\delta(x),\ \forall x\in I$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $a/\delta(a)=\min\left\{ \delta(r)|r\in I,r\neq0\right\} $
+\end_inset
+
+, nótese que esto es posible porque 
+\begin_inset Formula $\delta$
+\end_inset
+
+ está acotada inferiormente por 0 y toma valores discretos.
+ Como 
+\begin_inset Formula $a\in I\implies(a)\subset I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien, si 
+\begin_inset Formula $y\in I$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\exists q,r\in D/y=qa+r$
+\end_inset
+
+, con 
+\begin_inset Formula $r=0$
+\end_inset
+
+ o 
+\begin_inset Formula $\delta(r)<\delta(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $r=y-qx\in I$
+\end_inset
+
+, por tanto, como 
+\begin_inset Formula $a$
+\end_inset
+
+ presenta el mínimo de los 
+\begin_inset Formula $\delta$
+\end_inset
+
+, ha de ser 
+\begin_inset Formula $r=0$
+\end_inset
+
+.
+ Es decir, 
+\begin_inset Formula $y=qx\implies y\in(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, 
+\begin_inset Formula $I\subset(a)$
+\end_inset
+
+ y tenemos las dos inclusiones.
+\end_layout
+
+\begin_layout Subsection*
+Propiedad universal del cuerpo de fracciones
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 2.34
+\end_layout
+
+\begin_layout Standard
+\align left
+Sean 
+\begin_inset Formula $D$
+\end_inset
+
+ un dominio, 
+\begin_inset Formula $Q(D)$
+\end_inset
+
+ su cuerpo de fracciones y 
+\begin_inset Formula $u:D\rightarrow Q(D)$
+\end_inset
+
+ la aplicación dada por 
+\begin_inset Formula $u(a)=\frac{a}{1}$
+\end_inset
+
+.
+ Entonces:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+
+\series bold
+Propiedad universal del cuerpo de fracciones: 
+\series default
+Para toda pareja 
+\begin_inset Formula $(K,f)$
+\end_inset
+
+ formada por un cuerpo 
+\begin_inset Formula $K$
+\end_inset
+
+ y un homomorfismo inyectivo de anillos 
+\begin_inset Formula $f:D\rightarrow K$
+\end_inset
+
+, existe un único homomorfismo de cuerpos 
+\begin_inset Formula $\overline{f}:Q(D)\rightarrow K$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\overline{f}\circ u=f$
+\end_inset
+
+.
+ Se dice que 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ completa de modo único el diagrama
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+\xymatrix{D\ar[dr]_{f}\ar[r]^{u} & \ar@{-->}[d]^{\overline{f}}Q(D)\\
+ & K
+}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\align left
+Si dos homomorfismos de cuerpos 
+\begin_inset Formula $g,h:Q(D)\rightarrow K$
+\end_inset
+
+ coinciden sobre 
+\begin_inset Formula $D$
+\end_inset
+
+ entonces son iguales.
+ Es decir, si 
+\begin_inset Formula $g\circ u=h\circ u$
+\end_inset
+
+ entonces 
+\begin_inset Formula $g=h$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $Q(D)$
+\end_inset
+
+ está determinado salvo isomorfismos por la propiedad universal.
+ Explícitamente: supongamos que existen un cuerpo 
+\begin_inset Formula $F$
+\end_inset
+
+ y un homomorfismo inyectivo de anillos 
+\begin_inset Formula $v:D\rightarrow F$
+\end_inset
+
+ tales que, para todo cuerpo 
+\begin_inset Formula $K$
+\end_inset
+
+ y todo homomorfismo inyectivo de anillos 
+\begin_inset Formula $f:D\rightarrow K$
+\end_inset
+
+, existe un único homomorfismo de cuerpos 
+\begin_inset Formula $\overline{f}:F\rightarrow K$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\overline{f}\circ v=f$
+\end_inset
+
+.
+ Entonces existe un isomorfismo 
+\begin_inset Formula $\phi:F\rightarrow Q(D)$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\phi\circ v=u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+1) 
+\series default
+Sea 
+\begin_inset Formula $f$
+\end_inset
+
+ como en el enunciado.
+ Si 
+\begin_inset Formula $\overline{f}:Q(D)\rightarrow K$
+\end_inset
+
+ es un homomorfismo de cuerpos tal que 
+\begin_inset Formula $\overline{f}\circ u=f$
+\end_inset
+
+, entonces, 
+\begin_inset Formula $\forall\frac{a}{s}\in Q(D)$
+\end_inset
+
+, se verifica
+\begin_inset Formula 
+\[
+\overline{f}\left(\frac{a}{s}\right)=\overline{f}\left(u(a)u(s)^{-1}\right)=\left(\overline{f}\circ u\right)(a)\left(\overline{f}\circ u\right)(s)^{-1}=f(a)f(s)^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Esto prueba que el único homomorfismo de cuerpos 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ que puede satisfacer 
+\begin_inset Formula $\overline{f}\circ u=f$
+\end_inset
+
+ tiene que venir dado por 
+\begin_inset Formula $\overline{f}\left(\frac{a}{s}\right)=f(a)f(s)^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Solo falta comprobar que la aplicación 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ así dada está bien definida y es un homomorfismo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $\frac{a_{1}}{s_{1}}=\frac{a_{2}}{s_{2}}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $a_{1}s_{2}=a_{2}s_{1}$
+\end_inset
+
+, luego 
+\begin_inset Formula $f(a_{1})f(s_{2})=f(a_{2})f(s_{1})\iff f(a_{1})f(s_{1})^{-1}=f(a_{2})f(s_{2})^{-1}$
+\end_inset
+
+.
+ Luego 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ está bien definida.
+\end_layout
+
+\begin_layout Standard
+\align left
+Veamos que es un homomorfismo:
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\overline{f}\left(\frac{a_{1}}{s_{1}}+\frac{a_{2}}{s_{2}}\right)=\overline{f}\left(\frac{a_{1}s_{2}+a_{2}s_{1}}{s_{1}s_{2}}\right)=f(a_{1}s_{2}+a_{2}s_{1})f(s_{1}s_{2})^{-1}=\left(f(a_{1}s_{2})+f(a_{2}s_{1})\right)f(s_{1})^{-1}f(s_{2})^{-1}=f(a_{1})f(s_{2})f(s_{1})^{-1}f(s_{2})^{-1}+f(a_{2})f(s_{1})f(s_{1})^{-1}f(s_{2})^{-1}=f(a_{1})f(s_{1})^{-1}+f(a_{2})f(s_{2})^{-1}=\overline{f}\left(\frac{a_{1}}{s_{1}}\right)+\overline{f}\left(\frac{a_{2}}{s_{2}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\overline{f}\left(\frac{a_{1}}{s_{1}}\frac{a_{2}}{s_{2}}\right)=f(a_{1}a_{2})f(s_{1}s_{2})^{-1}=f(a_{1})f(a_{2})f(s_{1})^{-1}f(s_{2})^{-1}=\overline{f}\left(\frac{a_{1}}{s_{1}}\right)\overline{f}\left(\frac{a_{2}}{s_{2}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\overline{f}(1)=\overline{f}\left(\frac{1}{1}\right)=f(1)f(1)^{-1}=1\cdot1^{-1}=1\cdot1=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y ya lo tenemos.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+2) 
+\series default
+Si ponemos 
+\begin_inset Formula $f=g\circ u=h\circ u:D\rightarrow K$
+\end_inset
+
+, los homomorfismos 
+\begin_inset Formula $g,h$
+\end_inset
+
+ completan el diagrama de 
+\series bold
+1) 
+\series default
+y por la unicidad se tiene 
+\begin_inset Formula $g=h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+3) 
+\series default
+Aplicando 
+\series bold
+1) 
+\series default
+a 
+\begin_inset Formula $v$
+\end_inset
+
+ del enunciado, encontramos un homomorfismo 
+\begin_inset Formula $\overline{v}:Q(D)\rightarrow F$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\overline{v}\circ u=v$
+\end_inset
+
+, y aplicando la hipótesis de 
+\series bold
+3)
+\series default
+ sobre 
+\begin_inset Formula $u$
+\end_inset
+
+, encontramos un homomorfismo 
+\begin_inset Formula $\overline{u}:F\rightarrow Q(D)$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\overline{u}\circ v=u$
+\end_inset
+
+.
+ Entonces la composición 
+\begin_inset Formula $\overline{u}\circ\overline{v}:Q(D)\rightarrow Q(D)$
+\end_inset
+
+ verifica 
+\begin_inset Formula $(\overline{u}\circ\overline{v})\circ u=\overline{u}\circ v=u=Id_{Q(D)}u$
+\end_inset
+
+.
+ Por 
+\series bold
+2)
+\series default
+, obtenemos que 
+\begin_inset Formula $\overline{u}\circ\overline{v}=Id_{Q(D)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+En particular 
+\begin_inset Formula $\overline{u}$
+\end_inset
+
+ es suprayectiva, y es inyectiva por ser homomorfismo de cuerpos (el núcleo
+ es un ideal y los únicos ideales en un cuerpo son el 0 y el total, entonces
+ el núcleo es 0 y es inyectiva), y entonces 
+\begin_inset Formula $\phi=\overline{u}$
+\end_inset
+
+ es el isomorfismo buscado.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\xymatrix{D\ar[dr]_{v}\ar[r]^{u} & \ar@{-->}[d]^{\overline{v}}Q(D)\\
+ & F
+}
+\qquad$
+\end_inset
+
+
+\begin_inset Formula $\qquad\xymatrix{D\ar[dr]_{u}\ar[r]^{v} & \ar@{-->}[d]^{\overline{u}}F\\
+ & Q(D)
+}
+$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Polinomios
+\end_layout
+
+\begin_layout Subsection*
+Propiedad Universal de Anillo de Polinomios (PUAP)
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 3.3
+\end_layout
+
+\begin_layout Standard
+\align left
+Sean 
+\begin_inset Formula $A$
+\end_inset
+
+ un anillo, 
+\begin_inset Formula $A[X]$
+\end_inset
+
+ el anillo de polinomios con coeficientes en 
+\begin_inset Formula $A$
+\end_inset
+
+ en la indeterminada 
+\begin_inset Formula $X$
+\end_inset
+
+ y 
+\begin_inset Formula $u:A\rightarrow A[X]$
+\end_inset
+
+ el homomorfismo de inclusión.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+
+\series bold
+PUAP 
+\series default
+Para todo homomorfismo de anillos 
+\begin_inset Formula $f:A\rightarrow B$
+\end_inset
+
+ y todo elemento 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ existe un único homomorfismo de anillos 
+\begin_inset Formula $\overline{f}:A[X]\rightarrow B$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\overline{f}(X)=b$
+\end_inset
+
+ y 
+\begin_inset Formula $\overline{f}\circ u=f$
+\end_inset
+
+.
+ Para expresar la última igualdad se dice que 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ completa de modo único el diagrama
+\begin_inset Formula 
+\[
+\xymatrix{A\ar[dr]_{f}\ar[r]^{u} & \ar@{-->}[d]^{\overline{f}}A[X]\\
+ & B
+}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+\align left
+Si dos homomorfismos de anillos 
+\begin_inset Formula $g,h:A[X]\rightarrow B$
+\end_inset
+
+ coinciden sobre 
+\begin_inset Formula $A$
+\end_inset
+
+ y en 
+\begin_inset Formula $X$
+\end_inset
+
+ entonces son iguales.
+ Es decir, si 
+\begin_inset Formula $g\circ u=h\circ u$
+\end_inset
+
+ y 
+\begin_inset Formula $g(X)=h(X)$
+\end_inset
+
+ entonces 
+\begin_inset Formula $g=h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+\align left
+\begin_inset Formula $A[X]$
+\end_inset
+
+ y 
+\begin_inset Formula $u$
+\end_inset
+
+ están determinados salvo isomorfimos por la PUAP.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align left
+Explícitamente: supongamos que existen un homomorfismo de anillos 
+\begin_inset Formula $v:A\rightarrow P$
+\end_inset
+
+ y un elemento 
+\begin_inset Formula $T\in P$
+\end_inset
+
+ tales que, para todo homomorfismo de anillos 
+\begin_inset Formula $f:A\rightarrow B$
+\end_inset
+
+ y todo elemento 
+\begin_inset Formula $b\in B$
+\end_inset
+
+, existe un único homomorfismo de anillos 
+\begin_inset Formula $\overline{f}:P\rightarrow B$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\overline{f}\circ v=f$
+\end_inset
+
+ y 
+\begin_inset Formula $\overline{f}(T)=b.$
+\end_inset
+
+ Entonces existe un isomorfismo 
+\begin_inset Formula $\phi:A[X]\rightarrow P$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\phi\circ u=v$
+\end_inset
+
+ y 
+\begin_inset Formula $\phi(X)=T$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\noindent
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\series bold
+1) 
+\series default
+Sean 
+\begin_inset Formula $f:A\rightarrow B$
+\end_inset
+
+ y 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ como en el enunciado.
+ Si existe un homomorfismo 
+\begin_inset Formula $\overline{f}:A[X]\rightarrow B$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\overline{f}\circ u=f$
+\end_inset
+
+ y 
+\begin_inset Formula $\overline{f}(X)=b$
+\end_inset
+
+, entonces, para un polinomio 
+\begin_inset Formula $P=\sum_{n\geq0}p_{n}X^{n}$
+\end_inset
+
+, se tendrá
+\begin_inset Formula 
+\[
+\overline{f}\left(P\right)=\overline{f}\left(\sum_{n\geq0}u\left(p_{n}\right)X^{n}\right)=\sum_{n\geq0}f(p_{n})b^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Por tanto, la aplicación dada por 
+\begin_inset Formula $\overline{f}\left(P\right)=\sum_{n\geq0}f(p_{n})b^{n}$
+\end_inset
+
+ es la única que puede cumplir tales condiciones.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\bar under
+¿Homomorfismo?
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+\begin_inset Formula $\overline{f}(P+Q)=\sum_{n\geq0}f\left(p_{n}+q_{n}\right)b^{n}=\sum_{n\geq0}\left(f\left(p_{n}\right)b^{n}+f\left(q_{n}\right)b^{n}\right)=\sum_{n\geq0}f\left(p_{n}\right)b^{n}+\sum_{n\geq0}f\left(q_{n}\right)b^{n}=\overline{f}(P)+\overline{f}(Q)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+\begin_inset Formula $\overline{f}(PQ)=\sum_{n\geq0}f\left(\sum_{k=0}^{n}p_{k}q_{n-k}\right)b^{n}=\sum_{n\geq0}\left(\sum_{k=0}^{n}f\left(p_{k}q_{n-k}\right)\right)b^{n}=\sum_{n\geq0}\left(\sum_{k=0}^{n}f\left(p_{k}\right)f\left(q_{n-k}\right)\right)b^{n}=\overline{f}(P)\overline{f}(Q)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+\begin_inset Formula $\overline{f}(1)=f(1)b^{0}=1\cdot1=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\bar under
+¿
+\begin_inset Formula $\overline{f}(X)=b$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula $\overline{f}(X)=f(0)b^{0}+f(1)b^{1}=0\cdot1+1\cdot b=b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\bar under
+¿
+\begin_inset Formula $\overline{f}\circ u=f$
+\end_inset
+
+?
+\bar default
+ Es evidente, pues hemos construido 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ para que verifique esto.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\series bold
+2) 
+\series default
+Haciendo 
+\begin_inset Formula $f=g\circ u=h\circ u:A\rightarrow B$
+\end_inset
+
+, los homomorfismos 
+\begin_inset Formula $g,h$
+\end_inset
+
+ completan el diagrama de 
+\series bold
+1)
+\series default
+, por la unicidad se tiene que 
+\begin_inset Formula $g=h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\series bold
+3) 
+\series default
+Tomemos 
+\begin_inset Formula $v:A\rightarrow P$
+\end_inset
+
+ y 
+\begin_inset Formula $T\in P$
+\end_inset
+
+ como en el enunciado.
+ Fijémonos en estos diagramas:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\xymatrix{A\ar[dr]_{v}\ar[r]^{u} & \ar@{-->}[d]^{\overline{v}}A[X]\\
+ & P
+}
+\qquad$
+\end_inset
+
+
+\begin_inset Formula $\qquad\xymatrix{A\ar[dr]_{u}\ar[r]^{v} & \ar@{-->}[d]^{\overline{u}}P\\
+ & A[X]
+}
+$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Aplicando 
+\series bold
+1)
+\series default
+ al primero, obtenemos 
+\begin_inset Formula $\overline{v}:A[X]\rightarrow P/\overline{v}\circ u=v\ y\ \overline{v}(X)=T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Aplicando las hipótesis de 
+\series bold
+3)
+\series default
+ al segundo, obtenemos 
+\begin_inset Formula $\overline{u}:P\rightarrow A[X]/\overline{u}\circ v=u\ y\ \overline{u}(T)=X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, la composición, 
+\begin_inset Formula $\overline{u}\circ\overline{v}:A[X]\rightarrow A[X]$
+\end_inset
+
+ verifica
+\begin_inset Formula 
+\[
+\left(\overline{u}\circ\overline{v}\right)\circ u=\overline{u}\circ v=u=Id_{A[X]}u\qquad y\qquad\left(\overline{u}\circ\overline{v}\right)\left(X\right)=\overline{u}(T)=X=Id_{A[X]}(X)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Luego, por 
+\series bold
+2)
+\series default
+ obtenemos que 
+\begin_inset Formula $\overline{u}\circ\overline{v}=Id_{A[X]}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Análogamente se demuestra que 
+\begin_inset Formula $\overline{v}\circ\overline{u}=Id_{P}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Y así, el isomorfismo buscado es 
+\begin_inset Formula $\phi=\overline{v}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Relación entre la multiplicidad de una raíz de un polinomio y sus derivadas
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 3.11
+\end_layout
+
+\begin_layout Standard
+\align left
+Un elemento 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ es una raíz múltiple de 
+\begin_inset Formula $P\in A[X]$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $P(a)=P'(a)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Por el teorema de Ruffini, 
+\begin_inset Formula $a$
+\end_inset
+
+ es una raíz de 
+\begin_inset Formula $P$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $P(a)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $a$
+\end_inset
+
+ es raíz simple se tiene 
+\begin_inset Formula $P=(X-a)Q$
+\end_inset
+
+ para 
+\begin_inset Formula $Q\in A[X]$
+\end_inset
+
+ con 
+\begin_inset Formula $Q(a)\neq0$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+P'=Q+(X-a)Q'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+y entonces 
+\begin_inset Formula $P'(a)=Q(a)+0\cdot Q'(a)=Q(a)\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Si 
+\begin_inset Formula $a$
+\end_inset
+
+ es raíz múltiple, entonces 
+\begin_inset Formula $P=(X-a)^{2}Q$
+\end_inset
+
+ para 
+\begin_inset Formula $Q\in A[X]$
+\end_inset
+
+ con 
+\begin_inset Formula $Q(a)\neq0$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+P'=2(X-a)Q+(X-a)^{2}Q'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y, así, 
+\begin_inset Formula $P'(a)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 3.12
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $D$
+\end_inset
+
+ un dominio de característica 0, y sean 
+\begin_inset Formula $P\in D[X]$
+\end_inset
+
+ y 
+\begin_inset Formula $a\in D$
+\end_inset
+
+.
+ Entonces la multiplicidad de 
+\begin_inset Formula $a$
+\end_inset
+
+ en 
+\begin_inset Formula $P$
+\end_inset
+
+ es el menor 
+\begin_inset Formula $m\in\mathbb{N}_{0}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $P^{(m)}(a)\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Hagamos inducción en la multiplicidad 
+\begin_inset Formula $m$
+\end_inset
+
+ de 
+\begin_inset Formula $a$
+\end_inset
+
+ en 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+\begin_inset Formula $m=0$
+\end_inset
+
+
+\bar default
+ Es evidente, si la multiplicidad es 0, entonces no es raíz, por lo que
+ 
+\begin_inset Formula $P(a)\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+\begin_inset Formula $m\geq1$
+\end_inset
+
+
+\bar default
+ Entonces 
+\begin_inset Formula $a$
+\end_inset
+
+ es raíz de 
+\begin_inset Formula $P$
+\end_inset
+
+ y por tanto 
+\begin_inset Formula $P=(X-a)Q$
+\end_inset
+
+ para cierto 
+\begin_inset Formula $Q\in D[X]$
+\end_inset
+
+.
+ Entonces, la multiplicidad de 
+\begin_inset Formula $a$
+\end_inset
+
+ en 
+\begin_inset Formula $Q$
+\end_inset
+
+ es 
+\begin_inset Formula $m-1$
+\end_inset
+
+, y por hipótesis de inducción 
+\begin_inset Formula $Q^{(i)}(a)=0\neq Q^{(m-1)}(a),\ \forall i<m-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Calculemos la derivada n-ésima de 
+\begin_inset Formula $P$
+\end_inset
+
+, que es 
+\begin_inset Formula $P^{(n)}=nQ^{(n-1)}+(X-a)Q^{(t)}$
+\end_inset
+
+, por inducción:
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+\begin_inset Formula $n=1$
+\end_inset
+
+
+\bar default
+ 
+\begin_inset Formula $P'=Q+(X-a)Q'\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, obtenemos la hipótesis de inducción, 
+\begin_inset Formula $P^{(n-1)}=(n-1)Q^{(n-2)}+(X-a)Q^{(n-1)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+\begin_inset Formula $n\geq2$
+\end_inset
+
+
+\bar default
+ 
+\begin_inset Formula $P^{(n)}=\left(P^{(n-1)}\right)^{'}=(n-1)Q^{(n-1)}+Q^{(n-1)}+(X-a)Q^{n}=nQ^{(n-1)}+(X-a)Q^{(n)}\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula 
+\[
+P^{(m-1)}=(m-1)Q^{(m-2)}+(X-a)Q^{(m-1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Luego
+\begin_inset Formula 
+\[
+P^{(m-1)}(a)=(m-1)Q^{(m-2)}(a)+0\cdot Q^{(m-1)}(a)=0+0=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+y
+\begin_inset Formula 
+\[
+P^{(m)}(a)=mQ^{(m-1)}(a)+(X-a)Q^{(m)}(a)=mQ^{(m-1)}(a)\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y la multiplicidad es el menor natural 
+\begin_inset Formula $m$
+\end_inset
+
+ con la derivada 
+\begin_inset Formula $m$
+\end_inset
+
+-ésima de 
+\begin_inset Formula $P$
+\end_inset
+
+ no nula.
+\end_layout
+
+\begin_layout Subsection*
+D DFU implica D[X] DFU
+\end_layout
+
+\begin_layout Subsubsection*
+Lema 3.15
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $a\in D$
+\end_inset
+
+ DFU y 
+\begin_inset Formula $f,g,h\in D[X]$
+\end_inset
+
+ verifican 
+\begin_inset Formula $af=gh\neq0$
+\end_inset
+
+, entonces existen 
+\begin_inset Formula $g_{1},h_{1}\in D[X]$
+\end_inset
+
+ tales que 
+\begin_inset Formula 
+\[
+f=g_{1}h_{1},\qquad gr(g_{1})=gr(g),\qquad gr(h_{1})=gr(h)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Vamos a razonar por inducción en 
+\begin_inset Formula $\varphi(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $\varphi(a)=0$
+\end_inset
+
+, podemos tomar 
+\begin_inset Formula $g_{1}=a^{-1}g$
+\end_inset
+
+ y 
+\begin_inset Formula $h_{1}=h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $\varphi(a)>0$
+\end_inset
+
+, existen 
+\begin_inset Formula $p,b\in D$
+\end_inset
+
+ tales que 
+\begin_inset Formula $a=pb$
+\end_inset
+
+ y 
+\begin_inset Formula $p$
+\end_inset
+
+ es primo (esto es porque en los DFU los irreducibles son primos).
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $p|af=gh$
+\end_inset
+
+ en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ y, por el Lema 3.14 (si 
+\begin_inset Formula $D$
+\end_inset
+
+ es DFU, p primo en 
+\begin_inset Formula $D$
+\end_inset
+
+ sii p primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+), entonces 
+\begin_inset Formula $p|g\ ó\ p|h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Podemos asumir que 
+\begin_inset Formula $p|g$
+\end_inset
+
+ en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+, es decir, 
+\begin_inset Formula $\exists\overline{g}/g=\overline{g}p$
+\end_inset
+
+ y 
+\begin_inset Formula $gr(g)=gr(\overline{g})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Tenemos, entonces, que 
+\begin_inset Formula 
+\[
+pbf=af=gh=p\overline{g}h
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Cancelando 
+\begin_inset Formula $p$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $bf=\overline{g}h$
+\end_inset
+
+, pero ahora 
+\begin_inset Formula $\varphi(b)=\varphi(a)-1<\varphi(a)$
+\end_inset
+
+, y la hipótesis de inducción nos dice que existen 
+\begin_inset Formula $g_{1},h_{1}\in D[X]$
+\end_inset
+
+ tales que 
+\begin_inset Formula $f=g_{1}h_{1},$
+\end_inset
+
+ con 
+\begin_inset Formula $gr(g_{1})=gr(\overline{g})=gr(g)$
+\end_inset
+
+ y 
+\begin_inset Formula $gr(h_{1})=gr(h)$
+\end_inset
+
+.
+ Y ya tenemos el resultado.
+\end_layout
+
+\begin_layout Subsubsection*
+Lema 3.16
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $f\in D[X]\setminus D$
+\end_inset
+
+ es irreducible en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ siendo 
+\begin_inset Formula $D$
+\end_inset
+
+ DFU, entonces es irreducible (y primo) en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que 
+\begin_inset Formula $f$
+\end_inset
+
+ no es irreducible en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por la proposición 3.13 (
+\begin_inset Formula $f$
+\end_inset
+
+ irred en 
+\begin_inset Formula $Q[X]$
+\end_inset
+
+, 
+\begin_inset Formula $Q$
+\end_inset
+
+ cuerpo si y solo si es primo si y solo si 
+\begin_inset Formula $gr(f)>0$
+\end_inset
+
+ y 
+\begin_inset Formula $f$
+\end_inset
+
+ no es producto de dos polinomios de grado menor), entonces, como no es
+ irreducible, deben existir 
+\begin_inset Formula $G,H\in K[X]$
+\end_inset
+
+ tales que 
+\begin_inset Formula 
+\[
+f=GH,\qquad gr(G)>0,\qquad gr(H)>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $0\neq b\in D$
+\end_inset
+
+ es un múltiplo común de los denoinadores de los coeficientes de 
+\begin_inset Formula $G$
+\end_inset
+
+, entonces 
+\begin_inset Formula $g=bG\in D[X]$
+\end_inset
+
+, y análogamente existe 
+\begin_inset Formula $0\neq c\in D$
+\end_inset
+
+ tal que 
+\begin_inset Formula $h=cH\in D[X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Aplicando el lema anterior a la igualdad 
+\begin_inset Formula 
+\[
+(bc)f=gh
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+obtenemos 
+\begin_inset Formula $g_{1},h_{1}\in D[X]$
+\end_inset
+
+ tales que 
+\begin_inset Formula 
+\[
+f=g_{1}h_{1},\qquad gr(g_{1})=gr(g)=gr(G)>0,\qquad gr(h_{1})=gr(h)=gr(H)>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+por lo que 
+\begin_inset Formula $f$
+\end_inset
+
+ no es irreducible en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+.
+ Por tanto, el resultado queda demostrado por contrarrecíproco.
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 3.17
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $D$
+\end_inset
+
+ es DFU si y solo si lo es 
+\begin_inset Formula $D[X]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' El corolario 3.2 nos dice que 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ dominio sii 
+\begin_inset Formula $D$
+\end_inset
+
+ dominio y en este caso 
+\begin_inset Formula $D[X]^{*}=D^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $D$
+\end_inset
+
+ es un dominio y cada 
+\begin_inset Formula $0\neq a\in D\setminus D^{*}$
+\end_inset
+
+ es producto de irreducibles de 
+\begin_inset Formula $D[X]$
+\end_inset
+
+, que tendrán grado 0 pues lo tiene 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Por el lema 3.14 (
+\begin_inset Formula $p$
+\end_inset
+
+ irred en 
+\begin_inset Formula $D$
+\end_inset
+
+ sii 
+\begin_inset Formula $p$
+\end_inset
+
+ irred en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+), tenemos que esa misma factorización de 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ es una factorización en 
+\begin_inset Formula $D$
+\end_inset
+
+ por irreducibles.
+ Como 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ es DFU, entonces los irreducibles son primos.
+ Y el mismo lema 3.14 nos dice que los primos de 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ son los primos de 
+\begin_inset Formula $D$
+\end_inset
+
+, por lo que, usando la caracterización de DFU, tenemos que, como 
+\begin_inset Formula $D$
+\end_inset
+
+ es DF y los irreducibles son primos, entonces 
+\begin_inset Formula $D$
+\end_inset
+
+ es DFU.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Vamos a empezar viendo que cada 
+\begin_inset Formula $a=a_{0}+...+a_{n}X^{n}\in D[X]$
+\end_inset
+
+, no invertible y con 
+\begin_inset Formula $a_{n}\neq0$
+\end_inset
+
+, es producto de irreducibles.
+ Lo haremos por inducción en 
+\begin_inset Formula $n+\varphi(a_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Obsérvese que 
+\begin_inset Formula $a$
+\end_inset
+
+ es invertible si, y solo si, 
+\begin_inset Formula $a\in D^{*}$
+\end_inset
+
+, si, y solo si, 
+\begin_inset Formula $n+\varphi(a_{n})=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+\begin_inset Formula $n+\varphi(a_{n})=1$
+\end_inset
+
+
+\bar default
+ 
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $n=1,\varphi(a_{n})=0$
+\end_inset
+
+, y en este caso 
+\begin_inset Formula $gr(f)=1$
+\end_inset
+
+ y 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+ es invertible.
+ Si no fuera producto de irreducibles, entonces debe poder escribirse como
+ 
+\begin_inset Formula $a=gh$
+\end_inset
+
+, con 
+\begin_inset Formula $g,h\in D[X]\setminus D[X]^{*}$
+\end_inset
+
+ y alguno de ellos no es producto de irreducibles.
+ Uno debe ser de grado 0 y otro de grado 1, supongamos 
+\begin_inset Formula $gr(g)=1,gr(h)=0$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+a_{0}+a_{1}X=(b_{0}+b_{1}X)c_{0}=b_{0}c_{0}+b_{1}c_{0}X
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+De donde 
+\begin_inset Formula $a_{0}=b_{0}c_{0}$
+\end_inset
+
+ y 
+\begin_inset Formula $a_{1}=b_{1}c_{0}$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $a_{1}\in D^{*}\implies b_{1}c_{0}\in D^{*}\implies c_{0}\in D^{*}=D[X]^{*}$
+\end_inset
+
+.
+ Luego 
+\begin_inset Formula $d$
+\end_inset
+
+ es invertible.
+ # Esto contradice que 
+\begin_inset Formula $a$
+\end_inset
+
+ no sea producto de irreducibles.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\align left
+\begin_inset Formula $n=0,\varphi(a_{n})=1$
+\end_inset
+
+ Entonces estamos en 
+\begin_inset Formula $D$
+\end_inset
+
+ y como 
+\begin_inset Formula $D$
+\end_inset
+
+ es DFU, entonces 
+\begin_inset Formula $a$
+\end_inset
+
+ es producto de irreducibles.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+\begin_inset Formula $n+\varphi(a_{n})>1$
+\end_inset
+
+
+\bar default
+ Supongamos que 
+\begin_inset Formula $a$
+\end_inset
+
+ no es irreducible.
+ Entonces existen
+\begin_inset Formula 
+\[
+b=b_{0}+...+b_{m}X^{m}\ (b_{m}\neq0)\quad y\quad c=c_{0}+...+c_{k}X^{k}\ (c_{k}\neq0)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+en 
+\begin_inset Formula $D[X]\setminus D[X]^{*}$
+\end_inset
+
+, con 
+\begin_inset Formula $a=bc$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces
+\begin_inset Formula 
+\[
+0<m+\varphi(b_{m}),\ 0<k+\varphi(c_{k})\quad y\quad n+\varphi(a_{n})=m+k+\varphi(b_{m})+\varphi(c_{k})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+En consecuencia, podemos aplicar la hipótesis de inducción a 
+\begin_inset Formula $b$
+\end_inset
+
+ y 
+\begin_inset Formula $c$
+\end_inset
+
+ y pegando las factorizaciones obtenemos una factorización de 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, sabemos que 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ es DF, si demostramos que en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ todo irreducible es primo, entonces podremos asegurar, por la caracterización
+ de DFU, que 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ es DFU.
+\end_layout
+
+\begin_layout Standard
+\align left
+Vamos a ver que todo 
+\begin_inset Formula $f$
+\end_inset
+
+ irreducible en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ es primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+.
+ El lema 3.14 nos dice que si 
+\begin_inset Formula $D$
+\end_inset
+
+ es DFU, entonces 
+\begin_inset Formula $p$
+\end_inset
+
+ irred en 
+\begin_inset Formula $D$
+\end_inset
+
+ sii 
+\begin_inset Formula $p$
+\end_inset
+
+ primo en 
+\begin_inset Formula $D$
+\end_inset
+
+ sii 
+\begin_inset Formula $p$
+\end_inset
+
+ primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+.
+ Por tanto, podemos suponer que 
+\begin_inset Formula $gr(f)\geq1$
+\end_inset
+
+, pues el otro caso ya lo tenemos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sean entonces 
+\begin_inset Formula $g,h\in D[X]$
+\end_inset
+
+ tales que 
+\begin_inset Formula $f|gh$
+\end_inset
+
+ en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ 
+\bar under
+¿
+\begin_inset Formula $f|g\ ó\ f|h$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\align left
+Se tiene que 
+\begin_inset Formula $f|gh$
+\end_inset
+
+ en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+ y por el lema 3.16 
+\begin_inset Formula $f$
+\end_inset
+
+ es primo en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+ y entonces 
+\begin_inset Formula $f|g$
+\end_inset
+
+ ó 
+\begin_inset Formula $f|h$
+\end_inset
+
+ en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+.
+ Podemos suponer que divide a 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ O sea, 
+\begin_inset Formula $\exists G\in K[X]$
+\end_inset
+
+ tal que 
+\begin_inset Formula $g=fG$
+\end_inset
+
+, si demostramos que 
+\begin_inset Formula $G\in D[X]$
+\end_inset
+
+ habremos acabado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para esto, sea 
+\begin_inset Formula $a\in D/aG\in D[X]$
+\end_inset
+
+ y 
+\begin_inset Formula $\varphi(a)$
+\end_inset
+
+ mínimo.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\bar under
+Basta ver que 
+\begin_inset Formula $\varphi(a)=0$
+\end_inset
+
+.
+
+\bar default
+ Supongamos que no es así, es decir, 
+\begin_inset Formula $\varphi(a)>0$
+\end_inset
+
+ y sean 
+\begin_inset Formula $p,b\in D$
+\end_inset
+
+ con 
+\begin_inset Formula $a=pb$
+\end_inset
+
+ con 
+\begin_inset Formula $p$
+\end_inset
+
+ primo.
+ Entonces, en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula $p|ag=faG.$
+\end_inset
+
+ Como 
+\begin_inset Formula $p$
+\end_inset
+
+ es primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ (Lema 3.14) y 
+\begin_inset Formula $p\nmid f$
+\end_inset
+
+ (porque 
+\begin_inset Formula $f$
+\end_inset
+
+ es irreducible y 
+\begin_inset Formula $gr(f)\geq1$
+\end_inset
+
+), entonces ha de ser 
+\begin_inset Formula $p|aG$
+\end_inset
+
+ en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $g_{1}\in D[X]$
+\end_inset
+
+ verifica 
+\begin_inset Formula $aG=pg_{1}$
+\end_inset
+
+entonces 
+\begin_inset Formula $bG=g_{1}\in D[X]$
+\end_inset
+
+, y 
+\begin_inset Formula $\varphi(b)<\varphi(a)$
+\end_inset
+
+ # esto contradice la minimalidad de 
+\begin_inset Formula $\varphi(a)$
+\end_inset
+
+.
+ Por tanto, ha de ser 
+\begin_inset Formula $\varphi(a)=0$
+\end_inset
+
+.
+ Esto implica que 
+\begin_inset Formula $G\in D[X]$
+\end_inset
+
+ y que 
+\begin_inset Formula $f|g$
+\end_inset
+
+ en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+, como queríamos ver.
+ Así, 
+\begin_inset Formula $f$
+\end_inset
+
+ es primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ es un DF en el que todo irreducible es primo, esto quiere decir (caracterizació
+n de DFU) que 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ es DFU.
+\end_layout
+
+\begin_layout Subsection*
+Caracterización de los irreducibles del anillo de polinomios de un DFU
+\end_layout
+
+\begin_layout Subsubsection*
+Lema 3.14
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $D$
+\end_inset
+
+ un dominio y sea 
+\begin_inset Formula $p\in D$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $p$
+\end_inset
+
+ irreducible en 
+\begin_inset Formula $D$
+\end_inset
+
+ si y solo si lo es en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $p$
+\end_inset
+
+ primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ entonces 
+\begin_inset Formula $p$
+\end_inset
+
+ primo en 
+\begin_inset Formula $D$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Si 
+\begin_inset Formula $D$
+\end_inset
+
+ es DFU, entonces las siguientes condiciones son equivalentes
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $p$
+\end_inset
+
+ irred en 
+\begin_inset Formula $D$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $p$
+\end_inset
+
+ irred en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $p$
+\end_inset
+
+ primo en 
+\begin_inset Formula $D$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $p$
+\end_inset
+
+ primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+1) 
+\series default
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Obvio
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Si no fuese irreducible en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+, debería ser producto de dos polinomios no invertibles con grado menor.
+ Pero su grado es 0, luego estos polinomios deberían tener grado 0, por
+ lo que 
+\begin_inset Formula $p$
+\end_inset
+
+ sería no irreducible en 
+\begin_inset Formula $D$
+\end_inset
+
+# 
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+2) 
+\series default
+Si 
+\begin_inset Formula $p|ab$
+\end_inset
+
+ en 
+\begin_inset Formula $D$
+\end_inset
+
+, entonces 
+\begin_inset Formula $p|ab$
+\end_inset
+
+ en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+, como es primo aquí, entonces 
+\begin_inset Formula $p|a$
+\end_inset
+
+ o 
+\begin_inset Formula $p|b$
+\end_inset
+
+ en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+, pero, como todos tienen grado 0, esto quiere decir que 
+\begin_inset Formula $p|a$
+\end_inset
+
+ o 
+\begin_inset Formula $p|b$
+\end_inset
+
+ en 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+3) 
+\series default
+(a)
+\begin_inset Formula $\iff$
+\end_inset
+
+(b) por 
+\series bold
+1)
+\end_layout
+
+\begin_layout Standard
+\align left
+(a)
+\begin_inset Formula $\iff$
+\end_inset
+
+(c) Cierto, pues 
+\begin_inset Formula $D$
+\end_inset
+
+ es DFU, por el lema 2.21
+\end_layout
+
+\begin_layout Standard
+\align left
+(d)
+\begin_inset Formula $\implies$
+\end_inset
+
+(b) Cierto, porque primo en un dominio implica irreducible
+\end_layout
+
+\begin_layout Standard
+\align left
+Demostrando (c)
+\begin_inset Formula $\implies$
+\end_inset
+
+(d) lo tenemos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $p$
+\end_inset
+
+ primo en 
+\begin_inset Formula $D$
+\end_inset
+
+ y sean 
+\begin_inset Formula 
+\[
+a=a_{0}+...+a_{n}X^{n}\qquad b=b_{0}+...+b_{m}X^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+polinomios de 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ tales que 
+\begin_inset Formula $p\nmid a,p\nmid b$
+\end_inset
+
+ y veamos que 
+\begin_inset Formula $p\nmid ab$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $p$
+\end_inset
+
+ no divide a 
+\begin_inset Formula $a$
+\end_inset
+
+, existe un menor índice 
+\begin_inset Formula $i$
+\end_inset
+
+ tal que 
+\begin_inset Formula $p\nmid a_{i}$
+\end_inset
+
+ y un menor índice 
+\begin_inset Formula $j$
+\end_inset
+
+ tal que 
+\begin_inset Formula $p\nmid b_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+El coeficiente de grado 
+\begin_inset Formula $i+j$
+\end_inset
+
+ de 
+\begin_inset Formula $ab$
+\end_inset
+
+ es
+\begin_inset Formula 
+\[
+c_{i+j}=a_{0}b_{i+j}+...+a_{i-1}b_{j+1}+a_{i}b_{j}+a_{i+1}b_{j-1}+...+a_{i+j}b_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $p$
+\end_inset
+
+ divide a todos los sumandos excepto al 
+\begin_inset Formula $a_{i}b_{j}$
+\end_inset
+
+, porque los de la izquierda tienen un índice en la 
+\begin_inset Formula $a$
+\end_inset
+
+ menor que 
+\begin_inset Formula $i$
+\end_inset
+
+ y los de la derecha en la 
+\begin_inset Formula $b$
+\end_inset
+
+ menor que 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ Así, 
+\begin_inset Formula $p\nmid c_{i+j}\implies p\nmid ab$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $p$
+\end_inset
+
+ es primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Lema 3.19.
+ Lema de Gauss
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $f,g\in K[X],$
+\end_inset
+
+ entonces 
+\begin_inset Formula $c(fg)=c(f)c(g)$
+\end_inset
+
+.
+ En particular, 
+\begin_inset Formula $fg$
+\end_inset
+
+ es primitivo si y solo si 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ son primitivos.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Tenemos 
+\begin_inset Formula $f=c(f)f_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $g=c(g)g_{1}$
+\end_inset
+
+ con 
+\begin_inset Formula $f_{1},g_{1}$
+\end_inset
+
+ primitivos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto
+\begin_inset Formula 
+\[
+fg=c(f)c(g)f_{1}g_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Luego, para ver la igualdad basta ver que 
+\begin_inset Formula $f_{1}g_{1}$
+\end_inset
+
+ es primitivo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si no fuera primitivo, entonces 
+\begin_inset Formula $c(f_{1}g_{1})$
+\end_inset
+
+ tendría un divisor irreducible 
+\begin_inset Formula $p$
+\end_inset
+
+ en 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Esto implica que 
+\begin_inset Formula $p|f_{1}g_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el lema 
+\begin_inset Formula $3.14,$
+\end_inset
+
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ es primo en 
+\begin_inset Formula $D\overset{D\ DFU}{\implies}p$
+\end_inset
+
+ primo en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ y por lo tanto 
+\begin_inset Formula $p|f_{1}$
+\end_inset
+
+ o 
+\begin_inset Formula $p|g_{1}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $p|c(f_{1})$
+\end_inset
+
+ o 
+\begin_inset Formula $p|c(g_{1})$
+\end_inset
+
+# esto contradice que 
+\begin_inset Formula $c(f_{1})=c(g_{1})=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, 
+\begin_inset Formula $f_{1}g_{1}$
+\end_inset
+
+es primitivo y el resultado queda demostrado.
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 3.20
+\end_layout
+
+\begin_layout Standard
+\align left
+Para un polinomio primitivo 
+\begin_inset Formula $f\in D[X]\setminus D$
+\end_inset
+
+, las siguientes condiciones son equivalentes:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $f$
+\end_inset
+
+ irreducible en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $f$
+\end_inset
+
+ irreducible en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $f=GH$
+\end_inset
+
+, con 
+\begin_inset Formula $G,H\in K[X]\implies gr(G)=0\ ó\ gr(H)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $f=gh,$
+\end_inset
+
+ con 
+\begin_inset Formula $g,h\in D[X]\implies gr(g)=0\ ó\ gr(h)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $1\implies2$
+\end_inset
+
+ Por el lema 3.16
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $2\iff3$
+\end_inset
+
+ Por la proposición 3.13, que dice que 
+\begin_inset Formula $f$
+\end_inset
+
+ irreducible en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+ sii 
+\begin_inset Formula $gr(f)>0$
+\end_inset
+
+ y no puede escribirse como producto de polinomios de grado menor
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $3\implies4$
+\end_inset
+
+ Si 
+\begin_inset Formula $g,h\in D[X]\implies g,h\in K[X]\implies gr(g)=0\ ó\ gr(h)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $4\implies1$
+\end_inset
+
+ Como 
+\begin_inset Formula $f$
+\end_inset
+
+ es primitivo, sus únicos divisores de grado 
+\begin_inset Formula $0$
+\end_inset
+
+ son unidades, por lo que no tiene divisores de grado 0, ni los tiene de
+ grado mayor por la hipótesis 4.
+ Por tanto, 
+\begin_inset Formula $f$
+\end_inset
+
+ es irreducible en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Corolario 3.21
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $D$
+\end_inset
+
+ es un DFU y 
+\begin_inset Formula $K$
+\end_inset
+
+ es su cuerpo de fracciones, entonces los irreducibles de 
+\begin_inset Formula $D[X]$
+\end_inset
+
+ son los irreducibles de 
+\begin_inset Formula $D$
+\end_inset
+
+ y los polinomios primitivos de 
+\begin_inset Formula $D[X]\setminus D$
+\end_inset
+
+ que son irreducibles en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el lema 3.14 sabemos que los irreducibles de 
+\begin_inset Formula $D$
+\end_inset
+
+ son irreducibles en 
+\begin_inset Formula $D[X]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si tenemos un polinomio 
+\begin_inset Formula $f\in D[X]\setminus D$
+\end_inset
+
+ que no es primitivo, entonces no es irreducible, pues es divisible por
+ un elemento de 
+\begin_inset Formula $D$
+\end_inset
+
+ y claramente no son asociados.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si es primitivo, entonces es irreducible si y solo si lo es en 
+\begin_inset Formula $K[X]$
+\end_inset
+
+, por el teorema 3.20.
+\end_layout
+
+\end_body
+\end_document

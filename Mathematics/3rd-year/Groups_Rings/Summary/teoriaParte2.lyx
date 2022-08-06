@@ -1,0 +1,5758 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Gya - Teoría 2ª Parte 
+\end_layout
+
+\begin_layout Title
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Grupos
+\end_layout
+
+\begin_layout Subsection*
+Clases laterales y teorema de Lagrange
+\end_layout
+
+\begin_layout Subsubsection*
+Clases laterales
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $G$
+\end_inset
+
+ un grupo y 
+\begin_inset Formula $H$
+\end_inset
+
+ un subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Se define la siguiente relación binaria en 
+\begin_inset Formula $G$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+a\equiv_{i}b\mod H\iff a^{-1}b\in H
+\]
+
+\end_inset
+
+ Esto es una relación de equivalencia:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Reflexiva: 
+\begin_inset Formula $a^{-1}a\in H\implies a\equiv_{i}a\mod H$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+Simétrica: 
+\begin_inset Formula $a\equiv_{i}b\mod H\iff a^{-1}b\in H\implies\left(a^{-1}b\right)^{-1}=b^{-1}a\in H\iff b\equiv_{i}a\mod H$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+Transitiva: 
+\begin_inset Formula $\begin{cases}
+a\equiv_{i}b\mod H\iff a^{-1}b\in H\\
+b\equiv_{i}c\mod H\iff b^{-1}c\in H
+\end{cases}\implies\left(a^{-1}b\right)\left(b^{-1}c\right)=a^{-1}c\in H\implies a\equiv_{i}c\mod H$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Y define una partición de 
+\begin_inset Formula $G$
+\end_inset
+
+ en clases de equivalencia.
+ La clase de equivalencia que contiene a 
+\begin_inset Formula $a$
+\end_inset
+
+ se denomina 
+\series bold
+clase lateral de 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ módulo 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ por la izquierda
+\series default
+ y es
+\begin_inset Formula 
+\[
+aH=\left\{ ah:h\in H\right\} 
+\]
+
+\end_inset
+
+ para ver esto:
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\subset$
+\end_inset
+
+' Sea 
+\begin_inset Formula $b\in aH$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a\equiv_{i}b\mod H$
+\end_inset
+
+, entonces 
+\begin_inset Formula $b\equiv_{i}a\mod H$
+\end_inset
+
+, lo que quiere decir que 
+\begin_inset Formula $b^{-1}a=h\in H$
+\end_inset
+
+.
+ O sea, que 
+\begin_inset Formula $b^{-1}=ha^{-1}\implies b=ah^{-1},$
+\end_inset
+
+ con 
+\begin_inset Formula $h^{-1}\in H$
+\end_inset
+
+, pues 
+\begin_inset Formula $h\in H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\supset$
+\end_inset
+
+' Si 
+\begin_inset Formula $b\in\left\{ ah:h\in H\right\} $
+\end_inset
+
+, entonces 
+\begin_inset Formula $b=ag$
+\end_inset
+
+, con 
+\begin_inset Formula $g\in H$
+\end_inset
+
+.
+ Y se tiene que 
+\begin_inset Formula $a^{-1}b=a^{-1}ag=g\in H$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Análogamente, se puede definir otra relación de equivalencia
+\begin_inset Formula 
+\[
+a\equiv_{d}b\mod H\iff ab^{-1}\in H
+\]
+
+\end_inset
+
+ Donde la clase de equivalencia que contiene a 
+\begin_inset Formula $a$
+\end_inset
+
+ se denomina 
+\series bold
+clase lateral de 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ módulo 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ por la derecha
+\series default
+ y es
+\begin_inset Formula 
+\[
+Ha=\left\{ ha:h\in H\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+El conjunto de las clases laterales por la izquierda de 
+\begin_inset Formula $G$
+\end_inset
+
+ módulo 
+\begin_inset Formula $H$
+\end_inset
+
+ se denota 
+\begin_inset Formula $G/H$
+\end_inset
+
+ y el de las clases laterales por la derecha 
+\begin_inset Formula $H\backslash G$
+\end_inset
+
+.
+ Por el lema 4.2 se tiene que las aplicaciones
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+H & \rightarrow & aH\\
+h & \mapsto & ah
+\end{array}\qquad\begin{array}{ccc}
+H & \rightarrow & Ha\\
+h & \mapsto & ha
+\end{array}
+\]
+
+\end_inset
+
+ son biyectivas, con los que todas las clases laterales tienen el mismo
+ cardinal.
+ Además, la aplicacion
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+G/H & \rightarrow & H\backslash G\\
+aH & \mapsto & Ha^{-1}
+\end{array}
+\]
+
+\end_inset
+
+ es otra biyección, con lo que también 
+\begin_inset Formula $G/H$
+\end_inset
+
+ y 
+\begin_inset Formula $H\backslash G$
+\end_inset
+
+ tienen el mismo cardinal.
+\end_layout
+
+\begin_layout Standard
+\align left
+En el caso de los grupos el cardinal se denomina 
+\series bold
+orden de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para un subgrupo 
+\begin_inset Formula $H$
+\end_inset
+
+ de 
+\begin_inset Formula $G$
+\end_inset
+
+, hemos visto que se verifica:
+\begin_inset Formula 
+\[
+\left|aH\right|=\left|Ha\right|=\left|H\right|\quad y\quad\left|G/H\right|=\left|H\backslash G\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+El cardinal de 
+\begin_inset Formula $G/H$
+\end_inset
+
+ y 
+\begin_inset Formula $H\backslash G$
+\end_inset
+
+ se llama 
+\series bold
+índice de 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ en 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ 
+\series default
+y se denota 
+\begin_inset Formula $\left[G:H\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema de Lagrange (4.17)
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ es un grupo finito y 
+\begin_inset Formula $H$
+\end_inset
+
+ es un subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\left|G\right|=\left|H\right|\left|G:H\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ tiene 
+\begin_inset Formula $\left|G\right|$
+\end_inset
+
+ elementos, y 
+\begin_inset Formula $G/H$
+\end_inset
+
+ tiene 
+\begin_inset Formula $\left|G/H\right|=\left[G:H\right]$
+\end_inset
+
+ clases de equivalencia, cada una con 
+\begin_inset Formula $\left|H\right|$
+\end_inset
+
+ elementos, entonces, se tiene que 
+\begin_inset Formula 
+\[
+\left|H\right|=\frac{\left|G\right|}{\left[G:H\right]}\implies\left|G\right|=\left|H\right|\left[G:H\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Teorema de la Correspondencia para grupos
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $N$
+\end_inset
+
+ un subgrupo normal de un grupo 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ La asignación 
+\begin_inset Formula $H\mapsto H/N$
+\end_inset
+
+ establece una biyección entre el conjunto de los subgrupos de 
+\begin_inset Formula $G$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $N$
+\end_inset
+
+ y el conjunto de los subgrupos de 
+\begin_inset Formula $G/N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, esta biyección conserva las inclusiones y la normalidad.
+ Es decir, dados dos subgrupos 
+\begin_inset Formula $H$
+\end_inset
+
+ y 
+\begin_inset Formula $K$
+\end_inset
+
+ de 
+\begin_inset Formula $G$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $N$
+\end_inset
+
+, se tiene:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $H\subset K\iff\left(H/N\right)\subset\left(K/N\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $H\trianglelefteq G\iff\left(H/N\right)\trianglelefteq\left(G/N\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+
+\series bold
+Sobreyectividad
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula $\underline{H/N\ subgrupo}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Como 
+\begin_inset Formula $H$
+\end_inset
+
+ subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+, entonces 
+\begin_inset Formula $1\in H\implies1N\in H/N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Dados 
+\begin_inset Formula $x,y\in H$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $(xN)(yN)=(xy)N\in H/N,$
+\end_inset
+
+ pues 
+\begin_inset Formula $xy\in H$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Dado 
+\begin_inset Formula $x\in H$
+\end_inset
+
+, entonces 
+\begin_inset Formula $x^{-1}\in H\implies x^{-1}N\in H/N$
+\end_inset
+
+.
+ Y se tiene que 
+\begin_inset Formula $xNx^{-1}N=xx^{-1}N=1=x^{-1}xN=x^{-1}NxN$
+\end_inset
+
+.
+ Así, vemos que 
+\begin_inset Formula $H/N$
+\end_inset
+
+ es subgrupo de 
+\begin_inset Formula $G/N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\bar under
+Sea ahora 
+\begin_inset Formula $K\ subgrupo\ de\ G/N$
+\end_inset
+
+ y sea 
+\begin_inset Formula $J=\left\{ a\in G/aN\in K\right\} $
+\end_inset
+
+
+\bar default
+, y definimos
+\begin_inset Formula 
+\[
+\begin{array}{ccccc}
+G & \overset{f}{\rightarrow} & G/N & \overset{g}{\rightarrow} & \left(G/N\right)/K\\
+a & \mapsto & aN\\
+ &  & b & \mapsto & bK
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Y sea 
+\begin_inset Formula $h=g\circ f$
+\end_inset
+
+.
+ Calculemos su núcleo:
+\begin_inset Formula 
+\[
+a\in Kerh\iff f(a)K=g(f(a))=1NK\iff f\left(a\right)=aN\in K\iff a\in J
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Es decir, 
+\begin_inset Formula $Kerh=J\overset{lema\ 4.14.7}{\implies}J\ subgrupo\ de\ G$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Además, si 
+\begin_inset Formula $a\in N\implies aN=1N\in K\implies a\in J$
+\end_inset
+
+.
+ Es decir, 
+\begin_inset Formula $N\subset J$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\bar under
+¿
+\begin_inset Formula $J/N=K$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+'
+\begin_inset Formula $\subseteq$
+\end_inset
+
+' 
+\begin_inset Formula $x\in J/N\implies x=aN,\ a\in J\implies x=aN\in K$
+\end_inset
+
+ (por la definición de 
+\begin_inset Formula $J$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+'
+\begin_inset Formula $\supseteq$
+\end_inset
+
+' 
+\begin_inset Formula $x\in K\subset G/N\implies x=aN\in K,\ a\in G\implies a\in J\implies x=aN\in J/N$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\bar under
+Recapitulando:
+\bar default
+ dado un subgrupo de 
+\begin_inset Formula $G/N$
+\end_inset
+
+, podemos escribir este como 
+\begin_inset Formula $J/N$
+\end_inset
+
+, donde 
+\begin_inset Formula $I\subset J\ y\ este\ es\ subgrupo\ de\ A$
+\end_inset
+
+, por lo que nuestra aplicación es suprayectiva.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\noindent
+\align left
+
+\series bold
+Inyectividad
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align left
+Sean 
+\begin_inset Formula $J_{1},J_{2}$
+\end_inset
+
+ subgrupos de 
+\begin_inset Formula $A$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $N$
+\end_inset
+
+ tales que 
+\begin_inset Formula $J_{1}/N\subseteq J_{2}/N$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+x\in J_{1}\implies xN\in J_{1}/N\subset J_{2}/N\implies xN=yN,\ y\in J_{2}\implies
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\implies y^{-1}x\in N\subset J_{2}\implies x=yy^{-1}x\in J_{2}\implies J_{1}\subseteq J_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Por tanto, si 
+\begin_inset Formula $J_{1}/N=J_{2}/N\implies\begin{cases}
+J_{1}/N\subseteq J_{2}/N\implies J_{1}\subseteq J_{2}\\
+J_{2}/N\subseteq J_{1}/N\implies J_{2}\subseteq J_{1}
+\end{cases}\implies J_{1}=J_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Y la aplicación es inyectiva.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\noindent
+\align left
+Es decir, que la aplicación del enunciado es biyectiva.
+ Pero esto quiere demuestra también la igualdad de los dos conjuntos de
+ subrupos.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Solo resta ver que conserva la normalidad.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Supongamos que 
+\begin_inset Formula $H\trianglelefteq G$
+\end_inset
+
+, sean 
+\begin_inset Formula $x\in H/N,\ y\in G/N$
+\end_inset
+
+, entonces 
+\begin_inset Formula $x=hN,\ h\in H$
+\end_inset
+
+ e 
+\begin_inset Formula $y=gN,\ g\in G$
+\end_inset
+
+.
+ Y se tiene que
+\begin_inset Formula 
+\[
+y^{-1}xy=\left(gN\right)^{-1}\left(hN\right)\left(gN\right)=g^{-1}hgN
+\]
+
+\end_inset
+
+ como 
+\begin_inset Formula $H$
+\end_inset
+
+ es normal en 
+\begin_inset Formula $G$
+\end_inset
+
+, entonces 
+\begin_inset Formula $g^{-1}hg\in H$
+\end_inset
+
+ y tenemos que 
+\begin_inset Formula $y^{-1}xy\in H/N$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $H/N$
+\end_inset
+
+ es normal en 
+\begin_inset Formula $G/N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Supongamos que 
+\begin_inset Formula $H/N\trianglelefteq G/N$
+\end_inset
+
+, sean 
+\begin_inset Formula $h\in H$
+\end_inset
+
+ y 
+\begin_inset Formula $g\in G$
+\end_inset
+
+, entonces 
+\begin_inset Formula $hN\in H/N$
+\end_inset
+
+ y 
+\begin_inset Formula $gN\in G/N,$
+\end_inset
+
+ entonces 
+\begin_inset Formula 
+\[
+(gN)^{-1}\left(hN\right)\left(gN\right)=g^{-1}hgN\in H/N
+\]
+
+\end_inset
+
+ esto quiere decir que 
+\begin_inset Formula $\exists k\in H/g^{-1}hgN=kN\iff g^{-1}hgk^{-1}\in N\subset H$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $g^{-1}hgk^{-1}k=g^{-1}hg\in H$
+\end_inset
+
+, y 
+\begin_inset Formula $H$
+\end_inset
+
+ es normal en 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Teoremas de Isomorfía para grupos
+\end_layout
+
+\begin_layout Enumerate
+Si 
+\begin_inset Formula $f:G\rightarrow H$
+\end_inset
+
+ es un homomorfismo de grupos entonces existe un único isomorfismo de grupos
+ 
+\begin_inset Formula $\overline{f}:G/Kerf\rightarrow f$
+\end_inset
+
+ que hace conmutativo el diagrama
+\begin_inset Formula 
+\[
+\xymatrix{G\ar[d]_{p}\ar[r]^{f} & H\\
+G/Kerf\ar@{-->}[r]^{\overline{f}} & Imf\ar[u]^{i}
+}
+\]
+
+\end_inset
+
+ es decir, 
+\begin_inset Formula $i\circ\overline{f}\circ p=f$
+\end_inset
+
+, donde 
+\begin_inset Formula $i$
+\end_inset
+
+ es la inclusión y 
+\begin_inset Formula $p$
+\end_inset
+
+ es la proyección canónica.
+ En particular
+\begin_inset Formula 
+\[
+G/Kerf\simeq Imf
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Sean 
+\begin_inset Formula $N,H$
+\end_inset
+
+ subgrupos normales de un grupo 
+\begin_inset Formula $G$
+\end_inset
+
+ con 
+\begin_inset Formula $N\subset H$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $H/N$
+\end_inset
+
+ es un subgrupo normal de 
+\begin_inset Formula $G/N$
+\end_inset
+
+ y se tiene
+\begin_inset Formula 
+\[
+\frac{G/N}{H/N}\simeq G/H
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Sean 
+\begin_inset Formula $G$
+\end_inset
+
+ un grupo, 
+\begin_inset Formula $H$
+\end_inset
+
+ un subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+ y 
+\begin_inset Formula $N$
+\end_inset
+
+ un subgrupo normal de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $HN$
+\end_inset
+
+ es un subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+ que contiene a 
+\begin_inset Formula $H$
+\end_inset
+
+, 
+\begin_inset Formula $H\cap N$
+\end_inset
+
+ es un subgrupo normal de 
+\begin_inset Formula $H$
+\end_inset
+
+ y se tiene
+\begin_inset Formula 
+\[
+\frac{H}{N\cap H}\simeq\frac{HN}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+\align left
+Veamos que, en caso de existir, debe ser único
+\begin_inset Formula 
+\[
+i\circ\overline{f}\circ p=f\iff i\circ\overline{f}\circ p\left(x\right)=f\left(x\right),\ \forall x\iff i\left(\overline{f}\left(p\left(x\right)\right)\right)=f\left(x\right)\iff i\left(\overline{f}\left(xKerf\right)\right)=f\left(x\right)\iff\overline{f}\left(xKerf\right)=f\left(x\right)
+\]
+
+\end_inset
+
+ es decir, que la única forma que puede tener este isomorfismo es 
+\begin_inset Formula $\overline{f}\left(xKerf\right)=f\left(x\right)$
+\end_inset
+
+.
+ Veamos que, de hecho, es un isomorfismo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Bien definido: 
+\series default
+sean 
+\begin_inset Formula $x,y\in G$
+\end_inset
+
+ tales que 
+\begin_inset Formula $xKerf=yKerf$
+\end_inset
+
+, veamos que tienen la misma imagen
+\begin_inset Formula 
+\[
+xKerf=yKerf\iff xy^{-1}\in Kerf\implies f\left(x\right)f\left(y\right)^{-1}=f\left(x\right)f\left(y^{-1}\right)=f\left(xy^{-1}\right)=1\implies
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\implies\overline{f}\left(xKerf\right)=f\left(x\right)=f\left(y\right)=\overline{f}\left(yKerf\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Homomorfismo:
+\series default
+ sean 
+\begin_inset Formula $xKerf,yKerf\in G/Kerf$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+\overline{f}\left(xyKerf\right)=f\left(xy\right)=f\left(x\right)f\left(y\right)=\overline{f}\left(x\right)\overline{f}\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Sobreyectiva:
+\series default
+ sea 
+\begin_inset Formula $y\in Imf$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\exists x\in G/f\left(x\right)=y\implies\overline{f}\left(xKerf\right)=f\left(x\right)=y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Inyectiva:
+\series default
+ si 
+\begin_inset Formula $\overline{f}\left(xKerf\right)=\overline{f}\left(yKerf\right)\implies f\left(x\right)=f\left(y\right)\implies f\left(x\right)f\left(y\right)^{-1}=1\implies f\left(xy^{-1}\right)=1\implies xy^{-1}\in Kerf\implies xKerf=yKerf$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y tenemos el resultado.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\noindent
+\align left
+Que 
+\begin_inset Formula $H/N$
+\end_inset
+
+ es un subgrupo normal de 
+\begin_inset Formula $G/N$
+\end_inset
+
+ es consecuencia inmediata del teorema de la correspondencia.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Para ver el isomorfismo, consideramos
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+f:G/N & \rightarrow & G/H\\
+gN & \mapsto & gH
+\end{array}
+\]
+
+\end_inset
+
+ que es un homomorfismo:
+\begin_inset Formula 
+\[
+f\left(xyN\right)=xyH=xHyH=f\left(xN\right)f\left(yN\right)
+\]
+
+\end_inset
+
+ Es sobreyectiva: sea 
+\begin_inset Formula $yH\in G/H$
+\end_inset
+
+, entonces 
+\begin_inset Formula $y\in G$
+\end_inset
+
+ y 
+\begin_inset Formula $yN\in G/N$
+\end_inset
+
+, entonces 
+\begin_inset Formula $f\left(yN\right)=yH$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por último, calculamos el núcleo
+\begin_inset Formula 
+\[
+xN\in Kerf\iff xH=f\left(xN\right)=1H=H\iff x\in H
+\]
+
+\end_inset
+
+ es decir, que el núcleo es 
+\begin_inset Formula $Kerf=H/N$
+\end_inset
+
+.
+ Entonces, por el 1er teorema de isomorfía, tenemos que 
+\begin_inset Formula 
+\[
+\frac{G/N}{H/N}\simeq G/H
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\noindent
+\align left
+Veamos que 
+\begin_inset Formula $HN$
+\end_inset
+
+ es un subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\noindent
+\align left
+Como 
+\begin_inset Formula $1\in H,\ 1\in N\implies1=1\cdot1\in HN$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Dado 
+\begin_inset Formula $x,y\in HN$
+\end_inset
+
+, entonces 
+\begin_inset Formula $x=h_{1}n_{1},\ y=h_{2}n_{2}$
+\end_inset
+
+ y se tiene que
+\begin_inset Formula 
+\[
+xy=h_{1}n_{1}h_{2}n_{2}=h_{1}h_{2}h_{2}^{-1}n_{1}h_{2}n_{2}
+\]
+
+\end_inset
+
+ y se tiene que 
+\begin_inset Formula $h_{1}h_{2}\in H$
+\end_inset
+
+, por ser 
+\begin_inset Formula $N$
+\end_inset
+
+ normal se tiene que 
+\begin_inset Formula $h_{2}^{-1}n_{1}h_{2}\in N$
+\end_inset
+
+ y así 
+\begin_inset Formula $xy\in HN$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Además, 
+\begin_inset Formula $x^{-1}=n_{1}^{-1}h_{1}^{-1}=h_{1}^{-1}h_{1}n_{1}^{-1}h_{1}^{-1}\in HN$
+\end_inset
+
+, puesto que 
+\begin_inset Formula $h_{1}^{-1}\in H$
+\end_inset
+
+ y 
+\begin_inset Formula $h_{1}n_{1}^{-1}h_{1}^{-1}\in N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Ahora vamos a ver que 
+\begin_inset Formula $H\cap N$
+\end_inset
+
+ es normal en 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ Para ello, tomamos 
+\begin_inset Formula $h\in H,\ x\in H\cap N$
+\end_inset
+
+, y tenemos que 
+\begin_inset Formula $h^{.1}xh\in H$
+\end_inset
+
+ por ser producto de elementos de 
+\begin_inset Formula $H$
+\end_inset
+
+ y 
+\begin_inset Formula $h^{-1}xh\in N$
+\end_inset
+
+ porque 
+\begin_inset Formula $N$
+\end_inset
+
+ es normal.
+ Por tanto, 
+\begin_inset Formula $h^{-1}xh\in H\cap N$
+\end_inset
+
+ y tenemos que es normal en 
+\begin_inset Formula $H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Por último, queda ver la isomorfía.
+ Para ello, hacemos
+\begin_inset Formula 
+\[
+\begin{array}{ccccc}
+f:H & \rightarrow & HN & \rightarrow & HN/N\\
+h & \mapsto & h & \mapsto & hN
+\end{array}
+\]
+
+\end_inset
+
+ Veamos que 
+\begin_inset Formula $f$
+\end_inset
+
+ es suprayectiva: dado 
+\begin_inset Formula $x\in HN/N\implies x=\left(hn\right)N=hN=f\left(h\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Y calculemos el núcleo:
+\begin_inset Formula 
+\[
+Kerf=\left\{ h\in H:hN=1=N\right\} =H\cap N
+\]
+
+\end_inset
+
+ Así, por el primer teorema de isomorfía, tenemos que
+\begin_inset Formula 
+\[
+\frac{H}{H\cap N}\simeq\frac{HN}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Teorema chino de los restos para grupos
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ y 
+\begin_inset Formula $H$
+\end_inset
+
+ son dos subgrupos cíclicos de órdenes 
+\begin_inset Formula $n$
+\end_inset
+
+ y 
+\begin_inset Formula $m$
+\end_inset
+
+, entonces 
+\begin_inset Formula $G\times H$
+\end_inset
+
+ es cíclico si y solo si 
+\begin_inset Formula $mcd\left(n,m\right)=1$
+\end_inset
+
+.
+ Más generalmente, si 
+\begin_inset Formula $g,h$
+\end_inset
+
+ son dos elementos de un grupo 
+\begin_inset Formula $G$
+\end_inset
+
+ de órdenes coprimos 
+\begin_inset Formula $n$
+\end_inset
+
+ y 
+\begin_inset Formula $m$
+\end_inset
+
+ y 
+\begin_inset Formula $gh=hg$
+\end_inset
+
+ , entonces 
+\begin_inset Formula $\left\langle g,h\right\rangle =\left\langle gh\right\rangle $
+\end_inset
+
+ es cíclico de orden 
+\begin_inset Formula $nm$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Por la proposición 4.22, tenemos que 
+\begin_inset Formula $G\simeq\left(\mathbb{Z}_{n},+\right),\ H\simeq\left(\mathbb{Z}_{m},+\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Si 
+\begin_inset Formula $mcd\left(n,m\right)=1$
+\end_inset
+
+, entonces, por el teorema chino de los restos para anillos, 
+\begin_inset Formula $\mathbb{Z}_{n}\times\mathbb{Z}_{m}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{Z}/nm\mathbb{Z}$
+\end_inset
+
+ son isomorfos como anillos.
+ En particular son isomorfos sus grupos aditivos.
+ Es decir, 
+\begin_inset Formula $G\times H\simeq\left(\mathbb{Z}_{n},+\right)\times\left(\mathbb{Z}_{m},+\right)\simeq\left(\mathbb{Z}/nm\mathbb{Z},+\right)$
+\end_inset
+
+, que es cíclico.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Si 
+\begin_inset Formula $n$
+\end_inset
+
+ y 
+\begin_inset Formula $m$
+\end_inset
+
+ no son coprimos y 
+\begin_inset Formula $d=mcd\left(n,m\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $G$
+\end_inset
+
+ tiene un subgrupo 
+\begin_inset Formula $G_{1}$
+\end_inset
+
+ de orden 
+\begin_inset Formula $d$
+\end_inset
+
+ y 
+\begin_inset Formula $H$
+\end_inset
+
+ tiene otro subgrupo 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ de orden 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $G_{1}\times1$
+\end_inset
+
+ y 
+\begin_inset Formula $1\times H_{1}$
+\end_inset
+
+ son dos subgrupos distintos de 
+\begin_inset Formula $G\times H$
+\end_inset
+
+ del mismo orden, en contra de la proposición 4.22, por lo que 
+\begin_inset Formula $G\times H$
+\end_inset
+
+ no puede ser cíclico y el resultado queda demostrado por contrarrecíproco.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos ahora que 
+\begin_inset Formula $g,h\in G$
+\end_inset
+
+ tienen órdenes coprimos 
+\begin_inset Formula $n$
+\end_inset
+
+ y 
+\begin_inset Formula $m$
+\end_inset
+
+ y que 
+\begin_inset Formula $gh=hg$
+\end_inset
+
+.
+ Entonces la aplicación
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+f:\mathbb{Z}_{n}\times\mathbb{Z}_{m} & \rightarrow & G\\
+\left(i,j\right) & \mapsto & g^{i}h^{j}
+\end{array}
+\]
+
+\end_inset
+
+es un homomorfismo de anillos cuya imagen es 
+\begin_inset Formula $\left\langle g,h\right\rangle $
+\end_inset
+
+, puesto que 
+\begin_inset Formula $gh=hg$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+Kerf=\left\{ \left(a,b\right):g^{a}h^{b}=1\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $g^{a}=h^{-b}\in\left\langle g\right\rangle \cap\left\langle h\right\rangle $
+\end_inset
+
+, que es un subgrupo tanto de 
+\begin_inset Formula $\left\langle g\right\rangle $
+\end_inset
+
+ como de 
+\begin_inset Formula $\left\langle h\right\rangle $
+\end_inset
+
+.
+ Como el primero tiene orden 
+\begin_inset Formula $n$
+\end_inset
+
+ y el segundo tiene orden 
+\begin_inset Formula $m$
+\end_inset
+
+, entonces, por el teorema de Lagrange, el orden de 
+\begin_inset Formula $\left\langle g\right\rangle \cap\left\langle h\right\rangle $
+\end_inset
+
+ divide a 
+\begin_inset Formula $n$
+\end_inset
+
+ y a 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Como son coprimos, el orden debe ser 1.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces los elementos de 
+\begin_inset Formula $Kerf$
+\end_inset
+
+ son tales que 
+\begin_inset Formula $g^{a}=1=h^{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $g^{a}=1\implies n|a\implies a\equiv0\mod n$
+\end_inset
+
+ y de igual forma 
+\begin_inset Formula $m|b$
+\end_inset
+
+ y 
+\begin_inset Formula $b\equiv0\mod m$
+\end_inset
+
+.
+ Pero, esto quiere decir que 
+\begin_inset Formula $Kerf=\left\{ \left(0,0\right)\right\} $
+\end_inset
+
+.
+ Por tanto, la aplicación es inyectiva y se tiene, por el primer teorema
+ de isomorfía, que
+\begin_inset Formula 
+\[
+\mathbb{Z}_{n}\times\mathbb{Z}_{m}\simeq\left\langle g,h\right\rangle 
+\]
+
+\end_inset
+
+ y así, 
+\begin_inset Formula $\left\langle g,h\right\rangle $
+\end_inset
+
+ es cíclico de orden 
+\begin_inset Formula $nm$
+\end_inset
+
+.
+ Falta ver que es generado por 
+\begin_inset Formula $gh$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es claro que 
+\begin_inset Formula $\left\langle gh\right\rangle $
+\end_inset
+
+ es un subgrupo de 
+\begin_inset Formula $\left\langle g,h\right\rangle $
+\end_inset
+
+, si demostramos que tienen el mismo orden, 
+\begin_inset Formula $nm$
+\end_inset
+
+, tendremos la igualdad.
+ Calculemos el orden de 
+\begin_inset Formula $gh$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+1=\left(gh\right)^{k}=g^{k}h^{k}\implies g^{k}=h^{-k}\in\left\langle g\right\rangle \cap\left\langle h\right\rangle =\left\{ 1\right\} 
+\]
+
+\end_inset
+
+ como antes.
+ De esta forma, se tiene que 
+\begin_inset Formula $n=\left|g\right||k$
+\end_inset
+
+ y 
+\begin_inset Formula $m=\left|h\right||k$
+\end_inset
+
+, luego el orden, que es el menor 
+\begin_inset Formula $k$
+\end_inset
+
+ que verifica esto, es el 
+\begin_inset Formula $mcm$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $n$
+\end_inset
+
+ y 
+\begin_inset Formula $m$
+\end_inset
+
+ son coprimos, entonces 
+\begin_inset Formula $k=nm$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Propiedades y aplicaciones de las acciones de grupos en conjuntos
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 4.26
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $G$
+\end_inset
+
+ un grupo actuando en un conjunto 
+\begin_inset Formula $X$
+\end_inset
+
+ y sean 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ y 
+\begin_inset Formula $g\in G$
+\end_inset
+
+.
+ Entonces:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Estab_{G}\left(x\right)$
+\end_inset
+
+ es un subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left[G:Estab_{G}\left(x\right)\right]=\left|G\cdot x\right|$
+\end_inset
+
+.
+ En particular, si 
+\begin_inset Formula $G$
+\end_inset
+
+ es finito, entonces el número de elementos de cada órbita es un divisor
+ del orden de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Si se trata de una acción por la izquierda entonces 
+\begin_inset Formula $Estab_{G}\left(g\cdot x\right)=Estab_{G}\left(x\right)^{g^{-1}}$
+\end_inset
+
+.
+ Sin embargo, si se trata de una acción por la derecha entonces 
+\begin_inset Formula $Estab_{G}\left(x\cdot g\right)=Estab_{G}\left(x\right)^{g}$
+\end_inset
+
+.
+ En particular, si 
+\begin_inset Formula $x,g\in G$
+\end_inset
+
+ y 
+\begin_inset Formula $H$
+\end_inset
+
+ es un subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+ entonces
+\begin_inset Formula 
+\[
+C_{G}\left(x^{g}\right)=C_{G}\left(x\right)^{g}\qquad y\qquad N_{G}\left(H^{g}\right)=N_{G}\left(H\right)^{g}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Ecuación de Órbitas:
+\series default
+ si 
+\begin_inset Formula $R$
+\end_inset
+
+ es un subconjunto de representantes de las órbitas de la acción de 
+\begin_inset Formula $G$
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+, es decir, 
+\begin_inset Formula $R$
+\end_inset
+
+ contiene exactamente un elemento de cada órbita, entonces
+\begin_inset Formula 
+\[
+\left|X\right|=\sum_{r\in R}\left|G\cdot r\right|=\sum_{r\in R}\left[G:Estab_{G}\left(r\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Estab_{G}\left(x\right)=\left\{ g\in G:gx=x\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $1\in Estab_{G}\left(x\right):$
+\end_inset
+
+ como 
+\begin_inset Formula $1a=a,\ \forall a\in G\implies1\in Estab_{G}\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dados 
+\begin_inset Formula $a,b\in Estab_{G}\left(x\right)\implies abx=a\left(bx\right)=ax=x\implies ab\in Estab_{G}\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dado 
+\begin_inset Formula $a\in Estab_{G}\left(x\right)\implies ax=x\implies x=a^{-1}x\implies a^{-1}\in Estab_{G}\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y 
+\begin_inset Formula $Estab_{G}\left(x\right)$
+\end_inset
+
+ es un subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sea 
+\begin_inset Formula $H=Estab_{G}\left(x\right)$
+\end_inset
+
+, entonces la aplicación
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+h:G/H & \rightarrow & G\cdot x\\
+gH & \mapsto & gx
+\end{array}
+\]
+
+\end_inset
+
+ es biyectiva.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inyectividad, sean 
+\begin_inset Formula $aH,bH$
+\end_inset
+
+ tales que 
+\begin_inset Formula $ax=bx\implies x=a^{-1}bx\implies a^{-1}b\in H\implies a^{.1}bH=H\implies bH=aH$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sobreyectividad, sea 
+\begin_inset Formula $yx\in G\cdot x\implies y\in G\implies yH\in G/H\implies h\left(yH\right)=yx$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+Estab_{G}\left(gx\right)=\left\{ a\in G:agx=gx\right\} =\left\{ a\in G:g^{-1}agx=x\right\} =\left\{ a\in G:g^{-1}ag\in Estab_{G}\left\{ x\right\} \right\} =
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\{ a\in G:a\in gEstab_{G}\left\{ x\right\} g^{-1}\right\} =Estab_{G}\left\{ x\right\} ^{g^{-1}}
+\]
+
+\end_inset
+
+ Para verlo por la derecha es exactamente igual.
+ 
+\begin_inset Formula 
+\[
+C_{G}\left(x^{g}\right)=Estab_{G}\left(x^{g}\right)=Estab_{G}\left(xg\right)=Estab_{G}\left(x\right)^{g}=C_{G}\left(x\right)^{g}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+N_{G}\left(H^{g}\right)=Estab_{G}\left(H^{g}\right)=Estab_{G}\left(Hg\right)=Estab_{G}\left(H\right)^{g}=N_{G}\left(H\right)^{g}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Como las órbitas forman una partición de 
+\begin_inset Formula $X$
+\end_inset
+
+ entonces el cardinal de 
+\begin_inset Formula $X$
+\end_inset
+
+ es la suma de los cardinales de las órbitas.
+ La segunda igualdad es obvia habiendo demostrado 2.
+\end_layout
+
+\begin_layout Subsubsection*
+Corolario 4.27
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $G$
+\end_inset
+
+ un grupo y 
+\begin_inset Formula $a\in G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left|a^{G}\right|=\left[G:C_{G}\left(a\right)\right]$
+\end_inset
+
+.
+ En particular, 
+\begin_inset Formula $a^{G}$
+\end_inset
+
+ tiene un único elemento si y solo si 
+\begin_inset Formula $a$
+\end_inset
+
+ es un elemento del centro 
+\begin_inset Formula $Z\left(G\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Ecuación de Clases:
+\series default
+ si 
+\begin_inset Formula $G$
+\end_inset
+
+ es finito y 
+\begin_inset Formula $X$
+\end_inset
+
+ es un subconjunto de 
+\begin_inset Formula $G$
+\end_inset
+
+ que contiene exactamente un elemento de cada clase de conjugación con al
+ menos dos elementos, entonces
+\begin_inset Formula 
+\[
+\left|G\right|=\left|Z\left(G\right)\right|+\sum_{x\in X}\left[G:C_{G}\left(x\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $C_{G}\left(a\right)=Estab_{G}\left(a\right)$
+\end_inset
+
+ con la acción de conjugación.
+ Entonces, usando 2.
+ de la proposición anterior, 
+\begin_inset Formula $\left[G:C_{G}\left(a\right)\right]=\left|G\cdot a\right|=\left|a^{G}\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Es evidente por 3.
+ de la proposición anterior.
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 4.28
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ es un 
+\begin_inset Formula $p$
+\end_inset
+
+-grupo no trivial para 
+\begin_inset Formula $p$
+\end_inset
+
+ un primo entonces 
+\begin_inset Formula $Z\left(G\right)\neq1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el corolario anterior tenemos que
+\begin_inset Formula 
+\[
+\left|G\right|=\left|Z\left(G\right)\right|+\sum_{x\in X}\left[G:C_{G}\left(x\right)\right]
+\]
+
+\end_inset
+
+ entonces 
+\begin_inset Formula $\left|G\right|$
+\end_inset
+
+ y 
+\begin_inset Formula $\left[G:C_{G}\left(x\right)\right]$
+\end_inset
+
+ son potencia de 
+\begin_inset Formula $p,\forall x\in X$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\left|Z\left(G\right)\right|$
+\end_inset
+
+ es múltiplo de 
+\begin_inset Formula $p$
+\end_inset
+
+ y, por tanto, debe tener más elementos además del 1.
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 4.29
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ es un 
+\begin_inset Formula $p-$
+\end_inset
+
+grupo finito entonces 
+\begin_inset Formula $G$
+\end_inset
+
+ tiene una cadena de subgrupos normales 
+\begin_inset Formula $1=G_{0}\subset G_{1}\subset...\subset G_{n}=G$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\left[G_{i}:G_{i-1}\right]=p$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Razonamos por inducción sobre el orden de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+El caso de orden 1 es obvio.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que 
+\begin_inset Formula $G\neq1$
+\end_inset
+
+ y que el teorema se verifica para grupos de orden menor.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por la proposición anterior, existe 
+\begin_inset Formula $g\in Z\left(G\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $g\neq1$
+\end_inset
+
+.
+ Sea 
+\begin_inset Formula $N=\left\langle g\right\rangle $
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $N$
+\end_inset
+
+ es normal en 
+\begin_inset Formula $G$
+\end_inset
+
+ ya que 
+\begin_inset Formula $N$
+\end_inset
+
+ está dentro del centro de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $G=N$
+\end_inset
+
+, entonces 
+\begin_inset Formula $G$
+\end_inset
+
+ es cíclico y por la proposición 4.22, deducimos que si 
+\begin_inset Formula $\left|G\right|=p^{n}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\forall i=0,1,...,n$
+\end_inset
+
+, 
+\begin_inset Formula $G$
+\end_inset
+
+ tiene un único subgrupo 
+\begin_inset Formula $G_{i}$
+\end_inset
+
+ de orden 
+\begin_inset Formula $p^{i}$
+\end_inset
+
+ y que 
+\begin_inset Formula $G_{i-1}\subset G_{i}$
+\end_inset
+
+, con lo que se cumple el enunciado.
+\end_layout
+
+\begin_layout Standard
+\align left
+En caso contrario, tanto 
+\begin_inset Formula $N$
+\end_inset
+
+ como 
+\begin_inset Formula $G/N$
+\end_inset
+
+ son 
+\begin_inset Formula $p-$
+\end_inset
+
+grupos de orden estrictamente menor que 
+\begin_inset Formula $G$
+\end_inset
+
+ con lo que por la hipótesis de inducción existe una cadena
+\begin_inset Formula 
+\[
+G_{0}=1\subset G_{1}\subset...\subset G_{k}=N
+\]
+
+\end_inset
+
+ de subgrupos normales de 
+\begin_inset Formula $N$
+\end_inset
+
+ y una cadena
+\begin_inset Formula 
+\[
+H_{k}=1\subset H_{k+1}\subset...\subset H_{n}=G/N
+\]
+
+\end_inset
+
+ de subgrupos normales de 
+\begin_inset Formula $G/N$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\left[G_{i}:G_{i-1}\right]=p,\ \forall i=1,...,k$
+\end_inset
+
+ y 
+\begin_inset Formula $\left[H_{j}:H_{j-1}\right]=p,\ \forall j=k+1,...,n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el teorema de la correspondencia, cada 
+\begin_inset Formula $H_{j}=G_{j}/N$
+\end_inset
+
+ para algún subgrupo normal 
+\begin_inset Formula $G_{j}$
+\end_inset
+
+ de 
+\begin_inset Formula $G$
+\end_inset
+
+ que verifica los contenidos y, por el 2º trm de isomorfía se tiene que
+ si 
+\begin_inset Formula $k<j\leq n$
+\end_inset
+
+ entonces 
+\begin_inset Formula $H_{j}/H_{j-1}=\frac{G_{j}/N}{G_{j-1}/N}\simeq G_{j}/G_{j-1}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\left[G_{j}:G_{j-1}\right]=\left[H_{j}:H_{j-1}\right]=p.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema de Cauchy (4.30)
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ es un grupo finito cuyo orden es múltiplo de un primo 
+\begin_inset Formula $p$
+\end_inset
+
+, entonces 
+\begin_inset Formula $G$
+\end_inset
+
+ tiene un elemento de orden 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $X=\left\{ \left(g_{1},g_{2},...,g_{p}\right)\in G^{p}:g_{1}g_{2}\cdot...\cdot g_{p}=1\right\} $
+\end_inset
+
+.
+ La aplicación
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+G^{p-1} & \rightarrow & X\\
+\left(g_{1},...,g_{p-1}\right) & \mapsto & \left(g_{1},...,g_{p-1},\left(g_{1}\cdot...\cdot g_{p-1}\right)^{-1}\right)
+\end{array}
+\]
+
+\end_inset
+
+ es una biyección, luego 
+\begin_inset Formula $\left|X\right|=\left|G\right|^{p-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Inyectividad: se tiene por la unicidad del inverso.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Sobreyectividad: dado 
+\begin_inset Formula $a=\left(a_{1},...,a_{p}\right)\in X\implies a_{1}...a_{p}=1\implies a_{p}=\left(a_{1}...a_{p-1}\right)^{-1}\implies a=\left(a_{1},...,a_{p-1},\left(a_{1}...a_{p-1}\right)^{-1}\right)=f\left(a_{1},...,a_{p-1}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Consideremos la acción de 
+\begin_inset Formula $S_{p}$
+\end_inset
+
+ en 
+\begin_inset Formula $G^{p}$
+\end_inset
+
+ del ejemplo 4.25.(5):
+\begin_inset Formula 
+\[
+\sigma\cdot\left(g_{1},...,g_{p}\right)=\left(g_{\sigma\left(1\right)},...,g_{\sigma\left(p\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Consideremos la permutación 
+\begin_inset Formula $\sigma\in S_{p}$
+\end_inset
+
+ dada por
+\begin_inset Formula 
+\[
+\sigma\left(i\right)=\begin{cases}
+i+1, & i\neq p\\
+1, & i=p
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $\left(x_{1},...,x_{p}\right)\in X$
+\end_inset
+
+ entonces
+\begin_inset Formula 
+\[
+x_{p}x_{1}...x_{p-1}=x_{p}\left(x_{1}...x_{p}\right)x_{p}^{-1}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Lo que demuestra que si 
+\begin_inset Formula $x\in X\implies\sigma x\in X$
+\end_inset
+
+.
+ Esto quiere decir que la acción de 
+\begin_inset Formula $S_{p}$
+\end_inset
+
+ en 
+\begin_inset Formula $G^{p}$
+\end_inset
+
+ define una acción de 
+\begin_inset Formula $\left\langle \sigma\right\rangle $
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Analicemos las órbitas de la acción de 
+\begin_inset Formula $\left\langle \sigma\right\rangle $
+\end_inset
+
+ en 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $\left|\sigma\right|=p$
+\end_inset
+
+, de la proposición 4.26.2 se deduce que cada órbita tiene cardinal 1 ó 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $n$
+\end_inset
+
+ el número de órbitas con un elemento y 
+\begin_inset Formula $m$
+\end_inset
+
+ el número de óritas con 
+\begin_inset Formula $p$
+\end_inset
+
+ elementos.
+ Como las órbitas forman una partición de 
+\begin_inset Formula $X$
+\end_inset
+
+ se tiene que
+\begin_inset Formula 
+\[
+\left|G\right|^{p-1}=\left|X\right|=n+pm
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $p|\left|G\right|$
+\end_inset
+
+, se deduce que 
+\begin_inset Formula $p|n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Como la órbita de 
+\begin_inset Formula $\left(1,...,1\right)$
+\end_inset
+
+ tiene exactamente un elemento se tiene que 
+\begin_inset Formula $n\geq1$
+\end_inset
+
+ y como 
+\begin_inset Formula $n$
+\end_inset
+
+ es múltiplo de 
+\begin_inset Formula $p$
+\end_inset
+
+ necesariamente 
+\begin_inset Formula $n\geq2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces existe 
+\begin_inset Formula $x=\left(g_{1},...,g_{p}\right)\in X\setminus\left\{ \left(1,...,1\right)\right\} $
+\end_inset
+
+ tal que 
+\begin_inset Formula $\left|G\cdot x\right|=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto
+\begin_inset Formula 
+\[
+\left(g_{1},...,g_{p}\right)=\sigma x=\left(g_{p},g_{1},...,g_{p-1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Esto implica que todos los 
+\begin_inset Formula $g_{i}$
+\end_inset
+
+ son iguales a un elemento 
+\begin_inset Formula $1\neq g\in G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula $g^{p}=g_{1}\cdot...\cdot g_{p}=1$
+\end_inset
+
+ y, ya que 
+\begin_inset Formula $g\neq1$
+\end_inset
+
+, 
+\begin_inset Formula $g$
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Grupos Abelianos Finitos
+\end_layout
+
+\begin_layout Section*
+Clasificación de grupos abelianos finitos indescomponibles
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 5.10
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $A$
+\end_inset
+
+ un grupo abeliano finito y sean 
+\begin_inset Formula $p_{1},...,p_{k}$
+\end_inset
+
+ los divisores primos de 
+\begin_inset Formula $\left|A\right|$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+A=t_{p_{1}}\left(A\right)\varoplus...\varoplus t_{p_{k}}\left(A\right)
+\]
+
+\end_inset
+
+ con cada 
+\begin_inset Formula $t_{p_{i}}\left(A\right)\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ y sea 
+\begin_inset Formula $\left|a\right|=n=p_{1}^{a_{1}}\cdot...\cdot p_{k}^{a_{k}}$
+\end_inset
+
+ la única descomposición de 
+\begin_inset Formula $n$
+\end_inset
+
+ en factores primos (recordemos de 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ es un DFU).
+\end_layout
+
+\begin_layout Standard
+\align left
+Para cada 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+ sea 
+\begin_inset Formula $q_{i}=\frac{n}{p_{i}^{a_{i}}}$
+\end_inset
+
+.
+ Ningún primo divide a la vez a todos los 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $mcd\left(q_{1},...,q_{k}\right)=1$
+\end_inset
+
+ y esto quiere decir que existen 
+\begin_inset Formula $m_{1},...,m_{k}\in\mathbb{Z}$
+\end_inset
+
+ tales que 
+\begin_inset Formula $m_{1}q_{1}+...+m_{k}q_{k}=1$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $na=p_{i}^{a_{i}}q_{i}a=0$
+\end_inset
+
+, entonces 
+\begin_inset Formula $q_{i}a\in t_{p_{i}}\left(A\right)$
+\end_inset
+
+, y entonces
+\begin_inset Formula 
+\[
+a=m_{1}q_{1}a+...+m_{k}q_{k}a\in t_{p_{1}}\left(A\right)+...+t_{p_{k}}\left(A\right)
+\]
+
+\end_inset
+
+Y, por tanto, 
+\begin_inset Formula $A=t_{p_{1}}\left(A\right)+...+t_{p_{k}}\left(A\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para ver que la suma es directa, supongamos que 
+\begin_inset Formula $a_{1}+...+a_{k}=0,\ a_{i}\in t_{p_{i}}\left(A\right)$
+\end_inset
+
+.
+ Entonces, para cada 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+, existe 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $p_{i}^{b_{i}}a_{i}=0$
+\end_inset
+
+.
+ Sea 
+\begin_inset Formula $m=p_{1}^{b_{1}}...p_{k}^{b_{k}}$
+\end_inset
+
+.
+ Para cada 
+\begin_inset Formula $i$
+\end_inset
+
+, ponemos 
+\begin_inset Formula $t_{i}=\frac{m}{p_{i}^{b_{i}}}$
+\end_inset
+
+, de modo que 
+\begin_inset Formula $t_{i}a_{j}=\frac{m}{p_{i}^{b_{i}}}a_{j}=0$
+\end_inset
+
+ siempre que 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, pues el factor 
+\begin_inset Formula $p_{j}^{b_{j}}$
+\end_inset
+
+ multiplica a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+t_{1}a_{1}+...+t_{k}a_{k}=0\implies t_{i}a_{i}=-t_{i}\sum_{j\neq i}a_{j}=0
+\]
+
+\end_inset
+
+ entonces 
+\begin_inset Formula $\left|a_{i}\right|$
+\end_inset
+
+ divide a 
+\begin_inset Formula $t_{i}$
+\end_inset
+
+ y a 
+\begin_inset Formula $p_{i}^{b_{i}}$
+\end_inset
+
+, que son coprimos por cómo hemos definido 
+\begin_inset Formula $t_{i}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\left|a_{i}\right|=1$
+\end_inset
+
+ y se tiene que 
+\begin_inset Formula $a_{i}=0$
+\end_inset
+
+.
+ Así, la familia es independiente.
+\end_layout
+
+\begin_layout Standard
+\align left
+Queda ver que los 
+\begin_inset Formula $t_{p_{i}}\left(A\right)\neq0$
+\end_inset
+
+.
+ Ya hemos visto que 
+\begin_inset Formula $A=t_{p_{1}}\left(A\right)\varoplus...\varoplus t_{p_{k}}\left(A\right)$
+\end_inset
+
+, de donde se deduce que 
+\begin_inset Formula $\left|A\right|=\left|t_{p_{1}}\left(A\right)\right|...\left|t_{p_{k}}\left(A\right)\right|$
+\end_inset
+
+.
+ Como el orden de cada 
+\begin_inset Formula $t_{p_{i}}\left(A\right)$
+\end_inset
+
+ es una potencia de 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+, por el lema 5.9 y cada 
+\begin_inset Formula $p_{i}|\left|A\right|$
+\end_inset
+
+, entonces este orden es mayor que 1 y tenemos el resultado.
+\end_layout
+
+\begin_layout Subsubsection*
+Lema 5.13
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset Formula $A$
+\end_inset
+
+ un 
+\begin_inset Formula $p-grupo$
+\end_inset
+
+ finito.
+ Entonces:
+\end_layout
+
+\begin_layout Enumerate
+Existe 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\left|a\right|=Exp\left(A\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Si 
+\begin_inset Formula $B=\left\langle a\right\rangle $
+\end_inset
+
+, siendo 
+\begin_inset Formula $a$
+\end_inset
+
+ el de 1., entonces todo elemento del cociente 
+\begin_inset Formula $A/B$
+\end_inset
+
+ tiene un representante con el mismo orden.
+ Es decir, para todo 
+\begin_inset Formula $y\in A/B$
+\end_inset
+
+ existe 
+\begin_inset Formula $x\in A$
+\end_inset
+
+ tal que 
+\begin_inset Formula $x+B=y$
+\end_inset
+
+ y 
+\begin_inset Formula $\left|x\right|=\left|y\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\forall x\in A,\ x^{Exp\left(A\right)}=1\implies\left|x\right||Exp\left(A\right),\ \forall x\in A
+\]
+
+\end_inset
+
+ Claramente, el mcm de los órdenes verifica esto, y ningún otro orden que
+ lo verifique puede ser menor que el mcm.
+ Entonces 
+\begin_inset Formula $Exp\left(A\right)=mcm\left\{ \left|x\right|:x\in A\right\} $
+\end_inset
+
+, tomando 
+\begin_inset Formula 
+\[
+a=\prod_{x\in X}x
+\]
+
+\end_inset
+
+ tenemos el 
+\begin_inset Formula $a$
+\end_inset
+
+ buscado.
+\end_layout
+
+\begin_layout Enumerate
+Para el segundo apartado, comenzamos eligiendo un representante cualquiera
+ de 
+\begin_inset Formula $y$
+\end_inset
+
+ y veremos que podemos sustituirlo por otro con la propiedad requerida.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sea entonces 
+\begin_inset Formula $z\in A$
+\end_inset
+
+ tal que 
+\begin_inset Formula $z+B=y$
+\end_inset
+
+.
+ Supongamos que 
+\begin_inset Formula $\left|a\right|=Exp\left(A\right)=p^{m}$
+\end_inset
+
+, 
+\begin_inset Formula $\left|z\right|=p^{s}$
+\end_inset
+
+ y 
+\begin_inset Formula $\left|y\right|=p^{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nótese que si 
+\begin_inset Formula $G$
+\end_inset
+
+ es un grupo abeliano y 
+\begin_inset Formula $S$
+\end_inset
+
+ es un subgrupo.
+ Si 
+\begin_inset Formula $ng=0,\ n\in\mathbb{N},g\in G,$
+\end_inset
+
+ entonces, en 
+\begin_inset Formula $G/S$
+\end_inset
+
+ se tiene 
+\begin_inset Formula $n\left(g+S\right)=0.$
+\end_inset
+
+ Esto implica que el orden de 
+\begin_inset Formula $g+S$
+\end_inset
+
+ divide al orden de 
+\begin_inset Formula $g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Retomando lo anterior, esto quiere decir que 
+\begin_inset Formula $k\leq s\leq m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $k=s$
+\end_inset
+
+, tomamos 
+\begin_inset Formula $x=z$
+\end_inset
+
+ y hemos terminado.
+\end_layout
+
+\begin_layout Standard
+Supongamos entonces que 
+\begin_inset Formula $k<s$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $p^{k}\left(z+B\right)=p^{k}y=0,$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula $p^{k}z\in B=\left\langle a\right\rangle \implies p^{k}y=qa,\ q\in\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dividiendo 
+\begin_inset Formula $q$
+\end_inset
+
+ por la mayor potencia posible de 
+\begin_inset Formula $p$
+\end_inset
+
+, podemos poner 
+\begin_inset Formula $q=rp^{t}$
+\end_inset
+
+, con 
+\begin_inset Formula $mcd\left(p,r\right)=1$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+p^{m+k-t}z=p^{m-t}p^{k}z=p^{m-t}qa=rp^{m}a=0
+\]
+
+\end_inset
+
+ y, por tanto, 
+\begin_inset Formula $s\leq m+k-t$
+\end_inset
+
+.
+ Por otro lado
+\begin_inset Formula 
+\[
+p^{m+k-t-1}z=p^{m-t-1}qa=rp^{m-1}a\neq0
+\]
+
+\end_inset
+
+ y, por tanto, 
+\begin_inset Formula $s=m+k-t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea ahora 
+\begin_inset Formula $x=z-tp^{m-s}a$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+x+B=z+B=y
+\]
+
+\end_inset
+
+ por lo que 
+\begin_inset Formula $\left|y\right|=p^{k}|\left|x\right|$
+\end_inset
+
+.
+ Pero, además
+\begin_inset Formula 
+\[
+p^{k}x=p^{k}y-rp^{m+k-s}a=p^{k}y-rp^{t}a=p^{k}y-qa=p^{k}y-p^{k}y=0
+\]
+
+\end_inset
+
+ es decir, que 
+\begin_inset Formula $\left|x\right|=p^{k}=\left|y\right|$
+\end_inset
+
+, como queríamos ver.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Proposición 5.14
+\end_layout
+
+\begin_layout Standard
+Un grupo abeliano finito es indescomponible si y solo si es un 
+\begin_inset Formula $p-$
+\end_inset
+
+grupo cíclico.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Supongamos que 
+\begin_inset Formula $G=\left\langle a\right\rangle $
+\end_inset
+
+ es un grupo cíclico de orden 
+\begin_inset Formula $p^{n}$
+\end_inset
+
+ con 
+\begin_inset Formula $p$
+\end_inset
+
+ primo y 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ Entonces los subgrupo de 
+\begin_inset Formula $G$
+\end_inset
+
+ forman una cadena:
+\begin_inset Formula 
+\[
+1<\left\langle a^{p^{n-1}}\right\rangle _{p}<\left\langle a^{p^{n-2}}\right\rangle _{p^{2}}<...<\left\langle a^{p^{2}}\right\rangle _{p^{n-2}}<\left\langle a^{p}\right\rangle _{p^{n-1}}<\left\langle a\right\rangle _{p^{n}}=G
+\]
+
+\end_inset
+
+ Por lo que 
+\begin_inset Formula $G$
+\end_inset
+
+ es indescomponible, ya que no puede expresarse como suma directa de subgrupos
+ suyos.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Supongamos que 
+\begin_inset Formula $A$
+\end_inset
+
+ es indescomponible, por el corolario 5.11, que dice que un grupo finito
+ indescomponible es un 
+\begin_inset Formula $p$
+\end_inset
+
+-grupo, tenemos que es un 
+\begin_inset Formula $p-$
+\end_inset
+
+grupo, y solo resta ver que es cíclico.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para esto, vamos a hacer inducción sobre 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $n=1$
+\end_inset
+
+, entonces 
+\begin_inset Formula $A$
+\end_inset
+
+ tiene orden primo, por lo que es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{p}$
+\end_inset
+
+ (corolario 4.23) y, por tanto, es cíclico.
+\end_layout
+
+\begin_layout Standard
+\align left
+En el caso general, por el lema anterior, 
+\begin_inset Formula $A$
+\end_inset
+
+ contiene un elemento 
+\begin_inset Formula $a$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\left|a\right|=Exp\left(A\right)$
+\end_inset
+
+.
+ Sean 
+\begin_inset Formula $B=\left\langle a\right\rangle $
+\end_inset
+
+ y 
+\begin_inset Formula $C=A/B$
+\end_inset
+
+.
+ Por la proposición 5.6 (todo grupo abeliano finito y no nulo es una suma
+ directa de subgrupos indescomponibles), se tiene 
+\begin_inset Formula $C=C_{1}\varoplus...\varoplus C_{k}$
+\end_inset
+
+ para ciertos 
+\begin_inset Formula $C_{1},...,C_{k}$
+\end_inset
+
+ indescomponibles.
+ Por hipótesis de inducción, cada 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ es cíclico.
+ Es decir, existen 
+\begin_inset Formula $x_{1},...,x_{k}\in A$
+\end_inset
+
+ tales que 
+\begin_inset Formula $C_{i}=\left\langle x_{i}+B\right\rangle $
+\end_inset
+
+ para cada 
+\begin_inset Formula $i$
+\end_inset
+
+, y por el lema anterior podemos suponer que 
+\begin_inset Formula $\left|x_{i}\right|=\left|x_{i}+B\right|$
+\end_inset
+
+ para cada 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces se tiene que 
+\begin_inset Formula $A=B+\left\langle x_{1}\right\rangle +...+\left\langle x_{k}\right\rangle $
+\end_inset
+
+.
+ Vamos a ver que esta suma es directa.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sean 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ y 
+\begin_inset Formula $m_{1},...,m_{k}\in\mathbb{Z}$
+\end_inset
+
+ tales que 
+\begin_inset Formula $b+m_{1}x_{1}+...+m_{k}x_{k}=0$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $0=m_{1}\left(x_{1}+B\right)+...+m_{k}\left(x_{k}+B\right)$
+\end_inset
+
+ y, por tanto, cada 
+\begin_inset Formula $m_{i}\left(x_{i}+B\right)=0$
+\end_inset
+
+.
+ De aquí se deduce que 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ es múltiplo de 
+\begin_inset Formula $\left|x_{i}+B\right|=\left|x_{i}\right|$
+\end_inset
+
+ y por tanto 
+\begin_inset Formula $m_{i}x_{i}=0$
+\end_inset
+
+ y 
+\begin_inset Formula $b=0$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $A$
+\end_inset
+
+ es indescomponible y 
+\begin_inset Formula $B\neq0$
+\end_inset
+
+, se deduce que 
+\begin_inset Formula $A=B=\left\langle a\right\rangle $
+\end_inset
+
+, por lo que 
+\begin_inset Formula $A$
+\end_inset
+
+ es cíclico y tenemos el resultado.
+\end_layout
+
+\begin_layout Subsection*
+Teorema de Estructura de Grupos Abelianos Finitos
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 5.20
+\end_layout
+
+\begin_layout Standard
+Todo grupo abeliano finito tiene una descomposición invariante.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $A$
+\end_inset
+
+ un grupo abeliano finito.
+ Añadiendo sumandos triviales a una descomposición primaria suya tenemos
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+A= & \left\langle a_{11}\right\rangle _{p_{1}^{\alpha_{11}}}\varoplus...\varoplus\left\langle a_{1m}\right\rangle _{p_{1}^{\alpha_{1m}}}\varoplus\\
+ & ...\\
+ & \left\langle a_{k1}\right\rangle _{p_{k}^{\alpha_{k1}}}\varoplus...\varoplus\left\langle a_{km}\right\rangle _{p_{k}^{\alpha_{km}}}
+\end{array}
+\]
+
+\end_inset
+
+ para ciertos primos positivos distintos 
+\begin_inset Formula $p_{1}<p_{2}<...<p_{k}$
+\end_inset
+
+ y ciertos enteros 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+ que satisfacen 
+\begin_inset Formula $\alpha_{i1}\geq...\geq\alpha_{im}\geq0,\ \forall i=1,...,k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ que valen 0 se corresponden con los sumandos triviales que hemos añadido
+ para que en cada fila de la descomposición de 
+\begin_inset Formula $A$
+\end_inset
+
+ haya el mismo número de sumandos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para obtener la descomposición invariante basta con agrupar los sumandos
+ por columnas.
+ Entonces, tenemos, para cada 
+\begin_inset Formula $j=1,...,m$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+b_{j}=a_{1j}+a_{2j}+...+a_{kj}\ y\ d_{j}=p_{1}^{\alpha_{1j}}\cdot...\cdot p_{k}^{\alpha_{kj}}
+\]
+
+\end_inset
+
+ Entonces, como las potencias de primos usadas son coprimas, tenemos que
+\begin_inset Formula 
+\[
+\left\langle b_{j}\right\rangle _{d_{j}}=\left\langle a_{1j}\right\rangle _{p_{1}^{\alpha_{1j}}}\varoplus...\varoplus\left\langle a_{kj}\right\rangle _{p_{k}^{\alpha_{kj}}}
+\]
+
+\end_inset
+
+ Entonces
+\begin_inset Formula 
+\[
+A=\left\langle b_{1}\right\rangle _{d_{1}}\varoplus...\varoplus\left\langle b_{k}\right\rangle _{d_{k}}
+\]
+
+\end_inset
+
+ es una descomposición invariante, ya que se tiene, por la definición de
+ los 
+\begin_inset Formula $d_{i},$
+\end_inset
+
+ que 
+\begin_inset Formula $d_{i}|d_{i-1},\ \forall i=2,...,k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Teorema 5.24
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $A$
+\end_inset
+
+ un grupo abeliano finito.
+ Entonces
+\end_layout
+
+\begin_layout Enumerate
+Todas las descomposiciones primarias de 
+\begin_inset Formula $A$
+\end_inset
+
+ son semejantes
+\end_layout
+
+\begin_layout Enumerate
+Todas las descomposiciones invariantes de 
+\begin_inset Formula $A$
+\end_inset
+
+ son semejantes
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Hemos visto en la demostración anterior cómo pasar de una descomposición
+ primaria a una invariante.
+ El proceso inverso es similar, basta tomar los órdenes, descomponerlos
+ en factores potencia de primo, ver el generador de cada subgrupo de estos
+ órdenes y agrupar adecuadamente.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, para demostrar el teorema basta demostrar una de las afirmaciones.
+ Vamos a ver la primera.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea
+\begin_inset Formula 
+\[
+A=\left(\varoplus_{j=1}^{m_{1}}A_{1j}\right)\varoplus...\varoplus\left(\varoplus_{j=1}^{m_{k}}A_{kj}\right)
+\]
+
+\end_inset
+
+ una descomposición primaria de 
+\begin_inset Formula $A$
+\end_inset
+
+ con 
+\begin_inset Formula $\left|A_{ij}\right|=p_{i}^{\alpha_{kj}}$
+\end_inset
+
+ para ciertos enteros primos positivos 
+\begin_inset Formula $p_{1}<p_{2}<...<p_{k}$
+\end_inset
+
+ y ciertos enteros positivos 
+\begin_inset Formula $\alpha_{ij}$
+\end_inset
+
+ con 
+\begin_inset Formula $\alpha_{i1}\geq...\geq\alpha_{im_{i}}\geq1$
+\end_inset
+
+ para cada 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Obsérvese que para cada 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+ se tiene
+\begin_inset Formula 
+\[
+\varoplus_{j=1}^{m_{i}}A_{ij}=t_{p_{i}}\left(A\right)
+\]
+
+\end_inset
+
+ por lo que estos subgrupos también están determinados por 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por lo tanto, podemos limitarnos a demostrar la unicidad asumiendo que 
+\begin_inset Formula $A$
+\end_inset
+
+ es un 
+\begin_inset Formula $p$
+\end_inset
+
+-grupo finito.
+\end_layout
+
+\begin_layout Standard
+\align left
+En esta situación, dos descomposiciones primarias de 
+\begin_inset Formula $A$
+\end_inset
+
+ serán de la forma 
+\begin_inset Formula 
+\[
+A=A_{1}\varoplus...\varoplus A_{n}=B_{1}\varoplus...\varoplus B_{m}
+\]
+
+\end_inset
+
+ donde cada sumando es cíclico.
+ Si ponemos 
+\begin_inset Formula $\left|A_{i}\right|=p^{\alpha_{i}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\left|B_{i}\right|=p^{\beta_{i}}$
+\end_inset
+
+, se tiene 
+\begin_inset Formula $\alpha_{1}\geq...\geq\alpha_{n}$
+\end_inset
+
+ y 
+\begin_inset Formula $\beta_{1}\geq...\geq\beta_{m}$
+\end_inset
+
+.
+ Vamos a ver, por inducción en 
+\begin_inset Formula $i$
+\end_inset
+
+, que 
+\begin_inset Formula $\alpha_{i}=\beta_{i},\ \forall i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Obsérvese que 
+\begin_inset Formula $p^{\alpha_{1}}=Exp\left(A\right)=p^{\beta_{1}},$
+\end_inset
+
+ por lo que tenemos el caso 
+\begin_inset Formula $i=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos entonces que 
+\begin_inset Formula $\alpha_{j}=\beta_{j},\ \forall j=1,...,i-1$
+\end_inset
+
+ y veamos que 
+\begin_inset Formula $\alpha_{i}=\beta_{i}$
+\end_inset
+
+.
+ Podemos suponer sin perder generalidad que 
+\begin_inset Formula $\alpha_{i}\leq\beta_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Observamos ahora que: si 
+\begin_inset Formula $C$
+\end_inset
+
+ es un grupo cíclico de orden 
+\begin_inset Formula $p^{r}$
+\end_inset
+
+ y 
+\begin_inset Formula $s\in\mathbb{N},$
+\end_inset
+
+ entonces se tiene 
+\begin_inset Formula $p^{s}C=0\iff s\geq r$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $s\leq r$
+\end_inset
+
+, entonces 
+\begin_inset Formula $p^{s}C$
+\end_inset
+
+ es cíclico de orden 
+\begin_inset Formula $p^{r-s}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, si ponemos 
+\begin_inset Formula $q=p^{\alpha i}$
+\end_inset
+
+, se tiene
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+qA\simeq & qA_{1}\varoplus...\varoplus qA_{i-1}\\
+\simeq & \left(qB_{1}\varoplus...\varoplus qB_{i-1}\right)\varoplus\left(qB_{i}\varoplus...\varoplus qB_{m}\right)
+\end{array}
+\]
+
+\end_inset
+
+ como 
+\begin_inset Formula $qA_{1}\varoplus...\varoplus qA_{i-1}$
+\end_inset
+
+ y 
+\begin_inset Formula $qB_{1}\varoplus...\varoplus qB_{i-1}$
+\end_inset
+
+ tienen el miso cardinal, deducimos que 
+\begin_inset Formula $qB_{i}\varoplus...\varoplus qB_{m}=0$
+\end_inset
+
+.
+ Esto quiere decir que 
+\begin_inset Formula $0=qB_{i}=p^{\alpha_{i}}B_{i}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\alpha_{i}\geq\beta_{i}$
+\end_inset
+
+ y, así, 
+\begin_inset Formula $\alpha_{i}=\beta_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Teorema 5.27
+\end_layout
+
+\begin_layout Enumerate
+Todo grupo abeliano finito tiene una descomposición primaria y una descomposició
+n invariante
+\end_layout
+
+\begin_layout Enumerate
+Las siguientes condiciones son equivalentes para dos grupos abelianos finitos
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Son isomorfos
+\end_layout
+
+\begin_layout Enumerate
+Tienen descomposiciones primarias semejantes
+\end_layout
+
+\begin_layout Enumerate
+Tienen descomposiciones invariantes semejantes
+\end_layout
+
+\begin_layout Enumerate
+Tienen la misma lista de divisores elementales
+\end_layout
+
+\begin_layout Enumerate
+Tienen la misma lista de factores invariantes
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Esto es practicamente un corolario de lo ya visto.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Todo grupo tiene una descomposición primaria y toda descomposición primaria
+ puede dar lugar a una descomposición invariante.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $a\implies b$
+\end_inset
+
+ Evidente
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Formula $b\implies a$
+\end_inset
+
+ Si 
+\begin_inset Formula $A=\left(\varoplus_{j=1}^{m_{1}}A_{1j}\right)\varoplus...\varoplus\left(\varoplus_{j=1}^{m_{k}}A_{kj}\right)\simeq\left(\varoplus_{j=1}^{m_{1}}B_{1j}\right)\varoplus...\varoplus\left(\varoplus_{j=1}^{m_{k}}B_{kj}\right)=B\implies A\simeq B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $b\iff c$
+\end_inset
+
+ Es obvio porque una composición primaria nos determina una invariante salvo
+ isomorfismos y viceversa
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $d\iff e$
+\end_inset
+
+ Es también obvio, ya que los factores invariantes vienen unívocamente determina
+dos por los divisores elementales y los divisores elementales no son más
+ que la factorización en potencia de primos de los factores invariantes
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $c\iff e$
+\end_inset
+
+ Muy fácil también teniendo en cuenta que 
+\begin_inset Formula $\left\langle a\right\rangle _{p^{k}}\simeq\left(\mathbb{Z}_{p^{k}},+\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Grupos de Permutaciones
+\end_layout
+
+\begin_layout Subsection*
+Tipo de una permutación y sus propiedades
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 6.5
+\end_layout
+
+\begin_layout Standard
+Toda permutación 
+\begin_inset Formula $\sigma\neq1$
+\end_inset
+
+ de 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ se puede expresar de forma única (salvo el orden) como producto de ciclos
+ disjuntos.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Razonamos por inducción en 
+\begin_inset Formula $\left|M\left(\sigma\right)\right|$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $\sigma\neq1$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $\left|M\left(\sigma\right)\right|\geq2$
+\end_inset
+
+, con lo que el primer caso 
+\begin_inset Formula $M\left(\sigma\right)=\left\{ i,j\right\} $
+\end_inset
+
+ lo que implica que 
+\begin_inset Formula $\sigma=\left(1\ 2\right).$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $\sigma=\tau_{1}...\tau_{k},$
+\end_inset
+
+ con 
+\begin_inset Formula $\tau_{1},...,\tau_{k}$
+\end_inset
+
+ ciclos disjuntos, entonces 
+\begin_inset Formula $M\left(\sigma\right)=\cup_{i=1}^{k}M\left(\tau_{i}\right)=\left\{ i,j\right\} ,$
+\end_inset
+
+ de donde 
+\begin_inset Formula $k=1$
+\end_inset
+
+, y tenemos la unicidad.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que la propiedad se verifica para toda permutación que mueve
+ menos elementos que 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Fijemos 
+\begin_inset Formula $i\in M\left(\sigma\right)$
+\end_inset
+
+ y definamos recursivamente 
+\begin_inset Formula $i_{0}=i,\ i_{j}=\sigma\left(i_{j-1}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como los 
+\begin_inset Formula $i_{j}$
+\end_inset
+
+ toman valores en un conjunto finito existirán 
+\begin_inset Formula $0\leq j<k$
+\end_inset
+
+ con 
+\begin_inset Formula $i_{j}=i_{k}$
+\end_inset
+
+ y tomamos el menor 
+\begin_inset Formula $j$
+\end_inset
+
+ para el que existe un 
+\begin_inset Formula $k$
+\end_inset
+
+ con estas condiciones.
+ Para este 
+\begin_inset Formula $j$
+\end_inset
+
+ tomamos el menor 
+\begin_inset Formula $k$
+\end_inset
+
+ que verifica 
+\begin_inset Formula $i_{j}=i_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+De hecho, 
+\begin_inset Formula $j=0$
+\end_inset
+
+, pues, en caso contrario, 
+\begin_inset Formula $i_{j-1}=\sigma^{-1}\left(i_{k}\right)=i_{k-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $i_{0},...,i_{k-1}$
+\end_inset
+
+ son distintos y 
+\begin_inset Formula $i_{0}=i_{k}=\sigma\left(i_{k-1}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $\tau=\left(i_{0}\ i_{1}\ ...\ i_{k-1}\right)$
+\end_inset
+
+ es un 
+\begin_inset Formula $k-$
+\end_inset
+
+ciclo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Definimos 
+\begin_inset Formula $\rho\in S_{n}$
+\end_inset
+
+ poniendo
+\begin_inset Formula 
+\[
+\rho\left(j\right)=\begin{cases}
+j, & si\ j\in\left(i_{0}\ i_{1}...i_{k-1}\right)\\
+\sigma\left(j\right) & en\ otro\ caso
+\end{cases}
+\]
+
+\end_inset
+
+ Entonces 
+\begin_inset Formula $\rho$
+\end_inset
+
+ y 
+\begin_inset Formula $\tau$
+\end_inset
+
+ son disjuntas, pues si 
+\begin_inset Formula $\tau$
+\end_inset
+
+ mueve a 
+\begin_inset Formula $j$
+\end_inset
+
+, entonces 
+\begin_inset Formula $j\in\left(i_{0}\ i_{1}...i_{k-1}\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\rho$
+\end_inset
+
+ no lo mueve.
+ Y si 
+\begin_inset Formula $\rho$
+\end_inset
+
+ mueve a 
+\begin_inset Formula $j$
+\end_inset
+
+, entonces ocurre al contrario y 
+\begin_inset Formula $\tau$
+\end_inset
+
+ no lo mueve.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es evidente, entonces, que 
+\begin_inset Formula $\rho$
+\end_inset
+
+ mueve tantos elementos como 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, menos los que mueve 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+ Es decir
+\begin_inset Formula 
+\[
+\left|M\left(\rho\right)\right|=\left|M\left(\sigma\right)\right|-\left|M\left(\tau\right)\right|=\left|M\left(\sigma\right)\right|-k<\left|M\left(\sigma\right)\right|
+\]
+
+\end_inset
+
+ Y, además, se tiene que 
+\begin_inset Formula 
+\[
+\tau\rho\left(j\right)=\begin{cases}
+\tau\left(j\right) & j\in\left(i_{0}\ i_{1}...i_{k-1}\right)\\
+\tau\left(\sigma\left(j\right)\right) & otro\ caso
+\end{cases}=\sigma\left(j\right)
+\]
+
+\end_inset
+
+ Es decir, que 
+\begin_inset Formula $\sigma=\tau\rho.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Aplicando la hipótesis de inducción deducimos que 
+\begin_inset Formula $\rho=\rho_{1}...\rho_{l}$
+\end_inset
+
+, con 
+\begin_inset Formula $\rho_{1},...,\rho_{l}$
+\end_inset
+
+ ciclos disjuntos dos a dos.
+ Además, son disjuntos con 
+\begin_inset Formula $\tau,$
+\end_inset
+
+ pues, de no ser así, no lo sería 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $\sigma=\tau\rho_{1}...\rho_{l}$
+\end_inset
+
+ es un producto de ciclos disjuntos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si fuera 
+\begin_inset Formula $\sigma=\tau_{1}...\tau_{m}$
+\end_inset
+
+ con 
+\begin_inset Formula $\tau_{1},...,\tau_{m}$
+\end_inset
+
+ ciclos disjuntos, entonces 
+\begin_inset Formula $i\in M\left(\tau_{j}\right)$
+\end_inset
+
+ para un único 
+\begin_inset Formula $j=1,...,m$
+\end_inset
+
+.
+ Como los 
+\begin_inset Formula $\tau_{j}$
+\end_inset
+
+ conmutan por ser disjuntos, podemos suponer 
+\begin_inset Formula $j=1$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+\tau\left(i\right)=\sigma\left(i\right)=\tau_{1}\left(i\right)
+\]
+
+\end_inset
+
+ por lo que 
+\begin_inset Formula $\tau=\tau_{1}$
+\end_inset
+
+.
+ Por lo que 
+\begin_inset Formula $\rho=\tau_{2}...\tau_{m}$
+\end_inset
+
+.
+ Usando de nuevo la hipótesis de inducción, tenemos la unicidad de la factorizac
+ión de 
+\begin_inset Formula $\rho$
+\end_inset
+
+ como producto de ciclos disjuntos, y deducimos la unicidad de la factorización
+ como producto de ciclos disjuntos de 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 6.8
+\end_layout
+
+\begin_layout Standard
+El orden de una permutación es el mcm de las componentes de su tipo.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $\sigma=\tau_{1}...\tau_{k}$
+\end_inset
+
+ la factorización de una permutación 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ como producto de ciclos disjuntos y sea 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+ la longitud del ciclo 
+\begin_inset Formula $\tau_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $m\in\mathbb{N}$
+\end_inset
+
+.
+ Como los 
+\begin_inset Formula $\tau_{i}$
+\end_inset
+
+ conmutan entre sí por ser disjuntos, se tiene
+\begin_inset Formula 
+\[
+\sigma^{m}=\tau_{1}^{m}...\tau_{k}^{m}
+\]
+
+\end_inset
+
+ Por otra parte, para cada 
+\begin_inset Formula $i$
+\end_inset
+
+ se tiene 
+\begin_inset Formula $M\left(\tau_{i}^{m}\right)\subset M\left(\tau_{i}\right)$
+\end_inset
+
+ y por tanto los 
+\begin_inset Formula $\tau_{i}^{m}$
+\end_inset
+
+ son disjuntos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Eso implica que 
+\begin_inset Formula $\sigma^{m}=1$
+\end_inset
+
+ precisamente si 
+\begin_inset Formula $\tau_{i}^{m}=1,\ \forall i$
+\end_inset
+
+, por la unicidad de la factorización, pero esto sucede si, y solo si, 
+\begin_inset Formula $s_{i}|m,\ \forall i$
+\end_inset
+
+ o, lo que es lo mismo, si 
+\begin_inset Formula $mcm\left(s_{1},...,s_{m}\right)|m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 6.9
+\end_layout
+
+\begin_layout Standard
+Dos elementos de 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ son conjugados si tienen el mismo tipo.
+ En consecuencia, cada clase de conjugación de 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ está formada por todos los elementos de un mismo tipo.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+'
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea una permutación 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ Para un 
+\begin_inset Formula $s$
+\end_inset
+
+-ciclo 
+\begin_inset Formula $\tau=\left(i_{1}\ i_{2}...i_{s}\right)$
+\end_inset
+
+, se tiene que
+\begin_inset Formula 
+\[
+\alpha\tau\alpha^{-1}\left(j\right)=\alpha\tau\left(\alpha^{-1}\left(j\right)\right)=\begin{cases}
+\alpha\left(i_{k}\right) & si\ \alpha^{-1}\left(j\right)=i_{k-1}\\
+\alpha\left(\alpha^{-1}\left(j\right)\right)=j & si\ \alpha^{-1}\left(j\right)\notin\left(i_{1}\ i_{2}...i_{s}\right)
+\end{cases}
+\]
+
+\end_inset
+
+ es decir, que
+\begin_inset Formula 
+\[
+\alpha\tau\alpha^{-1}=\left(\alpha\left(i_{1}\right)\ \alpha\left(i_{2}\right)...\alpha\left(i_{s}\right)\right)
+\]
+
+\end_inset
+
+ y es un 
+\begin_inset Formula $s$
+\end_inset
+
+-ciclo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $\tau_{1},\tau_{2}$
+\end_inset
+
+ son disjuntos, entonces también lo son 
+\begin_inset Formula $\alpha\tau_{1}\alpha^{-1}$
+\end_inset
+
+ y 
+\begin_inset Formula $\alpha\tau_{2}\alpha^{-1}$
+\end_inset
+
+, pues 
+\begin_inset Formula 
+\[
+\alpha\tau_{1}\alpha^{-1}\left(j\right)=\alpha\tau_{2}\alpha^{-1}\left(j\right)\iff\alpha\left(i_{1n}\right)=\alpha\left(i_{2m}\right)\iff i_{1n}=i_{2m}\implies\tau_{1},\ \tau_{2}\ \text{no son disjuntos}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, como se tiene, en general, que
+\begin_inset Formula 
+\[
+\sigma\left(\tau_{1}...\tau_{k}\right)\alpha^{-1}=\left(\alpha\tau_{1}\alpha^{-1}\right)...\left(\alpha\tau_{k}\alpha^{-1}\right)
+\]
+
+\end_inset
+
+ esto quiere decir que dos elementos conjugados de 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ tendrán el mismo tipo.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Supongamos que 
+\begin_inset Formula $\sigma,\sigma'$
+\end_inset
+
+ tienen el mismo tipo.
+ Entonces las descomposiciones de 
+\begin_inset Formula $\sigma,\sigma'$
+\end_inset
+
+ en producto de ciclos disjuntos son de la forma 
+\begin_inset Formula $\sigma=\tau_{1}...\tau_{k}$
+\end_inset
+
+ y 
+\begin_inset Formula $\sigma'=\tau_{1}'...\tau_{k}'$
+\end_inset
+
+ donde 
+\begin_inset Formula $\tau_{i},\ \tau_{i}'$
+\end_inset
+
+ tienen la misma longitud.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto existen biyecciones 
+\begin_inset Formula $\alpha_{i}:M\left(\tau_{i}\right)\rightarrow M\left(\tau_{i}'\right)$
+\end_inset
+
+ que conservan la estructura de los ciclos; es decir, que si 
+\begin_inset Formula $\tau_{i}=\left(j_{1}...j_{s}\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\tau_{i}'=\left(j_{1}'...j_{s}'\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\alpha_{i}\left(j_{t}\right)=j_{t}'$
+\end_inset
+
+, 
+\begin_inset Formula $\forall t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, como 
+\begin_inset Formula $\left|M\left(\sigma\right)\right|=\left|M\left(\sigma'\right)\right|$
+\end_inset
+
+, existe una biyección 
+\begin_inset Formula $\beta:\mathbb{N}_{n}\setminus M\left(\sigma\right)\rightarrow\mathbb{N}_{n}\setminus M\left(\sigma'\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea ahora 
+\begin_inset Formula $\alpha\in S_{n}$
+\end_inset
+
+ la biyección que se obtiene pegando las 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ y 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ Es decir
+\begin_inset Formula 
+\[
+\alpha\left(x\right)=\begin{cases}
+\alpha_{i}\left(x\right) & si\ x\in M\left(\tau_{i}\right)\\
+\beta\left(x\right) & si\ x\notin M\left(\sigma\right)
+\end{cases}
+\]
+
+\end_inset
+
+ Entonces, si 
+\begin_inset Formula $x\in M\left(\tau_{i}'\right)$
+\end_inset
+
+, esto quiere decir que 
+\begin_inset Formula $x=j_{l}'$
+\end_inset
+
+ y 
+\begin_inset Formula $\alpha^{-1}\left(x\right)=j_{l}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha\tau_{i}\alpha^{-1}\left(x\right)=\alpha\tau_{i}\alpha_{i}^{-1}\left(x\right)=\alpha\tau_{i}\left(j_{l}\right)=\alpha\left(j_{\left\lfloor l+1\right\rfloor _{s}}\right)=j_{\left\lfloor l+1\right\rfloor _{s}}'=\tau_{i}'\left(j_{l}\right)=\tau_{i}'\left(x\right)
+\]
+
+\end_inset
+
+ Y si 
+\begin_inset Formula $x\notin M\left(\tau_{i}'\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\alpha^{-1}\left(x\right)\notin M\left(\tau_{i}\right)$
+\end_inset
+
+, y entonces
+\begin_inset Formula 
+\[
+\alpha\tau_{i}\alpha^{-1}\left(x\right)=\alpha\alpha^{-1}\left(x\right)=x=\tau_{i}'\left(x\right)
+\]
+
+\end_inset
+
+ Y se tiene que 
+\begin_inset Formula $\tau_{i}'=\alpha\tau_{i}\alpha^{-1}$
+\end_inset
+
+.
+ Esto ocurre para todo 
+\begin_inset Formula $i$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\sigma'=\alpha\sigma\alpha^{-1}$
+\end_inset
+
+ y tenemos el resultado.
+\end_layout
+
+\begin_layout Subsection*
+Generadores de los Grupos Simétricos y Alternados
+\end_layout
+
+\begin_layout Standard
+Esta proposición no sale en la lista, pero no tiene mucho sentido.
+ La pongo.
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 6.12
+\end_layout
+
+\begin_layout Standard
+Para 
+\begin_inset Formula $n\geq2$
+\end_inset
+
+, los siguientes son conjuntos generadores de 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+El conjunto de todos los ciclos
+\end_layout
+
+\begin_layout Enumerate
+El conjunto de todas las trasposiciones
+\end_layout
+
+\begin_layout Enumerate
+El conjunto de 
+\begin_inset Formula $n-1$
+\end_inset
+
+ transposiciones: 
+\begin_inset Formula $\left\{ \left(1\ 2\right),\left(1\ 3\right),\left(1\ 4\right),...,\left(1\ n-1\right),\left(1\ n\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+El conjunto de 
+\begin_inset Formula $n-1$
+\end_inset
+
+ transposiciones: 
+\begin_inset Formula $\left\{ \left(1\ 2\right),\left(2\ 3\right),\left(3\ 4\right),...,\left(n-1\ n\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+El conjunto de una transposición y un 
+\begin_inset Formula $n-$
+\end_inset
+
+ciclo: 
+\begin_inset Formula $\left\{ \left(1\ 2\right),\left(1\ 2\ 3...n-1\ n\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Enumerate
+Esto es cierto ya que toda permutación puede ponerse como producto de ciclos
+ disjuntos (teorema 6.5).
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Para demostrar el resto de apartados basta comprobar que los elementos del
+ conjunto dado en cada apartado se expresan como productos de los elementos
+ del conjunto del apartado siguiente
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Cada ciclo 
+\begin_inset Formula $\sigma=\left(i_{1}...i_{s}\right)$
+\end_inset
+
+ puede escribirse como producto de trasposiciones no disjuntas:
+\begin_inset Formula 
+\[
+\sigma=\left(i_{1}\ i_{s}\right)\left(i_{1}\ i_{s-1}\right)...\left(i_{1}\ i_{3}\right)\left(i_{1}\ i_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Dado 
+\begin_inset Formula $\sigma=\left(i\ j\right)$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+\left(1\ i\right)\left(1\ j\right)\left(1\ i\right)=\left(1\ j\ i\right)\left(1\ i\right)=\left(i\ j\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Dado 
+\begin_inset Formula $j\geq2$
+\end_inset
+
+, sea 
+\begin_inset Formula $\alpha=\left(2\ 3\right)\left(3\ 4\right)...\left(j-1\ j\right)$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+\left(1\ 2\right)^{\alpha}=\alpha^{-1}\left(1\ 2\right)\alpha=\left(2\ 3...j\right)^{-1}\left(1\ 2\right)\left(2\ 3...j\right)=\left(j\ j-1\right)...\left(4\ 3\right)\left(3\ 2\right)\left(1\ 2\ 3...j\right)=\left(j\ j-1\right)...\left(4\ 3\right)\left(1\ 3...j\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(j\ j-1\right)...\left(5\ 4\right)\left(1\ 4...j\right)=...=\left(j\ j-1\right)\left(1\ j-1\ j\right)=\left(1\ j\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Sean 
+\begin_inset Formula $\tau=\left(1\ 2\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\sigma=\left(1\ 2...n-1\ n\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Como 
+\begin_inset Formula $\sigma^{j-1}\left(1\right)=j$
+\end_inset
+
+ y 
+\begin_inset Formula $\sigma^{j-1}\left(2\right)=j+1$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+\sigma^{j-1}\tau\sigma^{1-j}=\sigma^{j-1}\left(1\ 2\right)\sigma^{1-j}=\left(1\ j+1\right)\sigma^{1-j}=\left(j\ j+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Corolario 6.13
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset Formula $p$
+\end_inset
+
+ un número primo y 
+\begin_inset Formula $H$
+\end_inset
+
+ un subgrupo de 
+\begin_inset Formula $S_{p}$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $H$
+\end_inset
+
+ contiene una transposición y un 
+\begin_inset Formula $p-$
+\end_inset
+
+ciclo, entonces 
+\begin_inset Formula $H=S_{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Podemos suponer que 
+\begin_inset Formula $H$
+\end_inset
+
+ contiene a 
+\begin_inset Formula $\left(1\ 2\right)$
+\end_inset
+
+ y un 
+\begin_inset Formula $p$
+\end_inset
+
+-ciclo 
+\begin_inset Formula $\sigma=\left(a_{1}\ a_{2}...a_{p}\right)$
+\end_inset
+
+.
+ Podemos suponer que 
+\begin_inset Formula $a_{1}=1$
+\end_inset
+
+ porque es un 
+\begin_inset Formula $p$
+\end_inset
+
+-ciclo.
+ Entonces, si 
+\begin_inset Formula $a_{i}=2$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $\sigma^{i-1}\left(1\right)=2$
+\end_inset
+
+, y se tiene que 
+\begin_inset Formula $\sigma^{i-1}=\left(1\ 2\ b_{3}...b_{p}\right)$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $p$
+\end_inset
+
+ es primo, entonces 
+\begin_inset Formula $i-1,p$
+\end_inset
+
+ son coprimos, y su mcm es 
+\begin_inset Formula $\left(i-1\right)p$
+\end_inset
+
+, pues en caso contrario 
+\begin_inset Formula $\sigma^{i-1}$
+\end_inset
+
+ no tiene por qué ser un ciclo 
+\begin_inset Formula $\left(\left(1\ a\ 2\ b\right)^{2}=\left(1\ 2\right)\left(a\ b\right)\right)$
+\end_inset
+
+.
+ Si renombramos los 
+\begin_inset Formula $b_{i}=i$
+\end_inset
+
+, entonces tenemos que 
+\begin_inset Formula $\sigma^{i-1}=\left(1\ 2\ 3...p\right)$
+\end_inset
+
+, y llega hasta el 
+\begin_inset Formula $p$
+\end_inset
+
+ por lo mencionado anteriormente, 
+\begin_inset Formula $\sigma^{i-1}$
+\end_inset
+
+ lo podemos aplicar 
+\begin_inset Formula $p$
+\end_inset
+
+ veces hasta que nos dé la identidad, por tanto ha de tener 
+\begin_inset Formula $p$
+\end_inset
+
+ elementos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $\left(1\ 2\right),\left(1\ 2...p\right)\in H$
+\end_inset
+
+, por la proposición anterior, estas dos permutaciones son generadores de
+ 
+\begin_inset Formula $S_{p},$
+\end_inset
+
+ luego 
+\begin_inset Formula $H=S_{p}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Proposición 6.20
+\end_layout
+
+\begin_layout Standard
+Los siguientes son sistemas de generadores de 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+El conjunto de todos los productos de dos transposiciones, disjuntas o no
+\end_layout
+
+\begin_layout Enumerate
+El conjunto de todos los 
+\begin_inset Formula $3-$
+\end_inset
+
+ciclos.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Enumerate
+Sea 
+\begin_inset Formula $\sigma\in A_{n}$
+\end_inset
+
+, entonces, como las trasposiciones son generadores de 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+, podemos escribir 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ como producto de trasposiciones.
+ Además, 
+\begin_inset Formula $Sg\left(\sigma\right)=1$
+\end_inset
+
+, porque está en 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+, y las trasposiciones tienen signo -1.
+ Como 
+\begin_inset Formula $Sg\left(ab\right)=Sg\left(a\right)Sg\left(b\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ debe ser producto de una cantidad par de trasposiciones, como queríamos
+ ver.
+\end_layout
+
+\begin_layout Enumerate
+Todos los 3-ciclos están en 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ porque son permutaciones pares.
+ Entonces, usando 1.
+ para demostrar 2., solo hay que probar que cada producto de dos trasposiciones
+ distintas se puede escribir como producto de 3-ciclos, pero esto es cierto
+ porque
+\begin_inset Formula 
+\[
+\left(i\ j\right)\left(i\ k\right)=\left(i\ k\ j\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left(i\ j\right)\left(k\ l\right)=\left(j\ l\ k\right)\left(i\ k\ j\right)
+\]
+
+\end_inset
+
+ con 
+\begin_inset Formula $i,j,k,l$
+\end_inset
+
+ son distintos dos a dos.
+\end_layout
+
+\begin_layout Subsection*
+Teorema de Abel
+\end_layout
+
+\begin_layout Subsubsection*
+Lema 6.23
+\end_layout
+
+\begin_layout Standard
+Si un subgrupo normal 
+\begin_inset Formula $H$
+\end_inset
+
+ de 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+, con 
+\begin_inset Formula $n\geq5$
+\end_inset
+
+, contiene un 
+\begin_inset Formula $3$
+\end_inset
+
+-ciclo, entonces 
+\begin_inset Formula $H=A_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ un 
+\begin_inset Formula $3-$
+\end_inset
+
+ciclo en 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ Por la proposición 6.20 (la anterior), basta ver que cualquier otro 
+\begin_inset Formula $3-$
+\end_inset
+
+ciclo 
+\begin_inset Formula $\sigma'$
+\end_inset
+
+ está en 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ Sabemos por el teorema 6.9 que existe 
+\begin_inset Formula $\alpha\in S_{n}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\sigma'=\sigma^{\alpha}$
+\end_inset
+
+, de modo que si 
+\begin_inset Formula $\alpha\in A_{n}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\sigma'\in H$
+\end_inset
+
+, por la normalidad de 
+\begin_inset Formula $H$
+\end_inset
+
+ en 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+.
+ Por tanto, podemos suponer que 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ es una permutación impar.
+ Como 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ cambia solo 3 elementos y 
+\begin_inset Formula $n\geq5$
+\end_inset
+
+, existe una trasposición 
+\begin_inset Formula $\beta$
+\end_inset
+
+ disjunta de 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\sigma^{\beta}=\sigma$
+\end_inset
+
+.
+ Por tanto
+\begin_inset Formula 
+\[
+\sigma^{\beta\alpha}=\left(\sigma^{\beta}\right)^{\alpha}=\sigma^{\alpha}=\sigma'
+\]
+
+\end_inset
+
+ y como 
+\begin_inset Formula $\beta\alpha$
+\end_inset
+
+ está en 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ por ser el producto de dos permutaciones impares, la normalidad de 
+\begin_inset Formula $H$
+\end_inset
+
+ en 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ implica que 
+\begin_inset Formula $\sigma'\in H$
+\end_inset
+
+, como queríamos ver.
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema de Abel (6.24)
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $n\geq5$
+\end_inset
+
+, entonces 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ es un grupo simple.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Demostración
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que 
+\begin_inset Formula $H\neq\left\{ 1\right\} $
+\end_inset
+
+ es un subgrupo normal de 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ y veamos que 
+\begin_inset Formula $H=A_{n}$
+\end_inset
+
+.
+ Por el lema anterior, basta ver que 
+\begin_inset Formula $H$
+\end_inset
+
+ contiene un 3-ciclo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $1\neq\sigma\in H$
+\end_inset
+
+ tal que 
+\begin_inset Formula $r=\left|M\left(\sigma\right)\right|$
+\end_inset
+
+ sea mínimo, es decir, 
+\begin_inset Formula $\left|M\left(\alpha\right)\right|\leq r,\ \forall1\neq\alpha\in H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora veremos que debe ser 
+\begin_inset Formula $r=3$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ será un 3-ciclo en 
+\begin_inset Formula $H$
+\end_inset
+
+ y habremos terminado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sabemos que no puede ser 
+\begin_inset Formula $r=1$
+\end_inset
+
+, porque una permutación no puede cambiar un único elemento.
+\end_layout
+
+\begin_layout Standard
+\align left
+Tampoco puede ser 
+\begin_inset Formula $r=2$
+\end_inset
+
+ porque todas las permutaciones de 
+\begin_inset Formula $H$
+\end_inset
+
+ son pares (
+\begin_inset Formula $H\subset A_{n}$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos, buscando una contradicción, que 
+\begin_inset Formula $r>3$
+\end_inset
+
+.
+ Se tienen dos posibilidades:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Que en la factorización de 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ en ciclos disjuntos, aparezca alguno de longitud 
+\begin_inset Formula $\geq3$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+Entonces, 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ debe cambiar al menor 5 elementos.
+ Si solo cambiase 4, como en su factorización aparece un ciclo de longitud
+ 
+\begin_inset Formula $\geq3$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ debe ser un 4-ciclo, y sería impar#.
+ Podemos suponer, sin pérdida de generalidad (porque al fin y al cabo aquí
+ los números solo son etiquetas), que 
+\begin_inset Formula $1,2,3,4,5\in M\left(\sigma\right)$
+\end_inset
+
+ y que alguno de los ciclos disjuntos que componen 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ es de la forma 
+\begin_inset Formula $(1\ 2\ 3...)$
+\end_inset
+
+, con longitud al menos 3.
+ Sea 
+\begin_inset Formula $\alpha=\left(3\ 4\ 5\right)$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $\alpha\in A_{n}$
+\end_inset
+
+ y 
+\begin_inset Formula $H$
+\end_inset
+
+ es normal en 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\sigma^{\alpha}\in H$
+\end_inset
+
+, y entonces 
+\begin_inset Formula $\beta=\sigma^{-1}\sigma^{\alpha}\in H$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $\sigma\left(i\right)=i$
+\end_inset
+
+, entonces 
+\begin_inset Formula $i>5$
+\end_inset
+
+ y, por tanto, 
+\begin_inset Formula $\alpha\left(i\right)=i$
+\end_inset
+
+, y esto implica que 
+\begin_inset Formula $\beta\left(i\right)=i$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $M\left(\beta\right)\subset M\left(\sigma\right)$
+\end_inset
+
+, y la inclusión es estricta, porque 
+\begin_inset Formula $\sigma\left(1\right)=2$
+\end_inset
+
+, mientras que 
+\begin_inset Formula $\beta\left(1\right)=\sigma^{-1}\alpha^{-1}\sigma\alpha\left(1\right)=\sigma^{-1}\alpha^{-1}\sigma\left(1\right)=\sigma^{-1}\alpha^{-1}\left(2\right)=\sigma^{-1}\left(2\right)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $\beta\in H$
+\end_inset
+
+ cambia menos de 
+\begin_inset Formula $r$
+\end_inset
+
+ elementos, por lo que debe ser 
+\begin_inset Formula $\beta=1$
+\end_inset
+
+, por la elección de 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ Esto quiere decir que 
+\begin_inset Formula $\sigma^{\alpha}=\sigma\implies\sigma\alpha=\alpha\sigma$
+\end_inset
+
+.
+ Pero esto no es cierto, porque 
+\begin_inset Formula 
+\[
+\sigma\alpha\left(2\right)=\sigma\left(2\right)=3,\ \alpha\sigma\left(2\right)=\alpha\left(3\right)=4\#
+\]
+
+\end_inset
+
+Por tanto, esta primera posibilidad lleva a una contradicción.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\align left
+Que 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ sea producto de, al menos dos, trasposiciones disjuntas.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+En este caso, reordenando los elementos de 
+\begin_inset Formula $\mathbb{N}_{n}$
+\end_inset
+
+ podemos asumir que 
+\begin_inset Formula $\sigma=\left(1\ 2\right)\left(3\ 4\right)...$
+\end_inset
+
+ (puede haber más trasposiciones en el producto o no).
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea, de nuevo, 
+\begin_inset Formula $\alpha=\left(3\ 4\ 5\right)$
+\end_inset
+
+.
+ Como antes, tomamos 
+\begin_inset Formula $\beta=\sigma^{-1}\sigma^{\alpha}\in H$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $i\neq5$
+\end_inset
+
+ y 
+\begin_inset Formula $\sigma\left(i\right)=i$
+\end_inset
+
+, entonces 
+\begin_inset Formula $i\neq3,4,5$
+\end_inset
+
+ y, por tanto, 
+\begin_inset Formula $\alpha\left(i\right)=i$
+\end_inset
+
+, de donde se sigue que 
+\begin_inset Formula $\beta\left(i\right)=i$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $M\left(\beta\right)\subset M\left(\sigma\right)\cup\left\{ 5\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Pero 
+\begin_inset Formula $\beta\left(1\right)=\sigma^{-1}\alpha^{-1}\sigma\alpha\left(1\right)=\sigma^{-1}\alpha^{-1}\sigma\left(1\right)=\sigma^{-1}\alpha^{-1}\left(2\right)=\sigma^{-1}\left(2\right)=1$
+\end_inset
+
+ y 
+\begin_inset Formula $\beta\left(2\right)=\sigma^{-1}\alpha^{-1}\sigma\alpha\left(2\right)=\sigma^{-1}\alpha^{-1}\sigma\left(2\right)=\sigma^{-1}\alpha^{-1}\left(1\right)=\sigma^{-1}\left(1\right)=2$
+\end_inset
+
+, luego 
+\begin_inset Formula $\beta$
+\end_inset
+
+ fija 1 y 2.
+ Sin embargo 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ los mueve.
+ Por tanto, 
+\begin_inset Formula $\beta$
+\end_inset
+
+ cambia menor de 
+\begin_inset Formula $r$
+\end_inset
+
+ elementos y debe ser 
+\begin_inset Formula $\beta=1$
+\end_inset
+
+, de nuevo se tiene que 
+\begin_inset Formula $\sigma\alpha=\alpha\sigma$
+\end_inset
+
+.
+ Pero
+\begin_inset Formula 
+\[
+\sigma\alpha\left(3\right)=\sigma\left(4\right)=3\ \alpha\sigma\left(3\right)=\alpha\left(4\right)=5\#
+\]
+
+\end_inset
+
+ Y, de nuevo, llegamos a una contradicción.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+Por tanto, ha de ser 
+\begin_inset Formula $r=3$
+\end_inset
+
+, por lo que hay un 3-ciclo en 
+\begin_inset Formula $H$
+\end_inset
+
+ y el lema anterior nos da el resultado.
+\end_layout
+
+\end_body
+\end_document

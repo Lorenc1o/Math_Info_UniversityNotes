@@ -1,0 +1,857 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea Cap 5 - GyA
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Date
+Mayo 2020
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsubsection}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Consideremos 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+ como subgrupo aditivo de 
+\begin_inset Formula $\boldsymbol{\mathbb{Q}}$
+\end_inset
+
+.
+ Fijamos un primo 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ y para cada entero no negativo 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ sea 
+\begin_inset Formula 
+\[
+\boldsymbol{X_{n}=\left\{ \frac{a}{p^{k}}:\ a\in\mathbb{Z},\ 0\leq k\leq n\right\} }
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\boldsymbol{X=\cup_{n\geq0}X_{n}}
+\]
+
+\end_inset
+
+ Denotamos 
+\begin_inset Formula 
+\[
+\boldsymbol{A_{n}=\frac{X_{n}}{\mathbb{Z}}\qquad\mathbb{Z}_{p^{\infty}}=\frac{X}{\mathbb{Z}}}
+\]
+
+\end_inset
+
+ Demostrar:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\boldsymbol{\frac{\mathbb{Q}}{\mathbb{Z}}}$
+\end_inset
+
+ 
+\series bold
+es de torsión
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Queremos ver que 
+\begin_inset Formula $\forall a\in\frac{\mathbb{Q}}{\mathbb{Z}}$
+\end_inset
+
+, 
+\begin_inset Formula $a$
+\end_inset
+
+ tiene orden finito.
+ La forma de 
+\begin_inset Formula $a$
+\end_inset
+
+ es 
+\begin_inset Formula $\frac{p}{q}\notin\mathbb{Z}$
+\end_inset
+
+, pues si fuera entero, entonces sería 
+\begin_inset Formula $0\ \mod\mathbb{Z}$
+\end_inset
+
+, y tendría orden 1.
+ Entonces, tenemos que (notación aditiva):
+\begin_inset Formula 
+\[
+q\cdot\frac{p}{q}=p\in\mathbb{Z}\implies\left(\frac{p}{q}\right)^{q}=0\ \mod\mathbb{Z}\implies\left|\frac{p}{q}\right|=q
+\]
+
+\end_inset
+
+y el grupo es de torsión.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ y todos los 
+\begin_inset Formula $\boldsymbol{X_{n}}$
+\end_inset
+
+ son subgrupos de 
+\begin_inset Formula $\boldsymbol{\mathbb{Q}}$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Empezamos por 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $0\in X$
+\end_inset
+
+: 
+\begin_inset Formula $\frac{0}{p^{k}}=0\in\mathbb{Z}\implies0\in X_{n}$
+\end_inset
+
+ para todo 
+\begin_inset Formula $n$
+\end_inset
+
+ 
+\begin_inset Formula $\implies0\in X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cerrado para la suma: sean 
+\begin_inset Formula $a,b\in X\implies a\in X_{n},\ b\in X_{m}\implies a=\frac{a'}{p^{k}},\ b=\frac{b'}{p^{j}},\ 0\leq k\leq n,\ 0\leq j\leq m,\ a',b'\in\mathbb{Z}$
+\end_inset
+
+.
+ Y, entonces
+\begin_inset Formula 
+\[
+a+b=\frac{a'}{p^{k}}+\frac{b'}{p^{j}}=\frac{a'p^{j}+b'p^{k}}{p^{k+j}}
+\]
+
+\end_inset
+
+ y se tiene que 
+\begin_inset Formula $a'p^{j}+b'p^{k}\in\mathbb{Z}$
+\end_inset
+
+ y 
+\begin_inset Formula $0\leq k+j\leq n+m$
+\end_inset
+
+.
+ Por lo que 
+\begin_inset Formula $a+b\in X_{n+m}\implies ab\in X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cerrado para inversos: sea 
+\begin_inset Formula $a\in X$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a=\frac{a'}{p^{k}},\ 0\leq k\leq n,\ a'\in\mathbb{Z}$
+\end_inset
+
+.
+ Y se tiene que 
+\begin_inset Formula 
+\[
+\frac{a}{p^{k}}+\frac{b}{p^{m}}=0\iff\frac{ap^{m}+bp^{k}}{p^{k}p^{m}}=0
+\]
+
+\end_inset
+
+ tomando 
+\begin_inset Formula $b=-a$
+\end_inset
+
+ y 
+\begin_inset Formula $m=k$
+\end_inset
+
+, tenemos que
+\begin_inset Formula 
+\[
+\frac{ap^{m}+bp^{k}}{p^{k}p^{m}}=\frac{ap^{k}-ap^{k}}{p^{2k}}=\frac{0}{p^{2k}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hemos visto que es subgrupo, y resta ver que contiene a 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+.
+ Para ver esto, sea 
+\begin_inset Formula $a\in\mathbb{Z}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a=\frac{a}{1}=\frac{a}{p^{0}}$
+\end_inset
+
+, luego 
+\begin_inset Formula $a\in X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pasamos a ver 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $0\in X_{n}$
+\end_inset
+
+, ya lo hemos visto antes
+\end_layout
+
+\begin_layout Itemize
+Cerrado para la suma: sean 
+\begin_inset Formula $a,b\in X_{n}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a=\frac{a'}{p^{k}},\ b=\frac{b'}{p^{j}},\ a,b\in\mathbb{Z},\ 0\leq k,j\leq n$
+\end_inset
+
+.
+ Y se tiene que 
+\begin_inset Formula 
+\[
+a+b=\frac{a'p^{j}+b'p^{k}}{p^{j+k}}=\begin{cases}
+\frac{a'+b'p^{k-j}}{p^{k}} & j\leq k\\
+\frac{a'p^{j-k}+b'}{p^{j}} & k\leq j
+\end{cases}
+\]
+
+\end_inset
+
+ y en cualquiera de los casos, el resultado está en 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Cerrado para inversos: en la parte anterior, hemos visto que el inverso
+ de 
+\begin_inset Formula $a\in X$
+\end_inset
+
+ está en el mismo 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ que 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Por lo que ya lo hemos probado.
+\end_layout
+
+\begin_layout Standard
+Para ver que contiene a 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+, razonamos exactamente como en el caso anterior.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Formula $\boldsymbol{A_{n}=\left\langle \frac{1}{p^{n}}+\mathbb{Z}\right\rangle _{p^{n}}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+'
+\begin_inset Formula $\supset$
+\end_inset
+
+' Dado 
+\begin_inset Formula $a\in\left\langle \frac{1}{p^{n}}+\mathbb{Z}\right\rangle _{p^{n}}$
+\end_inset
+
+, entonces existe 
+\begin_inset Formula $0\leq k<p^{n}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $a=k\left(\frac{1}{p^{n}}+\mathbb{Z}\right)=\frac{k}{p^{n}}+\mathbb{Z}$
+\end_inset
+
+.
+ Y 
+\begin_inset Formula $\frac{k}{p^{n}}\in X_{n}$
+\end_inset
+
+.
+ Por tanto, 
+\begin_inset Formula $a\in A_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\subset$
+\end_inset
+
+' Dado 
+\begin_inset Formula $a\in A_{n}=\frac{X_{n}}{\mathbb{Z}}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a=\frac{a'}{p^{k}}+\mathbb{Z}$
+\end_inset
+
+, con 
+\begin_inset Formula $0\leq a'<p^{k}$
+\end_inset
+
+.
+ Y entonces 
+\begin_inset Formula $a'p^{n-k}\left(\frac{1}{p^{n}}+\mathbb{Z}\right)=\frac{a'}{p^{k}}+\mathbb{Z},$
+\end_inset
+
+ luego 
+\begin_inset Formula $a\in\left\langle \frac{1}{p^{n}}+\mathbb{Z}\right\rangle _{p^{n}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\boldsymbol{t_{p}\left(\frac{\mathbb{Q}}{\mathbb{Z}}\right)=\mathbb{Z}_{p^{\infty}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+'
+\begin_inset Formula $\subset$
+\end_inset
+
+' Si 
+\begin_inset Formula $\frac{a}{b}+\mathbb{Z}\in\frac{\mathbb{Q}}{\mathbb{Z}}$
+\end_inset
+
+ es de orden 
+\begin_inset Formula $p^{k}$
+\end_inset
+
+, eso quiere decir que 
+\begin_inset Formula $p^{k}\frac{a}{b}\in\mathbb{Z}$
+\end_inset
+
+, o sea, que 
+\begin_inset Formula $b|p^{k}a$
+\end_inset
+
+.
+ Pero 
+\begin_inset Formula $b\nmid a$
+\end_inset
+
+, pues si así fuera, entonces 
+\begin_inset Formula $\frac{a}{b}=c\in\mathbb{Z}$
+\end_inset
+
+ y tendría orden 1 en 
+\begin_inset Formula $\frac{\mathbb{Q}}{\mathbb{Z}}$
+\end_inset
+
+.
+ Por tanto, 
+\begin_inset Formula $b|p^{k}\implies b=p^{j},\ 0<j\leq k$
+\end_inset
+
+.
+ O sea, 
+\begin_inset Formula $\frac{a}{b}+\mathbb{Z}=\frac{a}{p^{j}}+\mathbb{Z}\in\mathbb{Z}_{p^{\infty}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\supset$
+\end_inset
+
+' Si 
+\begin_inset Formula $\frac{a}{p^{k}}+\mathbb{Z}\in\mathbb{Z}_{p^{\infty}}$
+\end_inset
+
+, claramente 
+\begin_inset Formula $\frac{a}{p^{k}}+\mathbb{Z}\in\frac{\mathbb{Q}}{\mathbb{Z}}$
+\end_inset
+
+ y se tiene que 
+\begin_inset Formula $p^{k}\frac{a}{p^{k}}+\mathbb{Z}=a+\mathbb{Z}=0+\mathbb{Z}$
+\end_inset
+
+, por lo que tiene orden potencia de 
+\begin_inset Formula $p$
+\end_inset
+
+, y así 
+\begin_inset Formula $\frac{a}{p^{k}}+\mathbb{Z}\in t_{p}\left(\frac{\mathbb{Q}}{\mathbb{Z}}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Formula $\boldsymbol{\frac{\mathbb{Q}}{\mathbb{Z}}}\boldsymbol{=\varoplus_{p\in\mathbb{P}}\mathbb{Z}_{p^{\infty}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Por el ejercicio 5.2.4, basta ver 
+\begin_inset Formula $t\left(\frac{\mathbb{Q}}{\mathbb{Z}}\right)=\frac{\mathbb{Q}}{\mathbb{Z}}$
+\end_inset
+
+, y entonces 
+\begin_inset Formula $\frac{\mathbb{Q}}{\mathbb{Z}}=t\left(\frac{\mathbb{Q}}{\mathbb{Z}}\right)\overset{5.2.4}{=}\varoplus_{p\in P}t_{p}\left(\frac{\mathbb{Q}}{\mathbb{Z}}\right)\overset{(4)}{=}\varoplus_{p\in P}\mathbb{Z}_{p^{\infty}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Que 
+\begin_inset Formula $t\left(\frac{\mathbb{Q}}{\mathbb{Z}}\right)=\frac{\mathbb{Q}}{\mathbb{Z}}$
+\end_inset
+
+ es fácil de ver, ya que si 
+\begin_inset Formula $\frac{a}{b}+\mathbb{Z}\in\frac{\mathbb{Q}}{\mathbb{Z}}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $b\frac{a}{b}+\mathbb{Z}=a+\mathbb{Z}=0+\mathbb{Z}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $\frac{a}{b}$
+\end_inset
+
+ tiene orden finito y la otra inclusión es obvia.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Todo subgrupo propio de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{p^{\infty}}}$
+\end_inset
+
+ es igual a 
+\begin_inset Formula $\boldsymbol{A_{n}}$
+\end_inset
+
+ para algún 
+\begin_inset Formula $\boldsymbol{n\geq0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sea 
+\begin_inset Formula $G$
+\end_inset
+
+ un subgrupo propio de 
+\begin_inset Formula $\mathbb{Z}_{p^{\infty}}$
+\end_inset
+
+.
+ ¿
+\begin_inset Formula $\exists n\in\mathbb{N}:\ G=A_{n}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Bueno, claramente 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ es un subgrupo propio de 
+\begin_inset Formula $\mathbb{Z}_{p^{\infty}}$
+\end_inset
+
+, ya que 
+\begin_inset Formula $\frac{1}{p^{n+1}}\notin A_{n}$
+\end_inset
+
+.
+ Por tanto, falta ver la otra inclusión.
+ Pero si 
+\begin_inset Formula $g\in G\implies g\in\mathbb{Z}_{p^{\infty}}=\frac{X}{\mathbb{Z}}\implies g'+\mathbb{Z}\in\frac{X}{\mathbb{Z}}\implies g'\in X\implies g'\in X_{n},$
+\end_inset
+
+ para algún 
+\begin_inset Formula $n$
+\end_inset
+
+, entonces 
+\begin_inset Formula $g'+\mathbb{Z}\in\frac{X_{n}}{\mathbb{Z}}=A_{n}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsubsection}{16}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que todo grupo abeliano finito no cíclico contiene un subgrupo
+ isomorfo a 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{p}\times\mathbb{Z}_{p}}$
+\end_inset
+
+ para algún primo 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como no es cíclico, entonces no es indescomponible.
+ Luego admite una descomposición primaria
+\begin_inset Formula 
+\[
+G=\left\langle a_{1}\right\rangle _{p_{1}}\varoplus...\varoplus\left\langle a_{m}\right\rangle _{p_{m}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+sabemos que esto podemos expresarlo como 
+\begin_inset Formula 
+\[
+G\simeq\left\langle a_{1}\right\rangle _{p_{1}}\times...\times\left\langle a_{m}\right\rangle _{p_{m}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+De forma que 
+\begin_inset Formula $p_{m}|p_{m-1}|...|p_{2}|p_{1}$
+\end_inset
+
+ y podemos supones que no tomamos ningún subgrupo trivial.
+ Entonces, no puede haber un único subgrupo, de este tipo, pues en tal caso
+ 
+\begin_inset Formula $G=\left\langle a_{1}\right\rangle _{p_{1}}$
+\end_inset
+
+ y es cíclico, en contra de la hipótesis.
+ Entonces, encontramos un subgrupo 
+\begin_inset Formula $\left\langle a_{1}\right\rangle _{p_{1}}\times\left\langle a_{2}\right\rangle _{p_{2}}$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\exists p$
+\end_inset
+
+ primo tal que 
+\begin_inset Formula $p|p_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $p|p_{2}$
+\end_inset
+
+, ya que 
+\begin_inset Formula $p_{2}|p_{1}$
+\end_inset
+
+.
+ Este subgrupo es un producto de dos grupos cíclicos, que por tanto tienen
+ subgrupo de cualquier orden que divida a su orden, en particular tienen
+ subgrupos cíclicos de orden 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Es decir, que podemos encontrar un subgrupo de la forma
+\begin_inset Formula 
+\[
+\left\langle a\right\rangle _{p}\times\left\langle b\right\rangle _{p}
+\]
+
+\end_inset
+
+ pero todo subgrupo cíclico de orden 
+\begin_inset Formula $p$
+\end_inset
+
+ es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{p}$
+\end_inset
+
+, por lo que este producto es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{p}\times\mathbb{Z}_{p}$
+\end_inset
+
+, como queríamos ver.
+\end_layout
+
+\begin_layout Standard
+\align left
+De hecho, es 
+\begin_inset Formula $a=a_{1}^{\frac{p_{1}}{p}}$
+\end_inset
+
+ y 
+\begin_inset Formula $b=a_{2}^{\frac{p_{2}}{p}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,3875 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Ejercicios GyA - Cap 5
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Grupos Abelianos Finitos
+\end_layout
+
+\begin_layout Subsection
+Sumas directas
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar las siguientes afirmaciones sobre un grupo abeliano 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Toda subfamilia de una familia independiente de subgrupos de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es independiente.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Esto es muy sencillo.
+ Sea 
+\begin_inset Formula $\left\{ B_{i}:i\in I\right\} $
+\end_inset
+
+ una familia independiente, y sea 
+\begin_inset Formula $J\subset I$
+\end_inset
+
+.
+ Sabemos que si 
+\begin_inset Formula $\sum_{i\in I}b_{i}=0\implies b_{i}=0,\ \forall i$
+\end_inset
+
+.
+ Si suponemos que 
+\begin_inset Formula $\sum_{j\in J}b_{j}=0$
+\end_inset
+
+ pero no todos los 
+\begin_inset Formula $b_{j}$
+\end_inset
+
+ son 0, entonces esta misma suma añadiendo los 
+\begin_inset Formula $b_{k}:k\in I\setminus J$
+\end_inset
+
+ todos a 0, da 0, por lo que el 
+\begin_inset Formula $b_{j}$
+\end_inset
+
+ anterior debe ser 0#.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Una familia de subgrupos es independiente precisamente si toda subfamilia
+ finita suya lo es.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Como los elementos de 
+\begin_inset Formula $\sum_{i\in I}B_{i}$
+\end_inset
+
+ tienen la forma 
+\begin_inset Formula $\sum_{i\in I}b_{i}$
+\end_inset
+
+, con 
+\begin_inset Formula $b_{i}\in B_{i}$
+\end_inset
+
+ y todos nulos excepto una cantidad finita, entonces si toda subfamilia
+ finita es independiente, la familia total ha de serlo.
+ Pues si una suma da 0, a lo sumo una cantidad finita de elementos pueden
+ ser no nulos, pero estos están en una subfamilia finita, que es independiente,
+ por lo que son todos nulos.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Si la familia 
+\begin_inset Formula $\boldsymbol{\left\{ B_{i}:i\in I\right\} }$
+\end_inset
+
+ de subgrupos de un grupo abeliano 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es independiente y otro subgrupo 
+\begin_inset Formula $\boldsymbol{B_{0}}$
+\end_inset
+
+ de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ verifica 
+\begin_inset Formula $\boldsymbol{B_{0}\cap\left(\varoplus_{i\in I}B_{i}\right)=0}$
+\end_inset
+
+, entonces la familia 
+\begin_inset Formula $\boldsymbol{\left\{ B_{0}\right\} \cup\left\{ B_{i}:i\in I\right\} }$
+\end_inset
+
+ también es independiente.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Supongamos que 
+\begin_inset Formula $\sum_{i\in I\cup\left\{ 0\right\} }b_{i}=0$
+\end_inset
+
+.
+ Entonces:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b_{0}=0\implies\sum_{i\in I}b_{i}=0\implies b_{i}=0,\ \forall i\in I\implies b_{i}=0,\ \forall i\in I\cup\left\{ 0\right\} \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b_{0}\neq0\implies\sum_{i\in I}b_{i}=-b_{0}\implies-b_{0}\in\varoplus_{i\in I}B_{i}\implies b_{0}\in\varoplus_{i\in I}B_{i}\implies B_{0}\cap\left(\varoplus_{i\in I}B_{i}\right)\neq0\#$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que la suma da 0 de forma única y la familia es independiente.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Si 
+\begin_inset Formula $\boldsymbol{A=\varoplus_{i\in I}B_{i}}$
+\end_inset
+
+ entonces cada 
+\begin_inset Formula $\boldsymbol{B_{j}}$
+\end_inset
+
+ es un sumando directo de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ con complemento 
+\begin_inset Formula $\boldsymbol{\varoplus_{i\neq j}B_{i}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Es evidente que 
+\begin_inset Formula $A=B_{j}\varoplus\left(\varoplus_{i\neq j}B_{i}\right)$
+\end_inset
+
+, falta ver que la intersección es 0.
+ Pero, si la intersección no es 0, si llamamos 
+\begin_inset Formula $0\neq b_{j}\in B_{j}\cap\left(\varoplus_{i\neq j}B_{i}\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $b_{j}-b_{j}=0=0+\left(0+...+0\right)$
+\end_inset
+
+ de forma que encontramos dos maneras de expresar el 0 como suma de elementos
+ de estos conjuntos # Contradicción, pues la familia es independiente.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Si 
+\begin_inset Formula $\boldsymbol{A=B\varoplus C}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{B=B_{1}\varoplus...\varoplus B_{n}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{C=C_{1}\varoplus...\varoplus C_{m}}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{A=B_{1}\varoplus...\varoplus B_{n}\varoplus C_{1}\varoplus...\varoplus C_{m}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=B\varoplus C=B_{1}\varoplus...\varoplus B_{n}\varoplus C_{1}\varoplus...\varoplus C_{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Si 
+\begin_inset Formula $\boldsymbol{A=B\varoplus C}$
+\end_inset
+
+ entonces la aplicación 
+\begin_inset Formula $\boldsymbol{A\rightarrow C}$
+\end_inset
+
+ dada por 
+\begin_inset Formula $\boldsymbol{b+c\mapsto c}$
+\end_inset
+
+ es un homomorfismo suprayectivo de grupos con núcleo 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+.
+ En particular 
+\begin_inset Formula $\boldsymbol{C\simeq\frac{A}{B}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Está bien definida por la unicidad de la representación de los elementos
+ de 
+\begin_inset Formula $A$
+\end_inset
+
+ como suma de elementos de 
+\begin_inset Formula $B$
+\end_inset
+
+ y 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+¿Es homomorfismo? Sean 
+\begin_inset Formula $x,y\in A\implies x=b_{1}+c_{1},\ y=b_{2}+c_{2}$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+f\left(x+y\right)=f\left(b_{1}+b_{2}+c_{1}+c_{2}\right)=c_{1}+c_{2}=f\left(b_{1}+c_{1}\right)+f\left(b_{2}+c_{2}\right)=f\left(x\right)+f\left(y\right)\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Es suprayectiva? Sí, dado 
+\begin_inset Formula $c\in C,\ c=f\left(0+c\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+¿El núcleo es 
+\begin_inset Formula $B$
+\end_inset
+
+? 
+\begin_inset Formula 
+\[
+f\left(b+c\right)=0\iff c=0\iff b+c=b\in B
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La isomorfía nos la da el primer teorema de isomorfía para grupos.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Si 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+ es un sumando directo de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+, cualquier complemento directo suyo es isomorfo a 
+\begin_inset Formula $\boldsymbol{\frac{A}{B}}$
+\end_inset
+
+.
+ Por tanto, aunque un sumando directo puede tener distintos complementos
+ directos, todos ellos son isomorfos entre sí.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Consecuencia directa del apartado anterior.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ un grupo abeliano.
+ Demostrar que als siguientes condiciones son equivalentes para un subconjunto
+ 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ es linealmente independiente sobre 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+, es decir, si 
+\begin_inset Formula $\boldsymbol{k_{1},...,k_{n}}$
+\end_inset
+
+ son enteros y 
+\begin_inset Formula $\boldsymbol{k_{1}x_{1}+...+k_{n}x_{n}=0}$
+\end_inset
+
+ con 
+\begin_inset Formula $\boldsymbol{x_{1},...,x_{n}}$
+\end_inset
+
+ elementos distintos de 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{k_{1}=...=k_{n}=0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Todo elemento de 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ tiene orden infinito y la familia de grupos cíclicos 
+\begin_inset Formula $\boldsymbol{\left\{ \left\langle x\right\rangle :x\in X\right\} }$
+\end_inset
+
+ es independiente
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{V}$
+\end_inset
+
+ un espacio vectorial sobre el cuerpo de los números complejos y consideremos
+ 
+\begin_inset Formula $\boldsymbol{V}$
+\end_inset
+
+ como grupo aditivo.
+ Demostrar que un subconjunto de 
+\begin_inset Formula $\boldsymbol{V}$
+\end_inset
+
+ es linealmente independiente sobre 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+ si, y solo si, lo es sobre 
+\begin_inset Formula $\boldsymbol{\mathbb{Q}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' Si lo es sobre 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+, lo es también sobre 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Si lo es sobre 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+, eso quiere decir que si 
+\begin_inset Formula $\sum_{i\in I}q_{i}v_{i}=0\implies q_{i}=0,\ \forall i$
+\end_inset
+
+.
+ Cada 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ tendrá coeficientes en 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+, pero si multiplicamos por el mcm de los denominadores, el vector será
+ proporcional y estará en 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+.
+ Llamemos a estos vectores 
+\begin_inset Formula $v_{i}'$
+\end_inset
+
+, claramente son independientes en 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+, pues de no serlo, tampoco lo serían en 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ los 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Decidir sobre la verdad o falsedad de las siguientes afirmaciones para el
+ caso en que 
+\begin_inset Formula $\boldsymbol{A=\left(\mathbb{Z}^{n},+\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Todo subconjunto linealmente independiente de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ tiene a lo sumo 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ elementos.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Verdadero, 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ no puede ponerse como suma directa de subgrupos.
+ Al ser abeliano, todo subgrupo es cíclico, por lo que es generado por algún
+ elemento.
+ Pero en 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+, dados dos elementos, la intersección de los subgrupos generados por estos
+ no es 0, pues están todos los múltiplos comunes de ambos elementos.
+ Entonces, los únicos conjuntos linealmente independientes que podemos tomar
+ son de la forma 
+\begin_inset Formula $\left\{ \mathbb{Z}^{m_{i}}\right\} ,\ \sum_{i}m_{i}\leq n$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Todo subconjunto generador de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ tiene al menos 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ elementos.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Verdadero, el menor generador que podemos encontrar es 
+\begin_inset Formula $\left\{ \left\langle 1,0,...,0\right\rangle ,\left\langle 0,1,0,...,0\right\rangle ,...,\left\langle 0,...,0,1\right\rangle \right\} $
+\end_inset
+
+.
+ Ya que no puede haber un único elemento que genere el producto cartesiano.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, supongamos que 
+\begin_inset Formula $\mathbb{Z}\times\mathbb{Z}=\left\langle a,b\right\rangle $
+\end_inset
+
+, entonces 
+\begin_inset Formula $b=ka$
+\end_inset
+
+, luego
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $a\neq b$
+\end_inset
+
+, entonces
+\begin_inset Formula $\left(b,b\right)=\left(ka,b\right)\notin\left\langle a,b\right\rangle $
+\end_inset
+
+, pues 
+\begin_inset Formula $kb\neq b$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $a=b$
+\end_inset
+
+, entonces 
+\begin_inset Formula $2=ka,$
+\end_inset
+
+ 
+\begin_inset Formula $5=ma$
+\end_inset
+
+, y así 
+\begin_inset Formula $\left(2,5\right)=\left(ka,ma\right)\notin\left\langle a,a\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Todo subconjunto linealmente independiente de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ con 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ elementos es conjunto generador de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Falso.
+ 
+\begin_inset Formula $\left\{ \left\langle 2,0,...,0\right\rangle ,\left\langle 0,2,0,...,0\right\rangle ,...,\left\langle 0,...,0,2\right\rangle \right\} $
+\end_inset
+
+ tiene 
+\begin_inset Formula $n$
+\end_inset
+
+ elementos, es linealmente independiente, pero no es generador, pues 
+\begin_inset Formula $\left(1,0,...,0\right)$
+\end_inset
+
+ no está en el conjunto que genera.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Todo subconjunto generador de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ con 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ elementos es linealmente independiente.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Un conjunto generador debe poder expresar todo elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+ como suma de elementos de sus subconjuntos.
+ Por ser 
+\begin_inset Formula $A$
+\end_inset
+
+ abeliano, todo subgrupo es cíclico.
+ Luego lo genera un elemento.
+ Entonces para todo 
+\begin_inset Formula $\left(x_{1},...,x_{n}\right)\in A$
+\end_inset
+
+, se tiene que
+\begin_inset Formula 
+\[
+\begin{cases}
+k_{1}a_{11}+k_{2}a_{21}+...+k_{n}a_{n1}=x_{1}\\
+k_{1}a_{12}+k_{2}a_{22}+...+k_{n}a_{12}=x_{2}\\
+...\\
+k_{1}a_{1n}+k_{2}a_{2n}+...+k_{n}a_{nn}=x_{n}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Demostrar que todo subgrupo de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}^{n}}$
+\end_inset
+
+ es isomorfo a 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}^{k}}$
+\end_inset
+
+ para algún 
+\begin_inset Formula $\boldsymbol{k\leq n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Encontrar un subgrupo 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+ de 
+\begin_inset Formula $\boldsymbol{A=\mathbb{Z}_{16}^{*}}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\boldsymbol{\frac{A}{B}\simeq\mathbb{Z}_{2}\times\mathbb{Z}_{2}}$
+\end_inset
+
+.
+ ¿Cuántos subgrupos así eres capaz de encontrar? ¿Alguno de ellos es un
+ sumando directo de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+16=2^{4}\implies\phi\left(16\right)=16\frac{2-1}{2}=8
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El cardinal de 
+\begin_inset Formula $\mathbb{Z}_{2}\times\mathbb{Z}_{2}$
+\end_inset
+
+ es 4.
+ Por tanto, 
+\begin_inset Formula $B$
+\end_inset
+
+ debe tener cardinal 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los subgrupos de cardinal 2 son 
+\begin_inset Formula $\left\langle 15\right\rangle $
+\end_inset
+
+, 
+\begin_inset Formula $\left\langle 7\right\rangle $
+\end_inset
+
+ y 
+\begin_inset Formula $\left\langle 9\right\rangle $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{A}{\left\langle 15\right\rangle }=\left\{ \left(1,15\right),\left(3,13\right),\left(5,11\right),\left(7,9\right)\right\} ,\quad\frac{A}{\left\langle 7\right\rangle }=\left\{ \left(1,7\right),\left(3,5\right),\left(9,15\right),\left(11,13\right)\right\} ,\quad\frac{A}{\left\langle 9\right\rangle }=\left\{ \left(1,9\right),\left(3,11\right),\left(5,13\right),\left(7,15\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+con tablas 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+respectivamente.
+\end_layout
+
+\begin_layout Standard
+La tabla de 
+\begin_inset Formula $\mathbb{Z}_{2}\times\mathbb{Z}_{2}$
+\end_inset
+
+ es
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1,1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1,1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1,1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1,1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir, que la isomorfía es 
+\begin_inset Formula 
+\[
+\mathbb{Z}_{2}\times\mathbb{Z}_{2}\simeq\frac{A}{\left\langle 9\right\rangle }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Grupos indescomponibles y 
+\begin_inset Formula $\boldsymbol{p-}$
+\end_inset
+
+grupos
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que si 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es un grupo finito, entonces 
+\begin_inset Formula $\boldsymbol{Exp\left(G\right)|\left|G\right|}$
+\end_inset
+
+.
+ ¿En qué caso se daría la igualdad?
+\end_layout
+
+\begin_layout Standard
+\align left
+Se tiene que, 
+\begin_inset Formula $\forall a\in G,\ a^{Exp\left(G\right)}=1$
+\end_inset
+
+.
+ Esto quiere decir que 
+\begin_inset Formula $\left|\left\langle a\right\rangle \right|=Exp\left(G\right)$
+\end_inset
+
+, por el teorema de Lagrange, 
+\begin_inset Formula $Exp\left(G\right)|\left|G\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+La igualdad se daría precisamente en el caso de que 
+\begin_inset Formula $G$
+\end_inset
+
+ es cíclico.
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ de período finito y sea 
+\begin_inset Formula $\boldsymbol{H}$
+\end_inset
+
+ un subgrupo de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{Exp\left(H\right)}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{p\left(G/H\right)}$
+\end_inset
+
+ son divisores de 
+\begin_inset Formula $\boldsymbol{Exp\left(G\right)}$
+\end_inset
+
+.
+ En particular, si 
+\begin_inset Formula $\boldsymbol{g\in G\implies\left|g\right||Exp\left(G\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Evidentemente, 
+\begin_inset Formula $Exp\left(H\right)\leq Exp\left(G\right)$
+\end_inset
+
+.
+ Por el ejercicio anterior 
+\begin_inset Formula $Exp\left(H\right)|\left|H\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Está claro que 
+\begin_inset Formula $a^{Exp\left(H\right)}=1,\ \forall a\in H$
+\end_inset
+
+.
+ Pero, también 
+\begin_inset Formula $a^{Exp\left(G\right)}=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Supongamos que 
+\begin_inset Formula $Exp\left(H\right)\nmid Exp\left(G\right)$
+\end_inset
+
+, sabemos que no son coprimos, por lo anterior.
+ Sea 
+\begin_inset Formula $d=mcd\left(Exp\left(H\right),Exp\left(G\right)\right)<Exp\left(H\right).$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que el período de un grupo finito, no necesariamente abeliano,
+ es el mcm de los órdenes de sus elementos.
+ Demostrar que si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es un grupo abeliano generado por un subconjunto finito 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ y todos los elementos de 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ tienen orden finito entocnes 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es periódico y 
+\begin_inset Formula $\boldsymbol{Exp\left(A\right)=mcm\left(\left|x\right|:x\in X\right)}$
+\end_inset
+
+.
+ Dar un ejemplo que muestre que esto último no se verifica en grupos no
+ abelianos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sabemos que 
+\begin_inset Formula $a^{Exp\left(G\right)}=1\implies\left|a\right||Exp\left(G\right)$
+\end_inset
+
+.
+ Esto ocurre para todo 
+\begin_inset Formula $a$
+\end_inset
+
+, luego 
+\begin_inset Formula $mcm|Exp\left(G\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Pero, además
+\begin_inset Formula 
+\[
+a^{mcm}=a^{\left|a\right|\frac{mcm}{\left|a\right|}}=1^{\frac{mcm}{\left|a\right|}}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Luego 
+\begin_inset Formula $Exp\left(G\right)\leq mcm$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, 
+\begin_inset Formula $Exp\left(G\right)=mcm$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $A$
+\end_inset
+
+ es abeliano generado por un subconjunto finito, entonces sea 
+\begin_inset Formula $m=mcm\left(\left|x\right|:x\in X\right)$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $a^{m}=1,\ \forall a\in A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y dado 
+\begin_inset Formula $g\in G$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $g=a_{1}^{n_{1}}...a_{k}^{n_{k}}$
+\end_inset
+
+, luego 
+\begin_inset Formula $G$
+\end_inset
+
+ tiene menos elementos o tantos como 
+\begin_inset Formula $card\left(X\right)^{m}$
+\end_inset
+
+, que es finito.
+\end_layout
+
+\begin_layout Standard
+\align left
+Además
+\begin_inset Formula 
+\[
+g^{m}=a_{1}^{mn_{1}}...a_{k}^{mn_{k}}=1...1=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Luego 
+\begin_inset Formula $G$
+\end_inset
+
+ es periódico.
+\end_layout
+
+\begin_layout Subsubsection
+Para un grupo arbitrario 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+, denotamos por 
+\begin_inset Formula $\boldsymbol{t\left(G\right)}$
+\end_inset
+
+ el conjunto de los elementos de orden finito de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+ Demostrar que si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es un grupo abeliano entonces 
+\begin_inset Formula $\boldsymbol{t\left(A\right)}$
+\end_inset
+
+ es un subgrupo de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{t\left(A\right)=\varoplus_{p\in\mathbb{P}}t_{p}\left(A\right)}$
+\end_inset
+
+.
+ Dar un ejemplo de un grupo 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ en el que 
+\begin_inset Formula $\boldsymbol{t\left(G\right)}$
+\end_inset
+
+ no sea un subgrupo de 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+1 tiene orden finito 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sean 
+\begin_inset Formula $a,b\in t\left(A\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $a^{n}=1,\ b^{m}=1$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+\left(ab\right)^{nm}=abab...ab=aa...ab...bb=a^{n}b^{m}=1\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $a^{n}=1\implies1=a^{-n}=\left(a^{-1}\right)^{n}<\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La segunda parte no la tengo clara
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsubsection}{5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que el grupo aditivo 
+\begin_inset Formula $\boldsymbol{\left(A,+\right)}$
+\end_inset
+
+ de un anillo 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es de torsión precisamente si la característica de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es diferente de 0.
+ Si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es un dominio, demostrar que las condiciones son equivalentes a que 
+\begin_inset Formula $\boldsymbol{t\left(A\right)\neq0}$
+\end_inset
+
+.
+ En particular, si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es dominio entonces 
+\begin_inset Formula $\boldsymbol{t\left(A\right)}$
+\end_inset
+
+ es 0 ó 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+.
+ Calcular 
+\begin_inset Formula $\boldsymbol{t\left(\mathbb{Z}\left[X\right]/\left(2X\right)\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A$
+\end_inset
+
+ es de torsión 
+\begin_inset Formula $\implies na=0,\ \forall a\in A\implies car\left(A\right)|n\implies car\left(A\right)\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $car\left(A\right)\neq0\implies car\left(A\right)a=0,\ \forall a\in A\implies A$
+\end_inset
+
+ es de torsión.
+\end_layout
+
+\begin_layout Subsection
+Descomposiciones primarias e invariantes
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que si 
+\begin_inset Formula $\boldsymbol{\left(d_{1},...,d_{k}\right)}$
+\end_inset
+
+ es la lista de factores invariantes de un grupo entonces el exponente de
+ 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es 
+\begin_inset Formula $\boldsymbol{d_{1}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El exponente es el mcm de los órdenes de los elementos de 
+\begin_inset Formula $A$
+\end_inset
+
+, pero también 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ lo es.
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que, si 
+\begin_inset Formula $\boldsymbol{n\in\mathbb{Z}^{+}}$
+\end_inset
+
+ es libre de cuadrados, entonces todo grupo abeliano finito de orden 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ es cíclico.
+\end_layout
+
+\begin_layout Standard
+Por ser libre de cuadrados, es 
+\begin_inset Formula $n=p_{1}...p_{k}$
+\end_inset
+
+, con 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ primo.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $k=1$
+\end_inset
+
+, es cíclico y ya está.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $k>1$
+\end_inset
+
+, el teorema de Cauchy asegura que 
+\begin_inset Formula $\forall i,\ \exists a_{i}/\left|a_{i}\right|=p_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces
+\begin_inset Formula 
+\[
+A=t_{p_{1}}\left(A\right)\varoplus...\varoplus t_{p_{k}}\left(A\right)=\left\langle a_{1}\right\rangle \varoplus...\varoplus\left\langle a_{k}\right\rangle 
+\]
+
+\end_inset
+
+es una descomposición primaria, y 
+\begin_inset Formula 
+\[
+\mathbb{Z}_{n}=\left\langle p_{1}\right\rangle \varoplus...\varoplus\left\langle p_{k}\right\rangle 
+\]
+
+\end_inset
+
+ luego las listas de divisores elementales serán iguales y se tiene la isomorfía.
+ Por tanto, 
+\begin_inset Formula $A$
+\end_inset
+
+ es cíclico.
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ un número primo.
+ Demostrar que, salvo isomorfismos, los únicos grupos de orden 
+\begin_inset Formula $\boldsymbol{p^{2}}$
+\end_inset
+
+ son 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{p^{2}}}$
+\end_inset
+
+y 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{p}\times\mathbb{Z}_{p}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para todo 
+\begin_inset Formula $a\in A$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $\left|a\right||p^{2}$
+\end_inset
+
+.
+ Por tanto, 
+\begin_inset Formula $\left|a\right|\in\left\{ 1,p,p^{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, 
+\begin_inset Formula $Exp\left(A\right)=mcm\left\{ \left|a\right|:a\in A\right\} $
+\end_inset
+
+.
+ No puede ser 
+\begin_inset Formula $Exp\left(A\right)=1$
+\end_inset
+
+ porque entonces el grupo sería trivial.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula $Exp\left(A\right)\in\left\{ p,p^{2}\right\} $
+\end_inset
+
+.
+ Si es 
+\begin_inset Formula $p^{2}$
+\end_inset
+
+, entonces hay algún elemento con orden 
+\begin_inset Formula $p^{2}$
+\end_inset
+
+, porque si no todos tendrían orden 
+\begin_inset Formula $1,p$
+\end_inset
+
+ y el mcm sería 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Por lo que ese elemento genera 
+\begin_inset Formula $A$
+\end_inset
+
+ y es cíclico e isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si es 
+\begin_inset Formula $p$
+\end_inset
+
+, entonces 
+\begin_inset Formula $A/\left\langle a\right\rangle $
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $p$
+\end_inset
+
+ y se tiene que hay 
+\begin_inset Formula $b\notin\left\langle a\right\rangle $
+\end_inset
+
+ con 
+\begin_inset Formula $A=\left\langle a\right\rangle _{p}\varoplus\left\langle b\right\rangle _{p}\simeq\mathbb{Z}_{p}\times\mathbb{Z}_{p}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Describir, salvo isomorfismos, los grupos abelianos de órden 8.
+ Ver las isomorfías para 
+\begin_inset Formula $\mathbb{Z}_{15}^{*},\ \mathbb{Z}_{16}^{*},\ \mathbb{Z}_{20}^{*},\ \mathbb{Z}_{24}^{*},\ \mathbb{Z}_{30}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los elementos pueden tener orden 1,2,4,8.
+\end_layout
+
+\begin_layout Standard
+Si algún elemento tiene orden 8, entonces es cíclico y es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{8}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si ningún elemento tiene orden 8:
+\end_layout
+
+\begin_layout Itemize
+No puede ocurrir que todos tengan orden 1, el grupo sería trivial
+\end_layout
+
+\begin_layout Itemize
+Si algún elemento tiene orden 
+\begin_inset Formula $4$
+\end_inset
+
+, entonces 
+\begin_inset Formula $A/\left\langle a\right\rangle $
+\end_inset
+
+ tiene orden 2, y 
+\begin_inset Formula $A\simeq\mathbb{Z}_{4}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si ningún elemento tiene orden 
+\begin_inset Formula $4$
+\end_inset
+
+, entonces 
+\begin_inset Formula $A\simeq\mathbb{Z}_{2}\times c_{2}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{15}^{*}:$
+\end_inset
+
+ 
+\begin_inset Formula $\left|2\right|=4$
+\end_inset
+
+ y ninguno tiene orden 8.
+ Es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{4}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{16}^{*}$
+\end_inset
+
+: 
+\begin_inset Formula $\left|3\right|=4$
+\end_inset
+
+ y ninguno tiene orden 8.
+ Es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{4}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{20}^{*}$
+\end_inset
+
+: 
+\begin_inset Formula $\left|3\right|=4$
+\end_inset
+
+ y ninguno tiene orden 8.
+ Es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{4}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{24}^{*}$
+\end_inset
+
+: todos tienen orden 2.
+ Es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{2}\times\mathbb{Z}_{2}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}_{30}^{*}$
+\end_inset
+
+: 
+\begin_inset Formula $\left|3\right|=4$
+\end_inset
+
+ y ninguno tiene orden 8.
+ Es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{4}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Grupos abelianos de órdenes 12,16,20,24 salvo isom.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $12=2^{2}\cdot3$
+\end_inset
+
+.
+ Los grupos son 
+\begin_inset Formula $\mathbb{Z}_{12}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{Z}_{6}\times\mathbb{Z}_{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $16=2^{4}$
+\end_inset
+
+.
+ Los grupos son 
+\begin_inset Formula $\mathbb{Z}_{16},\ \mathbb{Z}_{8}\times\mathbb{Z}_{2},\ \mathbb{Z}_{4}\times\mathbb{Z}_{4},\ \mathbb{Z}_{4}\times\mathbb{Z}_{2}\times\mathbb{Z}_{2},\ \mathbb{Z}_{2}\times\mathbb{Z}_{2}\times\mathbb{Z}_{2}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $20=2^{2}\cdot5$
+\end_inset
+
+.
+ Los grupos son 
+\begin_inset Formula $\mathbb{Z}_{20}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{Z}_{10}\times\mathbb{Z}_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $24=2^{3}\cdot3$
+\end_inset
+
+.
+ Los grupos son 
+\begin_inset Formula $\mathbb{Z}_{24},\ \mathbb{Z}_{2}\times\mathbb{Z}_{12},\ \mathbb{Z}_{4}\times\mathbb{Z}_{6},\ \mathbb{Z}_{2}\times\mathbb{Z}_{2}\times\mathbb{Z}_{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Calcular todos los grupos abelianos de orden 420 salvo isomorfismos y sus
+ descomposiciones invariantes y primarias.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $420=2^{2}\cdot3\cdot5\cdot7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los grupos son 
+\begin_inset Formula $\mathbb{Z}_{420}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{Z}_{2}\times\mathbb{Z}_{210}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbb{Z}_{420}$
+\end_inset
+
+ descomposición primaria: 
+\begin_inset Formula $\mathbb{Z}_{420}\simeq\mathbb{Z}_{4}\varotimes\mathbb{Z}_{5}\varotimes\mathbb{Z}_{3}\varotimes\mathbb{Z}_{7}=\left\langle 1\mod4\right\rangle _{4}\times\left\langle 1\mod5\right\rangle _{5}\times\left\langle 1\mod7\right\rangle _{7}\times\left\langle 1\mod3\right\rangle _{3}=\left\langle 105\right\rangle _{4}\times\left\langle 336\right\rangle _{5}\times\left\langle 120\right\rangle _{7}\times\left\langle 280\right\rangle _{3}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Descomposición invariante: 
+\begin_inset Formula $\mathbb{Z}_{420}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathbb{Z}_{2}\times\mathbb{Z}_{210}$
+\end_inset
+
+ primaria: 
+\begin_inset Formula $t_{2}\left(\mathbb{Z}_{2}\right)\times t_{2}\left(\mathbb{Z}_{210}\right)\times t_{3}\left(\mathbb{Z}_{210}\right)\times t_{5}\left(\mathbb{Z}_{210}\right)\times t_{7}\left(\mathbb{Z}_{210}\right)=\mathbb{Z}_{2}\times\left\langle 105\right\rangle _{2}\times\left\langle 70\right\rangle _{3}\times\left\langle 160\right\rangle _{5}\times\left\langle 120\right\rangle _{7}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La invariante queda
+\begin_inset Formula 
+\[
+\mathbb{Z}_{210}\times\mathbb{Z}_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Demostrar el recíproco del Teorema de Lagrange para grupos abelianos finitos.
+ Es decir, demostrar que un grupo abeliano de orden 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ tiene un subgrupo de orden 
+\begin_inset Formula $\boldsymbol{m}$
+\end_inset
+
+ para divisor 
+\begin_inset Formula $\boldsymbol{m}$
+\end_inset
+
+ de 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Podemos suponer que 
+\begin_inset Formula $A$
+\end_inset
+
+ es un 
+\begin_inset Formula $p-$
+\end_inset
+
+grupo para algún 
+\begin_inset Formula $p$
+\end_inset
+
+ primo, porque en el caso general, si 
+\begin_inset Formula $n=\left|A\right|=p_{1}^{a_{1}}...p_{k}^{a_{k}}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $A=t_{p_{1}}\left(A\right)\varoplus...\varoplus t_{p_{k}}\left(A\right)$
+\end_inset
+
+.
+ Si se cumple para cada 
+\begin_inset Formula $t_{p}\left(A\right)$
+\end_inset
+
+, sea 
+\begin_inset Formula $m:m|n\implies m=p_{1}^{b_{1}}...p_{k}^{b_{k}}$
+\end_inset
+
+, 
+\begin_inset Formula $0\leq b_{i}\leq a_{i}$
+\end_inset
+
+.
+ Tomo un subgrupo 
+\begin_inset Formula $B_{i}\subset t_{p_{i}}\left(A\right):\ \left|B_{i}\right|=p^{b_{i}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\varoplus_{i}^{k}B_{i}$
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $A$
+\end_inset
+
+ es 
+\begin_inset Formula $p-$
+\end_inset
+
+grupo, 
+\begin_inset Formula $A=\left\langle x_{1}\right\rangle _{p_{1}^{a_{1}}}\varoplus...\varoplus\left\langle x_{k}\right\rangle _{p_{k}^{a_{k}}}$
+\end_inset
+
+, 
+\begin_inset Formula $m|\left|A\right|=p^{n}\implies m=p^{l},\ 0\leq l\leq n$
+\end_inset
+
+.
+ Tomo, para 
+\begin_inset Formula $i=1,...,k$
+\end_inset
+
+, 
+\begin_inset Formula $b_{i}:\ 0\leq b_{i}\leq a_{i}$
+\end_inset
+
+ y 
+\begin_inset Formula $\sum_{i=1}^{k}b_{i}=l$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $\left\langle x_{i}\right\rangle $
+\end_inset
+
+ es cíclico, 
+\begin_inset Formula $\exists y_{i}\in\left\langle x_{i}\right\rangle :\left|\left\langle y_{i}\right\rangle \right|=p^{b_{i}}$
+\end_inset
+
+ y, por lo tanto 
+\begin_inset Formula $\varoplus_{1}^{k}\left\langle y_{i}\right\rangle $
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Sean 
+\begin_inset Formula $\boldsymbol{L,M,N}$
+\end_inset
+
+ grupos abelianos finitos con 
+\begin_inset Formula $\boldsymbol{L\varoplus N\simeq M\varoplus N}$
+\end_inset
+
+.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{L\simeq M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por ser isomorfos, las descomposiciones primarias de 
+\begin_inset Formula $L\varoplus N$
+\end_inset
+
+ y de 
+\begin_inset Formula $M\varoplus N$
+\end_inset
+
+ son semejantes, además, la descomposición de 
+\begin_inset Formula $L\varoplus N$
+\end_inset
+
+ es la descomposición de 
+\begin_inset Formula $L$
+\end_inset
+
+ en suma directa con la de 
+\begin_inset Formula $N$
+\end_inset
+
+, y lo mismo ocurre con la otra:
+\begin_inset Formula 
+\[
+L_{1}\varoplus...\varoplus L_{k}\varoplus N_{1}\varoplus...\varoplus N_{m}\simeq M_{1}\varoplus...\varoplus M_{k}\varoplus N_{1}\varoplus...\varoplus N_{m}\implies L_{1}\varoplus...\varoplus L_{k}\simeq M_{1}\varoplus...\varoplus M_{k}
+\]
+
+\end_inset
+
+ luego 
+\begin_inset Formula $L\simeq M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Calcular las descomposiciones primaria e invariante del grupo aditivo 
+\begin_inset Formula $\mathbb{Z}_{20}\varoplus\mathbb{Z}_{40}\varoplus\mathbb{Z}_{108}$
+\end_inset
+
+, el grupo multiplicativo 
+\begin_inset Formula $\mathbb{Z}_{21}^{*}\times\mathbb{Z}_{27}^{*}\times\mathbb{Z}_{29}^{*}$
+\end_inset
+
+ y el producto de ambos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $20=2^{2}\cdot5$
+\end_inset
+
+, 
+\begin_inset Formula $40=2^{3}\cdot5$
+\end_inset
+
+, 
+\begin_inset Formula $108=2^{2}3^{3}$
+\end_inset
+
+, luego
+\begin_inset Formula 
+\[
+\mathbb{Z}_{20}\varoplus\mathbb{Z}_{40}\varoplus\mathbb{Z}_{108}\simeq t_{2}\left(\mathbb{Z}_{20}\right)\varoplus t_{2}\left(\mathbb{Z}_{40}\right)\varoplus t_{2}\left(\mathbb{Z}_{108}\right)\varoplus t_{5}\left(\mathbb{Z}_{20}\right)\varoplus t_{5}\left(\mathbb{Z}_{40}\right)\varoplus t_{3}\left(\mathbb{Z}_{108}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left\langle 5,0,0\right\rangle _{4}\varoplus\left\langle 0,25,0\right\rangle _{8}\varoplus\left\langle 0,0,77\right\rangle _{4}\varoplus\left\langle 16,0,0\right\rangle _{5}\varoplus\left\langle 0,16,0\right\rangle _{5}\varoplus\left\langle 0,0,28\right\rangle _{27}
+\]
+
+\end_inset
+
+ O sea, que la descomposición primaria es
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\mathbb{Z}_{8} & \varoplus\mathbb{Z}_{4} & \varoplus\mathbb{Z}_{4}\\
+\varoplus\mathbb{Z}_{27}\\
+\varoplus\mathbb{Z}_{5} & \varoplus\mathbb{Z}_{5}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y la invariante es
+\begin_inset Formula 
+\[
+\mathbb{Z}_{1080}\varoplus\mathbb{Z}_{20}\varoplus\mathbb{Z}_{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el multiplicativo, tenemos que 
+\begin_inset Formula $\mathbb{Z}_{21}^{*}\simeq\mathbb{Z}_{3}^{*}\times\mathbb{Z}_{7}^{*}\simeq\left\langle -1,1\right\rangle _{2}\times\left\langle 1,-1\right\rangle _{2}\times\left\langle 1,2\right\rangle _{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbb{Z}_{27}^{*}=\mathbb{Z}_{3^{3}}^{*}$
+\end_inset
+
+, que tiene orden 
+\begin_inset Formula $2\cdot3^{2}$
+\end_inset
+
+, luego 
+\begin_inset Formula $\mathbb{Z}_{27}^{*}\simeq\left\langle -1\right\rangle _{2}\times\left\langle 4\right\rangle _{9}$
+\end_inset
+
+ y, por último, 
+\begin_inset Formula $\mathbb{Z}_{29}^{*}$
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $28=2^{2}\cdot7$
+\end_inset
+
+, y es 
+\begin_inset Formula $\mathbb{Z}_{29}^{*}\simeq\left\langle 17\right\rangle _{4}\times\left\langle 25\right\rangle _{7}$
+\end_inset
+
+, es decir
+\begin_inset Formula 
+\[
+\mathbb{Z}_{21}^{*}\times\mathbb{Z}_{27}^{*}\times\mathbb{Z}_{29}^{*}\simeq\begin{array}{cccc}
+\left\langle 1,1,17\right\rangle _{4} & \times\left\langle 8,1,1\right\rangle _{2} & \times\left\langle 1,-1,1\right\rangle _{2} & \times\left\langle 13,1,1\right\rangle _{2}\\
+\times\left\langle 1,4,1\right\rangle _{9} & \times\left\langle 16,1,1\right\rangle _{3}\\
+\times\left\langle 1,1,25\right\rangle _{7}
+\end{array}\simeq\left\langle 1,4,19\right\rangle _{252}\times\left\langle 2,1,1\right\rangle _{6}\times\left\langle 1,-1,1\right\rangle _{2}\times\left\langle 13,1,1\right\rangle _{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para sacar la descomposición del producto, juntamos las descomposiciones
+ primarias, teniendo en cuenta que 
+\begin_inset Formula $A\varoplus B\simeq A\times B$
+\end_inset
+
+.
+ Entonces, si llamamos 
+\begin_inset Formula $A$
+\end_inset
+
+ a este grupo producto, es
+\begin_inset Formula 
+\[
+A\simeq\begin{array}{ccccccc}
+\mathbb{Z}_{8} & \times\mathbb{Z}_{4} & \times\mathbb{Z}_{4} & \times\mathbb{Z}_{4} & \times\mathbb{Z}_{2} & \times\mathbb{Z}_{2} & \times\mathbb{Z}_{2}\\
+\times\mathbb{Z}_{27} & \times\mathbb{Z}_{9} & \times\mathbb{Z}_{3}\\
+\times\mathbb{Z}_{5} & \times\mathbb{Z}_{5}\\
+\times\mathbb{Z}_{7}
+\end{array}\simeq\mathbb{Z}_{7560}\times\mathbb{Z}_{180}\times\mathbb{Z}_{12}\times\mathbb{Z}_{4}\times\mathbb{Z}_{2}\times\mathbb{Z}_{2}\times\mathbb{Z}_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Grupos abelianos de órdenes 30, 60, 72, 90, 180, 360, 720, 1830.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $30=2\cdot3\cdot5$
+\end_inset
+
+, el único es 
+\begin_inset Formula $\mathbb{Z}_{30}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $60=2^{2}\cdot3\cdot5$
+\end_inset
+
+, son 
+\begin_inset Formula $\mathbb{Z}_{60}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{Z}_{2}\times\mathbb{Z}_{30}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $72=2^{3}\cdot3^{2}$
+\end_inset
+
+, son 
+\begin_inset Formula $\mathbb{Z}_{72},\ \mathbb{Z}_{2}\times\mathbb{Z}_{36},\ \mathbb{Z}_{2}\times\mathbb{Z}_{12}\times\mathbb{Z}_{3},\ \mathbb{Z}_{2}\times\mathbb{Z}_{2}\times\mathbb{Z}_{6}\times\mathbb{Z}_{3},\ \mathbb{Z}_{2}\times\mathbb{Z}_{2}\times\mathbb{Z}_{18},\ \mathbb{Z}_{4}\times\mathbb{Z}_{18},\ \mathbb{Z}_{4}\times\mathbb{Z}_{6}\times\mathbb{Z}_{3},\ \mathbb{Z}_{6}\times\mathbb{Z}_{12},\ \mathbb{Z}_{6}\times\mathbb{Z}_{2}\times\mathbb{Z}_{12},\ \mathbb{Z}_{24}\times\mathbb{Z}_{3}$
+\end_inset
+
+ (quizás falte alguno)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $90=2\cdot3^{2}\cdot5$
+\end_inset
+
+, son 
+\begin_inset Formula $\mathbb{Z}_{90},\ \mathbb{Z}_{3}\times\mathbb{Z}_{30}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $180=2^{2}\cdot3^{2}\cdot5$
+\end_inset
+
+, son 
+\begin_inset Formula $\mathbb{Z}_{180},\ \mathbb{Z}_{2}\times\mathbb{Z}_{90},\ \mathbb{Z}_{2}\times\mathbb{Z}_{3}\times\mathbb{Z}_{30},\ \mathbb{Z}_{3}\times\mathbb{Z}_{60},\ \mathbb{Z}_{6}\times\mathbb{Z}_{30}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $1830=2\cdot3\cdot5\cdot61$
+\end_inset
+
+, solo es 
+\begin_inset Formula $\mathbb{Z}_{1830}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsubsection}{11}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que la lista de factores invariantes de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{n}\varoplus\mathbb{Z}_{m}}$
+\end_inset
+
+ es 
+\begin_inset Formula $\boldsymbol{\left(mcm\left(n,m\right),\ mcd\left(n,m\right)\right)}$
+\end_inset
+
+ ó 
+\begin_inset Formula $\boldsymbol{\left(nm\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $n,m$
+\end_inset
+
+ son coprimos, entonces, por el trm chino de los restos, 
+\begin_inset Formula $\mathbb{Z}_{n}\varoplus\mathbb{Z}_{m}\simeq\mathbb{Z}_{nm}$
+\end_inset
+
+ y es cíclico, por lo que su lista de factores invariantes es 
+\begin_inset Formula $\left(nm\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $n,m$
+\end_inset
+
+ no son coprimos, entonces se tiene, si 
+\begin_inset Formula $d=mcd\left(n,m\right)$
+\end_inset
+
+, que 
+\begin_inset Formula $\mathbb{Z}_{n}\simeq\mathbb{Z}_{\frac{n}{d}}\varoplus\mathbb{Z}_{d}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathbb{Z}_{m}\simeq\mathbb{Z}_{\frac{m}{d}}\varoplus\mathbb{Z}_{d}$
+\end_inset
+
+, luego 
+\begin_inset Formula $\mathbb{Z}_{n}\varoplus\mathbb{Z}_{m}\simeq\mathbb{Z}_{\frac{n}{d}}\varoplus\mathbb{Z}_{d}\varoplus\mathbb{Z}_{\frac{m}{d}}\varoplus\mathbb{Z}_{d}$
+\end_inset
+
+, ahora bien, 
+\begin_inset Formula $\frac{n}{d}$
+\end_inset
+
+ y 
+\begin_inset Formula $\frac{m}{d}$
+\end_inset
+
+ sí que son coprimos, por lo que esto último es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{\frac{nm}{d^{2}}}\varoplus\mathbb{Z}_{d}\varoplus\mathbb{Z}_{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $d=p_{1}^{d_{1}}...p_{k}^{d_{k}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\frac{nm}{d^{2}}=p_{1}^{x_{1}}...p_{k}^{x_{k}}$
+\end_inset
+
+, entonces, si 
+\begin_inset Formula $d_{i}\neq0\implies x_{i}=0$
+\end_inset
+
+, podemos suponer que los primeros 
+\begin_inset Formula $m$
+\end_inset
+
+ primos son los que tienen 
+\begin_inset Formula $d_{i}$
+\end_inset
+
+ no nulo, y la descomposición primaria (cambiando filas, esto no afectará
+ a la invariante) queda
+\begin_inset Formula 
+\[
+\begin{array}{cccc}
+\left\langle a_{11}\right\rangle _{p_{1}^{d_{1}}} & \varoplus\left\langle a_{12}\right\rangle _{p_{1}^{d_{1}}}\\
+...\\
+\varoplus\left\langle a_{m1}\right\rangle _{p_{m}^{d_{m}}} & \varoplus\left\langle a_{m2}\right\rangle _{p_{m}^{d_{m}}}\\
+\varoplus\left\langle a_{m+1,1}\right\rangle _{p_{m+1}^{x_{m+1}}}\\
+...\\
+\varoplus\left\langle a_{k,1}\right\rangle _{p_{k}^{x_{k}}}
+\end{array}
+\]
+
+\end_inset
+
+ y la descomposición invariante es
+\begin_inset Formula 
+\[
+\left\langle a\right\rangle _{d\cdot\frac{nm}{d^{2}}}\varoplus\left\langle b\right\rangle _{d}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+pero 
+\begin_inset Formula $d\cdot\frac{nm}{d^{2}}=\frac{nm}{d}=mcm\left(n,m\right)$
+\end_inset
+
+.
+ Es decir, que la lista de factores invariantes es 
+\begin_inset Formula $\left(mcm\left(n,m\right),\ mcd\left(n,m\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Demostrar que si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es un 
+\series medium
+
+\begin_inset Formula $\boldsymbol{p-}$
+\end_inset
+
+
+\series default
+grupo abeliano que es la suma directa de 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ grupos cíclicos no triviales, entonces la ecuación 
+\begin_inset Formula $\boldsymbol{px=0}$
+\end_inset
+
+ tiene exactamente 
+\begin_inset Formula $\boldsymbol{p^{n}}$
+\end_inset
+
+ soluciones en 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A=\varoplus_{1}^{n}\left\langle a_{i}\right\rangle _{p^{x_{i}}}$
+\end_inset
+
+ con 
+\begin_inset Formula $a_{i}\neq0\ \forall1,...,n\implies x_{i}>0,\ \forall i$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $y_{i}\in\left\langle a_{i}\right\rangle ,y_{j}\in\left\langle a_{j}\right\rangle $
+\end_inset
+
+ cumplen 
+\begin_inset Formula $py_{i}=0,\ py_{j}=0\implies p\left(x_{i}+x_{j}\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si tengo 
+\begin_inset Formula $p$
+\end_inset
+
+ soluciones de 
+\begin_inset Formula $px=0$
+\end_inset
+
+ en cada 
+\begin_inset Formula $\left\langle a_{i}\right\rangle $
+\end_inset
+
+, entonces tengo 
+\begin_inset Formula $p^{n}$
+\end_inset
+
+ soluciones en 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cada 
+\begin_inset Formula $\left\langle a_{i}\right\rangle $
+\end_inset
+
+ tiene 
+\begin_inset Formula $p$
+\end_inset
+
+ soluciones:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $px=0\implies\left|x\right||p\implies\left|x\right|=1\ ó\ p$
+\end_inset
+
+, la primera solución es 
+\begin_inset Formula $x=0$
+\end_inset
+
+.
+ Buscamos ahora 
+\begin_inset Formula $\left|x\right|=0$
+\end_inset
+
+ y sabemos que 
+\begin_inset Formula $\left|\left\langle n\cdot a_{i}\right\rangle \right|=\frac{\left|a_{i}\right|}{mcd\left(n,a_{i}\right)}=\frac{p^{x_{i}}}{mcd\left(n,p^{x_{i}}\right)}=p\iff mcd\left(n,p^{x_{i}}\right)=p^{x_{i}-1}\iff x=j\cdot p^{x_{i}-1},\ j=1,...,p-1$
+\end_inset
+
+, pues a partir de ahí se repiten.
+ Por tanto, hay 
+\begin_inset Formula $p$
+\end_inset
+
+ soluciones y lo tenemos.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ un 
+\begin_inset Formula $\boldsymbol{p-}$
+\end_inset
+
+grupo abeliano finito en el que la ecuación 
+\begin_inset Formula $\boldsymbol{px=0}$
+\end_inset
+
+ tiene a lo sumo 
+\series medium
+
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ 
+\series default
+soluciones.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es cíclico.
+ Demostrar que también es cíclico un grupo abeliano finito en el que la
+ ecuación 
+\begin_inset Formula $\boldsymbol{px=0}$
+\end_inset
+
+ tenga a lo sumo 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ soluciones para todo primo 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G$
+\end_inset
+
+ será suma directa de 
+\begin_inset Formula $n$
+\end_inset
+
+ grupos cíclicos, por lo que esa ecuación tendrá 
+\begin_inset Formula $p^{n}$
+\end_inset
+
+ soluciones.
+ Por tanto, 
+\begin_inset Formula $n$
+\end_inset
+
+ es 1 y 
+\begin_inset Formula $G$
+\end_inset
+
+ es cíclico.
+\end_layout
+
+\begin_layout Standard
+Para la segunda afirmación 
+\begin_inset Formula $G=t_{p_{1}}\left(G\right)\varoplus...\varoplus t_{p_{k}}\left(G\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $p_{1},...,p_{k}$
+\end_inset
+
+ primos distintos.
+ Sea 
+\begin_inset Formula $s\left(p,G\right)$
+\end_inset
+
+ el número de soluciones de 
+\begin_inset Formula $px=0$
+\end_inset
+
+ en 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $s\left(p,G\right)=\prod_{1}^{k}s\left(p,t_{p_{i}}\left(G\right)\right)$
+\end_inset
+
+: similarmente a como hicimos en el ejercicio anterior
+\end_layout
+
+\begin_layout Enumerate
+dado 
+\begin_inset Formula $A$
+\end_inset
+
+ un 
+\begin_inset Formula $p-$
+\end_inset
+
+grupo, 
+\begin_inset Formula $s\left(q,G\right)=1$
+\end_inset
+
+ si 
+\begin_inset Formula $q\neq p$
+\end_inset
+
+ (
+\begin_inset Formula $q$
+\end_inset
+
+ primo): 
+\begin_inset Formula $q\cdot0=0\implies$
+\end_inset
+
+al menos hay una solución.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Si 
+\begin_inset Formula $g\in G\setminus\left\{ 0\right\} $
+\end_inset
+
+, entonces 
+\begin_inset Formula $qg=0\iff\left|g\right|=p^{l}|q\iff l=0$
+\end_inset
+
+, por ser 
+\begin_inset Formula $q$
+\end_inset
+
+ primo#
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $s\left(p_{i},G\right)=s\left(p_{i},t_{p_{i}}\left(G\right)\right)$
+\end_inset
+
+: evidente por 1 y 2
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $t_{p_{i}}\left(G\right)$
+\end_inset
+
+ cíclico para todo 
+\begin_inset Formula $i$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $s\left(p_{i},t_{p_{i}}\left(G\right)\right)=s\left(p_{i},G\right)\leq p_{i}$
+\end_inset
+
+, entonces la primera parte del ejercicio nos asegura que es cíclico
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $G$
+\end_inset
+
+ cíclico
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Por el teorema chino de los restos, pues es suma directa de cíclicos con
+ órdenes coprimos dos a dos
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ un grupo abeliano finito que satisface la siguiente propiedad: Para todo
+ entero positivo 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+, el conjunto 
+\begin_inset Formula $\boldsymbol{\left\{ a\in A:na=0\right\} }$
+\end_inset
+
+ tiene a lo sumo 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ elementos.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es cíclico.
+ Deducir que todo subgrupo finito del grupo de unidades de un cuerpo es
+ cíclico.
+\end_layout
+
+\begin_layout Standard
+La primera parte es obvia teniendo en cuenta el ejercicio anterior.
+\end_layout
+
+\begin_layout Standard
+Para la segunda, en notación multiplicativa, buscamos 
+\begin_inset Formula $x^{n}=1$
+\end_inset
+
+ y esto tiene a lo sumo 
+\begin_inset Formula $n$
+\end_inset
+
+ soluciones, pues 
+\begin_inset Formula $x^{n}-1$
+\end_inset
+
+ es un polinomio de grado 
+\begin_inset Formula $n$
+\end_inset
+
+ en un cuerpo.
+\end_layout
+
+\begin_layout Subsubsection
+Sea 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ primo.
+ Demostrar que si 
+\begin_inset Formula $\boldsymbol{G}$
+\end_inset
+
+ es un grupo abeliano finito en el que todo elemento no nulo tiene orden
+ 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{G\simeq\mathbb{Z}_{p}^{n}}$
+\end_inset
+
+ para algún 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $p^{n}=\left|G\right|$
+\end_inset
+
+.
+ Por hipótesis todo elemento de 
+\begin_inset Formula $G$
+\end_inset
+
+ es solución de 
+\begin_inset Formula $px=0$
+\end_inset
+
+ (hay 
+\begin_inset Formula $p^{n}$
+\end_inset
+
+ soluciones).
+ Descomponemos el grupo como
+\begin_inset Formula 
+\[
+G=\varoplus_{1}^{k}\left\langle a_{i}\right\rangle _{p^{x_{i}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+por el 5.3.13, habrá 
+\begin_inset Formula $p^{k}$
+\end_inset
+
+ soluciones de 
+\begin_inset Formula $px=0$
+\end_inset
+
+.
+ Por tanto 
+\begin_inset Formula $k=n$
+\end_inset
+
+.
+ Como los 
+\begin_inset Formula $\left\langle a_{i}\right\rangle $
+\end_inset
+
+ no son triviales, se debe cumplir 
+\begin_inset Formula $\sum_{1}^{n}x_{i}=n,\ x_{i}>0\ \forall i$
+\end_inset
+
+, luego solo puede ser 
+\begin_inset Formula $x_{i}=1,\ \forall i$
+\end_inset
+
+ y cada 
+\begin_inset Formula $\left\langle a_{i}\right\rangle $
+\end_inset
+
+ tiene orden 
+\begin_inset Formula $p$
+\end_inset
+
+, por lo que es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{p}$
+\end_inset
+
+, y a
+\begin_inset Formula $G=\varoplus_{1}^{n}\left\langle a_{i}\right\rangle _{p}\simeq\mathbb{Z}_{p}^{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document

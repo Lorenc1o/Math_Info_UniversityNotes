@@ -1,0 +1,290 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2cm,rmargin=2cm,headheight=3cm,headsep=3cm,footskip=2cm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\makeatletter
+\@ifundefined{date}{}{\date{}}
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\title{GyA - Tarea 2}
+
+\author{Jose Antonio Lorencio Abril}
+
+\date{3/04/2020}
+\maketitle
+
+\subsubsection*{3.2.16. En el problema 2.1.12 se ha visto que el cardinal de un cuerpo
+finito K es una potencia de un número primo (de hecho una potencia
+de la característica de K). En este problema, fijado un entero primo
+positivo $\boldsymbol{p}$, vamos a ver que existen cuerpos de cardinal
+$\boldsymbol{p^{n},\forall n\in\mathbb{Z}^{+}}$.}
+\begin{flushleft}
+\textbf{(1) Sea $\boldsymbol{K}$ un cuerpo de característica $\boldsymbol{p,n\in\mathbb{Z}^{+}}$.
+Demostrar que el conjunto de las raíces en $\boldsymbol{K}$ del polinomio
+$\boldsymbol{x^{p^{n}}-x}$ es un subcuerpo finito de $\boldsymbol{K}$.}
+\par\end{flushleft}
+
+\begin{flushleft}
+El ejercicio 2.1.11 nos dice que 
+\[
+\begin{array}{c}
+f:\ K\rightarrow K\\
+\quad x\mapsto x^{p^{n}}
+\end{array}
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+es un endomorfismo de $K,\forall n\in\mathbb{Z}^{+}$.
+\par\end{flushleft}
+
+\begin{flushleft}
+Sea $A=\{a\in K:\ a^{p^{n}}-a=0\}$
+\par\end{flushleft}
+
+\begin{flushleft}
+¿Es $A$ un subcuerpo de $K$? Lo será si, y solo si, es un subanillo.
+Veámoslo.
+\par\end{flushleft}
+\begin{itemize}
+\item \begin{flushleft}
+¿$1\in A$?
+\par\end{flushleft}
+
+\begin{flushleft}
+\[
+1^{p^{n}}-1=1-1=0\qquad\surd
+\]
+\par\end{flushleft}
+\item \begin{flushleft}
+¿$a,b\in A\implies a+b\in a$?
+\par\end{flushleft}
+
+\begin{flushleft}
+\[
+(a+b)^{p^{n}}-(a+b)=\sum_{k=0}^{p^{n}}\left(\begin{array}{c}
+p^{n}\\
+k
+\end{array}\right)a^{p^{n}-k}b^{k}-(a+b)=
+\]
+\[
+=a^{p^{n}}+\left(\begin{array}{c}
+p^{n}\\
+1
+\end{array}\right)a^{p^{n}-1}b+...+\left(\begin{array}{c}
+p^{n}\\
+p^{n}-1
+\end{array}\right)ab^{p^{n}-1}+b^{p^{n}}-(a+b=*
+\]
+ Todos los factores entre $a^{p^{n}},b^{p^{n}}$ tienen al menos una
+$p$ multiplicando, porque $p$ es primo y, por tanto, $p^{n}$ siempre
+dejará un factor $p$, pues su mayor divisor distinto de sí mismo
+es $p^{n-1}$. Por tanto
+\[
+*=a^{p^{n}}+b^{p^{n}}-(a+b)=(a^{p^{n}}-a)+(b^{p^{n}}-b)=0-0=0\qquad\surd
+\]
+\par\end{flushleft}
+\item \begin{flushleft}
+¿$a,b\in A\implies a\cdot b\in A$?
+\par\end{flushleft}
+
+\begin{flushleft}
+Primero nótese que
+\[
+a^{p^{n}}-a=0\iff a^{p^{n}}=a
+\]
+\[
+b^{p^{n}}-b=0\iff b^{p^{n}}=b
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Entonces
+\[
+(ab)^{p^{n}}-ab=a^{p^{n}}b^{p^{n}}-ab=ab-ab=0\qquad\surd
+\]
+\par\end{flushleft}
+
+\end{itemize}
+\begin{flushleft}
+Así, $A$ es subanillo de $K$. Por lo que $A$ es subcuerpo de $K$.
+Como $K$ es finito, entonces $A$ también lo es.
+\par\end{flushleft}
+
+\begin{flushleft}
+\textbf{(2) Deducir que, $\boldsymbol{\forall n\in\mathbb{Z}^{+}}$,
+existe un cuerpo de cardinal $\boldsymbol{p^{n}}$.}
+\par\end{flushleft}
+
+\begin{flushleft}
+Sea $K$ un cuerpo de característica $p$.
+\[
+x^{p^{n}}-x\in K[x]-K
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Así, por el ejercicio 3.2.15, existe un cuerpo $K'$ que contiene
+a $K$ como subcuerpo y $P$ es producto de polinomios de grado 1
+con coeficientes en $K$.
+\par\end{flushleft}
+
+\begin{flushleft}
+Como el grado del polinomio es $p^{n}$, entonces será producto de
+$p^{n}$ polinomios de grado 1. Es decir, tendrá $p^{n}$ raíces.
+\par\end{flushleft}
+
+\begin{flushleft}
+Por el apartado 1, el conjunto $A$ de estas raíces es un cuerpo.
+Al haber $p^{n}$ raíces, $|A|=p^{n}$.
+\par\end{flushleft}
+
+\subsubsection*{3.3.1. ¿Es cierto que, si $\boldsymbol{D}$ es un DFU y $\boldsymbol{b}$
+es un elemento de $\boldsymbol{D}$, entonces solo hay una cantidad
+finita de ideales de $\boldsymbol{D}$ que contienen a $\boldsymbol{b}$?
+¿Y si $\boldsymbol{D}$ es DIP?}
+\begin{flushleft}
+Veamos primero el caso en que \textbf{$\boldsymbol{D}$ es DIP}, en
+particular, también es DFU.
+\par\end{flushleft}
+
+\begin{flushleft}
+Entonces 
+\[
+b=u\cdot p_{1}\cdot...\cdot p_{n}
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+De forma única. Esto quiere decir que
+\[
+b\in(u)=D,(p_{1}),...,(p_{n})
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+y a sus intersecciones. Como $D$ es DIP, estos son todos los ideales
+que lo contienen. En efecto, supongamos $I\vartriangleleft D$ distinto
+de los anteriores.
+\par\end{flushleft}
+
+\begin{flushleft}
+Entonces, como es DIP, $I=(a)$.
+\[
+b\in(a)\iff up_{1}\cdot...\cdot p_{n}=b=c\cdot a\overset{D\ DFU}{\implies}\begin{cases}
+c=u_{c}p_{c1}\cdot...\cdot p_{cm}\\
+a=v_{a}p_{a1}\cdot...\cdot p_{ak}\\
+m+k=n
+\end{cases}
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+En concreto, se tiene que $(a)=(p_{a1}\cdot...\cdot p_{ak})=(p_{a1})\cap...\cap(p_{ak})$.
+Por lo que $I$ es como los anteriores.
+\par\end{flushleft}
+
+\begin{flushleft}
+Si $\boldsymbol{D}$ \textbf{es DFU}. Vamos a ver un contraejemplo.
+\[
+\mathbb{Z}\ DFU\iff\mathbb{Z}[x]\ DFU\iff\mathbb{Z}[x][y]\ DFU
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Pero este último no es DIP, por la proposición 3.13.
+\par\end{flushleft}
+
+\begin{flushleft}
+Es más,
+\[
+x\in(x,y),(x,y^{2}),(x,y^{3}),...
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Una cantidad infinita de ideales, distintos, pues $y^{n-1}\notin(x,y^{n})$.
+\par\end{flushleft}
+
+\subsubsection*{3.4.1. Sea $\boldsymbol{D}$ un DFU y sea $\boldsymbol{f=a_{0}+a_{1}x+...+a_{n}x^{n}}$
+un polinomio primitivo en $\boldsymbol{D[x]}$. Demostrar que, si
+existe un irreducible $\boldsymbol{p\in D}$ tal que
+\[
+\boldsymbol{p|a_{i}\ \forall i>0,\qquad p\nmid a_{0},\qquad p^{2}\nmid a_{n}}
+\]
+ entonces $\boldsymbol{f}$ es irreducible en $\boldsymbol{D[x]}$.}
+\begin{flushleft}
+Pensemos $f=g\cdot h$. ¿Será $gr(g)=n$ ó $gr(f)=n$?
+\[
+g=b_{0}+...+b_{m}x^{m},\qquad h=c_{0}+...+c_{k}x^{k},\qquad b_{m}c_{k}\neq0
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Por otro lado, 
+\[
+p^{2}\nmid a_{n}=b_{m}c_{k}\implies p\nmid b_{m}\qquad\acute{o}\qquad p\nmid c_{k}
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Supongamos que $p\nmid c_{k}$. Como $f$ es primitivo, entonces $p\nmid g$,
+pues si $p|g\overset{g|f}{\implies}p|f\implies f\ no\ primitivo$,
+pero esto no es así.
+\par\end{flushleft}
+
+\begin{flushleft}
+Entonces, tomamos
+\[
+i=\max\{j:p\nmid b_{j}\}
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Consideremos ahora
+\[
+a_{i+k}=\sum_{j=0}^{i+k-1}b_{j}c_{i+k-j}+b_{i+k}c_{0}
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Como $gr(c)=k$, $c_{i+k-j}=0\:\forall j<i$. Por lo que 
+\[
+a_{i+k}=\sum_{j=i}^{i+k-1}b_{j}c_{i+k-j}+b_{i+k}c_{0}
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Entonces, tenemos que $p|b_{j}c_{i+k-j},\ \forall j>i$, ya que $i$
+es el máximo de los \textbf{$b_{j}$ }que no son divisibles por $p$.
+Es decir, $p$ divide a todos los sumandos de $a_{i+k}$, excepto
+a $b_{i}c_{k}$:
+\[
+a_{i+k}=b_{i}c_{k}+S\cdot p
+\]
+\par\end{flushleft}
+
+\begin{flushleft}
+Donde $S$ es lo que queda al sacar $p$ factor común en todo el sumatorio.
+Tenemos, de esta manera, que $p\nmid a_{i+k}$, pero esto quiere decir
+que $i+k=0$. Al ser ambos números no negativos, queda $i=0=k$. Es
+decir, $gr(h)=0\implies gr(g)=n$
+\par\end{flushleft}
+
+\begin{flushleft}
+Si hacemos el otro caso, $p\nmid b_{m}$, obtendremos $gr(h)=n$.
+\par\end{flushleft}
+
+\begin{flushleft}
+Tal y como queríamos ver, $f$ es irreducible.
+\par\end{flushleft}
+\end{document}

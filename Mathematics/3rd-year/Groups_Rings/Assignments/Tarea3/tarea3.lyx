@@ -1,0 +1,1129 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+GyA - Problemas sustitutivos del control 2
+\end_layout
+
+\begin_layout Title
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Date
+Abril 2020
+\end_layout
+
+\begin_layout Subsubsection*
+2.6.2.
+ Sea 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ un dominio y sea 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ su cuerpo de fracciones.
+ Supongamos que existe una aplicación 
+\begin_inset Formula $\boldsymbol{\delta:K\setminus\{0\}\rightarrow\mathbb{Q}}$
+\end_inset
+
+ que conserva productos y tal que 
+\begin_inset Formula $\boldsymbol{\delta(D)\subset\mathbb{Z}^{\geq0}}$
+\end_inset
+
+.
+ Demostrar que la restricción de 
+\begin_inset Formula $\boldsymbol{\delta}$
+\end_inset
+
+ a 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ es una función euclídea en 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ si y solo si para todo 
+\begin_inset Formula $\boldsymbol{x\in K\setminus D}$
+\end_inset
+
+ existe 
+\begin_inset Formula $\boldsymbol{y\in D}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\boldsymbol{\delta(x-y)<1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' La restricción, que voy a llamar 
+\begin_inset Formula $d$
+\end_inset
+
+, es una función euclídea si verifica 
+\begin_inset Formula $DE1$
+\end_inset
+
+ y 
+\begin_inset Formula $DE2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado 
+\begin_inset Formula $x\in K\setminus D$
+\end_inset
+
+, entonces podemos escribir 
+\begin_inset Formula $x=\frac{a}{b}$
+\end_inset
+
+, con 
+\begin_inset Formula $b\neq1,0$
+\end_inset
+
+, y 
+\begin_inset Formula $b\nmid a,\ coprimos$
+\end_inset
+
+.
+ De esta forma 
+\begin_inset Formula $\delta(x)=\delta\left(\frac{a}{b}\right)$
+\end_inset
+
+ y sea 
+\begin_inset Formula $k=\delta(1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien, 
+\begin_inset Formula $\delta(1)=\delta(1\cdot1)=\delta(1)\delta(1)=\delta(1)^{2}\implies\delta(1)\in\{-1,0,1\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+No puede ser 
+\begin_inset Formula $-1$
+\end_inset
+
+, ya que 
+\begin_inset Formula $1\in D\implies\delta(1)=d(1)\in\mathbb{Z}^{\geq0}$
+\end_inset
+
+.
+ Por tanto, 
+\begin_inset Formula $k=\delta(1)\in\{0,1\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Pero, si 
+\begin_inset Formula $k=0$
+\end_inset
+
+ y se conserva el producto, entonces 
+\begin_inset Formula $d(a)=d(a1)=d(a)d(1)=0$
+\end_inset
+
+.
+ Luego 
+\begin_inset Formula $d(a)=0,\ \forall a\in D$
+\end_inset
+
+.
+ Por lo que no puede verificarse DE2.
+\end_layout
+
+\begin_layout Standard
+Es decir, 
+\begin_inset Formula $k=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+¿Será 
+\begin_inset Formula $\delta\left(\frac{a}{b}\right)=\frac{\delta(a)}{\delta(b)}=\frac{d(a)}{d(b)}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+\frac{a}{b}=a\cdot b^{-1}\overset{\delta\ conserva\ productos}{\implies}\delta\left(\frac{a}{b}\right)=\delta(a\cdot b^{-1})=\delta(a)\cdot\delta(b^{-1})=d(a)\delta(b^{-1})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, tenemos que 
+\begin_inset Formula $b\cdot b^{-1}=1\implies\delta(b)\delta(b^{-1})=\delta(b\cdot b^{-1})=\delta(1)=1\implies\delta(b^{-1})=\frac{1}{\delta(b)}=\frac{1}{d(b)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, queda que 
+\begin_inset Formula 
+\[
+\delta(x)=\delta\left(\frac{a}{b}\right)=\frac{d(a)}{d(b)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por 
+\begin_inset Formula $DE2$
+\end_inset
+
+, existen 
+\begin_inset Formula $q,r\in D$
+\end_inset
+
+ tales que 
+\begin_inset Formula $a=bq+r$
+\end_inset
+
+ y o bien 
+\begin_inset Formula $r=0$
+\end_inset
+
+ o bien 
+\begin_inset Formula $d(r)<d(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sabemos que 
+\begin_inset Formula $r\neq0$
+\end_inset
+
+, pues entonces la fracción sería simplificable.
+ Por tanto, 
+\begin_inset Formula $d(r)<d(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Y se tiene que 
+\begin_inset Formula $bq=a-r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+De aquí deducimos que tomando 
+\begin_inset Formula $y=q$
+\end_inset
+
+, obtenemos que
+\begin_inset Formula 
+\[
+\delta\left(\frac{a}{b}-q\right)=\delta\left(\frac{a-bq}{b}\right)=\delta\left(\frac{a-a+r}{b}\right)=\delta\left(\frac{r}{b}\right)=\frac{d(r)}{d(b)}<1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y tenemos el resultado.
+\end_layout
+
+\begin_layout Standard
+\align left
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' 
+\end_layout
+
+\begin_layout Standard
+Nótese que excluyo el caso de 
+\begin_inset Formula $\delta$
+\end_inset
+
+ idénticamente nula, en este caso no nos proporciona una función euclídea.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DE1: 
+\series default
+Sean 
+\begin_inset Formula $a,b\in D$
+\end_inset
+
+, tales que 
+\begin_inset Formula $a|b$
+\end_inset
+
+, entonces ¿
+\begin_inset Formula $d(a)\le d(b)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $d$
+\end_inset
+
+ conserva el producto, entonces, tenemos que 
+\begin_inset Formula $b=ac$
+\end_inset
+
+, entonces 
+\begin_inset Formula $d(b)=d(ac)=d(a)d(c)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si fuera 
+\begin_inset Formula $d(c)=0$
+\end_inset
+
+, entonces tendríamos, en 
+\begin_inset Formula $K$
+\end_inset
+
+, que 
+\begin_inset Formula $1=\delta(1)=\delta(cc^{-1})=\delta(c)\delta(c^{-1})=d(c)\delta(c^{-1})=0\#$
+\end_inset
+
+ Esto es una contradicción, por lo que debe ser 
+\begin_inset Formula $d(c)\geq1\implies d(a)\leq d(b)\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DE2: 
+\series default
+Sean 
+\begin_inset Formula $a,b\in D$
+\end_inset
+
+ con 
+\begin_inset Formula $b\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, existe 
+\begin_inset Formula $y\in D$
+\end_inset
+
+ tal que 
+\begin_inset Formula $\delta\left(\frac{a}{b}-y\right)<1$
+\end_inset
+
+.
+ Entonces, tenemos que 
+\begin_inset Formula 
+\[
+\delta\left(\frac{a-by}{b}\right)=k\frac{\delta(a-by)}{\delta(b)}<1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\delta(a-by)<\delta(b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Tomando 
+\begin_inset Formula $r=a-by$
+\end_inset
+
+, 
+\begin_inset Formula $q=y$
+\end_inset
+
+, tenemos que
+\begin_inset Formula 
+\[
+a=yb+a-by=yb+r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $r=0$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a=yb\implies b|a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $r\neq0,$
+\end_inset
+
+ hemos visto que 
+\begin_inset Formula $d(r)=\delta(r)<\delta(b)=d(b)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+2.6.3.
+ Usar el problema anterior para decidir qué números naturales 
+\begin_inset Formula $\boldsymbol{m}$
+\end_inset
+
+ la aplicación 
+\begin_inset Formula $\boldsymbol{d(x)=\left|x\right|^{2}}$
+\end_inset
+
+ define una función euclídea en 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}\left[\sqrt{-m}\right]}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El cuerpo de fracciones es 
+\begin_inset Formula $\mathbb{Q}\left[\sqrt{-m}\right]$
+\end_inset
+
+ por el ejemplo 2.36.
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $x\in\mathbb{Q}\left[\sqrt{-m}\right]$
+\end_inset
+
+ tenemos que 
+\begin_inset Formula $x=\frac{a}{b}+\frac{c}{d}\sqrt{-m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces
+\begin_inset Formula 
+\[
+d(x)=\left(\frac{a}{b}+\frac{c}{d}\sqrt{-m}\right)\left(\frac{a}{b}-\frac{c}{d}\sqrt{-m}\right)=\frac{a^{2}}{b^{2}}+\frac{c^{2}}{d^{2}}m
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si tomamos 
+\begin_inset Formula $y=y_{1}+y_{2}\sqrt{-m}$
+\end_inset
+
+, con 
+\begin_inset Formula $y_{1}$
+\end_inset
+
+ el entero más cercano a 
+\begin_inset Formula $\frac{a}{b}$
+\end_inset
+
+ e 
+\begin_inset Formula $y_{2}$
+\end_inset
+
+ el entero más cercano a 
+\begin_inset Formula $\frac{c}{d}$
+\end_inset
+
+, entonces tendremos que 
+\begin_inset Formula $\left|\frac{a}{b}-y_{1}\right|\leq\frac{1}{2},\quad\left|\frac{c}{d}-y_{2}\right|\leq\frac{1}{2}$
+\end_inset
+
+, por lo que
+\begin_inset Formula 
+\[
+d(x-y)=d\left(\left(\frac{a}{b}-y_{1}\right)+\left(\frac{c}{d}-y_{2}\right)\sqrt{-m}\right)=\left|\frac{a}{b}-y_{1}\right|^{2}+\left|\frac{c}{d}-y_{2}\right|^{2}m\leq\left(\frac{1}{2}\right)^{2}+\left(\frac{1}{2}\right)^{2}m=\frac{1}{4}+\frac{m}{4}\leq\frac{m+1}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y 
+\begin_inset Formula $\mathbb{Z}\left[\sqrt{-m}\right]$
+\end_inset
+
+ admitirá a 
+\begin_inset Formula $d$
+\end_inset
+
+ como función euclídea si y solo si 
+\begin_inset Formula 
+\[
+\frac{m+1}{4}<1\iff m+1<4\iff m<3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir, 
+\begin_inset Formula $m\in\{1,2\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+2.6.4 Sea 
+\begin_inset Formula $\boldsymbol{m}$
+\end_inset
+
+ un entero libre de cuadrados, es decir no es divisible por el cuadrado
+ de ningún otro entero.
+ Sea 
+\begin_inset Formula 
+\[
+\boldsymbol{A_{m}=\left\{ \frac{a+b\sqrt{m}}{2}:\negthickspace a\equiv b\ mod\ 2\right\} }
+\]
+
+\end_inset
+
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{A_{m}}$
+\end_inset
+
+ es un subanillo de los números complejos si y solo si 
+\begin_inset Formula $\boldsymbol{m\equiv1\ mod\ 4}$
+\end_inset
+
+.
+ Usar el problema 2.6.2 para decidir para qué números primos 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+, 
+\begin_inset Formula $\boldsymbol{A_{-p}}$
+\end_inset
+
+ es un subanillo de los números complejos y la función 
+\begin_inset Formula $\boldsymbol{d(x)=\left|x\right|^{2}}$
+\end_inset
+
+ define una función euclídea en 
+\begin_inset Formula $\boldsymbol{A_{-p}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+¿
+\begin_inset Formula $1\in A_{m}$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=\frac{2+0\sqrt{m}}{2},\ 2\equiv0\ \mod\ 2\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suma
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sean 
+\begin_inset Formula $a,b\in A_{m}$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+\frac{a_{1}+a_{2}\sqrt{m}}{2}+\frac{b_{1}+b_{2}\sqrt{m}}{2}=\frac{\left(a_{1}+b_{1}\right)+\left(a_{2}+b_{2}\right)\sqrt{m}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y 
+\begin_inset Formula 
+\[
+\begin{array}{c}
+a_{1}\equiv a_{2}\ \mod\ 2\\
+b_{1}\equiv b_{2}\ \mod\ 2
+\end{array}\implies a_{1}+b_{1}\equiv a_{2}+b_{2}\ \mod\ 2\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Producto
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sean 
+\begin_inset Formula $a,b\in A_{m}$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+\left(\frac{a_{1}+a_{2}\sqrt{m}}{2}\right)\left(\frac{b_{1}+b_{2}\sqrt{m}}{2}\right)=\frac{a_{1}b_{1}+a_{1}b_{2}\sqrt{m}+a_{2}b_{1}\sqrt{m}+ma_{2}b_{2}}{4}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{\left(a_{1}b_{1}+ma_{2}b_{2}\right)+\left(a_{1}b_{2}+a_{2}b_{1}\right)\sqrt{m}}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sabemos que 
+\begin_inset Formula $a_{1}-a_{2}=2k\iff a_{1}=2k+a_{2}$
+\end_inset
+
+, e igual pasa con los 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ Entonces es
+\begin_inset Formula 
+\[
+\frac{\left(\left(2k+a_{2}\right)\left(2j+b_{2}\right)+ma_{2}b_{2}\right)+\left(\left(2k+a_{2}\right)b_{2}+a_{2}\left(2j+b_{2}\right)\right)\sqrt{m}}{4}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{\left(4jk+2kb_{2}+2ja_{2}+a_{2}b_{2}+ma_{2}b_{2}\right)+\left(2kb_{2}+a_{2}b_{2}+2ja_{2}+a_{2}b_{2}\right)\sqrt{m}}{4}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{\left(4jk+2kb_{2}+2ja_{2}+\left(m+1\right)a_{2}b_{2}\right)+\left(2kb_{2}+2a_{2}b_{2}+2ja_{2}\right)\sqrt{m}}{4}=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El sumando de la derecha es divisible por 2, y queremos que el de la izquierda
+ también lo sea, para simplificar el denominador.
+ Para ello ha de ser 
+\begin_inset Formula $m+1$
+\end_inset
+
+ un número par.
+ Por lo que 
+\begin_inset Formula $m$
+\end_inset
+
+ es impar y por tanto congruente módulo 4 con 1 o con -1.
+ Vamos a suponer que es así y seguimos:
+\begin_inset Formula 
+\[
+\frac{\left(2jk+kb_{2}+ja_{2}+\frac{m+1}{2}a_{2}b_{2}\right)+\left(kb_{2}+a_{2}b_{2}+ja_{2}\right)\sqrt{m}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora queremos que el primer sumando sea congruente módulo dos con el segundo:
+\begin_inset Formula 
+\[
+2jk\equiv0\ \mod\ 2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\begin_inset Formula $kb_{2}$
+\end_inset
+
+ y el 
+\begin_inset Formula $ja_{2}$
+\end_inset
+
+ son congruentes consigo mismos.
+ Por lo que solo resta ver que 
+\begin_inset Formula 
+\[
+\frac{m+1}{2}a_{2}b_{2}\equiv a_{2}b_{2}\ \mod\ 2\iff\frac{m+1}{2}a_{2}b_{2}-a_{2}b_{2}=2n\iff\left(\frac{m+1}{2}-1\right)a_{2}b_{2}=2n\iff
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff\left(\frac{m+1-2}{2}\right)a_{2}b_{2}=2n\iff\left(m-1\right)a_{2}b_{2}=4n\iff\left(m-1\right)a_{2}b_{2}\equiv0\ \mod\ 4
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como esto debe darse para todo 
+\begin_inset Formula $a_{2}b_{2}$
+\end_inset
+
+, sucederá si y solo si 
+\begin_inset Formula 
+\[
+m-1\equiv0\ \mod\ 4\iff m\equiv1\ \mod\ 4\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+Segunda parte
+\end_layout
+
+\begin_layout Standard
+La función es 
+\begin_inset Formula 
+\[
+\delta\left(\frac{a+b\sqrt{-p}}{2}\right)=\delta\left(\frac{a+bi\sqrt{p}}{2}\right)=\left(\frac{a}{2}+\frac{b\sqrt{p}}{2}i\right)\left(\frac{a}{2}-\frac{b\sqrt{p}}{2}i\right)=\frac{a^{2}}{4}+\frac{b^{2}p}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Conserva productos pues es la norma cuadrado.
+\end_layout
+
+\begin_layout Standard
+¿Va a los enteros no negativos?
+\end_layout
+
+\begin_layout Standard
+Sabemos que 
+\begin_inset Formula $a\equiv b\ \mod\ 2\iff a-b=2n\iff a=2n+b$
+\end_inset
+
+, y 
+\begin_inset Formula $-p\equiv1\ \mod\ 4\iff p\equiv-1\ \mod\ 4\iff p+1=4k$
+\end_inset
+
+ entonces
+\begin_inset Formula 
+\[
+\frac{\left(2n+b\right)^{2}+pb^{2}}{4}=\frac{4n^{2}+4nb+b^{2}+pb^{2}}{4}=n^{2}+nb+\frac{\left(1+p\right)b^{2}}{4}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=n^{2}+nb+\frac{4kb^{2}}{4}=n^{2}+nb+kb^{2}\in\mathbb{Z}^{\geq0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vamos a ver cuál es su cuerpo de fracciones.
+ Para ello tomamos dos elementos del anillo, hacemos la fracción y operamos:
+\begin_inset Formula 
+\[
+\frac{\frac{a_{1}+a_{2}\sqrt{-p}}{2}}{\frac{b_{1}+b_{2}\sqrt{-p}}{2}}=\frac{\left(a_{1}+a_{2}\sqrt{-p}\right)\left(b_{1}-b_{2}\sqrt{-p}\right)}{\left(b_{1}+b_{2}\sqrt{-p}\right)\left(b_{1}-b_{2}\sqrt{-p}\right)}=\frac{a_{1}b_{1}+pa_{2}b_{2}+\left(a_{2}b_{1}-a_{1}b_{2}\right)\sqrt{-p}}{b_{1}^{2}+pb_{2}^{2}}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{a_{1}b_{1}+pa_{2}b_{2}}{b_{1}^{2}+pb_{2}^{2}}+\frac{a_{2}b_{1}-a_{1}b_{2}}{b_{1}^{2}+pb_{2}^{2}}\sqrt{-p}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto está en 
+\begin_inset Formula $\mathbb{Q}\left[\sqrt{-p}\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Veamos si se verifica el recíproco, 
+\begin_inset Formula $\text{¿}\frac{a_{1}}{a_{2}}+\frac{b_{1}}{b_{2}}\sqrt{-p}\in Q\left(A_{-p}\right)?$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{a_{1}}{a_{2}}=\frac{\frac{2a_{1}+0\sqrt{-p}}{2}}{\frac{2a_{2}+0\sqrt{-p}}{2}}\in Q\left(A_{-p}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{b_{1}}{b_{2}}\sqrt{-p}=\frac{\frac{0+b_{1}\sqrt{-p}}{2}}{\frac{0+b_{2}\sqrt{-p}}{2}}\in Q\left(A_{-p}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por tanto, su suma está en 
+\begin_inset Formula $Q\left(A_{-p}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es decir, 
+\begin_inset Formula $Q\left(A_{-p}\right)=\mathbb{Q}\left[\sqrt{-p}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $x\in\mathbb{Q}\left[\sqrt{-p}\right]\setminus A_{-p}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+x=\frac{a_{1}}{a_{2}}+\frac{b_{1}}{b_{2}}\sqrt{-p}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si tomamos 
+\begin_inset Formula $y=\frac{a+b\sqrt{-p}}{2}\in A_{-p}$
+\end_inset
+
+, con 
+\begin_inset Formula $b$
+\end_inset
+
+ como el entero más cercado a 
+\begin_inset Formula $2\frac{b_{1}}{b_{2}}$
+\end_inset
+
+ y 
+\begin_inset Formula $a$
+\end_inset
+
+ como el entero más cercano a 
+\begin_inset Formula $2\frac{a_{1}}{a_{2}}$
+\end_inset
+
+ que verifica 
+\begin_inset Formula $a\equiv b\ \mod\ 2$
+\end_inset
+
+, entonces tenemos que 
+\begin_inset Formula $\left|2\frac{a_{1}}{a_{2}}-a\right|\leq1\iff\left|\frac{a_{1}}{a_{2}}-\frac{a}{2}\right|\leq\frac{1}{2},\ \left|2\frac{b_{1}}{b_{2}}-b\right|\leq\frac{1}{2}\iff\left|\frac{b_{1}}{b_{2}}-\frac{b}{2}\right|\leq\frac{1}{4}$
+\end_inset
+
+, y entonces
+\begin_inset Formula 
+\[
+\delta\left(x-y\right)=\left|x-y\right|^{2}=\left|\frac{a_{1}}{a_{2}}-\frac{a}{2}+\left(\frac{b_{1}}{b_{2}}-\frac{b}{2}\right)\sqrt{-p}\right|=\left(\frac{a_{1}}{a_{2}}-\frac{a}{2}\right)^{2}+p\left(\frac{b_{1}}{b_{2}}-\frac{b}{2}\right)^{2}\leq\frac{1}{4}+\frac{p}{16}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces, ha de ser
+\begin_inset Formula 
+\[
+\frac{4+p}{16}<1\iff4+p<16\iff p<12
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O sea, que 
+\begin_inset Formula $0<p<12$
+\end_inset
+
+, con 
+\begin_inset Formula $p$
+\end_inset
+
+ primo y con 
+\begin_inset Formula $p\equiv-1\ \mod\ 4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los únicos que verifican la desigualdad son 
+\begin_inset Formula $\left\{ 1,2,3,...,11\right\} $
+\end_inset
+
+, de ellos los primos son 
+\begin_inset Formula $\left\{ 2,3,5,7,11\right\} $
+\end_inset
+
+ y de estos, los que cumplen la congruencia son:
+\begin_inset Formula 
+\[
+p\in\left\{ 3,7,11\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

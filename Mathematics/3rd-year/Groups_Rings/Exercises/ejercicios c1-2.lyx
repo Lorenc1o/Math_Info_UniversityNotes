@@ -1,0 +1,6980 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Grupos y Anillos - Ejercicios
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Date
+2019/2020
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Introducción 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Introducción}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+En este documento voy a recopilar todos los ejercicios de la asignatura
+ que me parezcan interesantes.
+ Intentaré hacerlos con rigurosidad y precisión, mencionando las proposiciones
+ utilizadas.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los ejercicios que piden demostrar lemas anteriores, por lo general, no
+ los voy a incluir, pues normalmente son sencillos o han sido resueltos
+ en clase.
+\end_layout
+
+\begin_layout Section
+Anillos
+\end_layout
+
+\begin_layout Subsection
+Operaciones binarias
+\end_layout
+
+\begin_layout Standard
+Los tres primeros ejercicios de esta sección son bastante sencillos, pesados
+ y repetitivos.
+ Voy a comenzar por el cuarto.
+\end_layout
+
+\begin_layout Subsubsection*
+1.1.4 Demostrar que si 
+\begin_inset Formula $\boldsymbol{a,b}$
+\end_inset
+
+ son elementos invertibles en un monoide entonces 
+\begin_inset Formula $\boldsymbol{ab,\ a^{-1}}$
+\end_inset
+
+ también son invertibles y 
+\begin_inset Formula $\boldsymbol{(a^{-1})^{-1}=a}$
+\end_inset
+
+.
+ Deducir que el conjunto de los elementos invertibles de un monoide forma
+ un grupo con la operación del monoide.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $b$
+\end_inset
+
+ son invertibles, existen 
+\begin_inset Formula $a^{-1}$
+\end_inset
+
+ y 
+\begin_inset Formula $b^{-1}$
+\end_inset
+
+.
+ Así, 
+\begin_inset Formula $b^{-1}a^{-1}$
+\end_inset
+
+ está en el monoide, que podemos llamar 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Sea 
+\begin_inset Formula $e$
+\end_inset
+
+ el neutro de 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces 
+\begin_inset Formula 
+\[
+(ab)(b^{-1}a^{-1})\overset{X\ monoide}{=}a(bb^{-1})a^{-1}=aea^{-1}=aa^{-1}=e
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+(b^{-1}a^{-1})(ab)=b^{-1}(a^{-1}a)b=b^{-1}eb=b^{-1}b=e
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por lo que tenemos que 
+\begin_inset Formula $ab$
+\end_inset
+
+ es invertible, con inverso 
+\begin_inset Formula $b^{-1}a^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado
+\begin_inset Formula 
+\[
+aa^{-1}=e=a^{-1}a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por lo que 
+\begin_inset Formula $a^{-1}$
+\end_inset
+
+ es invertible y su inversa es 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Por la proposición 1.2, 
+\begin_inset Formula $a^{-1}$
+\end_inset
+
+ tiene a lo sumo un inverso, por tanto, 
+\begin_inset Formula $(a^{-1})^{-1}=a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Vamos a ver la última parte del enunciado.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Asociatividad: 
+\begin_inset Formula $ab=ba$
+\end_inset
+
+, pues 
+\begin_inset Formula $a,b\in X$
+\end_inset
+
+, que es monoide.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Elemento neutro: 
+\begin_inset Formula $1=1\cdot1\implies1\ invertible\implies1\in Y=\{x\in X/x\ invertible\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+Invertibilidad: 
+\begin_inset Formula $\forall y\in Y$
+\end_inset
+
+ se tiene que 
+\begin_inset Formula $y$
+\end_inset
+
+ es invertible, por definición de 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Standard
+El siguiente también es sencillo, solo hay que echar la cuenta y ver qué
+ deben cumplir 
+\begin_inset Formula $*$
+\end_inset
+
+ y 
+\begin_inset Formula $\circ$
+\end_inset
+
+ en cada caso:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\#$
+\end_inset
+
+ asociativa si 
+\begin_inset Formula $*,\circ$
+\end_inset
+
+ asociativas
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\#$
+\end_inset
+
+ conmutativa si 
+\begin_inset Formula $*,\circ$
+\end_inset
+
+ conmutativas
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\#$
+\end_inset
+
+ tiene neutro si 
+\begin_inset Formula $*,\circ$
+\end_inset
+
+ tienen neutro y 
+\begin_inset Formula $N_{\#}=(N_{*},N_{\circ})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Los elementos invertibles respecto 
+\begin_inset Formula $\#$
+\end_inset
+
+ son los que su primera coordenada es invertible respecto 
+\begin_inset Formula $*$
+\end_inset
+
+ y la segunda respecto 
+\begin_inset Formula $\circ$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Subsubsection*
+1.1.6 Demostrar que si 
+\begin_inset Formula $\boldsymbol{(X,*)}$
+\end_inset
+
+ es un monoide finito entonces los elementos cancelativos por la izquierda
+ de 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ son exactamente los que tienen un simétrico por la izquierda.
+ Dar un ejemplo de un elemento cancelativo de un monoide conmutativo que
+ no tenga simétrico.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por la proposición 1.2, sabemos que si un elemento tiene simétrico por un
+ lado, entonces es cancelable por ese mismo lado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Este ejercicio nos dice que en los monoides finitos son simétricos y los
+ cancelables son equivalentes.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos 
+\begin_inset Formula $X=\{e,x_{1},...,x_{n}\}$
+\end_inset
+
+ donde 
+\begin_inset Formula $e$
+\end_inset
+
+ es el neutro.
+\end_layout
+
+\begin_layout Standard
+\align left
+Y supongamos que 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ es cancelativo por la izquierda.
+ Definamos ahora 
+\begin_inset Formula $f_{i}:X\rightarrow X$
+\end_inset
+
+ con 
+\begin_inset Formula $f_{i}(a)=x_{i}a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ es cancelativo por la izquierda si, y solo si, 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ es inyectiva, ya que si no lo fuera, existirían 
+\begin_inset Formula $a\neq b\in X/x_{i}a=x_{i}b$
+\end_inset
+
+, por lo que no podríamos cancelar 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien, como 
+\begin_inset Formula $X$
+\end_inset
+
+ es finito, 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ inyectiva implica 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ suprayectiva ya que 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ inyectiva 
+\begin_inset Formula $\implies\left|f_{i}(X)\right|\geq\left|X\right|$
+\end_inset
+
+ y 
+\begin_inset Formula $f_{i}(X)\subset X\implies\left|f_{i}(X)\right|\leq\left|X\right|$
+\end_inset
+
+, por tanto 
+\begin_inset Formula $\left|f_{i}(X)\right|=\left|X\right|$
+\end_inset
+
+, y al ser finitos son el mismo y 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ es sobreyectiva.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por ser suprayectiva, 
+\begin_inset Formula $\exists a\in X/x_{i}a=f_{i}(a)=e\implies x_{i}$
+\end_inset
+
+ tiene simétrico por la derecha 
+\begin_inset Formula $\overset{prop\ 1.2}{\implies}x_{i}$
+\end_inset
+
+ cancelativo por la derecha 
+\begin_inset Formula $\overset{razonando\ como\ antes}{\implies}x_{i}$
+\end_inset
+
+ tiene simétrico por la izquierda.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es decir, el resultado es más fuerte aún de lo que nos dice el enunciado,
+ pues tenemos que la invertibilidad en un monoide finito es equivalente
+ a la cancelatividad por un lado.
+\end_layout
+
+\begin_layout Standard
+\align left
+El ejemplo pedido podría ser 
+\begin_inset Formula $(\mathbb{N},\cdot)$
+\end_inset
+
+, con cualquier elemento distinto de 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Standard
+El séptimo ejercicio estuvimos pensándolo en clase y no conseguimos llegar
+ a una conclusión clara.
+\end_layout
+
+\begin_layout Subsection
+Anillos
+\end_layout
+
+\begin_layout Subsubsection*
+1.2.2 Sea 
+\begin_inset Formula $\boldsymbol{m\in\mathbb{Z}}$
+\end_inset
+
+.
+ Demostrar que si 
+\begin_inset Formula $\boldsymbol{m}$
+\end_inset
+
+ no es un cuadrado en 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+, entonces tampoco es un cuadrado en 
+\begin_inset Formula $\boldsymbol{\mathbb{Q}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que 
+\begin_inset Formula $m=\left(\frac{a}{b}\right)^{2}\iff a^{2}=mb^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Descomponiendo 
+\begin_inset Formula $m$
+\end_inset
+
+ como producto de factores primos, queda 
+\begin_inset Formula 
+\[
+m=\pm p_{1}^{e_{1}}\cdot...\cdot p_{k}^{e_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Con 
+\begin_inset Formula $p_{1},...,p_{k}$
+\end_inset
+
+ primos distintos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Nótese que el signo ha de ser positivo, pues suponemos que es un cuadrado
+ de un racional: 
+\begin_inset Formula $m=p_{1}^{e_{1}}\cdot...\cdot p_{k}^{e_{k}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien, como 
+\begin_inset Formula $m$
+\end_inset
+
+ no es un cuadrado en 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+, debe tener algún exponente impar, 
+\begin_inset Formula $\exists i/e_{i}\ es\ impar$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Reordenando, podemos hacer que sea 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, 
+\begin_inset Formula $a^{2},b^{2}$
+\end_inset
+
+ tienen todos los exponentes de su factorización pares, pues son cuadrados.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien, teniendo en cuenta la igualdad del comienzo, 
+\begin_inset Formula $mb^{2}$
+\end_inset
+
+ debe tener todos los exponentes de su factorización pares (es igual a 
+\begin_inset Formula $a^{2}$
+\end_inset
+
+).
+ Pero los exponentes de la factorización de 
+\begin_inset Formula $mb^{2}$
+\end_inset
+
+ son:
+\begin_inset Formula 
+\[
+\begin{cases}
+e_{i}+b_{i} & \forall i/\forall i/p_{i}\in Fact(n),p_{i}\in Fact(b)\\
+e_{i} & \forall i/p_{i}\in Fact(n),p_{i}\notin Fact(b)\\
+b_{i} & \forall i/p_{i}\notin Fact(n),p_{i}\in Fact(b)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $p_{1}\in Fact(b)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $e_{1}+b_{1}$
+\end_inset
+
+ es impar, esto es una contradiccón.
+\end_layout
+
+\begin_layout Standard
+\align left
+Pero si 
+\begin_inset Formula $p_{1}\notin Fact(b)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ sigue siendo impar, lo que sigue suponiendo una contradicción.
+\end_layout
+
+\begin_layout Standard
+\align left
+En cualquier caso, vemos como 
+\begin_inset Formula $mb^{2}$
+\end_inset
+
+ tiene algún exponente impar y 
+\begin_inset Formula $m$
+\end_inset
+
+ no puede ser cuadrado en 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Standard
+El tercer ejercicio es sencillo, basta pensar en un anillo que no sea conmutativ
+o y encontraremos un ejemplo de esto fácilmente.
+ Se puede comprobar rápidamente, por ejemplo, que en el anillo 
+\begin_inset Formula $\mathcal{M}_{2}(\mathbb{R})$
+\end_inset
+
+ de las matrices reales 
+\begin_inset Formula $2\times2$
+\end_inset
+
+, tomando 
+\begin_inset Formula 
+\[
+a=\left(\begin{array}{cc}
+1 & 1\\
+1 & -1
+\end{array}\right)\hfill b=\left(\begin{array}{cc}
+1 & 2\\
+3 & 4
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+obtenemos el contraejemplo requerido.
+\end_layout
+
+\begin_layout Subsection
+Subanillos
+\end_layout
+
+\begin_layout Standard
+El primer ejercicio de este apartado es sencillo, basta comprobar las propiedade
+s de subanillo en cada caso.
+\end_layout
+
+\begin_layout Subsubsection*
+1.3.2 Decimos que un entero 
+\begin_inset Formula $\boldsymbol{d}$
+\end_inset
+
+ es libre de cuadrados si 
+\begin_inset Formula $\boldsymbol{p^{2}}$
+\end_inset
+
+ no divide a 
+\begin_inset Formula $\boldsymbol{d}$
+\end_inset
+
+ para ningún número primo 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ (en particular 
+\begin_inset Formula $\boldsymbol{1}$
+\end_inset
+
+ es libre de cuadrados).
+ Demostrar que para todo 
+\begin_inset Formula $\boldsymbol{m\in\mathbb{Z}}$
+\end_inset
+
+ existe un 
+\begin_inset Formula $\boldsymbol{d\in\mathbb{Z}}$
+\end_inset
+
+ libre de cuadrados tal que 
+\begin_inset Formula $\boldsymbol{\mathbb{Q}[\sqrt{m}]=\mathbb{Q}[\sqrt{d}]}$
+\end_inset
+
+.
+ ¿Ocurre lo mismo si cambiamos 
+\begin_inset Formula $\boldsymbol{\mathbb{Q}}$
+\end_inset
+
+ por 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $m$
+\end_inset
+
+ es libre de cuadrados, es claro.
+\end_layout
+
+\begin_layout Standard
+Si no es así, entonces 
+\begin_inset Formula $\exists p_{1}$
+\end_inset
+
+ primo tal que 
+\begin_inset Formula $p_{1}^{2}\mid m$
+\end_inset
+
+ y consideramos 
+\begin_inset Formula $d_{1}=\frac{m}{p_{1}^{2}}$
+\end_inset
+
+.
+ Entonces:
+\end_layout
+
+\begin_layout Itemize
+Dado 
+\begin_inset Formula $a+b\sqrt{m}\in\mathbb{Q}[\sqrt{m}]$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $a+b\sqrt{m}=a+b\sqrt{d\cdot p_{1}^{2}}=a+bp_{1}\sqrt{d}\implies a+b\sqrt{m}\in\mathbb{Q}[\sqrt{d}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Dado 
+\begin_inset Formula $a+b\sqrt{d}\in\mathbb{Q}[\sqrt{d}]$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $a+b\sqrt{d}=a+b\sqrt{\frac{m}{p_{1}^{2}}}=a+\frac{b}{p_{1}}\sqrt{m}\implies a+b\sqrt{d}\in\mathbb{Q}[\sqrt{m}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y tendríamos el resultado si 
+\begin_inset Formula $d$
+\end_inset
+
+ fuese libre de cuadrados.
+ De no ser así, iteramos el proceso y, es obvio que llegaría un momento
+ en que encontraríamos 
+\begin_inset Formula $d_{n}\geq1$
+\end_inset
+
+ libre de cuadrados, de forma que
+\begin_inset Formula 
+\[
+m=p_{1}^{2}p_{2}^{2}\cdot...\cdot p_{n}^{2}\cdot d_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La igualdad de ambos conjuntos se demuestra reproduciendo las cuentas anteriores
+ pero con todos estos primos en lugar de solo con uno.
+\end_layout
+
+\begin_layout Standard
+Respecto a la última pregunta, vemos que 
+\begin_inset Formula $\mathbb{Z}[\sqrt{m}]\subset\mathbb{Z}[\sqrt{d}]$
+\end_inset
+
+, pero la otra implicación no se cumple, ya que 
+\begin_inset Formula $\frac{b}{p_{1}\cdot...\cdot p_{n}}$
+\end_inset
+
+ puede no ser entero.
+\end_layout
+
+\begin_layout Subsection
+Homomorfismos de anillos
+\end_layout
+
+\begin_layout Subsubsection*
+1.4.2 Demostrar que la composición de dos homomorfismos de anillos es un homomorfi
+smo de anillos
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+\begin_inset Formula $\left(g\circ f\right)(1)=g(f(1))\overset{f\ hom}{=}g(1)\overset{g\ hom}{=}1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+\begin_inset Formula $(g\circ f)(x+y)=g(f(x+y))=g(f(x)+f(y))=g(f(x))+g(f(y))=(g\circ f)(x)+(g\circ f)(y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+\begin_inset Formula $(g\circ f)(xy)=g(f(xy))=g(f(x)f(y))=g(f(x))g(f(y))=(g\circ f)(x)(g\circ f)(y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Y vemos como la composición es un homomorfismo.
+\end_layout
+
+\begin_layout Subsubsection*
+1.4.3 Demostrar que la relación 
+\begin_inset Quotes eld
+\end_inset
+
+ser isomorfos
+\begin_inset Quotes erd
+\end_inset
+
+ en la clase de los anillos es de equivalencia
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Reflexividad
+\begin_inset Formula 
+\[
+id:\ X\rightarrow X\quad es\ homomorfismo\ biyectivo\implies X\cong X
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Transitividad
+\begin_inset Formula 
+\[
+\begin{cases}
+X\cong Y & \implies X\overset{g\ isom}{\rightarrow}Y\\
+Y\cong Z & \implies Y\overset{f\ isom}{\rightarrow}Z
+\end{cases}\implies X\overset{f\circ g\ isom}{\rightarrow}Z\implies X\cong Z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Simetría
+\begin_inset Formula 
+\[
+X\cong Y\implies X\overset{g\ isom}{\rightarrow}Y\implies Y\overset{g^{-1}\ isom}{\rightarrow}X\implies Y\cong X
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+1.4.4 Sean 
+\begin_inset Formula $\boldsymbol{f_{1}:A\rightarrow B_{1},\ f_{2}:A\rightarrow B_{2}}$
+\end_inset
+
+ dos homomorfismos de anillos.
+ Demostrar que la aplicación 
+\begin_inset Formula 
+\[
+\boldsymbol{f_{1}\times f_{2}:A\rightarrow B_{1}\times B_{2}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\boldsymbol{(f_{1}\times f_{2})(a)=(f_{1}(a),f_{2}(a))}
+\]
+
+\end_inset
+
+ es el único homomorfismo de anillos tal que 
+\begin_inset Formula $\boldsymbol{\pi_{B_{i}}\circ(f_{1}\times f_{2})=f_{i},\ i=1,2}$
+\end_inset
+
+.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{(f_{1},f_{2})\mapsto f_{1}\times f_{2}}$
+\end_inset
+
+ define una biyección 
+\begin_inset Formula $\boldsymbol{Hom(A,B_{1})\times Hom(A,B_{2})\rightarrow Hom(A,B_{1}\times B_{2})}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Que es un homomorfismo es simplemente comprobar las tres propiedades, lo
+ que se hace fácilmente.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para ver la unicidad, supongamos que existe otro homomorfismo, 
+\begin_inset Formula $g$
+\end_inset
+
+, tal que 
+\begin_inset Formula $\pi_{B_{i}}\circ g=f_{i}$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+(\pi_{B_{i}}\circ g)(a)=f_{i}(a)\iff\pi_{B_{i}}(g(a))=f_{i}(a)\iff\pi_{B_{i}}(g(a)_{1},g(a)_{2})=f_{i}(a)\iff
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff g(a)_{i}=f_{i}(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Esto sucede 
+\begin_inset Formula $\forall a\in A\implies g_{i}=f_{i}\implies g=f_{1}\times f_{2}$
+\end_inset
+
+, y vemos como esta es la única forma que puede tener esta aplicación.
+\end_layout
+
+\begin_layout Standard
+\align left
+Veamos la última afirmación:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Inyectividad
+\begin_inset Formula 
+\[
+f_{1}\times f_{2}=g_{1}\times g_{2}\implies(f_{1}(x),f_{2}(x))=(g_{1}(x),g_{2}(x)),\forall x\implies\begin{cases}
+f_{1}(x)=g_{1}(x)\\
+f_{2}(x)=g_{2}(x)
+\end{cases}\forall x\implies(f_{1},f_{2})=(g_{1},g_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+Sobreyectividad: Dado 
+\begin_inset Formula $g\in Hom(A,B_{1}\times B_{2})$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+(\pi_{1}\circ g,\pi_{2}\circ g)\in Hom(A,B_{1})\times Hom(A,B_{2})
+\]
+
+\end_inset
+
+ y la imagen por la aplicación del enunciado es 
+\begin_inset Formula $g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+1.4.5 Sea 
+\begin_inset Formula $\boldsymbol{f:A\rightarrow B}$
+\end_inset
+
+ un homomorfismo de anillos y sea 
+\begin_inset Formula $\boldsymbol{b\in B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+\align left
+
+\series bold
+Demostrar que la aplicación 
+\begin_inset Formula $\boldsymbol{f_{b}:A[X]\rightarrow B}$
+\end_inset
+
+ dada por 
+\begin_inset Formula $\boldsymbol{f_{b}(a_{0}+a_{1}X+...+a_{n}X^{n})=f(a_{0})+f(a_{1})b+...+f(a_{n})b^{n}}$
+\end_inset
+
+ es el único homomorfismo de anillos 
+\begin_inset Formula $\boldsymbol{A[X]\rightarrow B}$
+\end_inset
+
+ que extiende 
+\begin_inset Formula $\boldsymbol{f}$
+\end_inset
+
+ y asocia 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ con 
+\begin_inset Formula $\boldsymbol{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula $f_{b}(a_{0}+...+a_{n}X^{n}+c_{0}+...+c_{m}X^{m})=f(a_{0})+...+f(a_{n})b^{n}+f(c_{0})+...+f(c_{m})b^{m}=f_{b}(a_{0}+...+a_{n}X^{n})+f_{b}(c_{0}+...+c_{m}X^{m})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula $f_{b}(A\cdot C)=f_{b}(\sum_{i=0}^{n+m}(\prod_{j=0}^{i}a_{j}c_{i-j})X^{i}=\sum_{i=0}^{n+m}f(\prod_{j=0}^{i}a_{j}c_{i-j})b^{i}=\sum_{i=0}^{n+m}(\prod_{j=0}^{i}f(a_{j}c_{i-j}))b^{i}=\sum_{i=0}^{n+m}(\prod_{j=0}^{i}f(a_{j})f(c_{i-j}))b^{i}=$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula $=(\sum_{i=0}^{n}f(a_{i})b^{i})(\sum_{i=0}^{m}f(c_{i})b^{i})=f_{b}(A)f_{b}(C)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula $f_{b}(1)=f(1)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Y vemos como efectivamente es un homomorfismo.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Supongamos ahora que 
+\begin_inset Formula $g$
+\end_inset
+
+ es otro homomorfismo que extiende 
+\begin_inset Formula $f$
+\end_inset
+
+ y asocia 
+\begin_inset Formula $X$
+\end_inset
+
+ con 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ Entonces, en particular, coinciden en los polinomios de grado 0, pero entonces
+ son iguales, y esta es la única forma que pueden tener.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\noindent
+\align left
+
+\series bold
+Demostrar que la siguiente aplicación es biyectiva
+\begin_inset Formula 
+\[
+\boldsymbol{\begin{array}{ccc}
+Hom(A,B)\times B & \rightarrow & Hom(A[X],B)\\
+(f,b) & \mapsto & f_{b}
+\end{array}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align left
+Inyectividad:
+\begin_inset Formula 
+\[
+f_{b}=g_{a}\implies f_{b}(C)=g_{a}(C),\forall C\in A[X]\implies f(c_{0})+...+f(c_{n})b^{n}=g(c_{0})+...+g(c_{n})a^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Humm...
+ no veo claro cómo seguir a partir de aquí.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Ideales y anillos cociente
+\end_layout
+
+\begin_layout Subsubsection*
+1.5.2 Sea 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ un ideal de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+ distinto de 
+\begin_inset Formula $\boldsymbol{0}$
+\end_inset
+
+.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ tiene un entero positivo y si 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ es el menor entero positivo de 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{I=(a)}$
+\end_inset
+
+.
+ Concluir que todos los ideales del anillo 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+ son principales.
+ Demostrar además que si 
+\begin_inset Formula $\boldsymbol{n,m}$
+\end_inset
+
+ son dos números enteros entonces 
+\begin_inset Formula $\boldsymbol{(n)\subset(m)}$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\boldsymbol{m|n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $I\neq0,$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\exists b\neq0\in\mathbb{Z}/b\in I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Si 
+\begin_inset Formula $b>0$
+\end_inset
+
+, ya lo tenemos.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Si 
+\begin_inset Formula $b<0\overset{I\ ideal}{\implies}0<b^{2}\in I$
+\end_inset
+
+, y lo tenemos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea ahora 
+\begin_inset Formula $a=\min\{x\in I:x>0\}$
+\end_inset
+
+, ¿tendremos 
+\begin_inset Formula $I=(a)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+\begin_inset Formula $'\supseteq'$
+\end_inset
+
+ 
+\series default
+Si 
+\begin_inset Formula $b=k\cdot a,$
+\end_inset
+
+ entonces 
+\begin_inset Formula $b\in I$
+\end_inset
+
+, por ser 
+\begin_inset Formula $I$
+\end_inset
+
+ ideal.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $'\subseteq'$
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $I\nsubseteq(a)\iff\exists b\in I/b\notin(a)$
+\end_inset
+
+.
+ Podemos poner 
+\begin_inset Formula $b=c\cdot a+r,\quad0<r<a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, tenemos que 
+\begin_inset Formula $c\cdot a\in I$
+\end_inset
+
+, y por tanto 
+\begin_inset Formula $r=b-c\cdot a\in I$
+\end_inset
+
+.# Pero esto es una contradicción, ya que 
+\begin_inset Formula $0<r<\min\{x\in\mathbb{Z}:x>0\}$
+\end_inset
+
+.
+ Por lo que ha de ser 
+\begin_inset Formula $I\subseteq(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para la última afirmación:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $'\implies'$
+\end_inset
+
+ 
+\begin_inset Formula $(n)\subset(m)\implies\forall k,\exists l/kn=lm$
+\end_inset
+
+, en concreto, para 
+\begin_inset Formula $k=1$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $\exists l/n=lm\implies m|n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $'\impliedby'$
+\end_inset
+
+ 
+\begin_inset Formula $m|n\implies n=lm\implies kn=klm$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, dado un múltiplo de 
+\begin_inset Formula $n$
+\end_inset
+
+, lo podemos escribir como múltiplo de 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Esto quiere decir que 
+\begin_inset Formula $(n)\subset(m)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+1.5.3 Si 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ es un entero positivo, demostrar que los ideales de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{n}}$
+\end_inset
+
+ son precisamente los de la forma 
+\begin_inset Formula $\boldsymbol{m\mathbb{Z}_{n}}$
+\end_inset
+
+, donde 
+\begin_inset Formula $\boldsymbol{0<m|n}$
+\end_inset
+
+, y además 
+\begin_inset Formula $\boldsymbol{m\mathbb{Z}_{n}\subset m'\mathbb{Z}_{n}\iff m'|m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el teorema de correspondencia, los ideales de 
+\begin_inset Formula $\mathbb{Z}_{n}=\frac{\mathbb{Z}}{(n)}$
+\end_inset
+
+, por el teorema de correspondencia, son los ideales de 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $(n)$
+\end_inset
+
+, modulo 
+\begin_inset Formula $(n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por el ejercicio anterior, 
+\begin_inset Formula $(n)\subset(m)\iff m|n$
+\end_inset
+
+.
+ Además, este mismo ejercicio nos dice que podemos tomar 
+\begin_inset Formula $m>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, los ideales de 
+\begin_inset Formula $\mathbb{Z}_{n}$
+\end_inset
+
+ son 
+\begin_inset Formula $\frac{(m)}{(n)}/m|n$
+\end_inset
+
+, pero 
+\begin_inset Formula $\frac{(m)}{(n)}=m\mathbb{Z}_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Veamos la última afirmación
+\begin_inset Formula 
+\[
+m'|m\iff(m)\subset(m')\iff\frac{(m)}{(n)}\subset\frac{(m')}{(n)}\iff m\mathbb{Z}_{n}=m'\mathbb{Z}_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+1.5.4 Sea 
+\begin_inset Formula $\boldsymbol{f:A\rightarrow B}$
+\end_inset
+
+ un homomorfismo de anillos.
+ Demostrar que si 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ es un ideal de 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{f^{-1}(I)}$
+\end_inset
+
+ es un ideal de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+.
+ Demostrar que si 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ es un ideal de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{f}$
+\end_inset
+
+ es suprayectiva, entonces 
+\begin_inset Formula $\boldsymbol{f(I)}$
+\end_inset
+
+ es un ideal de 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+.
+ Dar un ejemplo de un homomorfismo de anillos 
+\begin_inset Formula $\boldsymbol{f:A\rightarrow B}$
+\end_inset
+
+ en el que la imagen por 
+\begin_inset Formula $\boldsymbol{f}$
+\end_inset
+
+ de un ideal de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ no sea ideal de 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Veamos que 
+\begin_inset Formula $f^{-1}(I)$
+\end_inset
+
+ es un ideal de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $I\neq\emptyset\implies f^{-1}(I)\neq\emptyset$
+\end_inset
+
+, esto se debe a que 
+\begin_inset Formula $0\in I$
+\end_inset
+
+ y 
+\begin_inset Formula $f^{-1}(0)=0\in f^{-1}(I)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x,y\in f^{-1}(I)\implies f(x),f(y)\in I\implies f(x)+f(y)\in I\implies f(x+y)\in I\implies x+y\in f^{-1}(I)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x\in f^{-1}(I),a\in A\implies f(x)\in I,f(a)\in B\implies f(a)f(x)\in I\implies f(ax)\in I\implies ax\in f^{-1}(I)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y tenemos el resultado.
+\end_layout
+
+\begin_layout Standard
+Prosigamos con la siguiente afirmación:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $I\neq\emptyset\implies f(I)\neq\emptyset$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x,y\in f(I)\implies f^{-1}(x),f^{-1}(y)\in I\implies f^{-1}(x)+f^{-1}(y)\in I\implies f\left(f^{-1}(x)+f^{-1}(y)\right)\in f(I)\implies f\left(f^{-1}(x)\right)+f\left(f^{-1}(y)\right)\in f(I)\implies x+y\in f(I)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x\in f(I),b\in B\implies f^{-1}(x)\in I\ y\ como\ f\ es\ suprayectiva\ \exists a\in A/f(a)=b\implies af^{-1}(x)\in I\implies$
+\end_inset
+
+
+\begin_inset Formula $f\left(af^{-1}(x)\right)\in f(I)\implies f(a)f\left(f^{-1}(x)\right)\in f(I)\implies bx\in f(I)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y tenemos el resultado.
+\end_layout
+
+\begin_layout Standard
+El ejemplo pedido al final puede ser 
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+f:\mathbb{Z} & \rightarrow & \mathbb{Q}\\
+n & \mapsto & n
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Claramente es un homomorfismo, pero 
+\begin_inset Formula $f\left(\mathbb{Z}\right)=\mathbb{Z}\ntrianglelefteq\mathbb{Q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+1.5.5 Sean 
+\begin_inset Formula $\boldsymbol{A,B}$
+\end_inset
+
+ dos anilos.
+ Describir los ideales de 
+\begin_inset Formula $\boldsymbol{A\times B}$
+\end_inset
+
+ en función de los ideales de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ y de 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+.
+ Determinar todos los ideales de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{12}\times\mathbb{Z}_{18}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los ideales de 
+\begin_inset Formula $A\times B$
+\end_inset
+
+ son de la forma 
+\begin_inset Formula $I\times J/I\trianglelefteqslant A,\ J\trianglelefteqslant B$
+\end_inset
+
+.
+ O sea
+\begin_inset Formula 
+\[
+Ideales(A\times B)=\{I\times J/I\trianglelefteqslant A,\ J\trianglelefteqslant B\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $'\supseteq'$
+\end_inset
+
+ Es muy obvio, ya que tenemos que comprobar que son ideales coordenada a
+ coordenada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $'\subseteq'$
+\end_inset
+
+ Sea 
+\begin_inset Formula $K\trianglelefteqslant A\times B$
+\end_inset
+
+, podemos definir
+\begin_inset Formula 
+\[
+K_{1}=K\cap(A\times0)=I\times0,\ donde\ I\trianglelefteqslant A
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+K_{2}=K\cap(0\times B)=0\times J,\ donde\ J\trianglelefteqslant B
+\]
+
+\end_inset
+
+ Y 
+\begin_inset Formula $K=K_{1}\cup K_{2}=I\times J$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por tanto, para ver cuáles son los ideales de 
+\begin_inset Formula $\mathbb{Z}_{12}\times\mathbb{Z}_{18}$
+\end_inset
+
+, debemos ver los ideales de cada uno.
+ Por el ejercicio 1.5.3, tenemos que los ideales de 
+\begin_inset Formula $\mathbb{Z}_{12}$
+\end_inset
+
+ son de la forma 
+\begin_inset Formula $m\mathbb{Z}_{12},\ m|12$
+\end_inset
+
+ y los de 
+\begin_inset Formula $\mathbb{Z}_{18}$
+\end_inset
+
+ son 
+\begin_inset Formula $k\mathbb{Z}_{18},\ k|18$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es decir, los ideales de 
+\begin_inset Formula $\mathbb{Z}_{12}\times\mathbb{Z}_{18}$
+\end_inset
+
+ son 
+\begin_inset Formula 
+\[
+\left\{ m\mathbb{Z}_{12}\times k\mathbb{Z}_{18}/m\in\{0,1,2,3,4,6\},\ k\in\{0,1,2,3,6,9\}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+1.5.6 Demostrar que si 
+\begin_inset Formula $\boldsymbol{p,q}$
+\end_inset
+
+ son dos primos distintos entonces no hay ningún homomorfismo de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{p}}$
+\end_inset
+
+ a 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{q}}$
+\end_inset
+
+ ni de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{q}}$
+\end_inset
+
+ a 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{p}}$
+\end_inset
+
+.
+ ¿Cuántos homomorfismos hay de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{4}}$
+\end_inset
+
+ a 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{2}}$
+\end_inset
+
+? ¿Y de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{2}}$
+\end_inset
+
+ a 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{4}}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Las características son, respectivamente, 
+\begin_inset Formula $p$
+\end_inset
+
+ y 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces, si 
+\begin_inset Formula $f:\mathbb{Z}_{p}\rightarrow\mathbb{Z}_{q}$
+\end_inset
+
+ es un homomorfismo, sabemos que 
+\begin_inset Formula $f(1)=1$
+\end_inset
+
+ y que 
+\begin_inset Formula $f$
+\end_inset
+
+ conserva inversos, también sabemos que 
+\begin_inset Formula $nf(a)=f(na).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así, tenemos que 
+\begin_inset Formula $f(q)=f(q\cdot1)=qf(1)=q=0$
+\end_inset
+
+, pero 
+\begin_inset Formula $q$
+\end_inset
+
+ es invertible en 
+\begin_inset Formula $\mathbb{Z}_{p}$
+\end_inset
+
+, pues 
+\begin_inset Formula $p$
+\end_inset
+
+ es primo, por lo que 
+\begin_inset Formula $\mathbb{Z}_{p}$
+\end_inset
+
+ es cuerpo y 
+\begin_inset Formula $p\nmid q\implies q\in\mathbb{Z}_{p}^{*}$
+\end_inset
+
+, pero 
+\begin_inset Formula $f(q)=0\notin\mathbb{Z}_{q}^{*}$
+\end_inset
+
+.
+ Por tanto, no puede 
+\begin_inset Formula $f$
+\end_inset
+
+ ser un homomorfismo.
+\end_layout
+
+\begin_layout Standard
+Al contrario se hace exactamente igual.
+\end_layout
+
+\begin_layout Standard
+De 
+\begin_inset Formula $\mathbb{Z}_{4}\ a\ \mathbb{Z}_{2}$
+\end_inset
+
+, los invertibles deben ir al 1 inevitablemente, y el 0 debe ir al 0.
+\end_layout
+
+\begin_layout Standard
+Es decir, ha de ser 
+\begin_inset Formula $f(3)=f(-1)=f(1)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El 2, en principio, podría ir tanto al 0 como al 1, pero tenemos que 
+\begin_inset Formula $1=f(3)=f(2+1)=f(2)+f(1)=f(2)+1$
+\end_inset
+
+, de donde ha de ser 
+\begin_inset Formula $f(2)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por tanto, solo hay un homomorfismo.
+\end_layout
+
+\begin_layout Standard
+De 
+\begin_inset Formula $\mathbb{Z}_{2}\ a\ \mathbb{Z}_{4}$
+\end_inset
+
+, el 1 debe ir al 1, y el 0 al 0.
+ Pero 
+\begin_inset Formula $0=f(0)=f(1+1)=f(1)+f(1)=2\#$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir, no existe ningún homomorfismo entre estos dos anillos.
+\end_layout
+
+\begin_layout Subsubsection*
+1.5.7 Demostrar que si 
+\begin_inset Formula $\boldsymbol{f:A\rightarrow B}$
+\end_inset
+
+ es un homomorfismo suprayectivo de anillos y todos los ideales del anillo
+ 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ son principales, entonces todos los ideales de 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+ son principales.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $J$
+\end_inset
+
+ un ideal de 
+\begin_inset Formula $B$
+\end_inset
+
+, entonces, por 1.5.4, tenemos que 
+\begin_inset Formula $f^{-1}(J)$
+\end_inset
+
+ es un ideal en 
+\begin_inset Formula $A$
+\end_inset
+
+, pero, entonces 
+\begin_inset Formula $f^{-1}(J)=(a)$
+\end_inset
+
+ es un ideal principal.
+ Es decir, 
+\begin_inset Formula $f^{-1}(J)=(a)=\{ka:k\in A\}$
+\end_inset
+
+.
+ Entonces, 
+\begin_inset Formula $J=f\left((a)\right)=\{f(ka):k\in A\}=\{f(k)f(a):k\in A\}\overset{f\ supra}{=}\{mf(a):m\in B\}=(f(a))=(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Así, vemos como todo ideal de 
+\begin_inset Formula $B$
+\end_inset
+
+ es principal.
+\end_layout
+
+\begin_layout Subsubsection*
+1.5.8 Sea 
+\begin_inset Formula $\boldsymbol{f:A\rightarrow B}$
+\end_inset
+
+ un homomorfismo suprayectivo de anillos.
+ Demostrar que existe una correspondencia biunívoca, que conserva la inclusión,
+ entre el conjunto de los ideales de 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+ y los ideales de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $\boldsymbol{Kerf}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+0 es un ideal en 
+\begin_inset Formula $B\implies Kerf$
+\end_inset
+
+ es un ideal en 
+\begin_inset Formula $A$
+\end_inset
+
+, por el ejercicio 1.5.4.
+\end_layout
+
+\begin_layout Standard
+Todos los ideales de 
+\begin_inset Formula $B$
+\end_inset
+
+ contienen al 
+\begin_inset Formula $0$
+\end_inset
+
+, por lo que todos los ideales de la forma 
+\begin_inset Formula $f^{-1}(J)$
+\end_inset
+
+, siendo 
+\begin_inset Formula $J$
+\end_inset
+
+ un ideal de 
+\begin_inset Formula $B$
+\end_inset
+
+, contienen a 
+\begin_inset Formula $Kerf$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es decir, si 
+\begin_inset Formula $J\trianglelefteq B\implies Kerf\subset f^{-1}(J)\trianglelefteq A$
+\end_inset
+
+ (!)
+\end_layout
+
+\begin_layout Standard
+Además, si 
+\begin_inset Formula $Kerf\subset I\trianglelefteq A\overset{f\ supra}{\implies}f(I)\trianglelefteq B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir, que la correspondencia será 
+\begin_inset Formula $f$
+\end_inset
+
+ vista como función de conjunto
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\overline{f}:\{I\trianglelefteq A/Kerf\subset I\} & \rightarrow & \{J\trianglelefteq B\}\\
+I & \mapsto & f(I)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por (!) tenemos que es sobreyectiva.
+\end_layout
+
+\begin_layout Standard
+Supongamos que no es inyectiva, entonces existen 
+\begin_inset Formula $f(I)=\overline{f}(I)=\overline{f}(K)=f(K)$
+\end_inset
+
+ con 
+\begin_inset Formula $I\neq K$
+\end_inset
+
+, o sea, existen 
+\begin_inset Formula $i\in I-K,k\in K-I$
+\end_inset
+
+ tales que 
+\begin_inset Formula $f(i)=f(k)$
+\end_inset
+
+.
+ Pero, entonces 
+\begin_inset Formula $f(i)-f(k)=0\implies f(i-k)=0\implies i-k\in Kerf\implies i-k\in I\implies i-k-i=-k\in I\implies k\in I$
+\end_inset
+
+# Esto es una contradiccón, pues se supone que 
+\begin_inset Formula $k\notin I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Así, vemos que es biunívoca (por tanto, conserva la inclusión).
+\end_layout
+
+\begin_layout Subsubsection*
+1.5.9 Sea 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ un conjunto y 
+\begin_inset Formula $\boldsymbol{*}$
+\end_inset
+
+ una operación en 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+.
+ Una congruencia en 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ con respecto a 
+\begin_inset Formula $\boldsymbol{*}$
+\end_inset
+
+ es una relación de equivalencia 
+\begin_inset Formula $\boldsymbol{\sim}$
+\end_inset
+
+en 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ que verifique la siguiente condición para todo 
+\begin_inset Formula $\boldsymbol{a,a',b,b'\in X}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\boldsymbol{a\sim a'\quad y\quad b\sim b'\implies a*b\sim a'*b'}
+\]
+
+\end_inset
+
+ En tal caso definimos la siguiente operación 
+\begin_inset Formula $\boldsymbol{*}$
+\end_inset
+
+ en el conjunto cociente 
+\begin_inset Formula $\boldsymbol{\frac{X}{\sim}}$
+\end_inset
+
+, donde 
+\begin_inset Formula $\boldsymbol{\overline{a}}$
+\end_inset
+
+ representa la clase de equivalencia en 
+\begin_inset Formula $\boldsymbol{\frac{X}{\sim}}$
+\end_inset
+
+ que contiene a 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\boldsymbol{\overline{a}*\overline{b}=\overline{a*b}}
+\]
+
+\end_inset
+
+ Demostrar las siguientes propiedades para 
+\begin_inset Formula $\boldsymbol{\sim}$
+\end_inset
+
+ una congruencia en 
+\begin_inset Formula $\boldsymbol{X}$
+\end_inset
+
+ con respecto a 
+\begin_inset Formula $\boldsymbol{*}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(a) Si 
+\begin_inset Formula $\boldsymbol{(X,*)}$
+\end_inset
+
+ es un semigrupo entonces 
+\begin_inset Formula $\boldsymbol{(\frac{X}{\sim},*)}$
+\end_inset
+
+ es un semigrupo y si además 
+\begin_inset Formula $\boldsymbol{(X,*)}$
+\end_inset
+
+ es un monoide o un grupo entonces 
+\begin_inset Formula $\boldsymbol{(\frac{X}{\sim},*)}$
+\end_inset
+
+ también lo es.
+\end_layout
+
+\begin_layout Standard
+Semigrupo
+\begin_inset Formula 
+\[
+(\overline{a}*\overline{b})*\overline{c}=\overline{a*b}*\overline{c}=\overline{\overline{a*b}*c}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\overline{a}*(\overline{b}*\overline{c})=\overline{a}*\overline{b*c}=\overline{a*\overline{b*c}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Son estas dos expresiones iguales?
+\end_layout
+
+\begin_layout Standard
+Lo serán si, y solo si, 
+\begin_inset Formula $\overline{a*b}*c\sim a*\overline{b*c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pero 
+\begin_inset Formula $\overline{a*b}*c\sim(a*b)*c=a*(b*c)\sim a*\overline{b*c}$
+\end_inset
+
+, como queríamos.
+\end_layout
+
+\begin_layout Standard
+Las otras dos comprobaciones son también sencillas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(b) Si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es un anillo y 
+\begin_inset Formula $\boldsymbol{\sim}$
+\end_inset
+
+ es una relación de equivalencia en 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{\sim}$
+\end_inset
+
+ es una congruencia respecto de la suma y el producto de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ si y solo si el conjunto 
+\begin_inset Formula $\boldsymbol{I=\{a\in A/a\sim0\}}$
+\end_inset
+
+ es un ideal de A.
+\end_layout
+
+\begin_layout Standard
+Este ejercicio lo vimos con Álvaro, la implicación a la izquierda es falsa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $'\implies'$
+\end_inset
+
+ Dados 
+\begin_inset Formula $a,b\in I\implies a\sim0,b\sim0\implies a+b\sim0+0=0\implies a+b\in I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dados 
+\begin_inset Formula $a\in I,x\in A\implies a\sim0,x\sim x\implies ax\sim0x=0\implies ax\in I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I\neq\emptyset$
+\end_inset
+
+, porque 
+\begin_inset Formula $0\sim0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $'\impliedby'$
+\end_inset
+
+ Es falso.
+ Contraejemplo:
+\begin_inset Formula 
+\[
+a\sim b\iff\begin{cases}
+a,b\in I\\
+a,b\notin I
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En 
+\begin_inset Formula $\mathbb{Z},$
+\end_inset
+
+ 
+\begin_inset Formula $I=(3)$
+\end_inset
+
+.
+ Tenemos que 
+\begin_inset Formula $2\sim2,1\sim2$
+\end_inset
+
+ pero 
+\begin_inset Formula $2+1\nsim2+2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Operaciones con ideales
+\end_layout
+
+\begin_layout Standard
+El primero es demostrar una proposición, y el segundo la verdad es que es
+ bastante aburrido.
+ Voy a hacer un par de apartados.
+\end_layout
+
+\begin_layout Subsubsection*
+1.6.2 Si 
+\begin_inset Formula $\boldsymbol{I,J,K}$
+\end_inset
+
+ son ideales de un anillo 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+, demostrar que:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(a) 
+\begin_inset Formula $\boldsymbol{IJ\subset I\cap J}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+IJ=\left\{ x_{1}y_{1}+...+x_{n}y_{n}/x_{1},...,x_{n}\in I,y_{1},...,y_{n}\in J\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{cases}
+x_{i}\in I\\
+y_{i}\in J
+\end{cases}\forall i\implies\begin{cases}
+x_{i}y_{i}\in I\\
+x_{i}y_{i}\in J
+\end{cases}\forall i\implies x_{i}y_{i}\in I\cap J,\forall i\implies\sum_{i}x_{i}y_{i}\in I\cap J
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y vemos como 
+\begin_inset Formula $IJ\subset I\cap J$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(d) 
+\begin_inset Formula $\boldsymbol{I(J+K)=IJ+IK}$
+\end_inset
+
+
+\series default
+
+\begin_inset Formula 
+\[
+a\in I(J+K)\iff a=\sum_{i}x_{i}b_{i},\ x_{i}\in I,\ b_{i}\in J+K\iff a=\sum_{i}x_{i}(y_{i}+z_{i}),\ x_{i}\in I,y_{i}\in J,z_{i}\in K\iff
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff a=\sum_{i}x_{i}y_{i}+\sum_{i}x_{i}z_{i},\ x_{i}\in I,y_{i}\in J,z_{i}\in K\iff a\in IJ+IK
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Los teoremas de isomorfía y chino de los restos
+\end_layout
+
+\begin_layout Subsubsection*
+1.7.1 Sea 
+\begin_inset Formula $\boldsymbol{a\in\mathbb{R}.}$
+\end_inset
+
+ ¿Qué se deduce al aplicar el Primer Teorema de Isomorfía al homomorfismo
+ 
+\begin_inset Formula $\boldsymbol{\mathbb{R}[X]\rightarrow\mathbb{R}}$
+\end_inset
+
+ dado por 
+\begin_inset Formula $\boldsymbol{P(x)\mapsto P(a)}$
+\end_inset
+
+? ¿Y qué se deduce al aplicarlo al homomorfismo 
+\begin_inset Formula $\boldsymbol{\mathbb{R}[X]\rightarrow\mathbb{C}}$
+\end_inset
+
+, dado por 
+\begin_inset Formula $\boldsymbol{P(X)\mapsto P(i)}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\align left
+El primer teorema de isomorfía muestra que 
+\begin_inset Formula 
+\[
+\frac{\mathbb{R}[X]}{Kerf}\simeq Imf
+\]
+
+\end_inset
+
+ Entonces, podemos hacer varias observaciones:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Aplicando el homomorfismo a los polinomios constantes podemos ver que 
+\begin_inset Formula $Imf=\mathbb{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $Kerf$
+\end_inset
+
+ son todos aquellos polinomios que tienen a 
+\begin_inset Formula $a$
+\end_inset
+
+ como raíz, por el teorema de Ruffini, los múltiplos de 
+\begin_inset Formula $(X-a)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, lo que deducimos es que 
+\begin_inset Formula $\frac{\mathbb{R}[X]}{(X-a)}\simeq\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+En el segundo caso, vamos a hacer observaciones similares:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Aplicando el homomorfismo a los polinomios de la forma 
+\begin_inset Formula $a+bX$
+\end_inset
+
+, vemos que 
+\begin_inset Formula $Imf=\mathbb{C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Formula $Kerf$
+\end_inset
+
+ son todos aquellos polinomios que tienen a 
+\begin_inset Formula $i$
+\end_inset
+
+ como raíz 
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien, aquí no podemos usar el teorema de Ruffini tan alegremente porque
+ 
+\begin_inset Formula $i\notin\mathbb{R}$
+\end_inset
+
+.
+ Consideremos los polinomios con coeficientes complejos.
+ Ahor notamos que si 
+\begin_inset Formula $i$
+\end_inset
+
+ es raíz de un polinomio con coeficientes reales, entonces 
+\begin_inset Formula $-i$
+\end_inset
+
+ también lo es, pues es su conjugado y la conjugación es un automorfismo
+ en 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+ que deja fijos los elementos de 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, si 
+\begin_inset Formula $P$
+\end_inset
+
+ está en el núcleo, visto sobre 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+, entonces, aplicando, ahora sí, Ruffini, tenemos que es disivible por 
+\begin_inset Formula $(X-i)$
+\end_inset
+
+ y 
+\begin_inset Formula $(X+i)$
+\end_inset
+
+.
+ Por tanto, 
+\begin_inset Formula $P$
+\end_inset
+
+ es divisible por 
+\begin_inset Formula $(X-i)(X+i)=X^{2}+1$
+\end_inset
+
+.
+ En particular, si 
+\begin_inset Formula $P$
+\end_inset
+
+ tiene coeficientes reales, también lo divide.
+ O sea, 
+\begin_inset Formula $P\in Kerf\implies X^{2}+1|P$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Recíprocamente, si 
+\begin_inset Formula $X^{2}+1|P$
+\end_inset
+
+, entonces 
+\begin_inset Formula $i$
+\end_inset
+
+ es raíz de 
+\begin_inset Formula $P\implies P\in Kerf$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto 
+\begin_inset Formula $Kerf=(X^{2}+1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Y así, por el primer teorema de isomorfía
+\begin_inset Formula 
+\[
+\frac{\mathbb{R}[X]}{\left(X^{2}+1\right)}\simeq\mathbb{C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+1.7.2 Demostrar el recíproco del Teorema Chino de los Restos para anillos;
+ es decir, probar que si 
+\begin_inset Formula $\boldsymbol{I_{1},...,I_{n}}$
+\end_inset
+
+son ideales de un anillo 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ tales que la aplicación 
+\begin_inset Formula $\boldsymbol{f:A\rightarrow\prod_{i=1}^{n}\frac{A}{I_{i}}}$
+\end_inset
+
+, dada por 
+\begin_inset Formula $\boldsymbol{f(a)=(a+I_{1},...,a+I_{n})}$
+\end_inset
+
+ es suprayectiva, entonces 
+\begin_inset Formula $\boldsymbol{I_{i}+I_{j}=(1),\forall i\neq j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+¿
+\begin_inset Formula $1\in I_{i}+I_{j}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $f$
+\end_inset
+
+ es sobreyectiva, entonces 
+\begin_inset Formula $\exists a\in A/f(a)=(0+I_{1},...,1+I_{i},...,0+I_{j},...,0+I_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto quiere decir que 
+\begin_inset Formula 
+\[
+\begin{cases}
+1-a\in I_{i}\\
+a\in I_{j}
+\end{cases}\implies1=(1-a)+a\in I_{i}+I_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y tenemos el resultado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Divisibilidad en dominios
+\end_layout
+
+\begin_layout Subsection
+Cuerpos y dominios; ideales maximales y primos
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.1 Sean 
+\begin_inset Formula $\boldsymbol{a,b}$
+\end_inset
+
+ dos elementos de un anillo.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{ab}$
+\end_inset
+
+ es un divisor de cero si y solo si 
+\begin_inset Formula $\boldsymbol{a\ ó\ b}$
+\end_inset
+
+ es un divisor de cero.
+\end_layout
+
+\begin_layout Standard
+Recordemos que los divisores de cero son los elementos no regulares.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' 
+\begin_inset Formula $ab$
+\end_inset
+
+ no es regular si 
+\begin_inset Formula $\exists c\neq d/abc=abd$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $a$
+\end_inset
+
+ es regular, entonces deducimos que 
+\begin_inset Formula $bc=bd$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $b$
+\end_inset
+
+ no puede ser regular o tendríamos 
+\begin_inset Formula $c=d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $b$
+\end_inset
+
+ es regular, tenemos 
+\begin_inset Formula $ac=ad$
+\end_inset
+
+ y 
+\begin_inset Formula $a$
+\end_inset
+
+ no puede ser regular.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Supongamos, sin perder generalidad, pues suponemos los anillos conmutativos,
+ que 
+\begin_inset Formula $a$
+\end_inset
+
+ no es regular.
+\end_layout
+
+\begin_layout Standard
+Entonces existen 
+\begin_inset Formula $c\neq d/ac=ad\implies acb=adb\implies abc=abd$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+De esta manera, 
+\begin_inset Formula $\exists c\neq d/abc=abd$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $ab$
+\end_inset
+
+ no es regular.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.2 Sea 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ un anillo finito.
+ Demostrar que todo elemento de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es o divisor de cero o unidad.
+ Deducir que todo dominio finito es un cuerpo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $a\in A$
+\end_inset
+
+.
+ Supongamos que no es unidad.
+\end_layout
+
+\begin_layout Standard
+\align left
+O sea que 
+\begin_inset Formula $a\cdot b\neq1,\forall b\in A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Consideremos
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+f:A & \rightarrow & A\\
+x & \mapsto & ax
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Esta aplicación no es sobreyectiva.
+ Pero como 
+\begin_inset Formula $A$
+\end_inset
+
+ es finito, 
+\begin_inset Formula $f$
+\end_inset
+
+ es sobreyectiva si y solo si es inyectiva.
+ Como no es sobre, no es inyectiva.
+ Por lo que existen 
+\begin_inset Formula $x\neq y/f(x)=f(y)\implies ax=ay$
+\end_inset
+
+.
+ O sea, que si 
+\begin_inset Formula $a$
+\end_inset
+
+ no es unidad, entonces no es regular (es divisor de cero).
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $a$
+\end_inset
+
+ no es divisor de 0, entonces 
+\begin_inset Formula $\forall c\neq b\in A\implies ac\neq ab$
+\end_inset
+
+.
+ Por lo que la aplicación 
+\begin_inset Formula $f$
+\end_inset
+
+ será inyectiva, y será sobreyectiva.
+ Al ser sobreyectiva, 
+\begin_inset Formula $\exists b\in A/ab=f(a)=1$
+\end_inset
+
+.
+ Y 
+\begin_inset Formula $a$
+\end_inset
+
+ es unidad.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para la última afirmación, si 
+\begin_inset Formula $A$
+\end_inset
+
+ es un dominio, entonces todos los elementos no nulos son regulares, por
+ lo anterior, al no ser divisores de cero deben ser unidades, por tanto
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ es un cuerpo.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.3 Sea 
+\begin_inset Formula $\boldsymbol{f:A\rightarrow B}$
+\end_inset
+
+ un homomorfismo de anillos.
+ Demostrar que:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) Si 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ es un ideal primo de 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{f^{-1}(p)}$
+\end_inset
+
+ es un ideal primo de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p$
+\end_inset
+
+ primo 
+\begin_inset Formula $\iff\forall a',b'\in B,\ a'b'\in p\implies a'\in B\ ó\ b'\in B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así, sean 
+\begin_inset Formula $a,b\in A/ab\in f^{-1}(p)\implies f\left(ab\right)\in p\implies f(a)f(b)\in p\implies f(a)\in p\ ó\ f(b)\in p\implies a\in f^{-1}(p)\ ó\ b\in f^{-1}(p)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así, 
+\begin_inset Formula $f^{-1}(p)$
+\end_inset
+
+ es un ideal por un ejercicio del capítulo 1 y es primo como acabamos de
+ ver.
+\end_layout
+
+\begin_layout Subsubsection*
+(2) En general, no se verifica el resultado análogo para ideales maximales
+\end_layout
+
+\begin_layout Standard
+Consideremos 
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+f:\mathbb{Z} & \rightarrow & \mathbb{Q}\\
+a & \mapsto & a
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+tenemos que 
+\begin_inset Formula $p=(0)$
+\end_inset
+
+ es maximal en 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+, pero 
+\begin_inset Formula $f^{-1}(p)=(0)$
+\end_inset
+
+ no es maximal en 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.4 Sea 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ un ideal propio de un anillo 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+.
+ Demostrar que las biyecciones del teorema de correspondencia llevan ideales
+ maximales (resp.
+ primos) de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ a ideales maximales (resp.
+ primos) de 
+\begin_inset Formula $\boldsymbol{\frac{A}{I}}$
+\end_inset
+
+, y viceversa.
+\end_layout
+
+\begin_layout Standard
+El teorema afirma que si 
+\begin_inset Formula $J\subset K$
+\end_inset
+
+ son ideales de 
+\begin_inset Formula $A$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $I$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\frac{J}{I}\subset\frac{K}{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+También afirma que si 
+\begin_inset Formula $X\subset Y$
+\end_inset
+
+ son ideales de 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\pi^{-1}(X)\subset\pi^{-1}(Y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pero también demuestra que los ideales de 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ son de la forma 
+\begin_inset Formula $\frac{J}{I}$
+\end_inset
+
+ con 
+\begin_inset Formula $I\subset J\triangleleft A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Juntando estos resultados, obtenemos que 
+\begin_inset Formula $J\subset K$
+\end_inset
+
+ ideales de 
+\begin_inset Formula $A$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $I$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\frac{J}{I}\subset\frac{K}{I}$
+\end_inset
+
+ son ideales de 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Y lo pedido sobre maximales del ejercicio se deduce inmediatamente de este
+ último resultado.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.5 Demostrar que si 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ es un dominio su característica es 0 o un número primo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D$
+\end_inset
+
+ es un dominio si y solo si 
+\begin_inset Formula $a,b\in D$
+\end_inset
+
+ son no nulos, entonces 
+\begin_inset Formula $ab\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $n$
+\end_inset
+
+ la característica de 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Es decir,
+\begin_inset Formula 
+\[
+n=\min_{n\in\mathbb{N}}\left\{ n/n1=0\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+o cero si este mínimo no existe.
+\end_layout
+
+\begin_layout Standard
+Si no es cero, entonces puede ser primo o no serlo.
+\end_layout
+
+\begin_layout Standard
+Si no es primo, entonces puede expresarse como producto de primos.
+ También podemos ponerlo como 
+\begin_inset Formula $n=ap$
+\end_inset
+
+, donde 
+\begin_inset Formula $p$
+\end_inset
+
+ es primo y 
+\begin_inset Formula $a$
+\end_inset
+
+ es el producto del resto de primos de la factorización de 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Nótese que 
+\begin_inset Formula $a,p<n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+De esta forma, tenemos que 
+\begin_inset Formula $n1=0\iff ap1=0\iff a1\cdot p1=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces, encontramos 
+\begin_inset Formula $a1,p1\in D$
+\end_inset
+
+ no nulos (si alguno fuera nulo, la característica no sería 
+\begin_inset Formula $n$
+\end_inset
+
+), tales que 
+\begin_inset Formula $a1\cdot p1=0$
+\end_inset
+
+# Esto es una contradición, pues 
+\begin_inset Formula $D$
+\end_inset
+
+ es un dominio.
+\end_layout
+
+\begin_layout Standard
+Así, vemos que la característica, si no es cero, debe ser un número primo.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.6 Determinar los ideales de 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{n}}$
+\end_inset
+
+.
+ ¿Cuáles son primos y cuales maximales?
+\end_layout
+
+\begin_layout Standard
+Por el teorema de correspondencia, sabemos que los ideales de 
+\begin_inset Formula $\frac{\mathbb{Z}}{(n)}$
+\end_inset
+
+ son los ideales de 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $(n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pero 
+\begin_inset Formula $(n)\subset(m)\iff m|n$
+\end_inset
+
+.
+ Por tanto, los ideales son 
+\begin_inset Formula $m\mathbb{Z}_{n}$
+\end_inset
+
+, con 
+\begin_inset Formula $m|n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por el ejercicio 2.1.4, los primos y maximales de 
+\begin_inset Formula $\mathbb{Z}_{n}$
+\end_inset
+
+ son los primos y maximales de 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ que contienen a 
+\begin_inset Formula $(n)$
+\end_inset
+
+.
+ Es decir, los de la forma 
+\begin_inset Formula $p\mathbb{Z}_{n}/p|n,\ p\ primo$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+———————————————————————————————————————
+\end_layout
+
+\begin_layout Standard
+El 7 es muy pesado
+\end_layout
+
+\begin_layout Subsubsection*
+———————————————————————————————————————
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.8 Demostrar que si 
+\begin_inset Formula $\boldsymbol{P}$
+\end_inset
+
+ es un ideal primo de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{P\left[X\right]}$
+\end_inset
+
+ es un ideal primo de 
+\begin_inset Formula $\boldsymbol{A\left[X\right]}$
+\end_inset
+
+ y 
+\begin_inset Formula 
+\[
+\boldsymbol{p+\left(X\right)=\left\{ a_{0}+...+a_{n}X^{n}:a_{0}\in P,\ a_{1},...,a_{n}\in A\right\} }
+\]
+
+\end_inset
+
+ es un ideal maximal de 
+\begin_inset Formula $\boldsymbol{A\left[X\right]}$
+\end_inset
+
+.
+ ¿Puede 
+\begin_inset Formula $\boldsymbol{P\left[X\right]}$
+\end_inset
+
+ ser maximal de 
+\begin_inset Formula $\boldsymbol{A\left[X\right]}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Por la proposición 2.6, 
+\begin_inset Formula $P\left[X\right]$
+\end_inset
+
+ será primo si y solo si 
+\begin_inset Formula $\frac{A\left[X\right]}{P\left[X\right]}$
+\end_inset
+
+ es un dominio.
+\end_layout
+
+\begin_layout Standard
+¿Es 
+\begin_inset Formula $\frac{A\left[X\right]}{P\left[X\right]}\cong\left(\frac{A}{P}\right)\left[X\right]$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Sea
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+f:A\left[X\right] & \rightarrow & \left(\frac{A}{P}\right)\left[X\right]\\
+\sum a_{i}X^{i} & \mapsto & \sum(a_{i}+P)X^{i}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f$
+\end_inset
+
+ es un homomorfismo suprayectivo con núcleo 
+\begin_inset Formula $P\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Así, por el primer teorema de isomorfía
+\begin_inset Formula 
+\[
+\frac{A\left[X\right]}{P\left[X\right]}\cong\left(\frac{A}{P}\right)\left[X\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora bien, como 
+\begin_inset Formula $P$
+\end_inset
+
+ es ideal primo de 
+\begin_inset Formula $A$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\frac{A}{P}$
+\end_inset
+
+ es un dominio, esto implica que 
+\begin_inset Formula $\left(\frac{A}{P}\right)\left[X\right]$
+\end_inset
+
+ es dominio.
+ Pero entonces 
+\begin_inset Formula $\frac{A\left[X\right]}{P\left[X\right]}$
+\end_inset
+
+ es dominio y así 
+\begin_inset Formula $P\left[X\right]$
+\end_inset
+
+ es ideal primo de 
+\begin_inset Formula $A\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+¿Puede 
+\begin_inset Formula $P\left[X\right]$
+\end_inset
+
+ ser maximal de 
+\begin_inset Formula $A\left[X\right]$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Para eso, 
+\begin_inset Formula $\frac{A\left[X\right]}{P\left[X\right]}\cong\left(\frac{A}{P}\right)\left[X\right]$
+\end_inset
+
+ debería ser un cuerpo, pero esto no puede ser, ya que un anillo de polinomios
+ no puede ser un cuerpo (
+\begin_inset Formula $X^{-1}\notin A\left[X\right]$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+¿
+\begin_inset Formula $p+(X)$
+\end_inset
+
+ maximal?
+\end_layout
+
+\begin_layout Standard
+No necesariamente...
+ pero sí primo.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+h:A\left[X\right] & \rightarrow & \frac{A}{P}\\
+a_{0}+...+a_{n}x^{n} & \mapsto & a_{o}+P
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $h$
+\end_inset
+
+ es un homomorfismo suprayectivo con núcleo 
+\begin_inset Formula $p+(X)$
+\end_inset
+
+.
+ Por el 1º trm isom:
+\begin_inset Formula 
+\[
+\frac{A\left[X\right]}{p+(X)}\cong\frac{A}{P}
+\]
+
+\end_inset
+
+ que es un dominio, por lo que 
+\begin_inset Formula $p+(X)$
+\end_inset
+
+ es un ideal primo.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.9 Demostrar que las siguientes condiciones son equivalentes para un anillo
+ 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ tiene un único ideal maximal
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ tiene un ideal propio 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ que contiene todos los elementos no invertibles de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(3) El conjunto de los elementos no invertibles de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es un ideal
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(4) Para todo 
+\begin_inset Formula $\boldsymbol{a,b\in A,\ a+b\in A^{*}\implies a\in A^{*}\ ó\ b\in A^{*}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Un anillo que satisface estas condiciones se denomina local.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $(1)\implies(2)$
+\end_inset
+
+' Sea 
+\begin_inset Formula $I$
+\end_inset
+
+ el ideal maximal de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Supongamos que existe algún elemento no invertible, 
+\begin_inset Formula $x\notin I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces 
+\begin_inset Formula $(x)\triangleleft A$
+\end_inset
+
+ propio 
+\begin_inset Formula $\implies(x)\subset I\implies x\in I$
+\end_inset
+
+# Contradicción.
+\end_layout
+
+\begin_layout Standard
+Así, 
+\begin_inset Formula $A$
+\end_inset
+
+ tiene un ideal que contiene a todos los elementos no invertibles, y es
+ 
+\begin_inset Formula $I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $(2)\implies(3)$
+\end_inset
+
+' Si 
+\begin_inset Formula $I$
+\end_inset
+
+ contuviera algún invertible, entonces contendría al 1 y, por tanto, sería
+ el total.
+ Pero 
+\begin_inset Formula $I$
+\end_inset
+
+ es propio.
+ Por tanto, 
+\begin_inset Formula $I$
+\end_inset
+
+ contiene a todos los no invertibles y no contiene a ningún invertible.
+ Es decir, el conjunto de los elementos no invertibles es un ideal.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $(3)\implies(4)$
+\end_inset
+
+' Por contrarrecíproco,
+\begin_inset Formula 
+\[
+a\notin A^{*}\ y\ b\notin A^{*}\overset{A\setminus A^{*}\ ideal}{\implies}a+b\notin A^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $(4)\implies(1)$
+\end_inset
+
+' Sea 
+\begin_inset Formula $I=A\setminus A^{*}$
+\end_inset
+
+.
+ ¿
+\begin_inset Formula $I$
+\end_inset
+
+ ideal?
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset Formula $x,y\in I\implies x,y$
+\end_inset
+
+ no invertibles
+\begin_inset Formula $\implies x+y$
+\end_inset
+
+ no invertible 
+\begin_inset Formula $\implies x+y\in I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $x\in I,\ a\in A\implies ax\in I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que 
+\begin_inset Formula $I$
+\end_inset
+
+ es un ideal.
+\end_layout
+
+\begin_layout Standard
+¿Es maximal?
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $J$
+\end_inset
+
+ un ideal propio.
+ 
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $x\in J,$
+\end_inset
+
+ si 
+\begin_inset Formula $x$
+\end_inset
+
+ no es invertible, entonces 
+\begin_inset Formula $x\in I.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $x$
+\end_inset
+
+ es invertible, entonces 
+\begin_inset Formula $1\in J\implies J=A$
+\end_inset
+
+# Esto no puede ocurrir, pues 
+\begin_inset Formula $J$
+\end_inset
+
+ es propio.
+\end_layout
+
+\begin_layout Standard
+Así, 
+\begin_inset Formula $J\subset I,\forall J$
+\end_inset
+
+ propio.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.10 Demotrar que los siguientes anillos son locales (verifica las propiedades
+ del ejercicio anterior)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}_{p^{n}}}$
+\end_inset
+
+, donde 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ es primo y 
+\begin_inset Formula $\boldsymbol{n\geq0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+\begin_inset Formula $n=0$
+\end_inset
+
+
+\bar default
+ Es 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+, este caso no es cierto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=1$
+\end_inset
+
+ Es un cuerpo, por lo que se verifica (4) trivialmente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n>1$
+\end_inset
+
+ Los ideales propios son los 
+\begin_inset Formula $p^{i}\mathbb{Z}_{p^{n}}$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,...,n-1$
+\end_inset
+
+.
+ Pero, para todo 
+\begin_inset Formula $i>1$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $p|p^{i}$
+\end_inset
+
+, luego 
+\begin_inset Formula $p^{i}\mathbb{Z}_{p^{n}}\subset p\mathbb{Z}_{p^{n}}$
+\end_inset
+
+.
+ Por lo que hay un único ideal maximal y se verifica (1).
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.11 Sea 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ un anillo cuya característica es un número primo 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+.
+ Demostrar que la aplicación 
+\begin_inset Formula $\boldsymbol{x\mapsto x^{p^{n}}}$
+\end_inset
+
+es un endomorfismo de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ para todo 
+\begin_inset Formula $\boldsymbol{n\in\mathbb{Z}^{\geq0}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a,b\in A\implies p(a+b)=\left(a+b\right)^{p^{n}}=\sum_{i=0}^{p^{n}}\binom{p^{n}}{i}a^{p^{n}}b^{p^{n}-i}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Pero este sumatorio tiene al menos un factor 
+\begin_inset Formula $p$
+\end_inset
+
+ en todos los sumandos excepto el primero y el último (
+\begin_inset Formula $p^{n}$
+\end_inset
+
+ tiene 
+\begin_inset Formula $n-1$
+\end_inset
+
+ divisores menores que él mismo, por ser 
+\begin_inset Formula $p$
+\end_inset
+
+ primo).
+ Entonces
+\begin_inset Formula 
+\[
+p(a+b)=a^{p^{n}}+b^{p^{n}}=p(a)+p(b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $a,b\in A\implies p(ab)=\left(ab\right)^{p^{n}}=a^{p^{n}}b^{p^{n}}=p(a)p(b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(1)=1^{p^{n}}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y la aplicación es un homomorfismo.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.12 Demostrar que si 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ es un cuerpo finito con un subcuerpo 
+\begin_inset Formula $\boldsymbol{F}$
+\end_inset
+
+, entonces el cardinal de 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ es una potencia del cardinal de 
+\begin_inset Formula $\boldsymbol{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Consideremos 
+\begin_inset Formula $K$
+\end_inset
+
+ espacio vectorial sobre 
+\begin_inset Formula $F$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset Formula $a_{1},a_{2},a\in F\ y\ v_{1},v_{2},v\in K$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+a(v_{1}+v_{2})=av_{1}+av_{2}\quad(a_{1}+a_{2})v=a_{1}v+a_{2}v\quad a_{1}(a_{2}v)=(a_{1}a_{2})v\quad1\cdot v=v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que efectivamente es un EV.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $n=dim_{F}K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces
+\begin_inset Formula 
+\[
+_{F}K\simeq F^{n}\implies\left|K\right|=\left|F\right|^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Deducir que:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) El cardinal de cualquier cuerpo finito es una potencia de un número
+ primo
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $A=subanillo\ primo\ de\ K=\left\{ n1_{k}/n\in\mathbb{Z}\right\} $
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+\left|A\right|=cararterística(K)=p\implies A\simeq\mathbb{Z}_{p}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|K\right|=potencia\ de\ \left|A\right|=potencia\ de\ p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) Si 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ es un cuerpo finito con un subcuerpo 
+\begin_inset Formula $\boldsymbol{F}$
+\end_inset
+
+, entonces existen un número primo 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ y enteros positvios 
+\begin_inset Formula $\boldsymbol{n,m}$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\boldsymbol{n|m,\ \left|F\right|=p^{n}\ y\ \left|K\right|=p^{m}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F\ subcuerpo\implies F\ cuerpo\ finito\implies\left|F\right|=p^{n}\implies\left|K\right|=\left|F\right|^{l}=\left(p^{n}\right)^{l}=p^{nl}=p^{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.13 Demostrar que si 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ es un cuerpo finito entonces 1 y -1 son los únicos elementos de 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ cuyo cuadrado es 1.
+ Usar esto para demostrar que el producto de todos los elementos no nulos
+ de 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ es -1 y deducir el teorema de Wilson: Si 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+ es un número primo entonces 
+\begin_inset Formula $\boldsymbol{\left(p-1\right)!\equiv-1\mod p}$
+\end_inset
+
+.
+ Demostrar también el recíproco del teorema de Wilson: si 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ es un entero positivo que cumple 
+\begin_inset Formula $\boldsymbol{\left(n-1\right)!\equiv-1\mod n}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{n}$
+\end_inset
+
+ es primo.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $n=\left|K\right|$
+\end_inset
+
+.
+ Entonces en 
+\begin_inset Formula $K$
+\end_inset
+
+ hay 
+\begin_inset Formula $n$
+\end_inset
+
+ elementos, que además tienen que ser 
+\begin_inset Formula $0,1,1+1,...,1+1+...+1=(n-1)1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $K$
+\end_inset
+
+ es un cuerpo de 
+\begin_inset Formula $n$
+\end_inset
+
+ elementos, es isomorfo a 
+\begin_inset Formula $\mathbb{Z}_{n}$
+\end_inset
+
+, con 
+\begin_inset Formula $n$
+\end_inset
+
+ primo por el ejercicio anterior.
+\end_layout
+
+\begin_layout Standard
+Lo demostramos para 
+\begin_inset Formula $\mathbb{Z}_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $m^{2}=1\iff m^{2}-1=0\iff(m-1)(m+1)=0\iff m=\pm1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para verlo en 
+\begin_inset Formula $K$
+\end_inset
+
+, consideramos el isomorfismo entre los dos cuerpos, 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $x\in K$
+\end_inset
+
+ es tal que 
+\begin_inset Formula $x^{2}=1\implies f(x^{2})=f(1)=1\implies f(x)^{2}=1\implies f(x)=\pm1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $f(x)=1\implies x=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $f(x)=-1\implies f(-x)=-f(x)=1\implies-x=1\implies x=-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Segunda afirmación
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall x\in K,\exists y/xy=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así, el producto de todos los elementos será
+\begin_inset Formula 
+\[
+1\cdot x_{1}\cdot y_{1}\cdot...\cdot x_{m}\cdot y_{m}\cdot(-1)=1\cdot1\cdot...\cdot1\cdot(-1)=-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Teorema de Wilson
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p\ primo\implies\mathbb{Z}_{p}\ cuerpo\implies(p-1)!=\prod_{x\in\mathbb{Z}_{p}}x=-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Recíproco de Wilson
+\end_layout
+
+\begin_layout Standard
+Supongamos que 
+\begin_inset Formula $n$
+\end_inset
+
+ no es primo, entonces 
+\begin_inset Formula $\mathbb{Z}_{n}$
+\end_inset
+
+ no es cuerpo, y entonces 
+\begin_inset Formula $\exists x\in\mathbb{Z}_{n}$
+\end_inset
+
+ no nulo y no invertible.
+\end_layout
+
+\begin_layout Standard
+Entonces
+\begin_inset Formula 
+\[
+(n-1)!=\prod_{y\in\mathbb{Z}_{n}}y=x\cdot\prod_{y\in\mathbb{Z}_{n}\setminus\{x\}}y=...sacamos\ todos\ los\ no\ invertibles...=x_{1}\cdot...\cdot x_{m}\cdot\prod_{y\in\mathbb{Z}_{n}^{*}}y=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=x_{1}\cdot...\cdot x_{m}\cdot(-1)=-x_{1}\cdot...\cdot x_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Que no es -1, pues entonces sería invertible, y los 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ serían invertibles, pero sabemos que no es así.
+\end_layout
+
+\begin_layout Standard
+Luego 
+\begin_inset Formula $n$
+\end_inset
+
+ ha de ser primo.
+\end_layout
+
+\begin_layout Subsubsection*
+2.1.14 Sean 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ un ideal de un anillo y 
+\begin_inset Formula $\boldsymbol{p_{1},...,p_{n}}$
+\end_inset
+
+ ideales primos del mismo anillo.
+ Demostrar que si 
+\begin_inset Formula $\boldsymbol{I\subset\cup_{i=1}^{n}p_{i}}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{I\subset p_{i}}$
+\end_inset
+
+ para algún 
+\begin_inset Formula $\boldsymbol{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Divisibilidad
+\end_layout
+
+\begin_layout Subsubsection*
+2.2.2 Demostrar que si dos elementos de un anillo son asociados, entonces
+ uno es irreducible (resp.
+ primo) si y solo si lo es el otro.
+\end_layout
+
+\begin_layout Standard
+Por la proposición 2.15:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a,b$
+\end_inset
+
+ asociados sii 
+\begin_inset Formula $(a)=(b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a$
+\end_inset
+
+ primo sii 
+\begin_inset Formula $(a)$
+\end_inset
+
+ ideal primo no nulo de 
+\begin_inset Formula $D$
+\end_inset
+
+ sii 
+\begin_inset Formula $(b)$
+\end_inset
+
+ ideal primo no nulo de 
+\begin_inset Formula $D$
+\end_inset
+
+ sii 
+\begin_inset Formula $b$
+\end_inset
+
+ primo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a$
+\end_inset
+
+ irreducible sii 
+\begin_inset Formula $(a)$
+\end_inset
+
+ ideal maximal entre los ideales principales propios no nulos de 
+\begin_inset Formula $D$
+\end_inset
+
+ sii 
+\begin_inset Formula $(b)$
+\end_inset
+
+ ideal maximal entre los ideales principales propios no nulos de 
+\begin_inset Formula $D$
+\end_inset
+
+ sii 
+\begin_inset Formula $b$
+\end_inset
+
+ irreducible
+\end_layout
+
+\begin_layout Subsubsection*
+2.2.3 Sea 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ un elemento diferente de cero de un anillo 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+.
+ Demostrar que si todos los divisores de 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ son unidades o asociados de 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ es irreducible.
+ Demostrar que el recíproco se verifica si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es dominio pero no en general.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a$
+\end_inset
+
+ es irreducible sii 
+\begin_inset Formula $(a)$
+\end_inset
+
+ ideal maximal entre los ideales principales propios no nulos de 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Supongamos que no es irreducible, entonces existe un ideal principal 
+\begin_inset Formula $(b)$
+\end_inset
+
+ tal que 
+\begin_inset Formula $(a)\subset(b)$
+\end_inset
+
+ de forma propia.
+ Esto quiere decir que 
+\begin_inset Formula $b|a$
+\end_inset
+
+, pero la hipótesis nos dice que entonces 
+\begin_inset Formula $b$
+\end_inset
+
+ es unidad o asociado de 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Si es unidad, entonces 
+\begin_inset Formula $(b)=D$
+\end_inset
+
+, por lo que no es un ideal propio
+\end_layout
+
+\begin_layout Standard
+Si es asociado de 
+\begin_inset Formula $a,$
+\end_inset
+
+ entonces 
+\begin_inset Formula $(a)=(b)$
+\end_inset
+
+, por lo que no está contenido propiamente
+\end_layout
+
+\begin_layout Standard
+En cualquier caso, llegamos a una contradiccón, por lo que 
+\begin_inset Formula $a$
+\end_inset
+
+ debe ser irreducible.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Si 
+\begin_inset Formula $A$
+\end_inset
+
+ es dominio se verifica el recíproco
+\end_layout
+
+\begin_layout Standard
+¿
+\begin_inset Formula $a\in A$
+\end_inset
+
+ irreducible 
+\begin_inset Formula $\implies$
+\end_inset
+
+los divisores de 
+\begin_inset Formula $a$
+\end_inset
+
+ son unidades o asociados de 
+\begin_inset Formula $a$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\ irred\iff\left(a=bc\implies b\in A^{*}\ o\ c\in A^{*}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A$
+\end_inset
+
+ dominio implica 
+\begin_inset Formula $a$
+\end_inset
+
+ regular 
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $x/x|a\implies a=cx\implies c\in A^{*}\ ó\ x\in A^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $x\in A^{*}\implies x\ unidad\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $c\in A^{*}\implies x\notin A^{*},$
+\end_inset
+
+ pues sería 
+\begin_inset Formula $a=cx\in A^{*}$
+\end_inset
+
+, pero 
+\begin_inset Formula $a\notin A^{*}$
+\end_inset
+
+(pues es irreducible).
+ En un dominio, 
+\begin_inset Formula $a,x$
+\end_inset
+
+ son asociados sii 
+\begin_inset Formula $\exists c\in A^{*}:a=cx\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Si no es dominio no se verifica necesariamente
+\end_layout
+
+\begin_layout Standard
+..
+\end_layout
+
+\begin_layout Subsubsection*
+2.2.4 Demostrar las siguientes afirmaciones para elementos 
+\begin_inset Formula $\boldsymbol{a.b}$
+\end_inset
+
+ de un anillo
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) 
+\begin_inset Formula $\boldsymbol{i)\ a|b\iff ii)\ a=mcd(a,b)\iff iii)\ b=mcm(a,b)}$
+\end_inset
+
+.
+ En particular, 
+\begin_inset Formula $\boldsymbol{1=mcd(a,1),\ mcd(a,0)=a=mcm(a,1)}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{0=mcm(a,0)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $ii)\implies i)$
+\end_inset
+
+' Obvio
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $i)\implies ii)$
+\end_inset
+
+' Supongamos que 
+\begin_inset Formula $a\neq mcd(a,b)\implies\exists m/m|a\ y\ m|b\ y\ a|m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $m$
+\end_inset
+
+ son asociados, lo que quiere decir que 
+\begin_inset Formula $a=mcd\iff m=mcd$
+\end_inset
+
+# Contradicción, pues suponíamos que 
+\begin_inset Formula $a$
+\end_inset
+
+ no era el mcd.
+ 
+\end_layout
+
+\begin_layout Standard
+Por tanto, 
+\begin_inset Formula $a=mcd(a,b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $'iii)\implies i)$
+\end_inset
+
+' Obvio 
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $i)\implies iii)$
+\end_inset
+
+' Supongamos 
+\begin_inset Formula $b\neq mcm(a,b)\implies\exists M/a|M\ y\ b|M\ y\ M|b\implies M,b\ asociados\implies\left(b\ mcm\iff m\ mcm\right)\#$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para las demás afirmaciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $1|a\implies mcd(a,1)=1\ y\ mcm(a,1)=a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a|0\implies a=mcd(a,0)\ y\ mcm(a,0)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) Si 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ es irreducible entonces 
+\begin_inset Formula $\boldsymbol{mcd(a,b)=1\iff a\nmid b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' 
+\begin_inset Formula $mcd(a,b)=1\iff\begin{cases}
+1|a\\
+1|b\\
+\nexists c/1|c,c|a,c|b
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Supongamos que 
+\begin_inset Formula $a|b\implies\begin{cases}
+a|a\\
+a|b\\
+1|a
+\end{cases}\#$
+\end_inset
+
+ Contradicción con lo anterior.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Supongamos 
+\begin_inset Formula $mcd(a,b)=c\implies\begin{cases}
+c|a\\
+c|b\\
+1|c
+\end{cases}\implies\begin{cases}
+a=dc\\
+b=ec\\
+c=c1
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $a$
+\end_inset
+
+ es irreducible, 
+\begin_inset Formula $a=dc\implies d\in A^{*}\ ó\ c\in A^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $c\in A^{*}\implies1,c\ asociados\implies mcd(a,b)=1\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $d\in A^{*}\implies a,c\ asociados\implies a|b\#$
+\end_inset
+
+ Esto no puede ser.
+\end_layout
+
+\begin_layout Subsubsection*
+2.2.5 Demostrar las siguientes propiedades para 
+\begin_inset Formula $\boldsymbol{d,m}$
+\end_inset
+
+ dos elementos de un dominio 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ un subconjunto de 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) 
+\begin_inset Formula $\boldsymbol{d=mcd(S)}$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\boldsymbol{(d)}$
+\end_inset
+
+ es mínimo entre los ideales principales que contienen a 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+.
+ En particular, si 
+\begin_inset Formula $\boldsymbol{(S)}$
+\end_inset
+
+ es un ideal principal entonces cualquier generador suyo es un máximo común
+ divisor de 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+, y además existe una identidad de Bezout para 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' 
+\begin_inset Formula $d=mcd(S)\iff\left(d|x,\ \forall x\in S\ y\ c|x,\forall x\in S\implies c|d\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d|x\implies(x)\subset(d),\forall x\in S\implies(S)\subset(d)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sea otro 
+\begin_inset Formula $e$
+\end_inset
+
+ tal que 
+\begin_inset Formula $(S)\subset(e)\implies e|x,\forall x\in S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $(e)\subset(d)\implies d|e$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por tanto, 
+\begin_inset Formula $e=mcd(S)$
+\end_inset
+
+# Pues el mcd es 
+\begin_inset Formula $d$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' 
+\begin_inset Formula $S\subset(d)\implies\forall x\in S,x\in(d)\implies d|x,\forall x\in S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Supongamos 
+\begin_inset Formula $d\neq mcd(S)=e\implies\begin{cases}
+e|x,\forall x\in S\implies(x)\subset(e)\implies S\subset(e)\\
+d|e\implies(e)\subset(d)
+\end{cases}\implies S\subset(e)\subset(d)\#$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Segunda afirmación
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $(S)=k$
+\end_inset
+
+, entonces 
+\begin_inset Formula $(k)$
+\end_inset
+
+ es mínimo entre los ideales principales que contienen a 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ Por tanto 
+\begin_inset Formula $k=mcd(S)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Tercera afirmación
+\end_layout
+
+\begin_layout Standard
+Por la proposición 2.17.(5), si 
+\begin_inset Formula $d$
+\end_inset
+
+ es 
+\begin_inset Formula $mcd(S)$
+\end_inset
+
+ y 
+\begin_inset Formula $d\in(S)=(d)$
+\end_inset
+
+, entonces existe una identidad de Bezout para 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) 
+\begin_inset Formula $\boldsymbol{m=mcm(S)\iff(m)=\cap_{s\in S}(s)}$
+\end_inset
+
+.
+ En consecuencia, 
+\begin_inset Formula $\boldsymbol{mcm(S)}$
+\end_inset
+
+ existe si y solo si el ideal 
+\begin_inset Formula $\boldsymbol{\cap_{s\in S}(s)}$
+\end_inset
+
+ es principal, y entonces cualquier generador de este es un mcm de 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\implies$
+\end_inset
+
+' '
+\begin_inset Formula $\subset$
+\end_inset
+
+' 
+\begin_inset Formula $m=mcm(S)\iff\begin{cases}
+s|m,\ \forall s\in S\\
+s|n,\forall s\in S\implies m|n
+\end{cases}\iff\begin{cases}
+(m)\subset(s),\forall s\in S\\
+(n)\subset(s),\forall\in S\implies(n)\subset(m)
+\end{cases}\implies(m)\subset\cap_{s\in S}(s)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\supset$
+\end_inset
+
+' Sea 
+\begin_inset Formula $x\in\cap_{s\in S}(s)\implies x=a_{s}s,\forall s\in S\implies s|x,\forall s\in S\implies m|x\implies x\in(m)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\impliedby$
+\end_inset
+
+' Supongamos 
+\begin_inset Formula $m\neq mcm(S)=e\implies\begin{cases}
+s|e,\forall s\in S\\
+s|n,\forall s\in S\implies e|n
+\end{cases}\implies(e)\subset\cap_{s\in S}(s)\implies(e)\subset(m)\implies\begin{cases}
+m|e\\
+m\in\cap_{s\in S}(s)\implies s|m,\forall s\in S
+\end{cases}\implies e$
+\end_inset
+
+ no es 
+\begin_inset Formula $mcm(S)$
+\end_inset
+
+# 
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Segunda afirmación
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\exists m=mcm(S)\iff(m)=\cap_{s\in S}(s)$
+\end_inset
+
+ principal
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Tercera afirmación
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $(k)=\cap_{s\in S}(s)\implies k=mcm(S)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+2.2.6 Demostrar en 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}\left[\sqrt{-5}\right]}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) 
+\begin_inset Formula $\boldsymbol{2\ y\ 1+\sqrt{-5}}$
+\end_inset
+
+ son coprimos y sin embargo no hay una identidad de Bezout para 
+\begin_inset Formula $\boldsymbol{\left\{ 2,1+\sqrt{-5}\right\} }$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $a|2\ a|1+\sqrt{-5}\implies\begin{cases}
+N(a)|N(2)=2^{2}=4\\
+N(a)|N\left(1+\sqrt{-5}\right)=\left(1+\sqrt{-5}\right)\left(1-\sqrt{-5}\right)=6
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por tanto, ha de ser 
+\begin_inset Formula 
+\[
+a_{1}^{2}+5a_{2}^{2}|2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a_{1}^{2}+5a_{2}^{2}=2$
+\end_inset
+
+, no hay dos enteros que puedan verificar esto
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a_{1}^{2}+5a_{2}^{2}=1\implies N(a)=1\implies a\in\mathbb{Z}\left[\sqrt{-5}\right]^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por tanto, son coprimos.
+\end_layout
+
+\begin_layout Standard
+Para que exista una identidad de Bezout, debe suceder que 
+\begin_inset Formula $1\in(2,1+\sqrt{-5})$
+\end_inset
+
+.
+ O sea
+\begin_inset Formula 
+\[
+1=2a+\left(1+\sqrt{-5}\right)b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+con 
+\begin_inset Formula $a,b\in\mathbb{Z}\left[\sqrt{-5}\right]$
+\end_inset
+
+.
+ ¿Es esto posible?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2\left(a_{1}+a_{2}\sqrt{-5}\right)+\left(1+\sqrt{-5}\right)\left(b_{1}+b_{2}\sqrt{-5}\right)=2a_{1}+2a_{2}\sqrt{-5}+b_{1}+b_{2}\sqrt{-5}+b_{1}\sqrt{-5}-5b_{2}=1\iff
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff\begin{cases}
+2a_{1}+b_{1}-5b_{2}=1\\
+2a_{2}+b_{2}+b_{1}=0
+\end{cases}\implies1-b_{1}+5b_{2}=-b_{2}-b_{1}\iff1+5b_{2}=-b_{2}\iff1+6b_{2}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y ningún entero verifica esto.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) 
+\begin_inset Formula $\boldsymbol{2,\ 1+\sqrt{-5}}$
+\end_inset
+
+ no tienen mcm
+\end_layout
+
+\begin_layout Standard
+Supongamos que sí, entonces
+\begin_inset Formula 
+\[
+\begin{cases}
+2|m\implies N(2)|N(m)\implies4|N(m)\\
+1+\sqrt{-5}|m\implies6|N(m)
+\end{cases}\implies12=mcm(4,6)|N(m)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora bien, 
+\begin_inset Formula $6=3\cdot2=\left(1+\sqrt{-5}\right)\left(1-\sqrt{-5}\right)$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $m|6\implies N(m)|N(6)=36$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por tanto
+\begin_inset Formula 
+\[
+12|N(m)|36\implies N(m)\in\{12,36\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Puede ser 12?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{1}^{2}+5m_{2}^{2}=12\implies m_{1}^{2}\equiv2\mod5
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Modulo 5 los cuadrados son 
+\begin_inset Formula $1\ y\ 4$
+\end_inset
+
+.
+ Es decir, este caso no puede darse.
+\end_layout
+
+\begin_layout Standard
+¿Puede ser 36?
+\begin_inset Formula 
+\[
+m_{1}^{2}+5m_{2}^{2}=36\implies m_{1}^{2}\equiv1\mod5
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula $m_{1}\in\{-4,-1,1,4,6\}$
+\end_inset
+
+, los demás o su cuadrado se pasa de 36 o al cuadrado no son cong con 1
+ mod 5
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m_{1}=-1,1\implies5m_{2}^{2}=35\implies m_{2}^{2}=7$
+\end_inset
+
+.
+ Esto no tiene solución entera
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m_{1}=6\implies m_{2}=0$
+\end_inset
+
+ Ok
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m_{1}=-4,4\implies5m_{2}^{2}=20\implies m_{2}^{2}=4\implies m_{2}=\pm2$
+\end_inset
+
+ Ok
+\end_layout
+
+\begin_layout Standard
+O sea 
+\begin_inset Formula $m\in\{6,\pm4\pm2\sqrt{-5}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es fácil comprobar que los múltiplos comúnes son 
+\begin_inset Formula $\left\{ 6,-4+2\sqrt{-5},4-\sqrt{-5}\right\} $
+\end_inset
+
+.
+ Nótese que estos dos últimos son asociados.
+\end_layout
+
+\begin_layout Standard
+Ahora bien, si existe el mcm, como 
+\begin_inset Formula $a=6$
+\end_inset
+
+ y 
+\begin_inset Formula $b=4-2\sqrt{-5}$
+\end_inset
+
+ no son asociados, solo puede ser uno de ellos, y debe dividir al otro.
+\end_layout
+
+\begin_layout Standard
+Pero tenemos que 
+\begin_inset Formula $N(a)=N(b)=36$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $a|b\implies b=ac\implies N(b)=N(a)N(c)\implies36=36N(c)\implies N(c)=1\implies c=\pm1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero 
+\begin_inset Formula $b\neq\pm a$
+\end_inset
+
+, por lo que estos números no tienen mcm.
+\end_layout
+
+\begin_layout Subsubsection*
+2.2.7 Sea 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ un subconjunto finito de un anillo 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ y supongamos que para cada dos elementos distintos 
+\begin_inset Formula $\boldsymbol{s,t}$
+\end_inset
+
+ de 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ se verifica que 
+\begin_inset Formula $\boldsymbol{mcd(s,t)=1}$
+\end_inset
+
+.
+ Demostrar que 
+\begin_inset Formula $\boldsymbol{mcm(S)\prod_{s\in S}s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dominios de factorización única
+\end_layout
+
+\begin_layout Subsubsection*
+2.3.1 Sean 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ un DFU y 
+\begin_inset Formula $\boldsymbol{P}$
+\end_inset
+
+ un conjunto de representantes de los irreducibles de 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ por la relación de equivalencia 'ser asociados'.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) Demostrar que cada elemento 
+\begin_inset Formula $\boldsymbol{a\in D}$
+\end_inset
+
+ se puede escribir de forma única como 
+\begin_inset Formula $\boldsymbol{a=u\prod_{p\in P}p^{\alpha_{p}}}$
+\end_inset
+
+, donde 
+\begin_inset Formula $\boldsymbol{u}$
+\end_inset
+
+ es una unidad de 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+, cada 
+\begin_inset Formula $\boldsymbol{\alpha_{p}\geq0}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{\alpha_{p}=0}$
+\end_inset
+
+ para casi todo 
+\begin_inset Formula $\boldsymbol{p\in P}$
+\end_inset
+
+.
+ Llamaremos a esto la factorización de 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ en irreducibles de 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $a\in D$
+\end_inset
+
+, por ser DFU, tenemos que 
+\begin_inset Formula 
+\[
+a=u\cdot p_{1}\cdot...\cdot p_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y cualquier otra factorización es equivalente.
+\end_layout
+
+\begin_layout Standard
+Entonces, para cada 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+, tomamos su representante en 
+\begin_inset Formula $P,$
+\end_inset
+
+ 
+\begin_inset Formula $\overline{p_{i}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces, para cada 
+\begin_inset Formula $p_{i},p_{j}$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\overline{p_{i}}=\overline{p_{j}},$
+\end_inset
+
+ aumentamos en una unidad 
+\begin_inset Formula $\alpha_{p_{i}}$
+\end_inset
+
+, una vez hecho esto nos quedarán solo los representantes sin repetición
+ y sus respectivos exponentes, digamos que hay 
+\begin_inset Formula $k$
+\end_inset
+
+ distintos.
+\end_layout
+
+\begin_layout Standard
+Entonces
+\begin_inset Formula 
+\[
+a=u\cdot u_{1}\overline{p_{1}}\cdot...\cdot u_{n}\overline{p_{n}}=u\cdot u_{1}\cdot...\cdot u_{n}\cdot\overline{p_{1}}^{\alpha_{\overline{p_{1}}}}\cdot...\cdot\overline{p_{k}}^{\alpha_{\overline{p_{k}}}}=v\cdot\overline{p_{1}}^{\alpha_{\overline{p_{1}}}}\cdot...\cdot\overline{p_{k}}^{\alpha_{\overline{p_{k}}}}=v\prod_{i=1...n}\overline{p_{i}}^{\alpha_{\overline{p_{i}}}}=v\prod_{p\in P}p^{\alpha_{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $\alpha_{p}=0,\forall p\notin\left\{ \overline{p_{1}},...,\overline{p_{k}}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) Demostrar que si
+\begin_inset Formula 
+\[
+\boldsymbol{a=u\prod_{p\in P}p^{\alpha_{p}}\quad y\quad b=v\prod_{p\in P}p^{\beta_{p}}}
+\]
+
+\end_inset
+
+ son las factorizaciones de 
+\begin_inset Formula $\boldsymbol{a,b}$
+\end_inset
+
+ es irreducibles de 
+\begin_inset Formula $\boldsymbol{P}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{a|b}$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\boldsymbol{\alpha_{p}\leq\beta_{p},\forall p\in P}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a|b\iff b=ca\iff v\prod_{p\in P}p^{\beta_{p}}=cu\prod_{p\in P}p^{\alpha_{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula 
+\[
+c=w\prod_{p\in P}p^{\gamma_{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo anterior queda
+\begin_inset Formula 
+\[
+v\prod_{p\in P}p^{\beta_{p}}=wu\prod_{p\in P}p^{\gamma_{p}+\alpha_{p}}\iff\forall p\in P,\ p^{\beta_{p}}=p^{\gamma_{p}+\alpha_{p}}\iff\forall p\in P,\ \beta_{p}=\gamma_{p}+\alpha_{p},\ para\ algún\ \gamma_{p}\geq0\iff\beta_{p}\geq\alpha_{p}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+(3) El número de divisores de un elemento no nulo 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ de 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ es finito, salvo asociados.
+ 
+\end_layout
+
+\begin_layout Standard
+Por (2), los divisores son aquellos números que tienen los coeficientes
+ de su factorización en irreducibles de 
+\begin_inset Formula $P$
+\end_inset
+
+ menores o iguales que los de 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como son no negativos, y hay un número finito de exponentes no nulos, esta
+ cantidad es finita.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(4) Obtener una fórmula para calcular el número de divisores de 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+, salvo asociados, en términos de una factorización de 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La fórmula consiste en la cantidad de formas distintas de coger los coeficientes
+, es 
+\begin_inset Formula 
+\[
+\prod_{p\in P}\left(\alpha_{p}+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ejemplo
+\begin_inset Formula 
+\[
+20=2^{2}\cdot3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La fórmula da 
+\begin_inset Formula $3\cdot2=6$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(5) Demostrar que todo subconjunto de 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ tiene mcd y mcm y dar una fórmula para ambos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $1|x,\ \forall x\in S\subset D\implies\exists mcd(S)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $S$
+\end_inset
+
+ es finito, entonces podemos tomar el máximo de los coeficientes de cada
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ para cada elemento de 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ Multiplicando todos estos 
+\begin_inset Formula $p^{max\{\alpha_{p}\}}$
+\end_inset
+
+ obtenemos un mcm
+\end_layout
+
+\begin_layout Standard
+Si es infinito, puede no haber mcm, ejemplo 
+\begin_inset Formula $\left\{ n\in\mathbb{N}/n\ par\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las fórmulas son
+\begin_inset Formula 
+\[
+mcd(S)=\prod_{p\in P}p^{\omega_{p}},\qquad\omega_{p}=max\left\{ \alpha:p^{\alpha}|s,\forall s\in S\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+mcm(S)=\prod_{p\in P}p^{\sigma_{p}},\qquad\sigma_{p}=max\left\{ \alpha:p^{\alpha}|s,\ para\ algún\ s\in S\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(6) Dar ejemplos de conjuntos 
+\begin_inset Formula $\boldsymbol{P}$
+\end_inset
+
+ como los del ejercicios para 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{K\left[X\right]}$
+\end_inset
+
+ con 
+\begin_inset Formula $\boldsymbol{K}$
+\end_inset
+
+ cuerpo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\mathbb{Z}\right)=\left\{ p\in\mathbb{Z}/p\ primo\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P\left(K\left[X\right]\right)=\left\{ X^{n}/n\geq0\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+2.3.2 Sea 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ un dominio y supongamos que existe una aplicación 
+\begin_inset Formula $\boldsymbol{\mu:D\rightarrow\mathbb{Z}^{\geq0}}$
+\end_inset
+
+ que verifica las propiedades:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{\mu(ab)=\mu(a)\mu(b),\ \forall a,b\in D}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{\mu(a)=0\iff a=0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{\mu(a)=1\iff a\in D^{*}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Demostrar que 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ es DF.
+ Demostrar que si 
+\begin_inset Formula $\boldsymbol{\mu(a)}$
+\end_inset
+
+ es primo y diferente de 
+\begin_inset Formula $\boldsymbol{\mu(1)}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $\boldsymbol{a}$
+\end_inset
+
+ es irreducible en 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Este no sé hacerlo
+\end_layout
+
+\begin_layout Subsubsection*
+2.3.3 ¿Qué conclusión sobre el anillo 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}\left[\sqrt{-3}\right]}$
+\end_inset
+
+ se extrae de la igualdad 
+\begin_inset Formula $\boldsymbol{\left(1+\sqrt{-3}\right)\left(1-\sqrt{-3}\right)=4}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Que no es 
+\begin_inset Formula $DFU$
+\end_inset
+
+, puesto que también se verifica 
+\begin_inset Formula $4=2\cdot2$
+\end_inset
+
+ y 
+\begin_inset Formula $2$
+\end_inset
+
+ no es asociado de ninguno de los otros dos factores.
+ Para comprobar esto suponemos que si y veremos que no puede ser.
+\end_layout
+
+\begin_layout Standard
+\align left
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Standard
+El 2.3.4 es muy pesado.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+2.3.5 Sea 
+\begin_inset Formula $\boldsymbol{m\neq1}$
+\end_inset
+
+ un entero libre de cuadrados y sea 
+\begin_inset Formula $\boldsymbol{R=\mathbb{Z}\left[\sqrt{m}\right]}$
+\end_inset
+
+.
+ Se pide:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) Usando la igualdad 
+\begin_inset Formula $\boldsymbol{\left(m+\sqrt{m}\right)\left(m-\sqrt{m}\right)=m(m-1)}$
+\end_inset
+
+, demostrar que 2 no es primo en 
+\begin_inset Formula $\boldsymbol{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m(m-1)$
+\end_inset
+
+ es par, pues si 
+\begin_inset Formula $m-1$
+\end_inset
+
+ es impar, entonces 
+\begin_inset Formula $m$
+\end_inset
+
+ es par, y al revés.
+\end_layout
+
+\begin_layout Standard
+Por tanto 
+\begin_inset Formula $m(m-1)=2\cdot k\implies2|m(m-1)=\left(m+\sqrt{m}\right)\left(m-\sqrt{m}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero 
+\begin_inset Formula $2\nmid m+\sqrt{m},$
+\end_inset
+
+ pues si fuese así, entonces
+\begin_inset Formula 
+\[
+m+\sqrt{m}=2c\implies\begin{cases}
+m\ par\implies\sqrt{m}\ par\\
+m\ impar\implies\sqrt{m}\ impar
+\end{cases}\implies\sqrt{m}\ entero\#
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Contradicción, pues 
+\begin_inset Formula $m$
+\end_inset
+
+ es libre de cuadrados.
+\end_layout
+
+\begin_layout Standard
+Con 
+\begin_inset Formula $m-\sqrt{m}$
+\end_inset
+
+ el razonamiento es el mismo.
+\end_layout
+
+\begin_layout Standard
+\align left
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Standard
+El 2 y el 3 no me salen
+\end_layout
+
+\begin_layout Standard
+\align left
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(4) Encontrar dos factorizaciones de 4 esencialmente distintas en 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}\left[\sqrt{-3}\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(1+\sqrt{-3}\right)\left(1-\sqrt{-3}\right)=4=2\cdot2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(5) Encontrar dos factorizaciones de 6 esencialmente distintas en 
+\begin_inset Formula $\boldsymbol{\mathbb{Z}\left[\sqrt{-6}\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2\cdot3=6
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(a+b\sqrt{-6}\right)\left(c+d\sqrt{-6}\right)=\left(ac-6bd\right)+\left(ad+bc\right)\sqrt{-6}=6\iff\begin{cases}
+ac-6bd=6\\
+ad+bc=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b=1,d=-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+ac+6=0\\
+-a+c=0
+\end{cases}\implies a=0=c
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así
+\begin_inset Formula 
+\[
+6=\left(\sqrt{-6}\right)\left(-\sqrt{-6}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Standard
+Los dos que faltan son parecidos
+\end_layout
+
+\begin_layout Subsection
+Dominios de ideales principales
+\end_layout
+
+\begin_layout Subsubsection*
+2.4.1 Sea 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ un DIP y sean 
+\begin_inset Formula $\boldsymbol{S\subset D}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{a,b,c\in D}$
+\end_inset
+
+.
+ Demostrar:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ tiene un mcm
+\end_layout
+
+\begin_layout Standard
+Por el ejercicio 2.2.5 mcm existe sii 
+\begin_inset Formula $\cap_{s\in S}(s)$
+\end_inset
+
+ es principal.
+\end_layout
+
+\begin_layout Standard
+Como es DIP, es principal.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ tiene un mcd y existe una identidad de Bezout para 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por el 2.2.5, si 
+\begin_inset Formula $(S)$
+\end_inset
+
+ es principal, entonces cualquier generador suyo es mcd y admite identidad
+ de Bezout.
+\end_layout
+
+\begin_layout Standard
+Como es DIP, 
+\begin_inset Formula $(S)$
+\end_inset
+
+ es principal.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(3) 
+\begin_inset Formula $\boldsymbol{d=mcd\left\{ a_{1},...,a_{n}\right\} \iff d|a_{i},\forall i=1,...,n\ y\ \exists r_{1},...,r_{n}\in D}/\boldsymbol{r_{1}a_{1}+...+r_{n}a_{n}=d}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se deduce inmediatamente del apartado anterior.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(4) Los elementos 
+\begin_inset Formula $\boldsymbol{a_{1},...,a_{n}}$
+\end_inset
+
+ son coprimos si y solo si 
+\begin_inset Formula $\boldsymbol{\exists r_{1},...,r_{n}\in D/r_{1}a_{1}+...+r_{n}a_{n}=1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Son coprimos sii el mcd es 1 sii existe esa identidad, por el apartado anterior.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(5) Si 
+\begin_inset Formula $\boldsymbol{d=mcd(a,b)\implies mcd\left(\frac{a}{d},\frac{b}{d}\right)=1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por el (3), 
+\begin_inset Formula $d=mcd(a,b)\iff d|a,d|b\ y\ \exists c,d/ca+db=d\implies c\frac{a}{d}+d\frac{b}{d}=1\overset{(4)}{\implies}mcd\left(\frac{a}{d},\frac{b}{d}\right)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(6) 
+\series default
+no me sale
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(7) Si 
+\begin_inset Formula $\boldsymbol{mcd(a,b)=1\ y\ a|bc\implies a|c}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $a\nmid c\implies a$
+\end_inset
+
+ no es primo, pues 
+\begin_inset Formula $a|bc$
+\end_inset
+
+ pero 
+\begin_inset Formula $a\nmid b\ y\ a\nmid c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿
+\begin_inset Formula $mcd(a,c)=1$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Supongamos que 
+\begin_inset Formula $1\neq d=mcd(a,c)$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+\begin{cases}
+d|a\\
+d|c\implies d|bc
+\end{cases}\implies\begin{cases}
+d|a\\
+d|bc\\
+a|a\\
+a|bc
+\end{cases}\overset{d\ mcd}{\implies}a|d\overset{d|a}{\implies}a,d\ asociados\overset{d|c}{\implies}a|c\#
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Contradicción, por lo que 
+\begin_inset Formula $mcd(a,c)=1$
+\end_inset
+
+# Contradicción, pues si 
+\begin_inset Formula $mcd(a,b)=1=mcd(a,c)\overset{(6)}{\implies mcd(a,bc)=1},$
+\end_inset
+
+ pero 
+\begin_inset Formula $a|bc$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(8) y (9) 
+\series default
+no me salen
+\end_layout
+
+\begin_layout Standard
+\align left
+|———————————————————————————————————————————|
+\end_layout
+
+\begin_layout Standard
+El 2.4.2 es una proposición del capítulo 3 (prop 3.13)
+\end_layout
+
+\begin_layout Subsubsection*
+2.4.3 Demostrar que si todos los ideales de un anillo 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ son principales e 
+\begin_inset Formula $\boldsymbol{I}$
+\end_inset
+
+ es un ideal de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ entonces todos los ideales de 
+\begin_inset Formula $\boldsymbol{\frac{A}{I}}$
+\end_inset
+
+ son principales.
+ ¿En qué condiciones si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es un DIP se verificará que 
+\begin_inset Formula $\boldsymbol{\frac{A}{I}}$
+\end_inset
+
+ también es un DIP?
+\end_layout
+
+\begin_layout Standard
+Esto se demuestra en el ejercicio 1.5.7
+\end_layout
+
+\begin_layout Standard
+La segunda pregunta, al relacionarla con la primera, vemos que lo que debe
+ verificarse es que 
+\begin_inset Formula $\frac{A}{I}$
+\end_inset
+
+ sea dominio, o sea que 
+\begin_inset Formula $I$
+\end_inset
+
+ debe ser maximal o primo, por la proposición 2.24.
+\end_layout
+
+\begin_layout Subsection
+Dominios euclídeos
+\end_layout
+
+\begin_layout Subsubsection*
+2.5.1 Demostrar que si 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ es un DIP entonces todo ideal se puede poner de forma única como producto
+ de ideales maximales.
+ ¿Qué ideales son intersección de ideales maximales?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D\ DIP\implies D\ DFU$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $0\neq I\triangleleft D$
+\end_inset
+
+, al ser DIP, tenemos que 
+\begin_inset Formula $I=(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por ser DFU, 
+\begin_inset Formula $a=up_{1}\cdot...\cdot p_{k}$
+\end_inset
+
+, donde 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ son irreducibles.
+\end_layout
+
+\begin_layout Standard
+Entonces 
+\begin_inset Formula $I=(a)=(p_{1}\cdot...\cdot p_{k})=(p_{1})...(p_{k})=P_{1}...P_{k}=(q_{1}...q_{m})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y cada 
+\begin_inset Formula $(p_{i})=P_{i}$
+\end_inset
+
+ es ideal maximal, por ser 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ irred.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a=up_{1}...p_{k}=vq_{1}...q_{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k=m$
+\end_inset
+
+ y podemos suponer 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ asociado de 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+, luego 
+\begin_inset Formula $(p_{i})=(q_{i}),\forall i$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+2.5.2 Demostrar que si 
+\begin_inset Formula $\boldsymbol{f:A\rightarrow B}$
+\end_inset
+
+ es un homomorfismo suprayectivo entre DI entonces o bien 
+\begin_inset Formula $\boldsymbol{f}$
+\end_inset
+
+ es un isomorfismo o bien 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+ es un cuerpo.
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $f$
+\end_inset
+
+ no es isomorfismo, entonces 
+\begin_inset Formula $f$
+\end_inset
+
+ no es inyectiva, por lo que 
+\begin_inset Formula $Kerf\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por el primer teorema de isomorfía
+\begin_inset Formula 
+\[
+\frac{A}{Kerf}\simeq B\implies\frac{A}{Kerf}\ dominio\implies Kerf\ primo
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por la proposición 2.24, se tiene que 
+\begin_inset Formula $Kerf$
+\end_inset
+
+ es maximal, lo que implica que 
+\begin_inset Formula $\frac{A}{Kerf}$
+\end_inset
+
+ es cuerpo, lo que equivale a que 
+\begin_inset Formula $B$
+\end_inset
+
+ sea cuerpo.
+\end_layout
+
+\begin_layout Subsubsection*
+2.5.3 Sea 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ un DIP y sea 
+\begin_inset Formula $\boldsymbol{a=p_{1}^{e_{1}}...p_{k}^{e_{k}}}$
+\end_inset
+
+ con 
+\begin_inset Formula $\boldsymbol{p_{1},...,p_{k}}$
+\end_inset
+
+irreducibles no asociados de 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+.
+ Demostrar que
+\begin_inset Formula 
+\[
+\boldsymbol{\frac{D}{(a)}\cong\frac{D}{\left(p_{1}^{e_{1}}\right)}\times...\times\frac{D}{\left(p_{k}^{e_{k}}\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ser DIP, es DFU, y entonces los irreducibles son primos.
+\end_layout
+
+\begin_layout Standard
+Entonces los 
+\begin_inset Formula $p_{i}^{e_{i}}$
+\end_inset
+
+ son coprimos, o sea 
+\begin_inset Formula $mcd(p_{1}^{e_{1}},...,p_{k}^{e_{k}})=1$
+\end_inset
+
+.
+ Por el ejercicio 2.4.1 (9), tenemos que 
+\begin_inset Formula $mcd\cdot mcm$
+\end_inset
+
+ y 
+\begin_inset Formula $\prod_{i}p_{i}^{e_{i}}$
+\end_inset
+
+ son asociados.
+\end_layout
+
+\begin_layout Standard
+Es decir, que 
+\begin_inset Formula $1\cdot mcm$
+\end_inset
+
+ es asociado de 
+\begin_inset Formula $a\implies a=mcm(p_{1}^{e_{1}},...,p_{k}^{e_{k}})\implies(a)=\cap_{i}(p_{i}^{e_{i}})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Como son coprimos, son coprimos dos a dos, entonces 
+\begin_inset Formula $(p_{i})+(p_{j})=D,\forall i\neq j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Así, estamos en las condiciones del teorema chino de los restos.
+ O sea, que 
+\begin_inset Formula 
+\[
+\frac{A}{(a)}=\frac{A}{\cap_{i}(p_{i}^{e_{i}})}\cong\frac{A}{\left(p_{1}^{e_{1}}\right)}\times...\times\frac{D}{\left(p_{k}^{e_{k}}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+El cuerpo de fracciones de un dominio
+\end_layout
+
+\begin_layout Subsubsection*
+2.6.1 Sea 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ un dominio y sea 
+\begin_inset Formula $\boldsymbol{Q}$
+\end_inset
+
+ su cuerpo de fracciones.
+ Demostrar que:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(1) Si 
+\begin_inset Formula $\boldsymbol{D'}$
+\end_inset
+
+ es un subanillo de 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+ con cuerpo de fracciones 
+\begin_inset Formula $\boldsymbol{Q'}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{Q}$
+\end_inset
+
+ contiene un subcuerpo isomorfo a 
+\begin_inset Formula $\boldsymbol{Q'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D'$
+\end_inset
+
+ subanillo de 
+\begin_inset Formula $D$
+\end_inset
+
+ dominio 
+\begin_inset Formula $\implies D'$
+\end_inset
+
+ dominio
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\subset Q\implies D\overset{u}{\rightarrow}Q\ hom\ iny
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+D'\subset D\implies D'\overset{i}{\rightarrow}D\ hom\ iny
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+D'\overset{u\circ i}{\rightarrow}Q\ hom\ iny
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por la proposición 2.35, 
+\begin_inset Formula $Q$
+\end_inset
+
+ contiene un subcuerpo isomorfo a 
+\begin_inset Formula $Q'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(2) Si 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ es un subanillo de 
+\begin_inset Formula $\boldsymbol{Q}$
+\end_inset
+
+ que contiene a 
+\begin_inset Formula $\boldsymbol{D}$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\boldsymbol{Q}$
+\end_inset
+
+ es un cuerpo de cocientes de 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\subset$
+\end_inset
+
+' 
+\begin_inset Formula $D\subset A\implies Q(D)\subset Q(A)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+'
+\begin_inset Formula $\supset$
+\end_inset
+
+' 
+\begin_inset Formula $Q$
+\end_inset
+
+ cuerpo 
+\begin_inset Formula $\implies Q$
+\end_inset
+
+ dominio
+\begin_inset Formula $\implies A$
+\end_inset
+
+ dominio
+\begin_inset Formula 
+\[
+A\overset{u}{\rightarrow}Q\ hom\ iny
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por la prop 2.35, 
+\begin_inset Formula $Q$
+\end_inset
+
+ contiene un subcuerpo isomorfo a 
+\begin_inset Formula $Q(A)\implies Q(A)\subset Q(D)$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
