@@ -1,0 +1,3704 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Esquema TDS
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Section
+Patrones GRASP
+\end_layout
+
+\begin_layout Subsection*
+Patrón EXPERTO
+\end_layout
+
+\begin_layout Standard
+Las responsabilidades deben recaer sobre la clase que tiene la información
+ necesaria para cumplimentarla.
+\end_layout
+
+\begin_layout Standard
+Para lograrlo podemos distribuir responsabilidades de forma homogénea y
+ no crear clases dios.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Beneficios:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Se conserva encapsulación
+\end_layout
+
+\begin_layout Itemize
+Produce alta cohesión
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Patrón CREADOR
+\end_layout
+
+\begin_layout Standard
+Es importante determinar qué clase es la responsable de crear una nueva
+ instancia de una cierta clase.
+ 
+\end_layout
+
+\begin_layout Standard
+Una clase B debe tener la responsabilidad de crear instancias de otra clase
+ A si:
+\end_layout
+
+\begin_layout Itemize
+B es una agregación de objetos de A
+\end_layout
+
+\begin_layout Itemize
+B contiene objetos de A
+\end_layout
+
+\begin_layout Itemize
+B registra instancias de A
+\end_layout
+
+\begin_layout Itemize
+B hace un uso específico de los objetos de A
+\end_layout
+
+\begin_layout Itemize
+B proporciona los datos de inicialización necesarios para crear un objeto
+ de A
+\end_layout
+
+\begin_layout Standard
+Este patrón nos proporciona los siguientes
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Beneficios:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bajo acoplamiento
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Patrón CONTROLADOR
+\end_layout
+
+\begin_layout Standard
+Determina quién se encarga de manejar eventos externos a uno o más objetos
+ controlador, que pueden representar el sistema o una funcionalidad concreta.
+\end_layout
+
+\begin_layout Standard
+Actúa de fachada entre la capa de presentación (GUI) y la capa de dominio
+\end_layout
+
+\begin_layout Standard
+Incluye, al menos, un método por cada operación atendida.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Beneficios:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Separación modelo-vista
+\end_layout
+
+\begin_layout Itemize
+Posibilidad de capturar información sobre el estado de una sesión
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Patrones de diseño
+\end_layout
+
+\begin_layout Subsection
+Patrones de Creación
+\end_layout
+
+\begin_layout Standard
+Proporcionan mecanismos de creación de objetos que incrementan la flexibilidad
+ y reutilización del código existente.
+\end_layout
+
+\begin_layout Subsection*
+Patrón ABSTRACT FACTORY (Factoría Abstracta)
+\end_layout
+
+\begin_layout Itemize
+Tiene como 
+\series bold
+propósito
+\series default
+ proporcionar una interfaz para crear familias de objetos relacionados o
+ dependientes sin especificar la clase concreta.
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando un sistema debería ser configurado para una familia familia de productos
+ y ser independientes de familias y productos concretos, ya sea por no conocer
+ las clases concretas de antemano o por querer permitir una futura extensibilida
+d
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desacopla a la aplicación de las clases concretas de implementación
+\end_layout
+
+\begin_layout Itemize
+Facilita el intercambio de familias de productos
+\end_layout
+
+\begin_layout Itemize
+Favorece la consistencia entre productos
+\end_layout
+
+\begin_layout Itemize
+Un nuevo producto requiere modificar todas las factorías
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Principio de responsabilidad única:
+\series default
+ podemos mover el código de creación de productos a un solo lugar, mejoran
+ la mantenibilidad del código
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se 
+\series bold
+implementan 
+\series default
+como singleton.
+ La factoría abstracta será una interfaz con una lista de métodos de creación
+ para todos los productos que son parte de la familia de productos.
+ Estos productos habrán sido implementados mediante una interfaz, y cada
+ línea del producto implementará la concreción de la interfaz.
+ La factoría abstracta devolverá productos abstractos representados por
+ estas interfaces.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Para cada variante de una familia de productos, creamos una clase de fábrica
+ independiente basada en la interfaz que hemos descrito.
+ Así, una fábrica es una clase que devuelve productos de un tipo particular.
+\end_layout
+
+\begin_layout Standard
+El código cliente tiene que funcionar con fábricas y productos a través
+ de las interfaces, de esta forma podemos cambiar el tipo de fábrica que
+ le pasamos, así como la variante del producto, sin descomponer el propio
+ código cliente.
+\end_layout
+
+\begin_layout Standard
+Ahora bien, si el cliente solo está expuesto a las interfaces abstractas,
+ ¿cómo se crean los objetos de fábrica? Normalmente la aplicación crea un
+ objeto de fábrica concreto en la etapa de inicialización.
+ Justo antes, la aplicación debe seleccionar el tipo de fábrica.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado1.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+productos abstractos
+\series default
+ declaran interfaces para un grupo de productos diferentes pero relacionados
+ que forman una familia de productos.
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+productos concretos
+\series default
+ son implementaciones distintas de productos abstractos agrupados por variantes.
+ Cada producto abstracto debe implementarse en todas las variantes.
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+fábrica abstracta
+\series default
+ declara un grupo de métodos para crear cada uno de los productos abstractos
+\end_layout
+
+\begin_layout Standard
+Las 
+\series bold
+fábricas concretas
+\series default
+ implementan los métodos de creación de la fábrica abstracta.
+ Cada fábrica concreta se corresponde con una variante de los productos.
+ Crea productos de esa variante.
+\end_layout
+
+\begin_layout Standard
+Aunque crean productos concretos, devuelven los productos abstractos correspondi
+entes.
+ Así, el código cliente no se acopla a la variante específica del producto
+ que obtiene de una fábrica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón FACTORY METHOD (Método Factoría)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ define un interfaz para crear un objeto, pero permite a las subclases decidir
+ la clase a instanciar: instanciación diferida a las subclases.
+\end_layout
+
+\begin_layout Itemize
+Viene 
+\series bold
+motivado
+\series default
+ por las situaciones en las que una clase B que utiliza una clase abstracta
+ A necesita crear instancias de subclases de A que no conoce.
+\end_layout
+
+\begin_layout Itemize
+Se puede 
+\series bold
+aplicar
+\series default
+ cuando una clase no puede anticipar la clase de objetos que debe crear.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Queremos ofrecer a los usuarios de nuestra biblioteca una forma de extender
+ sus componentes internos
+\end_layout
+
+\begin_layout Itemize
+Queremos ahorrar recursos mediante la reutilización de objetos existentes
+ en lugar de reconstruirlos cada vez
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Evita ligar un código a clases específicas de la aplicación
+\end_layout
+
+\begin_layout Itemize
+Puede suceder que las subclases de Creador solo se creen con el fin de la
+ creación de objetos (Esto debe evitarse)
+\end_layout
+
+\begin_layout Itemize
+El método factoría puede ser invocado por un cliente, no solo por la clases
+ Creador (esto se denomina 
+\series bold
+jerarquías paralelas
+\series default
+)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Para la 
+\series bold
+implementación
+\series default
+, tenemos dos posibilidades:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Crear el método factoría abstracto
+\end_layout
+
+\begin_layout Itemize
+Crearlo con una implementación por defecto
+\end_layout
+
+\begin_layout Standard
+Se debe evitar crear subclases de creador con metaclases y cuando el método
+ factoría puede tener un parámetro que identifica a la clase del objeto
+ a crear.
+\end_layout
+
+\begin_layout Standard
+En java está la alternativa de utilizar la interfaz funcional Supplier<>.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado8.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+producto
+\series default
+ declara la interfaz, que es común a todos los objetos que pueden producir
+ la clase creadora y sus subclases
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+productos concretos
+\series default
+ son distintas implementaciones de la interfaz de producto
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+creador
+\series default
+ declara el método factoría que devuelve nuevos objetos de producto.
+ El tipo de retorno debe ser la interfaz de producto.
+ Puede declararse abstracto para forzar a las subclases a implementarlo.
+ También puede devolver un producto por defecto.
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+creadores concretos
+\series default
+ sobrescriben el método factoría base, de modo que devuelva un tipo diferente
+ de producto
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón BUILDER (Constructor)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ la construcción de un objeto complejo, separando el proceso de construcción
+ de su representación, así que el mismo proceso puede crear diferentes represent
+aciones.
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuano deseamos crear un objeto complejo y que el algoritmo de creación
+ sea independiente de las piezas que conforman el objeto complejo y de cómo
+ se ensamblan.
+ O cuando el proceso de construcción debe permitir diferentes representaciones
+ para el objeto que se construye.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Para construir árboles con el patrón Composite u otros objetos complejos
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Permite cambiar la representación interna del producto
+\end_layout
+
+\begin_layout Itemize
+Reúne el código para la representación y el ensamblaje
+\end_layout
+
+\begin_layout Itemize
+Los clientes no necesitan saber nada sobre la estructura interna
+\end_layout
+
+\begin_layout Itemize
+Proporciona gran control del proceso de construcción
+\end_layout
+
+\begin_layout Itemize
+Diferentes directores pueden reutilizar un mismo builder
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Para 
+\series bold
+implementarlo
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+la interfaz de builder debe ser lo suficientemente general para permitir
+ la construcción de productos para cualquier builder concreto
+\end_layout
+
+\begin_layout Itemize
+la construcción puede ser más complicada que añadir el nuevo token al producto
+ en construcción
+\end_layout
+
+\begin_layout Itemize
+los métodos de la clase builder pueden no ser abstractos sino vacíos
+\end_layout
+
+\begin_layout Itemize
+las clases de los productos no siempre tienen una clase abstracta común
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Considera un builder cuando te enfrentes a un constructor con muchos parámetros
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+El patrón BUILDER organiza la construcción de objetos en una serie de pasos.
+ Para crear un objeto, se ejecuta una serie de estos pasos en un objeto
+ builder.
+ Lo importante es que no necesitas invocar todos los pasos, sino aquellos
+ que sean necesarios para producir una configuración particular de un objeto.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Clase directora: 
+\series default
+podemos extraer una serie de llamadas a los pasos del constructor que utilizamos
+ para construir un producto y ponerlas en una clase independiente, la directora.
+ Esta define el orden en el que se deben ejecutar los pasos de la construcción,
+ mientras que el constructor proporciona la implementación de esos pasos.
+ No es estrictamente necesaria, pero puede ser un buen lugar donde colocar
+ distintas rutinas de construcción para poder reutilizarlas a lo largo del
+ programa.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+Builder
+\series default
+ declara pasos de construcción de producto que todos los tipos de objetos
+ constructores tienen en común
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+builder concretos
+\series default
+ ofrecen distintas implementaciones de los pasos de construcción.
+ Pueden crear productos que no siguen la interfaz común
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+productos
+\series default
+ son los objetos resultantes.
+ Los construidos por distintos objetos builder no tienen que pertenecer
+ a la misma jerarquía de clases
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+directora
+\series default
+ define el orden en el que se invocarán los pasos de construcción.
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ debe asociar uno de los objetos constructores con la clase directora
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón SINGLETON
+\end_layout
+
+\begin_layout Itemize
+Su 
+\series bold
+propósito
+\series default
+ es asegurar que una clase tiene una única instancia y es un punto de acceso
+ global.
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando debe existir una única instancia de una clase, accesible globalmente.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Acceso controlado a la única instancia
+\end_layout
+
+\begin_layout Itemize
+Evita usar variables globales
+\end_layout
+
+\begin_layout Itemize
+Es posible generalizar a un número variable de instancias
+\end_layout
+
+\begin_layout Itemize
+No es lo mismo que declarar todos los métodos estáticos (no es posible definir
+ una jerarquía de clases y una clase puede cambiar y dejar de ser singleton)
+\end_layout
+
+\begin_layout Itemize
+La clase singleton puede tener subclases
+\end_layout
+
+\begin_layout Itemize
+Vulnera del principio de responsabiliad única
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Al usar singleton debemos ser cuidadosos al trabajar con 
+\series bold
+varios hilos
+\series default
+.
+ La manera más sencilla de crear un singleton seguro ante concurrencia es
+ hacer que el método de acceso global al singleton sea synchronized, de
+ forma que un solo hilo puede ejecutar este método en un momento dado.
+\end_layout
+
+\begin_layout Itemize
+La mejor forma de 
+\series bold
+implementar
+\series default
+ un singleton es utilizar un tipo enumerado de un único elemento.
+ Además, los singleton pueden ser inicializados de forma perezosa (se inicializa
+n cuando se utilizan por primera vez) o temprana (se inicializan cuando
+ se declaran).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado3.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+singleton
+\series default
+ declara el método estático 
+\begin_inset Formula $obtenerInstancia$
+\end_inset
+
+ que devuelve la misma instancia de su propia clase.
+\end_layout
+
+\begin_layout Standard
+El constructor del singleton debe ocultarse al cliente.
+ La llamada al método 
+\begin_inset Formula $obtenerInstancia$
+\end_inset
+
+ debe ser la única manera de obtener el objeto singleton.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Patrones Estructurales
+\end_layout
+
+\begin_layout Standard
+Explican cómo ensamblar objetos y clases en estructuras más grandes, mientras
+ se mantiene la flexibilidad y eficiencia de la estructura.
+\end_layout
+
+\begin_layout Subsection*
+Patrón ADAPTER/WRAPPER (Adaptador)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ convertir la interfaz de una clase en otra que una clase cliente espera.
+ Permite la colaboración de ciertas clases a pesar de tener interfaces incompati
+bles.
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando se desea usar una clase existente y su interfaz no coincide con
+ la que se necesita.
+ O se desea crear una clase reutilizable que debe colaborar con clases no
+ relacionadas o imprevistas.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+El tamaño de la clase adaptador depende de la similitud entre la interfaz
+ de las clases objetivo y adaptado.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Funcionamiento:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El adaptador obtiene una interfaz compatible con uno de los objetos existentes
+\end_layout
+
+\begin_layout Enumerate
+Usando esta interfaz, el objeto existente puede invocar con seguridad los
+ métodos del adaptador
+\end_layout
+
+\begin_layout Enumerate
+Al recibir una llamada, el adaptador pasa la solicitud al segundo objeto,
+ pero en el formato y orden que ese segundo objeto espera
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado4.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+cliente
+\series default
+ contiene la lógica de negocio existente del programa
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+interfaz con el cliente
+\series default
+ describe un protocolo que otras clases deben seguir para poer colaborar
+ con el código cliente
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Servicio
+\series default
+ es alguna clase útil.
+ El cliente no puede utilizarla directamente porque tiene una interfaz incompati
+ble
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+adaptador
+\series default
+ es capaz de trabajar tanto con la clase cliente como con la clase de servicio:
+ implementa la interfaz con el cliente, mientras envuelve el objeto de la
+ clase de servicio
+\end_layout
+
+\begin_layout Standard
+El código cliente no se acopla a la clase adaptador concreta siempre y cuando
+ funcione con la clase adaptadora a través de la interfaz con el cliente.
+ Gracias a esto, puedes introducir nuevos tipos de adaptadores en el programa
+ sin descomponer el código cliente existente.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón DAO: Adapter + Abstract Factory + Singleton
+\end_layout
+
+\begin_layout Standard
+El patrón DAO (Data Access Object) se utiliza para conseguir que una aplicación
+ sea independiente del sistema de almacenamiento utilizado.
+ Para una clase de negocio se crea una interfaz DAO que proporciona los
+ métodos CRUD para crear, recuperar, modificar y eliminar datos almacenados.
+\end_layout
+
+\begin_layout Standard
+La interfaz DAO es implementada por clases que se encargan de establecer
+ las conexiones a una fuente de datos concreta y encapsular cómo se accede
+ a dicha fuente.
+\end_layout
+
+\begin_layout Standard
+El patrón DAO utiliza una factoría abstracta para crear las instancias de
+ las clases DAO que requiere la aplicación, para conseguir que esta sea
+ independiente de un sistema concreto de almacenamiento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón BRIDGE/HANDLE
+\end_layout
+
+\begin_layout Itemize
+Su 
+\series bold
+propósito
+\series default
+ es desacoplar una abstracción de su implementación, de modo que los dos
+ puedan cambiar independientemente.
+ Permite dividir una clase grande, o un grupo de clases estrechamente relacionad
+as, en dos jerarquías separadas (asbtracción + implementación) que pueden
+ desarrollarse independientemente la una de la otra.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Abstracción:
+\series default
+ capa de control de alto nivel para una entidad.
+ No hace ningún trabajo real por su cuenta, sino que delega el trabajo a
+ la capa de 
+\series bold
+implementación
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Viene 
+\series bold
+motivado
+\series default
+ por situaciones en las que la herencia hace difícil reutilizar abstracciones
+ e implementaciones de forma independiente y si refinamos la abstracción
+ en una nueva subclase, esta tendrá tantas subclases como tenía la superclase.
+\end_layout
+
+\begin_layout Itemize
+Respecto a la 
+\series bold
+implementación
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Debe hacerse el constructor de la clase Abstracción + el método setImplementació
+n()
+\end_layout
+
+\begin_layout Itemize
+O elegir una implementación una implementación por defecto + el método setImplem
+entación()
+\end_layout
+
+\begin_layout Itemize
+O delegar a otro objeto (por ejemplo factoría)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ si se quiere evitar una ligadura permanente entre una abstracción y su
+ implementación, si las abstracciones e implementaciones son extensibles
+ o si se tiene una proliferación de clases.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Queremos extender una clase en varias dimensiones independientes
+\end_layout
+
+\begin_layout Itemize
+Necesitamos poder cambiar implementaciones en tiempo de ejecución
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Un objeto puede cambiar su implementación en tiempo de ejecución
+\end_layout
+
+\begin_layout Itemize
+Se mejora la extensibilidad
+\end_layout
+
+\begin_layout Itemize
+Se ocultan detalles de implementación a los clientes
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado5.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+abstracción
+\series default
+ ofrece lógica de control de alto nivel.
+ Depende de que el objeto de la implementación haga el trabajo de bajo nivel
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+implementación
+\series default
+ declara la interfaz común a todas las implementaciones concretas
+\end_layout
+
+\begin_layout Standard
+Las 
+\series bold
+implementaciones concretas 
+\series default
+contienen código específico de plataforma
+\end_layout
+
+\begin_layout Standard
+Las 
+\series bold
+abstracciones refinadas
+\series default
+ proporcionan variantes de lógica de control
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ solo está interesado en trabajar con la abstracción.
+ No obstante, el cliente tiene que vincular el objeto de la abstracción
+ con uno de los objetos de la implementación
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón COMPOSITE
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ componer objetos en estructuras jerárquicas para representar jerarquías
+ parte/todo.
+ Permite al código cliente manejar a los objetos primitivos y compuestos
+ de forma uniforme.
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando se quieren representar jerarquías parte/todo o se quiere que el
+ cliente ignore la diferencia entre objetos completos y los objetos individuales
+ que lo forman.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Jerarquía con clases que modelan objetos primitivos y compuestos de modo
+ uniforme
+\end_layout
+
+\begin_layout Itemize
+Clientes pueden tratar objetos primitivos y compuestos de modo uniforme
+\end_layout
+
+\begin_layout Itemize
+Es fácil añadir nuevos tipos de componentes
+\end_layout
+
+\begin_layout Itemize
+No se puede confiar al sistema de tipos que asegure que un objeto compuesto
+ solo contendrá objetos de ciertas clases, por lo que es necesario comprobarlo
+ en tiempo de ejecución.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Para 
+\series bold
+implementarlo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+las referencias de componentes hijos a su padre pueden ayudar al recorrido
+ y manejo de la estructura compuesta
+\end_layout
+
+\begin_layout Itemize
+Operaciones de añadir, eliminar y recuperar hijos pueden estar en Componente
+ Composite, llegando a un compromiso entre seguridad y transparencia
+\end_layout
+
+\begin_layout Itemize
+la estructura de datos adecuada para representar un composite dependerá
+ del contexto
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado6.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+component
+\series default
+ describe operaciones que son comunes a elementos simples y complejos del
+ árbol
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+hoja
+\series default
+ es un elemento básico de un árbol que no tiene subelementos
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+composite
+\series default
+ es un elemento que tiene subelementos: hojas u otros composites.
+ No conoce las clases concretas de sus hijos.
+ Funciona con todos los subelementos únicamente a través de la interfaz
+ componente
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ funciona con todos los elementos a través de la interfaz componente.
+ Así, el cliente puede funcionar de igual forma tanto con elementos simples
+ como complejos
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón DECORATOR (Decorador)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ asignar dinámicamente nuevas responsabilidades a un objeto.
+ Es una alternativa más flexible a crear subclases para extender la funcionalida
+d de una clase.
+\end_layout
+
+\begin_layout Itemize
+La 
+\series bold
+motivación 
+\series default
+es que en ocasiones se desea añadir atributos o comportamiento adicional
+ a un objeto concreto, no a una clase.
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando queremos añadir dinámicamente responsabilidades a objetos individuales
+ de forma transparente, sin afectar a otros objetos o para evitar una explosión
+ de clases
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+más flexible que la herencia
+\end_layout
+
+\begin_layout Itemize
+diferentes decoradores pueden ser conectados a un mismo objeto
+\end_layout
+
+\begin_layout Itemize
+reduce el número de propiedades en las clases de la parte alta de la jerarquía
+\end_layout
+
+\begin_layout Itemize
+es simple añadir nuevos decoradores de forma independiente a las clases
+ que extienden
+\end_layout
+
+\begin_layout Itemize
+puede dar lugar a aplicaciones con muchos y pequeños objetos
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Implementación:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+los componentes y decoradores deben heredar de una clase común que debe
+ ser ligera en funcionalidad.
+ Si no es así, es mejor utilizar el patrón estrategia.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado7.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+componente
+\series default
+ declara la interfaz común tanto para wrappers como para objetos envueltos
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+componente concreto
+\series default
+ es una clase de objetos envueltos.
+ Define el comportamiento básico, que los decoradores pueden alterar
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+decorador base
+\series default
+ tiene un campo para referenciar un objeto envuelto.
+ El tipo del campo debe declararse como la interfaz del compoennte, para
+ que pueda contener tanto los componentes concretos como los decoradores.
+ Esta clase delega todas las operaciones al objeto envuelto
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+decoradores concretos
+\series default
+ definen funcionalidad adicionales que se pueden añadir dinámicamente a
+ los componentes.
+ Sobrescriben métodos de la clase decoradores base y ejecutan su comportamiento,
+ ya sea antes o despues de invocar al método padre
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ puede envolver componentes en varias capas de decoradores, siempre y cuando
+ trabajen con todos los objetos a través de la interfaz del componente
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Diferencias entre Decorador y Estrategia:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="8cm">
+<column alignment="center" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Decorador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estrategia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Un componente no sabe nada sobre sus decoradores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Una estrategia no sabe nada sobre sus componentes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+El decorador envía los mensajes al componente que decora, pudiendo extender
+ la operación con nuevo comportamiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+La estrategia solo define un comportamiento del componente, en función del
+ contexto que este le proporciona
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Las clases que modelan los decoradores pueden añadir responsabilidades a
+ las que heredan de la clase Decorador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón FACADE (Fachada)
+\end_layout
+
+\begin_layout Itemize
+Su 
+\series bold
+propósito
+\series default
+ es proporcionar una única interfaz a un conjunto de clases de un subsistema
+ que ofrece una funcionalidad.
+ Define una interfaz de más alto nivel que facilita el uso de un subsistema.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Motivación: 
+\series default
+reducir las dependencias entre subsistemas
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando deseamos proporcionar una interfaz simple a un subsistema, hay muchas
+ dependencias entre clientes y las clases que implementan una abstracción
+ o se desea una arquitectura de varios niveles: una fachada define el punto
+ de entrada para cada nivel-subsistema
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+facilita a los clientes el uso de un subsistema al ocultar sus componentes
+\end_layout
+
+\begin_layout Itemize
+proporciona un acoplamiento débil entre un subsistema y los clientes: cambios
+ en los componentes no afectan a los clientes
+\end_layout
+
+\begin_layout Itemize
+no se impide a los clientes el uso de las clases del subsistema si lo necesitan
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Implementación:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+es posible reducir el acoplamiento entre clientes y el subsistema definiendo
+ la fachada como una clase abstracta con una subclase por cada implementación
+ del subsistema.
+\end_layout
+
+\begin_layout Itemize
+la fachada no es la única parte pública de un subsistema, sino que es posible
+ declarar clases individuales del subsistema como públicas
+\end_layout
+
+\begin_layout Itemize
+una fachada es normalmente un singleton
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado9.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El patrón 
+\series bold
+facade 
+\series default
+proporciona un práctico acceso a una parte específica de la funcionalidad
+ del subsistema.
+ Sabe a dónde dirigir la petición del cliente y cómo operar todas las partes
+ móviles
+\end_layout
+
+\begin_layout Standard
+Puede crearse una clase 
+\series bold
+fachada adicional
+\series default
+ para evitar contaminar una única fachada con funciones no relacionadas
+ que podrían convertirla en otra estructura compleja
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+subsistema complejo
+\series default
+ consiste en decenas de objetos diversos.
+ Para lograr que todos hagan algo significativo, debemos profundizar en
+ los detalles de implementación del subsistema, que pueden incluir inicializar
+ objetos en un orden concreto y suministrarles datos en un formato dado.
+ Las clases del subsistema no conocen la existencia de la fachada, operan
+ dentro del sistema y trabajan entre sí directamente
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ utiliza la fachada en lugar de invocar directamente los objetos del subsistema
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón FLYWEIGHT (Peso Ligero)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito: 
+\series default
+uso de objetos compartidos para soportar eficientemente un gran número de
+ objetos de poco tamaño.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Motivación:
+\series default
+ un flyweight es un objeto compartido que puede ser utilizado en diferentes
+ contextos simultáneamente, pues no hace asunciones sobre el contexto.
+ Se utilizan para modelar conceptos o entidades de los que se necesita una
+ gran cantidad en una aplicación.
+\end_layout
+
+\begin_layout Itemize
+Presenta dos estados:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+estado intrínseco:
+\series default
+ se almacena en el flyweight y consiste de información que es independiente
+ del contexto y se puede compartir
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+estado extrínseco:
+\series default
+ depende del contexto, por lo que no puede ser compartido.
+ Son los objetos clientes los que tienen esta información.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando se cumplen las siguientes condiciones:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+una aplicación utiliza un gran número de objetos de cierto tipo
+\end_layout
+
+\begin_layout Itemize
+el coste de almacenamiento es alto debido al excesivo número de objetos
+\end_layout
+
+\begin_layout Itemize
+la mayor parte del estado de esos objetos puede hacerse extrínseco
+\end_layout
+
+\begin_layout Itemize
+al separar el estado extrínseco, muchos grupos de objetos pueden reemplazarse
+ por unos pocos objetos compartidos
+\end_layout
+
+\begin_layout Itemize
+la aplicación no depende de la identidad de los objetos
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+puede introducir costes run-time debido a la necesidad de calcular y transferir
+ el estado extrínseco
+\end_layout
+
+\begin_layout Itemize
+la ganancia de espacio depende de la reducción del número de instancias,
+ del tamaño del estado extrínseco por objeto y de si el estado extrínseco
+ es almacenado o calculado
+\end_layout
+
+\begin_layout Itemize
+interesa que el estado extrínseco sea calculado
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Implementación:
+\series default
+ debido a que los flyweight son compartidos, no deberían ser instanciados
+ directamente por los clientes, es recomendable el uso de una factoría
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado10.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El patrón FLYWEIGHT es simplemente una optimización.
+ Antes de aplicarlo, debemos asegurarnos de que nuestro problema tiene un
+ problema de consumo de RAM provocado por tener una gran cantidad de objetos
+ similares en memoria al mismo tiempo
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+Flyweight
+\series default
+ contiene la parte del estado del objeto original que pueden compartir varios
+ objetos.
+ El mismo objeto flyweight puede utilizarse en muchos contextos diferentes.
+ El estado almacenado dentro de un objeto flywight es el intrínseco, mientras
+ que el que se pasa a sus métodos es el extrínseco
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+contexto
+\series default
+ contiene el estado extrínseco, único en todos los objetos originales.
+ Cuando un contexto se empareja con uno de los objetos flyweight, representa
+ el estado completo del objeto original
+\end_layout
+
+\begin_layout Standard
+El comportamiento del objeto original permanece en la clase flyweight.
+ Quien invoque un método del objeto flyweight debe también pasar las partes
+ adecuadas del estado extrínseco dentro de los parámetros del método
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ calcula o almacena el estado extrínseco de los objetos flyweight
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+fábrica flyweight
+\series default
+ gestiona un grupo de objetos flyweight existentes.
+ Con la fábrica, los clientes no crean objetos flyweight directamente.
+ En lugar de eso, invocan a la fábrica, pasándole partes del estado intrínseco
+ del objeto flyweight deseado.
+ La fábrica revisa objetos flyweight creados previamente y devuelve uno
+ existente que coincida con los criterios de búsqeuda o bien crea uno nuevo
+ si no hay coincidencias
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón PROXY (Sustituto)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito: 
+\series default
+proporcionar un sustituto de un objeto para controlar el acceso a dicho
+ objeto
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Motivación:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+diferir el coste de crear un objeto hasta que sea necesario usarlo: creación
+ bajo demanda
+\end_layout
+
+\begin_layout Itemize
+hay situaciones en las que un objeto cliente no referencia o no puede referencia
+r a otro objeto directamente, pero necesita interactuar con él.
+ Un objeto proxy puede actuar como intermediario entre el objeto cliente
+ y el objeto destino
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Para 
+\series bold
+implementarlo
+\series default
+ se convierte una referencia en un objeto que ocnforma con el objeto sustituido.
+ El objeto proxy tiene la misma interfaz que el objeto destino.
+ El objeto proxy mantiene una referencia al objeto destino y puede pasarle
+ a él los mensajes recibidos.
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando hay necesidad de referencias a un objeto mediante una referencia
+ más rica que un puntero o una referencia normal (como un proxy de acceso
+ remoto, virtual, para protección o de referencia inteligente, este último
+ proporciona operaciones adicionales a las que proporciona el propio objeto)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias: 
+\series default
+introduce un nivel de indirección para:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+un proxy remoto oculta el hecho de que los objetos residen en diferentes
+ espacios de direcciones
+\end_layout
+
+\begin_layout Itemize
+un proxy virtual puede crear o copiar un objeto bajo demanda.
+ Se usa cuando tenemos un objeto de servicio muy pesado que utiliza muchos
+ recursos del sistema al estar siempre funcionando, aunque solo lo necesitemos
+ de vez en cuando
+\end_layout
+
+\begin_layout Itemize
+un proxy para protección o las referencias inteligentes permiten realizar
+ tareas de control sobre los objetos accedidos
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Proxy para clonación perezosa:
+\series default
+ una razón para clonar un objeto Map es evitar mantener un bloqueo sobre
+ la colleción un largo tiempo, si solo se desean realizar operaciones de
+ consulta.
+ Los métodos synchronized para obtener el acceso exclusivo pueden resultar
+ inaceptables en algunas situaciones.
+ Algunas clases que implementan Map permiten la clonación, pero una clonación
+ previa puede ser innnecesaria, es mejor aplicar una clonación perezosa
+ y solo clonar cuando sea necesario.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado11.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+interfaz del servicio
+\series default
+ declara la interfaz del servicio.
+ El proxy debe seguir esta interfaz para poder camuflarse como objeto de
+ servicio
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Servicio
+\series default
+ es una clase que proporciona una lógica de negocio
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+proxy
+\series default
+ tiene un campo de referencia que apunta a un objeto de servicio.
+ Cuando el proxy finaliza su procesamiento, pasa la solicitud al objeto
+ de servicio
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ debe funcionar con servicios y proxies a través de la misma interfaz.
+ De este modo podemos pasar un proxy a cualquier código que espere un objeto
+ de servicio
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Patrones de Comportamiento
+\end_layout
+
+\begin_layout Standard
+Tratan con algoritmos y la asignación de responsabilidades entre objetos
+\end_layout
+
+\begin_layout Subsection*
+Patrón TEMPLATE METHOD (Método Plantilla)
+\end_layout
+
+\begin_layout Itemize
+Su 
+\series bold
+propósito
+\series default
+ es definir operaciones como esquemas de algoritmos que difieren algunos
+ pasos a operaciones implementadas en las subclases.
+ Permite a las subclases redefinir ciertos pasos de un algoritmo sin cambiar
+ la estructura del algoritmo.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Motivación:
+\series default
+ es esencial para la reutilización en jerarquías de clases: factorizar comportam
+iento común.
+\end_layout
+
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando una clase implementa el esquema de un algoritmo y deja que las subclases
+ implementen el comportamiento que puede variar o cuando el comportamiento
+ común entre varias clases debe ser factorizado y localizado en una superclase
+ común.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias: 
+\series default
+un método plantilla invoca a los siguientes tipos de métodos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+operaciones abstractas
+\end_layout
+
+\begin_layout Itemize
+operaciones concretas en la clase abstracta
+\end_layout
+
+\begin_layout Itemize
+operaciones concretas en clientes
+\end_layout
+
+\begin_layout Itemize
+métodos factoría
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado12.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+clase abstracta
+\series default
+ declara métodos que actúan como pasos de un algoritmo, así como el propio
+ método plantilla que invoca estos métodos en un orden específico.
+ Los pasos pueden declararse abstractos o con una implementación por defecto
+\end_layout
+
+\begin_layout Standard
+Las 
+\series bold
+clases concretas
+\series default
+ pueden sobrescribir todos los pasos, pero no el propio método plantilla
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón STRATEGY/POLICY (Estrategia)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito: 
+\series default
+define una familia de algoritmos, encapsula cada uno, y permite intercambiarlos.
+ Permite variar los algoritmos de forma independiente a los clientes que
+ los usan.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Implementación:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+¿Cómo una estrategia concreta accede a los datos del contexto? Se le pueden
+ pasar datos o un objeto contexto como argumento, o estrategia almacena
+ una referencia al contexto
+\end_layout
+
+\begin_layout Itemize
+¿Cómo se crea una instancia de una estrategia concreta? Mediante el uso
+ de una factoría.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando queremos configurar una clase con uno de varios comportamientos
+ posibles, o se necesitan diferentes variantes de un algoritmo, o una clase
+ define muchos comportamientos que aparecen como sentencias case en sus
+ métodos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+define una familia de algoritmos relacionados
+\end_layout
+
+\begin_layout Itemize
+una alternativa a crear subclases de la clase contexto
+\end_layout
+
+\begin_layout Itemize
+elimina sentencias case
+\end_layout
+
+\begin_layout Itemize
+en el código fuente se puede elegir entre diferentes estrategias o implementacio
+nes: debe conocer detalles
+\end_layout
+
+\begin_layout Itemize
+STATE y STRATEGY son similares, pero cambia el propósito
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado13.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+contexto
+\series default
+ mantiene una referencia a una de las estrategias concretas y se comunica
+ con este objeto únicamente a través de la interfaz estrategia
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+estrategia
+\series default
+ es común a todas las estrategias concretas.
+ Declara un método que la clase contexto utiliza para ejecutar una estrategia
+\end_layout
+
+\begin_layout Standard
+Las 
+\series bold
+estrategias concretas
+\series default
+ implementan distintas variaciones de un algoritmo que la clase contexto
+ utiliza
+\end_layout
+
+\begin_layout Standard
+La clase contexto invoca al método de ejecución en el objeto de estrategia
+ vinculado cada vez que necesita ejecutar el algoritmo.
+ La clase contexto no sabe con qué tipo de estrategia funciona o cómo se
+ ejecuta el algoritmo
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ crea un objeto de estrategia específico y lo pasa a la clase contexto,
+ esta tiene un modificador 
+\begin_inset Formula $set$
+\end_inset
+
+ que permite a los clientes sustituir la estrategia asociada al contexto
+ en tiempo de ejecución
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón STATE (Estado)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ permite a un objeto cambiar su comportamiento cuando cambia su estado.
+ El objeto parece cambiar de clase.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Implementación:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+¿Quién define las transiciones entre estados? El contexto o las subclases
+ estado.
+ Más apropiado que sean los estados.
+\end_layout
+
+\begin_layout Itemize
+¿Cuándo son creados los objetos estado? Pueden crearse cuando se necesiten
+ o con antelación y que contexto tenga una referencia a ellos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Es 
+\series bold
+aplicable
+\series default
+ cuando el comportamiento del objeto depende de su estado y debe cambiar
+ su comportamiento en tiempo de ejecución dependiendo de su estado o las
+ operaciones tienen grandes estructuras case que dependen del estado del
+ objeto, que es representado por uno o más constantes de tipo enumerado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Todo el comportamiento asociado a un particular estado es embebido de una
+ clase
+\end_layout
+
+\begin_layout Itemize
+Subclases en vez de sentencias case
+\end_layout
+
+\begin_layout Itemize
+Ayuda a evitar estados inconsistentes en caso de estado representado por
+ varias variables
+\end_layout
+
+\begin_layout Itemize
+Transiciones de estado son más explícitas
+\end_layout
+
+\begin_layout Itemize
+Incrementa el número de objetos.
+ Los objetos estado pueden ser singleton.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado14.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+contexto
+\series default
+ almacena una referencia a uno de los objetos de estado concreto y le delega
+ todo el trabajo específico del estado.
+ Se comunica con el estado a través de la interfaz de estado.
+ Tiene un modificador 
+\begin_inset Formula $set$
+\end_inset
+
+ para pasarle un nuevo objeto de estado.
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+estado
+\series default
+ declara los métodos específicos del estado.
+ Estos deben tener sentido para todos los estados concretos
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+estados concretos
+\series default
+ proporcionan sus propias implementaciones para los métodos específicos
+ del estado.
+ Pueden almacenar una referencia inversa al objeto de contexto.
+ A través de esta referencia el estado puede extraer cualquier información
+ requerida del objeto de contexto y hacer transiciones de estado
+\end_layout
+
+\begin_layout Standard
+Tanto el estado de contexto como el concreto pueden establecer el nuevo
+ estado del contexto y realizar la transicicón de estado sustituyendo el
+ objeto de estado vinculado al contexto
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón COMMAND (Orden)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ encapsular un mensaje como un objeto, permitiendo parametrizar métodos
+ y objetos como mensajes, añadir mensajes a una cola y soportar funcionalidad
+ deshacer/rehacer.
+\end_layout
+
+\begin_layout Itemize
+La 
+\series bold
+motivación 
+\series default
+es que algunas veces es necesario enviar un mensaje a un objeto sin conocer
+ el selector del mensaje ni el objeto receptor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Implementación:
+\series default
+ en lenguajes que soportan expresiones lambda, punteros a funciones o introspecc
+ión, el patrón COMMAND solo es útil para soportar undo/redo.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Aplicabilidad:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Para parametrizar objetos por la acción a realizar cuando el lenguaje no
+ soporta pasar código como parámetro de métodos
+\end_layout
+
+\begin_layout Itemize
+Añadir a una cola y ejecutar mensajes después de su ejecución.
+ Un objeto Command tiene un tiempo de vida independiente de la solicitud
+ original.
+ Para soportar undo/redo.
+ Y para recuperación de fallos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+desacopla el objeto que invoca la operación del objeto que sabe cómo realizarla
+\end_layout
+
+\begin_layout Itemize
+cada subclase CommandConcreto encapsula un par receptor/acción, almacenando
+ el receptro como un atributo e implementando el método ejecutar
+\end_layout
+
+\begin_layout Itemize
+objetos Command pueden ser manipulados como cualquier otro objeto
+\end_layout
+
+\begin_layout Itemize
+Se pueden crear command compuestos aplicando el patrón COMPOSITE
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Mecanismo Undo/Redo: 
+\series default
+una jerarquía de Commands representa las operaciones que se pueden deshacer/reha
+cer.
+ Los Command deben tener atributos para registrar la información que permita
+ deshacer/rehacer.
+ Hay una lista historia de objetos Command que registra copias de las operacione
+s realizadas (una única lista doblemente enlazada, o dos listas historia
+ y redo).
+ Una clase manager soporta el manejo de las listas de Commands y de la recepción
+ de operaciones.
+ Las operaciones undo y redo se tratan de forma distinta al resto de commands.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado15.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+invocador
+\series default
+ es responsable de inicializar las solicitudes.
+ Esta clase debe tener un campo para almacenar una referencia a un objeto
+ de comando.
+ El emisor activa este comando en lugar de enviar la solicitud directamente
+ al receptor.
+ El invocador no es responsable de crear el objeto de comando.
+ Normalmente, obtiene un comando precreado de parte del cliente a través
+ del constructor
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+comando
+\series default
+ normalmente declara un único método para ejecutar el comando
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+comandos concretos
+\series default
+ implementan varios tipos de solicitudes.
+ Un comando concreto no se supone que tenga que realizar el trabajo por
+ su cuenta, sino pasar la llamada a uno de los objetos de la lógica de negocio.
+ Los parámetros necesarios para ejecutar un método en un objeto receptor
+ pueden declararse como campos en el comando concreto
+\end_layout
+
+\begin_layout Standard
+La clase 
+\series bold
+receptor
+\series default
+ contiene cierta lógica de negocio.
+ Casi cualquier objeto puede actuar como receptor.
+ La mayoría de los comandos solo gestiona los detalles sobre cómo se pasa
+ una solicitud al receptor, mientras que es este el que hace el trabajo
+ real
+\end_layout
+
+\begin_layout Standard
+El
+\series bold
+ cliente 
+\series default
+crea y configura los objetos de comando concretos.
+ Este debe pasar todos los parámetros de la solicitud, incluyendo una instancia
+ del receptor, dentro del constructor del comando
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón ITERATOR (Iterador)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ proporciona una forma para acceder a los elementos de una estructura de
+ datos sin exponer los detalles de la representación.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Motivación:
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+un objeto contenedor debe permitir una forma de recorrer sus elementos sin
+ exponer su estructura interna
+\end_layout
+
+\begin_layout Itemize
+Debería permitir diferentes métodos de recorrido y recorridos concurrentes
+\end_layout
+
+\begin_layout Itemize
+Esta funcionalidad no es parte de la interfaz de la colección
+\end_layout
+
+\begin_layout Itemize
+Los iteradores pueden ser 
+\series bold
+externos 
+\series default
+(recorrido controlado por el código que usa el iterador, tarea del programador)
+ o 
+\series bold
+internos
+\series default
+ (recorrido controlado por el propio interador, se libera al programador
+ que solo dice lo que quiere)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+simplifica la interfaz de una colección al extraer los métodos de recorrido
+\end_layout
+
+\begin_layout Itemize
+permite varios recorridos concurrentes
+\end_layout
+
+\begin_layout Itemize
+soporta variantes en las técnicas de recorrido
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Implementación
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+¿Quién controla la iteración? Externos VS Internos
+\end_layout
+
+\begin_layout Itemize
+¿Quién define el algoritmo de recorrido? 
+\series bold
+Agregado:
+\series default
+ el iterador solo almacena el estado de la iteración.
+ 
+\series bold
+Iterador:
+\series default
+ es posible reutilizar el mismo algoritmo sobre diferentes colecciones o
+ aplucar diferentes algoritmos sobre una misma colección
+\end_layout
+
+\begin_layout Itemize
+¿Es posible modificar la colección durante la iteración?
+\end_layout
+
+\begin_layout Itemize
+Colección e iterador son clases muy relacionadas
+\end_layout
+
+\begin_layout Itemize
+Puede ser usado junto a patrón composite
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado17.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+iterador
+\series default
+ declara las operaciones necesarias para recorrer una colección: estraer
+ el siguiente elemento, recuperar la posición actual, reiniciar la iteración,...
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+iteradores concretos
+\series default
+ implementan algoritmos específicos para recorrer una colección.
+ El objeto iteradir debe controlar el progreso del recorrido por su cuenta,
+ así puede haber varios iteradores simultáneamente sobre la misma colección
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+colección
+\series default
+ declara uno o varios métodos para obtener iteradores compatibles con la
+ colección.
+ El tipo de retorno de los métodos debe declararse como la interfaz iteradora
+ de forma que las colecciones concretas puedan devolver varios tipos de
+ iteradores
+\end_layout
+
+\begin_layout Standard
+Las 
+\series bold
+colecciones concretas
+\series default
+ devuelven nuevas instancias de una clase iteradora concreta particular
+ cada vez que el cliente solicita una
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ debe funcionar con colecciones e iteradores a través de sus interfaces.
+ De este modo, el cliente no se acopla a clases concretas, permitiendo usar
+ varias colecciones e iteradores con el mismo código cliente
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Patrón OBSERVER / PUBLISH-SUBSCRIBE (Observador)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propósito:
+\series default
+ define una dependencia uno a muchos entre objetos, de modo que cuando cambia
+ el estado de un objeto, todos sus dependientes automáticamente son notificados
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Aplicabilidad:
+\series default
+ cuando un cambio de estado en un objeto requiere cambios en otros objetos,
+ y no sabe sobre qué objetos debe aplicarlos o cuando un objeto debe ser
+ capaz de notificar algo a otros objetos, sin hacer asunciones sobre quiénes
+ son estos objetos
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Consecuencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+acoplamiento abstracto y mínimo entre el sujeto y el observador, para poder
+ reutilizarlos por separado, puedan estar en diferentes capas, puedan añadirse
+ observers sin modificar el subject, y el subject no necesite concoer las
+ clases concretas de observers
+\end_layout
+
+\begin_layout Itemize
+es posible añadir y eliminar observers en cualquier instante
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Implementación:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+es posible que un observador esté ligado a más de un sujeto: la operación
+ update tendrá como argumento el sujeto
+\end_layout
+
+\begin_layout Itemize
+al registrar un observador es posible asociarle el evento sobre el que quiere
+ ser notificado
+\end_layout
+
+\begin_layout Itemize
+¿Quién dispara la notificación? Normalmente, métodos set en la clase Subject,
+ en vez de clases clientes de la clase Subject
+\end_layout
+
+\begin_layout Itemize
+¿Cuánta información sobre el cambio se le envía a los observers con la notificac
+ión? Conveniente pasarle el subject o un objeto
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estructura
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado16.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+notificador
+\series default
+ envía eventos de interés a otros objetos.
+ Esos eventos cuando el notificador cambia su estado o ejecuta algunos comportam
+ientos.
+ Los notificadores contienen una estructura de suscripción que permite a
+ nuevos y antiguos suscriptores abandonar la lista
+\end_layout
+
+\begin_layout Standard
+Cuando sucede un nuevo evento, el notificador recorre la lista de suscripción
+ e invoca el método de notificación declarado en la interfaz suscriptora
+ en cada objeto suscriptor
+\end_layout
+
+\begin_layout Standard
+La interfaz 
+\series bold
+suscriptor
+\series default
+ declara la interfaz de notificación.
+ En la mayoria de casos consiste en un único método 
+\begin_inset Formula $update$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+suscriptores concretos
+\series default
+ realizan algunas acciones en resppuesta a las notificaciones emitidas por
+ el notificador.
+ Todas estas clases deben implementar la misma interfaz, de forma que el
+ notificador no esté acoplado a clases concretas
+\end_layout
+
+\begin_layout Standard
+Los suscriptores necesitan cierta información contextual para manejar correctame
+nte la actualización.
+ Por esto, a menudo los notificadores pasan cierta información de contexto
+ como argumento del método 
+\begin_inset Formula $update$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+cliente
+\series default
+ crea objetos tipo notificador y suscriptor por separado y después registra
+ a los suscriptores para las actualizaciones del notificador
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+MODELO DE DELEGACIÓN DE EVENTOS (MDE):
+\series default
+ modelo de eventos basado en el patrón Observer.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Los objetos que pueden generar eventos son llamados fuentes de eventos
+\end_layout
+
+\begin_layout Itemize
+Los objetos que desean ser notificados de eventos son llamados oyentes de
+ eventos (event listeners)
+\end_layout
+
+\begin_layout Itemize
+Los listeners deben registrarse en las fuentes e implementan una interfaz
+ con los métodos que deben ser llamados por la fuente cuando ocurre el evento.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Interfaces funcionales
+\end_layout
+
+\begin_layout Standard
+Las
+\series bold
+ interfaces funcionales
+\series default
+ son interfaces con un único método que es utilizada como tipo de una expresión
+ lambda.
+ Las 
+\series bold
+expresiones lambda
+\series default
+ son bloques de código compatibles con una interfaz funcional.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Interfaz Predicate<T>:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+comprueba la condición sobre el argumento dado
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public interface Predicate<T> {
+\end_layout
+
+\begin_layout Plain Layout
+
+	boolean test(T t);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ejemplo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class testEq implements Predicate<String> {
+\end_layout
+
+\begin_layout Plain Layout
+
+	private String miString;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	testEq(String s) miString = s;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	public boolean test(String s){
+\end_layout
+
+\begin_layout Plain Layout
+
+		return miString.equals(s);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//para aplicarlo
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+String palabraEspecial;
+\end_layout
+
+\begin_layout Plain Layout
+
+testEq eq = new testEq(palabraEspecial);
+\end_layout
+
+\begin_layout Plain Layout
+
+for (String s : palabras)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (eq.test(s)) print(s);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//equivalentemente
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+palabras.stream().filter(s -> s.equals(palabraEspecial))
+\end_layout
+
+\begin_layout Plain Layout
+
+		.forEach(s -> print(s));
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Interfaz Consumer<T>:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+representa operaciones que dado un único argumento realizan una acción y
+ no retornan nada
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public interface Consumer<T> {
+\end_layout
+
+\begin_layout Plain Layout
+
+	void accept(T t);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ejemplo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class printFloor implements Consumer<Double> {
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	printFloor(){}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	public void accept(Double d){
+\end_layout
+
+\begin_layout Plain Layout
+
+		print(d.floor());
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//para aplicarlo
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Double num;
+\end_layout
+
+\begin_layout Plain Layout
+
+printFloor eq = new printFloor();
+\end_layout
+
+\begin_layout Plain Layout
+
+for (Double d : numeros)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (d<=num) eq.accept(d);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//equivalentemente
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+numeros.stream().filter(d -> d<=num).forEach(d -> print(d.floor()));
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Interfaz Supplier<T>:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Representa un suministrador de resultados
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public interface Supplier<T> {
+\end_layout
+
+\begin_layout Plain Layout
+
+	T get();
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ejemplo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class randomNumber implements Supplier<Double> {
+\end_layout
+
+\begin_layout Plain Layout
+
+	Random rand;
+\end_layout
+
+\begin_layout Plain Layout
+
+	Double min, max;
+\end_layout
+
+\begin_layout Plain Layout
+
+	testEq(double m, double M) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		min = m;
+\end_layout
+
+\begin_layout Plain Layout
+
+		max = M;
+\end_layout
+
+\begin_layout Plain Layout
+
+		rand = new Random();
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	public Double get(){
+\end_layout
+
+\begin_layout Plain Layout
+
+		return rand.nextDouble(max-min)-min;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//para aplicarlo
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+randomNumber r = new randomNumber(-5.0,5.0);
+\end_layout
+
+\begin_layout Plain Layout
+
+for (Double d : numeros)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (r.get()>0) print(d);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//equivalentemente
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+numeros.stream().forEach(d -> if(r.get()>0) print(d));
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Interfaz Function<T,R>:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+representa una función que acepta un argumento y devuelve un resultado
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public interface Function<T,R> {
+\end_layout
+
+\begin_layout Plain Layout
+
+	R apply(T t);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ejemplo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class getAutor implements Function<Libro, Autor> {
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	getAutor() {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	public Autor apply(Libro l){
+\end_layout
+
+\begin_layout Plain Layout
+
+		return l.getAutor();
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//para aplicarlo
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+getAutor eq = new getAutor();
+\end_layout
+
+\begin_layout Plain Layout
+
+for (Libro l : biblioteca)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (getAutor(l).equals(
+\begin_inset Quotes eld
+\end_inset
+
+Cervantes
+\begin_inset Quotes erd
+\end_inset
+
+)) print(
+\begin_inset Quotes eld
+\end_inset
+
+Found!
+\begin_inset Quotes erd
+\end_inset
+
+);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//equivalentemente
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+biblioteca.stream().map(l -> l.getAutor())
+\end_layout
+
+\begin_layout Plain Layout
+
+		.filter(s -> s.equals(
+\begin_inset Quotes eld
+\end_inset
+
+Cervantes
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
+		.forEach(s -> print(
+\begin_inset Quotes eld
+\end_inset
+
+Found!
+\begin_inset Quotes erd
+\end_inset
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document
