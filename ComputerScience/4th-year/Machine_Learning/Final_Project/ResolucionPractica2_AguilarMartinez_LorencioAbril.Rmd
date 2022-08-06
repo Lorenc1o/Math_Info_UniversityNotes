@@ -1,0 +1,1525 @@
+---
+title: "ResolucionPractica2"
+author: "Aguilar Martínez, Lorencio Abril"
+date: "15/12/2021"
+output: 
+  html_document:
+    df_print: paged
+    highlight: kate
+    number_sections: yes
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE)
+library(MLmetrics)
+library(caret)
+library(pROC)
+library(doParallel)
+library(tensorflow)
+library(keras)
+library(kernlab)
+library(modelr)
+library(naivebayes)
+```
+
+# Introducción
+
+En esta segunda práctica vamos a profundizar en la comprensión de distintos modelos y algoritmos de Machine Learning y en su utilización en el caso de la clasificación de conexiones Keylogger.
+
+En la primera práctica observamos como una regresión lineal era un mecanismo insuficiente para una buena clasificación en este problema. En principio, lo que esperamos es mejorar los resultados obtenidos, a cambio de aumentar el coste computacional de los entrenamientos de los diferentes modelos, así como el incremento en el esfuerzo dedicado a la comparación estadística de los distintos clasificadores obtenidos.
+
+## Los datos
+
+```{r Lectura de Datos}
+conex <- read.csv("Keylogger_Detection.csv", stringsAsFactors = FALSE)
+conexRFE <- conex
+```
+
+```{r echo=FALSE, warning=FALSE}
+conex$X <- NULL
+conex$Flow.ID <- NULL
+conex$Timestamp <- NULL
+conex$Source.IP <- NULL
+conex$Destination.IP <- NULL
+conex$Source.Port <- NULL
+conex$Destination.Port <- NULL
+conex$FIN.Flag.Count <- NULL
+conex$Fwd.Header.Length.1 <- NULL
+conex$Protocol <- as.factor(conex$Protocol)
+conex$Packet.Length.Std <- as.numeric(conex$Packet.Length.Std)
+conexRFE$Packet.Length.Std <- as.numeric(conexRFE$Packet.Length.Std)
+conex$CWE.Flag.Count <- as.numeric(conex$CWE.Flag.Count);
+conex = na.omit(conex)
+conex <- conex[-conex$Fwd.Header.Length<0,]
+conex <- conex[-conex$Flow.IAT.Min<0,]
+conex <- conex[-conex$min_seg_size_forward<0,]
+temp <- conex
+temp$Class <- NULL
+temp$Protocol <- NULL
+
+# Calculamos los cuartiles
+cuartiles <- sapply(temp,quantile) 
+
+pre <- names(temp)
+# Nos quedamos con las columnas cuyo conjunto A no colapsa a un unipuntual
+temp <- temp[, !apply(cuartiles, 2, function(x) any(x[4]== x[2]))] 
+
+Class <- conex$Class
+Protocol <- conex$Protocol
+post <- names(temp)
+conex <- cbind(Protocol, temp, Class)
+remove(cuartiles, temp, pre, post, Class, Protocol)
+conex <- unique(conex)
+conex$Class <- as.factor(conex$Class)
+```
+
+```{r echo = FALSE, warning=FALSE}
+conexRFE$X <- NULL
+conexRFE$Flow.ID <- NULL
+conexRFE$Source.IP <- NULL
+conexRFE$Destination.IP <- NULL
+conexRFE$Timestamp <- NULL
+conexRFE$Fwd.Header.Length.1 <- NULL
+conexRFE$Protocol <- as.factor(conexRFE$Protocol)
+conexRFE$Packet.Length.Std <- as.numeric(conexRFE$Packet.Length.Std)
+conexRFE$CWE.Flag.Count <- as.numeric(conexRFE$CWE.Flag.Count)
+conexRFE = na.omit(conexRFE)
+conexRFE <- conexRFE[-conexRFE$Fwd.Header.Length<0,]
+conexRFE <- conexRFE[-conexRFE$Flow.IAT.Min<0,]
+conexRFE <- conexRFE[-conexRFE$min_seg_size_forward<0,]
+temp <- conexRFE
+temp$Class <- NULL
+temp$Protocol <- NULL
+temp$Source.Port <- NULL
+temp$Destination.Port <- NULL
+
+# Calculamos los cuartiles
+cuartiles <- sapply(temp,quantile) 
+
+pre <- names(temp)
+# Nos quedamos con las columnas cuyo conjunto A no colapsa a un unipuntual
+temp <- temp[, !apply(cuartiles, 2, function(x) any(x[4]== x[2]))] 
+
+Class <- conexRFE$Class
+Protocol <- conexRFE$Protocol
+SP <- conexRFE$Source.Port
+DP <- conexRFE$Destination.Port
+
+post <- names(temp)
+conexRFE <- cbind(Protocol, SP, DP, temp, Class)
+remove(cuartiles, temp, pre, post, Class, Protocol, SP, DP)
+```
+
+A partir de lo hecho en la práctica 1, aunque de acuerdo con las recomendaciones del profesor, nos deshacemos de filas repetidas, obteniendo una cantidad significativamente menor de los datos.
+
+Para **PCA** dejamos los datos exactamente igual que en la práctica 1 (pero quitando los datos repetidos).
+
+```{r Análisis PCA}
+conexPCA <- conex #En este momento conex está como en la P1 y sin filas repetidas
+Class <- conexPCA$Class
+Protocol <- conexPCA$Protocol
+conexPCA$Class <- NULL
+conexPCA$Protocol <- NULL
+pca_result <- prcomp(conexPCA, scale = TRUE) #Hacemos análisis PCA
+pcas = as.data.frame(pca_result$x,stringsAsFactors=F)
+
+VE <- pca_result$sdev^2;
+PVE <- VE / sum(VE);
+PVE <- cumsum(PVE)
+round(PVE, 3)
+```
+
+Nos quedamos con las PCAs que explican el 90% de la variabilidad:
+
+```{r Obtensión de las PCA que explican el 90% de la variabilidad}
+pcas <- pcas[,PVE<0.9]
+pcas <- cbind(pcas,Class)
+```
+
+Para **RFE** solo quitamos aquellas columnas que son constantes y las que son factores con demasiados niveles (terminaron siendo todas excepto el protocolo).
+
+Una vez hemos obtenido estos conjuntos de datos, antes de proceder al entrenamiento de los modelos, los dividimos en training y test, con una proporción 80/20. Además, tomamos las variables de entrada y de salida:
+
+```{r}
+conexRFE <- unique(conexRFE)
+conexRFE$Class <- as.factor(conexRFE$Class)
+```
+
+```{r Creamos un vector que guarda la variable de salida}
+conex.Var.Salida.Usada = c("Class")
+```
+
+Obtenemos Test y Training para PCA:
+
+```{r Dividimos PCA en training y test}
+set.seed(1234)
+trainIndex <- sample(1:nrow(conex), size = nrow(conex)*0.8)
+trainPCA <- pcas[trainIndex,]
+testPCA <- pcas[-trainIndex,]
+conexPCA.Vars.Entrada.Usadas = setdiff(names(pcas),conex.Var.Salida.Usada)
+```
+
+Y para RFE:
+
+```{r Dividimos RFE en training y test}
+set.seed(1234)
+trainIndex <- sample(1:nrow(conexRFE), size = nrow(conexRFE)*0.8)
+trainRFE <- conexRFE[trainIndex,]
+testRFE <- conexRFE[-trainIndex,]
+conexRFE.Vars.Entrada.Usadas = setdiff(names(conexRFE),conex.Var.Salida.Usada)
+```
+
+# Recursive Feature Elimination
+
+RFE es un mecanismo para, como su propio nombre indica, eliminar variables de un conjunto de datos que ensucian el análisis.
+
+Para ello, sigue el siguiente proceso:
+
+1. Se selecciona un modelo de aprendizaje capaz de asignar importancia a los predictores usados, y los diferentes tamaños que queremos tener en cuenta.
+
+2. Se entrena el algoritmo con el mayor de los tamaños tomados en cuenta. El primer tamaño usado es el total de los predictores.
+
+3. Ordenamos todos los predictores por importancia, según la información proporcionada por el modelo elegido.
+
+4. Tomamos el siguiente tamaño a considerar. Si el tamaño es n, tomamos las n primeras variables del ranking que hemos efectuado en el paso anterior.
+
+5. Volvemos a entrenar el algoritmo, y a ordenar los predictores.
+
+6. Si quedan tamaños por comprobar, volvemos al paso 4. Si no, al paso 7.
+
+7. De entre los modelos entrenados con diferentes tamaños, nos quedamos con aquel que obtiene mejores resultados, y asumimos que la cantidad de variables utilizada en ese modelo es la óptima entre las que hemos comprobado.
+
+Así, nosotros hemos realizado el siguiente análisis RFE:
+
+```{r, eval = FALSE}
+cl <- makePSOCKcluster(3)
+registerDoParallel(cl)
+
+outcome <- trainRFE[,outcomeRFE]
+predictors <- trainRFE[,predictorsRFE]
+
+
+lmProfile = rfe(predictors, outcome,
+                sizes = c(15,20,25,30,35,40,45),
+                rfeControl = rfeControl(functions = treebagFuncs,
+                                        method = "cv",
+                                        number = 5,
+                                        verbose = FALSE))
+
+stopCluster(cl)
+```
+
+Antes de analizar el resultado, podemos resaltar la utilización de paralelización permitida por Caret, el método de control usado, que ha sido validación cruzada, y el modelo usado para el rfe, que ha sido un modelo **Bagged Trees**, indicado mediante la función treeBagFuncs. Este modelo lo explicaremos en detalle más adelante.
+
+Una muy buena característica de este proceso es que, además de ayudarnos a seleccionar variables, nos devuelve un modelo funcional, que podemos (y lo haremos) usar para el análisis.
+
+Este entrenamiento ya lo hicimos, y usamos la función saveRDS para guardar el objeto, ya que el proceso es demasiado largo para estar repitiéndolo. Esto será algo recurrente en el desarrollo de la práctica. Por tanto, obtenemos el archivo de memoria:
+
+```{r}
+lmProfile <- readRDS("lmProfile.RDS")
+lmProfile$optsize
+```
+
+Como vemos, el tamaño óptimo obtenido es el correspondiente a usar todos los predictores.
+
+
+# Modelos de Machine Learning
+
+En esta sección vamos a explicar los diferentes modelos utilizados, los resultados se detallarán en las siguientes secciones.
+
+## Multilayer Perceptron
+
+**mlpKerasDropout** genera una red neuronal con una capa oculta y *size* perceptrones ocultos. 
+Algunos perceptrones serán descartados con probabilidad 1 - *dropout*.
+
+La forma de obtener los pesos en la red es mediante *backpropagation*, aunque se añade al ratio de aprendizaje un factor de decaimiento, que acelera la convergencia de los valores.
+
+```{r echo = FALSE}
+getModelInfo("mlpKerasDropout")$mlpKerasDropout$fit
+```
+
+Podemos ver en la función fit que en nuestro caso se utiliza la función *optimizer_rmsprop* para la optimización de los pesos.
+
+### Parámetros
+
+```{r}
+mlpData <- getModelInfo("mlpKerasDropout")
+mlpData <- mlpData$mlpKerasDropout
+mlpData$parameters
+```
+
+Como podemos apreciar disponemos de siete parámetros para modificar en este algoritmo, pasamos a explicarlos:
+
++ **Size**: Indica el número de perceptrones ocultos en nuestra red.
+
++ **Dropout**: Se corresponde con 1 - P(E). Siendo P(E) la probabilidad de eliminar cada nodo oculto en el entrenamiento.
+
++ **Batch_size**: Tamaño de los subconjuntos de datos tomados para cada entrenamiento. Tras procesar un *Batch* se actualizan los pesos de la red.
+
++ **LR**: El learning rate, indica cuanto varían los pesos en cada actualización en el entrenamiento. Es el único parámetro que Keras recomienda variar. Nosotros haremos un grid propio con fines docentes.
+
++ **Rho**: indica cómo afecta el LR al entrenamiento a lo largo del tiempo.
+
++ **Decay**: Indica el factor del decaimiento del LR a lo largo del tiempo.
+
++ **Activation**: Único parámetro del grid que no es de tipo numérico. Indica la función de combinación de los inputs para generar el output. Puede tomar los valores sigmoid", "relu" y "tanh".
+
+### Preprocesamiento
+
++ Es recomendable llevar a cabo un centrado y escalado de las variables. Esto ayudará a la convergencia del algoritmo de minimización. La siguiente imagen ilustra la convergencia en el caso de usar el algoritmo de descenso de gradiente. [Descendo del gradiente](https://images.app.goo.gl/vpCyLdErx6fZhnGh9).
+
+* Deberemos imputar los valores nulos o bien eliminar las muestras que los contengan, debido al tamaño del conjunto de datos y la baja porción de datos nulos optamos por la segunda opción, tal y como hicimos en la práctica 1.
+
+### Estrategia para el grid de parámetros
+
+```{r}
+mlpData$grid
+```
+
+Aunque *keras* recomienda no variar los parámetros del algoritmo *mlpKerasDropout* a excepción del *LR*, nosotros generamos un grid con fines didácticos. Seguimos las recomendaciones que hemos podido encontrar en [Jason Brownlee](https://machinelearningmastery.com/), el blog de Jason Brownlee, investigador con un contrastado conocimiento sobre Machine Learning.
+
+La estrategia que hemos llevado a cabo para la selección del grid final ha seguido un enfoque exploratorio:
+
++ Con un porcentaje muy reducido de los datos probamos una cantidad considerable de valores (suficientemente dispares) para los parámetros.
+
++ Una vez seleccionada la mejor combinación de parámetros, repetimos el proceso, con valores menos dispares y centrados en el valor devuelto por el experimento anterior. 
+
++ Repetimos el segundo paso hasta disponer de un grid de tamaño razonable y con valores de parámetro "cercarnos" entre sí.
+
+El grid final que usaremos para entrenar el modelo completo queda de la siguiente manera:
+
+```{r eval = FALSE}
+NNgrid = expand.grid(size = c(7,9,11), #tras probar diferentes valores
+            dropout = c(0,0.1,0.2), #https://machinelearningmastery.com/dropout-for-regularizing-deep-neural-networks/
+            batch_size = c(floor(nrow(trainPCA)/3), floor(nrow(trainPCA)/5)), #tras probar diferentes valores
+            lr = c(0.01),
+            rho = c(0.9),
+            decay = c(0.01), #este y los anteriores: https://machinelearningmastery.com/understand-the-dynamics-of-learning-rate-on-deep-learning-neural-networks/
+            activation = c("relu","sigmoid")) #tradicionalmente se usaba sigmoid y actualmente parece que relu es más utilizado, nuestras pruebas parecen sugerir que relu sale ganando en este conjunto de datos
+```
+
+Además, en el entrenamiento, cambiamos la cantidad de *epochs* por defecto, de 10 a 100. Esto no forma parte del tuneGrid explícitamente, pero podría considerarse como un hiperparámetro. Realizamos este cambio ya que en 10 pasos las redes no parecían tener suficiente tiempo para converger.
+
+Este grid es el utilizado para entrenar con los datos de PCA. No obstante, es casi igual que el usado para entrenar con los datos de RFE:
+
+```{r eval = FALSE}
+NNgrid = expand.grid(size = c(30,35,40,45,50), 
+            dropout = c(0,0.1,0.2), #https://machinelearningmastery.com/dropout-for-regularizing-deep-neural-networks/
+            batch_size = c(floor(nrow(trainRFE)/3), floor(nrow(trainRFE)/5)), #tras probar diferentes valores
+            lr = c(0.01),
+            rho = c(0.9),
+            decay = c(0.01), #https://machinelearningmastery.com/understand-the-dynamics-of-learning-rate-on-deep-learning-neural-networks/
+            activation = c("relu","sigmoid"))
+```
+
+Como se observa, la única diferencia es la cantidad de neuronas ocultas. Esto se debe a la enorme diferencia en la cantidad de predictores en ambos modelos. Hemos optado por tomar valores para el size próximos a dos tercios del número de predictores, siguiendo las recomendaciones de [Haton Research](https://www.heatonresearch.com/2017/06/01/hidden-layers.html).
+
+## Random Forest
+
+**Random Forest** crea un *bosque* formado por *ntree* árboles de decisión de la siguiente manera:
+
+1. Crear un nuevo conjunto de datos muestreando con reemplazamiento el original (bootstrapping).
+
+2. Cada árbol se construye teniendo en cuenta, en cada nodo, como máximo *mtry* (pueden quedar menos) predictores tomados de forma aleatoria. Se construyen hasta la mayor profundidad posible y sin realizar poda.
+
+En la predicción, cada árbol construido apoya una clase y el bosque finalmente predice la clasificación con un mayor número de votos de los árboles de decisión.
+
+### Parámetros
+
+```{r}
+rfData <- getModelInfo("rf")
+rfData <- rfData$rf
+rfData$parameters
+```
+
+El único parámetro que podemos modificar en este algoritmo es **mtry**, el cual nos especifica el número máximo de variables, tomadas al azar, que tenemos en cuenta para la disgregación en cada nodo.
+
+### Preprocesamiento
+
+En la versión del algoritmo del paquete **randomForest** pueden tratarse los NA mediante el parámetro *na.action*, pero nosotros no debemos preocuparnos por esto, ya que los tenemos eliminados, como ya hemos comentado. 
+
+### Estrategia para el grid de parámetros
+
+```{r}
+rfData$grid
+```
+
+La función *var_seq* generará en nuestro caso una secuencia de valores simples entre dos y el número de columnas, con longitud por defecto de tres.
+
+En este caso hemos tomado la decisión de no usar un grid alternativo de parámetros, pues pensamos que los valores obtenidos para *mtry* por defecto son eficaces y no merece la pena cambiarlos.
+
+## Bagged Trees
+
+Bagged Trees es un concepto previo a Random Forest. También se crea un conjunto de árboles de decisión, y el resultado final se establece mediante una 'votación', tal y como hemos explicado para Random Forest. La diferencia estriba en que Random Forest selecciona, además, para cada árbol, un subconjunto aleatorio de los predictores. Esto no es así en Bagged Trees, en el que se puede considerar que todos los árboles 'son igual de grandes'.
+
+Este sencillo algoritmo merece la pena explicarlo, al menos de esta sucinta manera, ya que es el que seleccionamos para efectuar RFE.
+
+## Naive Bayes
+
+**Bayes-Naive** es un algoritmo de clasificación basado en el teorema de Bayes, que asume que los predictores son independientes entre sí.
+
+Para predecir una nueva instancia calcula el máximo de las probabilidades de cada una de las clases objetivo condicionada a los valores de los predictores de la muestra, y retorna la clase con mayor probabilidad.
+
+### Parámetros
+
+```{r}
+nbData <- getModelInfo("naive_bayes")
+nbData <- nbData$naive_bayes
+nbData$parameters
+```
+
+Disponemos de los siguientes parámetros:
+
++ **Laplace**: Es el valor usado para el suavizado de Laplace. Por defecto toma el valor 0. La wikipedia ( [Aditive Smoothing](https://en.wikipedia.org/wiki/Additive_smoothing)) ofrece una buena explicación sobre este parámetro.
+
++ **Usekernel**: Si toma el valor TRUE se asume que los predictores numéricos siguen una distribución de tipo Kernel. En caso contrario se asume que los predictores de tipo numérico siguen una distribución normal. Por defecto el parámetro toma el valor FALSE. Está altamente relacionado con el parámetro usepoisson.
+
++ **Adjust**: Hace referencia a la precisión con la que queremos que la función de densidad estimada ajuste la distribución de los datos.
+
++ **usepoisson**: aunque no aparece aquí, es un parámetro que se combina con el parámetro usekernel para usar diferentes funciones de probabilidad para estimar las probabilidades de los predictores.
+
+### Preprocesamiento
+
+Como este algoritmo supone independencia de los predictores, será conveniente eliminar aquellos predictores que presenten un alto grado de correlación entre sí, ya que el hecho de no hacerlo implicará que el modelo final da más importancia a las carácterísticas correladas de la que realmente tienen. 
+
+Este algoritmo no requiere de gran cantidad de datos para el aprendizaje, por tanto podemos eliminar las muestras que presenten datos perdidos o NAs. Cabe destacar que podremos especificar el tratamiento que se le da a los NAs con el parámetro *na.action*.
+
+### Estrategia para el grid de parámetros
+
+```{r}
+nbData$grid
+```
+
+El grid por defecto solo varía los valores de el parámetro *usekernel*, además, la función de entrenamiento no proporciona una forma de suministrarle un grid personalizado, por lo que esto lo haremos nosotros a mano. Detallaremos esto en la sección pertinente.
+
+## Stochastic Gradient Boosting
+
+**Stochastic gradient boosting** construye un modelo de clasificación basado en árboles, produce un modelo predictivo en forma de un conjunto de modelos de predicción menos completos. La idea es ir añadiendo al modelo nuevos árboles de forma que se intente minimizar la función de error. La principal diferencia respecto a random forest es que los árboles se añaden buscando minimizar la función de error.
+
+### Parámetros
+
+```{r}
+gbmData <- getModelInfo("gbm")
+gbmData <- gbmData$gbm_h2o
+gbmData$parameters
+```
+
+Disponemos de los siguientes parámetros:
+
++ **Ntrees**: Es el número de árboles que se construiran. (o número de iteraciones realizadas). 50 por defecto.
+
++ **Max_depth**: Profundidad máxima para cada uno de los árboles. Valores más altos generarán un modelo más complejo y pueden dar lugar a overfitting. El valor 0 especifica no límite en profundidad, por defecto toma el valor 5.
+
++ **Min_rows**: Especifica el número mínimo de observaciones por hoja. El valor por defecto es 10.
+
++ **Learn_rate**: Especifica el ratio de aprendizaje, valores entre 0 y 1. Por defecto toma el valor 0.1.
+
++ **Col_sample_rate**: especifica el ratio de columnas seleccionadas. Por defecto está a 1.
+
+### Preprocesamiento
+
+Deberemos imputar o eliminar los valores nulos y los NA's. Los eliminamos, como venimos haciendo.
+
+
+### Estrategia para el Grid de parámetros
+
+Otra forma de obtener una buena combinación de parámetros, si no se tiene una buena intuición de cuales podrán funcionar de forma adecuada en el modelo, es generarlos de forma aleatoria. Para el entrenamiendo de este modelo generamos una parrilla de parámetros aleatoria con la que será entrenado.
+
+Tras hacer esto, lo óptimo sería seleccionar, de nuevo, una parrilla, más reducida, y con aquellos parámetros que proporcionan mejores resultados. No hemos hecho este paso porque este modelo ha sido ya un extra, y ciertamente tarda mucho en completar los entrenamientos. Por tanto, pensamos que con explicar la idea tras el grid aleatorio sería suficiente.
+
+Por otro lado, este modelo no hemos podido utilizarlo con RFE, ya que lo dejamos entrenando durante 48 horas, pero no finalizaba. Así, queda restringido al entrenamiento con PCAs.
+
+Además, para entrenar este modelo, también introdujimos un nuevo cambio: la métrica de comparación. En este caso usamos ROC.
+
+Este modelo, básicamente, lo utilizamos con fines exploratorios, para probar distintas cosas que habíamos aprendido en el desarrollo de los demás modelos pero, que o bien parecían muy costosas, o bien no estábamos seguros de que funcionasen bien.
+
+
+```{r}
+conexControl_GBM <- trainControl(method="repeatedcv",
+                                  number=5,
+                                  repeats=2,
+                                  classProbs = TRUE, #Para poder usar ROC
+                                  summaryFunction = twoClassSummary, #Para poder usar ROC
+                                  verboseIter = TRUE,
+                                  search = "random") #genera un grid de hiperparámetros random
+```
+
+
+# Comparación de los modelos usando PCA
+
+Todos los modelos han sido entrenados con el mismo conjunto de training, que contiene el 80% de los datos totales, como comentábamos en la introducción.
+
+Como método de control hemos elegido utilizar validación cruzada con 5 pliegues y 2 repeticiones:
+
+```{r eval = FALSE}
+conexControl_CV5_2 <- trainControl(method="repeatedcv",
+                                  number=5,
+                                  repeats=2,
+                                  verboseIter = TRUE)  
+
+
+```
+
+## Multilayer Perceptron
+
+Para mlp, decidimos obtener dos modelos, uno haciendo el preprocesamiento recomendado de escalado y centrado, y otro en el que no lo hacemos, para poder comparar la utilidad del mismo:
+
+El entrenamiento lo hacemos mediante el siguiente comando:
+
+```{r eval = FALSE}
+cl <- makePSOCKcluster(4)
+registerDoParallel(cl)
+
+system.time(
+  conexPCA_NN<-caret::train(conexPCA.Datos.Train[conexPCA.Vars.Entrada.Usadas],
+                          conexPCA.Datos.Train[[conex.Var.Salida.Usada]],
+                          method='mlpKerasDropout',
+                          trControl=conexControl_CV5_2,
+                          tuneGrid = NNgrid,
+                          epochs = 100,
+                          preProcess = c("center", "scale", "nzv"),
+                          verbose=TRUE))
+
+stopCluster(cl)
+```
+
+Vemos cómo se aplica el procesamiento, en el que además hemos añadido "nzv", que elimina predictores con varianza casi nula, que no está de más aunque en nuestro caso esto no debería ser necesario utilizarlo, ya que hicimos esto al comienzo.
+
+Para entrenar sin preprocesamiento, basta eliminar ese parámetro.
+
+Obtenemos, entonces, los siguientes modelos:
+
+```{r}
+conexPCA_NN = readRDS("conexPCA_NN")
+conexPCA_NN_scaled = readRDS("conexPCA_NN_scaled")
+
+conexPCA_NN$bestTune
+conexPCA_NN_scaled$bestTune
+```
+
+Observamos que la selección óptima de parámetros es, para el modelo sin escalar, con 9 perceptrones ocultos, sin dropout, con un tamaño de batch de 42833, ratio de aprendizaje de 0.01, rho = 0.9, decay de 0.01, y utiliza la función de activación sigmoide.
+
+Respecto al modelo escalado, se comparten todos los parámetros anteriores, excepto la cantidad de perceptrones ocultos, que pasa a ser 11, y la función de activación, que en este caso es relu.
+
+Para compararlos podemos utilizar un simple test estadístico de McNemar sobre las predicciones que arrojan en el conjunto de test. La utilización de este test se explica en los apuntes de la asignatura, y hay un muy buen desarrollo del tema en [Jason Brownlee McNemar](https://machinelearningmastery.com/mcnemars-test-for-machine-learning/).
+
+Primero vamos a ver las precisiones de training:
+
+```{r}
+NN_pred = predict(conexPCA_NN, trainPCA[conexPCA.Vars.Entrada.Usadas])
+NN_scaled_pred = predict(conexPCA_NN_scaled, trainPCA[conexPCA.Vars.Entrada.Usadas])
+trueValues = trainPCA[[conex.Var.Salida.Usada]]
+
+MLmetrics::Accuracy(NN_pred, trueValues)
+MLmetrics::Accuracy(NN_scaled_pred, trueValues)
+```
+
+Observamos que son bajas, cercanas a la proporción de Benign/Total, por lo que muy difícilmente se producirá overfitting.
+
+Obtenemos las tablas de confusión sobre el conjunto de test:
+
+```{r}
+NN_pred = predict(conexPCA_NN, testPCA[conexPCA.Vars.Entrada.Usadas])
+NN_sc_pred = predict(conexPCA_NN_scaled, testPCA[conexPCA.Vars.Entrada.Usadas])
+trueValues = testPCA[[conex.Var.Salida.Usada]]
+
+cf_NN = MLmetrics::ConfusionMatrix(NN_pred, trueValues)
+cf_NN_scaled = MLmetrics::ConfusionMatrix(NN_sc_pred, trueValues)
+cf_NN
+cf_NN_scaled
+```
+
+De forma visual:
+
+```{r}
+cf_NN_df <- data.frame(cf_NN)
+cf_NN_scaled_df <- data.frame(cf_NN_scaled)
+
+NN <- cf_NN_df$Freq
+cf_NN_df$Freq <- NULL
+NN_scaled <- cf_NN_scaled_df$Freq
+
+cf_NN_df <- cbind(cf_NN_df, NN, NN_scaled)
+
+barplot(cbind(cf_NN_df$NN,cf_NN_df$NN_scaled), names.arg = c("NN", "scaledNN"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+Observamos como parece dar ligeramente más verdaderos negativos el escalado, y algunos más verdaderos positivos el que no está escalado. Esto puede que nos haga decantarnos por el modelo sin escalar, pero debemos tener evidencias estadísticas de que esto es correcto, más si cabe si pretendemos elegir un modelo entrenado de forma diferente a la que recomiendan los expertos en la materia. Vamos a recurrir al test de McNemar para ver si existen diferencias entre ambos modelos, y en base a los resultados decidiremos cuál escoger.
+
+Para calcular el estadístico de McNemar debemos hacer \[MN = \frac{\left(C/W - W/C\right)^2}{C/W+W/C}\] donde $C/W$ es la cantidad de instancias predecidas correctamente (**C**orrect) por conexPCA\_NN e incorrectamente (**W**rong) por conexPCA\_NN\_scaled, y $W/C$ es al contrario.
+
+Por tanto, debemos obtener una tabla de contingencia ligeramente diferente, en la que tengamos recogidos cuándo aciertan ambos y cuando difieren:
+
+```{r}
+comparador_NN = NN_pred == trueValues
+comparador_NN_sc = NN_sc_pred == trueValues
+
+cf_MN = MLmetrics::ConfusionMatrix(comparador_NN, comparador_NN_sc)
+cf_MN
+```
+
+Y le aplicamos el test de McNemar al contraste de la hipótesis:
+\[H_0:\ Ambos\ modelos\ se\ equivocan\ igual\]
+frente a
+\[H_1:\ Hay\ diferencias\ en\ las\ predicciones\]
+
+Y lo vamos a comprobar con un nivel de significación del 0.05.
+
+Hacemos el test:
+
+```{r}
+mcnemar.test(cf_MN, correct = TRUE)
+```
+
+Vemos como el pvalor es muy alto, por lo que debemos aceptar la hipótesis nula, y ambos modelos cometen equivocaciones muy similares. Mirando las tablas de contingencia de ambos modelos podemos observar que el modelo sin escalar detecta más Keylogger que el modelo escalado (tiene mejor sensibilidad), por lo que puede parecer razonable decantarnos por este modelo, en contra de las recomendaciones a priori de los diseñadores del algoritmo de entrenamiento.
+
+```{r}
+sensNN = MLmetrics::Sensitivity(trueValues, NN_pred, positive = "Keylogger")
+sensNN_sc = MLmetrics::Sensitivity(trueValues, NN_sc_pred, positive = "Keylogger")
+
+sensNN
+sensNN_sc
+```
+
+Y vamos a elegir el modelo sin escalar como el mejor entre ambos, aunque las diferencias son mínimas y no está totalmente claro que este sea mejor.
+
+Así, el modelo final de redes neuronales nos da las siguientes métricas:
+
+```{r}
+MLmetrics::Accuracy(NN_pred, trueValues)
+MLmetrics::Specificity(trueValues, NN_pred, positive = "Keylogger")
+MLmetrics::Sensitivity(trueValues, NN_pred, positive = "Keylogger")
+```
+
+Aquí observamos que, como adelantábamos, no hay posible overfitting, ya que las precisiones de entrenamiento y test son casi idénticas.
+
+```{r echo=FALSE}
+remove(conexPCA_NN_scaled)
+```
+
+## Random Forest
+
+Hacemos un entrenamiento similar al anterior:
+
+```{r eval=FALSE}
+cl <- makePSOCKcluster(3)
+registerDoParallel(cl)
+
+system.time(
+  conexPCA_RF<-caret::train(trainPCA[conexPCA.Vars.Entrada.Usadas],
+                                 trainPCA[[conex.Var.Salida.Usada]], 
+                                 method='rf', trControl=conexControl_CV5_2))
+
+
+stopCluster(cl)
+```
+
+Obteniendo el siguiente modelo:
+
+```{r}
+conexPCA_RF = readRDS("conexPCA_RF")
+
+conexPCA_RF$bestTune
+```
+
+Observamos que selecciona mtry = 2. Esto es muy curioso, se queda con únicamente 2 variables para efectuar la disgregación.
+
+Veamos qué ocurre con el error de entrenamiento:
+
+```{r}
+rf_pred = predict(conexPCA_RF, trainPCA[conexPCA.Vars.Entrada.Usadas])
+trueValues = trainPCA[[conex.Var.Salida.Usada]]
+
+MLmetrics::Accuracy(rf_pred, trueValues)
+```
+
+Y esta precisión es altísima, probablemente haya peor precisión en el test. No obstante, esto no implica overfitting, para detectar overfitting, deberíamos encontrar otro modelo con más error de entrenamiento, pero menos de test. Además, como se explica en un artículo de [Berkeley](https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm#mislabel), Random Forest no sufre overfitting. Esto implica que difícilmente encontraremos un modelo con menor precisión en el training y con mayor precisión en el test, que este.
+
+Nos da la siguiente matriz de confusión:
+
+```{r}
+rf_pred = predict(conexPCA_RF, testPCA[conexPCA.Vars.Entrada.Usadas])
+trueValues = testPCA[[conex.Var.Salida.Usada]]
+
+cf_rf = MLmetrics::ConfusionMatrix(rf_pred, trueValues)
+cf_rf
+```
+Vamos a compararlo visualmente con el mejor de los modelos anteriores:
+
+```{r}
+cf_NN_df <- data.frame(cf_NN)
+cf_RF_df <- data.frame(cf_rf)
+
+NN <- cf_NN_df$Freq
+cf_NN_df$Freq <- NULL
+RF <- cf_RF_df$Freq
+cf_NN_df <- cbind(cf_NN_df, NN, RF)
+
+barplot(cbind(cf_NN_df$NN,cf_NN_df$RF), names.arg = c("NN", "RF"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+Se ve claramente una gran mejora en cuanto a verdaderos positivos y a falsos positivos, aumenta mucho la sensibilidad. No obstante, también vemos un ligero empeoramiento en la cantidad de verdaderos negativos y de falsos negativos, empeora la especificidad.
+
+Para corroborar lo que vemos, calculamos los valores exactos:
+
+```{r}
+MLmetrics::Accuracy(rf_pred, trueValues)
+MLmetrics::Specificity(trueValues, rf_pred, positive = "Keylogger")
+MLmetrics::Sensitivity(trueValues, rf_pred, positive = "Keylogger")
+```
+
+Observamos, como adelántabamos viendo el gráfico, una enorme mejora en la sensibilidad, una ligera mejora en la precisión y un ligero empeoramiento de la especificidad. En principio, en nuestro problema, los falsos negativos tienen un coste mucho mayor que las falsos positivos, por lo que nos interesa maximizar la sensibilidad. Es decir, la elección entre el modelo anterior de redes neuronales y este de random forest, va a decantarse por este último.
+
+No obstante, vamos a realizar otro test McNemar, para observar si estos resultados, que en principio parecen mucho más dispares que los obtenidos entre ambos modelos de mlp, dejan patente cómo utilizar este test.
+
+```{r}
+comparador_NN = NN_pred == trueValues
+comparador_RF = rf_pred == trueValues
+
+cf_MN = MLmetrics::ConfusionMatrix(comparador_NN, comparador_RF)
+cf_MN
+```
+
+Y lvolvemos a aplicar el test de McNemar al contraste de la hipótesis:
+\[H_0:\ Ambos\ modelos\ se\ equivocan\ igual\]
+frente a
+\[H_1:\ Hay\ diferencias\ en\ las\ predicciones\]
+
+Y lo vamos a comprobar con un nivel de significación del 0.05.
+
+Hacemos el test:
+
+```{r}
+mcnemar.test(cf_MN, correct = TRUE)
+```
+
+Como era de esperar, obtenemos ahora un valor para el estadístico mucho mayor, y un p-valor minúsculo, que indica fuerte evidencia estadística de la diferencia entre las equivocaciones de ambos modelos.
+
+Así, nos reafirmamos en que para los propósitos de la predicción, es mejor el modelo de Random Forest, con mayor sensibilidad.
+
+```{r echo=FALSE}
+remove(conexPCA_NN)
+```
+
+
+## Naive Bayes
+
+Este algoritmo presenta el problema de que su método de entrenamiento no admite un grid de parámetros. Esto quiere decir que debemos simular un grid a mano, realizando nosotros el proceso de comparación de los diferentes modelos.
+
+Lo bueno es que este modelo entrena muy rápido, lo que nos permite poder jugar bastante.
+
+Así, necesitamos generar un grid de parámetros:
+
+```{r}
+laplace = c(0,0.5, 1,1.5)
+kernel = c(TRUE, FALSE)
+adjust = c(0.1, 0.25, 0.5,0.75)
+pois = c(TRUE, FALSE)
+```
+
+Y la función de entrenamiento:
+
+```{r eval=FALSE}
+set.seed(1234)
+
+#Vamos a hacer Bootstrapping
+n = 5
+tam = nrow(trainPCA)
+
+grid <- data.frame(matrix(ncol=5, nrow=0))
+names(grid) <- c("Laplace", "Kernel", "Adjust", "Poisson", "Accuracy")
+
+for(i in 1:length(laplace)){
+  for(j in 1:2){
+    for(k in 1:length(adjust)){
+      for(l in 1:length(pois)){
+        precisionLocal <- c()
+      
+        for(m in 1:n){
+          indices <- sample(1:tam, size = tam/n, replace = TRUE)
+          nb <- naive_bayes(formula = Class~., 
+                            data = trainPCA[indices,], 
+                            laplace = laplace[i],
+                            usekernel = kernel[j],
+                            adjust = adjust[k],
+                            usepoisson = pois[l])
+          
+          pred <- predict(nb, trainPCA[-indices,conexPCA.Vars.Entrada.Usadas])
+          
+          precisionLocal <- c(precisionLocal, MLmetrics::Accuracy(pred, trainPCA[-indices,conex.Var.Salida.Usada]))
+        }
+        grid <- rbind(grid, data.frame(Laplace = laplace[i], 
+                                       Kernel = kernel[j], 
+                                       Adjust = adjust[k], 
+                                       Poisson = pois[l],
+                                       Accuracy = mean(precisionLocal)))
+      }
+    }
+  }
+}
+```
+
+Y tomamos los parámetros que mejor error medio sobre los conjuntos de validación dan:
+
+```{r eval=FALSE}
+optParams <- grid[grid$Accuracy == max(grid$Accuracy),]
+```
+```{r}
+optParams <- readRDS("NB_optParams")
+optParams
+```
+
+
+Y solo resta entrenar un modelo con estos parámetros en el conjunto de entrenamiento completo:
+
+```{r eval=FALSE}
+conexPCA_NB <- naive_bayes(formula = Class~., 
+                          data = trainPCA, 
+                          laplace = optParams$Laplace,
+                          usekernel = optParams$Kernel,
+                          adjust = optParams$Adjust,
+                          usepoisson = optParams$Poisson)
+```
+
+```{r}
+conexPCA_NB <- readRDS("conexPCA_NB")
+```
+
+La matriz de contingencia obtenida es:
+
+```{r}
+BN_pred <- predict(conexPCA_NB, testPCA)
+trueValues <- testPCA[[conex.Var.Salida.Usada]]
+
+cf_NB <- MLmetrics::ConfusionMatrix(BN_pred, trueValues)
+
+cf_NB
+```
+
+Los resultados son ciertamente poco satisfactorios. Vemos como casi siempre predice Keylogger, esto es curioso ya que la cantidad de Benign es mayor, por lo que lo esperable sería que el sesgo fuese en ese sentido. No obstante, vamos a visualizar los resultados, de nuevo comparándolos con el mejor modelo que tenemos hasta el momento:
+
+```{r warning=FALSE}
+cf_NB_df <- data.frame(cf_NB)
+cf_RF_df <- data.frame(cf_rf)
+
+NB <- cf_NB_df$Freq
+cf_NB_df$Freq <- NULL
+RF <- cf_RF_df$Freq
+
+cf_NB_df <- cbind(cf_NB_df, NB, RF)
+
+barplot(cbind(cf_NB_df$NB,cf_NB_df$RF), names.arg = c("NB", "RF"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+Es obvio que Naive-Bayes funciona muy mal en este caso, ni siquiera hace falta realizar un test estadístico.
+
+### Un paso más con Naive Bayes
+
+Una asunción muy fuerte de Naive Bayes es que los predictores son independientes. Esto, en el caso de usar PCA, es una muy mala hipótesis, ya que todos los predictores son combinaciones lineales de los predictores iniciales.
+
+Vamos a repetir el experimento de Naive Bayes, pero retomando el conjunto que teníamos antes de aplicar PCA. Vamos a eliminar las variables que estén muy correlacionadas, como hicimos en la práctica 1, por lo que no solo no es descabellado que no empeore, sino que no debería extrañarnos obtener mejores resultados.
+
+```{r}
+#Eliminamos predictores muy correlacionados
+corrTab <- cor(conexPCA)
+upperCorrTab <- upper.tri(corrTab) * corrTab
+correls <- apply(upperCorrTab, 2, function(x) sum(abs(x)>=0.9) == 0)
+conexPCA <- conexPCA[, correls]
+
+#Tomamos conjuntos de train y test
+conexPCA <- cbind(conexPCA, Class)
+
+set.seed(1234)
+trainIndex <- sample(1:nrow(conexPCA), size = nrow(conexPCA)*0.8)
+trainNB <- conexPCA[trainIndex,]
+testNB <- conexPCA[-trainIndex,]
+
+conexNB.Vars.Entrada <- setdiff(names(conexPCA), conex.Var.Salida.Usada)
+```
+
+Y repetimos el entrenamiento de NB:
+
+```{r eval=FALSE}
+set.seed(1234)
+
+#Vamos a hacer Bootstrapping
+n = 2
+tam = nrow(trainNB)
+
+grid2 <- data.frame(matrix(ncol=5, nrow=0))
+names(grid2) <- c("Laplace", "Kernel", "Adjust", "Poisson", "Accuracy")
+
+for(i in 1:length(laplace)){
+  for(j in 1:2){
+    for(k in 1:length(adjust)){
+      for(l in 1:length(pois)){
+        precisionLocal <- c()
+      
+        for(m in 1:n){
+          indices <- sample(1:tam, size = tam/n, replace = TRUE)
+          nb <- naive_bayes(formula = Class~., 
+                            data = trainNB[indices,], 
+                            laplace = laplace[i],
+                            usekernel = kernel[j],
+                            adjust = adjust[k],
+                            usepoisson = pois[l])
+          pred <- predict(nb, trainNB[-indices,conexNB.Vars.Entrada])
+          
+          precisionLocal <- c(precisionLocal, MLmetrics::Accuracy(pred, trainNB[-indices,conex.Var.Salida.Usada]))
+        }
+        
+        grid2 <- rbind(grid, data.frame(Laplace = laplace[i], 
+                                        Kernel = kernel[j], 
+                                        Adjust = adjust[k], 
+                                        Poisson = pois[l], 
+                                        Accuracy = mean(precisionLocal)))
+      }
+    }
+  }
+}
+```
+
+Obtenemos ahora los parámetros óptimos, como antes:
+
+```{r eval=FALSE}
+optParams2 <- grid2[grid2$Accuracy == max(grid2$Accuracy),]
+```
+```{r}
+optParams2 <- readRDS("NB_optParams2")
+optParams2
+```
+
+
+Lo podemos comparar con el que obtuvimos anteriormente:
+
+```{r echo = FALSE}
+optParams
+```
+
+Observamos que el valor de suavizamiento de Laplace ha aumentado considerablemente en el nuevo caso. Por otro lado, la precisión no parece tener una mejora significativa.
+
+Vamos a entrenar el nuevo modelo:
+
+```{r eval=FALSE}
+conex_NB2 <- naive_bayes(formula = Class~., 
+                          data = trainNB, 
+                          laplace = optParams2$Laplace,
+                          usekernel = optParams2$Kernel,
+                          adjust = optParams2$Adjust,
+                          usepoisson = optParams$Poisson)
+```
+
+```{r}
+conex_NB <- readRDS("conexPCA_NB2")
+```
+
+
+Vamos a visualizar los resultados en comparación con el anterior modelo bayesiano:
+
+```{r warning=FALSE}
+BN2_pred <- predict(conex_NB, testNB)
+
+cf_NB2 <- MLmetrics::ConfusionMatrix(BN2_pred, trueValues)
+
+cf_NB_df <- data.frame(cf_NB)
+cf_NB2_df <- data.frame(cf_NB2)
+
+NB <- cf_NB_df$Freq
+cf_NB_df$Freq <- NULL
+NB2 <- cf_NB2_df$Freq
+
+cf_NB_df <- cbind(cf_NB_df, NB, NB2)
+
+barplot(cbind(cf_NB_df$NB,cf_NB_df$NB2), names.arg = c("NB", "NB2"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+Y los resultados parecen haber dado la vuelta, pero son igual de malos.
+
+Nótese que la comparación es justa, puesto que los conjuntos de test, si bien son distintos en tanto que uno está transformado mediante los loadings de PCA y tiene menos predictores que el otro, los índices usados son los mismos, gracias al uso de la semilla aleatoria fijada.
+
+Así, seguimos teniendo como mejor modelo hasta el momento a Random Forest.
+
+```{r echo=FALSE}
+remove(conexPCA_NB, conex_NB)
+```
+
+
+## GBM
+
+Vamos con el último modelo usado con PCA. En este caso es Stochastic Gradient Boosting. Como explicamos anteriormente, el grid es generado aleatoriamente. Puede consultarse en el apartado anterior.
+
+El entrenamiento es:
+
+```{r eval=FALSE}
+cl <- makePSOCKcluster(6)
+registerDoParallel(cl)
+
+set.seed(1234) #para poder reproducir el grid
+system.time(
+  conexPCA_GBM<-caret::train(conexPCA.Datos.Train[conexPCA.Vars.Entrada.Usadas],
+                          conexPCA.Datos.Train[[conex.Var.Salida.Usada]],
+                          method='gbm',
+                          trControl=conexControl_GBM,
+                          metric = "ROC",
+                          tuneLength = 10,
+                          verbose=TRUE))
+
+stopCluster(cl)
+```
+
+Y vamos a ver qué resultados nos arroja:
+
+```{r}
+conexPCA_GBM = readRDS("conexPCA_GBM")
+```
+
+```{r}
+GBM_pred <- predict(conexPCA_GBM, testPCA)
+cf_GBM <- MLmetrics::ConfusionMatrix(GBM_pred, trueValues)
+
+cf_GBM
+```
+
+Los resultados no son terribles. Veamos qué tal parado sale GBM en la comparación con RF:
+
+
+```{r warning=FALSE}
+cf_GBM_df <- data.frame(cf_GBM)
+cf_RF_df <- data.frame(cf_rf)
+
+GBM <- cf_GBM_df$Freq
+cf_GBM_df$Freq <- NULL
+RF <- cf_RF_df$Freq
+
+cf_GBM_df <- cbind(cf_GBM_df, GBM, RF)
+
+barplot(cbind(cf_GBM_df$GBM,cf_GBM_df$RF), names.arg = c("GBM", "RF"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+No está nada mal, aunque RF consigue acertar más Keyloggers, el modelo de GBM no es mucho peor. Quizás, si tuviésemos tiempo suficiente para llevar un estudio tan detallado como el que comentamos en la descripción del modelo, podría incluso superar a random forest.
+
+Así, concluimos el análisis con los datos PCA eligiendo al modelo de Random Forest como el mejor entre todos los entrenados.
+
+```{r echo=FALSE}
+remove(conexPCA_GBM, conexControl_GBM)
+```
+
+
+# Comparación de los modelos usando RFE
+
+Pasamos ahora a los modelos entrenados usando todas las variables que indica lmProfile, el objeto devuelto tras el proceso de RFE. Como vimos en la introducción, nos decía que usásemos todas las variables. Vamos con el análisis:
+
+## Multilayer Perceptron
+
+Para mlp, como hicimos en PCA, vamos a entrenar un modelo con preprocesado, y otro sin él.
+
+El entrenamiento lo hacemos mediante el siguiente comando:
+
+```{r eval=FALSE}
+cl <- makePSOCKcluster(3)
+registerDoParallel(cl)
+
+conexRFE.Vars.Entrada.Usadas <- setdiff(conexRFE.Vars.Entrada.Usadas, c("Protocol"))
+
+system.time(
+  conexRFE_NN_scaled<-caret::train(trainRFE[conexRFE.Vars.Entrada.Usadas],
+                            trainRFE[[conex.Var.Salida.Usada]], 
+                            method='mlpKerasDropout',
+                            tuneGrid=NNgrid,
+                            preProcess = c("center", "scale", "nzv"),
+                            trControl=conexControl_CV5_2_RFE, 
+                            epochs = 100
+                            ))
+
+
+stopCluster(cl)
+saveRDS(conexRFE_NN_scaled, file = "conexPCA_NN_scaled", ascii = FALSE, version = NULL,compress = TRUE, refhook = NULL)
+```
+
+Nótese que eliminamos el predictor Protocol, puesto que este método solo acepta entradas numéricas.
+
+Obtenemos, entonces, los siguientes modelos:
+
+```{r}
+conexRFE_NN = readRDS("conexRFE_NN")
+conexRFE_NN_scaled = readRDS("conexRFE_NN_scaled")
+
+conexRFE_NN$bestTune
+conexRFE_NN_scaled$bestTune
+```
+
+Vemos como comparten todos los parámetros, excepto el size, que en el caso sin preprocesado es de 50 unidades ocultas, y en el preprocesado es de 40.
+
+Obtenemos las tablas de confusión:
+
+```{r}
+NN_RFE_pred = predict(conexRFE_NN, testRFE[conexRFE.Vars.Entrada.Usadas])
+NN_RFE_sc_pred = predict(conexRFE_NN_scaled, testRFE[conexRFE.Vars.Entrada.Usadas])
+trueValues = testRFE[[conex.Var.Salida.Usada]]
+
+cf_NN = MLmetrics::ConfusionMatrix(NN_RFE_pred, trueValues)
+cf_NN_scaled = MLmetrics::ConfusionMatrix(NN_RFE_sc_pred, trueValues)
+cf_NN
+cf_NN_scaled
+```
+
+De forma visual:
+
+```{r}
+cf_NN_df <- data.frame(cf_NN)
+cf_NN_scaled_df <- data.frame(cf_NN_scaled)
+
+NN <- cf_NN_df$Freq
+cf_NN_df$Freq <- NULL
+NN_scaled <- cf_NN_scaled_df$Freq
+
+cf_NN_df <- cbind(cf_NN_df, NN, NN_scaled)
+
+barplot(cbind(cf_NN_df$NN,cf_NN_df$NN_scaled), names.arg = c("NN", "scaledNN"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+Vemos como ha cambiado mucho su comportamiento respecto a las redes anteriores, entrenadas con PCA. Ahora los resultados parecen más satisfactorios para nuestros propósitos. Vamos a hacer el test McNemar para contrastar la diferencia entre ambos modelos:
+
+```{r}
+comparador_NN = NN_RFE_pred == trueValues
+comparador_NN_sc = NN_RFE_sc_pred == trueValues
+
+cf_MN = MLmetrics::ConfusionMatrix(comparador_NN, comparador_NN_sc)
+cf_MN
+```
+
+Y le aplicamos el test de McNemar al contraste de la hipótesis:
+\[H_0:\ Ambos\ modelos\ se\ equivocan\ igual\]
+frente a
+\[H_1:\ Hay\ diferencias\ en\ las\ predicciones\]
+
+Y lo vamos a comprobar con un nivel de significación del 0.05.
+
+Hacemos el test:
+
+```{r}
+mcnemar.test(cf_MN, correct = TRUE)
+```
+
+Vemos como el pvalor es despreciable, por lo que rechazamos $H_0$ y concluimos que hay diferencias estadísticas entre ambos predictores.
+
+```{r}
+sensNN = MLmetrics::Sensitivity(trueValues, NN_RFE_pred, positive = "Keylogger")
+sensNN_sc = MLmetrics::Sensitivity(trueValues, NN_RFE_sc_pred, positive = "Keylogger")
+
+sensNN
+sensNN_sc
+```
+La sensibilidad es mucho mejor para el modelo con preprocesamiento. Respecto a la precisión:
+
+```{r}
+accNN = MLmetrics::Accuracy(NN_RFE_pred, trueValues)
+accNN_sc = MLmetrics::Accuracy(NN_RFE_sc_pred, trueValues)
+
+accNN
+accNN_sc
+```
+
+Y la precisión es mejor para el modelo sin preprocesar. Nos encontramos, por tanto, ante una decisión compleja. Lo correcto sería determinar en qué coste se traduce cada tipo de error, y decidirnos por aquel modelo que minimice el coste resultante. Por simplicidad (y desconocimiento de los costes) vamos a quedarnos con el modelo escalado, pues detecta mejor los casos positivos.
+
+```{r}
+MLmetrics::Accuracy(NN_RFE_sc_pred, trueValues)
+MLmetrics::Specificity(trueValues, NN_RFE_sc_pred, positive = "Keylogger")
+MLmetrics::Sensitivity(trueValues, NN_RFE_sc_pred, positive = "Keylogger")
+```
+```{r echo=FALSE}
+remove(conexRFE_NN)
+```
+
+
+## Random Forest
+
+Hacemos un entrenamiento similar al anterior:
+
+```{r eval=FALSE}
+cl <- makePSOCKcluster(3)
+registerDoParallel(cl)
+
+system.time(
+  conexRFE_RF<-train(trainRFE[conexRFE.Vars.Entrada.Usadas],
+                                 trainRFE[['Class']], 
+                                 method='rf', trControl=conexControl_CV5_2))
+
+stopCluster(cl)
+```
+
+Obteniendo el siguiente modelo:
+
+```{r}
+conexRFE_RF = readRDS("conexRFE_RF")
+
+conexRFE_RF$bestTune
+```
+
+Observamos que selecciona mtry = 52. Utiliza todos los predictores.
+
+Nos da la siguiente matriz de confusión:
+
+```{r}
+conexRFE.Vars.Entrada.Usadas <- c(conexRFE.Vars.Entrada.Usadas, "Protocol")
+rf_RFE_pred = predict(conexRFE_RF, testRFE[conexRFE.Vars.Entrada.Usadas])
+trueValues = testRFE[[conex.Var.Salida.Usada]]
+
+cf_rf = MLmetrics::ConfusionMatrix(rf_RFE_pred, trueValues)
+cf_rf
+```
+
+Vamos a compararlo visualmente con el mejor de los modelos anteriores, aunque tiene bastante mejor pinta que el modelo mlp anterior:
+
+```{r}
+cf_NN_scaled_df <- data.frame(cf_NN_scaled)
+cf_RF_df <- data.frame(cf_rf)
+
+NN <- cf_NN_scaled_df$Freq
+cf_NN_df$Freq <- NULL
+RF <- cf_RF_df$Freq
+
+cf_NN_scaled_df <- cbind(cf_NN_scaled_df, NN, RF)
+
+barplot(cbind(cf_NN_scaled_df$NN,cf_NN_scaled_df$RF), names.arg = c("NN", "RF"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+Se observa una mejora en todos los aspectos, acierta más y falla menos.
+
+Para corroborar lo que vemos, calculamos los valores exactos:
+
+```{r}
+MLmetrics::Accuracy(rf_RFE_pred, trueValues)
+MLmetrics::Specificity(trueValues, rf_RFE_pred, positive = "Keylogger")
+MLmetrics::Sensitivity(trueValues, rf_RFE_pred, positive = "Keylogger")
+```
+
+Se ve cómo nuestros ojos no nos engañaban, la mejora es evidente y este es el mejor modelo hasta el momento. No es necesario ningún test estadístico: es mejor indudablemente, en todos los sentidos.
+
+```{r echo=FALSE}
+remove(conexRFE_NN_scaled)
+```
+
+
+## Bagged Trees
+
+Vamos ahora a ver qué resultados nos proporciona el modelo que se entrena al efectuar el análisis RFE.
+
+```{r}
+BT_RFE_pred = predict(lmProfile, testRFE[conexRFE.Vars.Entrada.Usadas])
+trueValues = testRFE[[conex.Var.Salida.Usada]]
+
+cf_BT = MLmetrics::ConfusionMatrix(rf_RFE_pred, trueValues)
+cf_BT
+```
+
+Los resultados son muy interesantes, este modelo parece competitivo. Vamos a compararlo con el random forest anterior. Primero, gráficamente:
+
+```{r}
+cf_BT_df <- data.frame(cf_BT)
+cf_RF_df <- data.frame(cf_rf)
+
+BT <- cf_BT_df$Freq
+cf_BT_df$Freq <- NULL
+RF <- cf_RF_df$Freq
+
+cf_BT_df <- cbind(cf_BT_df, BT, RF)
+
+barplot(cbind(cf_BT_df$BT,cf_BT_df$RF), names.arg = c("BT", "RF"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+Y a simple vista es difícil notar diferencias significativas. Vamos a ver si el test McNemar esclarece algo:
+
+```{r}
+comparador_BT = BT_RFE_pred$pred == trueValues
+comparador_RF = rf_RFE_pred == trueValues
+
+cf_MN = MLmetrics::ConfusionMatrix(comparador_BT, comparador_RF)
+cf_MN
+```
+
+Y le aplicamos el test de McNemar al contraste de la hipótesis:
+\[H_0:\ Ambos\ modelos\ se\ equivocan\ igual\]
+frente a
+\[H_1:\ Hay\ diferencias\ en\ las\ predicciones\]
+
+Y lo vamos a comprobar con un nivel de significación del 0.05.
+
+Hacemos el test:
+
+```{r}
+mcnemar.test(cf_MN, correct = TRUE)
+```
+
+El p-valor es muy pequeño, por lo que los modelos no predicen de la misma forma. Debemos, entonces, decantarnos por alguno.
+
+Vamos a ver sus métricas:
+
+```{r}
+AccRF = MLmetrics::Accuracy(rf_RFE_pred, trueValues)
+SpRF = MLmetrics::Specificity(trueValues, rf_RFE_pred, positive = "Keylogger")
+SeRF = MLmetrics::Sensitivity(trueValues, rf_RFE_pred, positive = "Keylogger")
+
+AccBT = MLmetrics::Accuracy(BT_RFE_pred$pred, trueValues)
+SpBT = MLmetrics::Specificity(trueValues, BT_RFE_pred$pred, positive = "Keylogger")
+SeBT = MLmetrics::Sensitivity(trueValues, BT_RFE_pred$pred, positive = "Keylogger")
+```
+
+```{r}
+AccRF
+AccBT
+```
+La precisión es ligeramente mejor para RF.
+
+```{r}
+SpRF
+SpBT
+```
+La diferencia es especificidad es minúscula, aunque se decanta hacia RF.
+
+```{r}
+SeRF
+SeBT
+```
+
+Y la diferencia en cuanto a sensibilidad es también muy pequeña, pero mejor para RF.
+
+Es decir, el mejor modelo hasta el momento, sigue siendo Random Forest.
+
+```{r echo=FALSE}
+remove(lmProfile)
+```
+
+
+## Naive-Bayes
+
+Como antes, debemos hacer un entrenamiento manual:
+
+```{r}
+laplace = c(0,0.5, 1,1.5)
+kernel = c(TRUE, FALSE)
+adjust = c(0.1, 0.25, 0.5,0.75)
+pois = c(TRUE, FALSE)
+```
+
+Y la función de entrenamiento:
+
+```{r eval=FALSE}
+set.seed(1234)
+
+#Vamos a hacer Bootstrapping
+n = 5
+tam = nrow(trainRFE)
+
+#Aquí gy
+grid <- data.frame(matrix(ncol=5, nrow=0))
+names(grid) <- c("Laplace", "Kernel", "Adjust", "Poisson", "Accuracy")
+
+for(i in 1:length(laplace)){
+  for(j in 1:2){
+    for(k in 1:length(adjust)){
+      for(l in 1:length(pois)){
+        precisionLocal <- c()
+      
+        for(m in 1:n){
+          indices <- sample(1:tam, size = tam/n, replace = TRUE)
+          nb <- naive_bayes(formula = Class~., 
+                            data = trainRFE[indices,], 
+                            laplace = laplace[i],
+                            usekernel = kernel[j],
+                            adjust = adjust[k],
+                            usepoisson = pois[l])
+          
+          pred <- predict(nb, trainRFE[-indices,conexRFE.Vars.Entrada.Usadas])
+          
+          precisionLocal <- c(precisionLocal, MLmetrics::Accuracy(pred, trainRFE[-indices,conex.Var.Salida.Usada]))
+        }
+        grid <- rbind(grid, data.frame(Laplace = laplace[i], 
+                                       Kernel = kernel[j], 
+                                       Adjust = adjust[k], 
+                                       Poisson = pois[l],
+                                       Accuracy = mean(precisionLocal)))
+      }
+    }
+  }
+}
+```
+
+Y tomamos los parámetros que mejor error medio sobre los conjuntos de validación dan:
+
+```{r eval=FALSE}
+optParamsRFE <- grid[grid$Accuracy == max(grid$Accuracy),]
+```
+```{r}
+optParamsRFE <- readRDS("optParamsRFE")
+optParamsRFE
+```
+
+
+Y solo resta entrenar un modelo con estos parámetros en el conjunto de entrenamiento completo:
+
+```{r eval=FALSE}
+conexRFE_NB <- naive_bayes(formula = Class~., 
+                          data = trainRFE, 
+                          laplace = optParamsRFE$Laplace,
+                          usekernel = optParamsRFE$Kernel,
+                          adjust = optParamsRFE$Adjust,
+                          usepoisson = optParamsRFE$Poisson)
+```
+
+```{r}
+conexRFE_NB <- readRDS("conexRFE_NB")
+```
+
+
+La matriz de confusion:
+
+```{r}
+BN_RFE_pred <- predict(conexRFE_NB, testRFE)
+trueValues = testRFE[[conex.Var.Salida.Usada]]
+
+cf_NB <- MLmetrics::ConfusionMatrix(BN_RFE_pred, trueValues)
+
+cf_NB
+```
+
+Este modelo es bastante malo, aunque mejora considerablemente al Naive Bayes que obtuvimos con PCA. Nos seguimos quedando con RF, pues este modelo es evidentemente peor.
+
+En conclusión, tras el análisis con los datos RFE, al igual que sucedió con PCA, nos quedamos con el modelo de Random Forest.
+
+```{r echo=FALSE}
+remove(conexRFE_NB)
+```
+
+
+# Obtención del modelo final
+
+Ahora debemos comparar los dos modelos de Random Forest que tenemos: el de PCA y el de RFE. Para ello, vamos a aplicar los modelos al dataset completo y a comparar los resultados. (Quizás deberíamos haber guardado unos pocos datos al inicio del todo para este propósito, pero ya es demasiado tarde. Tendríamos que entrenar todos los modelos de nuevo y no merece la pena. Además, vamos a hacer un análisis estadístico exhaustivo para buscar las diferencias, por lo que el mayor accuracy hacia los datos que estuviesen en el training no debería ser muy importante.).
+
+```{r}
+RF_PCA_pred = predict(conexPCA_RF, predict(pca_result,conexRFE))
+RF_RFE_pred = predict(conexRFE_RF, conexRFE[conexRFE.Vars.Entrada.Usadas])
+trueValues = conexRFE[[conex.Var.Salida.Usada]]
+cf_RF_PCA = MLmetrics::ConfusionMatrix(RF_PCA_pred, trueValues)
+cf_RF_RFE = MLmetrics::ConfusionMatrix(RF_RFE_pred, trueValues)
+cf_RF_PCA
+cf_RF_RFE
+```
+
+Los resultados son ambos bastante buenos, aunque parecen ligeramente mejores para el Random Forest generado con RFE. Veámoslo gráficamente:
+
+```{r}
+cf_PCA_df <- data.frame(cf_RF_PCA)
+cf_RFE_df <- data.frame(cf_RF_RFE)
+
+RF_PCA <- cf_PCA_df$Freq
+cf_PCA_df$Freq <- NULL
+RF_RFE <- cf_RFE_df$Freq
+
+cf_PCA_df <- cbind(cf_PCA_df, RF_PCA, RF_RFE)
+
+barplot(cbind(cf_PCA_df$RF_PCA,cf_PCA_df$RF_RFE), names.arg = c("RF para PCA", "RF para RFE"), col = c("red", "yellow", "blue", "cyan"), legend = c("True Negative", "False Negative", "False Positive", "True Positive"))
+```
+
+Se observa el parecido, así como que para RFE es ligeramente mejor. Corroboremos que existen diferencias usando el test de McNemar:
+
+```{r}
+comparador_PCA = RF_PCA_pred == trueValues
+comparador_RFE = RF_RFE_pred == trueValues
+
+cf_MN = MLmetrics::ConfusionMatrix(comparador_PCA, comparador_RFE)
+cf_MN
+```
+
+Y le aplicamos el test de McNemar al contraste de la hipótesis:
+\[H_0:\ Ambos\ modelos\ se\ equivocan\ igual\]
+frente a
+\[H_1:\ Hay\ diferencias\ en\ las\ predicciones\]
+
+Y lo vamos a comprobar con un nivel de significación del 0.05.
+
+Hacemos el test:
+
+```{r}
+mcnemar.test(cf_MN, correct = TRUE)
+```
+
+Por lo que la conclusión es obvia: los modelos predicen distinto. Para decantarnos finalmente por uno de ellos, que presumiblemente será el Random Forest entrenado con los datos de RFE, haremos un test de la t-student, para el que generaremos distintos subconjuntos de evaluación para poder obtener una muestra aleatoria de las precisiones para estos dos algoritmos:
+
+```{r}
+set.seed(1234)
+
+PCA_Acc <- c()
+RFE_Acc <-c()
+
+for (i in 1:30){
+  indices <- sample(1:nrow(conexRFE), size=1000, replace = TRUE)
+  accPCA <- MLmetrics::Accuracy(predict(conexPCA_RF, predict(pca_result, conexRFE[indices,])),
+                                conexRFE[indices, conex.Var.Salida.Usada])
+  accRFE <- MLmetrics::Accuracy(predict(conexRFE_RF, conexRFE[indices,]),
+                                conexRFE[indices, conex.Var.Salida.Usada])
+  
+  PCA_Acc <- c(PCA_Acc, accPCA)
+  RFE_Acc <- c(RFE_Acc, accRFE)
+}
+```
+
+Veamos los vectores obtenidos:
+
+```{r}
+PCA_Acc
+RFE_Acc
+```
+
+Parece que el modelo de RFE arroja mucho mejores resultados. Vamos a comprobarlo utilizando el test de la t-student. 
+
+Primero, verificamos la normalidad de los datos:
+
+\[H_0: PCA_{Acc}\ sigue\ una\ distribución\ normal\]
+
+frente a
+
+\[H_1: PCA_{Acc}\ no\ sigue\ una\ distribución\ normal\]
+
+con extensión $\alpha=0.05$.
+
+```{r}
+shapiro.test(PCA_Acc)
+```
+
+El p-valor es prácticamente 1, por lo que aceptamos la normalidad de $PCA_{Acc}$.
+
+Realizamos el mismo contraste para $RFE_{Acc}$:
+
+```{r}
+shapiro.test(RFE_Acc)
+```
+
+El p-valor es mayor que 0.05, por lo que aceptamos $H_0$, los datos son normales. 
+
+Las muestras son, obviamente, pareadas, pues son predicciones sobre los mismos datos. Por tanto, realizamos el test de la t de student para contrastar:
+
+\[H_0: \mu_{PCA_{Acc}}\geq\mu_{RFE_{Acc}}\]
+
+frente a la alternativa:
+
+\[H_1: \mu_{PCA_{Acc}}<\mu_{RFE_{Acc}}\]
+
+```{r}
+t.test(PCA_Acc, RFE_Acc, alternative = "less", paired = TRUE)
+```
+
+El p-valor es prácticamente 0. Por lo que rechazamos la hipótesis nula. Hay evidencia estadística de que los resultados obtenidos por el modelo de Random Forest entrenado con RFE es mejor que el obtenido con PCA.
+
+# Conclusión 
+```{r child="conclusion.Rmd"}
+
+```
+
+Tras todo este análisis, el mejor modelo que hemos obtenido es Random Forest, a través de los datos modificados con RFE. Esta modificación, en realidad, fue nula, ya que RFE seleccionó todos los predictores. Esto nos hace ver que, como pensamos en la práctica 1, este conjunto de datos es muy complejo, y las relaciones entre las variables no están para nada claras, ni son fáciles de desentrañar.
+
+Respecto a los fines didácticos de la práctica, estamos bastante satisfechos con lo aprendido, así como con el esfuerzo realizado, que esperamos quede reflejado en esta memoria.
+

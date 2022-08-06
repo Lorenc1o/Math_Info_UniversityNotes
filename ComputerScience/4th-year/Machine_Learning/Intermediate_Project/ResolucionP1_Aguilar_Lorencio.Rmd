@@ -1,0 +1,629 @@
+---
+title: "Resolucion de la Práctica 1"
+author: "Aguilar Martínez, Francisco - Lorencio Abril, Jose Antonio"
+output:
+  html_document:
+    df_print: kable
+    highlight: kate
+    number_sections: yes
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(magrittr)
+library(ggplot2)
+library(tidyverse)
+library(gridExtra) 
+```
+# Introducción
+
+En este guión llevaremos a cabo un análisis del conjunto de datos, obtenido de [Kaggle](https://www.kaggle.com/subhajournal/keylogger-detection). 
+Dicho conjunto contiene alrededor de medio millón de muestras de conexiones TCP/IP obtenidas
+mediante PCAP, que podrán ser reconstruidas a través de las 85 características de las que
+dispondremos. El objetivo último de la práctica será obtener un modelo de machine
+learning capaz de detectar conexiones fraudulentas, en particular [keyloggers](https://www.kaspersky.com/resource-center/definitions/keylogger). Es decir, buscamos resolver el problema de clasificación de conexiones maliciosas, a partir de ciertas mediciones aplicables a estas.
+
+Así, cargamos los datos y procedemos a su análisis
+
+```{r Lectura de Datos}
+conex <- read.csv("Keylogger_Detection.csv", stringsAsFactors = FALSE)
+```
+
+# Resolución
+## Pre-Análisis y limpieza de los datos, extracción de características irrelevantes
+
+Nuestro dataset contiene 85 características, de entre las cuáles muchas son irrelevantes para la predicción, como ejemplo muy obvio tenemos la columna de índices.
+
+```{r Quitamos Indices}
+conex$X <- NULL
+```
+
+Así, vamos a tratar de averiguar si otras columnas tampoco proporcionan información que nos sea de utilidad en nuestro estudio, para eliminarlas y reducir la cantidad de características con las que tenemos que trabajar.
+
+Revisando los datos, hay varias columnas que en una situación real de predicción, no podremos usar, como son:
+
++ **Identificador de Conexión** (por ser -supuestamente- único para cada conexión).
+
++ **TimeStamp**, ya que la predicción será independiente del momento en que suceda (podrían discutirse temas de aumento de la incidencia en ciertas franjas horarias o épocas del año, pero esto complica el análisis de una forma innecesaria).
+
++ Las **Direcciones IP fuente y destino**. En principio, una cierta IP no proporciona información sobre qué transmite o recibe. Se podría, no obstante, hacer una etapa previa de filtrado, en la que guardásemos en una base de datos IP's que anteriormente hemos detectado como maliciosas (aunque el uso de VPN disminuiría la eficacia de este sistema).
+
++ Los **Puertos fuente y destino**, razonando análogamente a como lo hemos hecho con las IP's.
+
++ El **protocolo** es una variable numérica, pero su significado no lo es, y dado que no tiene un gran rango de valores, la cambiamos a Factor. 
+
++ El **contador de flag FIN**, pues únicamente indica la terminación de una conexión.
+
+```{r Eliminación de variables}
+conex$Flow.ID <- NULL
+conex$Timestamp <- NULL
+conex$Source.IP <- NULL
+conex$Destination.IP <- NULL
+conex$Source.Port <- NULL
+conex$Destination.Port <- NULL
+conex$FIN.Flag.Count <- NULL
+conex$Protocol <- as.factor(conex$Protocol)
+conex <- unique(conex)
+```
+
+También detectamos una variable repetida (**Fwd.Header.Length** y **Fwd.Header.Length.1**):
+```{r Eliminación de columna repetida}
+conex$Fwd.Header.Length.1 <- NULL
+```
+
+Procedemos a **limpiar los NA's** y cambiar el tipo de los datos que están almacenadas como **character** pero deberían ser de tipo **numérico**.
+
+```{r Búsqueda de columnas numéricas mal tratadas}
+caracter <- unlist(lapply(conex, is.character))
+summary(conex[,caracter])
+
+```
+```{r echo=FALSE}
+remove(caracter)
+```
+
+
+Vemos la Desviación Típica de la longitud de los paquetes, así como el Contador de Flags CWE, que no deberían ser de tipo character. Por tanto, hacemos que sean numéricos:
+```{r Conversión a columnas numéricas, warning=FALSE}
+conex$Packet.Length.Std <- as.numeric(conex$Packet.Length.Std);
+conex$CWE.Flag.Count <- as.numeric(conex$CWE.Flag.Count);
+```
+
+Como esta operación puede introducir NA'S en caso de encontrar valores de tipo character, eliminamos las muestras que se hayan podido ver afectadas.
+```{r Eliminación de NAs}
+conex = na.omit(conex)
+```
+
+Ahora vamos a eliminar valores que no tienen sentido (tiempo o cantidades negativas, por ejemplo).
+```{r}
+conex <- conex[-conex$Fwd.Header.Length<0,]
+conex <- conex[-conex$Flow.IAT.Min<0,]
+conex <- conex[-conex$min_seg_size_forward<0,]
+```
+
+
+Las características que no varíen a lo largo de las muestras no nos serán de utilidad, por tanto pasamos a eliminarlas, vamos un paso más allá y eliminamos aquellas que sean constantes excepto valores atípicos, para esto bastará comprobar si el siguiente intervalo 
+$$A=[Q_1 -1.5\cdot (Q_3 -Q_1),Q_3 +1.5\cdot (Q_3 -Q_1)]$$ 
+se reduce a un conjunto unipuntual.
+Nótese que para hacer esto basta comprobar que $Q_3 = Q_1$, pues entonces quedaría 
+$$A=[Q_1,Q_3]=[Q_1,Q_1]=\{Q_1\}$$
+```{r Eliminación de columnas constantes salvo valores atípicos}
+temp <- conex
+temp$Class <- NULL
+temp$Protocol <- NULL
+
+# Calculamos los cuartiles
+cuartiles <- sapply(temp,quantile) 
+
+pre <- names(temp)
+# Nos quedamos con las columnas cuyo conjunto A no colapsa a un unipuntual
+temp <- temp[, !apply(cuartiles, 2, function(x) any(x[4]== x[2]))] 
+
+Class <- conex$Class
+Protocol <- conex$Protocol
+post <- names(temp)
+conex <- cbind(Protocol, temp, Class)
+
+# Mostramos las columnas eliminadas
+setdiff(pre, post) 
+
+```
+```{r echo=FALSE}
+remove(cuartiles, temp, pre, post, Class, Protocol)
+```
+
+
+Podemos apreciar que había una cantidad considerable (27) de características constantes.
+Hasta ahora, hemos conseguido reducir la cantidad de predictores, desde los 85 iniciales, hasta 51 actualmente. Está claro que aún queda mucho trabajo por delante, pero es un buen comienzo, pues hemos conseguido prescindir de un 40% de las características mediante un análisis superficial de los datos.
+
+```{r echo = FALSE}
+# Una copia que usaremos en el ejercicio 5
+copia <- conex 
+# Una copia que usaremos en el apartado 3
+conexEspecialista <- conex 
+#Una copia para el apartado 4
+conexSinCor <- conex
+```
+
+
+
+## Agrupación de las características por temática.
+
+Identificamos las siguientes temáticas:
+
++ Características sobre el **flujo**: Flow.ID Source.IP Source.Port Destination.IP Destination.Port Protocol Timestamp
+
++ Características sobre los **paquetes del flujo**: Flow.Duration Total.Fwd.Packets Total.Backward.Packets Total.Length.of.Fwd.Packets Total.Length.of.Bwd.Packets Fwd.Packet.Length.Max Fwd.Packet.Length.Min Fwd.Packet.Length.Mean Fwd.Packet.Length.Std Bwd.Packet.Length.Max Bwd.Packet.Length.Min Bwd.Packet.Length.Mean Bwd.Packet.Length.Std Flow.Bytes.s Flow.Packets.s down.Up.ratio Subflow.Fwd.Packets Subflow.Fwd.Bytes Subflow.Bwd.Packets Subflow.Bwd.Bytes Fwd.Act.Data.Pkts
+
++ Características sobre el **tiempo transcurrido entre un paquete y el siguiente**: Flow.IAT.Mean Flow.IAT.Std Flow.IAT.Max Flow.IAT.Min Fwd.IAT.Total Fwd.IAT.Mean Fwd.IAT.Std Fwd.IAT.Max Fwd.IAT.Min Bwd.IAT.Total Bwd.IAT.Mean Bwd.IAT.Std Bwd.IAT.Max Bwd.IAT.Min
+
++ Características sobre el **tamaño del flujo**: Flow.Bytes.s, Flow.Packets.s, Fwd.Packets.s, Bwd.Packets.s, 
+
++ **Conteo de flags**: Fwd.PSH.flags, Bwd.PSH.flags, Fwd.URG.flags, Bwd.URG.flags, FIN.flag.count, SYN.flag.count, RST.flag.count, PSH.flag.count, ACK.flag.count, URG.flag count, CWR flag count, ECE flag count
+
++ Caracterícticas sobre el **tiempo de actividad**: Active.Min, Active.Max, Active.Mean, Active.Std, Idle.Min, Idle.Max, Idle.Mean, Idle.Std
+
++ Características sobre el **tamaño de los paquetes**: Fwd.Header.Length, Bwd.Header.Length, Packet.Length.Min, Packet.Length.Max, Packet.Length.Mean, Packet.Length.Std, Packet.Length.Variance, Average.Packet.Size, Fwd.Segment.Size.Avg, Bwd.Segment.Size.Avg, Fwd.Bytes.Bulk.Avg, Fwd.Packet.Bulk.Avg, Fwd.Bulk.Rate.Avg, Bwd.Bytes.Bulk.Avg, Bwd.Packet.Bulk.Avg, Bwd.Bulk.Rate.Avg Fwd.Seg.Size.Min
+
++ Características sobre la **ventana inicial**: Fwd.Init.Win.Bytes Bwd.Init.Win.Bytes
+
+## Estrategia para trabajar con el conjunto de datos de manera holgada.
+Para esto simplemente tomaremos un subconjunto de los datos que disponemos, manteniendo el ratio de conexiones benignas y maliciosas, procedemos como se muestra a continuación:
+
+
+```{r Obtención de conjuntos de training y testing}
+# Obtenemos la muestra de conexiones no maliciosas, con 
+# tamaño 20% del número de casos no malignos totales.
+# Además obtenemos el conjunto de testing.
+trainBenign <- conex[conex$Class == "Benign",]
+trainBenignIndex <- sample(1:nrow(trainBenign), size = nrow(trainBenign)*0.80)
+testBenign <- trainBenign[-trainBenignIndex,]
+trainBenign <- trainBenign[trainBenignIndex,]
+
+# Mismo procedimiento para las conexiones maliciosas
+trainKL <- conex[conex$Class=="Keylogger",]
+trainKLIndex <- sample(1:nrow(trainKL), size = nrow(trainKL)*0.80)
+testKL <- trainKL[-trainKLIndex,]
+trainKL <- trainKL[trainKLIndex,]
+
+contest <- rbind(testBenign,testKL)
+contrain <- rbind(trainBenign, trainKL)
+
+```
+```{r echo=FALSE}
+remove(testBenign, testKL, trainBenign, trainKL, trainKLIndex, trainBenignIndex)
+```
+
+Hemos tomado una muestra del 80% para poder usarla luego. Si quisiésemos trabajar con menos datos, bastaría cambiar esa cantidad.
+
+
+## Análisis de correlación
+Como los grupos identificados no nos parecen suficientemente sólidos, optamos por llevar a cabo un análisis de correlación entre todas las variables, para así poder descartar aquellas que por estar altamente correlacionadas sean despreciables.
+
+```{r Obtención de la matriz de correlación}
+# Obtenemos las características numéricas (todas menos Class en este punto)
+num <- unlist(lapply(conex, is.numeric))
+numCols <- contrain[ ,num]
+corrTab <- cor(numCols)
+
+```
+```{r echo=FALSE}
+remove(num)
+```
+
+
+Debido al gran número de características con las que estamos trabajando, resulta difícil mostrar la matriz de correlación completa, pasamos a seleccionar un grupo reducido de variables y mostrar su matriz asociada
+
+```{r Subanálisis de correlación}
+grupo <- cbind.data.frame(conex$Flow.IAT.Mean, conex$Flow.IAT.Std, conex$Flow.IAT.Max, conex$Flow.IAT.Min, conex$Fwd.IAT.Total, conex$Fwd.IAT.Mean, conex$Fwd.IAT.Std, conex$Fwd.IAT.Max, conex$Fwd.IAT.Min, conex$Bwd.IAT.Total, conex$Bwd.IAT.Mean, conex$Bwd.IAT.Std, conex$Bwd.IAT.Max, conex$Bwd.IAT.Min);
+
+subCorTab <- cor(grupo);
+corrplot::corrplot(subCorTab);
+
+```
+```{r echo=FALSE}
+remove(grupo)
+```
+
+Nos encontramos con pares de variables que presentan un alto coeficiente de correlación, por tanto, podremos prescindir de una de ellas  sin que esto suponga una gran pérdida de información.
+
+Pasamos a eliminar los pares de variables altamente correlacionados:
+```{r Eliminación de variables correlacionadas}
+# Como la matriz de correlación es simétrica, tomamos los datos que
+# se encuentran por encima de la diagonal superior.
+upperCorrTab <- upper.tri(corrTab) * corrTab
+correls <- apply(upperCorrTab, 2, function(x) sum(abs(x)>=0.9) == 0)
+conex <- conex[, correls]
+contrain <- contrain[, correls]
+contest <- contest[, correls]
+
+```
+```{r echo=FALSE}
+remove(numCols, corrTab, upperCorrTab, correls, subCorTab)
+```
+
+
+Con esto hemos descartado todas aquellas características que estuvieran correlacionadas con alguna otra con un factor de correlación mayor o igual que 0.9 en valor absoluto, lo cual nos deja con un **30% de las características iniciales**. 
+
+## Diferencias entre características Forward y Backward
+
+El análisis de las diferencias entre estos dos conjuntos de variables puede responderse, al menos, desde dos puntos de vista: desde la perspectiva de un **especialista en redes**, que conoce las características técnicas de este problema y puede razonar sobre estas; el otro punto de vista es el del **analista de datos**, que concentrará su esfuerzo en buscar las diferencias en cuanto a la relevancia para explicar la variable dependiente.
+
+### Perspectiva de un especialista {#esp}
+Algunas variables pueden ser Forward y Backward, dependiendo si nos fijamos en el flujo de entrada (Backward) o el de salida (Forward). Estas variables con las siguientes:
+
++ **Total Packets**: son los paquetes totales enviados, los Forward de salida, y los Backward de entrada.
+
++ **Packet Length**: longitud de los paquetes enviados, de salida y de entrada. Se tratan el total, el máximo, el mínimo, la media, la desviación típica y la varianza en ambas direcciones.
+
++ **IAT**: es el tiempo transcurrido entre dos paquetes envíados (Forward) o recibidos (Backward), y se presenta su media, desviación típica, el máximo y el mínimo
+
++ **Flags**: indican la cantidad total de ocurrencias de cada flag en la dirección forward y backward.
+
++ **Header length**: la longitud de la cabecera en ambas direcciones.
+
++ **Segment size**: longitud de segmento en ambas direcciones.
+
++ **Init Win Size**: tamaño de la ventana inicial, establecida por cada nodo de la conexión.
+
+Sabiendo que normalmente un Keylogger basado en software funciona modificando el Kernel del sistema operativo, consiguiendo así almacenar la información de la víctima en un archivo de datos, que posteriormente es transmitido al  atacante por diversos medios (email, subiéndolos a una página web, SSH). Sería lógico pensar que en caso de que podamos detectar una conexión  maliciosa, podremos hacerlo por medio de los paquetes Fwd y prescindir de los paquetes Bwd. 
+
+### Perspectiva de un analista
+
+Vamos a comparar grupos de características similares, que tengan diferenciación entre forward y backward. Para ello, primero seleccionamos:
+
+```{r Análisis de correlación Fwd y Bwd}
+caracts <- cbind.data.frame(copia$Total.Fwd.Packets, copia$Total.Backward.Packets, copia$Total.Length.of.Fwd.Packets, copia$Total.Length.of.Bwd.Packets, copia$Fwd.Packet.Length.Max, copia$Bwd.Packet.Length.Max, copia$Fwd.Packet.Length.Mean, copia$Bwd.Packet.Length.Mean, copia$Fwd.Packet.Length.Std, copia$Bwd.Packet.Length.Std, copia$Subflow.Fwd.Packets, copia$Subflow.Bwd.Packets)
+
+corrTab <- cor(caracts);
+corrplot::corrplot(corrTab);
+```
+
+Si hacemos igual que en el ejercicio anterior:
+
+```{r}
+upperCorrTab <- upper.tri(corrTab) * corrTab
+correls <- apply(upperCorrTab, 2, function(x) sum(abs(x)>=0.9) == 0)
+caracts <- caracts[, correls]
+
+names(caracts)
+```
+```{r echo=FALSE}
+remove(corrTab, upperCorrTab, correls)
+remove (caracts, copia)
+```
+
+Y vemos como sobreviven las mismas características para las forward y las backward (salvo una, la longitud total de paquetes forward). Por tanto, parece que ambos tipos de variables pueden ser suficientemente distintas como para aportar información relevante al modelo de clasificación.
+
+
+## Análisis PCA
+
+Vamos ahora a realizar el análisis de las componentes principales, y a estudiar la forma de estas.
+
+```{r Análisis PCA}
+conexPCA <- conex
+conexPCA$Class <- NULL
+conexPCA$Protocol <- NULL
+pca_result <- prcomp(conexPCA, scale = TRUE)
+pcas = as.data.frame(pca_result$x,stringsAsFactors=F)
+pcas = cbind(Class = conex$Class,pcas)
+
+ggplot(pcas, aes(PC1, PC2)) + 
+     modelr::geom_ref_line(h = 0) +
+     modelr::geom_ref_line(v = 0) +
+     geom_point(aes(color = Class), size = 2, position='jitter',alpha = 0.4) +
+     xlab("First Principal Component") + 
+     ylab("Second Principal Component") + 
+     ggtitle("First Two Principal Components of Keylogger Data")
+```
+
+Como observamos, las componentes principales no proporcionan separabilidad. No obstante, puede ser interesante estudiar los loadings:
+
+```{r Loading PC1}
+loadings <- pca_result$rotation
+loadings[,1]
+```
+Vemos que la primera componente principal, da mayor importancia a las variables la **Longitud Máxima de los paquetes Backward y los Forward**. el **conteo del Flag PSH**, **tiempo medio transcurrido entre dos paquetes Bwd**, la **desviación típica de la longitud de los paquetes Bwd** y el **tamaño de la ventana inicial Fwd**. O sea, la PC1 parece dar mucha importancia a las medidas de longitud de los paquetes, y lo hace de forma positiva, por lo que cuanto mayor sean los paquetes, más probable será, según la PC1, que sea un Keylogger.
+
+Vamos a ver la PC2:
+```{r Loading PC2}
+loadings[,2]
+```
+
+Esta componente vemos que da más importancia a variables que expresan medidas temporales, como varias que indican los **tiempos transcurridos entre dos paquetes**, o la **duración del flujo**. Además, de forma negativa, por lo que a mayores sean estos valores, menos probable es, según la PC2, que sea una conexión maliciosa.
+
+También podemos comprobar qué porcentaje de la variación es explicada por cada componente principal:
+```{r Porcentaje de Variación Explicada}
+VE <- pca_result$sdev^2;
+PVE <- VE / sum(VE);
+round(PVE, 3)
+```
+Estos resultados no son demasiado satisfactorios, pues observamos que necesitamos tomar 4 componentes principales solo para explicar el **50% de la variación**. Si quisiéramos dar **explicación al 75%** de esta, necesitaríamos una gran cantidad (9). Esto podemos verlo en los siguientes gráficos:
+
+```{r}
+# Gráfico PVE
+PVEplot <- qplot(c(1:length(PVE)), PVE) + 
+  geom_line() + 
+  xlab("Principal Component") + 
+  ylab("PVE") +
+  ggtitle("Variación explicada por cada PC") +
+  ylim(0, 1)
+
+# PVE acumulado
+cumPVE <- qplot(c(1:length(PVE)), cumsum(PVE)) + 
+  geom_line() + 
+  xlab("Principal Component") + 
+  ylab(NULL) + 
+  ggtitle("Variación explicada acumulativa") +
+  ylim(0,1)
+
+grid.arrange(PVEplot, cumPVE, ncol = 2)
+```
+
+
+## Modelo de clasificación
+
+Dado que estamos ante un problema de clasificación, el modelo que vamos a utilizar es el logístico, en el que entenderemos que **positivo** son las conexiones maliciosas (Keylogger) y **negativo** serán las benignas.
+
+```{r Modelo Logit}
+contrain$Class <- as.factor(contrain$Class)
+mymodel2 = glm(Class ~ ., data=contrain,family=binomial(link="logit"))
+summary(mymodel2)
+```
+Y lo usamos para lanzar una predicción sobre el conjunto de testing:
+```{r Predicción}
+pred = predict(mymodel2, newdata = contest)
+prob =  exp(pred) / (1+exp(pred))
+summary(prob)
+```
+Vemos que el tercer cuartil queda por debajo de 0,5. Esto indica que muy pocas conexiones serán predecidas como Keylogger.
+
+De todas formas, veamos la comparativa de la predicción VS la realidad:
+```{r Comprobación del modelo}
+prediccion <- factor(prob>0.5, levels = c(TRUE,FALSE), labels = c('Keylogger', 'Benign'))
+
+vNeg <- nrow(contest[contest$Class == prediccion & contest$Class == 'Benign',])
+fPos <- nrow(contest[contest$Class != prediccion & contest$Class == 'Benign',])
+fNeg <- nrow(contest[contest$Class != prediccion & contest$Class == 'Keylogger',])
+vPos <- nrow(contest[contest$Class == prediccion & contest$Class == 'Keylogger',])
+
+confusion <- matrix(data=c(vNeg, fPos, fNeg, vPos), nrow=2, ncol=2, dimnames = list(c("Predicción Negativa", "Predicción Positiva"), c("Negativo Real", "Positivo Real")))
+
+confusion <- data.frame(confusion)
+confusion
+```
+Vemos como, efectivamente, hay muy pocas predicciones positivas. Además, de entre las predicciones positivas, acierta alrededor del 50%. 
+Vamos a calcular algunas de las principales métricas para ver la adecuación del modelo de clasificación:
+```{r Métricas de ajuste del modelo}
+total <- vNeg + fPos + fNeg + vPos
+exactitud <- (vPos+vNeg)/total
+precision <- vPos/(vPos+fPos)
+sensibilidad <- vPos/(vPos+fNeg)
+especifidad <- vNeg/(vNeg+fPos)
+
+metricas <- data.frame(cbind(exactitud, precision, sensibilidad, especifidad))
+metricas #TODO bonico
+```
++ La **exactitud** es el porcentaje total de predicciones acertadas. Como vemos, es de 59%, lo cual no debería sorprendernos: esta es la proporción de conexiones benignas entre el total. Como Casi siempre predice benigno, era esperable este resultado.
++ La **precisión** se refiere al porcentaje de casos positivos reales entre todos los positivos pronosticados. Como es del 50%, cada vez que el modelo prediga un positivo, este será efectivamente así un 50% de las veces.
++ La **sensibilidad** indica el porcentaje de aciertos entre el total de positivos reales. Vemos la lamentable cifra del 7.5%. Esto quiere decir que, de cada 100 conexiones malignas, solo vamos a detectar 7.5 (y si juntamos esto con el resultado de la precisión, ni siquiera sabremos cuáles son).
++ La **especificidad** indica el porcentaje de aciertos entre el total de negativos reales. Como el modelo casi siempre pronostica negativo, no es de extrañar que esta cifra parezca tan buena.
+
+Cuando lo que queremos es detectar las conexiones maliciosas, la métrica más importante es la sensibilidad. Es decir, este modelo es muy poco útil.
+
+
+# Probando la visión del especialista
+
+Siguiendo el consejo de nuestro especialista en redes (ver apartado 2.5.1.), vamos a quedarnos solo con las características forward:
+```{r}
+conexEspecialista$Total.Backward.Packets <- NULL
+conexEspecialista$Bwd.Header.Length <- NULL
+conexEspecialista$Bwd.IAT.Max <- NULL
+conexEspecialista$Bwd.IAT.Mean <- NULL
+conexEspecialista$Bwd.IAT.Std <- NULL
+conexEspecialista$Bwd.IAT.Min <- NULL
+conexEspecialista$Bwd.IAT.Total <- NULL
+conexEspecialista$Bwd.Packet.Length.Max <- NULL
+conexEspecialista$Bwd.Packet.Length.Mean <- NULL
+conexEspecialista$Bwd.Packet.Length.Std <- NULL
+conexEspecialista$Bwd.Packets.s <- NULL
+conexEspecialista$Avg.Bwd.Segment.Size <- NULL
+conexEspecialista$Subflow.Bwd.Bytes <- NULL
+conexEspecialista$Subflow.Bwd.Packets <- NULL
+conexEspecialista$Subflow.Fwd.Bytes <- NULL
+conexEspecialista$Subflow.Fwd.Packets <- NULL
+conexEspecialista$Total.Length.of.Bwd.Packets <- NULL
+conexEspecialista$Init_Win_bytes_backward <- NULL
+```
+
+Procedemos ahora tal y como lo hicimos antes (obtención de conjuntos de prueba y testeo, análisis de correlación, etc.), y al hacer Análisis PCA, obtenemos la siguiente gráfica:
+```{r echo=FALSE}
+# Obtenemos la muestra de conexiones no maliciosas, con 
+# tamaño 20% del número de casos no malignos totales.
+# Además obtenemos el conjunto de testing.
+trainBenign <- conexEspecialista[conexEspecialista$Class == "Benign",]
+trainBenignIndex <- sample(1:nrow(trainBenign), size = nrow(trainBenign)*0.80)
+testBenign <- trainBenign[-trainBenignIndex,]
+trainBenign <- trainBenign[trainBenignIndex,]
+
+# Mismo procedimiento para las conexiones maliciosas
+trainKL <- conexEspecialista[conexEspecialista$Class=="Keylogger",]
+trainKLIndex <- sample(1:nrow(trainKL), size = nrow(trainKL)*0.80)
+testKL <- trainKL[-trainKLIndex,]
+trainKL <- trainKL[trainKLIndex,]
+
+contest <- rbind(testBenign,testKL)
+contrain <- rbind(trainBenign, trainKL)
+```
+```{r echo=FALSE}
+remove(testBenign, testKL, trainBenign, trainKL, trainKLIndex, trainBenignIndex)
+```
+
+
+```{r echo=FALSE}
+# Obtenemos las características numéricas (todas menos Class en este punto)
+num <- unlist(lapply(conexEspecialista, is.numeric))
+numCols <- contrain[ ,num]
+corrTab <- cor(numCols)
+```
+```{r echo=FALSE}
+remove(num)
+```
+
+
+```{r echo=FALSE}
+# Como la matriz de correlación es simétrica, tomamos los datos que
+# se encuentran por encima de la diagonal superior.
+upperCorrTab <- upper.tri(corrTab) * corrTab
+correls <- apply(upperCorrTab, 2, function(x) sum(abs(x)>=0.9) == 0)
+conexEspecialista <- conexEspecialista[, correls]
+contrain <- contrain[, correls]
+contest <- contest[, correls]
+```
+```{r echo=FALSE}
+remove(numCols, corrTab, upperCorrTab, correls)
+```
+
+
+```{r echo=FALSE}
+conexPCA <- conexEspecialista
+conexPCA$Class <- NULL
+conexPCA$Protocol <- NULL
+pca_result <- prcomp(conexPCA, scale = TRUE)
+pcas = as.data.frame(pca_result$x,stringsAsFactors=F)
+pcas = cbind(Class = conexEspecialista$Class,pcas)
+
+ggplot(pcas, aes(PC1, PC2)) + 
+     modelr::geom_ref_line(h = 0) +
+     modelr::geom_ref_line(v = 0) +
+     geom_point(aes(color = Class), size = 2, position='jitter',alpha = 0.4) +
+     xlab("First Principal Component") + 
+     ylab("Second Principal Component") + 
+     ggtitle("First Two Principal Components of Keylogger Data")
+```
+
+Observamos que sigue sin haber separabilidad. Respecto a la variabilidad explicada por cada componente vemos aquí abajo que parece ser algo mejor que la anterior.
+```{r echo=FALSE}
+VE <- pca_result$sdev^2;
+PVE <- VE / sum(VE);
+round(PVE, 3)
+```
+
+Ahora hacemos un nuevo modelo logístico, del que obtenemos la siguiente matriz de confusión:
+```{r echo=FALSE}
+contrain$Class <- as.factor(contrain$Class)
+mymodel2 = glm(Class ~ ., data=contrain,family=binomial(link="logit"))
+```
+```{r echo=FALSE}
+pred = predict(mymodel2, newdata = contest)
+prob =  exp(pred) / (1+exp(pred))
+```
+
+```{r echo=FALSE}
+prediccion <- factor(prob>0.5, levels = c(TRUE,FALSE), labels = c('Keylogger', 'Benign'))
+
+vNeg <- nrow(contest[contest$Class == prediccion & contest$Class == 'Benign',])
+fPos <- nrow(contest[contest$Class != prediccion & contest$Class == 'Benign',])
+fNeg <- nrow(contest[contest$Class != prediccion & contest$Class == 'Keylogger',])
+vPos <- nrow(contest[contest$Class == prediccion & contest$Class == 'Keylogger',])
+
+confusion <- matrix(data=c(vNeg, fPos, fNeg, vPos), nrow=2, ncol=2, dimnames = list(c("Predicción Negativa", "Predicción Positiva"), c("Negativo Real", "Positivo Real")))
+
+confusion <- data.frame(confusion)
+confusion
+```
+
+Y obtenemos, como antes, las métricas asociadas al modelo:
+
+```{r echo = FALSE}
+total <- vNeg + fPos + fNeg + vPos
+exactitud <- (vPos+vNeg)/total
+precision <- vPos/(vPos+fPos)
+sensibilidad <- vPos/(vPos+fNeg)
+especifidad <- vNeg/(vNeg+fPos)
+
+metricas <- data.frame(cbind(exactitud, precision, sensibilidad, especifidad))
+metricas #TODO bonico
+```
+Vemos como son un poco peores que las de antes. De aquí podemos extraer que el especialista en redes puede tener razón, ya que el modelo que propone no es muchísimo peor que el propuesto por el analista de datos. Deberán hacerse análisis más profundos para poder obtener unos resultados más concluyentes.
+
+# Estableciendo un modelo sin eliminar variables por correlación
+
+Establecemos ahora un modelo en el que solo vamos a eliminar las variables que presentan correlación 1. De esta manera, no debería haber pérdida de información y el modelo debería funcionar mejor.
+
+```{r echo=FALSE}
+# Obtenemos la muestra de conexiones no maliciosas, con 
+# tamaño 20% del número de casos no malignos totales.
+# Además obtenemos el conjunto de testing.
+trainBenign <- conexSinCor[conexSinCor$Class == "Benign",]
+trainBenignIndex <- sample(1:nrow(trainBenign), size = nrow(trainBenign)*0.80)
+testBenign <- trainBenign[-trainBenignIndex,]
+trainBenign <- trainBenign[trainBenignIndex,]
+
+# Mismo procedimiento para las conexiones maliciosas
+trainKL <- conexSinCor[conexSinCor$Class=="Keylogger",]
+trainKLIndex <- sample(1:nrow(trainKL), size = nrow(trainKL)*0.80)
+testKL <- trainKL[-trainKLIndex,]
+trainKL <- trainKL[trainKLIndex,]
+
+contest <- rbind(testBenign,testKL)
+contrain <- rbind(trainBenign, trainKL)
+```
+```{r echo = FALSE}
+# Obtenemos las características numéricas (todas menos Class en este punto)
+num <- unlist(lapply(conexSinCor, is.numeric))
+numCols <- contrain[ ,num]
+corrTab <- cor(numCols)
+
+```
+```{r echo=FALSE}
+# Como la matriz de correlación es simétrica, tomamos los datos que
+# se encuentran por encima de la diagonal superior.
+upperCorrTab <- upper.tri(corrTab) * corrTab
+correls <- apply(upperCorrTab, 2, function(x) sum(abs(x)>=1) == 0)
+conexSinCor <- conexSinCor[, correls]
+contrain <- contrain[, correls]
+contest <- contest[, correls]
+```
+```{r echo=FALSE}
+contrain$Class <- as.factor(contrain$Class)
+mymodel2 = glm(Class ~ ., data=contrain,family=binomial(link="logit"))
+summary(mymodel2)
+```
+```{r echo=FALSE}
+pred = predict(mymodel2, newdata = contest)
+prob =  exp(pred) / (1+exp(pred))
+```
+```{r echo=FALSE}
+prediccion <- factor(prob>0.5, levels = c(TRUE,FALSE), labels = c('Keylogger', 'Benign'))
+
+vNeg <- nrow(contest[contest$Class == prediccion & contest$Class == 'Benign',])
+fPos <- nrow(contest[contest$Class != prediccion & contest$Class == 'Benign',])
+fNeg <- nrow(contest[contest$Class != prediccion & contest$Class == 'Keylogger',])
+vPos <- nrow(contest[contest$Class == prediccion & contest$Class == 'Keylogger',])
+
+confusion <- matrix(data=c(vNeg, fPos, fNeg, vPos), nrow=2, ncol=2, dimnames = list(c("Predicción Negativa", "Predicción Positiva"), c("Negativo Real", "Positivo Real")))
+
+confusion <- data.frame(confusion)
+confusion
+```
+```{r echo = FALSE}
+total <- vNeg + fPos + fNeg + vPos
+exactitud <- (vPos+vNeg)/total
+precision <- vPos/(vPos+fPos)
+sensibilidad <- vPos/(vPos+fNeg)
+especifidad <- vNeg/(vNeg+fPos)
+
+metricas <- data.frame(cbind(exactitud, precision, sensibilidad, especifidad))
+metricas #TODO bonico
+```
+Como vemos, mejora la sensibilidad, aunque sigue siendo muy baja.
+
+# Conclusiones
+
+Tras todo este estudio, un modelo de regresión lineal parece no ser capaz de clasificar de forma satisfactoria el conjunto de datos dado. 
+Esto, técnicamente significa que no somos capaces de encontrar un hiperplano que ofrezca buena separabilidad entre el conjunto de datos.
+Otra forma de verlo es que la relación entre los predictores y la variable a clasificar no es lineal, y por tanto este tipo de modelos encuentra dificultades para hallar relaciones entre ellas.
