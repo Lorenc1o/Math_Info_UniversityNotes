@@ -1,0 +1,667 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Práctica 2: Parámetros de uso de un procesador CMP
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+Ejercicio 1
+\end_layout
+
+\begin_layout Enumerate
+El bucle externo no se vectoriza, pues se vectorizan los bucles internos,
+ dentro de lo posible.
+ En algunas ocasiones, puede ser útil usar 
+\begin_inset Formula $outer\ loop\ vectorization$
+\end_inset
+
+, como se explica en 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://software.intel.com/content/www/us/en/develop/articles/outer-loop-vectoriza
+tion.html
+\end_layout
+
+\end_inset
+
+.
+ Claramente, este bucle exterior no es un buen candidato a ser vectorizado,
+ porque la carga de trabajo está, realmente, en los bucles interiores.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Pasamos a analizar los bucles internos.
+\end_layout
+
+\begin_layout Enumerate
+El primero de ellos no puede ser vectorizado, pues contiene dependencias
+ peligrosas.
+ Vemos que 
+\begin_inset Formula $B_{i+1}$
+\end_inset
+
+ depende de 
+\begin_inset Formula $B_{i}$
+\end_inset
+
+, por lo que la vectorización no puede hacerse.
+ En general, para poder vectorizar este tipo de operaciones, en que los
+ valores de un array dependen de los valores del mismo, debe suceder que
+ se distancien en, al menos, el tamaño del vector.
+ Por ejemplo, en mi caso el procesador puede trabajar con vectores de 256
+ bits, o sea, 4 doubles, sí podría vectorizarse una operación de la forma
+ 
+\begin_inset Formula $A_{i}=op\left(A_{i-n}\right),\ n\geq4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Este segundo bucle sí puede vectorizarse, ya que estamos calculando 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+, dependiente de 
+\begin_inset Formula $A_{i},B_{i}$
+\end_inset
+
+ y 
+\begin_inset Formula $B_{i+1}$
+\end_inset
+
+, dependiente de 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+, de forma que, suponiendo un vector con capacidad para 4 doubles, en cada
+ iteración podríamos hacer el cálculo de 
+\begin_inset Formula $A_{j}=A_{j}+B_{j}$
+\end_inset
+
+ y de 
+\begin_inset Formula $B_{j+1}=C_{i}*2,\ j=i,...,i+3$
+\end_inset
+
+.
+ Aunque pueda parecer que 
+\begin_inset Formula $A$
+\end_inset
+
+ tiene una dependencia, en realidad no es así, pues 
+\begin_inset Formula $A_{j}$
+\end_inset
+
+ solo necesita conocer su valor actual para su cálculo, y su valor futuro
+ no afecta a ningún otro elemento.
+\end_layout
+
+\begin_layout Enumerate
+En este tercer bucle ocurre como en el primer, 
+\begin_inset Formula $A_{i-1}$
+\end_inset
+
+ depende del valor de 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+, por lo que no puede ser vectorizado.
+\end_layout
+
+\begin_layout Enumerate
+Este cuarto bucle puede vectorizarse de forma bastante clara, usamos los
+ valores de 3 arrays diferentes, no hay dependencias.
+\end_layout
+
+\begin_layout Enumerate
+Por último, este último bucle parece tener una clara dependencia, ya que
+ el valor de 
+\begin_inset Formula $total$
+\end_inset
+
+ depende de su valor anterior en toda iteración.
+ No obstante, este caso es muchas veces detectado por los compiladores,
+ que modifican ligeramente el código para que pueda ser vectorizado en alguna
+ medida.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Como decíamos, el bucle externo no se vectoriza, pues se vectorizan los
+ internos sin hacer fusión de bucles.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Como adelantamos, no lo vectoriza, pues encuentra una dependencia entre
+ 
+\begin_inset Formula $B_{i+1}$
+\end_inset
+
+ y 
+\begin_inset Formula $B_{i}$
+\end_inset
+
+.
+ Para que vectorice, podemos obtener 
+\begin_inset Formula $B_{i+4}$
+\end_inset
+
+ en función de 
+\begin_inset Formula $B_{i}$
+\end_inset
+
+ y los 4 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ siguientes.
+ Como debemos tener los 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ calculados, separamos el bucle:
+\begin_inset listings
+lstparams "language={C++},numbers=left,stepnumber=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for (int i = 0; i < arrays_size; ++i) A[i] = i* 2/3;
+\end_layout
+
+\begin_layout Plain Layout
+
+for (int i = 0; i < arrays_size - 4; ++i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      B[i + 4] = A[i+3] - A[i+2] + A[i+1] - 
+\end_layout
+
+\begin_layout Plain Layout
+
+	A[i] + B[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+for (int i = 0; i < 4; ++i){
+\end_layout
+
+\begin_layout Plain Layout
+
+     B[i+1] = A[i] - B[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+    } 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sin embargo, esto tampoco soluciona el problema, pues vemos que añadimos,
+ en realidad, muchas más operaciones y la vectorización no es eficiente.
+ Esto se debe a las llamadas dependencias cíclicas, que no tienen solución.
+ Deberíamos cambiar el algoritmo de cálculo.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El segundo bucle es vectorizado, como predijimos.
+ El compilador calcula, en cada loop, 
+\begin_inset Formula $A_{i},A_{i+1},A_{i+2},A_{i+3}$
+\end_inset
+
+ y, después, 
+\begin_inset Formula $B_{i+1},B_{i+2},B_{i+3},B_{i+4}$
+\end_inset
+
+, de forma vectorizada.
+\end_layout
+
+\begin_layout Enumerate
+El tercero no puede ser vectorizado, debido a la dependencia comentada en
+ el apartado 1, entre 
+\begin_inset Formula $A_{i-1}$
+\end_inset
+
+ y 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+.
+ Ocurre exactamente lo mismo que en (a), no podemos resolverlo debido a
+ las dependencias cíclicas.
+\end_layout
+
+\begin_layout Enumerate
+El cuarto se vectoriza, sin sorpresas.
+ Y el compilador hace similar a lo que hacía en b).
+\end_layout
+
+\begin_layout Enumerate
+La gran sorpresa viene en el quinto bucle.
+ Que se vectoriza a pesar de la dependencia que encontramos.
+ Como decíamos, el compilador está preparado para detectar este tipo de
+ diferencias y hacer modificaciones en el código para vectorizar, al menos,
+ parte del bucle.
+ Una forma que se me ocurre de hacerlo es la siguiente: 
+\begin_inset listings
+lstparams "language={C++},numbers=left,stepnumber=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+double aux[4];
+\end_layout
+
+\begin_layout Plain Layout
+
+for (int i = 0; i < arrays_size/4; ++i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int j=0; j<4; j++){
+\end_layout
+
+\begin_layout Plain Layout
+
+	  aux[j] += C[8*i+j];
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+for (int i=arrays_size; i> arrays_size-arrays_size%4; --i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	total = total + C[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+for (int i=0; i<4; i++){
+\end_layout
+
+\begin_layout Plain Layout
+
+  total = total + aux[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ De esta forma vectoriza el bucle interno, y hará los cálculos de 4 en 4.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Una mejora que podemos hacer en este código es sustituir el 4 por un 16,
+ para que sea el array del tamaño del vector multiplicado por la latencia
+ (4 en mi caso), de forma que además de vectorizar, llenamos el cauce de
+ ejecución, mejorando sustancialmente el tiempo del programa.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection*
+Ejercicio 2
+\end_layout
+
+\begin_layout Enumerate
+El do-while no es paralelizable, ya que cada loop necesita tener la matriz
+ actualizada tras el loop anterior completo.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Los dos for interiores sí que son paralelizables, pero debemos tener cuidado
+ con la variable difference.
+ Ambos bucles pueden ser paralelizados utilizando el pragma #pragma omp
+ parallel for reduction(max: difference).
+ De esta forma cada hilo calcularía su variable difference y, cuando terminasen,
+ se pondrían los resultados en común utilizando la función max.
+\end_layout
+
+\begin_layout Standard
+Además, podemos paralelizar los dos for usando la cláusula collapse(2) (#pragma
+ omp parallel for collapse(2) reduction(max: difference)), que junta ambos
+ for en uno solo.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+He usado compilador de intel instalada en mi máquina.
+ Mi procesador es un intel i5-7200U con arquitectura Kaby Lake y 2.5GHz.
+ El compilador usado es el intel icpc versión 19.1.3.304.
+ Obtenemos las siguientes gráficas al hacer las pruebas:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Sin paralelización.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ICC Paralelizando el primer for.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ICC Paralelizando el segundo for.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ICC Paralelizando ambos bucles (2 hilos por bucle).png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estos resultados son bastante sorprendentes.
+ Vemos como nuestra mejor opción sería no paralelizar nada y dejar el programa
+ secuencial.
+ Se está produciendo el llamado 
+\series bold
+parallel slowdown
+\series default
+, fenómeno en el que, al paralelizar un programa, este va más lento.
+ Una explicación que se me ocurre es que cada hilo no hace casi nada, démonos
+ cuenta de que cada iteración del bucle es hacer una media de 5 elementos
+ y calcular un máximo.
+ Por tanto, entiendo que se produce un efecto cuello de botella en el momento
+ de comunicación de los resultados entre hilos.
+\end_layout
+
+\begin_layout Standard
+Este argumento se respalda, también, al comparar la paralelización del for
+ interior con la del exterior.
+ Cuando paralelizamos el exterior, cada hilo hará todos los cálculos de
+ una fila completa de la matriz, y los resultados se pondrán en común tras
+ terminar toda la fila.
+ Pero al paralelizar el interior, en una misma fila estamos usando los 4
+ hilos, lo que hace que cada hilo haga menos cuentas y que se necesite más
+ sincronización.
+\end_layout
+
+\begin_layout Standard
+Algo que no consigo comprender es el por qué de la última gráfica.
+ Parece un rendimiento excesivamente malo en comparación con los demás,
+ y no he sido capaz de encontrarlo explicación a este fenómeno.
+\end_layout
+
+\begin_layout Standard
+Por último, comentar como parece haber un mínimo cuando usamos 2 hilos.
+ Esto sucede porque mi ordenador tiene dos núcleos y dos hilos por núcleo.
+ Por tanto, 'prefiere' usar dos núcleos a usar uno, pero también prefiere
+ tener un único hilo por núcleo que dos.
+ Es una especie de tradeoff entre más paralelización y más velocidad por
+ hilo.
+ En nuestro caso el tradeoff se mueve hacia paralelizar lo menos posible.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Comentarios sobre esta práctica
+\end_layout
+
+\begin_layout Standard
+\align left
+Esta práctica me ha resultado muy interesante, tanto que resulta un poco
+ frustrante no haber podido indagar más en estos temas debido a la carga
+ de trabajo de las últimas semanas.
+\end_layout
+
+\begin_layout Standard
+\align left
+Con esta práctica hemos aprendido la importancia de intentar programar de
+ forma que el compilador tenga fácil la consecución de optimizaciones, especialm
+ente la vectorización.
+ Esta parte del trabajo me ha parecido que ha quedado muy clara, está bien
+ explicada y los ejercicios bien diseñados para comprender estos conceptos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, la parte de paralelización nos muestra las dos caras de la
+ moneda.
+ Tenemos un ejemplo en que la paralelización mejora nuestros tiempos de
+ ejecución (el caso de la integral) y otros en los que se produce parallel
+ slowdown, como es el ejercicio que hemos resuelto después.
+ Esto es muy iluminador, ya que te hace darte reflexionar en el porqué no
+ siempre paralelizar es mejor opción, y cuándo, efectivamente, sí que lo
+ es.
+\end_layout
+
+\begin_layout Standard
+\align left
+Quizás sería provechoso un ejercicio en el que pudiésemos aplicar ambas
+ técnicas y mejorase sustancialmente los tiempos de ejecución, para ver
+ las dificultades que tiene mezclar las técnicas, y sus ventajas.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como aspecto negativo diría que hay ciertas cosas que debemos usar en la
+ práctica y no están explicadas en el boletín de prácticas, como la directiva
+ 'collapse' para paralelizar bucles anidados o la vectorización de expresiones
+ del tipo 
+\begin_inset Formula $a+=b$
+\end_inset
+
+.
+ Entiendo que debemos ser capaces de resolver este tipo de cosas sin que
+ salgan explícitamente en la explicación de la práctica, pero este tipo
+ de cosas básicas creo que hubiera sido mejor saberlas antes, y poder centrarse
+ en otros aspectos más complejos.
+\end_layout
+
+\begin_layout Subsubsection*
+Comentarios sobre el artículo de trabajo adicional
+\end_layout
+
+\begin_layout Standard
+\align left
+El resumen de la historia de la vectorización me hace pensar que la vectorizació
+n es realmente la evolución natural de los procesadores.
+ Sobre todo teniendo en cuenta que, como comenta, la introducción de vectores
+ en muchas ocasiones no deriva en un aumento del consumo energético (aunque
+ sí que aumenta la carga del procesador y se debe reducir la frecuencia
+ de reloj) ni de la latencia.
+ Seguro que se producirán avances en este mismo sentido en el futuro.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, vemos claramente como en este artículo se pone de manifiesto
+ que la evolución de la vectorización implica necesariamente un cambio en
+ los compiladores, y ciertamente un cambio muy complejo de implementar de
+ la forma más provechosa.
+ Vemos con los diversos ejemplos realizados, que la mayoría de las veces
+ la vectorización automática no produce mejoras significativas en los programas,
+ precisamente porque el compilador no es capaz de mapear nuestros programas
+ de forma totalmente vectorizada a ensamblador.
+ Para darle un uso completo a esta capacidad, parece que lo que debemos
+ hacer es programar teniéndolo en cuenta, y hacer nuestros programas vectorizado
+s, a posta.
+ Esto, evidentemente, requiere de un esfuerzo muy grande por parte del programad
+or, que probablemente no será asumible en la mayoría de casos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Al final, tenemos un tradeoff entre la performance de nuestros programas
+ y el tiempo que debemos invertir en su desarrollo.
+ Y, como todo tradeoff, depende de las cantidades relativas entre ambas
+ medidas.
+ Probablemente, se consigan mejorar los compiladores hasta alcanzar mejores
+ rendimientos que los actuales (aunque seguro que no tan buenos como la
+ adaptación propia de cada programa), de forma que haya una ganancia significati
+va en la ejecución de los programas, sin un aumento excesivo del tiempo
+ de programación.
+ En cambio, el esfuerzo habrá estar en el diseño y mejora del compilador.
+\end_layout
+
+\begin_layout Standard
+\align left
+Una última reflexión, es que no me parece descabellado que los procesadores
+ sigan evolucionando y se derive en una divergencia mucho más acusada que
+ la actual entre diferentes procesadores, llegando incluso a hacer procesadores
+ dedicados para ciertas tareas específicas.
+ Un ejemplo reciente pero que ilustra lo que quiero decir son las TPUs de
+ Google, circuitos integrados diseñados específicamente para tareas de inteligen
+cia artificial, optimizado para la libreria TensorFlow de la compañía.
+\end_layout
+
+\end_body
+\end_document

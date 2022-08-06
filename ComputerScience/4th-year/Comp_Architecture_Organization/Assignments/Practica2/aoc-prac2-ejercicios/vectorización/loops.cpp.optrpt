@@ -1,0 +1,186 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1] loops.cpp(12,33)
+  -> (74,8) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
+  -> (74,17) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at loops.cpp(15,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at loops.cpp(21,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #25438: unrolled without remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(25,5)
+      remark #15300: LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(28,5)
+      remark #25436: completely unrolled by 5   (pre-vector) 
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(32,5)
+   <Peeled loop for vectorization, Distributed chunk1>
+      remark #25436: completely unrolled by 3  
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(32,5)
+   <Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #15301: PARTIAL LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(42,5)
+      remark #25436: completely unrolled by 5   (pre-vector) 
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(32,5)
+   <Distributed chunk2>
+      remark #15301: PARTIAL LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(46,5)
+      remark #15300: LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(50,5)
+   <Peeled loop for vectorization>
+      remark #25436: completely unrolled by 3  
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(50,5)
+      remark #25453: Loop Reversed
+      remark #15301: REVERSED LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(54,5)
+      remark #15300: LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(59,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+      remark #25438: unrolled without remainder by 2  
+
+      LOOP BEGIN at loops.cpp(60,6)
+         remark #15300: LOOP WAS VECTORIZED
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(68,5)
+      remark #15300: LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(32,5)
+   <Remainder loop for vectorization, Distributed chunk2>
+      remark #25436: completely unrolled by 3  
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(46,5)
+   <Remainder loop for vectorization>
+      remark #25436: completely unrolled by 3  
+   LOOP END
+
+   LOOP BEGIN at loops.cpp(50,5)
+   <Remainder loop for vectorization>
+      remark #25436: completely unrolled by 1  
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+loops.cpp(26,18):remark #34060: alignment of adjacent dense (unit-strided stencil) loads is (alignment, offset): (32, 0)
+loops.cpp(26,18):remark #34050: adjacent dense (unit-strided stencil) loads seem unprofitable to optimize.
+loops.cpp(26,18):remark #34055: adjacent dense (unit-strided stencil) loads are not optimized. Details: stride { 8 }, step { 8 }, types { F64-V256, F64-V256, F64-V256, F64-V256 }, number of elements { 4 }, select mask { 0x00000000F }.
+loops.cpp(12,33):remark #34051: REGISTER ALLOCATION : [main] loops.cpp:12
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   23[ rax rdx rcx rsi rdi r8-r9 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     158
+            Global    :      34
+            Local     :     124
+        Regenerable   :      15
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       2 [2.14e-07 ~ 0.0%]
+            Writes    :       2 [2.14e-07 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: __sti__$E()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (__sti__$E()) [9] <compiler generated>
+
+
+    Report from: Code generation optimizations [cg]
+
+<compiler generated>:remark #34051: REGISTER ALLOCATION : [__sti__$E] (null):0
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       7
+            Local     :       6
+        Regenerable   :       7
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================

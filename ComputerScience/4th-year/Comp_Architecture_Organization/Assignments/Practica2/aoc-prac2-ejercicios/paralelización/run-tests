@@ -1,0 +1,36 @@
+#!/bin/bash
+
+SCRIPT_COMMAND="$0"
+set -o nounset
+set -o pipefail
+set -o errexit
+trap 'echo "$SCRIPT_COMMAND: error $? at line $LINENO"' ERR
+
+BINARY="${1:-./heat}"
+
+TESTS=$(for i in tests/*.in ; do echo "$i" | sed -e 's|^tests/||' -e 's|.in$||' ; done)
+
+THREADS_MAX="${THREADS_MAX:-$(grep -E processor.: /proc/cpuinfo | wc -l)}"
+THREADS_TESTS="${THREADS_TESTS:-$(seq -s ' ' 1 $THREADS_MAX)}"
+
+printf "Comprobando binario «$BINARY» (hilos: $THREADS_TESTS)\n"
+
+for t in ${TESTS} ; do
+    TMP_OUT="$(mktemp)"
+    TMP_ERR="$(mktemp)"
+    for p in ${THREADS_TESTS} ; do 
+        printf "%-45s" "Comprobando test «$t» con $p hilos:"
+        export OMP_NUM_THREADS=$p
+        if "${BINARY}" $(cat "tests/${t}.in") --print-result=true --print-iterations=false --print-difference=false --print-each-time=false --print-average-time=false > "$TMP_OUT" 2> "$TMP_ERR" ; then
+            if cmp -s tests/${t}.out "$TMP_OUT" ; then
+                printf "OK\n"
+                rm -f "$TMP_OUT"
+                rm -f "$TMP_ERR"
+            else
+                printf "ERROR (salida diferente, stdout %s, stderr %s)\n" "$TMP_OUT" "$TMP_ERR"
+            fi
+        else 
+            printf "ERROR (valor devuelto %d, stdout %s, stderr %s)\n" $? "$TMP_OUT" "$TMP_ERR"
+        fi
+    done
+done

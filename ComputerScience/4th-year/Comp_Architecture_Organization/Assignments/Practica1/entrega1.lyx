@@ -1,0 +1,575 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Práctica 1: Optimización de una aplicación secuencial
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+1.
+ Detalla las características relevantes del ordenador elegido (microarquitectura
+ de CPU y memoria).
+\end_layout
+
+\begin_layout Standard
+\align left
+Primero vamos a ver las características de nuestra máquina.
+ Usamos el comando 
+\begin_inset Formula $lscpu$
+\end_inset
+
+ y la orden 
+\begin_inset Formula $lshw$
+\end_inset
+
+, de la que nos interesa la salida correspondiente a la CPU.
+ Vamos a 
+\begin_inset Formula $wikichip.com$
+\end_inset
+
+ y buscamos nuestra CPU: i5-7200U.
+ Aquí encontramos la microarquitectura: 
+\series bold
+Kaby Lake
+\series default
+.
+ Entonces es un Intel® Core
+\begin_inset Formula $^{TM}$
+\end_inset
+
+ i5 CPU 2.5 GHz (hasta 3.1 GHz en modo turbo), con 2 núcleos, con HyperThreading
+ de 2 hilos por núcleo.
+ Tiene 128KiB de caché L1 (separada en dos cachés de 64KiB), 512KiB de caché
+ L2 y 3MiB de caché L3 compartida.
+ Tiene ISA soportado x86-64.
+ Vemos, además, que tiene AVX y AVX2.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para conocer el SO, usamos la orden 
+\begin_inset Formula $hostnamectl$
+\end_inset
+
+, y vemos que tenemos Ubuntu 20.04.1 LTS.
+\end_layout
+
+\begin_layout Subsubsection*
+2.
+ ¿Cuál es el rendimiento pico que puede alcanzar teóricamente usando coma
+ flotante de simple precisión (en GFLOPS)?
+\end_layout
+
+\begin_layout Standard
+\align left
+Para saber las unidades funcionales en punto flotante que permiten trabajar
+ vectorización, entramos en la microarquitectura Kaby Lake en wikichip,
+ y nos fijamos en el diseño de esta.
+\end_layout
+
+\begin_layout Standard
+\align left
+Vemos que hay dos unidades de esta clase (las que tienen FP FMA).
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, tenemos que:
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\frac{flops}{instruction}=2$
+\end_inset
+
+, porque soporta FMA
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\frac{operations}{instruction}=8,$
+\end_inset
+
+ porque soporta AVX
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\frac{instructions}{cycle}=2$
+\end_inset
+
+, por tener 2 unidades con soporte FMA
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $frec=3.1GHz$
+\end_inset
+
+, la turbo porque buscamos el pico
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\frac{cores}{socket}=2$
+\end_inset
+
+ (indicado en la salida de 
+\begin_inset Formula $lscpu$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\frac{sockets}{node}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+De modo que el rendimiento pico es:
+\begin_inset Formula 
+\[
+RendimientoPico=2\cdot8\cdot2\cdot3.1\cdot2=198.4\frac{Gflops}{s}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+3.
+ ¿Cuál es el ancho de memoria pico que puede alcanzar teóricamente?
+\end_layout
+
+\begin_layout Standard
+\align left
+Pasamos ahora al cálculo del ancho de banda pico, usamos 
+\begin_inset Formula $lshw\ -class\ memory$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $ControladorMemoria=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\frac{Canales}{Control}=1$
+\end_inset
+
+, aunque parezca que tiene dos (los bank), el segundo no se utiliza
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $Bytes=8$
+\end_inset
+
+, la memoria es de 8GiB
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $Freq=2.133GHz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que el ancho de banda pico es:
+\begin_inset Formula 
+\[
+BandWidthPico=1\cdot1\cdot8\cdot2.133=17.1GB/s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+4.
+ Mide el rendimiento pico en coma flotante de simple precisión del ordenador
+ elegido utilizando los benchmarks helloflops1 y helloflops2.
+ Explica los resultados obtenidos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Pasamos ahora a ver cuán cerca del rendimiento pico podemos ir, con unos
+ benchmarks de prueba.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ejecutando el primero, 
+\begin_inset Formula $helloflops1$
+\end_inset
+
+, obtenemos:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Initializing
+\end_layout
+
+\begin_layout Plain Layout
+
+Starting Compute
+\end_layout
+
+\begin_layout Plain Layout
+
+GFlops =    128.000, Secs =      1.695, GFlops per sec =     75.496
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Obtenemos siempre alrededor de 75 GFlops, lo que representa un ~75% del
+ rendimiento pico para un único núcleo 
+\begin_inset Formula $\left(\frac{198\ rendimiento\ pico\ total}{2\ nucleos}\simeq99\ GFlops/s\right)$
+\end_inset
+
+.
+ Este resultado es bastante bueno, pues parece que la potencia por núcleo
+ se aprovecha bastante.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ejecutando 
+\begin_inset Formula $helloflops2$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Starting Compute on 4 threads
+\end_layout
+
+\begin_layout Plain Layout
+
+GFlops =    512.000, Secs =      4.634, GFlops per sec =    110.499
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Obtenemos siempre un valor alrededor de 112 GFlops, teniendo, por tanto,
+ un 56% del rendimiento pico.
+ Vemos aumentamos los GFlops/s, pero se reduce, de alguna forma, el aprovechamie
+nto de cada núcleo al paralelizar.
+ Esto debe ser porque la comunicación entre hilos no es la idónea.
+ Por tanto, a pesar de las buenas noticias respecto al rendimiento por núcleo,
+ no podemos (al menos únicamente con esta información) estar tan contentos
+ con la paralelización.
+\end_layout
+
+\begin_layout Subsubsection*
+5.
+ Mide el ancho de banda pico de memoria del ordenador elegido utilizando
+ el benchmark copy.
+ Explica el resultado obtenido.
+\end_layout
+
+\begin_layout Standard
+\align left
+No lo hemos hecho con 
+\begin_inset Formula $copy$
+\end_inset
+
+, sino con 
+\begin_inset Formula $hellomem$
+\end_inset
+
+, que es el que tenemos cómo compilar.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Initializing
+\end_layout
+
+\begin_layout Plain Layout
+
+Starting BW Test on 4 threads
+\end_layout
+
+\begin_layout Plain Layout
+
+Gbytes =   1024.000, Secs =     89.802, GBytes per sec =     11.403
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Estos 11.4 GB/s (siempre sale alrededor de este valor) representan un 67%
+ del ancho de banda pico, lo cual parece un rendimiento aceptable, sobre
+ todo comparado con el resultado proporcionado por los profesores, que es
+ similar.
+\end_layout
+
+\begin_layout Subsubsection*
+6.
+ Usando los benchmarks sumaflopsX, calcula la latencia de las sumas en simple
+ precisión del ordenador elegido y trata de determinar de cuántas unidades
+ funcionales dispone cada core para la suma en simple precisión.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como pone en la práctica, debemos tener en cuenta que prescindimos de la
+ vectorización, por lo que el nuevo rendimiento es de 3.1 GFlops/s.
+\end_layout
+
+\begin_layout Standard
+\align left
+En 
+\begin_inset Formula $sumaflops1$
+\end_inset
+
+ obtenemos 0.272 GFlops/s, que es un ~10% del rendimiento máximo, por tanto,
+ la latencia podemos suponerla de unos 10 ciclos de reloj.
+\end_layout
+
+\begin_layout Standard
+\align left
+Vemos como, al igual que en el boletín, aumenta de forma lineal al aumentar
+ las variables.
+ Y, también, al igual que en el boletín, crece linealmente hasta tener 8
+ variables, a partir de aquí se estabiliza.
+ Por tanto, como tenemos 2 UF por núcleo, en realidad la latencia es 4,
+ es decir, que al usar pocas variables desaprovechamos muchísimo nuestra
+ CPU.
+\end_layout
+
+\begin_layout Subsubsection*
+7.
+ Valoración de la práctica
+\end_layout
+
+\begin_layout Standard
+\align left
+La práctica me ha parecido interesante, sobre todo porque hemos visto muchos
+ de los conceptos que se tratan en teoría, en nuestra propia máquina.
+ Esto me parece muy positivo, porque nos hace ponernos en circunstancia
+ y situar la teoría dentro del mundo real.
+ Como aspecto negativo solo puedo decir que el compilador gcc a veces hace
+ cosas extrañas, y esto me ha provocado mucha confusión, pues obtenía resultados
+ que no comprendía.
+ Poco podemos hacer contra esto, pero quizás hubiera estado bien un aviso
+ por parte del profesorado.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,29 @@
+
+Particle Binning Optimization Demo (single precision)
+Additional information is available in accompanying papers at http://colfaxresearch.com/
+
+(c) Colfax International, 2015.
+
+Initialization... done in 1.711 seconds.
+Computing reference result... done in 0.806 seconds.
+[1mBaseline performance: [42m  8.33e-02 GP/s[0m
+
+Benchmarking...
+
+[1m  Trial    Time, s    Speedup       GP/s *[0m
+      1  3.115e-01       2.59   2.15e-01 **
+      2  3.175e-01       2.54   2.11e-01 **
+      3  3.060e-01       2.63   2.19e-01 
+      4  3.049e-01       2.64   2.20e-01 
+      5  3.092e-01       2.61   2.17e-01 
+      6  3.056e-01       2.64   2.20e-01 
+      7  3.057e-01       2.64   2.20e-01 
+      8  3.117e-01       2.59   2.15e-01 
+      9  3.033e-01       2.66   2.21e-01 
+     10  3.074e-01       2.62   2.18e-01 
+---------------------------------------------------------
+[1mOptimized performance:   2.63 [42m  2.19e-01 +- 1.76e-03 GP/s[0m
+---------------------------------------------------------
+*  - Performance unit 1 GP/s is 10^9 particles binned per second.
+** - warm-up, not included in average
+

@@ -1,0 +1,32 @@
+Starting Compute
+GFlop =      0.640, Secs =      2.344, GFlop per sec =      0.273 (GFLOPs), suma1 = 16777216.000
+Starting Compute
+GFlop =      1.280, Secs =      2.358, GFlop per sec =      0.543 (GFLOPs), suma1 = 33554432.000
+Starting Compute
+GFlop =      1.920, Secs =      2.344, GFlop per sec =      0.819 (GFLOPs), suma1 = 50331648.000
+Starting Compute
+GFlop =      2.560, Secs =      2.335, GFlop per sec =      1.096 (GFLOPs), suma1 = 67108864.000
+Starting Compute
+GFlop =      3.200, Secs =      2.339, GFlop per sec =      1.368 (GFLOPs), suma1 = 83886080.000
+Starting Compute
+GFlop =      3.840, Secs =      2.347, GFlop per sec =      1.636 (GFLOPs), suma1 = 100663296.000
+Starting Compute
+GFlop =      4.480, Secs =      2.416, GFlop per sec =      1.854 (GFLOPs), suma1 = 117440512.000
+Starting Compute
+GFlop =      5.120, Secs =      2.657, GFlop per sec =      1.927 (GFLOPs), suma1 = 134217728.000
+Starting Compute
+GFlop =      5.760, Secs =      2.993, GFlop per sec =      1.925 (GFLOPs), suma1 = 134217728.000, suma2 = 16777216.000 
+Starting Compute
+GFlop =      6.400, Secs =      3.281, GFlop per sec =      1.950 (GFLOPs), suma1 = 134217728.000, suma2 = 33554432.000 
+Starting Compute
+GFlop =      7.040, Secs =      3.589, GFlop per sec =      1.962 (GFLOPs), suma1 = 134217728.000, suma2 = 50331648.000 
+Starting Compute
+GFlop =      7.680, Secs =      3.282, GFlop per sec =      2.340 (GFLOPs), suma1 = 134217728.000, suma2 = 67108864.000 
+Starting Compute
+GFlop =      8.320, Secs =      3.611, GFlop per sec =      2.304 (GFLOPs), suma1 = 134217728.000, suma2 = 83886080.000 
+Starting Compute
+GFlop =      8.960, Secs =      1.815, GFlop per sec =      4.938 (GFLOPs), suma1 = 134217728.000, suma2 = 100663296.000 
+Starting Compute
+GFlop =      9.600, Secs =      1.947, GFlop per sec =      4.931 (GFLOPs), suma1 = 134217728.000, suma2 = 117440512.000 
+Starting Compute
+GFlop =     10.240, Secs =      2.336, GFlop per sec =      4.384 (GFLOPs), suma1 = 134217728.000, suma2 = 134217728.000 

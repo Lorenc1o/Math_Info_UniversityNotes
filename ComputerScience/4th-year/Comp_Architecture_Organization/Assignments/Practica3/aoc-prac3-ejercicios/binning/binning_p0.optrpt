@@ -1,0 +1,912 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.3.304 Build 20200925_000000
+
+Compiler options: -std=c++11 -Wall -O2 -xCORE-AVX2 -qopt-report=5 -qopt-report-file=binning.optrpt -qopenmp -obinning
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/26=3.8%] binning.cpp(20,34)
+  -> EXTERN: (22,3) printf(const char *, ...)
+  -> EXTERN: (35,26) malloc(size_t)
+  -> EXTERN: (36,26) malloc(size_t)
+  -> INLINE: (40,26) GetReferenceResults(const InputDataType &, BinsType &) (isz = 479) (sz = 488)
+    -> EXTERN: binning.h:(109,15) omp_get_wtime()
+    -> EXTERN: binning.h:(109,32) printf(const char *, ...)
+    -> EXTERN: binning.h:(109,61) fflush(FILE *)
+    -> INLINE (MANUAL): binning.h:(119,3) InitializeRandomArray<float>(float *, size_t, double, double) (isz = 164) (sz = 175)
+      -> INLINE (MANUAL): (101,52) std::uniform_real_distribution<double>::uniform_real_distribution(std::uniform_real_distribution<double> *, double, double) (isz = 3) (sz = 12)
+        -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(1793,23) std::uniform_real_distribution<double>::param_type::param_type(std::uniform_real_distribution<double>::param_type *, double, double) (isz = 1) (sz = 9)
+      -> INLINE (MANUAL): (102,30) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *) (isz = 29) (sz = 34)
+        -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(272,65) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type) (isz = 28) (sz = 35)
+          -> INLINE (MANUAL): (283,9) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::seed(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type) (isz = 28) (sz = 35)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(119,12) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(120,8) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(123,9) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+      -> INLINE (MANUAL): (104,19) std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &) (isz = 105) (sz = 114)
+        -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(1853,24) std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &, const std::uniform_real_distribution<double>::param_type &) (isz = 101) (sz = 112)
+          -> INLINE (MANUAL): (1861,14) std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::_Adaptor(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *, std::default_random_engine &) (isz = 0) (sz = 6)
+          -> INLINE (MANUAL): (1862,19) std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::operator()(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *) (isz = 85) (sz = 92)
+            -> INLINE (MANUAL): (179,11) std::generate_canonical<std::uniform_real_distribution<double>::result_type, 53UL, std::default_random_engine>(std::default_random_engine &) (isz = 83) (sz = 90)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3323,4) std::min<std::size_t>(const std::size_t &, const std::size_t &) (isz = 2) (sz = 12)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3326,30) std::log(long double) (isz = 1) (sz = 8)
+                -> EXTERN: /usr/include/c++/9/cmath:(343,12) __builtin_logl(long double)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3326,46) std::log(long double) (isz = 1) (sz = 8)
+                -> EXTERN: /usr/include/c++/9/cmath:(343,12) __builtin_logl(long double)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3327,26) std::max<std::size_t>(const std::size_t &, const std::size_t &) (isz = 2) (sz = 12)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3334,29) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::operator()(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *) (isz = 10) (sz = 17)
+                -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(349,9) std::__detail::__mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL>(uint_fast32_t) (isz = 5) (sz = 12)
+                  -> INLINE (MANUAL): (147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 4) (sz = 11)
+          -> INLINE (MANUAL): (1862,29) std::uniform_real_distribution<double>::param_type::b(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+          -> INLINE (MANUAL): (1862,39) std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+          -> INLINE (MANUAL): (1862,51) std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+    -> INLINE (MANUAL): binning.h:(120,3) InitializeRandomArray<float>(float *, size_t, double, double) (isz = 164) (sz = 175)
+      -> INLINE (MANUAL): (101,52) std::uniform_real_distribution<double>::uniform_real_distribution(std::uniform_real_distribution<double> *, double, double) (isz = 3) (sz = 12)
+        -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(1793,23) std::uniform_real_distribution<double>::param_type::param_type(std::uniform_real_distribution<double>::param_type *, double, double) (isz = 1) (sz = 9)
+      -> INLINE (MANUAL): (102,30) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *) (isz = 29) (sz = 34)
+        -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(272,65) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type) (isz = 28) (sz = 35)
+          -> INLINE (MANUAL): (283,9) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::seed(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type) (isz = 28) (sz = 35)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(119,12) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(120,8) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(123,9) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+      -> INLINE (MANUAL): (104,19) std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &) (isz = 105) (sz = 114)
+        -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(1853,24) std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &, const std::uniform_real_distribution<double>::param_type &) (isz = 101) (sz = 112)
+          -> INLINE (MANUAL): (1861,14) std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::_Adaptor(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *, std::default_random_engine &) (isz = 0) (sz = 6)
+          -> INLINE (MANUAL): (1862,19) std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::operator()(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *) (isz = 85) (sz = 92)
+            -> INLINE (MANUAL): (179,11) std::generate_canonical<std::uniform_real_distribution<double>::result_type, 53UL, std::default_random_engine>(std::default_random_engine &) (isz = 83) (sz = 90)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3323,4) std::min<std::size_t>(const std::size_t &, const std::size_t &) (isz = 2) (sz = 12)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3326,30) std::log(long double) (isz = 1) (sz = 8)
+                -> EXTERN: /usr/include/c++/9/cmath:(343,12) __builtin_logl(long double)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3326,46) std::log(long double) (isz = 1) (sz = 8)
+                -> EXTERN: /usr/include/c++/9/cmath:(343,12) __builtin_logl(long double)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3327,26) std::max<std::size_t>(const std::size_t &, const std::size_t &) (isz = 2) (sz = 12)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3334,29) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::operator()(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *) (isz = 10) (sz = 17)
+                -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(349,9) std::__detail::__mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL>(uint_fast32_t) (isz = 5) (sz = 12)
+                  -> INLINE (MANUAL): (147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 4) (sz = 11)
+          -> INLINE (MANUAL): (1862,29) std::uniform_real_distribution<double>::param_type::b(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+          -> INLINE (MANUAL): (1862,39) std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+          -> INLINE (MANUAL): (1862,51) std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+    -> EXTERN: binning.h:(122,15) omp_get_wtime()
+    -> EXTERN: binning.h:(122,32) printf(const char *, ...)
+    -> EXTERN: binning.h:(122,75) fflush(FILE *)
+    -> EXTERN: binning.h:(125,15) omp_get_wtime()
+    -> EXTERN: binning.h:(125,32) printf(const char *, ...)
+    -> EXTERN: binning.h:(125,73) fflush(FILE *)
+    -> INLINE: binning.h:(126,3) BinParticlesReference(const InputDataType &, BinsType &) (isz = 54) (sz = 61)
+      -> EXTERN: (63,36) cosf(float)
+      -> EXTERN: (64,36) sinf(float)
+    -> EXTERN: binning.h:(127,15) omp_get_wtime()
+    -> EXTERN: binning.h:(127,32) printf(const char *, ...)
+    -> EXTERN: binning.h:(127,75) fflush(FILE *)
+    -> EXTERN: binning.h:(130,3) printf(const char *, ...)
+  -> EXTERN: (43,3) printf(const char *, ...)
+  -> EXTERN: (43,36) fflush(FILE *)
+  -> EXTERN: (44,3) printf(const char *, ...)
+  -> EXTERN: (59,17) omp_get_wtime()
+  -> INLINE: (60,5) BinParticles(const InputDataType &, BinsType &) (isz = 54) (sz = 61)
+    -> EXTERN: (6,36) cosf(float)
+    -> EXTERN: (7,36) sinf(float)
+  -> EXTERN: (61,17) omp_get_wtime()
+  -> INLINE: (64,17) ValidateResults(const BinsType &, const BinsType &) (isz = 98) (sz = 105)
+    -> EXTERN: binning.h:(88,5) printf(const char *, ...)
+    -> EXTERN: binning.h:(91,9) printf(const char *, ...)
+    -> EXTERN: binning.h:(93,7) printf(const char *, ...)
+    -> EXTERN: binning.h:(95,5) exit(int)
+  -> EXTERN: (73,5) printf(const char *, ...)
+  -> EXTERN: (76,5) fflush(FILE *)
+  -> EXTERN: (82,3) printf(const char *, ...)
+  -> EXTERN: (83,3) printf(const char *, ...)
+  -> EXTERN: (85,3) printf(const char *, ...)
+  -> EXTERN: (86,3) printf(const char *, ...)
+  -> EXTERN: (87,3) printf(const char *, ...)
+  -> EXTERN: (87,56) fflush(FILE *)
+  -> EXTERN: (89,3) free(void *)
+  -> EXTERN: (90,3) free(void *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at binning.h(112,3) inlined into binning.cpp(40,26)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25436: completely unrolled by 10  
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+      remark #15389: vectorization support: reference binnedDataRef[i][j] has unaligned access   [ binning.h(114,7) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15427: loop was completely unrolled
+      remark #15399: vectorization support: unroll factor set to 5
+      remark #15309: vectorization support: normalized vectorization overhead 0.120
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 0.710 
+      remark #15488: --- end vector cost summary ---
+      remark #25436: completely unrolled by 10  
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5) inlined into binning.cpp(40,26)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at binning.h(103,3) inlined into binning.cpp(40,26)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /usr/include/c++/9/bits/random.tcc(3327,26) ]
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /usr/include/c++/9/bits/random.tcc(3332,7) inlined into binning.cpp(40,26)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between __tmp (3334:4) and __tmp (3335:4)
+      remark #15346: vector dependence: assumed FLOW dependence between __tmp (3335:4) and __tmp (3334:4)
+      remark #15346: vector dependence: assumed FLOW dependence between __tmp (3335:4) and __tmp (3334:4)
+      remark #15346: vector dependence: assumed ANTI dependence between __tmp (3334:4) and __tmp (3335:4)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at binning.h(103,3) inlined into binning.cpp(40,26)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /usr/include/c++/9/bits/random.tcc(3327,26) ]
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /usr/include/c++/9/bits/random.tcc(3332,7) inlined into binning.cpp(40,26)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between __tmp (3334:4) and __tmp (3335:4)
+      remark #15346: vector dependence: assumed FLOW dependence between __tmp (3335:4) and __tmp (3334:4)
+      remark #15346: vector dependence: assumed FLOW dependence between __tmp (3335:4) and __tmp (3334:4)
+      remark #15346: vector dependence: assumed ANTI dependence between __tmp (3334:4) and __tmp (3335:4)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at binning.h(61,3) inlined into binning.cpp(40,26)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between binnedDataRef[:][:] (71:7) and binnedDataRef[:][:] (71:7)
+   remark #15346: vector dependence: assumed ANTI dependence between binnedDataRef[:][:] (71:7) and binnedDataRef[:][:] (71:7)
+LOOP END
+
+LOOP BEGIN at binning.cpp(52,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25436: completely unrolled by 10  
+
+   LOOP BEGIN at binning.cpp(53,7)
+      remark #15389: vectorization support: reference binnedData[i][j] has unaligned access   [ binning.cpp(54,9) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15427: loop was completely unrolled
+      remark #15399: vectorization support: unroll factor set to 5
+      remark #15309: vectorization support: normalized vectorization overhead 0.120
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 0.710 
+      remark #15488: --- end vector cost summary ---
+      remark #25436: completely unrolled by 10  
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+
+   LOOP BEGIN at binning.cpp(53,7)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at binning.cpp(4,3) inlined into binning.cpp(60,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between binnedData[:][:] (14:7) and binnedData[:][:] (14:7)
+   remark #15346: vector dependence: assumed ANTI dependence between binnedData[:][:] (14:7) and binnedData[:][:] (14:7)
+LOOP END
+
+LOOP BEGIN at binning.h(79,3) inlined into binning.cpp(64,17)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at binning.h(80,5) inlined into binning.cpp(64,17)
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.333
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15450: unmasked unaligned unit stride loads: 3 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 27 
+      remark #15477: vector cost: 4.870 
+      remark #15478: estimated potential speedup: 2.540 
+      remark #15487: type converts: 2 
+      remark #15488: --- end vector cost summary ---
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+      remark #25015: Estimate of max trip count of loop=1
+   LOOP END
+
+   LOOP BEGIN at binning.h(80,5) inlined into binning.cpp(64,17)
+   <Remainder loop for vectorization>
+      remark #25436: completely unrolled by 2  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at binning.h(89,5) inlined into binning.cpp(64,17)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at binning.h(90,7) inlined into binning.cpp(64,17)
+      remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ binning.h(91,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at binning.cpp(50,3)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+binning.cpp(20,34):remark #34051: REGISTER ALLOCATION : [main] binning.cpp:20
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   33[ rax rdx rcx rbx rsi rdi r8-r15 mm0-mm2 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     341
+            Global    :      89
+            Local     :     252
+        Regenerable   :     104
+        Spilled       :      14
+        
+    Routine stack
+        Variables     :     828 bytes*
+            Reads     :      14 [2.86e+00 ~ 2.9%]
+            Writes    :     207 [2.49e+01 ~ 24.9%]
+        Spills        :      80 bytes*
+            Reads     :      12 [7.93e-01 ~ 0.8%]
+            Writes    :      11 [5.84e-01 ~ 0.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: BinParticlesReference(const InputDataType &, BinsType &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (BinParticlesReference(const InputDataType &, BinsType &)) [2/26=7.7%] binning.h(57,85)
+  -> EXTERN: (63,36) cosf(float)
+  -> EXTERN: (64,36) sinf(float)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at binning.h(61,3)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+binning.h(57,85):remark #34051: REGISTER ALLOCATION : [_Z21BinParticlesReferenceRK13InputDataTypeRA10_A10_i] binning.h:57
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   21[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm6]
+        
+    Routine temporaries
+        Total         :      33
+            Global    :      13
+            Local     :      20
+        Regenerable   :       2
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      40 bytes*
+            Reads     :       5 [3.06e+00 ~ 3.1%]
+            Writes    :       5 [3.06e+00 ~ 3.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: ValidateResults(const BinsType &, const BinsType &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (ValidateResults(const BinsType &, const BinsType &)) [3/26=11.5%] binning.h(75,81)
+  -> EXTERN: (88,5) printf(const char *, ...)
+  -> EXTERN: (91,9) printf(const char *, ...)
+  -> EXTERN: (93,7) printf(const char *, ...)
+  -> EXTERN: (95,5) exit(int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at binning.h(79,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at binning.h(80,5)
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.263
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15450: unmasked unaligned unit stride loads: 2 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 27 
+      remark #15477: vector cost: 4.750 
+      remark #15478: estimated potential speedup: 2.640 
+      remark #15487: type converts: 2 
+      remark #15488: --- end vector cost summary ---
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+      remark #25015: Estimate of max trip count of loop=1
+   LOOP END
+
+   LOOP BEGIN at binning.h(80,5)
+   <Remainder loop for vectorization>
+      remark #25436: completely unrolled by 2  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at binning.h(89,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at binning.h(90,7)
+      remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ binning.h(91,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+binning.h(75,81):remark #34051: REGISTER ALLOCATION : [_Z15ValidateResultsRA10_A10_KiS2_] binning.h:75
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :      88
+            Global    :      24
+            Local     :      64
+        Regenerable   :      14
+        Spilled       :       7
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      40 bytes*
+            Reads     :       2 [2.67e-01 ~ 0.3%]
+            Writes    :       5 [3.07e-01 ~ 0.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: GetReferenceResults(const InputDataType &, BinsType &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (GetReferenceResults(const InputDataType &, BinsType &)) [4/26=15.4%] binning.h(108,85)
+  -> EXTERN: (109,15) omp_get_wtime()
+  -> EXTERN: (109,32) printf(const char *, ...)
+  -> EXTERN: (109,61) fflush(FILE *)
+  -> INLINE (MANUAL): (119,3) InitializeRandomArray<float>(float *, size_t, double, double) (isz = 164) (sz = 175)
+    -> INLINE (MANUAL): (101,52) std::uniform_real_distribution<double>::uniform_real_distribution(std::uniform_real_distribution<double> *, double, double) (isz = 3) (sz = 12)
+      -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(1793,23) std::uniform_real_distribution<double>::param_type::param_type(std::uniform_real_distribution<double>::param_type *, double, double) (isz = 1) (sz = 9)
+    -> INLINE (MANUAL): (102,30) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *) (isz = 29) (sz = 34)
+      -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(272,65) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type) (isz = 28) (sz = 35)
+        -> INLINE (MANUAL): (283,9) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::seed(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type) (isz = 28) (sz = 35)
+          -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(119,12) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+          -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(120,8) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+          -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(123,9) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+    -> INLINE (MANUAL): (104,19) std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &) (isz = 105) (sz = 114)
+      -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(1853,24) std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &, const std::uniform_real_distribution<double>::param_type &) (isz = 101) (sz = 112)
+        -> INLINE (MANUAL): (1861,14) std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::_Adaptor(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *, std::default_random_engine &) (isz = 0) (sz = 6)
+        -> INLINE (MANUAL): (1862,19) std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::operator()(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *) (isz = 85) (sz = 92)
+          -> INLINE (MANUAL): (179,11) std::generate_canonical<std::uniform_real_distribution<double>::result_type, 53UL, std::default_random_engine>(std::default_random_engine &) (isz = 83) (sz = 90)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3323,4) std::min<std::size_t>(const std::size_t &, const std::size_t &) (isz = 2) (sz = 12)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3326,30) std::log(long double) (isz = 1) (sz = 8)
+              -> EXTERN: /usr/include/c++/9/cmath:(343,12) __builtin_logl(long double)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3326,46) std::log(long double) (isz = 1) (sz = 8)
+              -> EXTERN: /usr/include/c++/9/cmath:(343,12) __builtin_logl(long double)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3327,26) std::max<std::size_t>(const std::size_t &, const std::size_t &) (isz = 2) (sz = 12)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3334,29) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::operator()(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *) (isz = 10) (sz = 17)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(349,9) std::__detail::__mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL>(uint_fast32_t) (isz = 5) (sz = 12)
+                -> INLINE (MANUAL): (147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 4) (sz = 11)
+        -> INLINE (MANUAL): (1862,29) std::uniform_real_distribution<double>::param_type::b(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+        -> INLINE (MANUAL): (1862,39) std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+        -> INLINE (MANUAL): (1862,51) std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+  -> INLINE (MANUAL): (120,3) InitializeRandomArray<float>(float *, size_t, double, double) (isz = 164) (sz = 175)
+    -> INLINE (MANUAL): (101,52) std::uniform_real_distribution<double>::uniform_real_distribution(std::uniform_real_distribution<double> *, double, double) (isz = 3) (sz = 12)
+      -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(1793,23) std::uniform_real_distribution<double>::param_type::param_type(std::uniform_real_distribution<double>::param_type *, double, double) (isz = 1) (sz = 9)
+    -> INLINE (MANUAL): (102,30) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *) (isz = 29) (sz = 34)
+      -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(272,65) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type) (isz = 28) (sz = 35)
+        -> INLINE (MANUAL): (283,9) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::seed(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type) (isz = 28) (sz = 35)
+          -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(119,12) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+          -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(120,8) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+          -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(123,9) std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t) (isz = 4) (sz = 11)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 3) (sz = 10)
+    -> INLINE (MANUAL): (104,19) std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &) (isz = 105) (sz = 114)
+      -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(1853,24) std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &, const std::uniform_real_distribution<double>::param_type &) (isz = 101) (sz = 112)
+        -> INLINE (MANUAL): (1861,14) std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::_Adaptor(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *, std::default_random_engine &) (isz = 0) (sz = 6)
+        -> INLINE (MANUAL): (1862,19) std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::operator()(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *) (isz = 85) (sz = 92)
+          -> INLINE (MANUAL): (179,11) std::generate_canonical<std::uniform_real_distribution<double>::result_type, 53UL, std::default_random_engine>(std::default_random_engine &) (isz = 83) (sz = 90)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3323,4) std::min<std::size_t>(const std::size_t &, const std::size_t &) (isz = 2) (sz = 12)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3326,30) std::log(long double) (isz = 1) (sz = 8)
+              -> EXTERN: /usr/include/c++/9/cmath:(343,12) __builtin_logl(long double)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3326,46) std::log(long double) (isz = 1) (sz = 8)
+              -> EXTERN: /usr/include/c++/9/cmath:(343,12) __builtin_logl(long double)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3327,26) std::max<std::size_t>(const std::size_t &, const std::size_t &) (isz = 2) (sz = 12)
+            -> INLINE (MANUAL): /usr/include/c++/9/bits/random.tcc:(3334,29) std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::operator()(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *) (isz = 10) (sz = 17)
+              -> INLINE (MANUAL): /usr/include/c++/9/bits/random.h:(349,9) std::__detail::__mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL>(uint_fast32_t) (isz = 5) (sz = 12)
+                -> INLINE (MANUAL): (147,16) std::__detail::_Mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL, true, true>::__calc(uint_fast32_t) (isz = 4) (sz = 11)
+        -> INLINE (MANUAL): (1862,29) std::uniform_real_distribution<double>::param_type::b(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+        -> INLINE (MANUAL): (1862,39) std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+        -> INLINE (MANUAL): (1862,51) std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const (isz = 0) (sz = 6)
+  -> EXTERN: (122,15) omp_get_wtime()
+  -> EXTERN: (122,32) printf(const char *, ...)
+  -> EXTERN: (122,75) fflush(FILE *)
+  -> EXTERN: (125,15) omp_get_wtime()
+  -> EXTERN: (125,32) printf(const char *, ...)
+  -> EXTERN: (125,73) fflush(FILE *)
+  -> INLINE: (126,3) BinParticlesReference(const InputDataType &, BinsType &) (isz = 54) (sz = 61)
+    -> EXTERN: (63,36) cosf(float)
+    -> EXTERN: (64,36) sinf(float)
+  -> EXTERN: (127,15) omp_get_wtime()
+  -> EXTERN: (127,32) printf(const char *, ...)
+  -> EXTERN: (127,75) fflush(FILE *)
+  -> EXTERN: (130,3) printf(const char *, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at binning.h(112,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25436: completely unrolled by 10  
+
+   LOOP BEGIN at binning.h(113,5)
+      remark #15389: vectorization support: reference binnedDataRef[i][j] has unaligned access   [ binning.h(114,7) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15427: loop was completely unrolled
+      remark #15399: vectorization support: unroll factor set to 5
+      remark #15309: vectorization support: normalized vectorization overhead 0.100
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 0.600 
+      remark #15488: --- end vector cost summary ---
+      remark #25436: completely unrolled by 10  
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+
+   LOOP BEGIN at binning.h(113,5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at binning.h(103,3) inlined into binning.h(120,3)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /usr/include/c++/9/bits/random.tcc(3327,26) ]
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /usr/include/c++/9/bits/random.tcc(3332,7) inlined into binning.h(120,3)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between __tmp (3334:4) and __tmp (3335:4)
+      remark #15346: vector dependence: assumed FLOW dependence between __tmp (3335:4) and __tmp (3334:4)
+      remark #15346: vector dependence: assumed FLOW dependence between __tmp (3335:4) and __tmp (3334:4)
+      remark #15346: vector dependence: assumed ANTI dependence between __tmp (3334:4) and __tmp (3335:4)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at binning.h(103,3) inlined into binning.h(121,3)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /usr/include/c++/9/bits/random.tcc(3327,26) ]
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /usr/include/c++/9/bits/random.tcc(3332,7) inlined into binning.h(121,3)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between __tmp (3334:4) and __tmp (3335:4)
+      remark #15346: vector dependence: assumed FLOW dependence between __tmp (3335:4) and __tmp (3334:4)
+      remark #15346: vector dependence: assumed FLOW dependence between __tmp (3335:4) and __tmp (3334:4)
+      remark #15346: vector dependence: assumed ANTI dependence between __tmp (3334:4) and __tmp (3335:4)
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at binning.h(61,3) inlined into binning.h(127,3)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+binning.h(108,85):remark #34051: REGISTER ALLOCATION : [_Z19GetReferenceResultsRK13InputDataTypeRA10_A10_i] binning.h:108
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   24[ rax rdx rcx rbx rbp rsi rdi r8-r10 r12-r15 mm0-mm2 zmm0-zmm6]
+        
+    Routine temporaries
+        Total         :     159
+            Global    :      59
+            Local     :     100
+        Regenerable   :      35
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :      24 bytes*
+            Reads     :       5 [5.17e+00 ~ 5.2%]
+            Writes    :       5 [5.17e+00 ~ 5.2%]
+        Spills        :      48 bytes*
+            Reads     :       5 [2.51e-01 ~ 0.3%]
+            Writes    :       5 [2.51e-01 ~ 0.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: BinParticles(const InputDataType &, BinsType &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (BinParticles(const InputDataType &, BinsType &)) [5/26=19.2%] binning.cpp(3,76)
+  -> EXTERN: (6,36) cosf(float)
+  -> EXTERN: (7,36) sinf(float)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at binning.cpp(4,3)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+binning.cpp(3,76):remark #34051: REGISTER ALLOCATION : [_Z12BinParticlesRK13InputDataTypeRA10_A10_i] binning.cpp:3
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   21[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm6]
+        
+    Routine temporaries
+        Total         :      33
+            Global    :      13
+            Local     :      20
+        Regenerable   :       2
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      40 bytes*
+            Reads     :       5 [3.06e+00 ~ 3.1%]
+            Writes    :       5 [3.06e+00 ~ 3.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::uniform_real_distribution<double>::uniform_real_distribution(std::uniform_real_distribution<double> *, double, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::uniform_real_distribution<double>::uniform_real_distribution(std::uniform_real_distribution<double> *, double, double)) /usr/include/c++/9/bits/random.h(1795,7)
+
+===========================================================================
+
+Begin optimization report for: std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &)) /usr/include/c++/9/bits/random.h(1853,9)
+
+===========================================================================
+
+Begin optimization report for: std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &, const std::uniform_real_distribution<double>::param_type &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::uniform_real_distribution<double>::operator()<std::default_random_engine>(std::uniform_real_distribution<double> *, std::default_random_engine &, const std::uniform_real_distribution<double>::param_type &)) /usr/include/c++/9/bits/random.h(1859,2)
+
+===========================================================================
+
+Begin optimization report for: std::uniform_real_distribution<double>::param_type::param_type(std::uniform_real_distribution<double>::param_type *, double, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::uniform_real_distribution<double>::param_type::param_type(std::uniform_real_distribution<double>::param_type *, double, double)) /usr/include/c++/9/bits/random.h(1753,2)
+
+===========================================================================
+
+Begin optimization report for: std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::uniform_real_distribution<double>::param_type::a(const std::uniform_real_distribution<double>::param_type *) const) /usr/include/c++/9/bits/random.h(1759,2)
+
+===========================================================================
+
+Begin optimization report for: std::uniform_real_distribution<double>::param_type::b(const std::uniform_real_distribution<double>::param_type *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::uniform_real_distribution<double>::param_type::b(const std::uniform_real_distribution<double>::param_type *) const) /usr/include/c++/9/bits/random.h(1763,2)
+
+===========================================================================
+
+Begin optimization report for: std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *)) /usr/include/c++/9/bits/random.h(272,7)
+
+===========================================================================
+
+Begin optimization report for: std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::linear_congruential_engine(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type)) /usr/include/c++/9/bits/random.h(283,7)
+
+===========================================================================
+
+Begin optimization report for: std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::seed(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::seed(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *, std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::result_type)) /usr/include/c++/9/bits/random.tcc(118,5)
+
+===========================================================================
+
+Begin optimization report for: std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::operator()(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL>::operator()(std::linear_congruential_engine<uint_fast32_t, 16807UL, 0UL, 2147483647UL> *)) /usr/include/c++/9/bits/random.h(348,7)
+
+===========================================================================
+
+Begin optimization report for: std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__detail::_Mod<uint_fast32_t, 2147483647UL, 1UL, 0UL, true, true>::__calc(uint_fast32_t)) /usr/include/c++/9/bits/random.h(136,2)
+
+===========================================================================
+
+Begin optimization report for: std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::_Adaptor(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *, std::default_random_engine &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::_Adaptor(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *, std::default_random_engine &)) /usr/include/c++/9/bits/random.h(161,14)
+
+===========================================================================
+
+Begin optimization report for: std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::operator()(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type>::operator()(std::__detail::_Adaptor<std::default_random_engine, std::uniform_real_distribution<double>::result_type> *)) /usr/include/c++/9/bits/random.h(178,2)
+
+===========================================================================
+
+Begin optimization report for: std::__detail::_Mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL, true, true>::__calc(uint_fast32_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__detail::_Mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL, true, true>::__calc(uint_fast32_t)) /usr/include/c++/9/bits/random.h(136,2)
+
+===========================================================================
+
+Begin optimization report for: std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__detail::__mod<uint_fast32_t, 2147483647UL, 1UL, 0UL>(uint_fast32_t)) /usr/include/c++/9/bits/random.h(147,7)
+
+===========================================================================
+
+Begin optimization report for: std::__detail::__mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL>(uint_fast32_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__detail::__mod<uint_fast32_t, 2147483647UL, 16807UL, 0UL>(uint_fast32_t)) /usr/include/c++/9/bits/random.h(147,7)
+
+===========================================================================
+
+Begin optimization report for: std::log(long double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::log(long double)) /usr/include/c++/9/cmath(343,3)
+
+===========================================================================
+
+Begin optimization report for: std::generate_canonical<std::uniform_real_distribution<double>::result_type, 53UL, std::default_random_engine>(std::default_random_engine &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::generate_canonical<std::uniform_real_distribution<double>::result_type, 53UL, std::default_random_engine>(std::default_random_engine &)) /usr/include/c++/9/bits/random.tcc(3317,5)
+
+===========================================================================
+
+Begin optimization report for: std::min<std::size_t>(const std::size_t &, const std::size_t &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::min<std::size_t>(const std::size_t &, const std::size_t &)) /usr/include/c++/9/bits/stl_algobase.h(199,5)
+
+===========================================================================
+
+Begin optimization report for: std::max<std::size_t>(const std::size_t &, const std::size_t &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::max<std::size_t>(const std::size_t &, const std::size_t &)) /usr/include/c++/9/bits/stl_algobase.h(223,5)
+
+===========================================================================
+
+Begin optimization report for: InitializeRandomArray<float>(float *, size_t, double, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (InitializeRandomArray<float>(float *, size_t, double, double)) binning.h(100,74)
+
+===========================================================================

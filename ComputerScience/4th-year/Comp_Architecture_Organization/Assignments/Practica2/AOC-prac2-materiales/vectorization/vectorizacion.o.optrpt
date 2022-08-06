@@ -1,0 +1,71 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+
+Begin optimization report for: main()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main()) [1] vectorization.cc(22,11)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at vectorization.cc(30,3)
+   remark #15319: loop was not vectorized: novector directive used
+   remark #25438: unrolled without remainder by 2  
+LOOP END
+
+LOOP BEGIN at vectorization.cc(34,3)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at vectorization.cc(40,3)
+   remark #15301: SIMD LOOP WAS VECTORIZED
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+vectorization.cc(22,11):remark #34051: REGISTER ALLOCATION : [main] vectorization.cc:22
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   22[ rax rdx rcx rsi rdi r12 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     216
+            Global    :      64
+            Local     :     152
+        Regenerable   :      14
+        Spilled       :      29
+        
+    Routine stack
+        Variables     :   160004 bytes*
+            Reads     :      14 [1.23e+01 ~ 12.3%]
+            Writes    :      12 [1.23e+01 ~ 12.3%]
+        Spills        :     360 bytes*
+            Reads     :      37 [5.55e-02 ~ 0.1%]
+            Writes    :      29 [4.33e-02 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
