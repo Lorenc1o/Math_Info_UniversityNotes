@@ -1,0 +1,672 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea Análisis Numérico Matricial (Última parte)
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Date
+Mayo 2020
+\end_layout
+
+\begin_layout Section
+Problema 1
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+(a) 
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccccccc}
+1 & 2 & | & 1 & 0 & | & 3.142\\
+1.001 & 2 & | & 0 & 1 & | & 0
+\end{array}\right)\implies\left(\begin{array}{ccccccc}
+1 & 2 & | & 1 & 0 & | & 3.142\\
+0 & -0.002 & | & -1.001 & 1 & | & -3.145
+\end{array}\right)\implies
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccccccc}
+1 & 2 & | & 1 & 0 & | & 3.142\\
+0 & 1 & | & 500.5 & -500 & | & 1573
+\end{array}\right)\implies\left(\begin{array}{ccccccc}
+1 & 0 & | & -1000 & 1000 & | & -3143\\
+0 & 1 & | & 500.5 & 500 & | & 1573
+\end{array}\right)
+\]
+
+\end_inset
+
+ 
+\series default
+es decir, 
+\begin_inset Formula $x_{1}=\left(\begin{array}{c}
+-3143\\
+1573
+\end{array}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si lo calculamos como 
+\begin_inset Formula $A^{-1}b$
+\end_inset
+
+, sale 
+\begin_inset Formula 
+\[
+x_{2}=\left(\begin{array}{cc}
+-1000 & 1000\\
+500.5 & 500
+\end{array}\right)\left(\begin{array}{c}
+3.142\\
+0
+\end{array}\right)=\left(\begin{array}{c}
+-3142\\
+1573
+\end{array}\right)
+\]
+
+\end_inset
+
+ un poco distintos.
+\end_layout
+
+\begin_layout Standard
+\align left
+El residual queda
+\begin_inset Formula 
+\[
+r_{1}=\left(\begin{array}{c}
+3.142\\
+0
+\end{array}\right)-\left(\begin{array}{cc}
+1 & 2\\
+1.001 & 2
+\end{array}\right)\left(\begin{array}{c}
+-3143\\
+1573
+\end{array}\right)=\left(\begin{array}{c}
+3.142\\
+0
+\end{array}\right)-\left(\begin{array}{c}
+3\\
+-0.143
+\end{array}\right)=\left(\begin{array}{c}
+0.142\\
+0.143
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+r_{2}=\left(\begin{array}{c}
+3.142\\
+0
+\end{array}\right)-\left(\begin{array}{cc}
+1 & 2\\
+1.001 & 2
+\end{array}\right)\left(\begin{array}{c}
+-3142\\
+1573
+\end{array}\right)=\left(\begin{array}{c}
+3.142\\
+0
+\end{array}\right)-\left(\begin{array}{c}
+4\\
+0.858
+\end{array}\right)=\left(\begin{array}{c}
+-0.858\\
+-0.858
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora evaluamos el error en la solución como la solución de 
+\begin_inset Formula 
+\[
+A\cdot\Delta x=r
+\]
+
+\end_inset
+
+ o sea
+\begin_inset Formula 
+\[
+\Delta x_{1}=A^{-1}r_{1}=\left(\begin{array}{c}
+1\\
+142.6
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Delta x_{2}=A^{-1}r_{2}=\left(\begin{array}{c}
+0\\
+-858.4
+\end{array}\right)
+\]
+
+\end_inset
+
+ ambos arrojan resultados reguleros.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+(b)
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+A^{t}A=\left(\begin{array}{cc}
+1 & 1.001\\
+2 & 2
+\end{array}\right)\left(\begin{array}{cc}
+1 & 2\\
+1.001 & 2
+\end{array}\right)=\left(\begin{array}{cc}
+2.002 & 4.002\\
+3.002 & 8
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|A^{t}A-xI\right|=\left|\begin{array}{cc}
+2.002-x & 4.002\\
+4.002 & 8-x
+\end{array}\right|=\left(2.002-x\right)\left(8-x\right)-12.01=x^{2}-10.00x-4e^{-6}
+\]
+
+\end_inset
+
+ Sus valores propios son 
+\begin_inset Formula 
+\[
+\begin{cases}
+x_{1}=10\\
+x_{2}=-4e^{-7}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y entonces
+\begin_inset Formula 
+\[
+cond_{2}\left(A\right)\approx\sqrt{\frac{10}{4e^{-7}}}=5000
+\]
+
+\end_inset
+
+ por lo que la matriz está bastante mal condicionada.
+ Además, este valor del número de condición se acerca bastante al real,
+ que, según Octave, ronda el 5001.
+\end_layout
+
+\begin_layout Section
+Problema 2
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+A=\left(\begin{array}{cccc}
+4 & 1 & 1 & 1\\
+1 & 3 & -1 & 0\\
+1 & -1 & 2 & 0\\
+1 & 0 & 0 & 2
+\end{array}\right)
+\]
+
+\end_inset
+
+ Queremos ponerla como 
+\begin_inset Formula 
+\[
+A=LDL^{t}=\left(\begin{array}{cccc}
+l_{11} & 0 & 0 & 0\\
+l_{21} & l_{22} & 0 & 0\\
+l_{31} & l_{32} & l_{33} & 0\\
+l_{41} & l_{42} & l_{43} & l_{44}
+\end{array}\right)\left(\begin{array}{cccc}
+d_{1} &  &  & 0\\
+ & d_{2}\\
+ &  & d_{3}\\
+0 &  &  & d_{4}
+\end{array}\right)\left(\begin{array}{cccc}
+l_{11} & l_{21} & l_{31} & l_{41}\\
+0 & l_{22} & l_{32} & l_{42}\\
+0 & 0 & l_{33} & l_{43}\\
+0 & 0 & 0 & l_{44}
+\end{array}\right)
+\]
+
+\end_inset
+
+ Queda, entonces, que
+\begin_inset Formula 
+\[
+4=d_{1}l_{11}^{2}
+\]
+
+\end_inset
+
+ de donde podemos hacer 
+\begin_inset Formula $l_{11}=1,\ d_{1}=4$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+1=d_{1}l_{11}l_{21}=4l_{21}\implies l_{21}=\frac{1}{4}
+\]
+
+\end_inset
+
+ y de igual forma, 
+\begin_inset Formula $l_{31}=l_{41}=\frac{1}{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Seguimos con 
+\begin_inset Formula 
+\[
+3=d_{1}l_{21}^{2}+d_{2}l_{22}^{2}=\frac{4}{16}+d_{2}l_{22}^{2}\implies\frac{11}{4}=d_{2}l_{22}^{2}
+\]
+
+\end_inset
+
+ y podemos hacer 
+\begin_inset Formula $d_{2}=\frac{11}{4},\ l_{22}=1$
+\end_inset
+
+.
+ Ahora es 
+\begin_inset Formula 
+\[
+-1=d_{1}l_{21}l_{31}+d_{2}l_{22}l_{32}=\frac{1}{4}+\frac{11}{4}l_{32}\implies l_{32}=\frac{-5}{11}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+0=d_{1}l_{21}l_{41}+d_{2}l_{22}l_{42}=\frac{1}{4}+\frac{11}{4}l_{42}\implies l_{42}=\frac{-1}{11}
+\]
+
+\end_inset
+
+ Continuamos con 
+\begin_inset Formula 
+\[
+2=d_{1}l_{31}^{2}+d_{2}l_{32}^{2}+d_{3}l_{33}^{2}=\frac{1}{4}+\frac{25}{44}+d_{3}l_{33}^{2}\implies\frac{13}{11}=d_{3}l_{33}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y hago 
+\begin_inset Formula $d_{3}=\frac{13}{11},\ l_{33}=1$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+0=d_{1}l_{31}l_{41}+d_{2}l_{32}l_{42}+d_{3}l_{33}l_{43}=\frac{1}{4}+\frac{5}{44}+\frac{13}{11}l_{43}\implies l_{43}=\frac{-4}{13}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y, por último,
+\begin_inset Formula 
+\[
+2=d_{1}l_{41}^{2}+d_{2}l_{42}^{2}+d_{3}l_{43}^{2}+d_{4}l_{44}^{2}=\frac{1}{4}+\frac{1}{44}+\frac{16}{143}+d_{4}l_{44}^{2}\implies d_{4}l_{44}^{2}=\frac{21}{13}
+\]
+
+\end_inset
+
+ y podemos hacer 
+\begin_inset Formula $d_{4}=\frac{21}{13},\ l_{44}=1$
+\end_inset
+
+.
+ Y queda
+\begin_inset Formula 
+\[
+L=\left(\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+\frac{1}{4} & 1 & 0 & 0\\
+\frac{1}{4} & \frac{-5}{11} & 1 & 0\\
+\frac{1}{4} & \frac{-1}{11} & \frac{-4}{13} & 1
+\end{array}\right)\qquad D=\left(\begin{array}{cccc}
+4 &  &  & 0\\
+ & \frac{11}{4}\\
+ &  & \frac{13}{11}\\
+0 &  &  & \frac{21}{13}
+\end{array}\right)
+\]
+
+\end_inset
+
+ es la factorización buscada.
+ Vemos que es definida positiva, pues es simétrica y todos sus valores propios
+ son positivos.
+\end_layout
+
+\begin_layout Section
+Problema 3
+\end_layout
+
+\begin_layout Standard
+\align left
+Tenemos 
+\begin_inset Formula $F$
+\end_inset
+
+ definida en un convexo de 
+\begin_inset Formula $\mathbb{R}^{d}$
+\end_inset
+
+ diferenciable de clase 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+ con un punto fijo en 
+\begin_inset Formula $\overline{x}$
+\end_inset
+
+ tal que
+\begin_inset Formula 
+\[
+\sum_{i,j=1}^{d}\left|\frac{\partial F_{i}\left(\overline{x}\right)}{\partial x_{j}}\right|^{2}<1
+\]
+
+\end_inset
+
+ y queremos ver que 
+\begin_inset Formula $\overline{x}$
+\end_inset
+
+ es un atractor.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para ello, vamos a intentar estimar 
+\begin_inset Formula $\left|dF\left(\overline{x}\right)\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se tiene que 
+\begin_inset Formula 
+\[
+dF\left(\overline{x}\right)\left(a_{1},...,a_{d}\right)=\left(\sum_{j=1}^{d}\frac{\partial F_{1}\left(\overline{x}\right)}{\partial x_{j}}a_{j},...,\sum_{j=1}^{d}\frac{\partial F_{d}\left(\overline{x}\right)}{\partial x_{j}}a_{j}\right)
+\]
+
+\end_inset
+
+ De donde 
+\begin_inset Formula 
+\[
+\left\Vert dF\left(\overline{x}\right)\left(a_{1},...,a_{d}\right)\right\Vert _{2}=\sqrt{\sum_{i=1}^{d}\left(\sum_{j=1}^{d}\frac{\partial F_{i}\left(\overline{x}\right)}{\partial x_{j}}a_{j}\right)^{2}}\leq\sqrt{\sum_{i=1}^{d}\sum_{j=1}^{d}\left(\frac{\partial F_{i}\left(\overline{x}\right)}{\partial x_{j}}a_{j}\right)^{2}}=\sqrt{\sum_{i,j=1}^{d}\left(\frac{\partial F_{i}\left(\overline{x}\right)}{\partial x_{j}}a_{j}\right)^{2}}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\sqrt{\sum_{i,j=1}^{d}\left[\left(\frac{\partial F_{i}\left(\overline{x}\right)}{\partial x_{j}}\right)^{2}a_{j}^{2}\right]}\leq\sqrt{\sum_{i,j=1}^{d}\left(\frac{\partial F_{i}\left(\overline{x}\right)}{\partial x_{j}}\right)^{2}}\left\Vert \left(a_{1},...,a_{n}\right)\right\Vert _{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+O sea, que 
+\begin_inset Formula 
+\[
+\left\Vert dF\left(\overline{x}\right)\left(a_{1},...,a_{d}\right)\right\Vert _{2}\leq\sqrt{\sum_{i,j=1}^{d}\left(\frac{\partial F_{i}\left(\overline{x}\right)}{\partial x_{j}}\right)^{2}}<1
+\]
+
+\end_inset
+
+ pues 
+\begin_inset Formula $a<1\implies\sqrt{a}<1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Entonces, por la proposición 5.1.3, tenemos el resultado.
+\end_layout
+
+\begin_layout Section
+Problema 4
+\end_layout
+
+\begin_layout Standard
+\align left
+La fórmula de Shermann Morrison nos dice que 
+\begin_inset Formula 
+\[
+\left(A+xy^{t}\right)^{-1}=A^{-1}-\frac{1}{1+y^{t}A^{-1}x}A^{-1}xy^{t}A^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+si 
+\begin_inset Formula $y^{t}A^{-1}x\neq-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para verificar la fórmula, multiplicamos ambas matrices y comprobamos que
+ obtenemos la identidad.
+\begin_inset Formula 
+\[
+\left(A+xy^{t}\right)\left(A^{-1}-\frac{1}{1+y^{t}A^{-1}x}A^{-1}xy^{t}A^{-1}\right)=AA^{-1}-\frac{1}{1+y^{t}A^{-1}x}AA^{-1}xy^{t}A^{-1}+
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
++xy^{t}A^{-1}-\frac{1}{1+y^{t}A^{-1}x}xy^{t}A^{-1}xy^{t}A^{-1}=I-\frac{xy^{t}A^{-1}+xy^{t}A^{-1}xy^{t}A^{-1}}{1+y^{t}A^{-1}x}+xy^{t}A^{-1}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=I-\frac{x\left(y^{t}A^{-1}+y^{t}A^{-1}xy^{t}A^{-1}\right)}{1+y^{t}A^{-1}x}+xy^{t}A^{-1}=I-\frac{x\left(1+y^{t}A^{-1}x\right)y^{t}A^{-1}}{1+y^{t}A^{-1}x}+xy^{t}A^{-1}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=I-xy^{t}A^{-1}+xy^{t}A^{-1}=I\checkmark
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y por el otro lado
+\begin_inset Formula 
+\[
+\left(A^{-1}-\frac{1}{1+y^{t}A^{-1}x}A^{-1}xy^{t}A^{-1}\right)\left(A+xy^{t}\right)=A^{-1}A+A^{-1}xy^{t}-\frac{A^{-1}xy^{t}A^{-1}A+A^{-1}xy^{t}A^{-1}xy^{t}}{1+y^{t}A^{-1}x}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=I+A^{-1}xy^{t}-\frac{A^{-1}x\left(y^{t}+y^{t}A^{-1}xy^{t}\right)}{1+y^{t}A^{-1}x}=I+A^{-1}xy^{t}-\frac{A^{-1}x\left(1+y^{t}A^{-1}x\right)y^{t}}{1+y^{t}A^{-1}x}=I+A^{-1}xy^{t}-A^{-1}xy^{t}=I\checkmark
+\]
+
+\end_inset
+
+ y queda probado que la fórmula funciona en las condiciones del enunciado.
+\end_layout
+
+\end_body
+\end_document
