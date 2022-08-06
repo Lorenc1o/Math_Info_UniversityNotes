@@ -7,10 +7,10 @@ Esta asignatura consta de dos partes, una de **análisis** en la que se estudian
 
 Mi grupo de prácticas era:
 
-Lorencio Abril, Jose Antonio
-Martínez Bastida, Julio
-Miralles González, Pablo @pablomiralles22
-Tárraga Navarro, Pablo 
+- Lorencio Abril, Jose Antonio
+- Martínez Bastida, Julio
+- Miralles González, Pablo @pablomiralles22
+- Tárraga Navarro, Pablo 
 
 Nota obtenida: 9.4/10
 
@@ -20,9 +20,9 @@ This subject consists of two parts, one of **analysis** in which different model
 
 My practice group was:
 
-Lorencio Abril, Jose Antonio
-Martínez Bastida, Julio
-Miralles González, Pablo @pablomiralles22
-Tárraga Navarro, Pablo 
+- Lorencio Abril, Jose Antonio
+- Martínez Bastida, Julio
+- Miralles González, Pablo @pablomiralles22
+- Tárraga Navarro, Pablo 
 
 Grade obtained: 9.4/10
