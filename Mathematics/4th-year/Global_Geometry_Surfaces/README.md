@@ -12,7 +12,7 @@ Nota obtenida: 10/10
 
 [EN]
 
-For this subject, I present the deliverable assignments in the folder *Assignments* and the class notes together with the solved exercises in the folder *Class_Notes*.
+For this course, I present the deliverable assignments in the folder *Assignments* and the class notes together with the solved exercises in the folder *Class_Notes*.
 
 The contents covered were:
 Vector fields on surfaces, parallel vector fields, geodesics, exponential function of a point on a surface, Gauss' lemma, Minding's theorem, etc.
