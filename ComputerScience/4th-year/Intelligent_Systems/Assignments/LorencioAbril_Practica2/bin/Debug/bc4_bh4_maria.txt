@@ -1,0 +1,40 @@
+BC: bc4.txt
+BH: bh4_maria.txt
+Comienza el encadenamiento hacia atrás
+Procesando esGrave
+--Procesando escamas
+    Es un hecho con FC = 0.95
+ El FC calculado para la regla R2, Si escamas Entonces esGrave, es 0.57
+--Procesando pasajero
+----Procesando enrojecimiento
+      Es un hecho con FC = -1
+   El FC es negativo, el caso 3 hace que este FC sea 0
+  El FC calculado para la regla R1, Si enrojecimiento Entonces pasajero, es 0
+----Procesando manchaN
+      Es un hecho con FC = -1
+   El FC es negativo, el caso 3 hace que este FC sea 0
+  El FC calculado para la regla R4, Si manchaN Entonces pasajero, es -0
+   Aplicando el caso 2 a las reglas R1 y R4
+  El FC calculado para pasajero es 0
+ El FC calculado para la regla R3, Si pasajero Entonces esGrave, es -0
+--Procesando hombre
+    Es un hecho con FC = -1
+  El FC es negativo, el caso 3 hace que este FC sea 0
+ El FC calculado para la regla R5, Si hombre Entonces esGrave, es 0
+--Procesando mujer
+    Es un hecho con FC = 1
+ El FC calculado para la regla R6, Si mujer Entonces esGrave, es 0.15
+--Procesando noFoto
+    Es un hecho con FC = -1
+  El FC es negativo, el caso 3 hace que este FC sea 0
+ El FC calculado para la regla R7, Si noFoto Entonces esGrave, es -0
+--Procesando edad
+    Es un hecho con FC = 0.19
+ El FC calculado para la regla R8, Si edad Entonces esGrave, es 0.19
+  Aplicando el caso 2 a las reglas R2 y R3
+  Aplicando el caso 2 a las reglas R3 y R5
+  Aplicando el caso 2 a las reglas R5 y R6
+  Aplicando el caso 2 a las reglas R6 y R7
+  Aplicando el caso 2 a las reglas R7 y R8
+ El FC calculado para esGrave es 0.703945
+La meta esGrave es cierta con FC = 0.703945

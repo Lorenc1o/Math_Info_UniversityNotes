@@ -1,0 +1,42 @@
+BC: bc5.txt
+BH: bh5.txt
+Comienza el encadenamiento hacia atrás
+Procesando supernova
+--Procesando lumi510
+    Es un hecho con FC = -1
+  El FC es negativo, el caso 3 hace que este FC sea 0
+ El FC calculado para la regla R1, Si lumi510 Entonces supernova, es 0
+--Procesando lumi1025
+    Es un hecho con FC = 1
+ El FC calculado para la regla R2, Si lumi1025 Entonces supernova, es 0.6
+--Procesando lumiMas25
+    Es un hecho con FC = -1
+  El FC es negativo, el caso 3 hace que este FC sea 0
+ El FC calculado para la regla R3, Si lumiMas25 Entonces supernova, es 0
+--Procesando noMasObs
+    Es un hecho con FC = 1
+ El FC calculado para la regla R4, Si noMasObs Entonces supernova, es -0.5
+--Procesando tonAzul
+----Procesando hierro
+      Es un hecho con FC = 0.7
+  El FC calculado para la regla R9, Si hierro Entonces tonAzul, es 0.28
+  El FC calculado para tonAzul es 0.28
+ El FC calculado para la regla R5, Si tonAzul Entonces supernova, es 0.112
+--Procesando tonRoj
+----Procesando tonAzul
+      Es un hecho con FC = 0.28
+  El FC calculado para la regla R7, Si tonAzul Entonces tonRoj, es -0.28
+  El FC calculado para tonRoj es -0.28
+  El FC es negativo, el caso 3 hace que este FC sea 0
+ El FC calculado para la regla R6, Si tonRoj Entonces supernova, es -0
+--Procesando nubes
+    Es un hecho con FC = 0.05
+ El FC calculado para la regla R8, Si nubes Entonces supernova, es -0.04
+  Aplicando el caso 2 a las reglas R1 y R2
+  Aplicando el caso 2 a las reglas R2 y R3
+  Aplicando el caso 2 a las reglas R3 y R4
+  Aplicando el caso 2 a las reglas R4 y R5
+  Aplicando el caso 2 a las reglas R5 y R6
+  Aplicando el caso 2 a las reglas R6 y R8
+ El FC calculado para supernova es 0.26
+La meta supernova es cierta con FC = 0.26

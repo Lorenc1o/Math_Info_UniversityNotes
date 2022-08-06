@@ -1,0 +1,10 @@
+7
+joven, FC=0.4
+antiguedad23, FC=1
+antiguedadMas3, FC=-1
+conduccionMas3, FC=1
+conduccion23, FC=-1
+noVaSolo, FC=-1
+alcohol, FC=0.5
+Objetivo
+causante

@@ -1,0 +1,40 @@
+BC: bc3.txt
+BH: bh3.txt
+Comienza el encadenamiento hacia atrás
+Procesando causante
+--Procesando experimentado
+----Procesando antiguedad23
+      Es un hecho con FC = 1
+  El FC calculado para la regla R1, Si antiguedad23 Entonces experimentado, es 0.5
+----Procesando antiguedadMas3
+      Es un hecho con FC = -1
+   El FC es negativo, el caso 3 hace que este FC sea 0
+  El FC calculado para la regla R2, Si antiguedadMas3 Entonces experimentado, es 0
+   Aplicando el caso 2 a las reglas R1 y R2
+  El FC calculado para experimentado es 0.5
+--Procesando noVaSolo
+    Es un hecho con FC = -1
+  Aplicando el caso 1 a experimentado y noVaSolo
+  El FC es negativo, el caso 3 hace que este FC sea 0
+ El FC calculado para la regla R5, Si experimentado y noVaSolo Entonces causante, es -0
+--Procesando cansado
+----Procesando conduccion23
+      Es un hecho con FC = -1
+   El FC es negativo, el caso 3 hace que este FC sea 0
+  El FC calculado para la regla R3, Si conduccion23 Entonces cansado, es 0
+----Procesando conduccionMas3
+      Es un hecho con FC = 1
+  El FC calculado para la regla R4, Si conduccionMas3 Entonces cansado, es 1
+   Aplicando el caso 2 a las reglas R3 y R4
+  El FC calculado para cansado es 1
+ El FC calculado para la regla R6, Si cansado Entonces causante, es 0.5
+--Procesando joven
+    Es un hecho con FC = 0.4
+--Procesando alcohol
+    Es un hecho con FC = 0.5
+  Aplicando el caso 1 a joven y alcohol
+ El FC calculado para la regla R7, Si joven y alcohol Entonces causante, es 0.28
+  Aplicando el caso 2 a las reglas R5 y R6
+  Aplicando el caso 2 a las reglas R6 y R7
+ El FC calculado para causante es 0.64
+La meta causante es cierta con FC = 0.64

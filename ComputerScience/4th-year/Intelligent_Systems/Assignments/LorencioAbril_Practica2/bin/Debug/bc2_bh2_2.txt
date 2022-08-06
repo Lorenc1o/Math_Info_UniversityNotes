@@ -1,0 +1,20 @@
+BC: bc2.txt
+BH: bh2_2.txt
+Comienza el encadenamiento hacia atrás
+Procesando ganaRM
+--Procesando arbMod
+    Es un hecho con FC = 1
+ El FC calculado para la regla R2, Si arbMod Entonces ganaRM, es 0.75
+--Procesando publicoMayEST
+    Es un hecho con FC = 0.65
+ El FC calculado para la regla R3, Si publicoMayEST Entonces ganaRM, es -0.26
+--Procesando les2pivRM
+    Es un hecho con FC = 1
+--Procesando visitanteRM
+    Es un hecho con FC = 1
+  Aplicando el caso 1 a les2pivRM y visitanteRM
+ El FC calculado para la regla R5, Si les2pivRM y visitanteRM Entonces ganaRM, es -0.1
+  Aplicando el caso 2 a las reglas R2 y R3
+  Aplicando el caso 2 a las reglas R3 y R5
+ El FC calculado para ganaRM es 0.624625
+La meta ganaRM es cierta con FC = 0.624625

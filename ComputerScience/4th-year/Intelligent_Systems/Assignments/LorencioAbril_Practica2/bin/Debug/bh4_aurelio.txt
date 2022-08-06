@@ -1,0 +1,10 @@
+7
+mujer, FC=-1
+hombre, FC=1
+edad, FC=0.3
+enrojecimiento, FC=1
+manchaN, FC=-1
+escamas, FC=-0.5
+noFoto, FC=-1
+Objetivo
+esGrave

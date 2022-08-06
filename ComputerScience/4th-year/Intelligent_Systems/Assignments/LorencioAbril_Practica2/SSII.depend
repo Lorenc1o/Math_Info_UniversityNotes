@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1607201058 source:c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\src\baseconocimiento.cpp
+	"baseConocimiento.h"
+	<stdio.h>
+
+1607200861 c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\include\baseconocimiento.h
+
+1607931639 source:c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\src\regla.cpp
+	"Regla.h"
+	<regex>
+	<iostream>
+
+1607961809 c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\include\regla.h
+	<string>
+	<vector>
+
+1607201550 source:c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\sbr-fc.cpp
+	<iostream>
+
+1607974425 source:c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\main.cpp
+	<iostream>
+	"base_conocimientos.h"
+	"base_hechos.h"
+	"Regla.h"
+	"SBR_FC.h"
+	<string>
+	<sstream>
+
+1607961681 source:c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\src\base_hechos.cpp
+	"base_hechos.h"
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	<fstream>
+
+1607961764 c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\include\base_hechos.h
+	<unordered_map>
+	<unordered_set>
+	<vector>
+	<string>
+	"Regla.h"
+
+1607961591 source:c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\src\base_conocimientos.cpp
+	"base_conocimientos.h"
+	<regex>
+	<iostream>
+
+1607961628 c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\include\base_conocimientos.h
+	<vector>
+	"Regla.h"
+	"base_hechos.h"
+	<fstream>
+
+1607975154 source:c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\src\sbr_fc.cpp
+	"SBR_FC.h"
+	"base_conocimientos.h"
+	"base_hechos.h"
+	<iostream>
+
+1607975073 c:\users\josea\dropbox\2∫ cuatrimestre\inform¡tica\tp\pr¡cticas\pr¡ctica 2\ssii\include\sbr_fc.h
+	"base_conocimientos.h"
+	"base_hechos.h"
+

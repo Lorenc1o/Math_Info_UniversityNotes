@@ -1,0 +1,10 @@
+9
+R1: Si lumi510 Entonces supernova, FC=0.3
+R2: Si lumi1025 Entonces supernova, FC=0.6
+R3: Si lumiMas25 Entonces supernova, FC=0.9
+R4: Si noMasObs Entonces supernova, FC=-0.5
+R5: Si tonAzul Entonces supernova, FC=0.4
+R6: Si tonRoj Entonces supernova, FC=-0.6
+R7: Si tonAzul Entonces tonRoj, FC=-1
+R8: Si nubes Entonces supernova, FC=-0.8
+R9: Si hierro Entonces tonAzul, FC=0.4

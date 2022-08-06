@@ -1,0 +1,32 @@
+BC: bc1.txt
+BH: bh1.txt
+Comienza el encadenamiento hacia atrás
+Procesando I
+--Procesando C
+----Procesando A
+      Es un hecho con FC = 0.6
+----Procesando B
+      Es un hecho con FC = 0.4
+   Aplicando el caso 1 a A o B
+  El FC calculado para la regla R1, Si A o B Entonces C, es 0.42
+----Procesando D
+      Es un hecho con FC = 0.9
+----Procesando E
+      Es un hecho con FC = 0.7
+   Aplicando el caso 1 a D y E
+----Procesando F
+      Es un hecho con FC = 0.8
+   Aplicando el caso 1 a E y F
+  El FC calculado para la regla R2, Si D y E y F Entonces C, es 0.35
+   Aplicando el caso 2 a las reglas R1 y R2
+  El FC calculado para C es 0.623
+--Procesando H
+----Procesando G
+      Es un hecho con FC = -0.3
+   El FC es negativo, el caso 3 hace que este FC sea 0
+  El FC calculado para la regla R4, Si G Entonces H, es 0
+  El FC calculado para H es 0
+  Aplicando el caso 1 a C o H
+ El FC calculado para la regla R3, Si C o H Entonces I, es 0.40495
+ El FC calculado para I es 0.40495
+La meta I es cierta con FC = 0.40495

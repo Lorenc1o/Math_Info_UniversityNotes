@@ -1,0 +1,9 @@
+6
+lumi1025, FC=1
+lumi510, FC=-1
+lumiMas25, FC=-1
+noMasObs, FC=1
+nubes, FC=0.05
+hierro, FC=0.7
+Objetivo
+supernova

@@ -1,0 +1,9 @@
+6
+A, FC=0.6
+B, FC=0.4
+D, FC=0.9
+E, FC=0.7
+F, FC=0.8
+G, FC=-0.3
+Objetivo
+I

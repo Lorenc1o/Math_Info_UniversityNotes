@@ -1,0 +1,8 @@
+7
+R1: Si antiguedad23 Entonces experimentado, FC=0.5
+R2: Si antiguedadMas3 Entonces experimentado, FC=0.9
+R3: Si conduccion23 Entonces cansado, FC=0.5
+R4: Si conduccionMas3 Entonces cansado, FC=1
+R5: Si experimentado y noVaSolo Entonces causante, FC=-0.5
+R6: Si cansado Entonces causante, FC=0.5
+R7: Si joven y alcohol Entonces causante, FC=0.7

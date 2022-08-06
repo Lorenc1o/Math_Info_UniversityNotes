@@ -1,0 +1,17 @@
+BC: bc2.txt
+BH: bh2_1.txt
+Comienza el encadenamiento hacia atrás
+Procesando ganaEST
+--Procesando arbMod
+    Es un hecho con FC = 1
+ El FC calculado para la regla R1, Si arbMod Entonces ganaEST, es 0.4
+--Procesando publicoEqui
+    Es un hecho con FC = 0.35
+ El FC calculado para la regla R4, Si publicoEqui Entonces ganaEST, es -0.1925
+--Procesando les2pivEST
+    Es un hecho con FC = 1
+ El FC calculado para la regla R6, Si les2pivEST Entonces ganaEST, es -0.6
+  Aplicando el caso 2 a las reglas R1 y R4
+  Aplicando el caso 2 a las reglas R4 y R6
+ El FC calculado para ganaEST es -0.461667
+La meta ganaEST es cierta con FC = -0.461667
