@@ -9,6 +9,14 @@ Contenidos tratados: espacios de Banach, espacios de Hilbert, teorema de Riesz-F
 
 Nota obtenida: 10/10 Matrícula de Honor
 
+### Examenes resueltos
+
+En el archivo *examenes.pdf* pueden consultarse distintos ejercicios resueltos de algunos exámenes antiguos. No obstante, este trabajo no fue solo mío, sino en colaboración con mis compañeros:
+
+- Aguilar Martínez, Francisco
+- Miralles Gonzalez, Pablo @pablomiralles22
+- Navidad Vilches, Beatriz
+
 [EN]
 
 In the file *apuntes_AF.pdf* my notes for the course can be read, with several solved exercises. In the folder *Assignments* the assignments for the course can be consulted. In the file *examenes.pdf* some solved exercises from old exams can be consulted.
@@ -16,3 +24,11 @@ In the file *apuntes_AF.pdf* my notes for the course can be read, with several s
 Topics covered: Banach spaces, Hilbert spaces, Riesz-Fréchet's theorem, ortonormal bases in Hilbert spaces, Fourier series, Riesz-Fischer's theorem. Compact and hermitian operators, spectral theorem, Fredholm's alternative, Baire's theorem, Banach-Steinhaus, Hahn-Banach's theorem, open map and closed graph theorem.
 
 Grade obtained: 10/10 Honours Distinction
+
+### Solved exams
+
+In the file *examenes.pdf* you can find solved exercises from some old exams. However, this work was not mine alone, but in collaboration with my colleagues:
+
+- Aguilar Martínez, Francisco
+- Miralles Gonzalez, Pablo @pablomiralles22
+- Navidad Vilches, Beatriz
