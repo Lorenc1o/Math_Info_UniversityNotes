@@ -1,0 +1,179 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 4: Una superficie
+\end_layout
+
+\begin_layout Subsubsection*
+Demuestre que el conjunto
+\begin_inset Formula 
+\[
+\boldsymbol{S=\left\{ \left(x,y,z\right)\in\mathbb{R}^{3}:z=x^{2}-y^{2}\right\} }
+\]
+
+\end_inset
+
+ es una superficie regular y compruebe que las siguientes aplicaciones son
+ parametrizaciones para 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $\boldsymbol{X\left(u,v\right)=\left(u+v,u-v,4uv\right),\ \left(u,v\right)\in\mathbb{R}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{X\left(u,v\right)=\left(u\cdot cosh\ v,u\cdot senh\ v,u^{2}\right),\ \left(u,v\right)\in R^{2},\ u\neq0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+¿Qué parte de la superficie 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ recubren estas parametrizaciones?
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+Para ver que es una superficie regular, definimos 
+\begin_inset Formula $f:\mathbb{R}^{2}\rightarrow\mathbb{R}$
+\end_inset
+
+ definida por 
+\begin_inset Formula $f\left(x,y\right)=x^{2}-y^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entonces, tenemos que 
+\begin_inset Formula 
+\[
+S=G\left(f\right)=\left\{ \left(x,y,f\left(x,y\right)\right):\left(x,y\right)\in\mathbb{R}^{2}\right\} 
+\]
+
+\end_inset
+
+ si vemos que 
+\begin_inset Formula $f$
+\end_inset
+
+ es diferenciable, entonces 
+\begin_inset Formula $S$
+\end_inset
+
+ será una superficie regular, por la proposición 2.1.2.
+\end_layout
+
+\begin_layout Standard
+Efectivamente, 
+\begin_inset Formula $f$
+\end_inset
+
+ es diferenciable de forma evidente.
+\end_layout
+
+\end_body
+\end_document

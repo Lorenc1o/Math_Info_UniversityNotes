@@ -1,0 +1,490 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 8: Superficie Reglada
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+a)
+\end_layout
+
+\begin_layout Standard
+\align left
+Para calcular 
+\begin_inset Formula $N$
+\end_inset
+
+, debemos obtener 
+\begin_inset Formula $X_{s}$
+\end_inset
+
+ y 
+\begin_inset Formula $X_{t}$
+\end_inset
+
+.
+ Voy a llamar 
+\begin_inset Formula $k=k_{\beta},\ n=N_{\beta}$
+\end_inset
+
+ y 
+\begin_inset Formula $T=T_{\beta}$
+\end_inset
+
+ por simplificar la notación.
+\begin_inset Formula 
+\[
+X_{s}=\beta'\left(s\right)+t\left(cos\varphi\cdot n'+sen\varphi\left[T'\land n+T\land n'\right]\right)=\beta'\left(s\right)+t\left(-kTcos\varphi+sen\varphi\left[kn\land n-kT\land T\right]\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\beta'\left(s\right)-tkTcos\varphi=T-tkTcos\varphi=T\left(1-tkcos\varphi\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+X_{t}=cos\varphi\cdot n+sen\varphi\cdot u
+\]
+
+\end_inset
+
+ Y se tiene que
+\begin_inset Formula 
+\[
+X_{s}\land X_{t}=\left(1-tkcos\varphi\right)\left[T\land cos\varphi n+T\land sen\varphi u\right]=\left(1-tkcos\varphi\right)\left(cos\varphi u-sen\varphi n\right)
+\]
+
+\end_inset
+
+ esta última igualdad se debe a que
+\begin_inset Formula 
+\[
+T\land cos\varphi n=cos\varphi T\land n=cos\varphi u
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T\land sen\varphi u=sen\varphi T\land u=sen\varphi T\land\left(T\land n\right)=sen\varphi\left(-n\right)=-sen\varphi n
+\]
+
+\end_inset
+
+ Calculamos su módulo:
+\begin_inset Formula 
+\[
+\left\Vert X_{s}\land X_{t}\right\Vert \overset{*}{=}\left|1-tkcos\varphi\right|\sqrt{cos^{2}\varphi\left\Vert u\right\Vert ^{2}+sen^{2}\left\Vert n\right\Vert ^{2}}\overset{**}{=}\left|1-tkcos\varphi\right|
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula $*$
+\end_inset
+
+: porque 
+\begin_inset Formula $u\perp n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $**$
+\end_inset
+
+: porque 
+\begin_inset Formula $\left\Vert u\right\Vert =\left\Vert n\right\Vert =1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien,
+\begin_inset Formula 
+\[
+1-tkcos\varphi>0\iff tkcos\varphi<1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+1-tkcos\varphi<0\iff tkcos\varphi>1
+\]
+
+\end_inset
+
+ Entonces
+\begin_inset Formula 
+\[
+N=\frac{X_{s}\land X_{t}}{\left\Vert X_{s}\land X_{t}\right\Vert }=\frac{\left(1-tkcos\varphi\right)}{\left|1-tkcos\varphi\right|}\left(cos\varphi\cdot u-sen\varphi\cdot n\right)=\begin{cases}
+cos\varphi\cdot u-sen\varphi\cdot n & si\ t\cdot k\left(s\right)\cdot cos\varphi<1\\
+-cos\varphi\cdot u+sen\varphi\cdot n & si\ t\cdot k\left(s\right)\cdot cos\varphi>1
+\end{cases}
+\]
+
+\end_inset
+
+ En el caso que falta, se tiene
+\begin_inset Formula 
+\[
+t\cdot k\left(s\right)\cdot cos\varphi=1\implies X_{s}=0
+\]
+
+\end_inset
+
+ luego 
+\begin_inset Formula $X$
+\end_inset
+
+ no es una parametrización en ese caso.
+\end_layout
+
+\begin_layout Subsubsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $E=\left\Vert X_{s}\right\Vert ^{2}=\left(1-tkcos\varphi\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $F=0$
+\end_inset
+
+, porque 
+\begin_inset Formula $\left\langle T,n\right\rangle =0$
+\end_inset
+
+ y 
+\begin_inset Formula $\left\langle T,u\right\rangle =0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $G=cos^{2}\varphi\left\Vert n\right\Vert ^{2}+sen^{2}\varphi\left\Vert u\right\Vert ^{2}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y
+\begin_inset Formula 
+\[
+\sqrt{EG-F^{2}}=\left|1-tkcos\varphi\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado,
+\begin_inset Formula 
+\[
+X_{ss}=kn\left(1-tkcos\varphi\right)-T\left(tk'cos\varphi\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+X_{st}=-Tkcos\varphi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+X_{tt}=0
+\]
+
+\end_inset
+
+ de modo que
+\begin_inset Formula 
+\[
+e=\left\langle N,X_{ss}\right\rangle =\left\langle cos\varphi\cdot u-sen\varphi\cdot n,kn\left(1-tkcos\varphi\right)-T\left(tk'cos\varphi\right)\right\rangle \overset{*}{=}-sen\varphi\cdot k\left(1-tkcos\varphi\right)\left\langle n,n\right\rangle +sen\varphi\cdot t\cdot cos\varphi\cdot k'\left\langle n,T\right\rangle =
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-k\cdot sen\varphi\left(1-tkcos\varphi\right)
+\]
+
+\end_inset
+
+ donde 
+\begin_inset Formula $*$
+\end_inset
+
+ se debe a que 
+\begin_inset Formula $\left\langle u,n\right\rangle =\left\langle u,T\right\rangle =0$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+f=\left\langle n,X_{st}\right\rangle =\left\langle cos\varphi\cdot u-sen\varphi\cdot n,-Tkcos\varphi\right\rangle =0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+g=\left\langle n,X_{tt}\right\rangle =\left\langle n,0\right\rangle =0
+\]
+
+\end_inset
+
+ De modo que, para ver la curvatura de Gauss
+\begin_inset Formula 
+\[
+eg-f^{2}=0\implies K=0
+\]
+
+\end_inset
+
+ Y para la curvatura media
+\begin_inset Formula 
+\[
+H=\frac{1}{2}\frac{eG-2fF+gE}{EG-F^{2}}=\frac{e}{2\left(EG-F^{2}\right)}=\frac{-k\cdot sen\varphi\left(1-tkcos\varphi\right)}{2\left(1-tkcos\varphi\right)^{2}}=\frac{-ksen\varphi}{2\left|1-tkcos\varphi\right|}
+\]
+
+\end_inset
+
+ Por lo tanto, tenemos que un punto 
+\begin_inset Formula $X\left(s,t\right)$
+\end_inset
+
+ será:
+\begin_inset Formula 
+\[
+\begin{cases}
+parabólico & si\ \varphi\neq0\ y\ k\left(s\right)\neq0\\
+plano & si\ \varphi=0\ ó\ k\left(s\right)=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+c)
+\end_layout
+
+\begin_layout Standard
+\align left
+Como los puntos no son umbilicales y 
+\begin_inset Formula $\beta$
+\end_inset
+
+ es la curva coordenada
+\begin_inset Formula 
+\[
+\beta\left(s\right)=X\left(s,0\right)
+\]
+
+\end_inset
+
+ entonces 
+\begin_inset Formula $\beta$
+\end_inset
+
+ será línea de curvatura si, y solo si, 
+\begin_inset Formula $F=f\equiv0$
+\end_inset
+
+ (ejercicio 3.13).
+ Como, efectivamente, 
+\begin_inset Formula $F=f\equiv0$
+\end_inset
+
+, 
+\begin_inset Formula $\beta$
+\end_inset
+
+ es línea de curvatura.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para ver si es una curva asintótica, tenemos en cuenta que 
+\begin_inset Formula $\beta\left(s\right)=X\left(s,0\right)\implies\beta'\left(s\right)=X_{s}\left(s,0\right)$
+\end_inset
+
+, y hacemos
+\begin_inset Formula 
+\[
+\mathrm{I\!I}_{\beta\left(s\right)}\left(\beta'\left(s\right)\right)=\mathrm{I\!I}_{\beta\left(s\right)}\left(X_{s}\left(x,0\right)\right)=e\left(s,0\right)=-k\left(s\right)sen\varphi
+\]
+
+\end_inset
+
+ Por lo que será asintótica si 
+\begin_inset Formula $k\left(s\right)\equiv0$
+\end_inset
+
+, es decir, 
+\begin_inset Formula $\beta$
+\end_inset
+
+ es una recta, o si 
+\begin_inset Formula $\varphi=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+d)
+\end_layout
+
+\begin_layout Standard
+Cuando 
+\begin_inset Formula $\varphi=\frac{\pi}{2}$
+\end_inset
+
+, obtenemos la superficie
+\begin_inset Formula 
+\[
+X\left(s,t\right)=\beta\left(s\right)+tu
+\]
+
+\end_inset
+
+ con curvatura 
+\begin_inset Formula $K=0$
+\end_inset
+
+ y curvatura media 
+\begin_inset Formula $H=\frac{-k}{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

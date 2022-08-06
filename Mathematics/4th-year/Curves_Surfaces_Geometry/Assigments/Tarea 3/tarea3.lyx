@@ -1,0 +1,533 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 3: El aparato de Frenet
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+Dada una curva regular en 
+\begin_inset Formula $\boldsymbol{\mathbb{R}^{3}}$
+\end_inset
+
+, 
+\begin_inset Formula $\boldsymbol{\alpha:I\subset\mathbb{R}\rightarrow\mathbb{R}^{3}}$
+\end_inset
+
+, su aparato de Frenet es la familia 
+\begin_inset Formula $\boldsymbol{\left\{ k,\tau,T,N,B\right\} }$
+\end_inset
+
+ formada por su curvatura, su torsión y su triedro de Frenet.
+ Calcule el aparato de Frenet de la siguiente curva:
+\begin_inset Formula 
+\[
+\boldsymbol{\alpha\left(s\right)=\left(3s-s^{3},3s^{2},3s+s^{3}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La curva es así:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado1.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pegado2.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Debemos tener cuidado al hacer esto, pues las definiciones del libro están
+ dadas para curvas p.p.a..
+\end_layout
+
+\begin_layout Standard
+\align left
+Tenemos, primero, que
+\begin_inset Formula 
+\[
+\alpha'=\left(3-3s^{2},6s,3+3s^{2}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha''=\left(-6s,6,6s\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha'''=\left(-6,0,6\right)
+\]
+
+\end_inset
+
+ Por lo que
+\begin_inset Formula 
+\[
+\alpha'\land\alpha''=\left|\begin{array}{ccc}
+i & j & k\\
+3-3s^{2} & 6s & 3+3s^{2}\\
+-6s & 6 & 6s
+\end{array}\right|=\left(36s^{2}-18-18s^{2},-18s-18s^{2}-18s+18s^{2},18-18s^{2}+36s^{2}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(18s^{2}-18,-36s,18s^{2}+18\right)=18\left(s^{2}-1,-2s,s^{2}+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Usando la proposición 1.3.5, podemos ya calcular la curvatura y la torsión:
+\begin_inset Formula 
+\[
+k=\frac{\left|\alpha'\land\alpha''\right|}{\left|\alpha'\right|^{3}}=\frac{18\sqrt{s^{4}+1-2s^{2}+4s^{2}+s^{4}+1+2s^{2}}}{\left(9+9s^{4}-18s^{2}+36s^{2}+9+9s^{4}+18s^{2}\right)^{\frac{3}{2}}}=\frac{18\sqrt{2s^{4}+2+4s^{2}}}{\left(18+18s^{4}+36s^{2}\right)^{\frac{3}{2}}}=\frac{18\sqrt{2}\sqrt{s^{4}+2s^{2}+1}}{\sqrt{18}^{3}\sqrt{1+2s^{2}+s^{4}}^{3}}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{\sqrt{2}}{\sqrt{18}\left(s^{2}+1\right)^{2}}=\frac{1}{\left(s^{2}+1\right)^{2}}\sqrt{\frac{2}{18}}=\frac{1}{\left(s^{2}+1\right)^{2}}\sqrt{\frac{1}{9}}=\frac{1}{3\left(s^{2}+1\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado,
+\begin_inset Formula 
+\[
+det\left(\alpha',\alpha'',\alpha'''\right)=\left|\begin{array}{ccc}
+3-3s^{2} & 6s & 3+3s^{2}\\
+-6s & 6 & 6s\\
+-6 & 0 & 6
+\end{array}\right|=216
+\]
+
+\end_inset
+
+ Por lo que
+\begin_inset Formula 
+\[
+\tau=-\frac{det\left(\alpha',\alpha'',\alpha'''\right)}{\left|\alpha'\land\alpha''\right|^{2}}=-\frac{216}{648\left(s^{4}+2s^{2}+1\right)}=-\frac{1}{3\left(s^{2}+1\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora, como queremos formar el triedro de Frenet, pero la curva no es p.p.a.,
+ tenemos que normalizar para obtener 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+T=t\left(s\right)=\frac{\alpha'}{\left|\alpha'\right|}=\frac{\left(3-3s^{2},6s,3+3s^{2}\right)}{\sqrt{18}\left(s^{2}+1\right)}=\frac{1}{\sqrt{18}}\left(\frac{3-3s^{2}}{s^{2}+1},\frac{6s}{s^{2}+1},3\right)=\frac{1}{\sqrt{2}}\left(\frac{1-s^{2}}{s^{2}+1},\frac{2s}{s^{2}+1},1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Una vez tenemos el vector tangente unitario, calculamos el vector normal
+ unitario (estas cuentas las realicé antes de hacer la última simplificación
+ en el vector tangente, pero sale bien y no merece la pena volver a hacerlas):
+\begin_inset Formula 
+\[
+N=n\left(s\right)=\frac{t'}{\left|t'\right|}=\frac{\frac{1}{\sqrt{18}}\left(\frac{-6s\left(s^{2}+1\right)-\left(3-3s^{2}\right)2s}{\left(s^{2}+1\right)^{2}},\frac{6\left(s^{2}+1\right)-12s^{2}}{\left(s^{2}+1\right)^{2}},0\right)}{\left|t'\right|}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{\frac{1}{\sqrt{18}}\left(\frac{-12s}{\left(s^{2}+1\right)^{2}},\frac{-6\left(s^{2}-1\right)}{\left(s^{2}+1\right)^{2}},0\right)}{\frac{1}{\sqrt{18}}\sqrt{\frac{144s^{2}+36\left(s^{2}-1\right)^{2}}{\left(s^{2}+1\right)^{4}}}}=\frac{\left(-12s,-6\left(s^{2}-1\right),0\right)}{\sqrt{144s^{2}+36\left(s^{4}+1-2s^{2}\right)}}=\frac{\left(-12s,-6\left(s^{2}-1\right),0\right)}{\sqrt{36s^{4}+72s^{2}+36}}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{\left(-12s,-6\left(s^{2}-1\right),0\right)}{6s^{2}+6}=\left(\frac{-2s}{s^{2}+1},\frac{1-s^{2}}{s^{2}+1},0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y, por último, el binormal unitario:
+\begin_inset Formula 
+\[
+B=b\left(s\right)=t\left(s\right)\land n\left(s\right)=\left|\begin{array}{ccc}
+i & j & k\\
+\frac{1}{\sqrt{2}}\frac{1-s^{2}}{s^{2}+1} & \frac{1}{\sqrt{2}}\frac{2s}{s^{2}+1} & \frac{1}{\sqrt{2}}\\
+\frac{-2s}{s^{2}+1} & \frac{1-s^{2}}{s^{2}+1} & 0
+\end{array}\right|=\left(\frac{1}{\sqrt{2}}\frac{s^{2}-1}{s^{2}+1},\frac{-\sqrt{2}s}{s^{2}+1},\frac{\left(1-1s^{2}\right)\left(1-s^{2}\right)+4s^{2}}{\sqrt{2}\left(s^{2}+1\right)^{2}}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{1}{\sqrt{2}}\left(\frac{s^{2}-1}{s^{2}+1},\frac{-2s}{s^{2}+1},\frac{1-s^{2}-s^{2}+s^{4}+4s^{2}}{\left(s^{2}+1\right)^{2}}\right)=\frac{1}{\sqrt{2}}\left(\frac{s^{2}-1}{s^{2}+1},\frac{-2s}{s^{2}+1},\frac{1+2s^{2}+1s^{4}}{\left(s^{2}+1\right)^{2}}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{1}{\sqrt{2}}\left(\frac{s^{2}-1}{s^{2}+1},\frac{-2s}{s^{2}+1},1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y ahora podemos hacer las comprobaciones oportunas:
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\left|t\right|=1:$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|t\right|=\frac{1}{\sqrt{2}}\sqrt{\left(\frac{1-s^{2}}{s^{2}+1}\right)^{2}+\left(\frac{2s}{s^{2}+1}\right)^{2}+1}=\frac{1}{\sqrt{2}}\sqrt{\frac{1+s^{4}-2s^{2}+4s^{2}}{\left(s^{2}+1\right)^{2}}+1}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{1}{\sqrt{2}}\sqrt{\frac{1+2s^{2}+1s^{4}}{\left(s^{2}+1\right)^{2}}+1}=\frac{1}{\sqrt{2}}\sqrt{\frac{\left(s^{2}+1\right)^{2}}{\left(s^{2}+1\right)^{2}}+1}=\frac{1}{\sqrt{2}}\sqrt{1+1}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\left|n\right|=1:$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|n\right|=\sqrt{\left(\frac{-2s}{s^{2}+1}\right)^{2}+\left(\frac{1-s^{2}}{s^{2}+1}\right)^{2}}=\sqrt{\frac{4s^{2}+1+s^{4}-2s^{2}}{\left(s^{2}+1\right)^{2}}}=\sqrt{\frac{s^{4}+2s^{2}+1}{\left(s^{2}+1\right)^{2}}}=\sqrt{\frac{\left(s^{2}+1\right)^{2}}{\left(s^{2}+1\right)^{2}}}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\left\langle t,n\right\rangle =0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left\langle t,n\right\rangle =\frac{\left(3-3s^{2}\right)\left(-2s\right)+6s\left(1-s^{2}\right)}{\left(s^{2}+1\right)^{2}}=\frac{-6s+6s^{3}+6s-6s^{3}}{\left(s^{2}+1\right)^{2}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\left|b\right|=1$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left|b\right|=\frac{1}{\sqrt{2}}\sqrt{\left(\frac{s^{2}-1}{s^{2}+1}\right)^{2}+\left(\frac{-2s}{s^{2}+1}\right)^{2}+1}=\frac{1}{\sqrt{2}}\sqrt{\frac{1+s^{4}-2s^{2}+4s^{2}}{\left(s^{2}+1\right)^{2}}+1}=\frac{1}{\sqrt{2}}\sqrt{\frac{1+2s^{2}+s^{4}}{\left(s^{2}+1\right)^{2}}+1}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\left\langle t,b\right\rangle =0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left\langle t,b\right\rangle =\left\langle \frac{1}{\sqrt{2}}\left(\frac{1-s^{2}}{s^{2}+1},\frac{2s}{s^{2}+1},1\right),\frac{1}{\sqrt{2}}\left(\frac{s^{2}-1}{s^{2}+1},\frac{-2s}{s^{2}+1},1\right)\right\rangle =
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{1}{2}\left(\frac{s^{2}-1-s^{4}+s^{2}-4s^{2}}{\left(s^{2}+1\right)^{2}}+1\right)=\frac{1}{2}\left(\frac{-s^{4}-2s^{2}-1}{\left(s^{2}+1\right)^{2}}+1\right)=\frac{1}{2}\left(\frac{-\left(s^{2}+1\right)^{2}}{\left(s^{2}+1\right)}+1\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{1}{2}\left(-1+1\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\left\langle n,b\right\rangle =0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left\langle n,b\right\rangle =\left\langle \left(\frac{-2s}{s^{2}+1},\frac{1-s^{2}}{s^{2}+1},0\right),\frac{1}{\sqrt{2}}\left(\frac{s^{2}-1}{s^{2}+1},\frac{-2s}{s^{2}+1},1\right)\right\rangle =\frac{1}{\sqrt{2}}\left(\frac{-2\left(s^{2}-1\right)+2\left(s^{2}-1\right)}{\left(s^{2}+1\right)^{2}}\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+El triedro de Frenet es una base positivamente orientada, 
+\begin_inset Formula $det\left(T,N,B\right)=1$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left|\begin{array}{ccc}
+\frac{1}{\sqrt{2}}\frac{1-s^{2}}{s^{2}+1} & \frac{1}{\sqrt{2}}\frac{2s}{s^{2}+1} & \frac{1}{\sqrt{2}}\\
+\frac{-2s}{s^{2}+1} & \frac{1-s^{2}}{s^{2}+1} & 0\\
+\frac{1}{\sqrt{2}}\frac{s^{2}-1}{s^{2}+1}, & \frac{1}{\sqrt{2}}\frac{-2s}{s^{2}+1}, & \frac{1}{\sqrt{2}}
+\end{array}\right|=\frac{1}{2}\frac{\left(1-s^{2}\right)^{2}}{\left(s^{2}+1\right)^{2}}+\frac{1}{2}\cdot\frac{4s^{2}}{\left(s^{2}+1\right)^{2}}-\left(\frac{1}{2}\frac{-\left(1-s^{2}\right)^{2}}{\left(s^{2}+1\right)^{2}}+\frac{1}{2}\frac{-4s^{2}}{\left(s^{2}+1\right)^{2}}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{1}{2}\frac{1-2s^{2}+s^{4}+4s^{2}}{\left(s^{2}+1\right)^{2}}\cdot2=\frac{\left(s^{2}+1\right)^{2}}{\left(s^{2}+1\right)^{2}}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y vemos como todo funciona como queremos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Recapitulando, tenemos el aparato de Frenet dado por:
+\begin_inset Formula 
+\[
+k=\frac{1}{3\left(s^{2}+1\right)^{2}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tau=-\frac{1}{3\left(s^{2}+1\right)^{2}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T=\frac{1}{\sqrt{2}}\left(\frac{1-s^{2}}{s^{2}+1},\frac{2s}{s^{2}+1},1\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+N=\left(\frac{-2s}{s^{2}+1},\frac{1-s^{2}}{s^{2}+1},0\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+B=\frac{1}{\sqrt{2}}\left(\frac{s^{2}-1}{s^{2}+1},\frac{-2s}{s^{2}+1},1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,300 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 6: El gradiente en superficies
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+a)
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $grad\ f_{p}\in T_{p}S$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+grad\ f_{p}=aX_{u}+bX_{v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por otro lado, utilizando la regla de la cadena:
+\begin_inset Formula 
+\[
+f_{u}=\frac{\partial f}{\partial x}\left(X\left(u,v\right)\right)\frac{\partial x}{\partial u}\left(u,v\right)+\frac{\partial f}{\partial y}\left(X\left(u,v\right)\right)\frac{\partial y}{\partial u}\left(u,v\right)+\frac{\partial f}{\partial z}\left(X\left(u,v\right)\right)\frac{\partial z}{\partial u}\left(u,v\right)=df\left(X_{u}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f_{v}=df\left(X_{v}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por tanto, se tiene
+\begin_inset Formula 
+\[
+f_{u}=df\left(X_{u}\right)=\left\langle grad\ f_{p},X_{u}\right\rangle =aE+bF
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f_{v}=df\left(X_{v}\right)=\left\langle grad\ f_{p},X_{v}\right\rangle =aF+bG
+\]
+
+\end_inset
+
+ Por tanto, tenemos el sistema
+\begin_inset Formula 
+\[
+\begin{cases}
+aE+bF=f_{u}\\
+aF+bG=f_{v}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O, equivalentemente
+\begin_inset Formula 
+\[
+\left(`\begin{array}{cc}
+E & F\\
+F & G
+\end{array}\right)\left(\begin{array}{c}
+a\\
+b
+\end{array}\right)=\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)\implies\left(\begin{array}{c}
+a\\
+b
+\end{array}\right)=\left(\begin{array}{cc}
+E & F\\
+F & G
+\end{array}\right)^{-1}\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calculamos esta inversa:
+\begin_inset Formula 
+\[
+\left(\begin{array}{cc}
+E & F\\
+F & G
+\end{array}\right)^{-1}\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)=\frac{\left(\begin{array}{cc}
+G & -F\\
+-F & E
+\end{array}\right)^{t}}{EG-F^{2}}\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)=\frac{\left(\begin{array}{cc}
+G & -F\\
+-F & E
+\end{array}\right)}{EG-F^{2}}\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)=\frac{1}{EG-F^{2}}\left(\begin{array}{c}
+Gf_{u}-Ff_{v}\\
+Ef_{v}-Ff_{u}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por tanto
+\begin_inset Formula 
+\[
+a=\frac{Gf_{u}-Ff_{v}}{EG-F^{2}},\ b=\frac{Ef_{v}-Ff_{u}}{EG-F^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y queda el resultado buscado
+\begin_inset Formula 
+\[
+grad\ f_{p}=\frac{Gf_{u}-Ff_{v}}{EG-F^{2}}X_{u}+\frac{Ef_{v}-Ff_{u}}{EG-F^{2}}X_{v}
+\]
+
+\end_inset
+
+ Para el caso particular de 
+\begin_inset Formula $S=\mathbb{R}^{2}$
+\end_inset
+
+, tomamos
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+X:\mathbb{R}^{2} & \rightarrow & S\\
+\left(u,v\right) & \mapsto & \left(u,v,0\right)
+\end{array}
+\]
+
+\end_inset
+
+ de forma que
+\begin_inset Formula 
+\[
+dX=\left(\begin{array}{cc}
+1 & 0\\
+0 & 1\\
+0 & 0
+\end{array}\right),\ E=1,\ F=0,\ G=1
+\]
+
+\end_inset
+
+ por lo que, utilizando la ecuación que hemos derivado, queda
+\begin_inset Formula 
+\[
+grad\ f_{p}=f_{u}e_{1}+f_{v}e_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+b)
+\end_layout
+
+\end_body
+\end_document

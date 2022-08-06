@@ -1,0 +1,660 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 4: Una superficie
+\end_layout
+
+\begin_layout Subsubsection*
+Demuestre que el conjunto
+\begin_inset Formula 
+\[
+\boldsymbol{S=\left\{ \left(x,y,z\right)\in\mathbb{R}^{3}:z=x^{2}-y^{2}\right\} }
+\]
+
+\end_inset
+
+ es una superficie regular y compruebe que las siguientes aplicaciones son
+ parametrizaciones para 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $\boldsymbol{X\left(u,v\right)=\left(u+v,u-v,4uv\right),\ \left(u,v\right)\in\mathbb{R}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{Y\left(u,v\right)=\left(u\cdot cosh\ v,u\cdot senh\ v,u^{2}\right),\ \left(u,v\right)\in R^{2},\ u\neq0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+¿Qué parte de la superficie 
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+ recubren estas parametrizaciones?
+\end_layout
+
+\begin_layout Standard
+La superficie es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pegado1.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Para ver que es una superficie regular, definimos 
+\begin_inset Formula $f:\mathbb{R}^{2}\rightarrow\mathbb{R}$
+\end_inset
+
+ como 
+\begin_inset Formula $f\left(x,y\right)=x^{2}-y^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Entonces, tenemos que 
+\begin_inset Formula 
+\[
+S=G\left(f\right)=\left\{ \left(x,y,f\left(x,y\right)\right):\left(x,y\right)\in\mathbb{R}^{2}\right\} 
+\]
+
+\end_inset
+
+ si vemos que 
+\begin_inset Formula $f$
+\end_inset
+
+ es diferenciable, entonces 
+\begin_inset Formula $S$
+\end_inset
+
+ será una superficie regular, por la proposición 2.1.2.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Efectivamente, 
+\begin_inset Formula $f$
+\end_inset
+
+ es diferenciable pues es una función polinómica.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Para ver que 
+\begin_inset Formula $X$
+\end_inset
+
+ es una parametrización de 
+\begin_inset Formula $S$
+\end_inset
+
+, debemos comprobar que verifica las tres condiciones de las parametrizaciones:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\noindent
+\align left
+S1: Los puntos generados por 
+\begin_inset Formula $X$
+\end_inset
+
+ son de la forma 
+\begin_inset Formula $\left(u+v,u-v,4uv\right)$
+\end_inset
+
+, y serán puntos de 
+\begin_inset Formula $S$
+\end_inset
+
+ si
+\begin_inset Formula 
+\[
+4uv=\left(u+v\right)^{2}-\left(u-v\right)^{2}=u^{2}+2uv+v^{2}-u^{2}+2uv-v^{2}=4uv\checkmark
+\]
+
+\end_inset
+
+ además, 
+\begin_inset Formula $X$
+\end_inset
+
+ es diferenciable, trivialmente.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+S2: Vamos a tratar de determinar la inversa directamente.
+ Tenemos
+\begin_inset Formula 
+\[
+\begin{cases}
+x=u+v\implies & u=x-v\\
+y=u-v
+\end{cases}\implies\begin{cases}
+u=x-v\\
+y=x-2v\implies & v=\frac{x-y}{2}
+\end{cases}\implies\begin{cases}
+u=\frac{x+y}{2}\\
+v=\frac{x-y}{2}
+\end{cases}
+\]
+
+\end_inset
+
+ Por lo que tenemos que 
+\begin_inset Formula $X^{-1}\left(x,y,z\right)=\left(\frac{x+y}{2},\frac{x-y}{2}\right)$
+\end_inset
+
+ que es continua.
+ Luego 
+\begin_inset Formula $X$
+\end_inset
+
+ es un homeomorfismo.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+S3: Por último, debemos ver que 
+\begin_inset Formula $dX\left(u,v\right)$
+\end_inset
+
+ es inyectiva.
+ Se tiene que 
+\begin_inset Formula 
+\[
+dX\left(u,v\right)=\left(\begin{array}{ccc}
+1 & 1 & 4v\\
+1 & -1 & 4u
+\end{array}\right)
+\]
+
+\end_inset
+
+ que es inyectiva, pues 
+\begin_inset Formula $\left|\begin{array}{cc}
+1 & 1\\
+1 & -1
+\end{array}\right|=-2\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Vamos a ver, también, qué parte de 
+\begin_inset Formula $S$
+\end_inset
+
+ cubre 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $X^{-1}$
+\end_inset
+
+ está definida 
+\begin_inset Formula $\forall p\in\mathbb{R}^{2}$
+\end_inset
+
+, entonces lo está 
+\begin_inset Formula $\forall p\in S$
+\end_inset
+
+.
+ Así, dado 
+\begin_inset Formula $p\in S,X^{-1}\left(p\right)$
+\end_inset
+
+ es un punto de 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ cuya imagen por 
+\begin_inset Formula $X$
+\end_inset
+
+ es 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Es decir 
+\begin_inset Formula $X\left(\mathbb{R}^{2}\right)=S$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\noindent
+\align left
+Ahora hacemos lo mismo para 
+\begin_inset Formula $Y$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\noindent
+\align left
+S1: 
+\begin_inset Formula 
+\[
+u^{2}cosh^{2}v-u^{2}senh^{2}v=u^{2}\left(cosh^{2}v-senh^{2}v\right)=u^{2}\checkmark
+\]
+
+\end_inset
+
+ e 
+\begin_inset Formula $Y$
+\end_inset
+
+ es diferenciable, pues es es 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+ en cada componente.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+S2:
+\begin_inset Formula 
+\[
+\begin{cases}
+x=ucoshv\implies u=\frac{x}{coshv}\\
+y=usenhv
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\implies\begin{cases}
+u=\frac{x}{coshv}\\
+y=xtanhv\implies tanhv=\frac{y}{x}\implies v=argtanh\frac{y}{x}=log\left(\sqrt{\frac{1+\frac{y}{x}}{1-\frac{y}{x}}}\right)
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\implies\begin{cases}
+u\overset{*}{=}\frac{x}{\frac{1}{\sqrt{1-\left(\frac{y}{x}\right)^{2}}}}=x\sqrt{1-\left(\frac{y}{x}\right)^{2}}=\sqrt{x^{2}-y^{2}}\\
+v=log\left(\sqrt{\frac{1+\frac{y}{x}}{1-\frac{y}{x}}}\right)=\frac{1}{2}log\left(\frac{1+\frac{y}{x}}{1-\frac{y}{x}}\right)=\frac{1}{2}log\left(\frac{x+y}{x-y}\right)
+\end{cases}
+\]
+
+\end_inset
+
+ vamos a ver si presenta problemas en algún punto.
+ Los posibles puntos problemáticos son aquellos en que 
+\begin_inset Formula $x=0$
+\end_inset
+
+ (porque dividimos por 
+\begin_inset Formula $x$
+\end_inset
+
+), aquellos en los que 
+\begin_inset Formula $\frac{y}{x}=1$
+\end_inset
+
+ (porque dividimos por 
+\begin_inset Formula $1-\frac{y}{x}$
+\end_inset
+
+) y aquellos en los que 
+\begin_inset Formula $\frac{1+\frac{y}{x}}{1-\frac{y}{x}}\leq0$
+\end_inset
+
+ (porque en tal caso calcularíamos el logaritmo de un número no positivo).
+\begin_inset Formula 
+\[
+x=0\iff ucoshv=0\iff u=0
+\]
+
+\end_inset
+
+ pero 
+\begin_inset Formula $u$
+\end_inset
+
+ es distinto de 0.
+\begin_inset Formula 
+\[
+\frac{y}{x}=1\iff\frac{usenhv}{ucoshv}=1\iff senhv=ucoshv\iff\frac{e^{v}-e^{-v}}{2}=\frac{e^{v}+e^{-v}}{2}\iff-e^{-v}=e^{-v}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff2e^{-v}=0\#
+\]
+
+\end_inset
+
+ y esto no ocurre para ningún 
+\begin_inset Formula $v\in\mathbb{R}$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+\frac{1+\frac{y}{x}}{1-\frac{y}{x}}=\frac{x+y}{x-y}>0\iff\begin{cases}
+x+y>0,\ x-y>0 & (1)\\
+x+y<0,\ x-y<0 & (2)
+\end{cases}
+\]
+
+\end_inset
+
+ Para ver el caso 
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $x+y>0\iff ucoshv+usenhv>0\iff u\left(coshv+senhv\right)>0$
+\end_inset
+
+.
+ Ahora bien, 
+\begin_inset Formula 
+\[
+coshv+senhv=\frac{e^{v}+e^{-v}}{2}+\frac{e^{v}-e^{-v}}{2}=e^{v}>0
+\]
+
+\end_inset
+
+Por tanto, debe ser 
+\begin_inset Formula $u>0$
+\end_inset
+
+.
+ Pero si esto sucede, entonces
+\begin_inset Formula 
+\[
+x-y>0\iff u\left(coshv-senhv\right)>0\overset{a>0}{\iff}coshv-senhv>0\iff\frac{e^{v}+e^{-v}}{2}-\frac{e^{v}-e^{-v}}{2}=e^{-v}>0\checkmark
+\]
+
+\end_inset
+
+Para ver el caso 
+\begin_inset Formula $\left(2\right)$
+\end_inset
+
+, de igual forma se tiene que 
+\begin_inset Formula $x+y<0\iff u<0$
+\end_inset
+
+, y en este caso
+\begin_inset Formula 
+\[
+x-y<0\iff u\left(coshv-senhv\right)<0\overset{a<0}{\iff}coshv-senhv>0\checkmark
+\]
+
+\end_inset
+
+Además, como hemos visto que 
+\begin_inset Formula $x\neq y$
+\end_inset
+
+, debemos ver que 
+\begin_inset Formula $x+y\neq0$
+\end_inset
+
+, para no calcular el logaritmo de 0:
+\begin_inset Formula 
+\[
+x+y=0\iff x=-y\iff ucoshv=-usenhv\iff\frac{e^{v}+e^{-v}}{2}=\frac{-e^{v}+e^{-v}}{2}\iff e^{v}=-e^{v}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff2e^{v}=0\#
+\]
+
+\end_inset
+
+Esto no se puede dar, por lo que todo funciona como nos gustaría y tenemos
+ 
+\begin_inset Formula $Y^{-1}\left(x,y,z\right)=\left(\sqrt{x^{2}-y^{2}},\frac{1}{2}log\left(\frac{x+y}{x-y}\right)\right)$
+\end_inset
+
+, que es continua, ya que hemos visto que no puede darse 
+\begin_inset Formula $x=y$
+\end_inset
+
+.
+ Así, 
+\begin_inset Formula $Y$
+\end_inset
+
+ es un homeomorfismo.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+S3: 
+\begin_inset Formula 
+\[
+dY\left(u,v\right)=\left(\begin{array}{ccc}
+coshv & senhv & 2u\\
+usenhv & ucoshv & 0
+\end{array}\right)
+\]
+
+\end_inset
+
+ y como 
+\begin_inset Formula $\left|\begin{array}{cc}
+coshv & senhv\\
+usenhv & ucoshv
+\end{array}\right|=ucosh^{2}v-usenh^{2}v=u\left(cosh^{2}v-senh^{2}v\right)=u\neq0$
+\end_inset
+
+, y tenemos la inyectividad de 
+\begin_inset Formula $dY$
+\end_inset
+
+ es inyectiva, como queríamos ver.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Según lo visto en S2, tenemos que 
+\begin_inset Formula $Y$
+\end_inset
+
+ cubre todo 
+\begin_inset Formula $S$
+\end_inset
+
+ excepto los puntos de la forma 
+\begin_inset Formula $\left(\left|x\right|,\left|x\right|,0\right),\ x\in\mathbb{R}$
+\end_inset
+
+, pues estos no están en el dominio de 
+\begin_inset Formula $Y^{-1}$
+\end_inset
+
+.
+ Pero, además, debemos descartar los puntos que no están en la imagen de
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+, que son aquellos puntos de 
+\begin_inset Formula $S$
+\end_inset
+
+ tales que 
+\begin_inset Formula $z<0$
+\end_inset
+
+, porque 
+\begin_inset Formula $z=u^{2}$
+\end_inset
+
+, es decir, aquellos tales que 
+\begin_inset Formula $\left|y\right|>\text{\left|x\right|}$
+\end_inset
+
+.
+ Por lo tanto, 
+\begin_inset Formula $Y\left(U\right)=\left\{ \left(x,y,z\right)\in S:z>0\right\} $
+\end_inset
+
+, donde 
+\begin_inset Formula $U$
+\end_inset
+
+ es el dominio de 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

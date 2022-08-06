@@ -1,0 +1,554 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 7: Orientabilidad
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+a) 
+\end_layout
+
+\end_inset
+
+Como 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ es orientable, existe un atlas de 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ compatible, o sea, tal que si dos cartas se cortan, entonces el cambio
+ de coordenadas tiene determinante de su jacobiano positivo.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sea 
+\begin_inset Formula $\left\{ U_{p},X_{p}\right\} _{p\in S_{2}}$
+\end_inset
+
+ dicho atlas.
+ Vamos a ver que podemos tomar otro atlas de 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ que es compatible y tal que 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es un difeomorfismo hacia el conjunto de llegada 
+\begin_inset Formula $X_{p}\left(U\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $U\subset U_{p}$
+\end_inset
+
+ un entorno de 
+\begin_inset Formula $p$
+\end_inset
+
+ (al menos para los 
+\begin_inset Formula $p$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\exists q\in S_{1}|p=\varphi\left(q\right)$
+\end_inset
+
+, los demás no tienen importancia para nuestro propósito).
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $q\in S_{1}\implies\varphi\left(q\right)=p\in S_{2}$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es un difeomorfismo local, existen entornos 
+\begin_inset Formula $V_{q}$
+\end_inset
+
+ de 
+\begin_inset Formula $q$
+\end_inset
+
+ y 
+\begin_inset Formula $W_{\varphi\left(q\right)}$
+\end_inset
+
+ de 
+\begin_inset Formula $p$
+\end_inset
+
+ tales que 
+\begin_inset Formula 
+\[
+\varphi_{q}:V_{q}\rightarrow W_{\varphi\left(q\right)}
+\]
+
+\end_inset
+
+ es un difeomorfismo.
+ Entonces, dado 
+\begin_inset Formula $q\in S_{1}$
+\end_inset
+
+ si 
+\begin_inset Formula $\varphi\left(q\right)$
+\end_inset
+
+ está cubierto por 
+\begin_inset Formula $\left\{ U,X\right\} $
+\end_inset
+
+, también está cubierto por 
+\begin_inset Formula $\left\{ U',X_{|U'}\right\} $
+\end_inset
+
+, donde 
+\begin_inset Formula $U'\subset U\cap X^{-1}\left(W_{\varphi\left(q\right)}\right)$
+\end_inset
+
+.
+ Por tanto, podemos tomar un nuevo atlas para 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ dado por 
+\begin_inset Formula $\left\{ U'_{p},X'_{p}\right\} _{p\in S_{2}}$
+\end_inset
+
+ de tal forma que si 
+\begin_inset Formula $p\notin\varphi\left(S_{1}\right)$
+\end_inset
+
+ la carta que lo cubre es la del atlas inicial, y si 
+\begin_inset Formula $p\in\varphi\left(S_{2}\right)$
+\end_inset
+
+, entonces tomamos la carta como acabamos de describir.
+ Este atlas es, también, compatible en 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+, pues consiste en tomar el primero y restringir las parametrizaciones a
+ abiertos contenidos en los iniciales.
+\end_layout
+
+\begin_layout Standard
+Ahora, tomamos el atlas de 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ dado por 
+\begin_inset Formula $\left\{ U'_{p},\varphi^{-1}\left(X'_{p}\right)\right\} _{p\in\varphi\left(S_{1}\right)}$
+\end_inset
+
+, que es efectivamente un atlas porque:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $U_{p}$
+\end_inset
+
+ es abierto, 
+\begin_inset Formula $\varphi^{-1}\left(X'_{p}\right)$
+\end_inset
+
+ es diferenciable, porque 
+\begin_inset Formula $X'_{p}$
+\end_inset
+
+ lo es y 
+\begin_inset Formula $\varphi^{-1}$
+\end_inset
+
+ es un difeomorfismo en el dominio de definición (por la construcción del
+ atlas en 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\varphi^{-1}\left(X'_{p}\right)$
+\end_inset
+
+ es un homeomorfismo por ser composición de homeomorfismos en su dominio
+\end_layout
+
+\begin_layout Itemize
+en 
+\begin_inset Formula $U_{p}$
+\end_inset
+
+ la diferencial 
+\begin_inset Formula $d\left(\varphi^{-1}\left(X'_{p}\right)\right)$
+\end_inset
+
+ es inyectiva por ser composición de un difeomorfismo y de una aplicación
+ con diferencial inyectiva
+\end_layout
+
+\begin_layout Itemize
+Además, si 
+\begin_inset Formula $q\in S_{1}\implies\varphi\left(q\right)\in S_{2}\implies\left\{ U'_{\varphi\left(q\right)},X'_{\varphi\left(q\right)}\right\} $
+\end_inset
+
+ cubre a 
+\begin_inset Formula $\varphi\left(q\right)\implies\left\{ U'_{\varphi\left(q\right)},\varphi^{-1}\left(X'_{\varphi\left(q\right)}\right)\right\} $
+\end_inset
+
+ cubre a 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Supongamos ahora que hay dos cartas que cubren a 
+\begin_inset Formula $q=\varphi^{-1}\left(p\right)$
+\end_inset
+
+.
+ O sea
+\begin_inset Formula 
+\[
+\left\{ U'_{p},\varphi^{-1}\left(X'_{p}\right)\right\} ,\ \left\{ \overline{U'_{p}},\overline{\varphi^{-1}\left(X'_{p}\right)}\right\} ,\ p=\varphi\left(q\right)
+\]
+
+\end_inset
+
+ Entonces, las cartas 
+\begin_inset Formula $\left\{ U'_{p},X'_{p}\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $\left\{ \overline{U'_{p}},\overline{X'_{p}}\right\} $
+\end_inset
+
+ cubren 
+\begin_inset Formula $p$
+\end_inset
+
+, por lo que el cambio de coordenadas 
+\begin_inset Formula $h:U_{p}\rightarrow\overline{U_{p}}$
+\end_inset
+
+ es tal que 
+\begin_inset Formula $det\left(Jh\right)>0$
+\end_inset
+
+, pero este cambio de coordenadas nos sirve también para las cartas iniciales
+ en 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+De este modo, vemos como 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ admite el atlas compatible descrito y, por tanto, es orientable.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+b) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Como 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es difeomorfismo, entonces es difeomorfismo local.
+ Y como 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ es orientable, por el apartado anterior, tenemos que 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ es orientable.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+ Ahora, como 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es difeomorfismo, entonces 
+\begin_inset Formula $\varphi^{-1}$
+\end_inset
+
+ es difeomorfismo, y también es difeomorfismo local.
+ De nuevo, como 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ es orientable, usando el apartado anterior, tenemos que 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ es orientable.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+c) 
+\end_layout
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $\left\{ U_{p},X_{p}\right\} $
+\end_inset
+
+ un atlas compatible de 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+, que existe porque es orientable.
+ Entonces 
+\begin_inset Formula $\left\{ U_{p},\varphi\left(X_{p}\right)\right\} $
+\end_inset
+
+ es un atlas compatible de 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ por ser 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ un difeomorfismo (esto se hace como en a), pero más sencillo porque ahora
+ el difeomorfismo es global y no hace falta andar tomando entornos).
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sea 
+\begin_inset Formula $\varphi\left(p\right)\in S_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $N\left(\varphi\left(p\right)\right)$
+\end_inset
+
+ el valor de la orientación de 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ en 
+\begin_inset Formula $\varphi\left(p\right)$
+\end_inset
+
+.
+ Llamamos ahora 
+\begin_inset Formula $M=\varphi\left(X_{p}\right)_{u}\land\varphi\left(X_{p}\right)_{v}$
+\end_inset
+
+, y tenemos dos posibilidades:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{M}{\left|M\right|}=-N\left(\varphi\left(p\right)\right)$
+\end_inset
+
+, entonces tomamos la orientación inducida 
+\begin_inset Formula $\frac{M}{\left|M\right|}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{M}{\left|M\right|}=N\left(\varphi\left(p\right)\right)$
+\end_inset
+
+, en este caso tomamos el atlas de 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ dado por 
+\begin_inset Formula $\left\{ U_{p},X_{p}'\right\} $
+\end_inset
+
+, donde
+\begin_inset Formula 
+\[
+X_{p}'\left(u,v\right)=X_{p}\left(v,u\right)
+\]
+
+\end_inset
+
+ por lo que
+\begin_inset Formula 
+\[
+\left(X_{p}'\right)_{u}=\left(X_{p}\right)_{v},\qquad\left(X_{p}'\right)_{v}=\left(X_{p}\right)_{u}
+\]
+
+\end_inset
+
+ y
+\begin_inset Formula 
+\[
+\left(\varphi\circ X_{p}'\right)_{u}=d\varphi\left(X_{p}'\right)\left(X_{p}'\right)_{u}=d\varphi\left(X_{p}\right)\left(X_{p}\right)_{v}=\left(\varphi\circ X_{p}\right)_{v}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left(\varphi\circ X_{p}'\right)_{v}=\left(\varphi\circ X_{p}\right)_{u}
+\]
+
+\end_inset
+
+ Por tanto
+\begin_inset Formula 
+\[
+\frac{\left(\varphi\circ X_{p}'\right)_{u}\land\left(\varphi\circ X_{p}'\right)_{v}}{\left|\left(\varphi\circ X_{p}'\right)_{u}\land\left(\varphi\circ X_{p}'\right)_{v}\right|}=\frac{\left(\varphi\circ X_{p}\right)_{v}\land\left(\varphi\circ X_{p}\right)_{u}}{\left|\left(\varphi\circ X_{p}\right)_{v}\land\left(\varphi\circ X_{p}\right)_{u}\right|}=\frac{-M}{\left|M\right|}=-N\left(\varphi\left(p\right)\right)
+\]
+
+\end_inset
+
+ De forma que la orientación inducida buscada es 
+\begin_inset Formula $\frac{-M}{\left|M\right|}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

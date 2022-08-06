@@ -1,0 +1,305 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\begin_local_layout
+
+\end_local_layout
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 2: La Cicloide
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+Considere una circunferencia de radio 1 en el plano 
+\begin_inset Formula $\boldsymbol{xy}$
+\end_inset
+
+ que rueda sin deslizamiento a lo largo del eje 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+.
+ La figura descrita por un punto de la circunferencia se llama cicloide,
+ y es una de las curvas clásicas más importantes.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Obtenga una parametrización 
+\begin_inset Formula $\boldsymbol{\alpha:\mathbb{R}\rightarrow\mathbb{R}^{2}}$
+\end_inset
+
+ de la cicloide, y determine sus puntos singulares.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Podemos descomponer el movimiento en dos partes: el giro de la circunferencia,
+ y su desplazamiento.
+\end_layout
+
+\begin_layout Standard
+El giro se produce en sentido horario por lo que será:
+\begin_inset Formula 
+\[
+\alpha_{1}\left(t\right)=\left(-sent,1-cost\right)
+\]
+
+\end_inset
+
+ es decir, la circunferencia centrada en 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+, recorrida en sentido horario comenzando en el 
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Y, ahora, le debemos añadir el desplazamiento horizontal.
+ Este desplazamiento, para que no haya deslizamiento, debe ser tal que la
+ longitud recorrida por la circunferencia sea igual que la longitud del
+ intervalo.
+ Como la circunferencia es de radio 1, se obtiene:
+\begin_inset Formula 
+\[
+\alpha_{2}\left(t\right)=\left(t,0\right)
+\]
+
+\end_inset
+
+ En efecto:
+\begin_inset Formula 
+\[
+L_{0}^{t}\left(\alpha_{1}\right)=\int_{0}^{t}\left|\alpha_{1}'\left(u\right)\right|du=\int_{0}^{t}\left|\left(-cosu,senu\right)\right|du=\int_{0}^{t}1du=t=L_{0}^{t}\left(\alpha_{2}\right)
+\]
+
+\end_inset
+
+ Por tanto, la cicloide será la curva generada por la suma de estos dos
+ movimientos:
+\begin_inset Formula 
+\[
+\alpha\left(t\right)=\left(t-sent,1-cost\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aquí podemos ver la cicloide para 
+\begin_inset Formula $t\in\left[-4\pi,4\pi\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename desmos-graph.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para calcular los puntos singulares, debemos hallar 
+\begin_inset Formula $t:\alpha'\left(t\right)=0$
+\end_inset
+
+.
+ Tenemos, pues
+\begin_inset Formula 
+\[
+\left(1-cost,sent\right)=\left(0,0\right)\iff\begin{cases}
+cost=1\\
+sent=0
+\end{cases}\iff\begin{cases}
+t=2k\pi & k\in\mathbb{Z}\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Calcule la longitud de arco de la cicloide correspondiente a una rotación
+ completa de la circunferencia.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Para calcular la 
+\series bold
+longitud
+\series default
+, primero obtenemos la derivada:
+\begin_inset Formula 
+\[
+\alpha'\left(t\right)=\left(1-cost,sent\right)\implies\left|\alpha'\left(t\right)\right|=\sqrt{\left(1-cost\right)^{2}+sen^{2}t}=\sqrt{2-2cost}=\sqrt{2}\sqrt{1-cost}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y pasamos ahora al cálculo de la longitud:
+\begin_inset Formula 
+\[
+L_{t_{0}}^{t}\left(\alpha\right)=\int_{t_{0}}^{t}\left|\alpha'\left(s\right)\right|ds=\sqrt{2}\int_{t_{0}}^{t}\sqrt{1-cos\left(s\right)}ds=\left(*\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aquí utilizamos la igualdad:
+\begin_inset Formula 
+\[
+sen\frac{a}{2}=\sqrt{\frac{1-cosa}{2}}\implies\sqrt{1-cosa}=\sqrt{2}sen\frac{a}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego
+\begin_inset Formula 
+\[
+\left(*\right)=2\int_{t_{0}}^{t}sen\frac{s}{2}ds=-4cos\frac{s}{2}]_{t_{0}}^{t}=-4\left(cos\frac{t}{2}-cos\frac{t_{0}}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora podemos calcular la longitud entre 
+\begin_inset Formula $0$
+\end_inset
+
+ y 
+\begin_inset Formula $2\pi:$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+L_{0}^{2\pi}\left(\alpha\right)=-4\left(cos\pi-cos0\right)=8
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

@@ -1,0 +1,276 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 7
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+a) 
+\end_layout
+
+\end_inset
+
+Como 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ es orientable, existe un atlas de 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ compatible, o sea, tal que si dos cartas se cortan, entonces el cambio
+ de coordenadas tiene determinante de su jacobiano positivo.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sea 
+\begin_inset Formula $\left\{ U_{p},X_{p}\right\} _{p\in S_{2}}$
+\end_inset
+
+ dicho atlas.
+ Vamos a ver que podemos tomar otro atlas de 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ que es compatible y tal que 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es un difeomorfismo hacia el conjunto de llegada 
+\begin_inset Formula $X_{p}\left(U\right)$
+\end_inset
+
+ con 
+\begin_inset Formula $U\subset U_{p}$
+\end_inset
+
+ un entorno de 
+\begin_inset Formula $p$
+\end_inset
+
+ (al menos para los 
+\begin_inset Formula $p$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\exists q\in S_{1}|p=\varphi\left(q\right)$
+\end_inset
+
+, los demás no tienen importancia para nuestro propósito).
+\end_layout
+
+\begin_layout Standard
+Dado 
+\begin_inset Formula $q\in S_{1}\implies\varphi\left(q\right)=p\in S_{2}$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es un difeomorfismo local, existen entornos 
+\begin_inset Formula $V$
+\end_inset
+
+ de 
+\begin_inset Formula $q$
+\end_inset
+
+ y 
+\begin_inset Formula $W$
+\end_inset
+
+ de 
+\begin_inset Formula $p$
+\end_inset
+
+ tales que 
+\begin_inset Formula 
+\[
+\varphi_{q}:V\rightarrow W
+\]
+
+\end_inset
+
+ es un difeomorfismo.
+ Entonces, para 
+\begin_inset Formula $p\in\varphi\left(S_{1}\right)$
+\end_inset
+
+, si lo cubre la carta 
+\begin_inset Formula $\left\{ U,X\right\} $
+\end_inset
+
+ tomamos la carta 
+\begin_inset Formula $\left\{ U',X_{|U'}\right\} $
+\end_inset
+
+, donde 
+\begin_inset Formula $U'\subset W\cap U$
+\end_inset
+
+.
+ Y queda así definido el nuevo atlas, que vamos a denotar 
+\begin_inset Formula $\left\{ U_{p},X_{p}\right\} _{p\in S_{2}}$
+\end_inset
+
+ por simplicidad.
+\end_layout
+
+\begin_layout Standard
+Ahora, tomamos el atlas de 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ dado por 
+\begin_inset Formula $\left\{ U_{p},\varphi^{-1}\left(X_{p}\right)\right\} _{p\in\varphi\left(S_{1}\right)}$
+\end_inset
+
+ y supongamos que hay dos cartas que cubren a 
+\begin_inset Formula $q=\varphi^{-1}\left(p\right)$
+\end_inset
+
+.
+ O sea
+\begin_inset Formula 
+\[
+\left\{ U_{p},\varphi^{-1}\left(X_{p}\right)\right\} ,\ \left\{ \overline{U_{p}},\overline{\varphi^{-1}\left(X_{p}\right)}\right\} ,\ p=\varphi\left(q\right)
+\]
+
+\end_inset
+
+ Entonces, las cartas 
+\begin_inset Formula $\left\{ U_{p},X_{p}\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $\left\{ \overline{U_{p}},\overline{X_{p}}\right\} $
+\end_inset
+
+ cubren 
+\begin_inset Formula $p$
+\end_inset
+
+, por lo que el cambio de coordenadas 
+\begin_inset Formula $h:U_{p}\rightarrow\overline{U_{p}}$
+\end_inset
+
+ es tal que 
+\begin_inset Formula $det\left(Jh\right)>0$
+\end_inset
+
+, pero este cambio de coordenadas nos sirve también para las cartas iniciales
+ en 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+De este modo, vemos como 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ admite el atlas compatible descrito y, por tanto, es orientable.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

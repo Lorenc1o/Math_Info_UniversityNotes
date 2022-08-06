@@ -1,0 +1,785 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 6: El gradiente en superficies
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+a)
+\end_layout
+
+\begin_layout Standard
+\align left
+Como 
+\begin_inset Formula $grad\ f_{p}\in T_{p}S$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+grad\ f_{p}=aX_{u}+bX_{v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, utilizando la regla de la cadena:
+\begin_inset Formula 
+\[
+f_{u}=\frac{\partial f}{\partial x}\left(X\left(u,v\right)\right)\frac{\partial x}{\partial u}\left(u,v\right)+\frac{\partial f}{\partial y}\left(X\left(u,v\right)\right)\frac{\partial y}{\partial u}\left(u,v\right)+\frac{\partial f}{\partial z}\left(X\left(u,v\right)\right)\frac{\partial z}{\partial u}\left(u,v\right)=df\left(X_{u}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f_{v}=df\left(X_{v}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto, se tiene
+\begin_inset Formula 
+\[
+f_{u}=df_{p}\left(X_{u}\right)=\left\langle grad\ f_{p},X_{u}\right\rangle =aE+bF
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f_{v}=df_{p}\left(X_{v}\right)=\left\langle grad\ f_{p},X_{v}\right\rangle =aF+bG
+\]
+
+\end_inset
+
+ Por tanto, tenemos el sistema
+\begin_inset Formula 
+\[
+\begin{cases}
+aE+bF=f_{u}\\
+aF+bG=f_{v}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+O, equivalentemente
+\begin_inset Formula 
+\[
+\left(`\begin{array}{cc}
+E & F\\
+F & G
+\end{array}\right)\left(\begin{array}{c}
+a\\
+b
+\end{array}\right)=\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)\implies\left(\begin{array}{c}
+a\\
+b
+\end{array}\right)=\left(\begin{array}{cc}
+E & F\\
+F & G
+\end{array}\right)^{-1}\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Calculamos esta inversa:
+\begin_inset Formula 
+\[
+\left(\begin{array}{cc}
+E & F\\
+F & G
+\end{array}\right)^{-1}\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)=\frac{\left(\begin{array}{cc}
+G & -F\\
+-F & E
+\end{array}\right)^{t}}{EG-F^{2}}\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)=\frac{\left(\begin{array}{cc}
+G & -F\\
+-F & E
+\end{array}\right)}{EG-F^{2}}\left(\begin{array}{c}
+f_{u}\\
+f_{v}
+\end{array}\right)=\frac{1}{EG-F^{2}}\left(\begin{array}{c}
+Gf_{u}-Ff_{v}\\
+Ef_{v}-Ff_{u}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por tanto
+\begin_inset Formula 
+\[
+a=\frac{Gf_{u}-Ff_{v}}{EG-F^{2}},\ b=\frac{Ef_{v}-Ff_{u}}{EG-F^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y queda el resultado buscado
+\begin_inset Formula 
+\[
+grad\ f_{p}=\frac{Gf_{u}-Ff_{v}}{EG-F^{2}}X_{u}+\frac{Ef_{v}-Ff_{u}}{EG-F^{2}}X_{v}
+\]
+
+\end_inset
+
+ Para el caso particular de 
+\begin_inset Formula $S=\mathbb{R}^{2}$
+\end_inset
+
+, tomamos
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+X:\mathbb{R}^{2} & \rightarrow & S\\
+\left(u,v\right) & \mapsto & \left(u,v,0\right)
+\end{array}
+\]
+
+\end_inset
+
+ de forma que
+\begin_inset Formula 
+\[
+dX=\left(\begin{array}{cc}
+1 & 0\\
+0 & 1\\
+0 & 0
+\end{array}\right),\ E=1,\ F=0,\ G=1
+\]
+
+\end_inset
+
+ por lo que, utilizando la ecuación que hemos derivado, queda
+\begin_inset Formula 
+\[
+grad\ f_{p}=f_{u}e_{1}+f_{v}e_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $\boldsymbol{'\implies'}$
+\end_inset
+
+ Sea 
+\begin_inset Formula $v\left(t\right)$
+\end_inset
+
+ una curva regular que describe la circunferencia de radio 1, con centro
+ en 
+\begin_inset Formula $p$
+\end_inset
+
+ contenida en 
+\begin_inset Formula $T_{p}S$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+df_{p}\left(v\left(t\right)\right)=\left\langle grad\ f_{p},v\left(t\right)\right\rangle 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{d}{dt}df_{p}\left(v\left(t\right)\right)=\left\langle grad\ f_{p},v'\left(t\right)\right\rangle =\left|grad\ f_{p}\right|\left|v'\right|cos\alpha\overset{máximo}{=}0
+\]
+
+\end_inset
+
+ Por tanto, ha de ser:
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\left|v'\right|=0$
+\end_inset
+
+, pero esto no puede ser, porque 
+\begin_inset Formula $v\left(t\right)$
+\end_inset
+
+ es una curva regular
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Formula $\left|cos\alpha\right|=0\implies v'\perp grad\ f_{p}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, como 
+\begin_inset Formula $\left|v\right|^{2}=1\overset{\frac{d}{dt}}{\implies}\left\langle v,v'\right\rangle =0\implies v\perp v'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, como 
+\begin_inset Formula $v\in T_{p}S\implies v\left(t\right)=v_{1}\left(t\right)X_{u}+v_{2}\left(t\right)X_{v}\overset{\frac{d}{dt}}{\implies}v'\left(t\right)=v_{1}'\left(t\right)X_{u}+v_{2}'\left(t\right)X_{v}\in T_{p}S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, juntando estas tres últimas afirmaciones, tenemos que 
+\begin_inset Formula 
+\[
+v\in span\left(grad\ f_{p}\right)\overset{\left|v\right|=1}{\implies}v=\pm\frac{grad\ f_{p}}{\left|grad\ f_{p}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Pero 
+\begin_inset Formula 
+\[
+\left\langle grad\ f_{p},-\frac{grad\ f_{p}}{\left|grad\ f_{p}\right|}\right\rangle =-\left|grad\ f_{p}\right|
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left\langle grad\ f_{p},\frac{grad\ f_{p}}{\left|grad\ f_{p}\right|}\right\rangle =\left|grad\ f_{p}\right|
+\]
+
+\end_inset
+
+ por lo que, para que sea máximo, debe ser 
+\begin_inset Formula 
+\[
+v=\frac{grad\ f_{p}}{\left|grad\ f_{p}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $\boldsymbol{'\impliedby'}$
+\end_inset
+
+ Este valor nos dará un máximo si
+\begin_inset Formula 
+\[
+\frac{d}{dt}df\left(\frac{grad\ f_{p}}{\left|grad\ f_{p}\right|}\right)=0\ y\ \frac{d^{2}}{dt^{2}}df\left(\frac{grad\ f_{p}}{\left|grad\ f_{p}\right|}\right)<0
+\]
+
+\end_inset
+
+ Para verlo, por un lado escribimos
+\begin_inset Formula 
+\[
+df_{p}\left(v\left(t\right)\right)=\left\langle grad\ f_{p},v\right\rangle 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{d}{dt}df\left(v\left(t\right)\right)=\left\langle grad\ f_{p},v'\right\rangle =\left|grad\ f_{p}\right|\left|v'\right|cos\alpha
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{d^{2}}{dt^{2}}df\left(v\left(t\right)\right)=\left\langle grad\ f_{p},v''\right\rangle =\left|grad\ f_{p}\right|\left|v''\right|cos\beta
+\]
+
+\end_inset
+
+ Y por otro
+\begin_inset Formula 
+\[
+\left|v\right|^{2}=1\overset{\frac{d}{dt}}{\implies}\boldsymbol{\left(1\right)}\ \left\langle v,v'\right\rangle =0\overset{\frac{d}{dt}}{\implies}\left|v'\right|^{2}+\left\langle v,v''\right\rangle =0\implies\boldsymbol{\left(2\right)}\ \left\langle v,v''\right\rangle =-\left|v'\right|^{2}<0
+\]
+
+\end_inset
+
+ Dado que 
+\begin_inset Formula $grad\ f_{p}\in span\left(v\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{\left(1\right)}$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $cos\alpha=0\implies\frac{d}{dt}df\left(\frac{grad\ f_{p}}{\left|grad\ f_{p}\right|}\right)=0\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y, por 
+\begin_inset Formula $\boldsymbol{\left(2\right)}$
+\end_inset
+
+ tenemos que 
+\begin_inset Formula $\left|v\right|\left|v''\right|cos\beta'=-\left|v'\right|^{2}<0\implies cos\beta'=0$
+\end_inset
+
+, pero, dado que 
+\begin_inset Formula $grad\ f_{p}\in span\left(v\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\beta=\beta'\implies cos\beta=cos\beta'$
+\end_inset
+
+, y por lo tanto 
+\begin_inset Formula $\frac{d^{2}}{dt^{2}}df\left(v\left(t\right)\right)<0\ \checkmark$
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+c)
+\end_layout
+
+\begin_layout Standard
+\align left
+Primero, como 
+\begin_inset Formula $grad\ f_{p}\neq0,\ \forall p\in C\implies df_{p}\left(v\right)=\left\langle grad\ f_{p},v\right\rangle \neq0$
+\end_inset
+
+, tomando 
+\begin_inset Formula $v$
+\end_inset
+
+ que no sea ortogonal a 
+\begin_inset Formula $grad\ f_{p}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Esto implica que 
+\begin_inset Formula 
+\[
+df_{p}\neq0,\ \forall p\in C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Dado 
+\begin_inset Formula $p_{0}\in C$
+\end_inset
+
+, hay un entorno 
+\begin_inset Formula $V$
+\end_inset
+
+ de 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ que podemos describir mediante una carta 
+\begin_inset Formula $\left(U,X\right)$
+\end_inset
+
+, y defino 
+\begin_inset Formula $\overline{f}=f\circ X$
+\end_inset
+
+, de forma que si
+\begin_inset Formula 
+\[
+p_{0}=X\left(u_{0},v_{0}\right)\implies f\left(p_{0}\right)=f\circ X\left(u_{0},v_{0}\right)=\overline{f}\left(u_{0},v_{0}\right)
+\]
+
+\end_inset
+
+ Ahora, por ser 
+\begin_inset Formula $X$
+\end_inset
+
+ una parametrización y 
+\begin_inset Formula $df\left(p_{0}\right)\neq0$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+d\left(\overline{f}\right)\left(u_{0},v_{0}\right)\neq0
+\]
+
+\end_inset
+
+ por lo que 
+\begin_inset Formula $\frac{\partial\overline{f}}{\partial u}\left(u_{0},v_{0}\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\frac{\partial\overline{f}}{\partial v}\left(u_{0},v_{0}\right)$
+\end_inset
+
+ no se anulan simultáneamente.
+\end_layout
+
+\begin_layout Standard
+\align left
+Podemos suponer, sin pérdida de generalidad, que 
+\begin_inset Formula $\frac{\partial\overline{f}}{\partial v}\left(u_{0},v_{0}\right)\neq0$
+\end_inset
+
+ y, por el teorema de la función implícita, existe 
+\begin_inset Formula $I\subset\mathbb{R},\ V\left(v_{0}\right)\subset\mathbb{R}$
+\end_inset
+
+ y 
+\begin_inset Formula $g:I\rightarrow V\left(v_{0}\right)$
+\end_inset
+
+ tales que
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $i)\ g\left(u_{0}\right)=v_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $ii)\ \forall u\in I,\ \overline{f}\left(u,g\left(u\right)\right)-c=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $iii)\ \left(I\times V\left(v_{0}\right)\cap\overline{f}^{-1}\left(c\right)\right)=\left\{ \left(u,g\left(u\right)\right):u\in I\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Definimos, entonces, la curva
+\begin_inset Formula 
+\[
+\alpha\left(t\right)=\left(t,g\left(t\right)\right),\ t\in I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+De esta forma, tenemos que 
+\begin_inset Formula $\alpha\left(I\right)=\left(I\times V\left(v_{0}\right)\right)\cap U=U$
+\end_inset
+
+ abierto.
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ es una curva regular, pues es obviamente diferenciable (
+\begin_inset Formula $g$
+\end_inset
+
+ es diferenciable) y
+\begin_inset Formula 
+\[
+\alpha'\left(t\right)=\left(1,g'\left(t\right)\right)\neq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Para ver que la curva del enunciado es regular, la definimos como 
+\begin_inset Formula $\beta\left(t\right)=X\circ\alpha\left(t\right)$
+\end_inset
+
+, y tenemos que
+\begin_inset Formula 
+\[
+\beta'\left(t\right)=dX\left(\alpha\left(t\right)\right)\alpha'\left(t\right)\neq0
+\]
+
+\end_inset
+
+ porque 
+\begin_inset Formula $X$
+\end_inset
+
+ es una parametrización regular y 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ ya hemos visto que es una curva regular.
+ Por tanto, 
+\begin_inset Formula $\beta$
+\end_inset
+
+ es una curva diferenciable en 
+\begin_inset Formula $X\left(U\right)$
+\end_inset
+
+.
+ Además, 
+\begin_inset Formula $f\left(\beta\left(t\right)\right)=f\left(X\circ\alpha\left(t\right)\right)=f\circ X\left(\alpha\left(t\right)\right)=\overline{f}\left(\alpha\left(t\right)\right)=c$
+\end_inset
+
+.
+ Así que, efectivamente, 
+\begin_inset Formula $\beta$
+\end_inset
+
+ es la curva del enunciado en un entorno de 
+\begin_inset Formula $p$
+\end_inset
+
+ y es regular en 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ Como esto lo hacemos para 
+\begin_inset Formula $p$
+\end_inset
+
+ arbitrario, entonces 
+\begin_inset Formula $\beta$
+\end_inset
+
+ es una curva diferenciable en 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para la última afirmación, tenemos que, dado 
+\begin_inset Formula $p\in C$
+\end_inset
+
+, 
+\begin_inset Formula $p=\beta\left(t_{0}\right)$
+\end_inset
+
+ y el vector tangente es 
+\begin_inset Formula $\beta'\left(t_{0}\right)$
+\end_inset
+
+.
+ Entonces
+\begin_inset Formula 
+\[
+0\overset{f\circ\alpha\ cte}{=}\frac{d}{dt}\left(f\circ\beta\right)\left(t_{0}\right)=df\left(\beta\left(t_{0}\right)\right)\beta'\left(t_{0}\right)=df\left(p\right)\beta'\left(t_{0}\right)=\left\langle grad\ f_{p},\beta'\left(t\right)\right\rangle 
+\]
+
+\end_inset
+
+ y queda demostrado que 
+\begin_inset Formula $grad\ f_{p}\perp\beta'\left(t\right)$
+\end_inset
+
+, como queríamos ver.
+\end_layout
+
+\end_body
+\end_document

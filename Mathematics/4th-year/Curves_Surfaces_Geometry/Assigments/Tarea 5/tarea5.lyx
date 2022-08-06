@@ -1,0 +1,510 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 5: la proyección estereográfica
+\end_layout
+
+\begin_layout Subsubsection*
+Consideremos la esfera 
+\begin_inset Formula $\boldsymbol{\mathbb{S}^{2}}$
+\end_inset
+
+, dada por la ecuación 
+\begin_inset Formula $\boldsymbol{x^{2}+y^{2}+\left(z-1\right)^{2}=1}$
+\end_inset
+
+, y consideremos la proyección estereigráfica 
+\begin_inset Formula $\boldsymbol{\pi:\mathbb{S}^{2}\setminus\left\{ N\right\} \rightarrow\mathbb{R}^{2}}$
+\end_inset
+
+ que aplica el punto 
+\begin_inset Formula $\boldsymbol{p=\left(x,y,z\right)\in\mathbb{S}^{2}\setminus\left\{ N\right\} ,\ N=\left(0,0,2\right)}$
+\end_inset
+
+, en la intersección del plano 
+\begin_inset Formula $\boldsymbol{XY}$
+\end_inset
+
+ con la recta que conecta 
+\begin_inset Formula $\boldsymbol{N}$
+\end_inset
+
+ y 
+\begin_inset Formula $\boldsymbol{p}$
+\end_inset
+
+.
+ Escribamos 
+\begin_inset Formula $\boldsymbol{\left(u,v\right)=\pi\left(x,y,z\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+1) Demuestre que 
+\begin_inset Formula $\boldsymbol{X=\pi^{-1}:U=\mathbb{R}^{2}\rightarrow V=\mathbb{S}^{2}\setminus\left\{ N\right\} }$
+\end_inset
+
+ es una parametrización de la esfera
+\end_layout
+
+\begin_layout Standard
+\align left
+La recta que une 
+\begin_inset Formula $N$
+\end_inset
+
+ con 
+\begin_inset Formula $p$
+\end_inset
+
+ es 
+\begin_inset Formula $N+\lambda\left(p-N\right)\equiv\begin{cases}
+x=\lambda a\\
+y=\lambda b\\
+z=2+\lambda\left(c-2\right)
+\end{cases}$
+\end_inset
+
+, donde hemos hecho 
+\begin_inset Formula $p=\left(a,b,c\right)$
+\end_inset
+
+ por mera notación.
+\end_layout
+
+\begin_layout Standard
+\align left
+Esta recta corta al plano 
+\begin_inset Formula $XY$
+\end_inset
+
+ cuando 
+\begin_inset Formula $z=0$
+\end_inset
+
+, o sea cuando
+\begin_inset Formula 
+\[
+2+\lambda\left(c-2\right)=0\overset{c\neq2}{\iff}\lambda=\frac{2}{2-c}
+\]
+
+\end_inset
+
+ Por tanto
+\begin_inset Formula 
+\[
+x=\frac{2a}{2-c},\ y=\frac{2b}{2-c}
+\]
+
+\end_inset
+
+ Es decir,
+\begin_inset Formula 
+\[
+\pi\left(x,y,z\right)=\left(\frac{2x}{2-c},\frac{2y}{2-c}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Para obtener 
+\begin_inset Formula $\pi^{-1}$
+\end_inset
+
+, tomamos 
+\begin_inset Formula $\left(u,v\right)\overset{i}{\mapsto}\left(u,v,0\right)$
+\end_inset
+
+ y la recta 
+\begin_inset Formula $N+\lambda\left(\left(u,v,0\right)-N\right)$
+\end_inset
+
+, de forma que
+\begin_inset Formula 
+\[
+\begin{cases}
+x=\lambda u\\
+y=\lambda v\\
+z=2-2\lambda
+\end{cases}
+\]
+
+\end_inset
+
+ y les obligamos a estar en la circunferencia:
+\begin_inset Formula 
+\[
+x^{2}+y^{2}+\left(z-1\right)^{2}=1\iff\lambda^{2}u^{2}+\lambda v^{2}+\left(2-2\lambda-1\right)^{2}=1\iff\lambda^{2}\left(u^{2}+v^{2}\right)+1-4\lambda+4\lambda^{2}=1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\iff\lambda^{2}\left(u^{2}+v^{2}+4\right)-4\lambda=0\iff\begin{cases}
+\lambda=0 & No,\ pues\ obtenemos\ N\\
+ó\\
+\lambda\left(u^{2}+v^{2}+4\right)-4=0\iff\lambda=\frac{4}{u^{2}+v^{2}+4}
+\end{cases}
+\]
+
+\end_inset
+
+ Por lo que
+\begin_inset Formula 
+\[
+\pi^{-1}\left(u,v\right)=\left(\frac{4u}{u^{2}+v^{2}+4},\frac{4v}{u^{2}+v^{2}+4},\frac{2\left(u^{2}+v^{2}\right)}{u^{2}+v^{2}+4}\right)
+\]
+
+\end_inset
+
+ Ahora vamos a ver que es una parametrización:
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+(S1) 
+\series default
+Tenemos que 
+\begin_inset Formula 
+\[
+\pi^{-1}\left(\mathbb{R}^{2}\right)=\mathbb{S}^{2}\setminus\left\{ N\right\} 
+\]
+
+\end_inset
+
+ por construcción de 
+\begin_inset Formula $\pi^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, es obviamente diferenciable 
+\begin_inset Formula $\forall u,v|u^{2}+v^{2}+4\neq0$
+\end_inset
+
+, pero esta igualdad es evidente que no se da nunca 
+\begin_inset Formula $\left(u^{2}+v^{2}+4\geq4>0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+(S2) 
+\begin_inset Formula $\pi$
+\end_inset
+
+ 
+\series default
+continua, pues 
+\begin_inset Formula $z\neq2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+(S3)
+\begin_inset Formula 
+\[
+d\pi^{-1}\left(u,v\right)=\left(\begin{array}{cc}
+\frac{4\left(u^{2}+v^{2}+4\right)-4u\cdot2u}{\left(u^{2}+v^{2}+4\right)^{2}} & \frac{-8uv}{\left(u^{2}+v^{2}+4\right)^{2}}\\
+\frac{-8uv}{\left(u^{2}+v^{2}+4\right)^{2}} & \frac{4\left(u^{2}+v^{2}+4\right)-4v\cdot2v}{\left(u^{2}+v^{2}+4\right)^{2}}\\
+\frac{4u\left(u^{2}+v^{2}+4\right)-2\left(u^{2}+v^{2}\right)2u}{\left(u^{2}+v^{2}+4\right)^{2}} & \frac{4v\left(u^{2}+v^{2}+4\right)-2\left(u^{2}+v^{2}\right)2v}{\left(u^{2}+v^{2}+4\right)^{2}}
+\end{array}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(\begin{array}{cc}
+\frac{4\left(v^{2}-u^{2}+4\right)}{\left(u^{2}+v^{2}+4\right)^{2}} & \frac{-8uv}{\left(u^{2}+v^{2}+4\right)^{2}}\\
+\frac{-8uv}{\left(u^{2}+v^{2}+4\right)^{2}} & \frac{4\left(u^{2}-v^{2}+4\right)}{\left(u^{2}+v^{2}+4\right)^{2}}\\
+\frac{16u}{\left(u^{2}+v^{2}+4\right)^{2}} & \frac{16v}{\left(u^{2}+v^{2}+4\right)^{2}}
+\end{array}\right)=\frac{4}{\left(u^{2}+v^{2}+4\right)}\left(\begin{array}{cc}
+v^{2}-u^{2}+4 & -2uv\\
+-2uv & u^{2}-v^{2}+4\\
+4u & 4v
+\end{array}\right)
+\]
+
+\end_inset
+
+ 
+\series default
+Y, tenemos que
+\begin_inset Formula 
+\[
+\left|\begin{array}{cc}
+-2uv & u^{2}-v^{2}+4\\
+4u & 4v
+\end{array}\right|=-8uv^{2}-4u\left(u^{2}-v^{2}+4\right)=-8uv^{2}-4u^{3}+4uv^{2}-16u=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-4u^{3}-4uv^{2}-16u=u\left(-4u^{2}-4v^{2}-16\right)=0\iff\begin{cases}
+u=0\\
+ó\\
+4u^{2}+4v^{2}+16=0 & ,no\ puede\ ser
+\end{cases}
+\]
+
+\end_inset
+
+ Por lo que es inyectiva 
+\begin_inset Formula $\forall\left(u,v\right)|u\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si 
+\begin_inset Formula $u=0$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+d\pi^{-1}\left(0,v\right)=\left(\begin{array}{cc}
+v^{2}+4 & 0\\
+0 & 4-v^{2}\\
+0 & 4v
+\end{array}\right)\implies\left|\begin{array}{cc}
+v^{2}+4 & 0\\
+0 & 4-v^{2}
+\end{array}\right|=\left(v^{2}+4\right)\left(4-v^{2}\right)=0\iff v\neq\pm2
+\]
+
+\end_inset
+
+ Así, es inyectiva 
+\begin_inset Formula $\forall\left(u,v\right)\neq\left(0,\pm2\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Por último
+\begin_inset Formula 
+\[
+d\pi^{-1}\left(0,\pm2\right)=\left(\begin{array}{cc}
+8 & 0\\
+0 & 0\\
+0 & 8
+\end{array}\right)\implies\left|\begin{array}{cc}
+8 & 0\\
+0 & 8
+\end{array}\right|=64\neq0
+\]
+
+\end_inset
+
+ Y vemos como 
+\begin_inset Formula $d\pi^{-1}\left(u,v\right)$
+\end_inset
+
+ es inyectiva, y 
+\begin_inset Formula $\pi^{-1}$
+\end_inset
+
+ es una parametrización de 
+\begin_inset Formula $\mathbb{S}^{2}\setminus\left\{ N\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+2) Calcule los coeficientes de la primera forma fundamental en la parametrizació
+n anterior.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sea 
+\begin_inset Formula $X=\pi^{-1}$
+\end_inset
+
+, entonces
+\begin_inset Formula 
+\[
+X_{u}=\frac{4}{\left(u^{2}+v^{2}+4\right)^{2}}\left(v^{2}-u^{2}+4,-2uv,4u\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+X_{v}=\frac{4}{\left(u^{2}+v^{2}+4\right)^{2}}\left(-2uv,u^{2}-v^{2}+4,4v\right)
+\]
+
+\end_inset
+
+ Por lo que
+\begin_inset Formula 
+\[
+E=\left\langle X_{u},X_{u}\right\rangle =\frac{16}{\left(u^{2}+v^{2}+4\right)^{4}}\left(\left(v^{2}-u^{2}+4\right)^{2}+4u^{2}v^{2}+16u^{2}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{16}{\left(u^{2}+v^{2}+4\right)^{4}}\left(v^{4}+u^{4}+16-2v^{2}u^{2}+8v^{2}-8u^{2}+4u^{2}v^{2}+16u^{2}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{16}{\left(u^{2}+v^{2}+4\right)^{4}}\left(v^{4}+u^{4}+16+8v^{2}+2u^{2}v^{2}+8u^{2}\right)=\frac{16}{\left(u^{2}+v^{2}+4\right)^{4}}\left(u^{2}+v^{2}+4\right)^{2}=\frac{16}{\left(u^{2}+v^{2}+4\right)^{2}}
+\]
+
+\end_inset
+
+ Por simetría, tenemos que 
+\begin_inset Formula 
+\[
+G=\left\langle X_{v},X_{v}\right\rangle =\frac{16}{\left(u^{2}+v^{2}+4\right)^{2}}
+\]
+
+\end_inset
+
+ Por último
+\begin_inset Formula 
+\[
+F=\left\langle X_{u},X_{v}\right\rangle =\frac{16}{\left(u^{2}+v^{2}+4\right)^{2}}\left(-2uv\left(v^{2}-u^{2}+4\right)-2uv\left(u^{2}-v^{2}+4\right)+16uv\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{16}{\left(u^{2}+v^{2}+4\right)^{2}}\left(2uv\left(-v^{2}+u^{2}-4-u^{2}+v^{2}-4+8\right)\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
