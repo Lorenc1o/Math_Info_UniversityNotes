@@ -1,0 +1,4317 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+AEC
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Análisis de Prestaciones en Arquitectura de computadores
+\end_layout
+
+\begin_layout Subsection
+Definición de rendimiento
+\end_layout
+
+\begin_layout Standard
+\align left
+Para el usuario lo importante es el tiempo de respuesta, y para los centros
+ de cálculo es la productividad.
+ Pero, en general, nn ordenador es más rápido que otro cuando realiza la
+ misma cantidad de trabajo en menos tiempo, o sea, si:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Disminuye el tiempo de respuesta, ya sea por tener un ciclo de reloj más
+ rápido, por procesar en paralelo,...
+\end_layout
+
+\begin_layout Itemize
+\align left
+Aumenta la productividad, por ejemplo al poner muchos ordenadores trabajando
+ en paralelo.
+\end_layout
+
+\begin_layout Standard
+Ambos aspectos están relacionados, un aumento en la productividad puede
+ suponer una reducción del tiempo de respuesta.
+\end_layout
+
+\begin_layout Subsubsection
+Comparando velocidades
+\end_layout
+
+\begin_layout Standard
+\align left
+X es n% más rápido que Y si
+\begin_inset Formula 
+\[
+\frac{Rendimiento_{X}}{Rendimiento_{Y}}=1+\frac{n}{100}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Si definimos el rendimiento como la inversa del tiempo de ejecución, quedaría:
+\begin_inset Formula 
+\[
+\frac{Rendimiento_{X}}{Rendimiento_{Y}}=\frac{\frac{1}{TEj_{X}}}{\frac{1}{TEj_{Y}}}=\frac{TEj_{Y}}{TEj_{X}}=1+\frac{n}{100}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Métricas populares
+\end_layout
+
+\begin_layout Standard
+\align left
+Dependiendo del nivel en que nos situemos, las unidades de medición serán
+ distintas:
+\end_layout
+
+\begin_layout Itemize
+\align left
+A nivel de aplicación, suele medirse en 
+\series bold
+tiempo de ejecución
+\end_layout
+
+\begin_layout Itemize
+\align left
+A nivel de ISA (Instruction Set Architecture) suelen usarse medidas como
+ los 
+\series bold
+MIPS 
+\series default
+o los 
+\series bold
+MFLOPS
+\end_layout
+
+\begin_layout Itemize
+\align left
+A nivel de hardware lo mediremos como 
+\series bold
+ciclos por segundo, MB/s
+\series default
+,...
+\end_layout
+
+\begin_layout Subsubsection
+Tiempo de CPU
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+T_{CPU}=\frac{segundos}{programa}=\frac{instr}{programa}\cdot\frac{ciclos}{instr}\cdot\frac{segundos}{ciclo}=NI\cdot CPI\cdot T_{ciclo}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Cuando el CPI no es uniforme, lo calculamos como una media ponderada
+\begin_inset Formula 
+\[
+CPI=\sum_{i=1}^{n}CPI_{i}f_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Donde 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ es la frecuencia de aparición de la instrucción i.
+\end_layout
+
+\begin_layout Subsubsection
+MIPS
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+MIPS=\frac{NI}{T_{CPU}\cdot10^{6}}=\frac{F(en\,MHz)}{CPI}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Presenta como ventaja que es fácil de comprender, a mayor MIPS, más velocidad.
+\end_layout
+
+\begin_layout Standard
+\align left
+Sin embargo, son dependientes del conjunto de instrucciones y pueden variar
+ entre programas en el mismo ordenador.
+ Esto hace que incluso pueda variar inversamente al rendimiento, pudiendo
+ llevarnos a conclusiones erróneas.
+\end_layout
+
+\begin_layout Subsubsection
+MFLOPS
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+MFLOPS=\frac{NI\,en\,PF}{T_{CPU}\cdot10^{6}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Tiene como ventaja que la parte en PF depende del algoritmo, no de la máquina.
+\end_layout
+
+\begin_layout Standard
+\align left
+Pero no se pueden aplicar a todos los programas (por el compilador), todas
+ las máquinas no presentan las mismas instrucciones PF, lo que dificulta
+ la comparación.
+ Además, no todas las instrucciones en PF tardan lo mismo.
+ Aunque esto puede solucionarse normalizándolas, por ejemplo, en base a
+ una operación suma.
+\end_layout
+
+\begin_layout Subsection
+Ley de Amdahl
+\end_layout
+
+\begin_layout Standard
+\align left
+La ley de Amdahl es usada para medir la aceleración debida a una mejora
+ E, de una fracción 
+\begin_inset Formula $f$
+\end_inset
+
+ del tiempo de ejecución, en un factor 
+\begin_inset Formula $S$
+\end_inset
+
+, sin afectar al resto.
+ Establece que:
+\begin_inset Formula 
+\[
+speedup=\frac{T}{T_{E}}=\frac{T}{(1-f)\cdot T+\frac{f}{S}\cdot T}=\frac{1}{(1-f)+\frac{f}{S}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+La ganancia producida por una mejora está limitada por la fracción de tiempo
+ que puede usarse esa mejora.
+\end_layout
+
+\begin_layout Standard
+\align left
+Esta ley nos ayuda a tomar decisiones de diseño.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, no debemos caer en el error de esperar que la mejora de un
+ único aspecto de una máquina provoque un aumento del rendimiento proporcional
+ a la misma.
+\end_layout
+
+\begin_layout Subsubsection
+Corolario
+\end_layout
+
+\begin_layout Standard
+Si hacemos rápido el caso frecuente, podremos mejorar en gran medida el
+ rendimiento.
+ Además, normalmente el caso común suele ser el más sencillo de mejorar.
+\end_layout
+
+\begin_layout Subsection
+Cómo comparar resultados
+\end_layout
+
+\begin_layout Standard
+No es nada fácil, pues pueden hacerse de diversas formas, arrojando resultados
+ distintos.
+\end_layout
+
+\begin_layout Subsubsection
+Tiempo total de ejecución
+\end_layout
+
+\begin_layout Standard
+\align left
+Es una medida resumen consistente.
+ Es equivalente a hacer la media aritmética de los tiempos de ejecución
+ 
+\begin_inset Formula 
+\[
+\frac{1}{n}\sum_{i=1}^{n}T_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Si tenemos frecuencias en lugar de tiempos, usaremos la media armónica
+\begin_inset Formula 
+\[
+\frac{n}{\sum_{i=1}^{m}\frac{1}{Vel_{i}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tiempo total de ejecución ponderado
+\end_layout
+
+\begin_layout Standard
+\align left
+No todos los programas se ejecutan el mismo número de veces.
+\end_layout
+
+\begin_layout Standard
+\align left
+Puede usarse la media aritmética ponderada
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}w_{i}T_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O la media armónica ponderada
+\begin_inset Formula 
+\[
+\frac{1}{\sum_{i=1}^{n}\frac{w_{i}}{Vel_{i}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Tiempo normalizado
+\end_layout
+
+\begin_layout Standard
+\align left
+Si hay mezcla desigual de programas, se tiende a normalizar los tiempos
+ de ejecución para una máquina de referencia y después tomar la media geométrica
+ de los tiempos normalizados
+\begin_inset Formula 
+\[
+\sqrt[n]{\prod_{i=1}^{n}TNorm_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Presenta la ventaja de que es consistente independientemente de la máquina
+ tomada como referencia (al contrario que la media aritmética)
+\end_layout
+
+\begin_layout Standard
+\align left
+Aunque debemos ser cautos, la media geomrica no predice los tiempos de ejecución
+, solo sirve para hacer comparaciones ordinales.
+\end_layout
+
+\begin_layout Subsection
+Programas de prueba (Benchmarks)
+\end_layout
+
+\begin_layout Standard
+\align left
+Son programas usados para medir el rendimiento.
+ Por orden de fiabilidad:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Programas reales (a veces simplificados)
+\end_layout
+
+\begin_layout Itemize
+\align left
+Núcleos o kernels: partes de programas reales
+\end_layout
+
+\begin_layout Itemize
+\align left
+Benchmarks reducidos (toys): pequeños y fácilmente portables
+\end_layout
+
+\begin_layout Itemize
+\align left
+Benchmarks sintéticos: parecidos a los núcleos, su objetivo es obtener un
+ perfil medio de ejecución.
+\end_layout
+
+\begin_layout Standard
+\align left
+En ocasiones pueden llevar a conclusiones incorrectas.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es importante que las pruebas sean reproducibles (entradas al programa,
+ versión, nivel de optimización,...
+\end_layout
+
+\begin_layout Subsubsection
+SPEC CPU (System Performance Eval.
+ Coop)
+\end_layout
+
+\begin_layout Standard
+Conjunto de programas de prueba fundamentalmente centrados en el rendimiento
+ de la CPU.
+ Han ido evolucionando con el tiempo hasta hoy, que son 43 programas organizados
+ en 4 suites.
+\end_layout
+
+\begin_layout Subsubsection
+TPC (Transaction Processing Council)
+\end_layout
+
+\begin_layout Standard
+\align left
+Miden el rendimiento en transacciones por segundo, incluyendo un requisito
+ de tiempo de respuesta.
+\end_layout
+
+\begin_layout Standard
+\align left
+Tiene en cuenta CPU, I/O, red, SO,...
+\end_layout
+
+\begin_layout Standard
+\align left
+A día de hoy existen 4 tipos para simular distintos entornos de trabajo
+ (manejo de pedidos, toma de decisiones, comercio electrónico y servidores
+ web activos 24/7).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Segmentación Básica
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+\align left
+La 
+\series bold
+segmentación 
+\series default
+es una técnica que consiste en solapar la ejecución de las instrucciones.
+ El cauce de ejecución estará dividido en varias etapas o segmentos.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Esta técnica aprovecha el paralelismo existente entre las acciones necesarias
+ para ejecutar las instrucciones
+\end_layout
+
+\begin_layout Standard
+\align left
+Hoy en día es una técnica fundamental para conseguir CPUs más rápidas.
+\end_layout
+
+\begin_layout Standard
+\align left
+Las etapas se conectan una a la sigueinte formando el cauce o 
+\series bold
+pipeline
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Definimos la 
+\series bold
+productividad 
+\series default
+como la frecuencia de salida de instrucciones.
+\end_layout
+
+\begin_layout Standard
+\align left
+Las instrucciones entran por un extremo del pipeline, pasan por las distintas
+ etapas y salen por el otro extremo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como las etapas del pipeline están conectadas enc ascada, todas deben de
+ estar listas para avanzar en el mismo instante.
+ A este tiempo se le llama 
+\series bold
+ciclo máquina
+\series default
+ y coincidirá con el tiempo necesario para hacer la etapa más lenta.
+\end_layout
+
+\begin_layout Standard
+\align left
+De esta forma, el tiempo de instrucción en el procesador segmentado, en
+ el caso ideal, será:
+\begin_inset Formula 
+\[
+\frac{T\,Instr\,NoSegm}{N\text{º\, etapas}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, en el caso ideal se obtiene una aceleración igual al número de etapas
+ del cauce, aunque normalmente estas etapas noo estarán perfectamente balanceada
+s, además, la segmentación suele tener un coste, por lo que el tiempo de
+ instrucción no suele ser el ideal, aunque se aproxima.
+\end_layout
+
+\begin_layout Standard
+\align left
+La segmentación consigue aprovecharse del paralelismo existente entre las
+ instrucciones y no es visible al programador.
+\end_layout
+
+\begin_layout Standard
+\align left
+Depende de como se mire, la segmentación consigue:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Disminuir el CPI
+\end_layout
+
+\begin_layout Itemize
+Disminuir el 
+\begin_inset Formula $T_{ciclo}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+La arquitectura DLX
+\end_layout
+
+\begin_layout Standard
+\align left
+Es una arquitectura RISC de carga-almacenamiento parecida a MIPS.
+ Tiene 32 registros de propósito general de 32 bits y otros 32 de punto
+ flotante que pueden usarse como 32 registros de simple precisión o 16 de
+ doble.
+\end_layout
+
+\begin_layout Standard
+\align left
+También tiene los siguientes registros especiales:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Registro de estado de PF (fp)
+\end_layout
+
+\begin_layout Itemize
+\align left
+Contador de programa (PC)
+\end_layout
+
+\begin_layout Itemize
+\align left
+De direcciones de interrupción (IAR)
+\end_layout
+
+\begin_layout Standard
+\align left
+Los tipos de datos pueden ser bytes, medias palabras (16 bits), palabras
+ (32 bits) y los datos de PF de precisión simple o doble.
+\end_layout
+
+\begin_layout Standard
+\align left
+Posee una memoria direccionable por bytes con una dirección de 32 bits.
+\end_layout
+
+\begin_layout Standard
+\align left
+Como modos de direccionamiento tiene registros, inmediatos, base+desplazamiento
+ relativo al PC y pseudodirecto.
+\end_layout
+
+\begin_layout Standard
+\align left
+Solo tiene tres formatos de instrucciones:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Instrucciones con inmediato
+\end_layout
+
+\begin_layout Itemize
+\align left
+Instrucciones entre registros
+\end_layout
+
+\begin_layout Itemize
+\align left
+Instrucciones de salto
+\end_layout
+
+\begin_layout Standard
+\align left
+Y su repertorio de instrucciones contiene instrucciones de transferencia
+ de datos, aritmético-lógicas, de control y de punto flotante.
+\end_layout
+
+\begin_layout Subsubsection
+Implementación de DLX sin segmentación
+\end_layout
+
+\begin_layout Standard
+\align left
+Vamos a implementar un subconjunto de DLX que consta de las siguientes instrucci
+ones: carga y almacenamiento de palabras, saltos y operaciones enteras de
+ ALU.
+\end_layout
+
+\begin_layout Standard
+\align left
+Cada instrucción puede ejecutar 
+\series bold
+5 etapas:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Búsqueda de instrucción (IF)
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Decodificación de la instrucción/Leer registros (ID)
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Ejecución / Dirección efectiva (EX)
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Acceso a memoria / Finalización de saltos (MEM)
+\end_layout
+
+\begin_layout Enumerate
+\align left
+Postescritura (WB)
+\end_layout
+
+\begin_layout Standard
+\align left
+Veamoslas una a una:
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+1) Instruction Fetch (IF)
+\end_layout
+
+\begin_layout Standard
+\align left
+Busca la siguiente instrucción en la memoria y la trae al registro de instrucció
+n (IR).
+\end_layout
+
+\begin_layout Standard
+\align left
+Incrementa el PC en 4 y se almacena en el registro NPC.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+2) Decodificación de la Instrucción / Leer registros (ID)
+\end_layout
+
+\begin_layout Standard
+\align left
+Decodifica la instrucción y accede al banco de registros para leer dos registros.
+\end_layout
+
+\begin_layout Standard
+\align left
+La salida de los registros se almacena en dos registros intermedios (A y
+ B) para usarla en los ciclos posteriores.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se extiene el signo a los 16 bits menos signifativos de la instrucción y
+ se almacena en un registro intermedio (Imm).
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+3) Ejecución / Dirección efectiva (EX)
+\end_layout
+
+\begin_layout Standard
+\align left
+Dependiendo del tipo de instrucción, la ALU realiza lo siguiente:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+A)
+\end_layout
+
+\end_inset
+
+ Referencia a Memoria: Suma los operandos para formar la dirección efectiva.
+ El resultado se deja en 
+\begin_inset Formula $ALU_{output}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+B)
+\end_layout
+
+\end_inset
+
+ Instrucción ALU Registro-Registro: realiza la operación especificada por
+ el código de función con los operandos situados en los registros A y B.
+ El resultado se guarda en 
+\begin_inset Formula $ALU_{output}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+C)
+\end_layout
+
+\end_inset
+
+ Instrucción ALU Registro-Inmediato: realiza la operación especificada por
+ el código de operación con los operandos situados en los registros A e
+ Imm.
+ El resultado se guarda en 
+\begin_inset Formula $ALU_{output}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+D)
+\end_layout
+
+\end_inset
+
+ Salto: calcula la dirección efectiva del salto sumando el registro NPC
+ al valor del inmediato con signo que tenemos en Imm.
+ Se chequea el registro A, leído en la etapa anterior, para determinar si
+ el salto es tomado o no.
+ La operación de comparación op es el operador relacional especificado en
+ la instrucción de salto.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+4) Acceso a Memoria / Finalización de Saltos (MEM)
+\end_layout
+
+\begin_layout Standard
+\align left
+Las únicas instrucciones DLC activas en esta etapa son:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+A)
+\end_layout
+
+\end_inset
+
+ Referencia a Memoria: puede ser una carga o un almacenamiento.
+ En una carga el dato extraído de memoria se almacena en el registro LMD.
+ En un almacenamiento el dato que está en el registro B se escribe en memoria.
+ En ambos casos, la dirección a usar es la calculada en la etapa anterior
+ y almcenada en ALUOutput.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+B)
+\end_layout
+
+\end_inset
+
+ Saltos: si la condición es tal que debe tomarse el salto, el PC se reemplaza
+ por la dirección de destino del salto.
+ Si no debe tomarse el PC se reemplaza con el PC incrementado que está almacenad
+o en el registro NPC.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+5) Write-Back (WB)
+\end_layout
+
+\begin_layout Standard
+\align left
+Escribe el resultado en el banco de registros.
+ Para una instrucción de carga, está en LMD y para una instrucción ALU,
+ está en ALUOutput.
+\end_layout
+
+\begin_layout Standard
+\align left
+El campo que indica el registro destino también puede estar en dos posiciones
+ distintas dependiendo del código de función indicado.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Instrucción ALU Registro-Registro: se encuentra en los bits 16..20
+\end_layout
+
+\begin_layout Itemize
+\align left
+Instrucción ALU Registro-Inmediato: se encuentra en los bits 11..15
+\end_layout
+
+\begin_layout Itemize
+\align left
+Instrucción de carga: también en 11..15
+\end_layout
+
+\begin_layout Standard
+\align left
+Al final de cada ciclo de reloj, lo calculado en una etapa se almacena en
+ registros ingermedios.
+ Se necesitan 4 ciclos para saltos y almacenamientos, 5 para el resto.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename t2DLXMono.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Segmentación para la ejecución de instrucciones
+\end_layout
+
+\begin_layout Standard
+Podemos segmentar el pipeline de ejecución de instrucciones de DLX casi
+ sin cambios de forma que comience una nueva instrucción en cada ciclo de
+ reloj.
+\end_layout
+
+\begin_layout Standard
+\align left
+Solo tenemos que añadir los 
+\series bold
+registros de la segmentación
+\series default
+, que aíslan las distintas etapas, permitiendo que estas trabajen en paralelo.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename t2DLXSeg.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+También debemos modificar el cauce para que se calcule la dirección de la
+ siguiente instrucción en la etapa IF.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename t2DLXSeg2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Como cada etapa está activa en cada ciclo, cada una debe completar sus acciones
+ en dicho ciclo.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los registros de la segmentación o pipeline registers aíslan las etapas
+ del cauce.
+ Se llaman y se etiquetan con el nombre de las etapas que separan.
+ Se usan para pasar datos y el control de una etapa a la siguiente, cualquier
+ valor que pueda ser necesario en una etapa posterior debe propagarse a
+ través de estos registros, hasta que deje de ser necesario.
+\end_layout
+
+\begin_layout Standard
+\align left
+Una instrucción está activa en una única etapa en cada ciclo: las acciones
+ se realizan entre dos registros de segmentación.
+ De esta forma cada instrucción seguiría tardando cinco ciclos, pero ahora
+ se estarían haciendo cinco instrucciones al mismo tiempo, estando cada
+ una de ellas en una etapa distinta.
+\end_layout
+
+\begin_layout Standard
+\align left
+Hay que tener en cuenta que dos instrucciones distintas no pueden hacer
+ uso de ningún recurso común al mismo tiempo, por lo que se debe asegurar
+ que la segmentación no cause ese conflicto.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se usan 
+\series bold
+memorias caché separadas 
+\series default
+para instrucciones y para datos, con lo que se puede acceder a la vez a
+ ambas.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si el ciclo de reloj es el mismo que el de la máquina sin segmentar, el
+ 
+\series bold
+ancho de banda
+\series default
+ del sistema de memoria debe ser cinco veces mayor.
+\end_layout
+
+\begin_layout Standard
+\align left
+El 
+\series bold
+banco de registros
+\series default
+ se usa tanto en la etapa ID para la lectura de los dos registros, como
+ en WB para la escritura del registro resultado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para poder empezar una nueva instrucción cada ciclo de reloj debemos incrementar
+ el PC.
+\end_layout
+
+\begin_layout Standard
+\align left
+La segmentación 
+\series bold
+incrementa la productividad 
+\series default
+de instrucciones de la CPU, pero no reduce el tiempo de ejecución de cada
+ una de las instrucciones.
+ De hecho, suele incrementarlo ligeramente debido a la sobrecarga que supone.
+\end_layout
+
+\begin_layout Standard
+\align left
+El incremento de la productividad de instrucciones significa que un programa
+ se ejecuta más rápido y tiene un tiempo de ejecución total menor, aunque
+ sus instrucciones tarden más en ejecutarse.
+\end_layout
+
+\begin_layout Standard
+\align left
+El hecho de que el tiempo de ejecución de cada instrucción no disminuya,
+ pone una cota a la profundidad de la segmentación.
+\end_layout
+
+\begin_layout Standard
+\align left
+Las 
+\series bold
+señales de control 
+\series default
+que la segmentación produce son las siguientes:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename t2DLXSeg3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Problemas de la segmentación: los riesgos
+\end_layout
+
+\begin_layout Standard
+Hay situaciones, llamadas riesgos o hazards, en las que una instrucción
+ no puede avanzar a la siguiente etapa del cauce.
+ Estos riesgos provocan degradación del rendimiento y hay de tres tipos:
+ 
+\series bold
+estructurales 
+\series default
+(causados por un conflicto en el uso de un recurso hw si hay combinaciones
+ de instrucciones no soportadas), 
+\series bold
+de datos 
+\series default
+(cuando una instrucción depende del resultado de otra previa, y la ejecución
+ simultánea de ambas instrucciones puede provocar problemas) y 
+\series bold
+de control 
+\series default
+(provocados por la segmentación de los saltos y otras instrucciones que
+ modifican el PC).
+\end_layout
+
+\begin_layout Standard
+\align left
+Los riesgos pueden ser resueltos 
+\series bold
+a nivel hw 
+\series default
+(detectando la situación y parando la instrucción problemática y las siguientes
+ mientras avanzan las emitidas anteriormente hasta su finalización) o 
+\series bold
+a nivel sw 
+\series default
+(añadiendo en el ISA una instrucción NOP que será empleada por el compilador
+ para evitar los riesgos).
+\end_layout
+
+\begin_layout Subsubsection
+Riesgos estructurales
+\end_layout
+
+\begin_layout Standard
+\align left
+Surgen cuando dos o más instrucciones necesitan usar el mismo recurso hw
+ para cosas distintas.
+ Esta situación ocurre cuando un recurso no se ha replicado lo suficiente
+ o no se ha segmentado para permitir la combinación de algunas instrucciones.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Posibles soluciones:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Dedicar 
+\series bold
+más hw
+\series default
+ al problema.
+ Aunque podría no ser posible por el incremento en el costo que supondría,
+ incluso hay casos en los que no merece la pena.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Detener el cauce
+\series default
+ durante un ciclo de reloj: debemos detectar el riesgo y tener un mecanismo
+ de detención del cauce.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Que 
+\series bold
+sea el sw
+\series default
+ el que evite el riesgo.
+\end_layout
+
+\begin_layout Standard
+\align left
+El conjunto de instrucciones debe permitir detectar los riesgos estructurales
+ de forma sencilla.
+ Debe ser sencillo saber los recursos usados por una instrucción, pues el
+ código de operación lo dice todo, y debe ser uniforme en la utilización
+ de los recursos.
+\end_layout
+
+\begin_layout Standard
+Si el resto de factores son iguales, una máquina sin riesgos estructurales
+ siempre tendrá un CPI menor:
+\begin_inset Formula 
+\[
+CPI_{riesgos}=CPI_{ideal}+Ciclos\,de\,detención\,por\,instrucción
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Riesgos de datos
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Dependencia: 
+\series default
+pueden ser:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+de datos: 
+\series default
+existe un flujo de información entre una instrucción productora de un dato
+ y otra instrucción que consume dicho dato.
+\end_layout
+
+\begin_layout Standard
+\align left
+La instrucción j depende de la instrucción i, o j depende de k y k depende
+ de i.
+ También se llaman 
+\series bold
+dependencias verdaderas
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+LD F0,0(R1)
+\end_layout
+
+\begin_layout Plain Layout
+
+ADDD F4,F0,F2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Vemos como necesitamos el valor de F0 para realizar la segunda instrucción.
+ No podremos ejecutarla hasta tenerlo.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+de nombre: 
+\series default
+no hay flujo real de información entre las instrucciones.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Antidependencia: 
+\series default
+la instrucción j escribe registro o posición de memoria que i lee (i<j).
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SD 0(R1),F4
+\end_layout
+
+\begin_layout Plain Layout
+
+ADDD F4,F0,F2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Si se ejecutara la segunda instrucción antes que la primera, estaríamos
+ guardando un valor erróneo en 0(R1).
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Dependencia de salida: 
+\series default
+las instrucciones i y j escriben en el mismo registro o posición de memoria.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ambos tipos de dependencias pueden solucionarse renombrando registros.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+de control: 
+\series default
+debidas a instrucciones de control o saltos.
+ Determinan el flujo de ejecución de las instrucciones y el grado de reordenació
+n que se puede realizar en el programa.
+ Una instrucción dependiente de un salto (posterior a él) no puede moverse
+ a una posición anterior al salto.
+ Una instrucción no dependiente de un salto (anterior) no puede moverse
+ a una posición posterior al salto.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Riesgos de datos
+\end_layout
+
+\begin_layout Standard
+\align left
+Los riesgos de datos ocurren cuando la segmentación cambia el orden de los
+ accesos de lectura/escritura a los operandos que se daría en la versión
+ secuencial sin segmentación.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se produce un riesgo si hay una dependencia entre instrucciones, y estas
+ están suficientemente cerca para que la segmentación cambie el orden de
+ acceso a los operandos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Puede darse en el acceso a los registros, pero también en el acceso a una
+ posición de memoria.
+\end_layout
+
+\begin_layout Standard
+\align left
+En DLX, al tener solo un canal de acceso a memoria y caché bloqueante, los
+ accesos se hacen en orden.
+ Dependiendo del orden entre lecturas y escrituras, podemos clasificar los
+ riesgos de datos:
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+
+
+\series bold
+RAW (Read After Write):
+\series default
+ una instrucción posterior quiere leer un operando antes de que lo escriba
+ una instrucción anterior.
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+
+
+\series bold
+WAR (Write After Read):
+\series default
+ una instrucción posterior trata de escribir su resultado antes de que una
+ instrucción anterior haya leído el registro o posición de memoria que pretende
+ escribir.
+ Es provocado por una antidependencia, que el compilador resuelve mediante
+ el renombramiento de registros.
+ 
+\series bold
+NO
+\series default
+ puede ocurrir en DLX pues todas las lecturas se hacen en ID y todas las
+ escrituras en WB.
+\end_layout
+
+\begin_layout Itemize
+\align left
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+
+
+\series bold
+WAW (Write After Write):
+\series default
+ una escritura posterior se produce antes que otra escritura anterior en
+ el mismo destino.
+ Es producido por una dependencia de salida.
+ Solo es posble si varias etapas del cauce pueden volcar sus resultados
+ o se permite que otra instrucción continúe mientras una anterior está detenida.
+ Así, en DLX no pueden darse estos riesgos.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Solución HW: 
+\series default
+detectándolo e insertando ciclos de parada.
+ Habría que añadir hw para detectar el riesgo de datos y provocar una detención.
+ La instrucción que debe producir el dato continuará, mientras que la que
+ necesita el dato y las siguientes esperarán hasta que este esté disponible.
+ El CPI de la instrución detenida aumenta en tantos ciclos ocmo dure la
+ detención.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se añade una 
+\series bold
+unidad de detección de riesgos
+\series default
+.
+ Los riesgos por dependencias de datos se analizan en la etapa ID y si aparecen
+ la instrucción no es emitida, siendo parada hasta que el riesgo desaparezca.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Solución SW:
+\series default
+ mediante técnicas de compilación.
+ El compilador podría evitar el riesgo insertando instrucciones NOP entre
+ la instrucción que produce el dato y la que lo consume, pero esto incrementa
+ el número de instrucciones del programa.
+\end_layout
+
+\begin_layout Subsubsection
+Riesgos de control
+\end_layout
+
+\begin_layout Standard
+\align left
+Cuando se ejecuta una instrucción de salto, dependiendo de si se toma el
+ salto o no, se cambiará el PC a PC+2 o a otra dirección distinta.
+\end_layout
+
+\begin_layout Standard
+\align left
+En nuestro DLX, este cambio del PC no se lleva a cabo hasta el final de
+ la etapa MEM cuando se haya completado el cálculo de la dirección y la
+ comparación.
+\end_layout
+
+\begin_layout Standard
+\align left
+La 
+\series bold
+solución HW
+\series default
+ más básica consiste en ampliar la unidad de detección de reisgos para que
+ cuando se detecte un salto se detenga el cauce hasta saber si el ciclo
+ es tomado o no.
+ Como el salto se resuelve en MEM será necesario introducir 3 ciclos de
+ parada para darle tiempo al salto a que llegue a dicha etapa.
+ En cauces más profundos, en los que los saltos pasarían por más etapas
+ hasta resolverse, habría más ciclos de parada y se degradaría de forma
+ significativa el rendimiento.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los riesgos de control pueden causar una mayor pérdida de rendimiento que
+ los riesgos de datos.
+\end_layout
+
+\begin_layout Standard
+\align left
+La latencia de un salto puede reducirse en dos pasos: averiguando si el
+ salto se va a tomar o no en una etapa anterior o calculando antes la dirección
+ efectiva del salto.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Mejora para DLX: 
+\series default
+mover la unidad detectora de ceros a ID.
+ Calcular la dirección de salto, sea cual sea el resultado de la comparación
+ en ID.
+ Esto obliga a añadir un sumador, ya que la ALU no está disponible en esta
+ etapa.
+ Con este hw añadido podemos tomar la decisión del salto en la etapa ID,
+ con lo que solo tendríamos un ciclo de parada para los saltos.
+\end_layout
+
+\begin_layout Standard
+El cauce quedaría:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename t2DLXmejorado.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Segmentación avanzada y predicción de saltos
+\end_layout
+
+\begin_layout Subsection
+Mitigación de los riesgos de datos
+\end_layout
+
+\begin_layout Standard
+En las soluciones que vimos en el tema 2 para resolver los riesgos de datos
+ se producía una degradación del rendimiento debido a ciclos de parada o
+ la aparición de instrucciones adicionales.
+ Ahora vamos a ver una técnica HW que resuelve los riesgos de datos y lo
+ hace afectando lo menos posible al rendimiento.
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+adelantamiento 
+\series default
+consiste en que el trasvase de información entre dos instrucciones dependientes
+ no se haga a través del banco de registros, sino desde la unidad funcional
+ productora del dato hasta la UF consumidora del mismo.
+ Por supuesto, esta técnica minimiza el impacto de los riesgos 
+\series bold
+RAW
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Esta técnica puede generalizarse para que cualquier UF pueda obtener un
+ operando directamente del registro de segmentación en el que pudiera encontrars
+e.
+ Pero, evidentemente, para hacer esto necesitamos circuitería adicional.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename circuitAdelantamiento.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En esta figura vemos cómo se implementaría la circuitería que permite hacer
+ adelantamientos a la ALU.
+ Nótese, además, que hemos añadido una 
+\series bold
+unidad de adelantamiento
+\series default
+, que sirve para manejar las nuevas situaciones de control que plantea nuestro
+ diseño nuevo.
+\end_layout
+
+\begin_layout Standard
+Esta unidad de adelantamiento hará lo siguiente:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Adelantamiento EX:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if (EX/MEM.RegWrite && EX/MEM.Rd<>0 && EX/MEM.Rd=ID/EX.Rs)
+\end_layout
+
+\begin_layout Plain Layout
+
+	anticiparA=10
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (EX/MEM.RegWrite && EX/MEM.Rd<>0 && EX/MEM.Rd=ID/EX.Rt)
+\end_layout
+
+\begin_layout Plain Layout
+
+	anticiparB=10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Adelantamiento MEM:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if (MEM/WB.RegWrite && MEM/WB.Rd<>0 && MEM/WB.Rd=ID/EX.Rs)
+\end_layout
+
+\begin_layout Plain Layout
+
+	anticiparA=01
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (MEM/WB.RegWrite && MEM/WB.Rd<>0 && MEM/WB.Rd=ID/EX.Rt)
+\end_layout
+
+\begin_layout Plain Layout
+
+	anticiparB=01
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Primero se haría el test de adelantamiento en EX, y si este resulta negativo,
+ se hace el de MEM.
+\end_layout
+
+\begin_layout Standard
+Aunque el adelantamiento es una técnica que mejora enormemente el funcionamiento
+ de DLX, hay algunos riesgos de datos que aún pueden dar problemas.
+ Las instrucciones de carga tienen un retraso que no se puede eliminar totalment
+e con los adelantamientos, aunque se quedan reducidos a 1 único ciclo de
+ parada.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename adelsw.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mitigación de los riesgos de control
+\end_layout
+
+\begin_layout Standard
+Para mejorar el rendimiento y mitigar la penalización de los saltos, los
+ procesadores modernos recurren a técnicas de 
+\series bold
+predicción de saltos
+\series default
+.
+ Estas pueden ser 
+\series bold
+estáticas 
+\series default
+(no miran el comportamiento del salto) o 
+\series bold
+dinámicas 
+\series default
+(usan HW para predecir el resultado de un salto gracias a que los saltos
+ siguen patrones predecibles).
+\end_layout
+
+\begin_layout Subsubsection
+Predicción de saltos estática
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Predict Not-Taken
+\end_layout
+
+\begin_layout Standard
+Se tratan todos los saltos como si no se fueran a tomar hasta que se resuelvan,
+ procediendo con las instrucciones del camino NT.
+ 
+\end_layout
+
+\begin_layout Standard
+Si el salto 
+\series bold
+es tomado
+\series default
+ se han de descartar todas las instrucciones ejecutadas especulativamente.
+\end_layout
+
+\begin_layout Standard
+En DLX se implementa fácilmente, se siguen emitiendo instrucciones del camino
+ NT y si el salto resulta tomado, se convierten a NOP las instrucciones
+ buscadas del camino NT.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Predict Taken
+\end_layout
+
+\begin_layout Standard
+Se tratan todos los saltos como si se fueran a tomar.
+ En cuanto se tenga la dirección del salto se sigue por ahí.
+ 
+\end_layout
+
+\begin_layout Standard
+Si el salto es 
+\series bold
+no tomado
+\series default
+ se ha de deshacer lo hecho.
+\end_layout
+
+\begin_layout Standard
+Nótese que en DLX no tiene sentido esta alternativa, pues sabemos la dirección
+ del salto a la vez que la condición de salto.
+\end_layout
+
+\begin_layout Subsubsection
+Predicción de saltos dinámica
+\end_layout
+
+\begin_layout Standard
+Las técnicas dinámicas de predicción pretenden predecir el resultado de
+ un salto condicional en tiempo de ejecución.
+ Obtienen muy buenas tasas de acierto gracias a que los saltos siguen patrones
+ predecibles de comportamiento, generalmente basados en su historia.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Buffer de predicción de saltos
+\end_layout
+
+\begin_layout Standard
+Es el esquema más simple.
+ Se conoce como 
+\series bold
+Branch Prediction Buffer (BPB)
+\series default
+, y no es más que una pequeña memoria indexada por la parte baja del PC
+ de la instrucción del salto (
+\begin_inset Formula $PC\mod2^{m}$
+\end_inset
+
+), donde cada entrada contiene un contador saturado de n bits.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+BPB de 1 bit
+\end_layout
+
+\begin_layout Standard
+Guarda 1 bit d historia que dice si el salto fue tomado o no la última vez.
+ Si la predicción falla se invierte el bit para la próxima vez.
+\end_layout
+
+\begin_layout Standard
+Presenta como 
+\series bold
+problemas 
+\series default
+que falla 2 veces en cada bucle, en lugar de una vez, y que se producen
+ interferencias entre saltos que dan el mismo 
+\begin_inset Formula $PC\mod2^{m}$
+\end_inset
+
+.
+ Las 
+\series bold
+soluciones 
+\series default
+pasan por utilizar más de un bit en la predicción y tener más entradaas
+ en la tabla de contadores.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+BPB de 2 bits
+\end_layout
+
+\begin_layout Standard
+Usa contadores saturados de 2 bits para cada salto.
+ Ahora actualizamos el contador a cada salto: se incrementa si el salto
+ es tomado (y no está al máximo, 11) y se decrementa si es no tomado (y
+ no está en 00).
+ Para hacer la predicción se toma el bit más significativo (izq), si es
+ 0 se predice NT y si es 1 se predice T.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+BPB generalizado de n bits
+\end_layout
+
+\begin_layout Standard
+Ahora se asocia la mitad baja de los valores a NT y la mitad alta a T.
+ Así que, queda como antes: si el bit más significativo es 1, el salto se
+ predice T, si es 0 como NT.
+ Cuando el salto se toma, se aumenta en una unidad el contador, y cuando
+ es NT se decrementa.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Predictores con correlación
+\end_layout
+
+\begin_layout Standard
+Ahora buscamos usar información de otros saltos además de la historia del
+ salto a predecir.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Predictor con correlación con 2 tablas de contadores de 1 bit de historia
+ y 1 bit de correlación
+\end_layout
+
+\begin_layout Standard
+Ahora, para cada salto, tendremos dos bits de historia para elegir.
+ Uno se usa si el último salto no se tomó, y el otro si sí se tomó.
+ La elección del bit de historia utilizado se basa en el bit de correlación
+ global.
+\end_layout
+
+\begin_layout Standard
+Si un salto es tomado, el bit de correlación se pone a 1, se usará el bit
+ de historia correspondiente a último salto tomado.
+\end_layout
+
+\begin_layout Standard
+Si es no tomado, el bit de correlación se pone a 0 y se usará el otro bit
+ de historia.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Predictores de correlación con 
+\begin_inset Formula $\boldsymbol{2^{m}}$
+\end_inset
+
+ tablas de contadores de n bits de historia y 
+\begin_inset Formula $\boldsymbol{m}$
+\end_inset
+
+ bits de correlación
+\end_layout
+
+\begin_layout Standard
+Se puede generalizar a un predictor (m,n) donde se usa el comportamiento
+ de los últimos m saltos para seleccionar una de las 
+\begin_inset Formula $2^{m}$
+\end_inset
+
+ tablas de contadores saturados de n bits.
+\end_layout
+
+\begin_layout Standard
+Así, un predictor (m,n) ocupa:
+\begin_inset Formula 
+\[
+2^{m}\cdot n\cdot NumEntradas\ bits
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La historia global de los últimos m bits se almacenan en un registro de
+ desplazamiento de m bits.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Buffer de destino de salto (BTB)
+\end_layout
+
+\begin_layout Standard
+Para reducir la penalización de los saltos en nuestro DLX a solo 0 ciclos
+ hemos de saber en la etapa IF si la instrucción que acaba de entrar es
+ un salto; de ser así, si es tomado o no; y, si es tomado, a qué dirección
+ se dirige.
+\end_layout
+
+\begin_layout Standard
+Para eso se crea el 
+\series bold
+Buffer de Destino de Saltos (Branch Target Buffer, BTB)
+\series default
+, que consiste en una caché que proporciona la dirección de la siguiente
+ instrucción que sigue a un salto.
+ Se accede en la etapa IF usando el PC actual, y si hay acierto de BTB suponemos
+ que se trata de un salto y el BTB proporciona el siguiente PC, que puede
+ ser el de la siguiente instrucción secuencial (PC+4) o el PC destino del
+ salto.
+\end_layout
+
+\begin_layout Standard
+A diferencia de los predictores anteriores, el BTB usa etiquetas (parte
+ del PC) para evitar interferencias.
+\end_layout
+
+\begin_layout Standard
+De esta forma, si el PC se encuentra en las etiquetas, esto supone un acierto
+ de TLB, lo que quiere decir que la instrucción es un salto.
+ El segundo campo del BTB proporciona el PC siguiente.
+ Además, en un tercer campo opcional, se podría tener información de predicción.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename btb.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+BTB que solo almacena saltos tomados
+\end_layout
+
+\begin_layout Standard
+Si el PC está en el BTB, predecimos que la instrucción será un salto T.
+ Si en el siguiente ciclo vemos que no es así, lo quitamos del BTB.
+ Si no lo encontramos, usamos el PC secuencial (o sea, como si fuera Predict
+ NT) y si resulta que es un salto tomado, actualizamos el BTB para futuras
+ ocasiones.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+No hay penalización 
+\series default
+cuando la instrucción está en el BTB y la predicción es correcta (salto
+ T) ni cuando la instrucción no está en el BTB y el salto es NT.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Sí hay penalización 
+\series default
+cuando la instrucción está en el BTB, pero la predicción es incorrecta y
+ cuando la instrucción no está en el BTB, pero el salto es T.
+\end_layout
+
+\begin_layout Subsection
+Excepciones
+\end_layout
+
+\begin_layout Standard
+Una 
+\series bold
+excepción 
+\series default
+es un cambio inesperado en el flujo de control proveniente de una causa
+ interna o externa.
+ Si la causa es externa se puede llamar también interrupción.
+ Estas situaciones son más difíciles de manejar en las máquinas segmentadas
+ debido a la superposición de instrucciones, ya que esto hace más difícil
+ saber cuándo una instrucción puede cambiar de forma segura el estado de
+ la máquina.
+\end_layout
+
+\begin_layout Standard
+Las excepciones suelen suceder en medio de la ejecución de una isntrucción
+ y deben ser capaces de guardar el estado, atender la excepción, restaurar
+ el estado y recomenzar el programa original.
+\end_layout
+
+\begin_layout Standard
+En DLC pueden presentarse los siguientes problemas:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename excepcionesDLX.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las excepciones más complejas suceden en la etapa EX o MEM del pipeline
+ y deben poder reiniciarse.
+ Un fallo de página debe ser reiniciable y necesita la intervención del
+ SO.
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+tratamiento de excepciones en DLX 
+\series default
+se realiza de la siguiente forma:
+\end_layout
+
+\begin_layout Enumerate
+Forzamos la entrada de una instrucción TRAP en IF
+\end_layout
+
+\begin_layout Enumerate
+Impedimos que las instrucciones que siguen a la causante de la excepción
+ y esta misma puedan cambiar el estado de la máquina.
+ Para ello, el SO guarda el PC de la instrucción que causó el fallo y lo
+ usará para volver de la instrucción.
+\end_layout
+
+\begin_layout Standard
+Decimos que el pipeline implementa 
+\series bold
+excepciones precisas
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename excepcionEX.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podría darse el caso de que una instrucción cause una excepción antes de
+ que lo haga otra instrucción anterior:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename excepcionadelantada.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto tiene dos posibles soluciones:
+\end_layout
+
+\begin_layout Itemize
+No usar el mecanismo de excepciones precisas y tratar las excepciones en
+ el orden de aparición.
+\end_layout
+
+\begin_layout Itemize
+Tratar las excepciones en el orden del programa.
+ Para esto, cada instrucción que entra al pipeline tiene asociado un registro
+ con tantos bits como etapas en las que puede originar excepciones, si se
+ produce una excepción se pone a 1 el bit de la etapa correspondiente y
+ se convierte en NOP la instrucción, en la última etapa se mira si ocurrió
+ excepción (algún bit está a 1) y se trata con el mecanismo de excepciones
+ precisas.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename dosexcepciones.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Segmentación para punto flotante
+\end_layout
+
+\begin_layout Standard
+No podemos exigir que todas las operaciones de punto flotate de DLX se completen
+ en un ciclo de reloj, pues obligaría a tener un reloj muy lento o a implementac
+iones muy costosas en las unidades de coma flotante.
+ Así, estas instrucciones necesitarán varios ciclos en la etapa de ejecución.
+ Puede verse como si las operaciones PF repitieran varias veces la etapa
+ EX y tuviéramos varias UF de PF.
+\end_layout
+
+\begin_layout Standard
+Vamos a considerar una versión de DLX con 4 UFs:
+\end_layout
+
+\begin_layout Itemize
+Unidad principal de enteros, maneja cargas y almacenamientos, ALU enteras
+ y saltos
+\end_layout
+
+\begin_layout Itemize
+Multiplicador entero y PF
+\end_layout
+
+\begin_layout Itemize
+Sumador PF que suma, resta y hace conversiones PF
+\end_layout
+
+\begin_layout Itemize
+Divisor de enteros y PF, no segmentada
+\end_layout
+
+\begin_layout Standard
+Se define la 
+\series bold
+latencia 
+\series default
+de una UF como el número de ciclos requeridos para completar su operación.
+ El 
+\series bold
+tiempo de iniciación 
+\series default
+es el número de ciclos que deben pasar entre la emisión de dos operaciones
+ del mismo tipo.
+ 
+\end_layout
+
+\begin_layout Standard
+Nuestro nuevo DLX queda:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename DLXPF.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Necesitamos poner 
+\series bold
+pipeline registers 
+\series default
+entre las etapas de las UF de PF, así como extender el registro ID/EX para
+ que ahora sea ID/EX, ID/A1, ID/M1, ID/DIV.
+ Pero solo necesitamos un registro EX/MEM pues únicamente podremos teer
+ una instrucción a la vez entrando en dicha etapa.
+\end_layout
+
+\begin_layout Subsubsection
+Adelantamientos en el nuevo cauce
+\end_layout
+
+\begin_layout Standard
+Si es necesario adelantar el dato PF debe habilitarse el multiplexor correspondi
+ente para que la entrada se coja del registro intermedio de la instrucción
+ que aún no ha completado.
+ Los adelantamientos deben hacerse hacia la primera etapa de la UF consumidora
+ desde la última etapa de la UF productora.
+\end_layout
+
+\begin_layout Standard
+El hecho de que solamente las instrucciones enteras accedan a memoria nos
+ permitiría modificar el esquema anterior, quedando:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename PFconAdel.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Riesgos en PF
+\end_layout
+
+\begin_layout Standard
+El solapamiento en la ejecución de instrucciones cuyos tiempos de ejecución
+ difieren, y el que algunas UF no estén completamente segmentadas, crea
+ varias complicaciones:
+\end_layout
+
+\begin_layout Itemize
+Pueden aparecer riesgos estructurales en el acceso a la UF de la división
+\end_layout
+
+\begin_layout Itemize
+Como cada instrucción tiene diferente número de ciclos de ejecución, podría
+ haber varias instrucciones que quieran escribir a la vez su resultado final
+ en el banco de registros
+\end_layout
+
+\begin_layout Itemize
+Puede ocurrir que las instrucciones terminen en distinto orden a como fueron
+ emitidas, causando esto posibles problemas con las excepciones
+\end_layout
+
+\begin_layout Itemize
+Pueden aparecer riesgos WAW
+\end_layout
+
+\begin_layout Itemize
+Como las operaciones tienen mayores latencias, habrá más detenciones debidas
+ a riesgos RAW
+\end_layout
+
+\begin_layout Standard
+Como 
+\series bold
+solución 
+\series default
+podemos extender la unidad detectora de riesgos para prevenir o eliminar
+ los riesgos que introducen las unidades funcionales PF.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Banco de registros independientes para enteros y PF
+\end_layout
+
+\begin_layout Standard
+Solo las cargas/almac de PF y los movimientos entre registros PF y enteros
+ involucran a los dos bancos de registros en una misma instrucción, con
+ lo que solo en estas situaciones pueden producirse riesgos entre ambos.
+\end_layout
+
+\begin_layout Standard
+Como 
+\series bold
+ventajas 
+\series default
+presenta que no se pueden producir riesgos estructurales en operaciones
+ enteras; se duplica el número de registros sin complicar el número de registros
+, ni tiempo de acceso, ni añadir bits al formato de instrucción; y se duplica
+ el ancho de banda de registros sin añadir puertos.
+\end_layout
+
+\begin_layout Standard
+Como 
+\series bold
+desventajas 
+\series default
+tiene que a veces hay que transferir información entre los dos bancos de
+ registros y que se limita a priori el número de registros de cada tipo.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename DLXregistrosSeparados.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Aún podrían aparecer riesgos en la escritura del banco de registros PF,
+ debido a la diferente latencia de cada UF PF.
+ Con un único puerto de escritura en el banco de registros PF, la máquina
+ debe 
+\series bold
+serializar la finalización
+\series default
+ de las instrucciones.
+ Otra opción es 
+\series bold
+incrementar el número de puertos
+\series default
+, pero esta opción sería poco utilizada y complica mucho el HW.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Para tratar este riesgo hay que detectar en qué ciclo de reloj va a usar
+ el puerto de escritura del banco de registros cada instrucción y, si varias
+ coinciden, solo emitir una de ellas y detener el resto.
+ Esto se puede implementar mediante un 
+\series bold
+vector de bits de reserva
+\series default
+ del ciclo para acceso al recurso.
+ Al entrar la instrucción mira si estará libre el recurso (bit a 0) y lo
+ pondrá a 1 reservándolo.
+ Si está a 1 nos detenemos un ciclo.
+ Cada ciclo el vector se desplaza a la izquierda un bit.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+También podrían darse riesgos WAW, aunque estos solo ocurren cuando se ejecuta
+ una instrucción inútil.
+ Un buen compilador nunca generaría dos escrituras en el mismo registro
+ sin lecturas intermedias, pero puede haber situaciones inesperadas, como
+ que ocurra esto entre una instrucción del programa y otra de la rutina
+ de atención a una excepción.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Hay dos posibles soluciones.
+ La primera es detectar estos riesgos en ID e insertar ciclos de parada.
+ Otra es detectarlo en ID y anular la primera instrucción con el fin de
+ que no llegue a escribir su resultado.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Un último riesgo es el de que una instrucción posterior pudiera terminar
+ antes que otra anterior.
+ Esto pasa porque estamos dejando que las instrucciones terminen en diferente
+ orden a como fueron emitidas, es lo que se llama terminación fuera de orden.
+ Podemos ignorar el problema y conformarnos con excepciones imprecisas,
+ pero, hoy en día, la mayoría de procesadores impiden que una instrucción
+ cambie el estado de la máquina si hay instrucciones previas que aún no
+ han acabado.
+ Para ello las instrucciones realizan las escrituras en el ROB (ReOrder
+ Buffer) y de ahí se pasan al banco de registros o memoria cuando corresponda.
+\end_layout
+
+\begin_layout Subsection
+Emisión de múltiples instrucciones
+\end_layout
+
+\begin_layout Standard
+Ahora vamos a intentar obtener un 
+\begin_inset Formula $CPI<1$
+\end_inset
+
+.
+ Esto solo es posible si ejecutamos simultáneamente varias instrucciones
+ por ciclo.
+\end_layout
+
+\begin_layout Standard
+Esto implica una mayor presión sobre la memoria y los registros y una mayor
+ probabilidad de riesgos y dependencias.
+ Serán necesarias técnicas para resolver dependencias de datos (ejecución
+ fuera de orden) y para resolver dependencias de control (especulación).
+ Se necesitará, por tanto, un SW más sofisticado y un mayor consumo energético.
+\end_layout
+
+\begin_layout Subsubsection
+Procesadores superescalares
+\end_layout
+
+\begin_layout Standard
+Lanzan un número variable de instrucciones por ciclo, entre 0 y 8.
+ La planificación es 
+\series bold
+estática 
+\series default
+por el compilador y 
+\series bold
+dinámica 
+\series default
+por el HW del procesador.
+ Y las reglas de ejecución pueden ser 
+\series bold
+en orden 
+\series default
+o 
+\series bold
+fuera de orden (con especulación)
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Very Long Instruction Word (VLIW)
+\end_layout
+
+\begin_layout Standard
+Emiten un número fijo de instrucciones independientes empaquetadas en una
+ macroinstrucción.
+ El compilador se encarga de la extracción de ILP mediante 
+\series bold
+planificación estática
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Tiene la ventaja de que el diseño HW es más simple, lo que redunda en una
+ mayor frecuencia de reloj y un menor consumo.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, no se beneficia de técnicas de planificación dinámica, presenta
+ incompatibilidad binaria (WTF) en una familia de procesadores y suele increment
+ar el tamaño del código.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sistema de Memoria de Altas Prestaciones
+\end_layout
+
+\begin_layout Standard
+La gran diferencia en el crecimiento de las prestaciones entre los procesadores
+ y la memoria ha obligado a estudiar nuevas medidas para mejorar los subsistemas
+ de memoria.
+ 
+\end_layout
+
+\begin_layout Standard
+Un ordenador típico contiene una jerarquía de memoria formada por los registros
+ de la CPU, una memoria caché (con varios niveles), una memoria principal,
+ memoria secundaria (discos) y memoria de almacenamiento masivo (DVD, penDrive,...).
+ El coste de todo el sistema de memoria excede al de la CPU, así pues es
+ importante optimizar su rendimiento.
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+objetivos 
+\series default
+de la jerarquía de memoria son hacer que el usuario tenga la ilusión de
+ que dispone de una memoria con tiempo de acceso similar al nivel más rápido
+ y un coste por bit similar al del nivel más barato.
+\end_layout
+
+\begin_layout Standard
+La gestión en tiempo de ejecución de la jerarquía de memoria afecta a los
+ niveles de memoria caché, principal y secundaria.
+ Los registros del procesador normalmente los asigna el compilador y la
+ memoria de almacenamiento masivo se usan para backup.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gestión de la memoria caché: 
+\series default
+controla la transferencia de información entre caché y memoria y suele llevarse
+ a cabo mediante HW específico (controlador de caché y Memory Management
+ Unit, MMU).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gestión de la memoria virtual: 
+\series default
+controla la transferencia de información entre la memoria principal y la
+ secundaria.
+ Se realiza mediante una combinación HW (MMU) y SW (SO).
+\end_layout
+
+\begin_layout Standard
+La memoria 
+\series bold
+caché 
+\series default
+retiene información recientemente usada y también cercana a la recientemente
+ usada.
+ Tanto la memoria principal como la memoria caché se dividen en 
+\series bold
+bloques 
+\series default
+de igual tamaño.
+\end_layout
+
+\begin_layout Standard
+La jerarquía de memoria sigue tres principios:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Inclusión: 
+\series default
+cualquier información almacenada en un nivel de memoria, debe encontrarse
+ también en los niveles inferiores.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Coherencia entre niveles: 
+\series default
+si un bloque de información se actualiza en un nivel, deben actualizarse
+ los niveles inferiores.
+ Para ello puede usarse post-escritura o escritura directa.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Localidad: 
+\series default
+las referencias a memoria (datos e instrucciones) se concentran en regiones
+ del tiempo y el espacio.
+ Puede ser:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Temporal: 
+\series default
+las posiciones de memoria recientemente referenciadas serán próximamente
+ referenciadas.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Espacial: 
+\series default
+tendencia a referenciar elementos de memoria cercanos a los últimos elementos
+ referenciados
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Y algo de terminología:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Bloque: 
+\series default
+unidad mínima de transferencia entre dos niveles
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Acierto: 
+\series default
+el dato solicitado está en el nivel 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ Se mide tanto la 
+\series bold
+tasa de aciertos
+\series default
+, que es la fracción de accesos encotnrados en el nivel 
+\begin_inset Formula $i$
+\end_inset
+
+; como el 
+\series bold
+tiempo de servicio en caso de acierto
+\series default
+, que es el tiempo de acceso al nivel 
+\begin_inset Formula $i$
+\end_inset
+
+ más el tiempo de detección del acierto.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Fallo: 
+\series default
+el dato solicitado no está en el nivel 
+\begin_inset Formula $i$
+\end_inset
+
+ y es necesario buscarlo en el nivel 
+\begin_inset Formula $i+1$
+\end_inset
+
+.
+ Se miden la 
+\series bold
+tasa de fallos
+\series default
+, que coincide con 
+\begin_inset Formula $1-T_{Aciertos}$
+\end_inset
+
+; y el 
+\series bold
+tiempo de penalización por fallo
+\series default
+, que es el tiempo de sustitución de un bloque del nivel 
+\begin_inset Formula $i$
+\end_inset
+
+ más el tiempo de acceso al dato.
+\end_layout
+
+\begin_layout Standard
+El tiempo de servicio en caso de acierto debe ser mucho menor que el tiempo
+ de penalización en caso de fallo.
+\end_layout
+
+\begin_layout Subsubsection
+¿Dónde puede situarse un bloque en una caché?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Índice\ Conjunto=(Bloque\ Memoria)\mod(Conjuntos\ Cache)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay varios tipos de cachés:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Correspondencia directa: 
+\series default
+conjuntos de un solo bloque.
+ Cada dato solo puede colocarse en una posición de la caché.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Totalmente asociativa: 
+\series default
+un solo conjunto con la cantidad máxima posible de bloques.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Asociativa por conjuntos: 
+\series default
+cada conjunto comprende varios bloques de la caché.
+ El bloque va a un conjunto y luego se puede situar en cualquier hueco del
+ conjunto.
+ Si hay 
+\begin_inset Formula $n$
+\end_inset
+
+ bloques en un conjunto se llama asociativa por conjuntos de 
+\begin_inset Formula $n$
+\end_inset
+
+ vías.
+\end_layout
+
+\begin_layout Subsubsection
+Cómo sabemos si un bloque está en la caché?
+\end_layout
+
+\begin_layout Standard
+De la dirección del dato de memoria buscado se extraen los campos índice,
+ etiqueta y offset.
+\end_layout
+
+\begin_layout Itemize
+El 
+\series bold
+índice 
+\series default
+indica el conjunto en el que puede encontrarse el bloque
+\end_layout
+
+\begin_layout Itemize
+La 
+\series bold
+etiqueta 
+\series default
+diferencia todos los bloques de memoria que mapean al mismo conjunto
+\end_layout
+
+\begin_layout Itemize
+El 
+\series bold
+offset 
+\series default
+selecciona la palabra o byte deseado dentro del bloque
+\end_layout
+
+\begin_layout Itemize
+Si el tamaño de la caché no cambia, aumentar la asociatividad hace que disminuya
+ el tamaño del campo índice y aumente el de la etiqueta
+\end_layout
+
+\begin_layout Standard
+Cada bloque de la caché tiene un 
+\series bold
+bit de validez 
+\series default
+que indica si el bloque contiene información válida.
+ Cuando se busca un bloque en una caché, las etiquetas de todos los bloques
+ del conjunto se comparan en paralelo con la etiqueta de la dirección buscada.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename cache.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+¿Qué bloque se reemplaza en caso de fallo?
+\end_layout
+
+\begin_layout Standard
+Cuando ocurre un fallo, el controlador de memoria debe seleccionar un bloque
+ para ser sustituido, esto dependerá de la asociatividad:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Correspondencia directa: 
+\series default
+solo hay un bloque posible por lo que no se aplica ninguna política de reemplazo
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Asociativas: 
+\series default
+varops bloques candidates a ser reemplazados.
+ Se aplica una política de reemplazo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Aleatoria: 
+\series default
+sencilla de implementar
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+LRU: 
+\series default
+bloque menos recientemente usado.
+ Más efectiva, pero al aumentar el número de bloques por conjunto se vuelve
+ más costosa
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+FIFO: 
+\series default
+se elige por orden de antigüedad
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+¿Qué ocurre en las escrituras?
+\end_layout
+
+\begin_layout Standard
+Las escrituras son más difíciles de implementar, ya que no se puede comenzar
+ a modificar un bloque hasta que no se ha comparado la etiqueta y normalmente
+ solo se modifica una parte del bloque.
+ Para manejarlas, están las políticas de escritura:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Escritura directa: 
+\series default
+la información se escribe tanto en caché como en el siguiente nivel de memoria.
+ Es más fácil de implementar, el siguiente nivel siempre queda actualizado,
+ solo se escribe la palabra modificada, no el bloque completo, puede provocar
+ más esperas hasta que se realiza la escritura.
+ Una optimización común es un 
+\series bold
+buffer de escritura 
+\series default
+que permite al procesador continuar tan pronto los datos están en el buffer.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Post-escritura: 
+\series default
+la información se escribe solamente en caché.
+ Cuando el bloque es sustituido, se actualiza el siguiente nivel.
+ Para implementarlo se necesita un 
+\series bold
+bit de sucio
+\series default
+.
+ Las escrituras se realizan a la velocidad de la caché y varias escrituras
+ en un bloque solo requieren una escritura en memoria.
+ Necesita menos ancho de banda, ya que hay escrituras que no van a memoria.
+\end_layout
+
+\begin_layout Standard
+En caso de ocurrir un fallo de caché al escribir, pueden seguirse dos políticas:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Carga en escritura: 
+\series default
+si cuando se va a escribir el dato no se encuentra el bloque en caché, se
+ lee el bloque y se carga en caché.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+No carga en escritura: 
+\series default
+el bloque se modifica directamente en el nivel inferior y no se lleva a
+ caché.
+\end_layout
+
+\begin_layout Standard
+Las combinaciones más usuales de políticas son post-escritura/carga en escritura
+ y escritura directa/no carga en escritura.
+\end_layout
+
+\begin_layout Subsubsection
+Memoria virtual
+\end_layout
+
+\begin_layout Standard
+Surge para permitir que los procesos manejen de forma automática un conjunto
+ de datos mayor que la memoria real del sistema.
+ Permite que cada proceso tenga su propio espacio de direcciones y que datos
+ de procesos distintos convivan en la memoria.
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+objetivos 
+\series default
+son poder contar con más memoria de la que físicamente tenemos.
+ Proteger la memoria entre procesos, así como zonas de memoria específicas.
+ La 
+\series bold
+relocalización 
+\series default
+permite que un programa se ejecute en cualquier lugar de la memoria física.
+ Por último, una carga más rápida de procesos.
+\end_layout
+
+\begin_layout Standard
+Una 
+\series bold
+página o segmento 
+\series default
+se usa para referirse al bloque de memoria.
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+fallo de página 
+\series default
+se da cuando no se encuentra una página buscada en nuestro espacio de direccione
+s virtuales.
+\end_layout
+
+\begin_layout Standard
+La CPU produce direcciones virtuales que se traducen mediante una combinación
+ de HW y SW a una dirección física, con la que se accede a memoria principal.
+ A este proceso se le llama 
+\series bold
+mapeo de memoria
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Los sistemas de memoria virtual se dividen en dos clases:
+\end_layout
+
+\begin_layout Itemize
+Los que utilizan bloques de tamaño fijo, páginas.
+\end_layout
+
+\begin_layout Itemize
+Los que utilizan bloques de tamaño variable, segmentos.
+\end_layout
+
+\begin_layout Standard
+El uso de memoria virtual paginada/segmentada afecta a la CPU, pues el direccion
+amiento para memoria virtual paginada tiene una única dirección de tamaño
+ fija dividida en nº de página y desplazamiento.
+ Para la segmentada se encesitan dos palabras por dirección: una para el
+ nº de segmento y otra para el direccionamiento dentro del segmento.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename compmemvirt.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Comparación cualitativa:
+\end_layout
+
+\begin_layout Itemize
+El 
+\series bold
+reemplazo 
+\series default
+en las cachés se realiza por HW mientras que en la memoria virtual se hace
+ mediante una combinación HW-SW controlada por el SO
+\end_layout
+
+\begin_layout Itemize
+El 
+\series bold
+tamaño de la dirección 
+\series default
+que maneja el procesador determina el tamaño de la memoria virtual, pero
+ el tamaño de la memoria caché es independiente del tamaño de esa dirección
+\end_layout
+
+\begin_layout Itemize
+En la 
+\series bold
+memoria secundaria
+\series default
+, además de las direcciones de los procesos, también se ubican los ficheros
+ necesarios por los programas, que normalmente no forman parte del espacio
+ de direcciones del proceso
+\end_layout
+
+\begin_layout Subsubsection
+Las 4 preguntas de la memoria virtual
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+¿Dónde ponemos la página en memoria principal?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La penalización es tan alta que el SO permite a la página situarse en cualquier
+ lugar de la memoria principal
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+¿Cómo sabemos si la página está en memoria principal?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Con una 
+\series bold
+tabla de páginas 
+\series default
+indexada por el número de páginas virtual, que nos da la página física.
+ Algunos SO aplican una 
+\series bold
+tabla de páginas invertida 
+\series default
+para reducir el tamaño.
+ Para traducir la página rápidamente, se utiliza una pequeña caché llamada
+ 
+\series bold
+TLB
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+¿Qué página deberíamos reemplazar en caso de fallo de memoria virtual?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Debido a la penalización por fallo de página, el objetivo del SO es minimizar
+ los fallos de página.
+ La mayoría de SO intentan usar la política LRU usando un bit de referencia
+ que se limpia periódicamente.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+¿Qué ocurre en las escrituras?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La penalización por acceder a disco es tan alta que es imprescindible usar
+ 
+\series bold
+postescritura
+\series default
+.
+ Las páginas, como en las cachés, se marcan con un bit de sucio.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+TLB
+\end_layout
+
+\begin_layout Standard
+Las tablas de páginas son tan grandes que deben estar en memoria principal
+ y pueden incluso estar también paginadas.
+ Cada acceso a memoria principal, por tanto, cuesta dos accesos a memoria:
+ uno para obtener la dirección física y otro para acceder a ella.
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+solución 
+\series default
+pasa por usar una caché con las últimas traducciones realizadas, que se
+ llama 
+\series bold
+TLB (Translation Lookaside Buffer).
+ 
+\series default
+No reemplaza la tabla de páginas, solo acelera las traducciones.
+ Devuelve la página física y los bits de control de la tabla de traducción
+ de páginas (protección, validez, uso y sucio).
+ Para cambiar la dirección física de una página o su código de protección,
+ el SO debe forzar a que esa página salga del TLB.
+ El bit de sucio que cada página tiene en el TLB significa que el contenido
+ de la página de la página se ha modificado, no que la dirección física
+ haya cambiado.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename jerarquimemoria.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Evaluación del rendimiento de la jerarquía
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{CPU}=(Ciclos_{CPU}+Ciclos_{ParadaMemoria})\cdot T_{Ciclo}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ciclos_{ParadaMemoria}=Fallos\cdot PF=NI\cdot AMI\cdot TF\cdot PF
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $PF$
+\end_inset
+
+ es la penalización por fallo, 
+\begin_inset Formula $NI$
+\end_inset
+
+ el número de instrucciones, 
+\begin_inset Formula $AMI$
+\end_inset
+
+ el número medio de accesos a memoria por instrucción y 
+\begin_inset Formula $TF$
+\end_inset
+
+ la tasa de fallos.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+¿Qué métrica podemos emplear para medir el rendimiento de la jerarquía de
+ memoria?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{am}=T_{sa}+m\cdot T_{pf}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{am}$
+\end_inset
+
+ es el tiempo medio de acceso a memoria, 
+\begin_inset Formula $T_{sa}$
+\end_inset
+
+ el tiempo de servicio en caso de acierto, 
+\begin_inset Formula $m$
+\end_inset
+
+ la tasa de fallos y 
+\begin_inset Formula $T_{pf}$
+\end_inset
+
+ el tiempo de penalización por fallo.
+\end_layout
+
+\begin_layout Standard
+Para mejorar el rendimiento de una jerarquía de memoria, necesitamos mejorar
+ uno o varios de los términos de esta expresión.
+ 
+\end_layout
+
+\begin_layout Subsection
+Reducción de la tasa de fallos de Caché
+\end_layout
+
+\begin_layout Subsubsection
+Clasificación de fallos de caché
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Forzosos: 
+\series default
+el primer acceso a un bloque de memoria no puede estar en la caché
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Capacidad: 
+\series default
+la memoria caché no tiene el tamaño suficiente para contener todos los bloques
+ necesatios.
+ En un momento determinado uno de los bloques que se han utilizado tiene
+ que dejar hueco a otro.
+ Se produce fallo si se vuelve a referenciar al bloque desalojado
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Conflicto: 
+\series default
+la memoria caché no es totalmente asociativa.
+ Aciertos en una caché totalmente asociativa que se vuelven fallos en una
+ asociativa por conjuntos de n vías se deben a más de n peticiones sobre
+ algún conjunto
+\end_layout
+
+\begin_layout Subsubsection
+Aumento del tamaño de bloque
+\end_layout
+
+\begin_layout Standard
+Es la manera más sencilla de reducir la tasa de fallos.
+ Esto reduce los fallos forzosos al aumentar la localidad espacial.
+ Aunque aumenta la penalización por fallo, pues cuesta más mover un bloque
+ más grande.
+ Además, al reducir el número de bloques en caché pueden aumentar los fallos
+ por conflicto y por capacidad.
+\end_layout
+
+\begin_layout Standard
+Lo que buscamos es minimizar la tasa de fallos y la penalización por fallo.
+ Por tanto, la selección del tamaño de bloque depende tanto de la latencia
+ como del ancho de banda del nivel inferior:
+\end_layout
+
+\begin_layout Itemize
+Una 
+\series bold
+gran latencia y un gran ancho de banda
+\series default
+ aconsejan un tamaño de bloque grande, pues la caché obtiene muchos más
+ bytes por fallo por un pequeño incremento de la penalización
+\end_layout
+
+\begin_layout Itemize
+Una 
+\series bold
+baja latencia y un bajo ancho de banda 
+\series default
+aconsejan un tamaño de bloque pequeño, pues el tiempo que se gana respecto
+ a un bloque grande es pequeño, y al tener un número grande de bloques pequeños
+ se reducirán los fallos por conflictos
+\end_layout
+
+\begin_layout Subsubsection
+Aumento de la asociatividad
+\end_layout
+
+\begin_layout Standard
+Aumentar la asociatividad incrementa el tiempo de servicio en caso de acierto,
+ pues es necesario complicar el HW, pero reduce la tasa de fallos.
+ Se debe llegar a una solución de compromiso.
+\end_layout
+
+\begin_layout Standard
+Hay dos heurísticas muy usadas:
+\end_layout
+
+\begin_layout Itemize
+Una caché asociativa por conjuntos de 8 vías se comporta, a efectos prácticas,
+ como una caché totalmente asociativa
+\end_layout
+
+\begin_layout Itemize
+Una caché de correspondencia directa de tamaño 
+\begin_inset Formula $N$
+\end_inset
+
+ tiene aproximadamente la misma tasa de fallos que una asociativa por conjuntos
+ de 2 vías de tamaño 
+\begin_inset Formula $\frac{N}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Optimizaciones del compilador
+\end_layout
+
+\begin_layout Standard
+Permiten reducir la tasa de fallos sin ningñun cambio en el HW.
+ Vamos a ver algunos tipos:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Combinación de arrays: 
+\series default
+su objetivo es reducir la tasa de fallos al reducir la localidad espacial.
+ Algunos programas referencian múltiples arrays en la misma dimensión, con
+ los mismos índices al mismo tiempo, estos accesos pueden interferir entre
+ ellos provocando fallos de caché.
+ La 
+\series bold
+solución 
+\series default
+es combinarlos en un único array donde cada casilla contenga los elementos
+ necesarios de cada array original.
+ De esta forma todos los datos podrían estar a la vez en un mismo bloque
+ de caché.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Intercambio de iteraciones: 
+\series default
+algunos programas tienen bucles con iteraciones consecutivas que no acceden
+ a los datos de forma secuencial.
+ Intercambiando el roden de los bucles podemos hacer que se accedan los
+ datos en el orden en que están almacenados en memoria, reduciendo los fallos
+ de caché.
+ Se maximiza el uso de los datos de un bloque de caché antes de que este
+ se descarte.
+ Se mejora, como antes, la localidad espacial.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Unión de bucles: 
+\series default
+otros programas tienen secciones de códigos separadas que acceden los mismos
+ arrays, con los mismos bucles, pero realizando operaciones diferentes en
+ los mismos datos.
+ Si fusionamos el código en un único bucle, los datos que se cargan en caché
+ pueden utilizarse para las distintas operacionea antes de desalojarse.
+ De esta manera mejoramos la localidad temporal
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Blocking: 
+\series default
+el objetivo ahora es reducir la tasa de fallos al mejorar la localidad temporal
+ que resulte útil cuando se usan varios arrays, unos accedidos por filas
+ y otros por columnas.
+ La idea es que en vez de operar sobre columnas o filas enteras, se opere
+ sobre submatrices o bloques, maximizando el acceso a los datos de la caché
+ antes de sustituirlos
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+El número de fallos de caché depende de 
+\begin_inset Formula $N$
+\end_inset
+
+ (tamaño matriz) y del tamaño de la caché.
+ Para asegurar que el número de elementos accedidos cabe en memoria, se
+ cambia el código original para que actúe sobre una submatriz de tamaño
+ 
+\begin_inset Formula $B\times B$
+\end_inset
+
+, accediendo los bucles interiores en bloques de tamaño 
+\begin_inset Formula $B$
+\end_inset
+
+, en lugar de inicio a fin de los arrays iniciales.
+ Al tamaño 
+\begin_inset Formula $B$
+\end_inset
+
+ se le llama 
+\series bold
+blocking factor
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename blocking1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename blocking3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename blocking2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Optimizaciones HW: caché de víctimas
+\end_layout
+
+\begin_layout Standard
+Consiste en añadir un pequeño buffer totalmente asociativo entre un nivel
+ de caché y el siguiente donde se queden los datos que se van reemplazando
+ en el nivel superior.
+ Intenta conseguir el bajo tiempo de acierto de la correspondencia directa
+ a la vez que reduce los fallos debidos a conflictos.
+ 
+\end_layout
+
+\begin_layout Standard
+Se puede acceder al mismo tiempo a la memoria caché y a la caché de víctimas,
+ para que la penalización por fallo no incremente.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Búsqueda anticipada por HW de datos e instrucciones
+\end_layout
+
+\begin_layout Standard
+Una solución para evitar flalos de caché es hacer que el HW busque anticipadamen
+te (
+\series bold
+prefetching
+\series default
+) los datos antes de que los pida el procesador.
+ Se trata de iniciar el acceso a memoria antes de que se ejecute una instrucción
+ que produciría un fallo de caché.
+ Tanto las instrucciones como los datos pueden anticiparse, directamente
+ en la caché o en un buffer externo con un tiempo de acceso mucho menor
+ que el de la memoria.
+\end_layout
+
+\begin_layout Standard
+El problema de la prebúsqueda es que pueden producirse búsquedas anticipadas
+ innecesarias y desperdiciar ancho de banda.
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+prefetching de instrucciones
+\series default
+ suele realizarse en HW externo a la caché.
+ Lo más típico es que el procesador busque dos bloques en cada fallo: el
+ solicitado, que va a caché, y el contiguo, que se lleva a un buffer de
+ instrucciones.
+ Si el bloque solicitado se encuentra en el buffer de instrucciones se cancela
+ la petición a la caché, el bloque es leído del buffer y se emite una petición
+ de prebúsqueda para el próximo bloque.
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+prefetching de datos 
+\series default
+requiere esquemas más sofisticados, como la 
+\series bold
+prebúsqueda con stride
+\series default
+, que en lugar de prebuscar el bloque 
+\begin_inset Formula $i+1$
+\end_inset
+
+, busca el 
+\begin_inset Formula $i+x$
+\end_inset
+
+, donde 
+\begin_inset Formula $x$
+\end_inset
+
+ es el stride.
+ También está la 
+\series bold
+prebúsqueda etiquetada, 
+\series default
+que consiste en asociar un bit de etiqueta a cada bloque, inicialmente a
+ 0.
+ Cuando una línea es traída por fallo de caché o referenciada el bit se
+ pone a 1.
+ Cuando una línea es traída por prebúsqueda el bit se pone a 0.
+ La prebúsqueda para la línea 
+\begin_inset Formula $i+x$
+\end_inset
+
+ se inicia cuando bit de la etiqueta de la línea 
+\begin_inset Formula $i$
+\end_inset
+
+ pasa de 0 a 1.
+\end_layout
+
+\begin_layout Subsubsection
+Búsqueda anticipada controlada por el compilador
+\end_layout
+
+\begin_layout Standard
+Una alternativa al prefetching HW es dejar que el compilador inserte instruccion
+es solicitando los datos antes de que sean necesarios.
+ Hay dos alternativas:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Register prefetch: 
+\series default
+carga el valor en un registro
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Caché prefetch: 
+\series default
+carga los datos en caché
+\end_layout
+
+\begin_layout Standard
+Cualquier de los dos podría ser 
+\series bold
+faulting 
+\series default
+o 
+\series bold
+nonfaulting
+\series default
+, es decir, la dirección puede o no causar una excepción por un fallo en
+ la dirección virtual y violaciones de protecciones.
+ Usando esta terminología podríamos decir que una instrucción de carga usual
+ es una faulting register prefetch instruction.
+ La mayoría de procesadores ofrecen 
+\series bold
+nonfaulting caché prefetches
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Al usar la búsqeuda anticipada por SW se incrementa el número de instrucciones,
+ con lo que se debe tener cuidado de que esta sobrecarga no exceda los beneficio
+s.
+ Para evitar prebúsquedas innecesarias, los compiladores deben concentrarse
+ en las referencias a memoria que tienen mayor probabilidad de fallar y
+ que provocarían mayores detenciones.
+\end_layout
+
+\begin_layout Standard
+La búsqueda anticipada por SW solo tiene sentido si el procesador puede
+ continuar mientras se realiza la búsqueda (procesador con ejecución fuera
+ de orden), ya que, al igual que con la búsqueda anticipada HW, el pobjetivo
+ es que se solape la ejecución con la búsqueda de datos.
+\end_layout
+
+\begin_layout Subsection
+Reducción de la Penalización por Fallo de Caché
+\end_layout
+
+\begin_layout Subsubsection
+Cachés multinivel
+\end_layout
+
+\begin_layout Standard
+La gran diferencia en prestaciones entre procesador y memoria hace que nos
+ interesen cachés más rápidas, para cumplir con la velocidad de la CPU y
+ cachés más grandes para evitar ir a memoria.
+\end_layout
+
+\begin_layout Standard
+La solución es añadir un segundo nivel de caché entre la caché original
+ y memoria.
+ La caché de 
+\series bold
+primer nivel 
+\series default
+puede ser lo suficientemente pequeña para ser casi tan rápida como el procesador.
+ La caché de 
+\series bold
+segundo nivel 
+\series default
+puede ser lo suficientemente grande para capturar la mayoría de los accesos
+ que irían a memoria principal, disminuyendo así la penalización por fallo.
+\end_layout
+
+\begin_layout Standard
+Ahora el 
+\series bold
+análisis de prestaciones
+\series default
+ cambia: sabemos calcular el tiempo de acceso medio a memoria, pero ahora
+ tendremos que distinguir entre los distintos niveles de caché:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+T_{am}=T_{SA_{L1}}+m_{L1}T_{PF_{L1}}\\
+T_{PF_{L1}}=T_{SA_{L2}}+m_{L2}T_{PF_{L2}}
+\end{cases}\implies T_{am}=T_{SA_{L1}}+m_{L1}(T_{SA_{L2}}+m_{L2}T_{PF_{L2}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se adoptan, así, los términos:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tasa de fallos local: 
+\series default
+el número de fallos en la caché dividido por el número total de accesos
+ a esa caché.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tasa de fallos global: 
+\series default
+número de fallos de caché dividido por el número total de accesos a memoria
+ generados por la CPU.
+\end_layout
+
+\begin_layout Standard
+La tasa de fallos local para la de segundo nivel es mayor ya que la caché
+ de primer nivel captura la mayoria de accesos a memoria.
+ La tasa de fallos global es más útil e indica qué fracción de los accesos
+ a memoria van a memoria principal.
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+Sobre el diseño de la L2
+\end_layout
+
+\begin_layout Standard
+La principal diferencia entre los dos niveles de caché es que la velocidad
+ de la L1 afecta al tiempo de ciclo de la CPU, mientras que la de la L2
+ afecta a la penalización por fallo de la L1.
+ Se nos presentan dos posibilidades:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Inclusión multinivel: 
+\series default
+L1 está contenida en L2.
+ La coherencia entre cachés puede determinarse mirando solamente en la L2.
+ Podemos usar bloques más pequeños para L1 y mayores para L2.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Exclusión multinivel: 
+\series default
+L2 no contiene a L1.
+ No se permite tener en L2 una copia de un dato que esté en L1.
+ Un fallo de L1 provoca un intercambio de bloques entre L1 y L2 en lugar
+ de reemplazarlo.
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+Reducción de la tasa de fallos de L2
+\end_layout
+
+\begin_layout Standard
+Un mayor grado de 
+\series bold
+asociatividad
+\series default
+ en L2 es muy interesante, pues incrementaría el tiempo de servicio en caso
+ de acierto de la L2, pero hemos visto que para L2 lo más importante es
+ reducir la tasa de fallos para evitar tener que ir a memoria.
+\end_layout
+
+\begin_layout Standard
+Aumentar el 
+\series bold
+tamaño 
+\series default
+de la caché de segundo nivel reduce los fallos por conflicto al distribuir
+ los datos entre más bloques y elimina muchos de los fallos de capacidad.
+\end_layout
+
+\begin_layout Standard
+Incrementar el 
+\series bold
+tamaño de bloque 
+\series default
+de L2 aumentaría los fallos por conflicto para las cachés de segundo nivel
+ pequeñas, pero como son bastante grandes es posible tener tamaños de bloque
+ de 64, 128 o 256 B.
+ A mayor tamaño de bloque, mayor penalización por fallo.
+\end_layout
+
+\begin_layout Subsubsection
+Buffer de Escritura
+\end_layout
+
+\begin_layout Standard
+Las escrituras dejan el dato en el buffer, en lugar de esperar a que se
+ escriba en memoria, de forma que las siguientes instrucciones puedan seguir
+ ejecutándose.
+ Su uso es imprescindible en cachés de 
+\series bold
+escritura directa
+\series default
+, pues, sin él, todas las escrituras provocarían largas detenciones.
+ Permite que la caché siga atendiendo otros accesos mientras realiza una
+ escritura en memoria o en el siguiente nivel de caché.
+\end_layout
+
+\begin_layout Standard
+También mejora el rendimiento en cachés con 
+\series bold
+post-escritura
+\series default
+, acelerando los reemplazos.
+ Supongamos un fallo de lectura que va a provocar el desalojo de un bloque
+ de caché marcado.
+ La lectura debería esperar a que se escribiera en memoria principal el
+ bloque desalojado.
+ Sin embargo, podríamos tener un buffer odnde copar el bloque modificado
+ mientras que se trae de memoria principal el bloque demandado por la lectura
+ para que el procesador pueda continuar.
+ Una vez terminada la lectura, se copia el bloque modificado desde le buffer
+ intermedio a memoria principal.
+ 
+\end_layout
+
+\begin_layout Standard
+En ambios casos debemos controlar las posibles lecturas sobre un bloque
+ que estuviera en ese buffer intermedio.
+\end_layout
+
+\begin_layout Standard
+Nótese que el buffer de escritura podría contener valores pendientes para
+ un bloque que se ha pedido.
+ La forma más sencilla de solucionar este problema es que la lectura se
+ espere hasta que se vacíe el buffer de escritura, pero esto incrementaría
+ el tiempo de penalización en caso de fallo para la lectura.
+ La alternativa es que cuando se produzca un fallo por una lectura, se compriueb
+e el buffer de escritura y, si no está ahí el dato buscado y el sistema
+ de memoria está disponible, se continue con la lectura en memoria principal.
+\end_layout
+
+\begin_layout Subsubsection
+Cachés no bloqueantes
+\end_layout
+
+\begin_layout Standard
+Hasta ahora un acceso a memoria que produce un fallo de caché detiene el
+ cauce hasta que se obitene la palabra que lo provoca.
+ Un procesador que permite terminación fuera de orden no necesita parar
+ cuando hay un fallo en la caché de datos.
+ Así, las 
+\series bold
+cachés no bloqueantes
+\series default
+ permiten que la caché de datos siga permitiendo accesos mientras resuelve
+ un fallo de caché de otra instrucción.
+ Puede permitir solo accesos que acierten (
+\series bold
+acierto bajo fallo
+\series default
+) o incluso solapar varios fallos (
+\series bold
+acierto bajo múltiples fallos
+\series default
+), lo que reduciría la penalización media por fallo.
+ Sin embargo, esto incrementa la complejidad del controlador de la caché,
+ pues puede haber varios accesos al mismo tiempo a memoria.
+ Solo es beneficiosa si la memoria puede servir varios fallos a la vez.
+\end_layout
+
+\begin_layout Subsection
+Reducción del Tiempo en Caso de Acierto en Caché
+\end_layout
+
+\begin_layout Subsubsection
+Acceso segmentado a Caché
+\end_layout
+
+\begin_layout Standard
+El tiempo de servicio en caso de acierto para L1 es un valor crítico, pues
+ afecta directamente a la frecuencia de la CPU.
+ Los procesadores modernos tienen segmentado el acceso a las cachés a lo
+ largo de varios ciclos para poder soportar una elevada frecuencia de reloj.
+ Esto aumenta el número de etapas del cauce, provocando mayor penalización
+ en caso de fallo de predicción de saltos y más ciclos entre la entrada
+ de una carga y el uso del datos.
+ Aumenta el ancho de banda de memoria, pero no disminuye la latencia de
+ un acierto de caché-
+\end_layout
+
+\begin_layout Subsubsection
+Cachés pequeñas y sencillas
+\end_layout
+
+\begin_layout Standard
+Una parte importante del tiempo que se tarda en un acierto e caché se gasta
+ en leer la etiqueta y compararla con la dirección.
+ En general, HW más pequeño significa más rápido, por lo uqe interesa que
+ L1 sea 
+\series bold
+pequeña
+\series default
+.
+ Asimismo, es crítico mantener al menos una L2 on-chip suficientemente grande
+ para evitar la penalización de tener que salir fuera del chip.
+\end_layout
+
+\begin_layout Standard
+A la vez, interesa que la caché sea lo más 
+\series bold
+sencilla 
+\series default
+posible, para tener un tiempo de aciero pequeño.
+ La necesidad de conseguir altas frecuencias sin incrementar mucho el número
+ de etapas del cauce hace que las L1 sean pequeñas y sencillas.
+\end_layout
+
+\begin_layout Standard
+Aunque la cantidad de caché que se integra dentro del chip del procesador
+ va incrementándose a lo largo del tiempo, la tendencia actual es tener
+ la misma cantidad de L1.
+\end_layout
+
+\begin_layout Standard
+También se está poniendo énfasis en aumentar la frecuencia de reloj y ocultar
+ los fallos de la L1 mediante 
+\series bold
+ejecución dinámica
+\series default
+, o sea, que mientras se resuelve el fallo se ejecutan otras isntrucciones
+ del programa, y el uso de L2 para evitar tener que ir a memoria.
+\end_layout
+
+\begin_layout Subsubsection
+Evitar la traducción de la dirección al indexar la caché
+\end_layout
+
+\begin_layout Standard
+Incluso una caché pequeña y sencilla debe hacer la traducción de la dirección
+ virtual que maneja la CPU a la dirección fñisica para acceder a memoria.
+ Una alternativa es usar la dirección virtual para la caché, con lo que
+ nos evitamos tener que hacer la traducción: 
+\series bold
+cachés virtuales 
+\series default
+frente a las cachés tradicionales que llamaremos 
+\series bold
+cachés físicas
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Es importante distinguir la comparación de las etiquetas y la indexación
+ de la caché.
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+Problemas de las cachés virtuales
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Comprobar la protección de memoria: 
+\series default
+al acceder a memoria se comprueban los permisos durante la traducción de
+ dirección virtual a física.
+ Esta información se guarda en la tabla de páginas.
+ La 
+\series bold
+solución 
+\series default
+es copiar la información sobre protección de la tabla de páginas en la caché
+ en caso de fallo y comprobarla en cada acceso a caché.
+ Cada vez que hay un fallo de caché se lleva a la misma el bloque de datos
+ y la información de protección.
+ Cada vez que hay un acierto se comprueban los permisos en la caché.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Cambios de contexto: 
+\series default
+en cada cambio de contexto, las mismas direcciones virtuales se refieren
+ a distintas direcciones físicas, por tanto la caché debe vaciarse.
+ Puede añadirse a la etiqueta un campo PID que asigna el SO, de forma que
+ solo necesita vaciar la caché cuando se reutilice un PID.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Sinónimos o alias: 
+\series default
+se suelen utilizar distintas direcciones virtuales para la misma dirección
+ física para compartir zonas de memoria.
+ Esto provoca tener varias copias del mismo dato en caché.
+ Si se modifica uno, el otro podría mantener su valor antiguo, provocando
+ incoherencias.
+\end_layout
+
+\begin_layout Subsubsection
+Cachés indexadas virtualmente y etiquetadas físicamente
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename cachevirtindexfisetiq.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En estas cachés el campo índice de la cachñe ha de caer dentro del campo
+ offset de página de la dirección virtual.
+ Esto permite simultanear el acceso a la caché con la traducción de la etiqueta
+ a su dirección física.
+ Finalmente, la comparación de etiquetas se hace con direcciones físicas.
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+problema 
+\series default
+es que el campo índice no puede exceder el campo offser.
+ Esto se traduce en una limitación del tamaño efectivo de las cachés.
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+solución 
+\series default
+es aumentar la asociatividad para mantener el tamaño del índice:
+\begin_inset Formula 
+\[
+2^{índice}=\frac{TamCache}{TamBloque\times Asociatividad}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así conseguimos que doblando la asociatividad tengamos una caché el doble
+ de grande y sin aumentar su campo índice.
+\end_layout
+
+\begin_layout Subsubsection
+Tiempos de acceso según el tipo de caché
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Cachés físicas
+\begin_inset Formula 
+\[
+T_{am}=\overset{TLB}{T_{am\_TLB}}+\overset{dato}{T_{am\_caché}}=T_{sa_{TLB}}+m_{TLB}PF+T_{sa_{L1}}+m_{L1}PF
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Cachés virtuales
+\begin_inset Formula 
+\[
+T_{am}=\overset{dato}{T_{sa_{L1}}}+m_{L1}[PF+(\overset{TLB(\text{solo si fallo})}{T_{sa_{TLB}}}+m_{TLB}PF)]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Cachés virtualmente indexadas y físicamente etiquetadas
+\begin_inset Formula 
+\[
+T_{am}=\overset{dato\ y\ TLB\ en\ paralelo}{\max\{T_{sa_{L1}},T_{sa_{TLB}})}+m_{L1}PF+m_{TLB}PF
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Organizaciones de la memoria principal
+\end_layout
+
+\begin_layout Standard
+La memoria principal satisface las peticiones de las cachés y sirve como
+ interfaz para las operaciones de E/S, ya que los datos se suelen transferir
+ desde y hacia memoria.
+ 
+\end_layout
+
+\begin_layout Standard
+Las métricas para medir el rendimiento de la memoria son 
+\series bold
+latencia 
+\series default
+(fundamental para cachés) y 
+\series bold
+ancho de banda 
+\series default
+(fundamental para el susbsistema de E/S).
+\end_layout
+
+\begin_layout Standard
+El empleo de cachés de segundo nivel en prácticamente todos los sistemas
+ y los tamaños de bloque bastante grandes que usan hace que el ancho de
+ banda entre memoria principal y caché sea importante.
+ Uno de los motivos por los que los diseñadores incrementan el tamaño de
+ bloque de la caché es para aprovechar el elevado ancho de banda de la memoria.
+\end_layout
+
+\begin_layout Standard
+Vamos a ver distintas organizaciones de memoria principal para incrementar
+ el ancho de banda.
+\end_layout
+
+\begin_layout Subsubsection
+Mayor anchura
+\end_layout
+
+\begin_layout Standard
+Podemos aumentar la anchura de la caché y la anchura del bus que conecta
+ caché y memoria con el fin de aumentar el ancho de banda entre ambas.
+\end_layout
+
+\begin_layout Subsubsection
+Memoria entrelazada
+\end_layout
+
+\begin_layout Standard
+Podemos organizar la memoria en 
+\series bold
+bancos.
+ 
+\series default
+Direcciones consecutivas se almacenan en bancos diferentes.
+ Podemos leer/escribir varias palabras simultáneamente siempre que se encuentren
+ en diferentes bancos.
+ Además, los bancos tienen anchura de una palabra, por lo que no es necesario
+ cambiar la anchura del bus ni de la caché.
+\end_layout
+
+\begin_layout Standard
+Esta técnica es menos costosa que la anterior y proporciona resultados parecidos.
+ 
+\end_layout
+
+\begin_layout Standard
+La memoria se entrelaza normalmente con un 
+\series bold
+factor de entrelazado
+\series default
+ de una palabra, con lo que se optimizan los accesos secuenciales.
+\end_layout
+
+\begin_layout Subsubsection
+Bancos de memoria independientes
+\end_layout
+
+\begin_layout Standard
+La memoria entrelazada utiliza bancos que trabajan con las mismas líneas
+ de dirección compartiendo el controlador de memoria.
+ Una generalización del entrelazado es permitir múltiples accesos independientes
+ gracias a tener múltiples controladores de memoria, de forma que cada banco
+ necesita líneas de dirección y datos separadas.
+ Se puede acceder al mismo tiempo a direcciones diferentes en cada banco.
+ Las cachés no bloqueantes solo tienen sentido si tenemos bancos independientes.
+\end_layout
+
+\end_body
+\end_document
