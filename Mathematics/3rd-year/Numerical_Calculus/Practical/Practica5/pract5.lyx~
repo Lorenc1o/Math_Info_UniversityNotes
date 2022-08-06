@@ -1,0 +1,1101 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Práctica 5: Integración
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Subsection
+Queremos obtener una tabla de valores para la función 
+\begin_inset Formula 
+\[
+\boldsymbol{\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}e^{-\frac{t^{2}}{2}}dt}
+\]
+
+\end_inset
+
+ (distribución normal de media cero y desviación típica uno) para los valores
+ de x comprendidos entre 0 y 4 con incrementos de 0.1 utilizando la regla
+ compuesta de Simpson
+\end_layout
+
+\begin_layout Subsubsection
+Calcula en primer lugar, mediante un programa Matlab, la integral 
+\begin_inset Formula 
+\[
+\boldsymbol{\frac{1}{2}+\frac{1}{\sqrt{2\pi}}\int_{0}^{1}e^{-\frac{t^{2}}{2}}dt}
+\]
+
+\end_inset
+
+ con un error menor que 
+\begin_inset Formula $\boldsymbol{10^{-6}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+El fichero simpson_fi.m queda adjunto terminado, tal como hicimos en clase.
+ Cambiando que la función sea tratada como una cadena de caracteres, a que
+ sea tratada como una función de Octave.
+ También tenemos el fichero original, simpson.m, terminado, aunque este no
+ lo voy a utilizar para resolver la práctica.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien, debemos estimar el error, que, como vimos en clase de teoría
+\begin_inset Formula 
+\[
+I-S_{N}=\frac{1}{N^{4}}\frac{(b-a)^{5}}{180}f^{5)}(\xi)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Sin embargo, también podemos pensar en el siguiente error:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+I-S_{2N}=\frac{1}{16N^{4}}\frac{(b-a)^{5}}{180}f^{5)}(\xi)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Suponiendo que ambos 
+\begin_inset Formula $\xi$
+\end_inset
+
+ son el mismo, podemos pensar que
+\begin_inset Formula 
+\[
+I-S_{2N}=E_{2N}\qquad I-S_{N}=16E_{2N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Restando ambas expresiones:
+\begin_inset Formula 
+\[
+S_{2N}-S_{N}=16E_{2N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado 
+\begin_inset Formula 
+\[
+\int_{M}^{\infty}e^{-\frac{x^{2}}{2}}dx<\int_{M}^{\infty}e^{-\frac{Mx}{2}}dx=\frac{2}{M}e^{-\frac{M^{2}}{2}},\qquad si\quad m>1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, vamos a hacer un programa que encuentre M para obtener un error menor
+ que 
+\begin_inset Formula $10^{-7}$
+\end_inset
+
+, para que, sumado al error de calculo de 
+\begin_inset Formula 
+\[
+\int_{0}^{M}e^{-\frac{x^{2}}{2}}dx
+\]
+
+\end_inset
+
+ el error total sea menor que 
+\begin_inset Formula $10^{-6}$
+\end_inset
+
+, tal como buscamos.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset listings
+lstparams "language=Octave,numbers=left,stepnumber=1"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+M=2;
+\end_layout
+
+\begin_layout Plain Layout
+
+while (2/M*f(M)>1e-7)
+\end_layout
+
+\begin_layout Plain Layout
+
+  M=2*M;
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Una vez conocemos M, vamos a calcular el número de puntos de interpolación
+ que necesitaremos para que el error cometido sea menor que 
+\begin_inset Formula $10^{-6}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset listings
+lstparams "language=Octave,numbers=left,stepnumber=1"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+n=2; %numero de particiones para simpson
+\end_layout
+
+\begin_layout Plain Layout
+
+S1=simpson_fi(f,0,M,n);
+\end_layout
+
+\begin_layout Plain Layout
+
+S2=simpson_fi(f,0,M,2*n);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+while (abs(S2-S1)>1e-6)
+\end_layout
+
+\begin_layout Plain Layout
+
+  n=2*n;
+\end_layout
+
+\begin_layout Plain Layout
+
+  S1=S2;
+\end_layout
+
+\begin_layout Plain Layout
+
+  S2=simpson_fi(f,0,M,2*n);
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Como vemos, lo que hacemos es ir doblando la cantidad de puntos usados,
+ hasta que encontramos la cantidad que nos da un error menor que el requerido.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por último, queda calcular la integral 
+\begin_inset Formula 
+\[
+\int_{0}^{M}e^{-\frac{x^{2}}{2}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset listings
+lstparams "language=Octave,numbers=left,stepnumber=1"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for (i=0:40)
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(j=0:9)
+\end_layout
+
+\begin_layout Plain Layout
+
+    T(i+1,j+1)=0.5+simpson_fi(f,0,i*0.1+j*0.01,n);
+\end_layout
+
+\begin_layout Plain Layout
+
+  end
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Y ya tenemos todos los datos necesarios para mostrar la tabla pedida en
+ el enunciado.
+\end_layout
+
+\begin_layout Standard
+También nos pide calcular 
+\begin_inset Formula 
+\[
+\frac{1}{2}+\frac{1}{\sqrt{2\pi}}\int_{0}^{1}e^{-\frac{x^{2}}{2}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para ello, basta ver el valor almacenado en 
+\begin_inset Formula 
+\[
+T(11,1)=\frac{1}{2}+simpson\_fi(e^{-\frac{x^{2}}{2}},1,n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Que es precisamente lo que queremos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Octave,numbers=left,stepnumber=1"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+printf('El valor de la integral buscada es %d
+\backslash
+n', T(11,1));
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Que muestra:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+El valor de la integral buscada es 0.841345
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Utiliza las ideas del apartado anterior para construir la tabla deseada.
+\end_layout
+
+\begin_layout Standard
+Ahora, la matriz T tiene todos los datos que necesitamos para contruir la
+ tabla.
+ Solo falta darle un formato 'amigable'.
+\end_layout
+
+\begin_layout Standard
+Para ello, he creado un código que genera un archivo HTML en el que la tabla
+ queda mucho más ordenada.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Octave,numbers=left,stepnumber=1"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+A="<html>
+\backslash
+n
+\backslash
+t<head>
+\backslash
+n
+\backslash
+t</head>
+\backslash
+n
+\backslash
+t<body>
+\backslash
+n
+\backslash
+t
+\backslash
+t
+\end_layout
+
+\begin_layout Plain Layout
+
+	<table style=
+\backslash
+"width:100%
+\backslash
+">
+\backslash
+n
+\backslash
+t
+\backslash
+t<tr style=
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+"background-color: #DEB887
+\backslash
+">
+\backslash
+n
+\backslash
+t
+\backslash
+t
+\backslash
+t<td></td>
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+for (j=0:9)
+\end_layout
+
+\begin_layout Plain Layout
+
+  A = [A "
+\backslash
+t
+\backslash
+t
+\backslash
+t<td>" num2str(j*0.01) "</td>
+\backslash
+n"];
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+for (i=0:40)
+\end_layout
+
+\begin_layout Plain Layout
+
+  A=[A "
+\backslash
+t
+\backslash
+t<tr>
+\backslash
+n
+\backslash
+t
+\backslash
+t
+\backslash
+t<td style=
+\backslash
+"background-color:
+\end_layout
+
+\begin_layout Plain Layout
+
+	#DEB887
+\backslash
+">" num2str(i*0.1) "</td>
+\backslash
+n"];
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(j=0:9)
+\end_layout
+
+\begin_layout Plain Layout
+
+    A=[A "
+\backslash
+t
+\backslash
+t
+\backslash
+t<td>" num2str(T(i+1,j+1)) "</td>
+\backslash
+n"];
+\end_layout
+
+\begin_layout Plain Layout
+
+  end
+\end_layout
+
+\begin_layout Plain Layout
+
+  A = [A "
+\backslash
+t
+\backslash
+t</tr>
+\backslash
+n"];
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\begin_layout Plain Layout
+
+A = [A "
+\backslash
+t
+\backslash
+t</tr>
+\backslash
+n"];
+\end_layout
+
+\begin_layout Plain Layout
+
+A = [A "
+\backslash
+t</body>
+\backslash
+n</html>"];
+\end_layout
+
+\begin_layout Plain Layout
+
+save tabla_normal.html A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede apreciar, recorro T y voy generando la tabla HTML como una
+ cadena de texto.
+ Al final vuelco esta cadena en el archivo 'tabla_normal.html', adjunto a
+ esta memoria.
+ Clickando en él podemos ver la tabla generada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Escribe programas en Matlab para las fórmulas de cuadratura de Gauss-Legendre,
+ Gauss-Chebychev de tres y cuatro puntos (n=2, n=3) y utilizalos para aproximar
+ las integrales
+\begin_inset Formula 
+\[
+\boldsymbol{\int_{-1}^{1}\frac{sinx}{x}dx\qquad\int_{-1}^{1}\frac{e^{x}}{\sqrt{1-x^{2}}}dx,\quad\int_{0}^{2}\frac{1}{1+x^{2}}dx,\quad\int_{0}^{\frac{\pi}{4}}x^{2}sinxdx,\quad\int_{1}^{1.5}x^{2}logxdx}
+\]
+
+\end_inset
+
+ Compara los resultados obtenidos con los que saldrían si aplicas el método
+ de los trapecios o el de Simpson.
+ Utiliza los comandos de Matlab/Octave quad, quadl y trapz y compara los
+ resultados.
+ Mira en la ayuda de Matlab/Octave la información sobre estos comandos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para poder usar estos métodos lo primero que debemos hacer es llevar el
+ intervalo 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ en el que queremos calcular la integral al intervalo 
+\begin_inset Formula $[-1,1]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para ello usamos el cambio de variable 
+\begin_inset Formula 
+\[
+g(t)=a+\frac{b-a}{2}(1+t)
+\]
+
+\end_inset
+
+ Una vez tenemos el cambio de variable, basta saber los nodos de interpolación
+ y los pesos, y calcular
+\begin_inset Formula 
+\[
+\sum\frac{1}{W(x_{i})}w_{i}f(g(x_{i}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Siendo 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+ los pesos y 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ los correspondientes nodos.
+ 
+\begin_inset Formula $W(x_{i})$
+\end_inset
+
+ es la función peso.
+ En Gauss-Legendre es 
+\begin_inset Formula $W(x)=1,\forall x$
+\end_inset
+
+ y en Gauss-Chebyshev es 
+\begin_inset Formula $W(x)=\frac{1}{\sqrt{1-x^{2}}}$
+\end_inset
+
+.
+ Dividimos por la función peso puesto que
+\begin_inset Formula 
+\[
+\int_{-1}^{1}fdx=\int_{-1}^{1}\frac{W}{W}fdx\approx\sum\frac{1}{W(x_{i})}w_{i}f(x_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Estos métodos y notas quedan definidos en gauss_legendre.m y gauss_chebyshev.m.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Quad: 
+\series default
+quad(f,a,b) evalúa numéricamente la integral de f entre a y b usando rutinas
+ Fortran del paquete QUADPACK, basadas en cuadratura de Gauss.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+QuadL: 
+\series default
+quadl(f, a, b) evalúa numéricamente la integral de f entre a y b usando
+ una adaptación de la regla de Lobatto.
+ [Ver Anexo 1 (
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "Anexo 1"
+
+\end_inset
+
+)]
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+TrapZ: 
+\series default
+trapz(x,y) evalúa numéricamente la integral de los puntos 
+\begin_inset Formula $(x_{i},y_{i})$
+\end_inset
+
+ usando el método del trapecio.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para realizar este ejercicio, he programado el módulo comparar.m, que recibe
+ una función y el inicio y final de un intervalo.
+ Calcula la integral aproximada con Gauss-Legendre, con Gauss-Chebyshev
+ para n=2 y n=3 y las compara con trapecios, simpson, quad, quadl y trapz.
+\end_layout
+
+\begin_layout Standard
+\align left
+Vamos a ver la salida obtenida para cada función.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a) 
+\series default
+
+\begin_inset Formula $\frac{senx}{x}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pasted1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como podemos observar, con Gauss-Legendre obtenemos menores errores que
+ con Gauss-Chebyshev, además, los errores son mejores con n=3.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) 
+\begin_inset Formula $\frac{e^{x}}{\sqrt{1-x^{2}}}:$
+\end_inset
+
+ 
+\series default
+en esta función apreciamos un claro problema en los extremos del intervalo.
+ Si alguno de los métodos de aproximación de integral usa estos puntos para
+ evaluar la función, obtendremos una división por 0.
+ Trabajando al respecto parece ser que trapz, quad y quadl hacen uso de
+ estos puntos para la aproximación.
+ Sabemos también, de antemano, que nuestros métodos de los trapecios y de
+ Simpson los usan también.
+ Por tanto, no obtendremos buenas aproximaciones con estas funciones.
+ Esto, efectivamente lo comprobamos en la salida del programa:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename f2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vemos que dan infinito todos los errores relativos, dado que las integrales
+ calculadas con los métodos ya mencionados dan Inf.
+ Voy a intentar arreglar un poco esto tomando el intervalo 
+\begin_inset Formula $[a+0.00001,b-0.00001]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename f2_2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Esto está bastante mejor.
+ Podemos observar como las integrales calculadas por Gauss-Legendre y por
+ Gauss-Chebyshev apenas varían, pero ahora podemos compararlas con las obtenidas
+ por los otros métodos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Vemos que las diferencias son bastante significativas, lo que se debe al
+ carácter de la función.
+\end_layout
+
+\begin_layout Standard
+\align left
+Poco podemos afirmar, pero lo que está claro es que difícilmente habremos
+ obtenido una buena aproximación.
+ Un indicador de esto es que los propios valores arrojados por nuestros
+ dos métodos distan bastante.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c) 
+\series default
+
+\begin_inset Formula $\frac{1}{1+x^{2}}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename f3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En esta ocasión, al igual que en la primera, vemos que Gauss-Legendre parece
+ aproximar la integral mejor que Gauss-Chebyshev.
+ Sin embargo, ahora producimos un mejor resultado con n=2 que con n=3.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d) 
+\begin_inset Formula $x^{2}senx$
+\end_inset
+
+
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename f4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De nuevo, Gauss-Legendre aproxima mejor que Gauss-Chebyshev.
+\end_layout
+
+\begin_layout Standard
+En esta ocasión sí apreciamos una mejora muy significativa en la aproximación
+ con el aumento de n.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+e)
+\begin_inset Formula $x^{2}logx$
+\end_inset
+
+
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename f5.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como era de esperar, Gauss-Legendre aproxima mucho mejor que Gauss-Chebyshev.
+ También observamos una mejoría con n=3.
+\end_layout
+
+\begin_layout Standard
+\align left
+Así, comprobamos como diferentes métodos de integración numérica producen
+ distintos resultados y tienen distintas debilidades.
+ Por ejemplo, en 
+\series bold
+b)
+\series default
+, cuando hemos reducido un poco el intervalo para poder usar algunos métodos,
+ es evidente que estamos perdiendo información sobre la integral.
+ A cambio, ganamos en variedad de métodos utilizables.
+ A la hora de hacer decisiones de este tipo, debemos tener en cuenta cuánta
+ información perdemos, y a cambio de qué lo estamos haciendo.
+ Este cambio puede que merezca la pena si nos permite usar métodos mucho
+ más precisos de integración numérica o si el valor de la integral apenas
+ varía eliminando esa porción del intervalo.
+\end_layout
+
+\begin_layout Standard
+\align left
+También es importante fijarnos a qué función nos enfrentamos y qué método
+ funcionará mejor para integrarla.
+ Para ello disponemos de las estimaciones de las diferencias por medio de
+ las derivadas sucesivas.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "Anexo 1"
+
+\end_inset
+
+Anexo 1: Fórmulas de Lobatto
+\end_layout
+
+\begin_layout Standard
+Para cada 
+\begin_inset Formula $N\geq3$
+\end_inset
+
+, es la que se obtiene al integrar el polinomio interpolador de grado 
+\begin_inset Formula $N$
+\end_inset
+
+ basado en los nodos 
+\begin_inset Formula $x_{0}=a<x_{1}<...<x_{N}=b$
+\end_inset
+
+, donde los nodos 
+\begin_inset Formula $x_{1},...,x_{N}$
+\end_inset
+
+ se eligen para que el polinomio 
+\begin_inset Formula 
+\[
+W(x)=(x-a)(x-x_{1})...(x-x_{N-1})(x-b)
+\]
+
+\end_inset
+
+ verifique que
+\begin_inset Formula 
+\[
+\int_{a}^{b}W(x)(x-\frac{a+b}{2})^{k}dx=0,\quad k=0,1,...,N-2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
