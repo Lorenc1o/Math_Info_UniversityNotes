@@ -1,0 +1,19 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+$ORIGIN sstt6915.org.
+@	IN	SOA	sstt6915.org. root.sstt6915.org. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	dns.sstt6915.org.
+dns	IN	A	192.168.56.104
+web	IN	A	192.168.56.104
+www	IN	A	192.168.56.104
+smtp	IN	A	192.168.56.104
+pop	IN	A	192.168.56.104
+@	IN	MX	10	smtp
