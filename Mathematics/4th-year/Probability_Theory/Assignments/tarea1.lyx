@@ -1,0 +1,336 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 1
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+Demostrar la unicidad de la descomposición obtenida en el Teorema 2 del
+ apartado VII 9 del texto.
+\end_layout
+
+\begin_layout Standard
+\align left
+Demostrada la existencia de la descomposición, dada por
+\begin_inset Formula 
+\[
+P_{c}\left(B\right)=\beta P_{S}\left(B\right)+\left(1-\beta\right)P_{ac}\left(B\right)
+\]
+
+\end_inset
+
+donde 
+\begin_inset Formula $P_{S}$
+\end_inset
+
+ es singular 
+\begin_inset Formula $\left(\exists C\in\mathcal{B}_{k}/\lambda_{k}\left(C\right)=0,\ P_{S}\left(C\right)=1\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $P_{ac}$
+\end_inset
+
+ absolutamente continua, veamos que esta es única.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que tuviéramos otra descomposición
+\begin_inset Formula 
+\[
+P_{c}\left(B\right)=\beta'Q_{S}\left(B\right)+\left(1-\beta'\right)Q_{ac}\left(B\right)
+\]
+
+\end_inset
+
+ con un 
+\begin_inset Formula $C'\in\mathcal{B}_{k}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $Q_{S}\left(C'\right)=1,\ \lambda_{k}\left(C'\right)=0$
+\end_inset
+
+ (
+\begin_inset Formula $Q_{S}$
+\end_inset
+
+ singular) y 
+\begin_inset Formula $Q_{ac}$
+\end_inset
+
+ absolutamente continua.
+\end_layout
+
+\begin_layout Standard
+\align left
+Anteriormente, en la demostración, se ve que
+\begin_inset Formula 
+\[
+P_{c}\left(C\right)=\beta
+\]
+
+\end_inset
+
+ y, tenemos que
+\begin_inset Formula 
+\[
+P_{c}\left(C'\right)=\beta P_{S}\left(C'\right)+\left(1-\beta\right)P_{ac}\left(C'\right)\overset{*}{=}\beta P_{S}\left(C'\right)\overset{**}{\leq}\beta
+\]
+
+\end_inset
+
+ Donde 
+\begin_inset Formula $*$
+\end_inset
+
+ se debe a que 
+\begin_inset Formula $C'$
+\end_inset
+
+ es de medida lebesgue 0, por lo que la probabilidad en una distribución
+ absolutamente continua como lo es 
+\begin_inset Formula $P_{ac}$
+\end_inset
+
+ es 0.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $**$
+\end_inset
+
+ es obvio, pues 
+\begin_inset Formula $P_{S}\left(C'\right)\leq1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, tenemos que 
+\begin_inset Formula 
+\[
+P_{c}\left(C'\right)=\beta',\qquad P_{c}\left(C\right)=\beta'Q_{S}\left(C\right)\leq\beta'
+\]
+
+\end_inset
+
+ usando los mismos argumentos, pero sobre la segunda descomposición.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por lo tanto, tenemos que 
+\begin_inset Formula 
+\[
+\beta'=P_{c}\left(C'\right)\leq\beta
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\beta=P_{c}\left(C\right)\leq\beta'
+\]
+
+\end_inset
+
+ O sea, que 
+\begin_inset Formula 
+\[
+\beta=\beta'\ y\ P_{c}\left(C'\right)=P_{c}\left(C\right)=\beta
+\]
+
+\end_inset
+
+ Entonces, tenemos que 
+\begin_inset Formula 
+\[
+\begin{cases}
+P_{c}\left(C'\right)=\beta P_{S}\left(C'\right)=\beta\\
+P_{c}\left(C\right)=\beta Q_{S}\left(C\right)=\beta
+\end{cases}\implies P_{S}\left(C'\right)=Q_{S}\left(C\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, 
+\begin_inset Formula 
+\[
+Q_{S}\left(C^{c}\right)=1-Q_{S}\left(C\right)=1-1=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora bien, tenemos que
+\begin_inset Formula 
+\[
+P_{c}\left(B\cap C\right)\overset{***}{=}\beta Q_{S}\left(B\cap C\right)+\beta Q_{S}\left(B\cap C^{c}\right)=\beta Q_{S}\left(B\right)
+\]
+
+\end_inset
+
+ donde 
+\begin_inset Formula $***$
+\end_inset
+
+ es una forma inteligente de escribir esta probabilidad.
+ Usamos que 
+\begin_inset Formula $Q_{S}\left(B\cap C^{c}\right)\leq Q_{S}\left(C^{c}\right)=0$
+\end_inset
+
+, para escribir esa probabilidad como la suma de las probabilidades del
+ suceso intersecado con dos sucesos complementarios.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por lo tanto, se tiene que
+\begin_inset Formula 
+\[
+Q_{S}\left(B\right)=\frac{1}{\beta}P_{c}\left(B\cap C\right)\overset{*4}{=}P_{S}\left(B\right)
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula $*4$
+\end_inset
+
+ se obtiene anteriormente, en la demostración de la existencia.
+ En la ecuación (6).
+\end_layout
+
+\begin_layout Standard
+\align left
+Recapitulando todo lo anterior, tenemos que 
+\begin_inset Formula 
+\[
+\beta P_{S}\left(B\right)+\left(1-\beta\right)P_{ac}\left(B\right)=P_{c}\left(B\right)=\beta'Q_{S}\left(B\right)+\left(1-\beta'\right)Q_{ac}\left(B\right)=\beta P_{S}\left(B\right)+\left(1-\beta\right)Q_{ac}\left(B\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+De donde se deduce que 
+\begin_inset Formula 
+\[
+Q_{ac}\left(B\right)=P_{ac}\left(B\right)
+\]
+
+\end_inset
+
+ y tenemos que la descomposición debe ser la misma que teníamos desde un
+ primer momento.
+\end_layout
+
+\end_body
+\end_document

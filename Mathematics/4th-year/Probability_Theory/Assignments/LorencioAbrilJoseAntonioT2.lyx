@@ -1,0 +1,205 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 2
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[\implies\right]$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+F\left(x_{1},...,x_{m}\right)\overset{*}{=}P\left(X_{1}\leq x_{1},...,X_{m}\leq x_{m}\right)=P\left(\bigcap_{i=1}^{m}X_{i}\leq x_{i}\right)\overset{**}{=}\prod_{i=1}^{m}P\left(X_{i}\leq x_{i}\right)=F\left(x_{1}\right)\cdot...\cdot F\left(X_{m}\right)
+\]
+
+\end_inset
+
+ donde 
+\begin_inset Formula $*$
+\end_inset
+
+ es la definición de función de distribución y 
+\begin_inset Formula $**$
+\end_inset
+
+ se debe a que los sucesos 
+\begin_inset Formula $\left\{ X_{i}\leq x_{i}\right\} _{i=1,...,m}$
+\end_inset
+
+ son independientes porque las variables aleatorias 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,...,m$
+\end_inset
+
+ son independientes por hipótesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[\impliedby\right]$
+\end_inset
+
+ Ahora tenemos que 
+\begin_inset Formula 
+\[
+F\left(x_{1},...,x_{m}\right)=F\left(x_{1}\right)\cdot...\cdot F\left(x_{m}\right),\ \forall\left(x_{1},...,x_{m}\right)\in\mathbb{R}^{m}
+\]
+
+\end_inset
+
+ esto, por la definición de función de distribución, quiere decir que 
+\begin_inset Formula 
+\[
+P\left(X_{1}\leq x_{1},...,X_{m}\leq x_{m}\right)=P\left(X_{1}\leq x_{1}\right)\cdot...\cdot P\left(X_{m}\leq x_{m}\right)
+\]
+
+\end_inset
+
+ Ahora, sea 
+\begin_inset Formula $I=\left\{ i_{1},...,i_{k}\right\} \subset\left\{ 1,...,m\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $J=\left\{ 1,...,m\right\} \setminus I=\left\{ j_{1},...,j_{l}\right\} $
+\end_inset
+
+.
+ Entonces, haciendo tender 
+\begin_inset Formula $x_{j}\rightarrow\infty,\ \forall j\in J$
+\end_inset
+
+, se tiene que
+\begin_inset Formula 
+\[
+P\left(\bigcap_{i\in I}X_{i}\leq x_{i}\right)=F\left(x_{i_{1}},...,x_{i_{k}}\right)=\lim_{x_{j}\rightarrow\infty,\ j\in J}F\left(x_{1},...,x_{m}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{x_{j}\rightarrow\infty,\ j\in J}F\left(x_{1}\right)\cdot...\cdot F\left(x_{m}\right)=\prod_{i\in I}F\left(x_{i}\right)\prod_{j\in J}\lim_{x_{j}\rightarrow\infty}F\left(x_{j}\right)\overset{***}{=}\prod_{i\in I}F\left(x_{i}\right)=\prod_{i\in I}P\left(X_{i}\leq x_{i}\right)
+\]
+
+\end_inset
+
+ donde 
+\begin_inset Formula $***$
+\end_inset
+
+ se debe a que 
+\begin_inset Formula $F\left(\infty\right)=1$
+\end_inset
+
+.
+ Por tanto, para cualquier subfamilia de 
+\begin_inset Formula $\left\{ X_{r}\leq x_{r}\right\} _{r=1,...,m}$
+\end_inset
+
+ se tiene que la probabilidad de su intersección es el producto de las probabili
+dades individuales, luego 
+\begin_inset Formula $\left\{ X_{r}\leq x_{r}\right\} _{r=1,...,m}$
+\end_inset
+
+ son independientes, y esto sucede para todo 
+\begin_inset Formula $\left(x_{1},...,x_{m}\right)\in\mathbb{R}^{m}$
+\end_inset
+
+, por lo que las variables aleatorias son independientes.
+\end_layout
+
+\end_body
+\end_document
