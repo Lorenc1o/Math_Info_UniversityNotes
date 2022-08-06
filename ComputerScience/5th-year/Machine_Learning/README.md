@@ -9,6 +9,8 @@ En esta asignatura había un proyecto de ML sobre un dataset con datos sobre con
 
 2) La entrega final constaba del análisis de diferentes modelos y algoritmos de ML, tratando de obtener el mejor sistema de predicción posible. Puede consultarse en la carpeta *Final_Project*
 
+Este proyecto lo realicé junto con mi compañero de prácticas, Francisco Aguilar Martínez.
+
 Los contenidos tratados en la asignatura fueron:
 
 Visualización de datos, introducción de datos, inferencia, modelos lineales, modelos de perceptrón multicapa, modelos bayesianos, árboles de decisión, bosques aleatorios, desarrollo de un clasificador de aprendizaje automático con R, RStudio, RMarkdown
@@ -22,6 +24,8 @@ In this subject there was an ML project on a dataset with data about TCP connect
 1) The first deliverable consisted of performing the *Feature Engineering* process on the dataset. It can be seen in the *Intermediate_Project* folder.
 
 2) The final delivery consisted of the analysis of different ML models and algorithms, trying to obtain the best possible prediction system. It can be consulted in the folder *Final_Project*.
+
+I did this project with my colleague, Francisco Aguilar Martínez.
 
 The contents covered in the course were:
 
