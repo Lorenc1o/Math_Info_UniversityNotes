@@ -1,0 +1,2054 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,twoside,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=1cm,bmargin=1cm,lmargin=1cm,rmargin=1cm,headheight=1cm,headsep=1cm,footskip=1cm}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{textcomp}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{stmaryrd}
+\usepackage{esint}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+
+\makeatletter
+\@ifundefined{date}{}{\date{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\newcommand*{\DO}{\Omega}
+\newcommand*{\CDO}{{\bar\DO}}
+\newcommand*{\BDO}{{\partial\DO}}
+\newcommand*{\brxo}{{B_R(x_0)}}
+\newcommand*{\bbrxo}{{\partial B_R(x_0)}}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\textbf{CAPÍTULO 1: LA ECUACIÓN DE LA CUERDA VIBRANTE}
+
+\textbf{Ecuación de la cuerda vibrante: $\left(1\right)$$\begin{cases}
+u_{tt}=c^{2}u_{xx} & t>0,x\in\left(0,L\right)\\
+u\left(t,0\right)=u\left(t,L\right)=0 & t\geq0\\
+u\left(0,x\right)=f\left(x\right),\ u_{t}\left(0,x\right)=g\left(x\right) & x\in\left(0,L\right)
+\end{cases}$}
+
+Variantes: \textbf{con rozamiento: $u_{tt}=c^{2}uxx-\mu u_{t}$ con
+fuerza externa: $u_{tt}=c^{2}u_{xx}+F\left(t,x\right)$ densidad no
+cte: $u_{tt}=\frac{\tau}{\delta\left(x\right)}u_{xx}$}
+
+\textbf{Lema de D'alembert: - }Si $F,G\in C^{2}\left(\mathbb{R}\right)$
+entonces $u\left(t,x\right)=F\left(x-ct\right)+G\left(x+ct\right)$
+verifica $u_{tt}=c^{2}u_{xx}$.
+
+\textbf{- }Si $u\in C^{2}\left(\mathbb{R}^{2}\right)$ entonces $u_{tt}=c^{2}u_{xx}\implies\exists F,G\in C^{2}\left(\mathbb{R}\right)$
+tales que $u\left(t,x\right)=F\left(x-ct\right)+G\left(x+ct\right)$.
+
+\begin{tcolorbox}
+\textbf{Teorema 1: solución de la cuerda vibrante en $\boldsymbol{\mathbb{R}}$:
+}sean $f,g\in C^{2}\left(\mathbb{R}\right)$, entonces $\exists!u\in C^{2}\left(\mathbb{R}\times\mathbb{R}\right)$
+verificando $\left(1\right)$ (sin las condiciones de contorno) y
+es $u\left(t,x\right)=\frac{f\left(x-ct\right)+f\left(x+ct\right)}{2}+\frac{1}{2a}\int_{x-ct}^{x+ct}g\left(s\right)ds$.
+\end{tcolorbox}
+
+Hacemos el cv $y=x-ct,z=x+ct\implies t=\frac{z-y}{2c},x=\frac{z+y}{2}$.
+Definimos $v\left(y,z\right)=u\left(t,x\right)$. Entonces $u_{t}=v_{y}y_{t}+v_{z}z_{t}=v_{y}\left(-c\right)+cv_{z}$
+, $u_{tt}=v_{yy}\left(-c\right)^{2}+v_{yz}\left(-c\right)c+v_{zy}c\left(-c\right)+v_{zz}c^{2}$,
+$u_{x}=v_{y}y_{x}+v_{z}z_{x}=v_{y}+y_{z}$ y $u_{xx}=v_{yy}+2v_{yz}+v_{zz}$.
+Entonces
+
+$0=u_{tt}-c^{2}u_{xx}=c^{2}\left[v_{yy}-2v_{yz}+v_{zz}-v_{yy}-2v_{yz}-v_{zz}\right]=-4c^{2}v_{yz}\implies v_{yz}=0$.
+
+Integrando 2 veces $\overset{\int dy}{\rightarrow}0=\int_{0}^{y}v_{yz}\left(s,z\right)ds=v_{z}\left(y,z\right)-v_{z}\left(0,z\right)$$\overset{\int dz}{\rightarrow}0=\int_{0}^{z}\left(v_{z}\left(y,w\right)-v_{z}\left(0,w\right)\right)dw=v\left(y,z\right)-v\left(y,0\right)-v\left(0,z\right)+v\left(0,0\right)$.
+Por tanto, $v\left(y,z\right)=v\left(y,0\right)+v\left(0,z\right)-v\left(0,0\right)$.
+Tomando $F\left(y\right)=v\left(y,0\right)$ y $G\left(z\right)=v\left(0,z\right)-v\left(0,0\right)$
+tenemos que $F,G\in C^{2}\left(\mathbb{R}\right)$ y deshaciendo el
+cv sale $u\left(t,x\right)=F\left(x-ct\right)+G\left(x+ct\right)$.
+
+Así hemos hallado la solución general de la EDP. Ahora imponemos las
+condiciones iniciales $u\left(0,x\right)=f\left(x\right)$ y $u_{t}\left(0,x\right)=g\left(x\right)$.
+
+$u\left(0,x\right)=F\left(x\right)+G\left(x\right)=f\left(x\right)$
+
+$u_{t}\left(0,x\right)=\left[F'\left(x-ct\right)\left(-c\right)+G'\left(x+ct\right)c\right]_{t=0}=-cF'\left(x\right)+cG'\left(x\right)=g\left(x\right)$
+
+Haciendo $c\left(1\right)'+\left(2\right)$ tenemos $cf'\left(x\right)+g\left(x\right)=2cG'\left(x\right)\implies G\left(x\right)=\frac{1}{2}\int_{0}^{x}\left(cf'\left(s\right)+g\left(s\right)\right)ds\implies G\left(x\right)=\frac{1}{2}\left(f\left(x\right)-f\left(0\right)\right)+\frac{1}{2c}\int_{0}^{x}g\left(s\right)ds$.
+
+Y $F\left(x\right)=f\left(x\right)-G\left(x\right)=\frac{f\left(x\right)+f\left(0\right)}{2}-\frac{1}{2}\int_{0}^{x}g\left(s\right)ds$
+
+Por tanto $u\left(t,x\right)=F\left(x-ct\right)+G\left(x+ct\right)=\frac{f\left(x-ct\right)+f\left(x+ct\right)}{2}+\frac{1}{2c}\int_{x-ct}^{x+ct}g\left(s\right)ds$.
+
+\begin{tcolorbox}
+\textbf{Teorema 2: solución cuerda vibrante en $\boldsymbol{\left[0,L\right]}$
+con extremos fijos: }sean $f\in C^{2}\left(\left[0,L\right]\right),g\in C^{1}\left(\left[0,L\right]\right)$
+con $f\left(0\right)=f\left(L\right)=0,\ g\left(0\right)=g\left(L\right)=0,\ f''\left(0\right)=f''\left(L\right)=0$.
+Entonces $\exists!u\in C^{2}\left(\mathbb{R}\times\left[0,L\right]\right)$
+verificando $\left(1\right)$ y es $u\left(t,x\right)=\frac{\tilde{f}\left(x-ct\right)+\tilde{f}\left(x+ct\right)}{2}+\frac{1}{2c}\int_{x-ct}^{x+ct}\tilde{g}\left(s\right)ds$,
+donde $\tilde{f},\tilde{g}$ son las extensiones impares de $f$ y
+$g$.
+\end{tcolorbox}
+
+\textbf{Lemas de continuidad de $\boldsymbol{\tilde{f},\tilde{g}}$:}
+si $f\in C^{2}\left(\left[0,L\right]\right)$, entonces \textbf{a)
+$\tilde{f}\in C\left(\mathbb{R}\right)\iff f\left(0^{+}\right)=f\left(L^{-}\right)=0$},
+y en ese caso, \textbf{b) $\tilde{f}\in C^{1}\left(\mathbb{R}\right)$
+}y \textbf{c) }$\tilde{f}\in C^{2}\left(\mathbb{R}\right)\iff f''\left(0^{+}\right)=f''\left(L^{-}\right)=0$.
+Si $g\in C\left(\left[0,L\right]\right)|g\left(0\right)=g\left(L\right)\implies\int_{0}^{x}\tilde{g}\left(s\right)ds\in C^{2}\left(\mathbb{R}\right)$.
+
+Existencia: basta ver que $u\left(t,x\right)$ del enunciado cumple
+la EDP. Por los lemas de continuidad, $u\left(t,x\right)\in C^{2}\left(\mathbb{R}\times\mathbb{R}\right)$
+y por el lema de D'alembert, al ser $u\left(t,x\right)$ suma de ondas
+viajeras cumple $u_{tt}=c^{2}u_{xx}$. Se tiene $u\left(t,0\right)=u\left(t,L\right)=0$.
+Por último $u\left(0,x\right)=\tilde{f}\left(x\right)=f\left(x\right),x\in\left[0,L\right]$
+y $u_{t}\left(0,x\right)=\tilde{g}\left(x\right)=g\left(x\right),x\in\left[0,L\right]$.
+
+Unicidad: supongamos que $v\left(t,x\right)$ es solución de la EDP.
+¿Es de la forma $u\left(t,x\right)$ del enunciado? Sea $\tilde{v}\left(t,x\right)$
+la extensión impar, $2L$-periódica de $v$ en la coordenada $x$.
+Entonces, $v\in C^{2}\left(\mathbb{R}\times\left[0,L\right]\right)$
+y verifica la EDP, por lo que se puede comprobar que $\tilde{v}\in C^{2}\left(\mathbb{R}\times\mathbb{R}\right)$
+y verifica la EDP en $\mathbb{R}$. Como $\tilde{v}\left(0,x\right)=\tilde{f}$
+y $\tilde{v_{t}}\left(0,x\right)=\tilde{g}$, por el teorema 1 es
+$\tilde{v}=u$.
+
+\begin{tcolorbox}
+\textbf{Propiedades de las soluciones: 1)} la EDP es \uline{reversible
+en el tiempo}, si conozco $u\left(0,x\right)=f\left(x\right),\ u_{t}\left(0,x\right)=g\left(x\right)$,
+puedo determinar $u\left(t,x\right),\forall t$. \textbf{2) }la \uline{velocidad
+de propagación es finita}, si $sop\left(u\left(t_{0},\cdot\right)\right)\subset\left[a,b\right]\implies sop\left(u\left(t_{0}+T\right),\cdot\right)\subset\left[a-cT,b+cT\right]$.
+\textbf{3)} $\square=\partial_{tt}-c^{2}\partial_{xx}$ \uline{no
+es un operador regularizante}, o sea, $\square u=0\nRightarrow u\in C^{\infty}$.
+\textbf{4)} \uline{Conservación de la energía:} se suele definir
+la energía como $E\left(t\right)=\int\left(\left|u_{t}\right|^{2}+\left|\triangledown_{x}u\right|^{2}\right)dx$.
+Si $u\in C^{2}\left(\mathbb{R}\times\left[0,L\right]\right)$ es solución
+de $\left(1\right)$ entonces $E\left(t\right)=cte,\ \forall t>0$.
+\end{tcolorbox}
+
+Demostración de conservación de la energía: sea $t>0$, entonces 
+
+$E'\left(t\right)=\frac{\rho}{2}\int_{0}^{L}\left(2u_{t}u_{tt}+c^{2}2u_{x}u_{xt}\right)dx=\rho\int_{0}^{L}\left(u_{t}c^{2}u_{xx}+c^{2}u_{x}u_{xt}\right)dx=\rho c^{2}\int_{0}^{L}\left(u_{t}u_{x}\right)_{x}dx=\rho c^{2}\left[u_{t}u_{x}\right]_{x=0}^{x=L}=$
+
+$=\rho c^{2}\left[u_{t}\left(t,L\right)u_{x}\left(t,L\right)-u_{t}\left(t,0\right)u_{x}\left(t,0\right)\right]=\left[\begin{array}{c}
+u\left(t,0\right)\equiv0\implies u_{t}\left(t,0\right)=0\\
+u\left(t,L\right)\equiv0\implies u_{t}\left(t,L\right)=0
+\end{array}\right]=0\implies E\left(t\right)=cte$
+
+\begin{tcolorbox}
+\textbf{Corolario de la conservación de la energía: UNICIDAD: }sean
+$u_{1},u_{2}\in C^{2}\left(\mathbb{R}\times\left[0,L\right]\right)$
+soluciones de $\left(2\right)\begin{cases}
+u_{tt}=c^{2}u_{xx}-\mu u_{t}+F\left(t,x\right) & t>0,x\in\left[0,L\right]\\
+u\left(0,x\right)=f\left(x\right),\ u_{t}\left(0,x\right)=g\left(x\right) & x\in\left[0,L\right]\\
+u\left(t,0\right)=u\left(t,L\right)=0 & t>0
+\end{cases}$, entonces $u_{1}=u_{2}$.
+\end{tcolorbox}
+
+Sea $v\left(t,x\right)=u_{1}\left(t,x\right)-u_{2}\left(t,x\right)\in C^{2}\left(\mathbb{R}\times\left[0,L\right]\right)$
+entonces $\begin{cases}
+v_{tt}=c^{2}v_{xx}-\mu v_{t}\\
+v\left(t,0\right)=v\left(t,L\right)=0\\
+v\left(0,x\right)=v_{x}\left(0,x\right)=0 & condici\acute{o}n\ inicial\ nula
+\end{cases}$, entonces $E_{v}\left(t\right)\leq E_{v}\left(0\right)\overset{cc\ nula}{=}0$,
+y es $0\leq E_{v}\left(t\right)=\int_{0}^{L}\left[v_{t}^{2}+c^{2}v_{x}^{2}\right]dx\leq0\implies\left(v_{t}\right)^{2}+c^{2}\left(v_{x}\right)^{2}=0,\ \forall x\in\left[0,L\right],\forall t>0$.
+Entonces $v_{t}\equiv0,v_{x}\equiv0\implies v\left(t,x\right)\equiv cte$
+y $v\left(0,x\right)=0$ por lo que $v\left(t,x\right)\equiv0$ y
+es $u_{1}=u_{2}$.
+
+\textbf{La solución de Bernoulli:} Bernoulli consideró cuerdas con
+posiciones iniciales expresables mediante sumas finitas de senos tras
+observar las vibraciones de una cuerda real y propuso que la solución
+general del problema de la cuerda vibrante debería ser una superposición
+de ondas estacionarias caracterizadas por los armónicos principales.
+O sea $u\left(t,x\right)=\sum_{n\geq1}\sin\left(\frac{n\pi x}{L}\right)T_{n}\left(t\right)$
+donde $\sin\left(\frac{n\pi x}{L}\right)$ es el n-ésimo armónico
+y $T_{n}\left(t\right)$ es la amplitud del n-ésimo armmónico asociada
+al timbre del instrumento. Sustituyendo en la ecuación, sale $u\left(t,x\right)=\sum_{n\geq1}\sin\left(\frac{n\pi x}{L}\right)\left[a_{n}\cos\left(\frac{n\pi c}{L}t\right)+b_{n}\sin\left(\frac{n\pi c}{L}t\right)\right]$.
+Esta solución fue criticada por ser menos general y rigurosa que la
+de D'Alembert, porque solo valdría para posiciones iniciales expresables
+como sumas de senos. Aunque Fourier más tarde postularía que cualquier
+función podría escribirse de esta forma.
+
+\textbf{CAPÍTULO 2: LA ECUACIÓN DEL CALOR}
+
+$\begin{cases}
+u_{t}=\alpha\Delta u & t>0,x\in\Omega\\
+u\left(0,x\right)=f\left(x\right) & x\in\Omega\\
+u\left(t,x\right)=\varphi\left(t,x\right) & x\in\partial\Omega
+\end{cases}$
+
+\textbf{Lema:} si $f:\Omega\subset\mathbb{R}^{n}\rightarrow\mathbb{R}$
+con $f$ continua en $x_{0}\in\Omega$, entonces $\lim_{r\rightarrow0}\frac{1}{\left|B_{r}\right|}\int_{B_{r}\left(x_{0}\right)}f\left(x\right)dx=f\left(x_{0}\right)$.
+
+Sea $\varepsilon>0\implies\exists\delta=\delta\left(\varepsilon,x_{0}\right):\left|f\left(x\right)-f\left(x_{0}\right)\right|<\varepsilon$
+si $\left|x-x_{0}\right|<\delta$ entonces $\left|\fint_{B_{r}\left(x_{0}\right)}f\left(x\right)dx-f\left(x_{0}\right)\right|=\left|\fint_{B_{r}}\left(f\left(x\right)-f\left(x_{0}\right)\right)\right|\leq\fint_{B_{r}}\left|f\left(x\right)-f\left(x_{0}\right)\right|dx\overset{r\in\left(0,\delta\right)}{<}\varepsilon$.
+
+\textbf{Resolución por separación de variables:} se supone que $u\left(t,x\right)$
+es de la forma $u\left(t,x\right)=T\left(t\right)X\left(x\right)$
+y se comprueba qué debe suceder para que se verifique $\left(2\right)$.
+Se obtiene $T'\left(t\right)X\left(x\right)=\alpha T\left(t\right)X''\left(x\right)\implies\frac{T'\left(t\right)}{T\left(t\right)}=\alpha\frac{X''\left(x\right)}{X\left(x\right)}$
+y el LHS solo depende de $t$, el RHS solo depende de $x$, por lo
+que, al ser iguales, el resultado debe ser independiente de $x,t$
+y es constante: $\frac{T'\left(t\right)}{T\left(t\right)}=\alpha\frac{X''\left(x\right)}{X\left(x\right)}=\rho$.
+Se resuelven ahora $\left(2.T\right)\begin{cases}
+T'\left(t\right)=\rho T\left(t\right)\\
+T\left(t\right)\overset{t\rightarrow\infty}{\rightarrow}0
+\end{cases}$ y $\left(2.X\right)\begin{cases}
+X''\left(x\right)=\frac{\rho}{\alpha}X\left(x\right)\\
+X\left(0\right)=X\left(L\right)=0
+\end{cases}$ y se obtiene la solución general $u\left(t,x\right)=\sum_{n=1}^{\infty}B_{n}e^{-\frac{\alpha n^{2}\pi^{2}}{L^{2}}t}\sin\left(\frac{n\pi x}{L}\right)$.
+
+\textbf{Lema:} si $n,m\in\mathbb{N}$, entonces $\int_{0}^{L}\sin\left(\frac{n\pi x}{L}\right)\sin\left(\frac{m\pi x}{L}\right)dx=\begin{cases}
+0 & m\neq n\\
+\frac{L}{2} & m=n
+\end{cases}$. Por tanto, los coeficientes son 
+
+$B_{m}=\frac{2}{L}\int_{0}^{L}f\left(x\right)\sin\left(\frac{m\pi x}{L}\right)dx$.
+
+\begin{tcolorbox}
+\textbf{Teorema 1: Solución de la ecuación del calor en $\boldsymbol{\left[0,L\right]}$
+con extremos nulos}: sea $f\left(x\right)\in C\left(\left[0,L\right]\right)$
+tal que $f\left(x\right)=\sum_{n=1}^{\infty}b_{n}\sin\left(\frac{n\pi x}{L}\right)$
+donde $\sum_{n=1}^{\infty}\left|b_{n}\right|<\infty$ (si $f\in C^{1}\left(\left[0,L\right]\right)$
+con $f\left(0\right)=f\left(L\right)=0$ entonces esto se cumple).
+Entonces $u\left(t,x\right)=\sum_{n=1}^{\infty}b_{n}e^{-\frac{\alpha\pi^{2}n^{2}}{L^{2}}t}\sin\left(\frac{n\pi x}{L}\right),\ t\geq0,\ x\in\left[0,L\right]$
+es $u\in C^{\infty}\left(\left(0,\infty\right)\times\left(0,L\right)\right)\cap C\left(\left[0,\infty\right)\times\left[0,L\right]\right)$
+y cumple $\left(2\right)$.
+\end{tcolorbox}
+
+\textbf{Lema:} sean $f_{n}\in C^{1}\left(\left[a,b\right]\right)$
+tales que $\sum_{n=1}^{\infty}f_{n}\left(x\right)$ y $\sum_{n=1}^{\infty}f_{n}'\left(x\right)$
+convergen uniformemente para $x\in\left[a,b\right]$. Entonces $F\left(x\right)=\sum_{n=1}^{\infty}f_{n}\left(x\right)$
+es de clase $C^{1}\left(\left[a,b\right]\right)$ y $F'\left(x\right)=\left(\sum_{n=1}^{\infty}f_{n}\left(x\right)\right)'=\sum_{n=1}^{\infty}f_{n}'\left(x\right)$
+para $x\in\left[a,b\right]$.
+
+\textbf{M-test de Weiertrass:} sean $f_{n}\in C^{1}\left(\Omega\right)$
+tales que $\sup_{x\in\Omega}\left|f_{n}\left(x\right)\right|\leq M_{n}$
+con $\sum_{n=1}^{\infty}M_{n}<\infty$. Entonces $F\left(x\right)=\sum_{n=1}^{\infty}f_{n}\left(x\right)$
+converge uniforme y absolutamente $\forall x\in\Omega$ y, en particular,
+$F\in C\left(\Omega\right)$.
+
+Demostración del teorema 1:
+
+$u_{n}\left(t,x\right)=b_{n}e^{-\mu n^{2}t}\sin\left(\frac{n\pi x}{L}\right)\in C^{2}$
+con $\mu=\frac{\alpha\pi^{2}}{L}>0$, entonces $u\left(t,x\right)=\sum_{n=1}^{\infty}u_{n}\left(t,x\right)\overset{\text{¿?}}{\in}C^{\infty}\left(\left(0,\infty\right)\times\left[0,L\right]\right)$.
+Notemos que $\left|u_{n}\left(tmx\right)\right|=\left|b_{n}\right|\left|e^{-\mu n^{2}t}\right|\left|\sin\frac{n\pi x}{L}\right|\leq\left|b_{n}\right|$
+y por hipótesis $\sum\left|b_{n}\right|<\infty$, por tnato, por el
+M-test $\sum_{n=1}^{\infty}u_{n}\left(t,x\right)$ converge uniformemente
+y es $C\left([0,\infty)\times\left[0,L\right]\right)$.
+
+Veamos ahora que las series derivadas convergen uniformemente:
+
+$\left|\partial_{t}^{k}\partial_{x}^{l}u_{n}\left(t,x\right)\right|=\left|b_{n}c_{k,l}n^{2k+l}e^{-\frac{\alpha\pi^{2}n^{2}}{L^{2}}t}\sin\left(\frac{n\pi x}{L}\right)\right|\leq c_{k,l}\left|b_{n}\right|n^{2k+l}e^{-\frac{\alpha\pi^{2}n^{2}}{L^{2}}t}\leq c_{k,l}\left|b_{n}\right|\frac{n^{2k+l}+c_{k+l}}{\left(\frac{\alpha\pi^{2}n^{2}}{L^{2}}t\right)^{k+l}}\leq\frac{\tilde{c_{k,l}}}{t^{k+l}}\left|b_{n}\right|=M_{n}\left(t\right)$.
+
+Como $\sum_{n=1}^{\infty}M_{n}\left(t\right)<\infty,\forall t\geq t_{0}>0$
+entonces $\sum_{n=1}^{\infty}\partial_{t}^{k}\partial_{x}^{l}u_{n}\left(t,x\right)$
+converge uniformemente en $[t_{0},\infty)\times\left[0,L\right]$
+y por el lema 1 es $u\left(t,x\right)\in C^{\infty}\left([t_{0},\infty)\times\left[0,L\right]\right)$
+para todo $t_{0}>0\implies u\in C^{\infty}\left(\left(0,\infty\right)\times\left[0,L\right]\right)$.
+
+\textbf{Definición: frontera parabólica. }Sea $R=\left[0,T\right]\times\left[0,L\right]$.
+Llamamos frontera parabólica de $R$ a $\partial_{p}R=\partial R\setminus\left(\left\{ T\right\} \times\left(0,L\right)\right)$.
+
+\begin{tcolorbox}
+\textbf{Teorema 2}: \textbf{principio del máximo para la ecuación
+del calor. }Sea $u\in C_{\left(t,x\right)}^{1,2}\left(\left[0,T\right]\times\left[0,L\right]\right)$
+que cumple $u_{t}\leq\alpha u_{xx}$ en $R=\left[0,T\right]\times\left[0,L\right]$.
+Entonces $\max_{\left(t,x\right)\in R}u\left(t,x\right)=\max_{\left(t,x\right)\in\partial_{p}R}u\left(t,x\right)$.
+Por simetría, si $u_{t}\geq\alpha u_{xx}$, cumple un principio del
+mínimo.
+\end{tcolorbox}
+
+Sea $\left(t_{0},x_{0}\right)\in R:\max_{R}u=u\left(t_{0},x_{0}\right)$.
+
+Caso1: suponer que $u_{t}<\alpha u_{xx}$ en $R$, veamos que $\left(t_{0},x_{0}\right)\in\partial_{p}R$.
+Si no fuera así, sería $\left(a\right)$o bien $\left(t_{0},x_{0}\right)\in\overset{\circ}{R}$
+$\left(b\right)$ o bien $\left(t_{0},x_{0}\right)\in\left\{ T\right\} \times\left(0,L\right)$
+(tapa superior).
+
+Si fuese $\left(a\right)$ entonces $\left(t_{0},x_{0}\right)$ es
+máximo local de $u\implies u_{t}\left(t_{0},x_{0}\right)=0$ y $u_{x}\left(t_{0},x_{0}\right)=0,$y
+$u_{xx}\left(t_{0},x_{0}\right)\leq0$. Entonces $u_{t}\left(t_{0},x_{0}\right)-\alpha u_{xx}\left(t_{0},x_{0}\right)\geq0\#.$
+
+Si fuese $\left(b\right)$ entonces $t_{0}=T$ y $x_{0}\in\left(0,L\right)$,
+además $x_{0}$ es máximo local de $x\mapsto u\left(T,x\right)\implies u_{xx}\left(T,x_{0}\right)\leq0$.
+Además, mirando la línea vertical $\left\{ x=x_{0}\right\} $, es
+$u\left(t,x_{0}\right)\leq u\left(T,x_{0}\right),\forall t\leq T\implies u_{t}\left(T,x_{0}\right)=\lim_{h\rightarrow0^{+}}\frac{u\left(T,x_{0}\right)-u\left(T-h,x_{0}\right)}{h}\geq0$,
+por lo que $u_{t}\left(T,x_{0}-\alpha u_{xx}\left(T,x_{0}\right)\right)\geq0\#$.
+
+Por tanto, $\left(t_{0},x_{0}\right)\in\partial_{p}R$.
+
+Caso general: $u_{t}\leq\alpha u_{xx}$ en $R$.
+
+Dado $\varepsilon>0$, definimos $v\left(t,x\right)=u\left(t,x\right)+\varepsilon x^{2}\in C^{1,2}\left(R\right)$.
+Notemos que $v_{t}-\alpha v_{xx}=u_{t}-\alpha u_{xx}-2\alpha\varepsilon<0$.
+Por lo que podemos aplicarle el caso1 a $v$, y es $\max_{R}u\leq\max_{R}v=\max_{\partial_{p}R}v=\max_{\partial_{p}R}\left[u\left(t,x\right)+\varepsilon x^{2}\right]\leq\max_{\partial_{p}R}u+\varepsilon L^{2}$.
+Haciendo $\varepsilon\rightarrow0$ es $\max_{R}u\leq\max_{\partial_{p}R}u\implies\max_{R}u=\max_{\partial_{p}R}u$
+
+\textbf{Corolario 1:} si $u\in C_{\left(t,x\right)}^{1,2}\left(R\right)$
+y $u_{t}=\alpha u_{xx}$ en $R$ entonces $\max_{R}u=\min_{\partial_{p}R}u$
+y $\min_{R}u=\min_{\partial_{p}R}u$.
+
+\textbf{Corolario 2: Unicidad. }Sean $F\left(t,x\right),f\left(x\right),\phi_{0}\left(t\right),\phi_{1}\left(t\right)$
+continuas en $R$. Entonces la EDP
+
+$\begin{cases}
+u_{t}=\alpha u_{xx}+F\left(t,x\right) & \left(t,x\right)\in R\\
+u\left(0,x\right)=f\left(x\right) & x\in\left[0,L\right]\\
+u\left(t,0\right)=\phi_{0}\left(t\right),\ u\left(t,L\right)=\phi_{1}\left(t\right) & t\in\left[0,T\right]
+\end{cases}$ tiene, a lo sumo, una única solución $u\left(t,x\right)\in C_{\left(t,x\right)}^{1,2}\left(R\right)$.
+
+Sean $u_{1},u_{2}$ dos soluciones. Entonces $v\left(t,x\right)=u_{1}-u_{2}\in C_{t,x}^{1,2}\left(R\right)$
+y cumple $\begin{cases}
+v_{t}=\alpha v_{xx} & en\ R\\
+v\left(0,x\right)=0\\
+v\left(t,0\right)=v\left(t,L\right)=0
+\end{cases}\implies v\equiv0,\ en\ \partial_{p}R$, pero entonces $\max_{R}v=\max_{\partial_{p}R}v=0$ y $\min_{R}v=\min_{\partial_{p}R}v=0$,
+por lo que $v\equiv0$ y $u_{1}=u_{2}$.
+
+\begin{tcolorbox}
+\textbf{Teorema 3: decrecimiento de energía. }Sea $u\in C_{\left(t,x\right)}^{1,2}\left(\left[0,\infty\right]\times\left[0,L\right]\right)$
+tal que $\begin{cases}
+u_{t}=\alpha u_{xx}\\
+u\left(0,x\right)=f\left(x\right)
+\end{cases}$ y $u\left(t,0\right)\cdot u_{x}\left(t,0\right)\geq u\left(t,L\right)u_{x}\left(t,L\right)$.
+Entonces $E\left(t\right)=\int_{0}^{L}\left|u\left(t,x\right)\right|^{2}dx,t>0$
+es decreciente. En particular $E\left(t\right)\leq E\left(0\right)=\int_{0}^{L}\left|f\left(x\right)\right|^{2}dx,\ \forall t>0$.
+\end{tcolorbox}
+
+$E'\left(t\right)=\int_{0}^{L}\frac{d}{dt}\left(u^{2}\right)dx=\int_{0}^{L}2uu_{t}dx=2\alpha\int_{0}^{L}uu_{xx}dx\overset{partes}{=}2\alpha\left(\left[uu_{x}\right]_{x=0}^{x=L}-\int_{0}^{L}u_{x}^{2}dx\right)\leq0$
+
+\textbf{Corolario: unicidad + estabilidad. }si $u_{1}\left(t,x\right),u_{2}\left(t,x\right)\in C^{1,2}\left(R\right)$
+son soluciones de 
+\[
+\begin{cases}
+u_{t}=\alpha u_{xx}+F\left(t,x\right) & \left(t,x\right)\in R\\
+u\left(t,0\right)=\phi_{0}\left(t\right),\ u\left(t,L\right)=\phi_{1}\left(t\right) & \left[\text{o bien }u_{x}\left(t,0\right)=\phi_{0}\left(t\right),\ u_{x}\left(t,L\right)=\phi_{1}\left(t\right)\right]
+\end{cases}
+\]
+ con datos iniciales $u_{1}\left(0,x\right)=f_{1}\left(x\right),\ u_{2}\left(0,x\right)=f_{2}\left(x\right)$
+entonces
+
+$\sup_{t>0}\int_{0}^{L}\left|u_{1}\left(t,x\right)-u_{2}\left(t,x\right)\right|^{2}dx\leq\int_{0}^{L}\left|f_{1}\left(x\right)-f_{2}\left(x\right)\right|^{2}dx$. 
+
+\textbf{La ecuación del calor en $\boldsymbol{\mathbb{R}}$:} buscamos
+ahora resolver $\begin{cases}
+\left(*\right)u_{t}=u_{xx} & t>0,x\in\mathbb{R}\\
+u\left(0,x\right)=f\left(x\right)
+\end{cases}$. Primero obtenemos una solución particular, normalizada, o sea con
+$\int_{\mathbb{R}}u\left(t,x\right)dx=1,\ \forall t>0$, mediante
+el \textbf{método de autosemejanzas:} buscamos $\lambda,\mu,\gamma$
+tales que si $u$ cumple $\left(*\right)$, entonces $v\left(t,x\right)=\gamma u\left(\lambda t,\mu x\right)$
+también cumple $\left(*\right)$. Entonces es $\begin{cases}
+v_{t}=\gamma u_{t}\left(\lambda t,\mu x\right)\lambda\\
+v_{xx}=\gamma u_{xx}\left(\lambda t,\mu x\right)\mu^{2}
+\end{cases}\rightarrow v_{t}=v_{xx}\iff\lambda=\mu^{2}$. Por tanto $v\left(t,x\right)=\gamma u\left(\lambda t,\sqrt{\lambda}x\right)$
+(\textbf{dilatación parabólica}). 
+
+Además, $1=\int_{\mathbb{R}}v\left(t,x\right)dx=\int_{\mathbb{R}}\gamma u\left(\lambda t,\sqrt{\lambda}x\right)dx\overset{\sqrt{\lambda}x=z}{=}\frac{\gamma}{\sqrt{\lambda}}\int_{\mathbb{R}}u\left(\lambda t,z\right)dz=\frac{\gamma}{\sqrt{\lambda}}$,
+por lo que $\sqrt{\lambda}=\gamma$.
+
+Por tanto, si $u$ cumple $\left(*\right)$, entonces $v\left(t,x\right)=\sqrt{\lambda}u\left(\lambda t,\sqrt{\lambda}x\right)$
+cumple $\left(*\right),\forall\lambda>0$.
+
+Utilizamos esta relación para buscar una solución particular a partir
+de una función de una variable. Tomando $\lambda=\frac{1}{t}$, tenemos
+$v\left(t,x\right)=\frac{1}{\sqrt{t}}u\left(1,\frac{x}{\sqrt{t}}\right)=\frac{1}{\sqrt{t}}\phi\left(\frac{x}{\sqrt{t}}\right)$.
+Ahora $v_{t}=\frac{\frac{-1}{2}}{t^{\frac{3}{2}}}\phi\left(\frac{x}{\sqrt{t}}\right)+\frac{1}{\sqrt{t}}\phi'\left(\frac{x}{\sqrt{t}}\right)\frac{-\frac{1}{2}}{t^{\frac{3}{2}}}x$
+y $v_{xx}=\frac{1}{\sqrt{t}}\phi''\left(\frac{x}{\sqrt{t}}\right)\left(\frac{1}{\sqrt{t}}\right)^{2}$.
+Como debe ser $v_{t}=v_{xx},$ entonces $\frac{-1}{2}\left(\phi\left(\frac{x}{\sqrt{t}}\right)+\frac{x}{\sqrt{t}}\phi'\left(\frac{x}{\sqrt{t}}\right)\right)=\phi''\left(\frac{x}{\sqrt{t}}\right)$,
+y tomando $r=\frac{x}{\sqrt{t}}$, queda $\phi\left(r\right)+r\phi'\left(r\right)=-2\phi''\left(r\right)\iff\left(r\phi\left(r\right)\right)'=-2\phi''\left(r\right)\implies r\phi\left(r\right)=-2\phi'\left(r\right)+C$,
+tomamos ahora $C=0$, pues buscamos una solución particular. De modo
+que es $\frac{-r}{2}=\frac{\phi'\left(r\right)}{\phi\left(r\right)}\implies-\frac{r^{2}}{4}+C=\log\left(\phi\left(r\right)\right)\implies\phi\left(r\right)=e^{-\frac{r^{2}}{4}+C}=Ke^{-\frac{r^{2}}{4}}$.
+Como queremos que $\int_{\mathbb{R}}vdx=1$, entonces $1=\int_{\mathbb{R}}Ke^{-\frac{r^{2}}{4}}dr=K\sqrt{4\pi}\implies K=\frac{1}{\sqrt{4\pi}}.$
+Por tanto, hemos obtenido la solución particular $W\left(t,x\right)=\frac{1}{\sqrt{4\pi t}}e^{-\frac{x^{2}}{4t}},\ \left(t,x\right)\in\left(0,\infty\right)\times\mathbb{R}$.
+Esta función se denomina \textbf{núcleo de Gauss-Weierstrass}.
+
+\begin{tcolorbox}
+\textbf{Propiedades de $\boldsymbol{W}$: 1)} $W\left(t,x\right)\in C^{\infty}\left(\left(0,\infty\right)\times\mathbb{R}\right)$.
+
+\textbf{2) }$W\left(t,x\right)>0,\ \forall\left(t,x\right)$
+
+\textbf{3) $\int_{\mathbb{R}}W\left(t,x\right)dx=1,\ \forall t>0$}
+
+\textbf{4) $W_{t}=W_{xx}$}
+
+\textbf{5) $\lim_{t\rightarrow0}W\left(t,x\right)=\begin{cases}
+0 & x\neq0\\
+1 & x=1
+\end{cases}=\delta\left(x\right)$}. O sea, formalmente, $W$ es solución de la EDP $\begin{cases}
+u_{t}=u_{xx}\\
+u\left(0,x\right)=\delta\left(x\right)
+\end{cases}$. Esta $\delta\left(x\right)$ es una temperatura inicial concentrada
+en $x=0$ y de calor total 1, o sea $sop\delta=\left\{ 0\right\} ,\ \int_{\mathbb{R}}\delta dx=1$.
+Esta es la \textbf{delta de Dirac}.
+
+Podemos imaginar la varilla como unión de bolas puntuales, en posición
+$\left\{ y_{j}\right\} $, entonces $f\left(y_{j}\right)\Delta y\sim\int_{y_{j}-\frac{\Delta y}{2}}^{y_{j}+\frac{\Delta y}{2}}f\left(y\right)dy$
+y entonces $f\left(y\right)=\lim_{\Delta y\rightarrow0}\sum_{j}f\left(y_{j}\right)\Delta y\delta\left(y-y_{j}\right)$.
+Así, el candidato a solución es
+\[
+u\left(t,x\right)=\lim_{\Delta y\rightarrow0}\sum_{j}f\left(y_{j}\right)\Delta yW\left(t,x-y_{j}\right)=\int_{-\infty}^{\infty}f\left(y\right)W\left(t,x-y\right)dy
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Teorema: Solución de la ecuación del calor en $\boldsymbol{\mathbb{R}}$:
+}si $f\in C\left(\mathbb{R}\right)$ y acotada, entonces $u\left(t,x\right)=\int_{\mathbb{R}}f\left(y\right)W\left(t,x-y\right)dy$
+con $\left(t,x\right)\in\left(0,\infty\right)\times\mathbb{R}$ cumple
+$u\in C^{\infty}\left(\left(0,\infty\right),\mathbb{R}\right)$, $u_{t}=u_{xx},\ \left(0,\infty\right)\times\mathbb{R}$
+y $\lim_{\left(t,x\right)\rightarrow\left(0,x_{0}\right)}u\left(t,x\right)=f\left(x_{0}\right),\forall x_{0}\in\mathbb{R}$.
+\end{tcolorbox}
+
+\textbf{Lema de derivación de integrales paramétricas:} sea $F:\left(a,b\right)\times Y\rightarrow\mathbb{C}$
+medible tal que \textbf{(1) }si $y\in Y\implies t\in\left(a,b\right)\mapsto F\left(t,y\right)$
+es derivable; y \textbf{(2)} $\exists h\in L^{1}\left(Y\right)$ tal
+que $\left|\frac{\partial F}{\partial t}\left(t,y\right)\right|\leq h\left(y\right),\ \forall t\in\left(a,b\right)$.
+Entonces $\frac{d}{dt}\left[\int_{Y}F\left(t,y\right)dy\right]=\int_{Y}\frac{\partial F}{\partial t}\left(t,y\right)dy,\ \forall t\in\left(a,b\right)$.
+
+\textbf{Lema de expresión de la derivada $\boldsymbol{l}$-ésima de
+$\boldsymbol{W}$ con un polinomio de grado $\boldsymbol{l}$:} si
+$l\in\mathbb{N}_{0}$, entonces $\exists P_{l}$, un polinomio de
+grado $l$, tal que $\partial_{x}^{l}\left[W\left(t,x\right)\right]=\frac{1}{\left(\sqrt{t}\right)^{l}}P_{l}\left(\frac{x}{\sqrt{t}}\right)W\left(t,x\right)$ 
+
+\textbf{Teorema de Tychonoff: $\exists0\neq v\left(t,x\right)\in C^{\infty}\left(\mathbb{R}\times\mathbb{R}\right)$
+}tal que $\begin{cases}
+v_{t}=v_{xx} & \left(0,\infty\right)\times\mathbb{R}\\
+v\left(0,x\right)\equiv0
+\end{cases}$ (sin unicidad en general)
+
+\textbf{Teorema de unicidad de Tychonoff:} si $u\in C^{\infty}\left(\left(0,\infty\right)\times\mathbb{R}\right)\cap C\left(\left[0,\infty\right)\times\mathbb{R}\right)$
+tal que $\begin{cases}
+u_{t}=u_{xx}\\
+u\left(0,x\right)\equiv0\\
+\left|u\left(t,x\right)\right|\leq C^{a\left|x\right|^{2}}
+\end{cases}$, entonces $u\left(t,x\right)\equiv0$.
+
+\begin{tcolorbox}
+\textbf{Propiedades de la ecuación del calor: }
+
+\textbf{(1) Regularidad: $u\in C^{\infty}\left(\left(0,\infty\right)\times\mathbb{R}\right)$ }
+
+\textbf{(2) Velocidad de propagación infinita:} $f\geq0\implies sop\left(u\right)=\mathbb{R},\ \forall t>0$
+
+\textbf{(3) Irreversibilidad en $\boldsymbol{t}$:} si $u\left(0,x\right)=f\left(x\right)$,
+entonces puedo hallar $u\left(t,x\right),t>0$, pero no para $t<0$.
+
+\textbf{(4) Decaimiento en $\boldsymbol{t}$ (difusión):} supongamos
+$f\in L^{1}\left(\mathbb{R}\right)$, entonces, por un lado $\int_{\mathbb{R}}udx=\int_{\mathbb{R}}fdx=cte,\ \forall t>0$.
+Por otro lado, $\left|u\left(t,x\right)\right|\leq\frac{\left\Vert f\right\Vert _{L^{1}}}{\sqrt{4\pi t}}=\frac{C_{f}}{\sqrt{t}}\overset{t\rightarrow\infty}{\rightarrow}0$.
+
+\textbf{(5) No unicidad}
+\end{tcolorbox}
+
+\textbf{CAPÍTULO 3: LA ECUACIÓN DE LAPLACE}
+
+El \textbf{laplaciano} es el operador $\Delta=\partial_{x_{1}x_{1}}^{2}+...+\partial_{x_{n}x_{n}}^{2}$.
+
+$div\left(F\right)=\nabla\cdot F=\sum_{j=1}^{n}\frac{\partial F_{x_{j}}}{x_{j}}$
+
+$\nabla=\left(\frac{\partial}{\partial x_{1}},\frac{\partial}{\partial x_{2}},...,\frac{\partial}{\partial x_{n}}\right)$
+
+Si $f$ es una función escalar, también se denota $\nabla f=gradf$.
+
+$u:\Omega\subset\mathbb{R}^{n}\rightarrow\mathbb{R}\left(\acute{o}\ \mathbb{C}\right)$
+es \textbf{armónica en el abierto $\boldsymbol{\Omega}$, $u\in Har\left(\Omega\right)$},
+si $u\in C^{2}\left(\Omega\right)$ y $\Delta u=0$ en $\Omega$.
+
+\textbf{Proposición: algunas funciones armónicas:} si $f\in{\cal H}\left(\Omega\right)$,
+entonces $Ref,Imf\in Har\left(\Omega\right)$.
+
+Si $\Omega$ es simplemente conexo y $u\in Har\left(\Omega\right)$,
+entonces $\exists F\in{\cal H}\left(\Omega\right)|u=Ref$.
+
+\textbf{Problema del calor estacionario:} para el problema de propagación
+del calor en $\Omega\subset\mathbb{R}^{n}$: $\begin{cases}
+u_{t}=\Delta u\\
+u_{|\partial\Omega}=\varphi & \text{cond cont}\\
+u\left(0,\cdot\right)=f & \text{temp inicial}
+\end{cases}$, ¿cuál será la temperatura de equilibrio, $\overline{u}\left(x\right)$,
+cuando $t\rightarrow\infty$? Debe cumplir $\begin{cases}
+\Delta\overline{u}=0 & en\ \Omega\\
+\overline{u}_{|\partial\Omega}=\varphi
+\end{cases}$. Las funciones armónicas se pueden interpretar como temperaturas
+en equilibrio.
+
+\textbf{Problema de Dirichlet:} dado $\Omega\subset\mathbb{R}^{n},\varphi\in C\left(\partial\Omega\right)$,
+hallar $u\in C^{2}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$
+con $\begin{cases}
+\Delta u\left(x\right)=0 & x\in\Omega\\
+u_{|\partial\Omega}=\varphi
+\end{cases}$. Equivale a encontrar la temperatura de equilibrio en $\Omega$,
+cuando se fija un dato $\varphi$ en $\partial\Omega$.
+
+\textbf{Problema de Neumann:} dado $\Omega\subset\mathbb{R}^{2},\varphi\in C\left(\partial\Omega\right)$,
+hallar $u\in C^{2}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$
+con $\begin{cases}
+\Delta u\left(x\right)=0 & x\in\Omega\\
+\triangledown u\cdot\overrightarrow{n}_{|\partial\Omega}=\varphi
+\end{cases}$. Equivale a encontrar la temperatura de equilibrio en $\Omega$,
+cuando se fija un flujo de calor entrante.
+
+\textbf{Problema de Robin:} igual, con $\begin{cases}
+\Delta u\left(x\right)=0 & x\in\Omega\\
+\triangledown u\cdot\overrightarrow{n}+\gamma u=\varphi & x\in\partial\Omega
+\end{cases}$. Es más general, que el caso anterior, pues el flujo depende también
+de la temperatura de la frontera.
+
+\textbf{Ecuación de Poisson:} dado $f\in C\left(\Omega\right),$ hallar
+$u\in C^{2}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$
+tal que $\begin{cases}
+\Delta u\left(x\right)=f\left(x\right) & x\in\Omega\\
+u_{|\partial\Omega}\equiv0
+\end{cases}$. Es la versión no homogénea del problema de Dirichlet.
+
+\textbf{Resolución del Problema de Dirichlet en $\mathbb{D}\subset\mathbb{R}^{2}$:}
+sea $\mathbb{D}$ el disco unidad abierto. Dado $\varphi\in C\left(\partial\mathbb{D}\right)$,
+buscamos $u\in C^{2}\left(\mathbb{D}\right)\cap C\left(\overline{\mathbb{D}}\right)$
+tal que $\left(PD\right)\begin{cases}
+\Delta u=0\\
+u_{|\partial\mathbb{D}}=\varphi
+\end{cases}$.
+
+Pasamos la EDP a coordenadas polares $x=r\cos\theta,\ y=r\sin\theta$. 
+
+\textbf{Lema: laplaciano en polares:} en coordenadas polares, es $\Delta=\partial_{xx}+\partial_{yy}=\partial_{rr}+\frac{1}{r}\partial_{r}+\frac{1}{r^{2}}\partial_{\theta\theta}$.
+
+Así, buscamos $v\left(r,\theta\right)$ tal que $\begin{cases}
+v_{rr}+\frac{1}{r}v_{rr}+\frac{1}{r^{2}}v_{\theta\theta}=0 & \left(r,\theta\right)\in\left(0,1\right)\times\left(0,2\pi\right)\\
+v\left(1,\theta\right)=\varphi\left(\theta\right) & \theta\in\left(0,2\pi\right)\\
+v\text{ \ensuremath{2\pi-}periódica en \ensuremath{\theta}}\\
+\exists\lim_{r\rightarrow0^{+}}v\left(r,\theta\right)
+\end{cases}$.
+
+Usamos separación de variables: buscamos $v\left(r,\theta\right)=R\left(r\right)G\left(\theta\right)\not\equiv0$:
+$R''G+\frac{1}{r}R'G+\frac{1}{r^{2}}RG''=0$. Multiplicamos por $\frac{r^{2}}{RG}$:
+$\frac{r^{2}R''}{R}+\frac{rR'}{R}=-\frac{G''}{G}\equiv cte=\rho$.
+Y obtenemos las EDOs: $\left(1\right)\begin{cases}
+r^{2}R''+rR'=\ensuremath{\rho R}\\
+\exists R\left(0^{+}\right)
+\end{cases}$ y $\left(2\right)\begin{cases}
+G''=-\rho G\\
+G\text{ \ensuremath{2\pi} periódica}
+\end{cases}$. 
+
+Empezamos con $\left(2\right)$: si suponemos $\rho=-\lambda^{2}<0\implies G''=\lambda^{2}G\implies G\left(\theta\right)=A\sinh\left(\lambda\theta\right)+B\cosh\left(\lambda\theta\right)\overset{G\ 2\pi-peri\acute{o}dica}{\implies}A=B=0\#$
+
+si suponemos $\rho=0\implies G''=0\implies G\left(\theta\right)=A+B\theta\overset{2\pi-per}{\implies}B=0\implies G_{0}\left(\theta\right)=A_{0}$
+
+si $\rho=\lambda^{2}>0\implies G''=-\lambda^{2}G\implies G\left(\theta\right)=A\cos\left(\lambda\theta\right)+B\sin\left(\lambda\theta\right)\overset{G\left(0\right)=G\left(\pi\right),G'\left(0\right)=G'\left(\pi\right)}{\implies}A=A\cos\left(2\pi\lambda\right)+B\sin\left(2\pi\lambda\right)$
+y $B\lambda=-A\lambda\sin\left(2\pi\lambda\right)+B\lambda\cos\left(2\pi\lambda\right)$. 
+
+Obtenemos el sistema $\left\{ \begin{array}{ccc}
+A\left(1-cos\left(2\pi\lambda\right)\right) & -B\sin\left(2\pi\lambda\right) & =0\\
+A\sin\left(2\pi\lambda\right) & +B\left(1-\cos\left(2\pi\lambda\right)\right) & =0
+\end{array}\right\} $ y buscamos una solución no trivial. El determinante da $\left(1-\cos\left(2\pi\lambda\right)\right)^{2}+\left(\sin\left(2\pi\lambda\right)\right)^{2}$,
+como queremos que se anule, debe ser $\begin{cases}
+\cos\left(2\pi\lambda\right)=1\\
+\sin\left(2\pi\lambda\right)=0
+\end{cases}$ por lo que $\lambda\in\mathbb{Z}$. Por tanto $G_{n}\left(\theta\right)=A_{n}\cos\left(n\theta\right)+B_{n}\sin\left(n\theta\right),\ \rho=n^{2},\ n=1,2,...$.
+
+Vamos ahora a resolver $\left(1\right)$. $\rho$ ya no es arbitrario,
+es $\rho=\rho_{n}=n^{2},n=0,1,2,...$, entonces $r^{2}R''+rR'=n^{2}R$.
+
+$n=0$: $r^{2}R+rR'=0\implies rR''+R'=0\implies\left(rR'\right)'=0\implies rR'=A\implies R'=\frac{A}{r}\implies R=A\log\left(r\right)+B$,
+donde $A=0$ porque queremos que $\exists\lim_{r\rightarrow0+}.$
+
+$n>0$: $r^{2}R''+rR'=n^{2}R$. Buscamos soluciones del tipo $R\left(r\right)=r^{k}$.
+
+$r^{2}\left(k\left(k-1\right)r^{k-2}\right)r\left(kr^{k-1}\right)=n^{2}r^{k}\implies k\left(k-1\right)r^{k}+kr^{k}=n^{2}r^{k}\implies k\left(k-1\right)+k=n^{2}\implies k^{2}=n^{2}\implies k=\pm n$.
+
+Así, la solución general es $R\left(r\right)=Ar^{-n}+Br^{n}$ y hacemos
+$A=0$ porque $\exists R\left(0+\right)$. O sea $R_{n}\left(r\right)=B_{n}r^{n}$.
+
+Por tanto, la solución general de la EDP es $v\left(r,\theta\right)=A_{0}+\sum_{n=1}^{\infty}r^{n}\left(A_{n}\cos\left(n\theta\right)+B_{n}\sin\left(n\theta\right)\right)$.
+
+Para obtener los coeficientes, usamos la condición de contorno $\varphi\left(\theta\right)=v\left(1,\theta\right)=A_{0}+\sum_{n=1}^{\infty}\left(A_{n}\cos\left(n\theta\right)+B_{n}\sin\left(n\theta\right)\right)$
+y usamos ortogonalidad para obtener $A_{0}=\frac{1}{2\pi}\int_{0}^{2\pi}\varphi d\theta$,
+$A_{n}=\frac{1}{\pi}\int_{0}^{2\pi}\varphi\left(\theta\right)\cos\left(n\theta\right)d\theta$,
+$B_{n}=\frac{1}{\pi}\int_{0}^{2\pi}\varphi\left(\theta\right)\sin\left(n\theta\right)d\theta$.
+
+\textbf{El núcleo de Poisson:} ahora queremos expresar la solución
+$v$ anterior como una \textbf{fórmula integral explícita} de la forma
+\[
+v\left(r,\theta\right)=\frac{1}{2\pi}\int_{0}^{2\pi}\varphi\left(s\right)P\left(r,\theta-s\right)ds
+\]
+ donde $\varphi$ es la condición de contorno y $P\left(r,\theta-s\right)$
+es un núcleo.
+
+Para ello reescribimos la serie en forma compleja,
+
+$v\left(r,\theta\right)=A_{0}+\sum_{n=1}^{\infty}r^{n}\left[A_{n}\frac{e^{in\theta}+e^{-in\theta}}{2}+B_{n}\frac{e^{in\theta}-e^{-in\theta}}{2i}\right]=A_{0}+\sum_{n=1}^{\infty}r^{n}\left[\frac{A_{n}-iB_{n}}{2}e^{in\theta}+\frac{A_{n}+iB_{n}}{2}e^{-in\theta}\right]=\left(*\right)$.
+
+Llamamos $a_{0}=A_{0},a_{n}=\frac{A_{n}-iB_{n}}{2},a_{-n}=\frac{A_{n}+iB_{n}}{2}$
+y es $\left(*\right)=a_{0}+\sum_{n=1}^{\infty}r^{n}a_{n}e^{in\theta}+\sum_{m=-\infty}^{-1}r^{\left|m\right|}e^{im\theta}=\sum_{m\in\mathbb{Z}}a_{m}r^{\left|m\right|}e^{im\theta}$.
+
+Para calcular los coeficientes, hacemos $r=1\implies v\left(1,\theta\right)=\varphi\left(\theta\right)=\sum_{m\in\mathbb{Z}}a_{m}e^{im\theta}$.
+
+Por ortogonalidad, teniendo en cuenta que $\frac{1}{2\pi}\int_{0}^{2\pi}e^{im\theta}e^{-in\theta}d\theta=\begin{cases}
+0 & m\neq n\\
+1 & m=n
+\end{cases}=\delta_{m,n}$, obtenemos $a_{n}=\left\langle \varphi,e^{in\theta}\right\rangle =\int_{0}^{2\pi}\varphi\left(\theta\right)e^{-in\theta}d\theta,\ n\in\mathbb{Z}$.
+
+O sea, que queda 
+
+$v\left(r,\theta\right)=\sum_{m\in\mathbb{Z}}a_{m}r^{\left|m\right|}e^{im\theta}=\sum_{m\in\mathbb{Z}}\left(\frac{1}{2\pi}\int_{0}^{2\pi}\varphi\left(s\right)e^{-ims}ds\right)r^{\left|m\right|}e^{im\theta}=\frac{1}{2\pi}\int_{0}^{2\pi}\varphi\left(s\right)\left[\sum_{m\in\mathbb{Z}}r^{\left|m\right|}e^{im\left(\theta-s\right)}\right]ds$,
+y obtenemos el núcleo que queríamos, $P\left(r,\theta-s\right)=\sum_{m\in\mathbb{Z}}r^{\left|m\right|}e^{im\left(\theta-s\right)}$,
+y se llama \textbf{núcleo de Poisson}.
+
+\textbf{Lema: $P\left(r,\theta\right)=\frac{1-r^{2}}{1+r^{2}-2r\cos\theta}$.}
+
+$P\left(r,\theta\right)=\sum_{n=0}^{\infty}r^{n}e^{in\theta}+\sum_{m=1}^{\infty}r^{m}e^{-im\theta}\overset{z=re^{i\theta}}{=}\sum_{n=0}^{\infty}z^{n}+\sum_{m=1}^{\infty}\overline{z^{m}}\overset{\left|z\right|<1}{=}\frac{1}{1-z}+\overline{\frac{z}{1-z}}=\frac{1-\overline{z}+\overline{z}\left(1-z\right)}{\left(1-z\right)\left(1-\overline{z}\right)}=\frac{1-\left|z\right|^{2}}{\left|1-z\right|^{2}}=\frac{1-r^{2}}{1+r^{2}-2rcos\theta}$ 
+
+\begin{tcolorbox}
+\textbf{Propiedades del núcleo de Poisson: (1) $P\left(r,\theta\right)>0$
+}en $\mathbb{D}$
+
+\textbf{(2) $P\in C^{\infty}\left(\mathbb{D}\right)$}
+
+\textbf{(3) }$\Delta P=\left(\partial_{rr}+\frac{1}{r}\partial_{r}+\frac{1}{r^{2}}\partial_{\theta\theta}\right)P=0$
+
+\textbf{(4) }$\frac{1}{2\pi}\int_{0}^{2\pi}P\left(r,\theta\right)d\theta=1,\ \forall r\in[0,1)$
+
+\textbf{(5)} $\lim_{r\rightarrow1^{-}}P\left(r,\theta\right)=\begin{cases}
+0 & \theta\neq0\\
+\infty & \theta=0
+\end{cases}$
+\end{tcolorbox}
+
+Formalmente, $P\left(r,\theta\right)$ es solución de $\begin{cases}
+\Delta u=0 & en\ \text{\ensuremath{\mathbb{D}}}\\
+u_{|\partial\mathbb{D}}=\delta_{\left\{ \left(1,0\right)\right\} }
+\end{cases}$
+
+\begin{tcolorbox}
+\textbf{Teorema: Solución de PD en $\mathbb{D}$}
+
+Sea $\varphi\in C\left(\partial\mathbb{D}\right)$. Entonces $u\left(re^{i\theta}\right)=\frac{1}{2\pi}\int_{0}^{2\pi}\varphi\left(e^{is}\right)P\left(r,\theta-s\right)ds$
+con $re^{i\theta}\in\mathbb{D}$, cumple 
+
+(1) $u\in C^{\infty}\left(\mathbb{D}\right)$
+
+(2) $\Delta u=0$ en $\mathbb{D}$ 
+
+(3) $\lim_{re^{i\theta}\rightarrow e^{i\theta_{0}}}u\left(re^{i\theta}\right)=\varphi\left(e^{i\theta_{0}}\right),\ \forall\theta_{0}$
+\end{tcolorbox}
+
+Este teorema implica un \textbf{principio del máximo y del mínimo},
+pues
+
+$u\left(re^{i\theta}\right)=\frac{1}{2\pi}\int_{0}^{2\pi}\varphi\left(s\right)P\left(r,\theta-s\right)ds\leq\left[\max\varphi\right]\left[\frac{1}{2\pi}\int_{0}^{2\pi}P\left(r,\theta-s\right)ds\right]=\max\varphi$
+(y de igual forma para el mínimo). Entonces $\min_{\partial\mathbb{D}}u\leq u\left(re^{i\theta}\right)\leq\max_{\partial D}u$
+y por tanto $\min_{\mathbb{D}}u=\min_{\partial\mathbb{D}}u$ y $\max_{\mathbb{D}}u=\max_{\partial\mathbb{D}}u$.
+
+También implica \textbf{regularidad }y \textbf{unicidad,} si $\begin{cases}
+\Delta u^{j}=0\\
+u_{|\partial\mathbb{D}}^{j}=\varphi^{j}
+\end{cases}\implies\sup_{\mathbb{D}}\left|u^{1}-u^{2}\right|\leq\left\Vert \varphi^{1}-\varphi^{2}\right\Vert _{\infty}$
+
+\textbf{Propiedades de las funciones armónicas}
+
+\begin{tcolorbox}
+\textbf{Teorema 1: principio débil del máximo}
+
+Sea $\Omega\subset\mathbb{R}^{n}$ abierto y acotado y $u\in C^{2}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$
+tal que $\Delta u\geq0$ en $\Omega$. Entonces $\max_{\Omega}u=\max_{\partial\Omega}u$
+\end{tcolorbox}
+
+Caso 1: supongamos $\Delta u\left(x\right)>0,\forall x\in\Omega$.
+Sea $x_{0}\in\overline{\Omega}$ tal que $\max_{x\in\overline{\Omega}}u\left(x\right)=u\left(x_{0}\right)$.
+Si $x_{0}\in\partial\Omega$, ya está. Si $x_{0}\in\Omega$, entonces
+es un máximo local, por lo que $\triangledown u\left(x_{0}\right)=0$
+y $D^{2}u\left(x_{0}\right)\leq0$, por lo que todos sus valores propios
+son $\leq0$, y entonces $\Delta u\left(x_{0}\right)=tr\left(D^{2}u\left(x_{0}\right)\right)\leq0\#$
+
+Caso general: $\Delta u\left(x\right)\geq0$. Dado $\varepsilon>0$,
+definimos $v_{\varepsilon}\left(x\right)=u\left(x\right)+\varepsilon\left|x\right|^{2}\in C^{2}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$,
+entonces $\Delta v_{\varepsilon}=\Delta u+2n\varepsilon\geq2n\varepsilon>0$.
+Por el caso 1, tenemos que $\max_{\overline{\Omega}}u\leq\max_{\overline{\Omega}}v_{\varepsilon}=\max_{\partial\Omega}v_{\varepsilon}\leq\max_{\partial\Omega}u+\varepsilon\max_{\partial\Omega}\left|x\right|^{2}$.
+Haciendo $\varepsilon\rightarrow0$, obtenemos que $\max_{\overline{\Omega}}u\leq\max_{\partial\Omega}u\leq\max_{\overline{\Omega}}u\implies\max_{\overline{\Omega}}u=\max_{\partial\Omega}u$.
+
+\textbf{Corolario 1:} Si $\Omega\subset\mathbb{R}^{n}$ abierto y
+acotado, $u\in C^{2}\left(\Omega\right)\cap C\left(\Omega\right)$
+con $\Delta u=0$, entonces $\max_{\overline{\Omega}}u=\max_{\partial\Omega}u$
+y $\min_{\overline{\Omega}}u=\min_{\partial\Omega}u$.
+
+\begin{tcolorbox}
+\textbf{Corolario 2: unicidad de PD}
+
+Sea $\Omega\subset\mathbb{R}^{n}$ abierto y acotado, $\varphi\in C\left(\partial\Omega\right)$
+y $F\in C\left(\Omega\right)$. Entonces $\begin{cases}
+\Delta u=F & en\ \Omega\\
+u_{|\partial\Omega}=\varphi
+\end{cases}$ tiene, a lo sumo, una solución $u\in C^{2}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$.
+\end{tcolorbox}
+
+Si $u_{1},u_{2}$ son soluciones, entonces $v=u_{1}-u_{2}\in C^{2}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$
+y $\begin{cases}
+\Delta v=0 & en\ \Omega\\
+v_{|\partial\Omega}=0
+\end{cases}$ por lo que $\max_{\Omega}v=\min_{\Omega}v=0$ y es $v\equiv0$.
+
+\textbf{Nota:} la unicidad siempre se tiene en el PD si $\Omega$
+es acotado. Si no es acotado, no siempre hay unicidad. La existencia
+es un problema más difícil, que requiere de un poco de regularidad
+en $\partial\Omega$.
+
+\begin{tcolorbox}
+\textbf{Corolario 3: regularidad respecto a cond contorno}
+
+Sea $\Omega\subset\mathbb{R}^{n}$ acotado, $F_{j}\in C\left(\overline{\Omega}\right),\ \varphi_{j}\in C\left(\partial\Omega\right),\ u_{j}\in C^{2}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$
+tales que $\begin{cases}
+\Delta u_{j}=F_{j} & en\ \Omega\\
+u_{j_{|\partial\Omega}}=\varphi_{j}
+\end{cases}$ para $j=1,2$. Entonces $\sup_{\Omega}\left|u_{1}-u_{2}\right|\leq\left\Vert \varphi_{1}-\varphi_{2}\right\Vert _{\infty}+c_{\infty}\left\Vert F_{1}-F_{2}\right\Vert _{\infty}$
+\end{tcolorbox}
+
+\textbf{Problema de Neumann}: en este caso se conoce $\triangledown u\cdot\overrightarrow{n}_{|\partial\Omega}=\varphi$
+y el principio del máximo no es útil, pero podemos utilizar métodos
+de energía.
+
+\textbf{Lema 1:} $div\left(u\nabla u\right)=\left|\nabla u\right|^{2}+u\Delta u$
+
+$div\left(v\nabla u\right)=\sum_{j=1}^{n}\partial_{x_{j}}\left[v\partial_{x_{j}}u\right]=\sum_{j=1}^{n}\left(\partial_{x_{j}}v\partial_{x_{j}}u+v\partial_{x_{j}x_{j}}u\right)=\nabla v\nabla u+v\Delta u$.
+Tomando $v=u$ sale.
+
+\textbf{Teorema de la divergencia:} si $\Omega\subset\mathbb{R}^{n}$
+es de clase $C^{1}$, $\overrightarrow{F}=\left(F_{1},...,F_{n}\right)\in C^{1}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$,
+entonces $\int_{\partial\Omega}\overrightarrow{F}\cdot\overrightarrow{n}d\sigma=\int_{\Omega}div\left(\overrightarrow{F}\right)dx$.
+
+\textbf{Fórmula de Green 1: $\partial\Omega\in C^{1},u\in C^{2}\left(\Omega\right)\cap C^{1}\left(\overline{\Omega}\right),v\in C^{1}\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$},
+entonces $\int_{\Omega}\Delta u\cdot v=\int_{\partial\Omega}\left(\nabla u\cdot\overrightarrow{n}\right)\cdot v-\int_{\Omega}\nabla u\cdot\nabla v$
+
+\textbf{Fórmula de Green 2:} si $\partial\Omega\in C^{1}$ y $u,v\in C^{2}\left(\Omega\right)\cap C^{1}\left(\overline{\Omega}\right)$
+entonces $\int_{\Omega}\left(u\Delta v-v\Delta u\right)=\int_{\partial\Omega}\left[u\left(\nabla v\cdot\overrightarrow{n}\right)-v\left(\nabla u\cdot\overrightarrow{n}\right)\right]$
+
+\textbf{Lema 2:} si $\Omega\subset\mathbb{R}^{n}$ es acotado con
+$\partial\Omega\in C^{1}$ y $u\in C^{2}\left(\overline{\Omega}\right)$,
+entonces $\int_{\Omega}\left|\nabla u\right|^{2}=\int_{\partial\Omega}u\left(\nabla u\cdot\overrightarrow{n}\right)d\sigma-\int_{\Omega}u\Delta u$.
+
+$\int_{\partial\Omega}\left(v\nabla u\right)\cdot\overrightarrow{n}\overset{TrmDiv}{=}\int_{\Omega}div\left(v\nabla u\right)=\int_{\Omega}\nabla v\nabla u+v\Delta u$,
+por tanto $\int_{\Omega}\nabla v\nabla u=\int_{\partial\Omega}v\nabla u\cdot\overrightarrow{n}-\int_{\Omega}v\Delta u$.
+Tomando $v=u$, lo tenemos.
+
+\begin{tcolorbox}
+\textbf{Unicidad salvo ctes del PN}
+
+Sea $\Omega\subset\mathbb{R}^{n}$ acotado y conexo, con $\partial\Omega\in C^{1}$,
+$F\in C\left(\Omega\right),\varphi\in C\left(\partial\Omega\right)$.
+Entonces si $PN\begin{cases}
+\Delta u=F & en\ \Omega\\
+\nabla u\cdot\overrightarrow{n}_{|\partial\Omega}=\varphi
+\end{cases}$ tiene dos soluciones $u_{1},u_{2}\in C^{2}\left(\Omega\right)\cap C^{2}\left(\overline{\Omega}\right)$
+se tiene $u_{1}-u_{2}\equiv cte$.
+\end{tcolorbox}
+
+Sea $v=u_{1}-u_{2}\in C^{2}\left(\Omega\right)\cap C^{2}\left(\overline{\Omega}\right),$
+entonces $\begin{cases}
+\Delta v=0 & en\ \Omega\\
+\nabla v\cdot\overrightarrow{n}=0
+\end{cases}$, por el lema 2, $\int_{\Omega}\left|\nabla v\right|^{2}=0\implies\nabla v\equiv0\implies v\equiv cte$.
+
+\textbf{La propiedad del valor medio}
+
+\begin{tcolorbox}
+\textbf{Teorema 1: PVM}
+
+Sea $\Omega\subset\mathbb{R}^{n},u\in Har\left(\Omega\right)$. Entonces
+$u\left(x_{0}\right)\overset{PVM1}{=}\frac{1}{\left|\partial B_{R}\left(x_{0}\right)\right|}\int_{\partial B_{R}\left(x_{0}\right)}u\left(x\right)d\sigma\left(x\right)\overset{PVM2}{=}\frac{1}{\left|B_{R}\left(x_{0}\right)\right|}\int_{B_{R}\left(x_{0}\right)}u\left(x\right)dx$
+para toda $\overline{B_{R}\left(x_{0}\right)}\subset\Omega$
+\end{tcolorbox}
+
+Sea $\phi\left(r\right)=\fint_{\partial B_{r}\left(x_{0}\right)}u\left(x\right)dx,0<r<R$.
+Veamos que $\phi\left(r\right)\equiv cte$. En tal caso, haciendo
+$r\to0$ tenemos el resultado.
+
+Así, $\phi\left(r\right)=\frac{1}{\left|\partial B_{r}\left(x_{0}\right)\right|}\int_{\partial B_{r}\left(x_{0}\right)}u\left(x\right)dx\overset{x=x_{0}+rw,w\in S^{n-1},d\sigma\left(x\right)=r^{n-1}d\sigma\left(w\right)}{=}\frac{1}{\cancel{r^{n-1}}\left|S^{n-1}\right|}\int_{S^{n-1}}u\left(x_{0}+rw\right)\cancel{r^{n-1}}d\sigma\left(w\right)$.
+
+Derivando, $\phi'\left(r\right)=\fint_{S^{n-1}}\frac{d}{dr}\left[u\left(x_{0}+rw\right)\right]d\sigma\left(w\right)=\fint_{S^{n-1}}\sum_{i=1}^{n}u_{x_{i}}w_{i}d\sigma\left(w\right)=\fint_{S^{n-1}}\nabla u\cdot\overrightarrow{n}d\sigma\left(w\right)=$
+
+$\overset{deshaciendo\ cambio}{=}\fint_{B_{r}\left(x_{0}\right)}\nabla u\cdot\overrightarrow{n}d\sigma\left(x\right)\overset{trmDiv}{=}\frac{1}{\left|\partial B_{r}\left(x_{0}\right)\right|}\int_{B_{r}\left(x_{0}\right)}div\left(\nabla u\right)dx=\frac{1}{\left|\partial B_{r}\left(x_{0}\right)\right|}\int_{B_{r}\left(x_{0}\right)}\Delta udx\overset{u\in Har\left(\Omega\right)}{=}0$.
+
+Por tanto, $\phi$ es cte y tenemos el resultado.
+
+Para PVM2: usamos ahora coordenadas polares en $\mathbb{R}^{n}$:
+$\frac{1}{\left|B_{R}\left(x_{0}\right)\right|}\int_{B_{R}\left(x_{0}\right)}u\left(x\right)dx\overset{x=x_{0}+rw,dx=r^{n-1}drd\sigma\left(w\right)}{=}\frac{1}{\left|B_{R}\left(x_{0}\right)\right|}\int_{0}^{R}\overset{\int_{\partial B_{r}\left(x_{0}\right)}u\left(x\right)d\sigma\left(x\right)\overset{PVM1}{=}\left|\partial B_{r}\left(x_{0}\right)\right|u\left(x_{0}\right)}{\left[\int_{S^{n-1}}u\left(x_{0}+rw\right)d\sigma\left(w\right)\right]}r^{n-1}dr=$
+
+$=\frac{u\left(x_{0}\right)}{\left|B_{R}\left(0\right)\right|}\int_{0}^{R}\left|S^{n-1}\right|r^{n-1}dr=u\left(x_{0}\right)\frac{\left|S^{n-1}\right|}{\left|B_{R}\left(0\right)\right|}\frac{R^{n}}{n}$.
+
+Tomando $u\equiv1\in Har\left(\mathbb{R}^{n}\right)\implies\left|B_{R}\left(0\right)\right|=\frac{R^{n}}{n}\left|S^{n-1}\right|$.
+Y entonces, si $u\in Har\left(\Omega\right)\implies\fint_{B_{r}\left(x_{0}\right)}u=u\left(x_{0}\right)$.
+
+\begin{tcolorbox}
+\textbf{Teorema 2: recíproco}
+
+Si $u\in C^{2}\left(\Omega\right)$ cumple $u\left(x_{0}\right)=\fint_{\partial B_{r}\left(x_{0}\right)}ud\sigma$
+para toda $\overline{B_{r}\left(x_{0}\right)}\subset\Omega$, entonces
+$u\in Har\left(\Omega\right)$
+\end{tcolorbox}
+
+Por red abs, sup $\Delta u\left(x_{0}\right)\neq0$. Podemos suponer
+$\Delta u\left(x_{0}\right)>0\overset{u\in C^{2}}{\implies}\exists\overline{B_{r}\left(x_{0}\right)}\subset\Omega:\Delta u>0$.
+
+Tomando la $\phi$ de la demo del PVM, tenemos que $0=\phi'\left(r\right)=\frac{1}{\left|\partial B_{r}\left(x_{0}\right)\right|}\int_{B_{r}\left(x_{0}\right)}\Delta udx>0\#$
+
+\textbf{Nota:} también es cierto que $PVM2\implies u\in Har\left(\Omega\right)$.
+
+Además $\Delta u\geq0\overset{subPVM1}{\iff}u\left(x_{0}\right)\leq\fint_{\partial B_{r}\left(x_{0}\right)}ud\sigma,\ \forall\overline{B_{r}\left(x_{0}\right)}\subset\Omega\overset{sPVM2}{\iff}u\left(x_{0}\right)\leq\fint_{B_{r}\left(X_{0}\right)}udx,\ \forall\overline{B_{r}\left(x_{0}\right)}\subset\Omega$.
+
+La PVM caracteriza las funciones armónicas. Permite incluso generalizar
+la definición, {*}{*}
+
+\begin{tcolorbox}
+\textbf{Corolario 1: principio fuerte del máximo}
+
+Sea $\Omega\subset\mathbb{R}^{n}$ abierto y conexo y $u\in Har\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$.
+Si $\exists x_{0}\in\Omega|u\left(x_{0}\right)=\max_{\overline{\Omega}}u\implies u\equiv cte$
+\end{tcolorbox}
+
+Veamos algo más fuerte: que sPVM2 $\implies u\equiv cte$. Sea $M=\max_{\overline{\Omega}}u=u\left(x_{0}\right)$.
+Como $u\left(x_{0}\right)$ es un máximo, entonces $\nabla u\left(x_{0}\right)=0$
+y $D^{2}u\left(x_{0}\right)\leq0$, entonces $\Delta u=tr\left(D^{2}u\left(x_{0}\right)\right)\leq0${*}{*}{*}{*}
+
+\textbf{Corolario 2:} si $u\in Har\left(\Omega\right)\cap C\left(\overline{\Omega}\right)$
+y $u\not\equiv cte$ entonces $\min_{\partial\Omega}u<u\left(x\right)<\max_{\partial\Omega}u$
+
+\begin{tcolorbox}
+\textbf{Corolario 3: Teorema de Liouville}
+
+Si $u\in Har\left(\mathbb{R}^{n}\right)$ y acotado, entonces $u\equiv cte$
+\end{tcolorbox}
+
+Sea $x\in\mathbb{R}^{n}$ fijo. Veamos que $u\left(x\right)=u\left(0\right)$. 
+
+$\left|u\left(x\right)-u\left(0\right)\right|\overset{PVM2}{=}\left|\fint_{B_{r}\left(x\right)}u-\int_{B_{r}\left(0\right)}u\right|=\frac{1}{\left|B_{r}\right|}\left|\int_{B_{r}\left(x\right)}u-\int_{B_{r}\left(0\right)}u\right|=\frac{1}{\left|B_{r}\right|}\left|\int_{B_{r}\left(x\right)\setminus B_{r}\left(0\right)}u+\int_{B_{r}\left(0\right)\setminus B_{r}\left(x\right)}-u\right|$
+
+$\leq\frac{1}{\left|B_{r}\right|}\int_{B_{r}\left(x\right)\triangle B_{r}\left(0\right)}\left|u\right|$
+
+Ahora bien, $B_{r}\left(x\right)\triangle B_{r}\left(0\right)\subset\left\{ y\in\mathbb{R}^{n}|r-\left|x\right|\leq\left|y\right|\leq r+\left|x\right|\right\} $
+si $r>>\left|x\right|$.
+
+Entonces $\left|u\left(x\right)-u\left(0\right)\right|\leq\left\Vert u\right\Vert _{\infty}\frac{\left(r+\left|x\right|\right)^{n}-\left(r-\left|x\right|\right)^{n}}{r^{n}}\leq\left\Vert u\right\Vert _{\infty}\frac{c_{x}r^{n-1}}{r^{n}}\overset{r\rightarrow\infty}{\rightarrow}0$
+
+\begin{tcolorbox}
+\textbf{Corolario 4: regularidad}
+
+Si $u\in Har\left(\Omega\right)$ entonces $u\in C^{\infty}\left(\Omega\right)$
+\end{tcolorbox}
+
+{*}{*}{*}
+
+\textbf{El principio variacional de Dirichlet}
+
+Para resolver PD, Dirichlet pensó que entre todas las funciones de
+la clase ${\cal A}_{\varphi}=\left\{ w\in C^{2}\left(\Omega\right)\cap C^{1}\left(\overline{\Omega}\right):w_{|\partial\Omega}=\varphi\right\} $,
+la que resuelve PD es la que tiene mínima energía $E\left(w\right)=\frac{1}{2}\int_{\Omega}\left|\nabla w\right|^{2}$.
+El siguiente teorema da un método variacional (minimización) para
+resolver EDPs, implementable numéricamente, buscando sucesiones $u_{n}:E\left(u_{n}\right)\searrow E\left(u\right)$.
+Es aplicable a muchas EDPs elípticas. Aunque el teorema es condicionado
+a la existencia de solución o minimizante.
+
+\begin{tcolorbox}
+\textbf{Teorema 1: principio de Dirichlet}
+
+Sea $\varphi\in C\left(\partial\Omega\right)$ y $u\in{\cal A}_{\varphi}$.
+Son equivalentes: $\left(1\right)\Delta u=0$ y $\left(2\right)E\left(u\right)=\min\left\{ \frac{1}{2}\int_{\Omega}\left|\nabla w\right|^{2}:w\in{\cal A}_{\varphi}\right\} $.
+\end{tcolorbox}
+
+$\left(1\right)\implies\left(2\right)$ Sea $w\in{\cal A}_{\varphi}$
+y definimos $g=w-u\in C^{1}\left(\overline{\Omega}\right)\implies g_{|\partial\Omega}=0$.
+Entonces $E\left(w\right)=E\left(u+g\right)=\frac{1}{2}\int_{\Omega}\left|\nabla u+\nabla g\right|^{2}=\frac{1}{2}\int_{\Omega}\left|\nabla u\right|^{2}+\left|\nabla g\right|^{2}+2\nabla u\nabla g=E\left(u\right)+E\left(g\right)+\int_{\Omega}\nabla u\nabla g=$
+
+$\overset{Green1}{=}E\left(u\right)+E\left(g\right)+\int_{\partial\Omega}\left(\nabla u\cdot\overrightarrow{n}\right)g-\int_{\Omega}\left(\Delta u\right)g$
+
+Ahora bien, $E\left(g\right)\geq0$, como $g_{|\partial\Omega}=0$,
+entonces $\int_{\partial\Omega}\left(\nabla u\cdot\overrightarrow{n}\right)g=0$,
+y $\Delta u=0$, por lo que $\int_{\Omega}\left(\Delta u\right)g=0$.
+Así, queda que $E\left(w\right)\geq E\left(u\right)$.
+
+$\left(2\right)\implies\left(1\right)$ Sea $g\in C_{c}^{2}\left(\Omega\right)$
+(funciones $C^{2}$ con soporte compacto), por lo que $g_{|\partial\Omega}\equiv0$.
+Considero $I\left(t\right)=E\left(u+tg\right)$ con $t\in\mathbb{R}$,
+que es una función de una variable, y notemos que $u+tg\in{\cal A}_{\varphi}$.
+Como $\min_{t\in\mathbb{R}}I\left(t\right)=I\left(0\right)$, entonces
+$I'\left(0\right)=0$. Así, $I'\left(0\right)=\frac{d}{dt}\left[\frac{1}{2}\int_{\Omega}\left|\nabla\left(u+tg\right)\right|^{2}\right]_{t=0}=\frac{d}{dt}\left[\frac{1}{2}\int_{\Omega}\left|\nabla u\right|^{2}+t\int_{\Omega}\nabla u\cdot\nabla g+\frac{t^{2}}{2}\int_{\Omega}\left|\nabla g\right|^{2}\right]_{t=0}=\left[\int_{\Omega}\nabla u\cdot\nabla g+t\int_{\Omega}\left|\nabla g\right|^{2}\right]_{t=0}=$
+
+$=\int_{\Omega}\nabla u\nabla g\overset{Green1}{=}-\int_{\Omega}\left(\Delta u\right)g+\int_{\partial\Omega}\left(\nabla u\cdot\overrightarrow{n}\right)g\overset{g_{|\partial\Omega}=0}{=}-\int_{\Omega}\left(\Delta u\right)g$.
+
+O sea $0=I'\left(0\right)=-\int_{\Omega}\left(\Delta u\right)g,\ \forall g\in C_{c}^{2}\left(\Omega\right)\implies\Delta u\equiv0$
+en $\Omega$.
+
+\textbf{Problema de Plateau (superficies mínimas):} dado $\varphi\in C\left(\partial\Omega\right)$,
+buscamos $\min\left\{ \int_{\Omega}\sqrt{1+\left|\nabla u\right|^{2}}:u\in C^{1}\left(\Omega\right),u_{|\partial\Omega}=\varphi\right\} $.
+Para $u\in{\cal A}_{\varphi}$ equivale a resolver la EDP no lineal
+$div\left(\frac{\nabla u}{\sqrt{1+\left|\nabla u\right|^{2}}}\right)=0$
+en $\Omega$.
+
+\textbf{Operador $p$-Laplaciano, $1<p<\infty$:} buscamos la EDP
+que corresponde a minimizar $E\left(u\right)=\frac{1}{p}\int_{\Omega}\left|\nabla u\right|^{p}dx$,
+obteniendo la EDP no lineal $\Delta_{p}u=div\left(\left|\nabla u\right|^{p-2}\nabla u\right)=0$
+en $\Omega$.
+
+\textbf{Nota: ¿cuándo existe un minimizante de $E_{0}=\min\left\{ E\left(u\right)=\frac{1}{2}\int_{\Omega}\left|\nabla u\right|^{2}:u\in C^{2}\left(\Omega\right),u_{|\partial\Omega}=\varphi\right\} $?
+}Riemann afirmó que tales minimizantes siempre existen, pero Weierstrass
+y otros dieron contraejemplos. El problema es la compacidad de ${\cal A}_{\varphi}$:
+el punto límite de una sucesión $\left\{ u_{n}\right\} \subset{\cal A}_{\varphi}:E\left(u_{n}\right)\searrow E_{0}$
+podría no pertenecer a ${\cal A}_{\varphi}$. Es necesario trabajar
+en \textbf{espacios de Sobolev}: $H^{1}\left(\Omega\right)=\left\{ u\in L^{2}\left(\Omega\right):\nabla u\in L^{2}\left(\Omega\right)\right\} $.
+Usando análisis funcional se prueba que siempre existe $\min\left\{ E\left(u\right):u\in H^{1}\left(\Omega\right),u_{|\partial\Omega}=\varphi\right\} $,
+aunque este minimizante es solo \textbf{solución débil} de $\Delta u=0$.
+
+\textbf{Función de Green:} se denomina \textbf{solución fundamental
+de $\Delta$ en $\mathbb{R}^{n}$} a $K\left(x\right)=\frac{c_{n}}{\left|x\right|^{n-2}},\ x\in\mathbb{R}^{n}\setminus\left\{ 0\right\} $
+donde $c_{n}=\frac{-1}{\left(n-2\right)\left|\mathbb{S}^{n-1}\right|}$
+para $n\neq2$, o bien $K\left(x\right)=\frac{1}{2\pi}\log\left|x\right|,\ x\in\mathbb{R}^{2}\setminus\left\{ 0\right\} $
+si $n=2$.
+
+Si $x_{0}\in\mathbb{R}^{n}\implies K_{x_{0}}\left(x\right)=K\left(x-x_{0}\right)\in Har\left(\mathbb{R}^{n}\setminus\left\{ x_{0}\right\} \right)$.
+
+\begin{tcolorbox}
+\textbf{Teorema 1: Fórmula de Green 3}
+
+Sea $\Omega\subset\mathbb{R}^{n}$ de clase $C^{1}$. Si $u\in C^{2}\left(\Omega\right)\cap C^{1}\left(\overline{\Omega}\right)$
+entonces $u\left(x_{0}\right)=\int_{\Omega}\Delta u\left(x\right)\cdot K_{x_{0}}\left(x\right)dx+\int_{\partial\Omega}\left[u\cdot D_{\overrightarrow{n}}K_{x_{0}}-K_{x_{0}}\cdot D_{\overrightarrow{n}}u\right]d\sigma,\ \forall x_{0}\in\Omega$.
+($D_{\overrightarrow{n}}F=\nabla F\cdot\overrightarrow{n}$)
+\end{tcolorbox}
+
+\textbf{Nota:} si conocemos $\Delta u=f,u_{|\partial\Omega}=\varphi,\nabla u\cdot\overrightarrow{n}=g$,
+entonces obtenemos una fórmula explícita $u\left(x_{0}\right)=\int_{\Omega}f\cdot K_{x_{0}}+\int_{\partial\Omega}\left[\varphi\cdot\left(\nabla K_{x_{0}}\cdot\overrightarrow{n}\right)-K_{x_{0}}\cdot g\right]d\sigma$,
+que es un candidato a resolver PD o PN o ProbPoisson (no homog) en
+cualquier dominio $\Omega$ general.
+
+Aunque en la práctica solo se conoce una condición en $\partial\Omega$,
+o bien $u_{|\partial\Omega}=\varphi$ o bien $\nabla u\cdot\overrightarrow{n}_{|\partial\Omega}=g$.
+¿Podemos encontrar variantes con solo una condición? La demostración
+es válida también tomando $v=K_{x_{0}}+\nu\left(x\right),$ donde
+$\nu\in Har\left(\Omega\right)\cap C^{1}\left(\overline{\Omega}\right)$.
+Si tomamos $\nu$ adecuado podremos eliminar un término de frontera.
+
+Sea $\Omega\subset\mathbb{R}^{n}$ tal que $PD\left(x_{0},\Omega\right)$
+tiene solución $\nu=\nu_{\Omega,x_{0}},\ \forall x_{0}\in\Omega$.
+Se define la \textbf{solución de green} de $\Omega$ como $G_{\Omega}\left(x;x_{0}\right)=K\left(x-x_{0}\right)+\nu_{\Omega,x_{0}}\left(x\right),\ x\in\Omega$.
+
+\textbf{CAPÍTULO 4: TEORÍA DE LAS SERIES DE FOURIER}
+
+El objetivo ahora es, dada una función $f:\left[0,L\right]\rightarrow\mathbb{R}\ o\ \mathbb{C}$,
+determinar cuándo se tiene
+
+$f\left(x\right)=\sum_{n=0}^{\infty}\left[a_{n}\cos\left(\frac{2\pi nx}{L}\right)+b_{n}\sin\left(\frac{2\pi nx}{L}\right)\right]$.
+
+Fourier afirmó que es cierto para toda función $f$, pero sin demostración
+rigurosa. Deben obtener respuesta varias preguntas: ¿cuándo converge
+la serie? ¿converge a $f$? ¿Condiciones para $f$?
+
+Por convención se define $\mathbb{T}=\mathbb{R}/\left(L\mathbb{Z}\right)\equiv\left[0,L\right)$
+y $f:\mathbb{T}\rightarrow\mathbb{C}$ significa $f:\left[0,L\right)\rightarrow\mathbb{C}$
+extendida de forma $L$-periódica. A veces se reemplaza $\mathbb{T}\equiv\left[0,L\right)$
+por $\mathbb{T}\equiv\left[-\frac{L}{2},\frac{L}{2}\right)$. Nosotros
+usamos $L=1$.
+
+\textbf{Lema:} si $f$ es $L$-periódica, entonces $\int_{a}^{a+L}f\left(x\right)dx=\int_{0}^{L}f\left(x\right)dx=:\int_{\mathbb{T}}f\left(x\right)dx$.
+
+Se define $L^{1}\left(\mathbb{T}\right)=\left\{ f:\mathbb{T}\rightarrow\mathbb{C}\ medible|\int_{\mathbb{T}}\left|f\left(x\right)\right|dx<\infty\right\} $.
+
+Si $f\in L^{1}\left(\mathbb{T}\right)$, se define su \textbf{serie
+de Fourier compleja} como $f\left(x\right)\sim\sum_{n\in\mathbb{Z}}\tilde{f}\left(n\right)e^{2\pi inx}$
+donde $\tilde{f}\left(n\right)=\int_{\mathbb{T}}f\left(y\right)e^{-2\pi iny}dy$
+para $n\in\mathbb{Z}$ se denomina el \textbf{n-ésimo coeficiente
+de Fourier} de $f$.
+
+\textbf{Lema: aproximación por funciones simples:} si $f\in L^{1}\left(0,1\right)$
+entonces existen funciones simples $s_{1},s_{2},...$ tales que $\left(1\right)\lim_{n\rightarrow\infty}s_{n}\left(x\right)=f\left(x\right)$
+en casi todo punto (ctp) $x\in\left(0,1\right)$ y $\left(2\right)\lim_{n\rightarrow\infty}\int_{0}^{1}\left|f\left(x\right)-s_{n}\left(x\right)\right|dx=0$.
+
+\textbf{Lema de Riemann-Lebesgue: si $f\in L^{1}\left(\mathbb{T}\right)$
+}entonces $\lim_{\left|n\right|\rightarrow\infty}\tilde{f}\left(n\right)=0$.
+
+Caso $f={\cal X}_{\left(a,b\right)}$: $\tilde{f}\left(n\right)=\int_{a}^{b}e^{-2\pi inx}dx=\left[-\frac{e^{-2\pi inx}}{2\pi in}\right]_{a}^{b}=\frac{e^{-2\pi ina}-e^{-2\pi inb}}{2\pi in}$
+por lo que $\left|\tilde{f}\left(n\right)\right|\leq\frac{1}{\pi\left|n\right|}\overset{\left|n\right|\rightarrow\infty}{\rightarrow}0$.
+
+Por tanto, si $s$ es función simple, entonces $\lim_{\left|n\right|\rightarrow\infty}\tilde{s}\left(n\right)=0$.
+
+Caso $f\in L^{1}\left(\mathbb{T}\right)$: dado $\varepsilon>0,\exists s$
+función simple tal que $\left\Vert f-s\right\Vert _{L^{1}}<\varepsilon$.
+También sabemos que $\exists n_{0}$ tal que $\left|\tilde{s}\left(n\right)\right|<\varepsilon,\ \forall\left|n\right|>n_{0}$.
+Por tanto, para $\left|n\right|>n_{0}$, se tiene $\left|\tilde{f}\left(n\right)\right|=\left|\tilde{f-s}\left(n\right)+\tilde{s}\left(n\right)\right|\leq\int_{0}^{1}\left|f\left(x\right)-s\left(x\right)\right|\left|e^{-2\pi inx}\right|dx+\left|\tilde{s}\left(n\right)\right|=\left\Vert f-s\right\Vert _{L^{1}}+\left|\tilde{s}\left(n\right)\right|<\varepsilon+\varepsilon=2\varepsilon$
+
+\begin{tcolorbox}
+\textbf{Teorema 1: criterio de Dini 1}
+
+Si $f\in L^{1}\left(\mathbb{T}\right)$ es derivable en $x_{0}$,
+entonces $\exists\lim_{M,N\rightarrow\infty}\sum_{n=-N}^{M}\tilde{f}\left(n\right)e^{2\pi inx_{0}}=f\left(x_{0}\right)$
+\end{tcolorbox}
+
+Notar que
+
+$S_{N,M}f\left(x\right)=\sum_{n=-N}^{M}\tilde{f}\left(n\right)e^{2\pi inx}=\sum_{n=-N}^{M}\int_{\mathbb{T}}f\left(y\right)e^{-2\pi iny}dy\cdot e^{2\pi inx}=\int_{\mathbb{T}}f\left(y\right)\sum_{n=-N}^{M}e^{2\pi in\left(x-y\right)}dy=\int_{\mathbb{T}}f\left(x-t\right)D_{N,M}\left(t\right)dt$
+
+$D_{N,M}$ es el \textbf{núcleo de Dirichlet (asimétrico)}, y tiene
+dos propiedades útiles $\left(1\right)\int_{\mathbb{T}}D_{N,M}\left(t\right)dt=1,\ \forall N,M\in\mathbb{N}$
+y $\left(2\right)D_{N,M}\left(t\right)=\frac{e^{2\pi i\left(M+1\right)t}-e^{-2\pi iNt}}{e^{2\pi it}-1}$
+si $t\neq0\mod\mathbb{Z}$.
+
+Así, $S_{N,M}f\left(x_{0}\right)-f\left(x_{0}\right)=\int_{\mathbb{T}}f\left(x_{0}-t\right)D_{N,M}\left(t\right)dt-f\left(x_{0}\right)\overset{=1}{\overline{\int_{\mathbb{T}}D_{N,M}\left(t\right)dt}}=\int_{\mathbb{T}}\left[f\left(x_{0}-t\right)-f\left(x_{0}\right)\right]D_{N,M}\left(t\right)dt=$
+
+$\overset{\left(2\right)}{=}\int_{\mathbb{T}}\frac{f\left(x_{0}-t\right)-f\left(x_{0}\right)}{e^{2\pi it}-1}\left(e^{2\pi i\left(M+1\right)t}-e^{-2\pi iNt}\right)dt=\left(*\right)$ 
+
+Llamando $g\left(t\right)=\frac{f\left(x_{0}-t\right)-f\left(x_{0}\right)}{e^{2\pi it}-1}$,
+entonces $\left(*\right)=\tilde{g}\left(-M-1\right)-\tilde{g}\left(N\right)$
+y si probamos que $g\in L^{1}\left(\mathbb{T}\right)$ entonces, por
+el lema RL, $\lim_{N,M\rightarrow\infty}S_{N,M}f\left(x_{0}\right)-f\left(x_{0}\right)=\lim_{N,M\rightarrow\infty}\tilde{g}\left(-M-1\right)-\tilde{g}\left(N\right)=0$.
+
+Sea $t\in\mathbb{T}$, por hipótesis, $f$ es derivable en $x_{0}$,
+entonces $\lim_{t\rightarrow0}g\left(t\right)=\lim_{t\rightarrow0}\frac{f\left(x_{0}-t\right)-f\left(x_{0}\right)}{t}\frac{t}{e^{2\pi it}-1}=-f'\left(x_{0}\right)\frac{1}{2\pi i}$
+por lo que $g$ es acotada cerca de $t=0$: $\exists\delta>0:\int_{-\delta}^{\delta}\left|g\left(t\right)\right|dt<\infty$,
+y en el resto de puntos, $\delta\leq\left|t\right|\leq\frac{1}{2}$,
+el denominador no se anula $\left(h\left(t\right)\neq0\right)$, y
+por continuidad $\exists c_{\delta}>0:\left|h\left(t\right)\right|\geq c_{\delta},\ \forall\delta\leq\left|t\right|\leq\frac{1}{2}$.
+Por tanto, $\int_{\delta\leq t\leq\frac{1}{2}}\left|g\left(t\right)dt\right|\leq\frac{1}{c_{\delta}}\int_{\mathbb{T}}\left|f\left(x_{0}-t\right)-f\left(x_{0}\right)\right|dt\leq\frac{\left\Vert f\right\Vert _{L^{1}}-\left|f\left(x_{0}\right)\right|}{c_{\delta}}<\infty$
+y tenemos el resultado.
+
+\textbf{Nota:} el criterio es válido con hipótesis más generales que
+la derivabilidad, como solo necesitamos que $\exists\delta>0:g\left(t\right)\in L^{1}\left(-\delta,\delta\right)$
+basta la \textbf{condición de Dini}: $\exists\delta>0:\int_{-\delta}^{\delta}\left|\frac{f\left(x_{0}-t\right)-f\left(x_{0}\right)}{t}\right|dt<\infty$
+
+\textbf{Nota:} no vale con pedir continuidad, el Teorema de Bois-Reymond
+prueba que existen funciones continuas con $\lim_{N\rightarrow\infty}\left|S_{N}f\left(0\right)\right|=\infty$.
+Más aún, el de Kolmogorov prueba que existen funciones $L^{1}$ tales
+que $\lim_{N\rightarrow\infty}\left|S_{N}f\left(x\right)\right|=\infty,\ \forall x\in\mathbb{T}$.
+
+El teorema que cierra la teoría es el de Carleson: $f\in C\left(\mathbb{T}\right)\implies\exists\lim_{N\rightarrow\infty}S_{n}f\left(x\right)=f\left(x\right)$
+ctp $x\in\mathbb{T}$.
+
+\begin{tcolorbox}
+\textbf{Teorema 2: criterio de Dini 2}
+
+Si $f\in L^{1}\left(\mathbb{T}\right)$ y existen $f\left(x_{0}\right)^{\pm}$
+y $f'\left(x_{0}\right)^{\pm}$, entonces $\exists\lim_{N\rightarrow\infty}\sum_{n=-N}^{N}\tilde{f}\left(n\right)e^{2\pi inx_{0}}=\frac{f\left(x_{0}\right)^{-}+f\left(x_{0}\right)^{+}}{2}$
+\end{tcolorbox}
+
+$S_{N}f\left(x_{0}\right)=\sum_{n=-N}^{N}\tilde{f}\left(n\right)e^{2\pi inx_{0}}=\sum_{n=-N}^{N}\int_{\mathbb{T}}f\left(x\right)e^{-2\pi in\left(x-x_{0}\right)}dx=\sum_{n=-N}^{N}\int_{\mathbb{T}}f\left(x_{0}+y\right)e^{-2\pi iny}dy=$
+
+$=\sum_{n=-N}^{N}\left[\int_{0}^{\frac{1}{2}}\left(...\right)+\int_{-\frac{1}{2}}^{0}\left(...\right)\right]=\sum_{n=-N}^{N}\int_{0}^{\frac{1}{2}}\left(f\left(x_{0}+y\right)-f\left(x_{0}^{+}\right)\right)e^{-2\pi iny}dy+f\left(x_{0}^{+}\right)\sum_{n=-N}^{N}\int_{0}^{\frac{1}{2}}e^{-2\pi iny}dy+$
+
+$+\sum_{n=-N}^{N}\int_{-\frac{1}{2}}^{0}\left(f\left(x_{0}+y\right)-f\left(x_{0}^{-}\right)\right)e^{-2\pi iny}dy+f\left(x_{0}^{-}\right)\sum_{n=-N}^{N}\int_{-\frac{1}{2}}^{0}e^{-2\pi iny}dy$ 
+
+Por lo que $S_{N}f\left(x_{0}\right)=\frac{f\left(x_{0}^{+}\right)+f\left(x_{0}^{-}\right)}{2}+\sum_{n=-N}^{N}\int_{0}^{\frac{1}{2}}\overset{g_{1}\left(y\right)}{\left[\frac{f\left(x_{0}+y\right)-f\left(x_{0}^{+}\right)}{e^{2\pi iy}-1}\right]}\left(e^{2\pi iy}-1\right)e^{-2\pi iny}dy+$
+
+$+\sum_{n=-N}^{N}\int_{-\frac{1}{2}}^{0}\overset{g_{2}\left(y\right)}{\left[\frac{f\left(x_{0}+y\right)-f\left(x_{0}^{-}\right)}{e^{2\pi iy}-1}\right]}\left(e^{2\pi iy}-1\right)e^{-2\pi iny}dy$.
+Y definimos $g\left(y\right)=\begin{cases}
+g_{1}\left(y\right) & y\in\left(0,\frac{1}{2}\right)\\
+g_{2}\left(y\right) & y\in\left(-\frac{1}{2},0\right)
+\end{cases}$, $g\in L^{1}\left(\mathbb{T}\right)$?
+
+Tenemos $S_{N}f\left(x_{0}\right)=\frac{f\left(x_{0}^{+}\right)+f\left(x_{0}^{-}\right)}{2}+\sum_{n=-N}^{N}\left[\tilde{g}\left(n-1\right)-\tilde{g}\left(n\right)\right]=\frac{f\left(x_{0}^{+}\right)+f\left(x_{0}^{-}\right)}{2}+\tilde{g}\left(-N-1\right)-\tilde{g}\left(N\right)$
+y si $g\in L^{1}\left(\mathbb{T}\right),$ entonces $\tilde{g}\left(-N-1\right)-\tilde{g}\left(N\right)\overset{N\rightarrow\infty}{\rightarrow}0$
+y tendremos el resultado.
+
+Si $y>0$, entonces $g\left(y\right)=g_{1}\left(y\right)=\frac{f\left(x_{0}+y\right)-f\left(x_{0}^{+}\right)}{y}\frac{y}{2^{2\pi iy}-1}\rightarrow f'\left(x_{0}^{+}\right)\frac{1}{2\pi i}\implies\exists\delta>0:g\left(y\right)<M,\forall y\in\left(0,\delta\right)\implies\int_{0}^{\delta}\left|g\left(y\right)\right|dy<\infty$.
+
+Si $y<0$, igual.
+
+Si $\delta\leq\left|y\right|\leq\frac{1}{2}$, entonces $\left|h\left(y\right)\right|=\left|e^{2\pi iy}-1\right|\geq m\implies\int_{\delta\leq\left|y\right|\leq\frac{1}{2}}\leq\frac{1}{m}\int_{\mathbb{T}}\left(\left|f\left(y+x_{0}\right)\right|+\left|f\left(x_{0}^{+}\right)\right|\right)dy<\infty$
+y juntando todo esto tenemos $g\in L^{1}\left(\mathbb{T}\right)$
+y el resultado.
+
+\begin{tcolorbox}
+\textbf{Fórmula de Parseval}
+
+Si $f\in L^{2}\left(\mathbb{T}\right)$ entonces $\int_{\mathbb{T}}\left|f\left(x\right)\right|^{2}dx=\sum_{n\in\mathbb{Z}}\left|\tilde{f}\left(n\right)\right|^{2}$
+\end{tcolorbox}
+
+{*}{*}
+
+\textbf{Derivación de integración de SF}
+
+\begin{tcolorbox}
+\textbf{Lema1: }si $f\in C^{K}\left(\mathbb{T}\right)$ entonces $\tilde{f^{\left(k\right)}}\left(n\right)=\left(2\pi in\right)^{k}\tilde{f}\left(n\right),\ \forall n\in\mathbb{Z}$.
+Además, $\left|\tilde{f}\left(n\right)\right|\leq\frac{c_{f}}{\left|n\right|^{k}},\ n\geq1$.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Corolario: }si $f\in C^{2}\left(\mathbb{T}\right)$ entonces
+$f\left(x\right)=\sum_{n\in\mathbb{Z}}\tilde{f}\left(n\right)e^{2\pi inx},\ \forall x\in\mathbb{T}$
+con convergencia uniforme y absoluta.
+\end{tcolorbox}
+
+\textbf{Corolario 2:} si $f\in C^{N+2}\left(\mathbb{T}\right)$ entonces
+para $0\leq k\leq N$ se tiene $f^{\left(k\right)}\left(x\right)=\sum_{n\in\mathbb{Z}}\tilde{f}\left(n\right)\left(2\pi in\right)^{k}e^{2\pi inx},\ \forall x\in\mathbb{T}$
+uniforme y absolutamente.
+
+\begin{tcolorbox}
+\textbf{Lema2: }sea $f\in L^{1}\left(\mathbb{T}\right)$ con $\int_{\mathbb{T}}f=0$,
+y sea $F\left(x\right)=\int_{0}^{x}f\left(t\right)dt$. Entonces $\tilde{F}\left(n\right)=\frac{\tilde{f}\left(n\right)}{2\pi in},\ n\in\mathbb{Z}\setminus\left\{ 0\right\} $.
+En particular, $F\left(x\right)\sim\sum_{n\in\mathbb{Z}^{*}}\frac{\tilde{f}\left(n\right)}{2\pi in}e^{2\pi inx}+C_{0}$
+\end{tcolorbox}
+
+{*}{*}{*}
+
+\textbf{Nota:} la cte $C_{0}$ se calcula a mano. La serie integral
+siempre converge uniformemente en todo $\mathbb{T}$.
+
+Cuando $\int_{\mathbb{T}}f\neq0$, se aplica el teorema a $g\left(x\right)=f\left(x\right)-\tilde{f}\left(0\right)\implies F\left(x\right)-\tilde{f}\left(n\right)x\sim\sum_{n\neq0}\frac{\tilde{f}\left(n\right)-\tilde{f}\left(0\right)}{2\pi in}e^{2\pi inx}+C_{0}$
+converge uniformemente en $\mathbb{T}$.
+
+\textbf{Unicidad de las SF}
+
+\begin{tcolorbox}
+\textbf{Teorema: }Sean $f,g\in L^{1}\left(\mathbb{T}\right)$. Entonces
+$\left\{ \begin{array}{c}
+\tilde{f}\left(n\right)=\tilde{g}\left(n\right)\\
+\forall n\in\mathbb{Z}
+\end{array}\right\} \implies f\equiv g$
+\end{tcolorbox}
+
+Sea $h=f-g\in L^{1}\left(\mathbb{T}\right)$, entonces $\tilde{h}\left(n\right)=0,\ \forall n\in\mathbb{Z}$.
+Veamos que $h\equiv0$.
+
+caso1: $h\in C^{1}\left(\mathbb{T}\right)$ (o derivable), por el
+DINI1 es $h\left(x\right)=\lim_{N\rightarrow\infty}\sum_{n=-N}^{N}\tilde{h}\left(n\right)e^{2\pi inx}\equiv0,\ \forall x\in\mathbb{T}$
+
+caso2: $h\in C\left(\mathbb{T}\right)$, definimos la primitiva $H\left(x\right)=\int_{0}^{x}h\left(t\right)dt\in C^{1}\left(\mathbb{T}\right)$
+y periódica, pues $\tilde{h}\left(0\right)=0$. Entonces $\tilde{H}\left(n\right)=\frac{\tilde{h}\left(n\right)}{2\pi in},n\neq0$
+y por DINI1 es $H\left(x\right)\equiv\tilde{H}\left(0\right)=cte\overset{TFC}{\implies}0=H'\left(x\right)=h\left(x\right)$
+
+caso3: $h\in L^{1}\left(\mathbb{T}\right)$, la resuleve el siguiente
+\textbf{lema: TFC-Lebesgue:} $f\in L^{1}\left(0,1\right)\implies F\left(x\right)=\int_{0}^{x}f\left(t\right)dt$
+es derivable ctp $x$ y $F'\left(x\right)=f\left(x\right)$ ctp $x$.
+
+\textbf{Series de Fourier en $\boldsymbol{L^{2}\left(\mathbb{T}\right)}$}
+
+$L^{2}\left(\mathbb{T}\right)=\left\{ f:\mathbb{T}\rightarrow\mathbb{C}\ medible:\int_{\mathbb{T}}\left|f\left(x\right)\right|^{2}dx<\infty\right\} $
+
+Tiene las siguientes propiedades: $\left(1\right)$ tiene norma y
+producto escalar $\left\Vert f\right\Vert _{L^{2}}=\left[\int_{\mathbb{T}}\left|f\left(x\right)\right|^{2}dx\right]^{\frac{1}{2}}$
+y $\left\langle f,g\right\rangle =\int_{\mathbb{T}}f\left(x\right)\overline{g\left(x\right)}dx$.
+$\left(2\right)$ es un espacio completo. $\left(3\right)$ $L^{2}\left(\mathbb{T}\right)\subsetneq L^{1}\left(\mathbb{T}\right)$,
+por la desigualdad de Cauchy-Schwarz $\int_{\mathbb{T}}\left|f\left(x\right)\right|dx\leq\left[\int_{\mathbb{T}}\left|f\left(x\right)\right|^{2}dx\right]^{\frac{1}{2}}$
+se tiene $\left[\subset\right]$ y para ver $\left[=\right]$ basta
+tomar $f\left(x\right)=\left|x\right|^{\frac{-1}{2}}$.
+
+\textbf{Lema: desigualdad de Cauchy-Schwarz:} si $f,g\in L^{2}\left(\mathbb{T}\right)$
+entonces
+
+$\int_{\mathbb{T}}\left|f\left(x\right)g\left(x\right)\right|\leq\left(\int_{\mathbb{T}}\left|f\left(x\right)\right|^{2}dx\right)^{\frac{1}{2}}\left(\int_{\mathbb{T}}\left|g\left(x\right)\right|^{2}dx\right)^{\frac{1}{2}}$.
+
+\textbf{Espacios de Hilbert:} la teoría de SF en $L^{2}\left(\mathbb{T}\right)$
+es un caso especial de la teoría de bases ortonormales en un espacio
+de Hilbert.
+
+Sea $\left(\mathbb{H},\left\langle \cdot,\cdot\right\rangle \right)$
+un $\mathbb{C}$-espacio vectorial con un producto escalar $\left(1\right)$lineal
+1ª: $\left\langle a_{1}f_{1}+a_{2}f_{2},g\right\rangle =a_{1}\left\langle f_{1},g\right\rangle +a_{2}\left\langle f_{2},g\right\rangle $.
+$\left(2\right)$ antilineal 2ª: $\left\langle f,a_{1}g_{1}+a_{2}g_{2}\right\rangle =\overline{a_{1}}\left\langle f,g_{1}\right\rangle +\overline{a_{2}}\left\langle f,g_{2}\right\rangle $.
+$\left(3\right)$hermítico: $\left\langle f,g\right\rangle =\overline{\left\langle g,f\right\rangle }$.
+$\left(4\right)$ definido positivo: $\left\langle f,f\right\rangle \geq0,\forall f\in\mathbb{H}$
+y $\left\langle f,f\right\rangle =0\iff f=0$.
+
+Se define la norma asociada al producto escalar $\left\Vert f\right\Vert =\sqrt{\left\langle f,f\right\rangle }$.
+Se dice que $\mathbb{H}$ es un \textbf{espacio de Hilbert }si la
+norma es completa, o sea, toda sucesión de Cauchy es convergente.
+
+$\left(1\right)$ $f\perp g$ si $\left\langle f,g\right\rangle =0$
+
+$\left(2\right)$$\left\{ e_{j}\right\} _{j\in J}\subset\mathbb{H}$
+es un \textbf{sistema ortonormal SON} si $\left\langle e_{j},e_{k}\right\rangle =\delta_{j,k},\ \forall j,k\in J$
+
+$\left(3\right)$$\left\{ e_{j}\right\} _{j=1}^{\infty}$ es una \textbf{base
+ortonormal BON} si es SON y $\forall f\in\mathbb{H},\exists a_{j}\in\mathbb{C}:f=\sum_{j=1}^{\infty}a_{j}e_{j}$
+
+\textbf{Lema de ortogonalidad 1:} si $f,g\in\mathbb{H}$ entonces
+$\left\Vert f+g\right\Vert ^{2}=\left\Vert f\right\Vert ^{2}+\left\Vert g\right\Vert ^{2}+2Re\left[\left\langle f,g\right\rangle \right]$
+
+{*}{*}{*}
+
+\textbf{Corolario: identidad de Pitágoras:} $\left(1\right)$ si $f\perp g\implies\left\Vert f+g\right\Vert ^{2}=\left\Vert f\right\Vert ^{2}+\left\Vert g\right\Vert ^{2}$.
+$\left(2\right)$ si $\left\{ f_{n}\right\} _{n=1}^{N}$ son OG dos
+a dos entonces $\left\Vert \sum_{n=1}^{N}f_{n}\right\Vert ^{2}=\sum_{n=1}^{N}\left\Vert f_{n}\right\Vert ^{2}$.
+
+\textbf{Lema de ortogonalidad 2:} si $\left\{ e_{j}\right\} _{j=1}^{\infty}$
+es SON y $f=\sum_{j=1}^{\infty}a_{j}e_{j}$ entonces $\left(1\right)a_{j}=\left\langle f,e_{j}\right\rangle ,\forall j$
+y $\left(2\right)\left\Vert f\right\Vert ^{2}=\sum_{j=1}^{\infty}\left|\left\langle f,e_{j}\right\rangle \right|^{2}$
+
+Si $\{e_{j}\}_{1}^{\infty}$ es SON y $f=\sum_{n=1}^{\infty}a_{n}e_{n}$
+entonces $\left\langle f,e_{j}\right\rangle =\text{\ensuremath{\left\langle \sum_{n=1}^{\infty}a_{n}e_{n},e_{j}\right\rangle }}\underbrace{=}_{\left\langle \cdot,\cdot\right\rangle \text{ cont en }\|\|_{2}}\sum_{n=1}^{\infty}a_{n}\underbrace{\left\langle e_{n},e_{j}\right\rangle }_{\delta_{n,j}}=a_{j},\forall j\in\mathbb{N}$.
+$\|f\|^{2}=\|\sum_{n=1}^{\infty}\left\langle fe_{n},e_{n}\right\rangle \|^{2}=\sum_{n=1}^{\infty}\|\left\langle f,e_{n}\right\rangle \|^{2}\underbrace{\|e_{n}\|^{2}}_{1}$
+aplicando Pitágoras al sacar el límite porque la serie converge.
+
+\textbf{Lema de ortogonalidad 3: desigualdad de Bessel:} si $\left\{ e_{j}\right\} _{j=1}^{\infty}$
+es SON, entonces $\sum_{j=1}^{\infty}\left|\left\langle f,e_{j}\right\rangle \right|^{2}\leq\left\Vert f\right\Vert ^{2},\forall f\in\mathbb{H}$.
+Además, si $S_{N}f=\sum_{j=1}^{N}\left\langle f,e_{j}\right\rangle e_{j}$,
+entonces se tiene $\left\Vert f-S_{N}f\right\Vert ^{2}=\left\Vert f\right\Vert ^{2}-\sum_{j=1}^{N}\left|\left\langle f,e_{j}\right\rangle \right|^{2}$
+
+Lo segundo implica lo primero tomando límites.
+
+$\|f-S_{N}f\|^{2}=\|f\|^{2}+\|S_{N}f\|^{2}-2Re\left\langle f,S_{N}f\right\rangle $,
+y $\left\langle f,S_{N}f\right\rangle =\sum_{n=1}^{N}\overline{\left\langle f,e_{n}\right\rangle }\left\langle f,e_{n}\right\rangle =\sum_{n=1}^{N}\|\left\langle f,e_{n}\right\rangle \|^{2}=\|S_{N}f\|^{2}$.
+Observando que esta última norma es real ya lo tenemos.
+
+\begin{tcolorbox}
+\textbf{Teorema 1: caracterización de BON:} sea $\mathbb{H}$ un espacio
+de Hilbert y $\left\{ e_{j}\right\} _{j=1}^{\infty}$un SON. Entonces
+son equivalentes $\left(1\right)\left\{ e_{j}\right\} _{j=1}^{\infty}$
+es BON. $\left(2\right)\left\Vert f\right\Vert ^{2}=\sum_{j=1}^{\infty}\left|\left\langle f,e_{j}\right\rangle \right|^{2},\forall f\in\mathbb{H}$.
+$\left(3\right)f\in\mathbb{H}$ y $\left\langle f,e_{j}\right\rangle =0,\ \forall j\implies f=0$
+\end{tcolorbox}
+
+$\left[1\implies2\right]$ $f=\sum_{n=1}^{\infty}a_{n}e_{n},a_{n}=\left\langle f,e_{n}\right\rangle \ \forall n$.
+Por definición de convergencia $0=\lim_{N\to\infty}\|f-\sum_{n=1}^{N}a_{n}e_{n}\|^{2}=\lim_{N\to\infty}\|f-S_{N}f\|^{2}\overset{LemaBessel}{=}\lim_{N\to\infty}\left(\|f\|^{2}-\sum_{n=1}^{N}\|\left\langle f,e_{n}\right\rangle \|^{2}\right)$
+
+$\left[2\implies3\right]$ Obvio.
+
+$\left[3\implies1\right]$ $f\in\mathbb{H}$, $g_{n}:=\sum_{n=1}^{N}\left\langle f,e_{j}\right\rangle e_{j}$,
+hay que ver que $g_{N}\to f$ en $\|\cdot\|$. $\|g_{N}-g_{M}\|^{2}=\|\sum_{n=N+1}^{M}\left\langle f,e_{n}\right\rangle e_{n}\|^{2}=$
+$\sum_{n=N+1}^{M}\|\left\langle f,e_{n}\right\rangle \|^{2}\to0$
+si $M\ge N\to\infty$. Como es de Cauchy en un espacio completo converge
+a cierta $g\in\mathbb{H}$, y por definición de convergencia $g=\sum_{n=1}^{\infty}\left\langle f,e_{n}\right\rangle e_{n}$.
+Entonces $\left\langle g,e_{n}\right\rangle =\left\langle f,e_{n}\right\rangle ,\forall n\in\mathbb{N}$,
+luego la resta tiene todos los coeficientes nulos y $g=f$.
+
+\textbf{Corolario 1:} $\left\{ e^{2\pi inx}\right\} _{n\in\mathbb{Z}}$
+es BON de $L^{2}\left(\mathbb{T}\right)$, o sea, $f\left(x\right)=\sum_{n\in\mathbb{Z}}\tilde{f}\left(n\right)e^{2\pi inx}$
+en $\left\Vert \cdot\right\Vert _{L^{2}},\forall f\in L^{2}\left(\mathbb{T}\right)$.
+
+\begin{tcolorbox}
+\textbf{Corolario 2: identidad de Parseval general:} si $f,g\in L^{2}\left(\mathbb{T}\right)$,
+entonces $\int_{\mathbb{T}}f\left(x\right)\overline{g\left(x\right)}dx=\sum_{n\in\mathbb{Z}}\tilde{f}\left(n\right)\overline{\tilde{g}\left(n\right)}$
+\end{tcolorbox}
+
+Si $\left\{ e_{j}\right\} _{j=1}^{\infty}$ es BON y $f,g\in\mathbb{H}$
+entonces $\left\langle f,g\right\rangle =\left\langle \lim_{N\rightarrow\infty}S_{N}f,g\right\rangle =\lim_{N\rightarrow\infty}\left\langle \sum_{n=1}^{N}\left\langle f,e_{j}\right\rangle e_{j},g\right\rangle =$
+
+$=\lim_{N\rightarrow\infty}\sum_{j=1}^{N}\left\langle f,e_{j}\right\rangle \left\langle e_{j},g\right\rangle =\sum_{j=1}^{\infty}\left\langle f,e_{j}\right\rangle \overline{\left\langle g,e_{j}\right\rangle }$
+y esta serie converge absolutamente por las desigualdades de Cauchy-Schwarz
+y Bessel.
+
+\begin{tcolorbox}
+\textbf{Corolario 3: criterio de convergencia uniforme:} si $f\in C^{1}\left(\mathbb{T}\right)$
+entonces $f\left(x\right)=\sum_{n\in\mathbb{Z}}\tilde{f}\left(n\right)e^{2\pi inx}$
+unif y abs en $\mathbb{T}$
+\end{tcolorbox}
+
+Por Dini 1 tenemos conv. puntual.
+
+$\left\Vert \sum_{N\leq\left|n\right|\leq M}\tilde{f}\left(n\right)e^{2\pi inx}\right\Vert \leq\sum_{N\leq\left|n\right|\leq M}\left\Vert \tilde{f}\left(n\right)\right\Vert =\sum_{N\leq\left|n\right|\leq M}\left\Vert \tilde{f}\left(n\right)2\pi in\right\Vert \frac{1}{2\pi\left|n\right|}\overset{Cauchy-Schwarz}{\leq}$
+
+$\leq\left(\sum_{n\in\mathbb{Z}}|\widehat{f'}(n)|^{2}\right)^{\frac{1}{2}}\left(\sum_{|n|\ge N}\frac{1}{|2\pi n|^{2}}\right)^{\frac{1}{2}}\leq\left|f'\right|_{L^{2}\left(\mathbb{T}\right)}\frac{1}{2\pi}\left[\sum_{n\geq N}\frac{1}{n^{2}}\right]$
+
+Lo último es la cola de una serie convergente, tiende a 0 si $N\to\infty$,
+luego la serie original es de Cauchy unif+abs, así que es convergente
+unif+abs.
+
+\begin{tcolorbox}
+\textbf{Corolario 4: SF reales:} $\left\{ 1,\cos\left(2\pi nx\right),\sin\left(2\pi nx\right)\right\} _{n\geq1}$
+es BOG de $L^{2}\left(\mathbb{T}\right)$ (sin normalizar). En particular,
+$f\left(x\right)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n}\cos\left(2\pi nx\right)+b_{n}\sin\left(2\pi nx\right)\right)$
+en $\left\Vert \cdot\right\Vert _{L^{2}}$
+\end{tcolorbox}
+
+\textbf{CAPÍTULO 5: CONVOLUCIONES Y SF}
+
+Si $K,f\in L^{1}\left(\mathbb{T}\right)$ se define su \textbf{convolución
+}como $K*f\left(x\right)=\int_{\mathbb{T}}K\left(x-y\right)f\left(y\right)dy$
+para $x\in\mathbb{T}$ siempre que la integral sea absolutamente convergente.
+Esta misma definición puede utilizarse en $\mathbb{R}^{n}$.
+
+\textbf{Interpretación:} en general, si $\int K\left(x\right)dx=1$
+entonces $K*f\left(x\right)\thickapprox$promedio de $f$ en torno
+a $x$, ponderado por el peso $K$.
+
+\textbf{Propiedades}
+
+\begin{tcolorbox}
+\textbf{Proposición 1:} si $K,f\in L^{1}\left(\mathbb{T}\right)$
+entonces $\exists K*f\left(x\right)$ ctp $x\in\mathbb{T}$. Además,
+$\left\Vert K*f\right\Vert _{L^{1}}\leq\left\Vert K\right\Vert _{L^{1}}\left\Vert f\right\Vert _{L^{1}}$
+\end{tcolorbox}
+
+Veamos que $I\left(x\right)=\int_{\mathbb{T}}\left|K\left(x-y\right)f\left(y\right)\right|dy<\infty$
+ctp $x\in\mathbb{T}$. Integrando, es
+
+$0\leq\int_{\mathbb{T}}I\left(x\right)dx=\int_{\mathbb{T}}\left[\int_{\mathbb{T}}\left|K\left(x-y\right)\right|\left|f\left(y\right)\right|dy\right]dx$$\overset{Fubini-Tonelli}{=}\int_{\mathbb{T}}\left|f\left(y\right)\right|\left[\int_{\mathbb{T}}\left|K\left(x-y\right)\right|dx\right]dy$. 
+
+Pero $\int_{\mathbb{T}}\left|K\left(x-y\right)\right|dx\overset{x-y=z}{=}\int_{x-\mathbb{T}}\left|K\left(z\right)\right|dz=\left\Vert K\right\Vert _{L^{1}}$.
+Por tanto, es $0\leq\int_{\mathbb{T}}I\left(x\right)dx=\int_{\mathbb{T}}\left|f\left(y\right)\right|\left\Vert K\right\Vert _{L^{1}}dy=\left\Vert K\right\Vert _{L^{1}}\left\Vert f\right\Vert _{L^{1}}<\infty$
+ctp $x\in\mathbb{T}$.
+
+Y $\int_{\mathbb{T}}\left|K*f\left(x\right)\right|dx\leq\int_{\mathbb{T}}I\left(x\right)dx\leq\left\Vert K\right\Vert _{L^{1}}\left\Vert f\right\Vert _{L^{1}}$
+
+\begin{tcolorbox}
+\textbf{Proposición 2: }si $K,f,g\in L^{1}\left(\mathbb{T}\right)$
+entonces $\left(1\right)\boldsymbol{conmutatividad}:K*f\left(x\right)=f*K\left(x\right)$,
+$\left(2\right)\boldsymbol{asocitatividad}:K*\left(f*g\right)\left(x\right)=\left(K*f\right)*g\left(x\right)$,
+$\left(3\right)\boldsymbol{fourier}:\tilde{\left(K*f\right)}\left(n\right)=\tilde{K}\left(n\right)\tilde{f}\left(n\right),n\in\mathbb{Z}$ 
+\end{tcolorbox}
+
+{*}
+
+\begin{tcolorbox}
+\textbf{Corolario:} si $f,K\in L^{1}\left(\mathbb{T}\right)$ y $f\left(x\right)\sim\sum_{n\in\mathbb{Z}}\tilde{f}\left(n\right)e^{2\pi inx}$
+entonces $K*f\left(x\right)\sim\sum_{n\in\mathbb{Z}}\tilde{K}\left(n\right)\tilde{f}\left(n\right)e^{2\pi inx}$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Proposición 3: derivación: }si \textbf{$K\in C^{M}\left(\mathbb{T}\right),f\in L^{1}\left(\mathbb{T}\right)$
+}entonces $K*f\in C^{M}\left(\mathbb{T}\right)$ y $D^{\left(m\right)}\left[K*f\left(x\right)\right]=\left(D^{\left(m\right)}K\right)*f\left(x\right),\ \forall0\leq m\leq M$
+\end{tcolorbox}
+
+\textbf{Aproximaciones de la Identidad}
+
+$\left\{ K_{N}\right\} _{N\geq1}\subset L^{1}\left(\mathbb{T}\right)$
+es una \textbf{aproximación de la identidad AI} si $\left(1\right)\int_{\mathbb{T}}K_{N}\left(y\right)dy=1,\forall N\geq1$,
+$\left(2\right)A=\sup_{N\geq1}\int_{\mathbb{T}}\left|K_{N}\left(y\right)\right|dy<\infty$,
+$\left(3\right)\forall\delta>0\implies\lim_{N\rightarrow\infty}\int_{\mathbb{T}\setminus\left(-\delta,\delta\right)}\left|K_{N}\left(y\right)\right|dy=0$.
+
+Intuitivamente, es una sucesión de funciones que tiende a una $\delta_{\left\{ 0\right\} }$.
+
+{*}{*} ejemplos? lema?
+
+\begin{tcolorbox}
+\textbf{Teorema 1:} \textbf{convergencia de AI:} sea $\left\{ K_{N}\right\} _{N\geq1}\subset L^{1}\left(\mathbb{T}\right)$
+una AI, entonces $\left(1\right)$si $f$ acotada y continua en un
+punto $x_{0}\in\mathbb{T}$, entonces $\lim_{N\rightarrow\infty}K_{N}*f\left(x_{0}\right)=f\left(x_{0}\right)$,
+$\left(2\right)$si $f\in C\left(\mathbb{T}\right)$ entonces la igualdad
+es cierta uniformemente $\forall x\in\mathbb{T}$, $\left(3\right)$si
+$f\in L^{1}\left(\mathbb{T}\right)$ entonces la igualdad es cierta
+en la norma de $L^{1}\left(\mathbb{T}\right)$. 
+\end{tcolorbox}
+
+$\left(1\right)$ Dado $\varepsilon>0$ sea $\delta=\delta\left(\varepsilon,x_{0}\right)>0|\left|f\left(x_{0}+h\right)-f\left(x_{0}\right)\right|<\varepsilon,\ \forall\left|h\right|<\varepsilon$,
+por la continuidad de $f$ en $x_{0}$. Entonces 
+
+$\left|K_{N}*f\left(x_{0}\right)-f\left(x_{0}\right)\right|=\left|\int_{\mathbb{T}}f\left(x_{0}-y\right)K_{N}\left(y\right)dy-f\left(x_{0}\right)\overset{=1}{\left[\int_{\mathbb{T}}K_{N}\left(y\right)dy\right]}\right|=\left|\int_{\mathbb{T}}\left(f\left(x_{0}-y\right)-f\left(x_{0}\right)\right)K_{N}\left(y\right)dy\right|\leq\int_{\mathbb{T}}\left|...\right|dy=\int_{-\delta}^{\delta}\left|f\left(x_{0}-y\right)-f\left(x_{0}\right)\right|\left|K_{N}\left(y\right)\right|dy+\int_{\mathbb{T}\setminus\left(-\delta,\delta\right)}\left|f\left(x_{0}-y\right)-f\left(x_{0}\right)\right|\left|K_{N}\left(y\right)\right|dy\leq$
+
+$\leq\varepsilon\int_{-\delta}^{\delta}\left|K_{N}\right|dy+2\left\Vert f\right\Vert _{\infty}\int_{\mathbb{T}\setminus\left(-\delta,\delta\right)}\left|K_{n}\right|dy=\left(*\right)$
+
+Ahora bien, $\int_{-\delta}^{\delta}\left|K_{N}\right|dy\leq\int_{\mathbb{T}}\left|K_{N}\right|dy\leq A$
+y por $\left(3\right)$ en la def de IA, $\exists N_{0}=N_{0}\left(\varepsilon,x_{0},\left\Vert f\right\Vert _{\infty}\right):\int_{\mathbb{T}\setminus\left(-\delta,\delta\right)}\left|K_{N}\right|\leq\frac{\varepsilon}{\left\Vert f\right\Vert _{\infty}},\ \forall N>N_{0}$.
+por tanto $\left(*\right)\leq\left(A+2\right)\varepsilon$ si $N>N_{0}$.
+
+$\left(2\right)$Si $f\in C\left(\mathbb{T}\right)\implies f\in UC\left(\mathbb{T}\right)$
+y acotada, y el $\delta$ de $\left(1\right)$ podemos tomarlo independiente
+de $x_{0}$, y por tanto el $N_{0}$ independiente de $x_{0}$. Así,
+igual que antes, se tiene $\lim_{N}K_{N}*f\left(x_{0}\right)=f\left(x_{0}\right)$
+uniformemente $\forall x_{0}\in\mathbb{T}$.
+
+$\left(3\right)$ Necesitamos un lema de integral de Lebesgue: \textbf{lema:
+$f\in L^{1}\left(\mathbb{T}\right)\implies\lim_{\left|h\right|\rightarrow0}\left\Vert f\left(\cdot+h\right)-f\left(\cdot\right)\right\Vert _{L^{1}\left(\mathbb{T}\right)}=0$.}
+
+Y usando este lema la prueba es como la de $\left(1\right)$.
+
+\begin{tcolorbox}
+\textbf{Teorema 1.1:} sea $\left\{ K_{N}\right\} _{N\geq1}\subset L^{1}\left(\mathbb{T}\right)$
+una AI, con núcleos pares $K_{N}\left(x\right)=K_{N}\left(-x\right)$.
+entonces, si $f$ acotada y existen $f\left(x_{0}^{\pm}\right)$,
+se tiene $\lim_{N\rightarrow\infty}K_{N}*f\left(x_{0}\right)=\frac{f\left(x_{0}^{-}\right)+f\left(x_{0}^{+}\right)}{2}$
+\end{tcolorbox}
+
+{*}{*}
+
+\textbf{El núcleo de Dirichlet}
+
+El núcleo de Dirichlet es $D_{N}\left(x\right)=\sum_{\left|n\right|\leq N}e^{2\pi inx}=\frac{\sin\left(\left(2N+1\right)\pi x\right)}{\sin\left(\pi x\right)}$.
+
+\begin{tcolorbox}
+\textbf{Propiedades:} $\left(1\right)$$\int_{\mathbb{T}}D_{N}\left(x\right)dx=1$
+
+$\left(2\right)D_{N}\left(x\right)=D_{N}\left(-x\right)$
+
+$\left(3\right)D_{N}\left(0\right)=2N+1$
+
+$\left(4\right)D_{N}\left(x\right)=0\iff x\in\left\{ \frac{\pm1}{2N+1},...,\frac{\pm N}{2N+1}\right\} $
+
+$\left(5\right)\int_{\mathbb{T}}\left|D_{N}\left(x\right)\right|dx\thickapprox\log\left(N+1\right)\rightarrow\infty$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Lema 1: }$L_{N}=\int_{\mathbb{T}}\left|D_{N}\left(x\right)\right|dx\geq\frac{4}{\pi^{2}}\log\left(N+1\right)$
+\end{tcolorbox}
+
+Uso $\frac{|u|}{\pi/2}\le|\sin u|\le|u|,\forall|u|\le\frac{\pi}{2}$.
+$\int_{0}^{\frac{1}{2}}|D_{N}|\ge\sum_{n=0}^{N-1}\int_{\frac{n}{2N+1}}^{\frac{n+1}{2N+1}}\frac{|\sin((2N+1)\pi x)|}{|\sin(\pi x)|}dx\underbrace{\ge}_{|\sin\pi x|\le\pi|x|}$
+$\sum_{n=0}^{N-1}\frac{1}{\frac{\pi(j+1)}{2N+1}}\int_{\frac{n}{2N+1}}^{\frac{n+1}{2N+1}}|\sin((2N+1)\pi x)|dx\underbrace{=}_{(2N+1)\pi x=u}\frac{1}{\pi^{2}}\sum_{n=0}^{N-1}\frac{1}{n+1}\int_{\pi n}^{\pi(n+1)}|\sin u|du=\frac{2}{\pi^{2}}\sum_{n=0}^{N-1}\frac{1}{n+1}=\frac{2}{\pi^{2}}\sum_{n=1}^{N}\frac{1}{n}$
+$\ge\frac{2}{\pi^{2}}\sum_{n=1}^{N}\int_{n}^{n+1}\frac{dx}{x}=\ln(N+!)$
+
+\textbf{Nota:} $f\left(x\right)=\frac{\sin x}{x}$ es el prototipo
+de función $f\notin L^{1}\left(0,\infty\right)$ pues $\int_{0}^{\infty}\left|\frac{\sin x}{x}\right|dx=\infty$
+pero $f\in{\cal R}\left(0,\infty\right)$ en el sentido $\exists\lim_{R\rightarrow\infty}\int_{0}^{R}\frac{\sin x}{x}dx=\frac{\pi}{2}$.
+De hecho, $D_{N}$ y $f$ están relacionadas:
+
+\begin{tcolorbox}
+\textbf{Lema 2: }$\int_{0}^{a}D_{N}\left(x\right)dx=\frac{1}{\pi}\int_{0}^{\left(2N+1\right)\pi a}\frac{\sin x}{x}dx+O\left(\frac{1}{N}\right)$
+uniformemente en $\left|a\right|\leq\frac{1}{2}$. En particular,
+se tiene $\sup_{N\geq1}\sup_{\left|a\right|,\left|b\right|\leq\frac{1}{2}}\left|\int_{a}^{b}D_{N}\left(x\right)dx\right|<\infty$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Teorema 1: criterio de Dirichlet-Jordan}
+
+Sea $f\in L^{1}\left(\mathbb{T}\right)$.
+
+$\left(1\right)$ Si $f$ es creciente (o decreciente) en un entorno
+de $x=a$, entonces $\exists\lim_{N\rightarrow\infty}S_{N}f\left(a\right)=\frac{f\left(a^{-}\right)+f\left(a^{+}\right)}{2}$
+
+$\left(2\right)$ Si $f$ es creciente (o decreciente) en un entorno
+de $\left[a,b\right]$ y $C\left[a,b\right]$, entonces $\lim_{N\rightarrow\infty}S_{N}f\left(x\right)=f\left(x\right)$
+uniformemente $\forall x\in\left[a,b\right]$
+\end{tcolorbox}
+
+\textbf{El fenómeno de Gibbs}
+
+El criterio de DINI2, asegura que si $f$ tiene una discontinuidad
+de salto en $a$ entonces su SF converge a la media de los límites
+laterales. Pero en las gráficas se observa un efecto curioso, y es
+que en las discontinuidades siempre se produce un overshoot de aproximadamente
+un 9\% del tamaño del salto. Esto es problemática en las aplicaciones
+prácticas, por lo que se atenúa utilizando filtros.
+
+\begin{tcolorbox}
+\textbf{Teorema 1: }Si $f\in C^{1}\left(\mathbb{T}\setminus\left\{ a\right\} \right)$,
+con discontinuidad de salto en $x=a$, entonces $\lim_{N\rightarrow\infty}S_{N}f\left(a\pm\frac{1}{2N+1}\right)=f\left(a^{\pm}\right)\pm0,09\left[f\left(a^{+}\right)-f\left(a^{-}\right)\right]$.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Ejercicio: }si $\left\{ K_{n}\right\} _{n\geq1}$ es una AI
+con núcleos positivos, entonces $-M_{1}\leq f\left(x\right)\leq M_{2}\implies-M_{1}\leq K_{n}*f\left(x\right)\leq M_{2}$
+\end{tcolorbox}
+
+En particular, los núcleos positivos no producen overshooting.
+
+\textbf{Sumabilidad de Cesàro y núcleo de Féjer}
+
+$\sum_{n=0}^{\infty}a_{n}$ es convergente si $\exists\lim_{N\rightarrow\infty}S_{N}=\sum_{n=0}^{N}a_{n}$.
+Sea $\sum a_{n}$ una serie divergente, ¿es posible aignarle un valor
+natural con algún método de sumación?
+
+La respuesta es que sí: se dice que $\sum_{n=0}^{\infty}a_{n}$ \textbf{converge
+a $\boldsymbol{s}$ en media} o en el sentido de Cèsaro $\left(C,1\right)$
+si $\sigma_{N}=\frac{S_{0}+S_{1}+...+S_{N-1}}{N}\rightarrow s=C-\sum a_{n}$.
+
+\textbf{Lema 1:} si $\sum_{n=0}^{\infty}s\implies C-\sum_{n=0}^{\infty}a_{n}=s$
+
+Por el criterio de Stolz, $\lim_{N}\sigma_{N}=\lim_{N}\frac{S_{0}+...+S_{N}}{N+1}=\lim_{N}\frac{S_{N}}{1}=s$.
+
+\textbf{Notas:} $\left(1\right)$$\sigma_{N}=\sum_{n=0}^{\infty}\frac{N-n}{N}a_{n}=\sum_{n=0}^{\infty}\left(1-\frac{n}{N}\right)a_{n}$
+
+$\left(2\right)$Hay otros métodos de sumación: \textbf{Cèsaro K $\boldsymbol{\left(C,k\right)}$}:
+$\sigma_{N}^{\left(k\right)}=\frac{\sigma_{1}^{\left(k-1\right)}+...+\sigma_{N}^{\left(k-1\right)}}{N}\rightarrow C_{k}-\sum a_{n}$
+
+\textbf{Ricoz $\boldsymbol{\left(R,\alpha\right)}\boldsymbol{:}$$R_{\alpha}-\sum a_{n}=\sum_{n=0}^{\infty}\left(1-\frac{n}{N}\right)_{+}^{\alpha}a_{n}$}
+
+\textbf{Abel: }$A-\sum a_{n}=\lim_{r\rightarrow1^{-}}\sum_{n=0}^{\infty}r^{n}a_{n}$
+
+\textbf{Núcleo de Féjer}
+
+Féjer aplicó la C-sumación a las SF. Si $f\in L^{1}\left(\mathbb{T}\right)$
+se define $\sigma_{N}f\left(x\right)=\frac{S_{0}f\left(x\right)+...+S_{N-1}f\left(x\right)}{N}$.
+Como $S_{n}f=D_{n}*f$, se tiene $\sigma_{N}f=\left(\frac{D_{0}+...+D_{N-1}}{N}\right)*f=F_{N}*f$.
+
+Se define el $\boldsymbol{N}$\textbf{-ésimo núcleo de Féjer}, $F_{N}\left(x\right)$
+como $F_{N}\left(x\right)=\frac{D_{0}\left(x\right)+...+D_{N-1}\left(x\right)}{N}$.
+
+\begin{tcolorbox}
+\textbf{Lema:} $\left(1\right)F_{N}\left(x\right)=\frac{1}{N}\left(\frac{\sin\left(N\pi x\right)}{\sin\left(\pi x\right)}\right)^{2}$
+
+$\left(2\right)\left\{ F_{N}\left(x\right)\right\} _{N\geq1}$ es
+una AI en $L^{1}\left(\mathbb{T}\right)$
+\end{tcolorbox}
+
+$\left(1\right)$ $z=e^{2\pi ix}$, entonces $F_{N}\left(x\right)=\frac{D_{0}+...+D_{N-1}}{N}=\frac{1}{N}\sum_{n=0}^{N-1}\left(\sum_{\left|k\right|\leq n}e^{2\pi ikx}\right)=\frac{1}{N}\sum_{n=0}^{N}\left(\sum_{\left|k\right|\leq n}z^{k}\right)=\frac{1}{N}\sum_{n=0}^{N-1}\frac{z^{n-1}-z^{-n}}{z-1}=$
+
+$=\frac{1}{Z}\frac{1}{z-1}\left(\sum_{n=0}^{N-1}z^{n+1}-\sum_{n=0}^{N-1}z^{-n}\right)=\frac{1}{N\left(z-1\right)}\left(\frac{z^{N+1}-z}{z-1}-\frac{z^{-N}-1}{z^{-1}-1}\right)=\frac{z^{N+1}-z+z\left(z^{-N}-z\right)}{N\left(z-1\right)^{2}}=\frac{z\left(z^{N}-2+z^{-N}\right)}{N\left(z-1\right)^{2}}=$
+
+$=\frac{1}{N}\frac{\left(z^{\frac{N}{2}}-z^{-\frac{N}{2}}\right)^{2}}{\left(z^{\frac{1}{2}}-z^{-\frac{1}{2}}\right)^{2}}=\frac{1}{N}\left(\frac{\sin\left(N\pi x\right)}{\sin\left(\pi x\right)}\right)^{2}$
+
+$\left(2\right)$ - $\int_{\mathbb{T}}F_{N}=\int_{\mathbb{T}}\left|F_{N}\right|=\int_{\mathbb{T}}\frac{D_{0}+...+D_{N-1}}{N}=\frac{\sum_{n=0}^{N-1}\int_{\mathbb{T}}D_{n}}{N}=\frac{N}{N}=1$
+
+- $A=\sup_{N\geq1}\int_{\mathbb{T}}\left|F_{N}\left(x\right)\right|dx$,
+$\int_{\mathbb{T}}\left|F_{N}\left(x\right)\right|dx=\int_{\mathbb{T}}\left|\frac{1}{N}\sum_{n=0}^{N-1}D_{n}\left(x\right)\right|dx\leq\frac{1}{N}\sum_{n=0}^{N-1}\int_{\mathbb{T}}\left|D_{n}\left(x\right)\right|dx\leq\frac{NA_{D}}{N}=A_{D}$
+
+- Si $\delta>0$, usando $\left|\sin\left(\pi x\right)\right|\geq\sin\pi\delta$,
+es $\int_{\delta\leq\left|x\right|\leq\frac{1}{2}}\left|F_{N}\left(x\right)\right|dx\leq\int_{\delta\leq\left|x\right|\leq\frac{1}{2}}\frac{1}{N}\frac{1}{\sin^{2}\left(\pi\delta\right)}\leq\frac{1}{N\sin^{2}\left(\pi\delta\right)}\overset{N\rightarrow\infty}{\rightarrow}0$
+
+\textbf{Propiedades del núcleo de Féjer}
+
+$\left(1\right)F_{N}\geq0$ y $F_{N}\left(x\right)=F_{N}\left(-x\right)$
+
+$\left(2\right)\int_{\mathbb{T}}F_{N}\left(x\right)dx=\int_{\mathbb{T}}\left|F_{N}\left(x\right)\right|dx=1$
+
+$\left(3\right)F_{N}\left(0\right)=N$
+
+$\left(4\right)F_{N}\left(x\right)=0\iff x=\pm\frac{j}{N},j=1,...,\frac{N}{2}$
+
+$\left(5\right)$ decaimiento: $F_{N}\left(x\right)=\frac{1}{N}\left(\frac{\sin\left(N\pi x\right)}{\sin\left(\pi x\right)}\right)^{2}\lesssim\min\left\{ N,\frac{1}{N\left|x\right|^{2}}\right\} $
+($\lesssim$ es $\leq$ por una cte)
+
+$\left(6\right)$ fourier: $\tilde{F_{N}}\left(n\right)=\left(1-\frac{\left|n\right|}{N}\right),n\in\mathbb{Z}$.
+De hecho, $\sigma_{N}f\left(x\right)=\sum_{\left|n\right|<N}\left(1-\frac{\left|n\right|}{N}\right)_{+}\tilde{f}\left(n\right)e^{2\pi inx}$
+
+\begin{tcolorbox}
+\textbf{Teorema de Féjer}
+
+$\left(1\right)$ si $f\in L^{1}\left(\mathbb{T}\right)$ y existen
+$f\left(a^{\pm}\right)$ entonces $\lim_{N}\sigma_{N}f\left(a\right)=\frac{f\left(a^{-}\right)+f\left(a^{+}\right)}{2}$
+
+$\left(2\right)$ si $f\in C\left(\mathbb{T}\right)$ entonces $\lim_{N}\sigma_{N}f\left(x\right)=f\left(x\right)$
+uniformemente $\forall x\in\mathbb{T}$
+
+$\left(3\right)$ si $f\in L^{1}\left(\mathbb{T}\right)$ entonces
+$\lim_{N}\left\Vert \sigma_{N}f-f\right\Vert _{L^{1}}=0$
+\end{tcolorbox}
+
+\textbf{Corolario 1: unicidad de las SF:} si $f\in L^{1}\left(\mathbb{T}\right)$
+es tal que $\tilde{f}\left(n\right)=0,\ \forall n\in\mathbb{Z}$,
+entonces $f\equiv0$
+
+$0=\lim_{N}\left\Vert \sigma_{N}f-f\right\Vert _{L^{1}}=\lim_{N}\left\Vert \sum_{\left|n\right|<N}\left(1-\frac{\left|n\right|}{N}\right)\tilde{f}\left(n\right)e^{2\pi inx}-f\right\Vert _{L^{1}}=\lim_{N}\left\Vert 0-f\right\Vert _{L^{1}}=\left\Vert f\right\Vert _{L^{1}}\implies f\equiv0$
+
+\textbf{Corolario 3: }el conjunto ${\cal T}=span\left\{ e^{2\pi inx}\right\} _{n\in\mathbb{Z}}$
+es denso en $C\left(\mathbb{T}\right)$
+
+si $f\in C\left(\mathbb{T}\right)$ entonces $\sigma_{N}f\left(x\right)\in{\cal T}$
+y converge unif a $f$
+
+\begin{tcolorbox}
+\textbf{Corolario 4: el Teorema de Weierstrass}
+
+El conjunto ${\cal P}=span\left\{ x^{n}\right\} _{n\geq0}$ de los
+polinomios es denso en $C\left(\left[a,b\right]\right)$. O sea, si
+$f\in C\left(\left[a,b\right]\right)$ y $\varepsilon>0$ entonces
+existe un polinomio $P\left(x\right)$ tal que $\sup_{x\in\left[a,b\right]}\left|f\left(x\right)-P\left(x\right)\right|<\varepsilon$ 
+\end{tcolorbox}
+
+Podemos suponer $\left[a,b\right]=\left[0,\frac{1}{2}\right]$. Sea
+$f\in C\left(\left[0,\frac{1}{2}\right]\right)$ y sea $g\left(x\right)=f\left(\left|x\right|\right)\in C_{per}\left(\left[-\frac{1}{2},\frac{1}{2}\right]\right)$.
+Entonces $g\in C\left(\mathbb{T}\right)$. Por el corolario 3, dado
+$\varepsilon>0,\exists N_{0}=N_{0}\left(\varepsilon,\delta\right)$
+tal que $\sup_{\left|x\right|\leq\frac{1}{2}}\left|g\left(x\right)-\sum_{\left|n\right|\leq N_{0}}a_{n}e^{2\pi inx}\right|<\varepsilon$.
+
+Escribimos, por Taylor, $e^{u}=P_{L}\left(u\right)+R_{L}\left(u\right)$,
+con $\left|R_{L}\left(u\right)\right|\overset{L\rightarrow\infty}{\rightarrow}0$
+uniformemente en compactos, y en particular en $\left[-\pi N_{0},\pi N_{0}\right]$.
+
+Tomando $L_{0}=L_{0}\left(\varepsilon,N_{0},\left\{ a_{n}\right\} \right)$
+tal que $\left|R_{L}\left(u\right)\right|<\frac{\varepsilon}{\sum_{\left|n\right|\leq N_{0}}a_{n}},\forall L\geq L_{0},\forall u\in\left[-\pi N_{0},\pi N_{0}\right]$,
+entonces $\left|e^{2\pi inx}-P_{L_{0}}\left(2\pi inx\right)\right|=\left|R_{L_{0}}\left(2\pi inx\right)\right|<\frac{\varepsilon}{\sum_{\left|n\right|\leq N_{0}}a_{n}},\forall\left|x\right|\leq\frac{1}{2},\forall\left|n\right|\leq N_{0}$.
+
+Por tanto, $\left|g\left(x\right)-\sum_{\left|n\right|\leq N_{0}}a_{n}P_{L_{0}}\left(2\pi inx\right)\right|\leq\left|g\left(x\right)-\sum_{\left|n\right|\leq N_{0}}a_{n}e^{2\pi inx}\right|+\sum_{\left|n\right|\leq N_{0}}\left|a_{n}\right|\left|e^{2\pi inx}-P_{L_{0}}\left(2\pi inx\right)\right|<2\varepsilon,\ \forall x\in\mathbb{T}$
+
+\textbf{Aplicaciones de la teoría de SF}
+
+\textbf{Desigualdad isoperimétrica en $\boldsymbol{\mathbb{R}^{2}}$}
+
+De entre todas las curvas cerradas $\Gamma\subset\mathbb{R}^{2}$
+de longitud $L$, ¿cuál es la que encierra la mayor área?
+
+\textbf{Lema: Desigualdad de Wirtinger: }sea $f$ $T$-periódica y
+de clase $C^{1}$. $\left(1\right)$ si $\int_{0}^{T}f=0$ entonces
+$\left\Vert f\right\Vert _{L^{2}[0,T)}\leq\frac{T}{2\pi}\left\Vert f'\right\Vert _{L^{2}[0,T)}$
+, $\left(2\right)$si $f\left(0\right)=f\left(T\right)$ entonces
+$\left\Vert f\right\Vert _{L^{2}[0,T)}\leq\frac{T}{\pi}\left\Vert f'\right\Vert _{L^{2}[0,T)}$
+y $\left(3\right)$ para $\left(1\right)$ se da la igualdad sii $f\left(y\right)=Ae^{-\frac{2\pi iy}{T}}+Be^{\frac{2\pi iy}{T}}$
+y para $\left(2\right)$ se da sii $f\left(y\right)=A\sin\left(\frac{\pi y}{T}\right)$.
+
+\begin{tcolorbox}
+\textbf{Teorema: }sea $\Gamma\subset\mathbb{R}^{2}$ una curva cerrada
+simple regular con $long\left(\Gamma\right)=L$. Entonces, el área
+que encierra cumple $A\leq\frac{L^{2}}{4\pi}$. Además, la igualdad
+se da si, y solo si, $\Gamma$ es una circunferencia.
+\end{tcolorbox}
+
+Tomamos la ppa $\sigma:\left[0,L\right]\rightarrow\Gamma,\sigma\left(s\right)=\left(x\left(s\right),y\left(s\right)\right)$
+y $\left|\sigma'\left(s\right)\right|=1$. Sin pérdida de generalidad,
+podemos suponer $\int_{0}^{L}x\left(s\right)ds=\int_{0}^{L}y\left(s\right)ds=0$
+porque las traslaciones no cambian $L$ ni $A$.
+
+$A=\frac{1}{2}\left|\int_{0}^{L}\left(xdy-ydx\right)\right|=\frac{1}{2}\left|\int_{0}^{L}\left(x\left(s\right)y'\left(s\right)-y\left(s\right)x'\left(s\right)\right)ds\right|=\frac{1}{2}\left|\int_{0}^{L}Im\left[\overline{\left(x\left(s\right)+iy\left(s\right)\right)}\left(x'\left(s\right)+iy'\left(s\right)\right)\right]ds\right|=$
+
+$=\frac{1}{2}\left|Im\left[\int_{0}^{L}\overline{\left(x+iy\right)}\left(x'+iy'\right)ds\right]\right|\overset{Im\left(z\right)\leq\left|z\right|}{\leq}\frac{1}{2}\left|\int_{0}^{L}\overline{\sigma\left(s\right)}\sigma'\left(s\right)ds\right|\overset{Cauchy-Schwarz}{\leq}\frac{1}{2}\left(\int_{0}^{L}\left|\sigma\left(s\right)\right|^{2}ds\right)^{\frac{1}{2}}\left(\int_{0}^{L}\left|\sigma'\left(s\right)\right|^{2}ds\right)^{\frac{1}{2}}\leq$
+
+$\overset{Wirtinger}{\leq}\frac{L}{4\pi}\int_{0}^{L}\left|\sigma'\left(s\right)\right|^{2}ds=\frac{L^{2}}{4\pi}$.
+
+Para la igualdad, recordemos que $\left|\left\langle u,v\right\rangle \right|\leq\left\Vert u\right\Vert \left\Vert v\right\Vert $
+con $=$ si, y solo si, $u=\lambda v,\ \lambda\in\mathbb{C}$.
+
+Así, si $A=\frac{L^{2}}{4\pi},$ donde hemos usado Cauchy-Schwarz
+debe ser una igualdad, por lo que debe ser $\sigma=\lambda\sigma'\implies x\left(s\right)+iy\left(s\right)=\lambda\left(x'\left(s\right)+iy'\left(s\right)\right),\ \forall s\in\left(0,L\right)$.
+
+$x\left(s\right)+iy\left(s\right)\overset{igualdad\ Wirtinger}{=}ae^{\frac{2\pi is}{L}}+be^{-\frac{2\pi is}{L}}$
+
+$\lambda\left(x'\left(s\right)+iy'\left(s\right)\right)=a\lambda\frac{2\pi i}{L}e^{\frac{2\pi is}{L}}-b\lambda\frac{2\pi i}{L}e^{-\frac{2\pi is}{L}}$
+
+Entonces debe ser $\begin{cases}
+a=a\frac{2\pi i\lambda}{L} & \implies a=0\ \acute{o}\ \lambda=\frac{L}{2\pi i}\\
+b=-b\frac{2\pi i\lambda}{L} & \implies b=0\ \acute{o}\ \lambda=-\frac{L}{2\pi i}
+\end{cases}$, supongamos $b=0$, entonces $\lambda=\frac{L}{2\pi i}$ y es $\sigma\left(s\right)=ae^{\frac{2\pi is}{L}}$,
+que es una circunferencia de radio $a$.
+
+\begin{tcolorbox}
+\textbf{Teorema: Weierstrass: }sea $\alpha\in\left(0,1\right)$ y
+sea $W_{\alpha}\left(x\right)=\sum_{n=0}^{\infty}\frac{e^{2\pi i2^{n}x}}{2^{n\alpha}},\ x\in\mathbb{T}$.
+Entonces, $W_{\alpha}\in C\left(\mathbb{T}\right)$ pero no es derivable
+en ningún $x_{0}\in\mathbb{R}$. Es más, $W_{\alpha}\in C^{\alpha}\left(\mathbb{T}\right)$,
+pero $W_{\alpha}\notin C^{\alpha+\varepsilon}\left(x_{0}\right),\ \forall\varepsilon>0,x_{0}\in\mathbb{R}$
+\end{tcolorbox}
+
+\textbf{CAPÍTULO 6: MÁS SOBRE EDPs}
+
+\textbf{EDOs de Sturm-Liouville}
+
+A menudo, al resolver EDP por separación de variables llegamos a EDOs
+de orden 2, del tipo
+
+$\begin{cases}
+a\left(t\right)x''\left(t\right)+b\left(t\right)x'\left(t\right)+c\left(t\right)x\left(t\right)=-\lambda x\left(t\right) & t\in\left[a,b\right]\\
+cond\ contorno
+\end{cases}$
+
+En cada EDP, debemos determinar \textbf{(1)} ¿para qué valores de
+$\lambda$ existen soluciones no nulas? \textbf{(2) }encontrar autofunciones
+$\phi_{n}|L\phi_{n}\left(t\right)=-\lambda_{n}\phi_{n}\left(t\right)$
+\textbf{(3) }probar ortogonalidad de las $\phi_{n}$ \textbf{(4)}
+determinar si toda función $f\left(t\right)$ se puede escribir como
+$f\left(t\right)=\sum_{n=0}^{\infty}a_{n}\phi_{n}\left(t\right),t\in\left[a,b\right]$ 
+
+Y nos preguntamos si esto debe hacerse para cada EDP o puede generalizarse
+de alguna forma.
+
+Un \textbf{operador de Sturm-Liouville regular }$\left(L,cc\right)$
+está formado por:
+
+\textbf{(a)} un operador diferencial $L$ de orden 2: $Lx\left(t\right)=-\left[a\left(t\right)x''\left(t\right)+b\left(t\right)x'\left(t\right)+c\left(t\right)x\left(t\right)\right],t\in\left[a,b\right]$
+donde $a,b,c\in C_{\mathbb{R}}\left[a,b\right]$ con $a\left(t\right)>0$.
+
+\textbf{(b) }unas condiciones de contorno $cc$ fijas, o bien $a_{1}x\left(a\right)+a_{2}x'\left(a\right)=0$
+y $b_{1}x\left(b\right)+b_{2}x\left(b\right)=0$ $\left(c_{s}\right)$
+condiciones separadas
+
+o bien $x\left(a\right)=x\left(b\right)$ y $x'\left(a\right)=x'\left(b\right)$
+$\left(c_{p}\right)$ condiciones periódicas
+
+Diremos que $\lambda\in\sigma\left(L,cc\right)$ (espectro) si $\exists\phi\not\equiv0|\begin{cases}
+L\phi\left(t\right)=\lambda\phi\left(t\right)\\
+\phi\in cc
+\end{cases}$. En ese caso, $\lambda$ es un autovalor de $\left(L,cc\right)$
+y $\phi\left(t\right)$ su autofunción asociada.
+
+\begin{tcolorbox}
+\textbf{Teorema general de Sturm Liouville}
+
+Sea $\left(L,cc\right)$ un operador de SL regular. Entonces se cumple:
+
+$\left(1\right)\sigma\left(L,cc\right)=\left\{ \lambda_{n}\right\} _{n=1}^{\infty}$
+con $\lambda_{1}<\lambda_{2}<...<\lambda_{n}<...\rightarrow\infty$
+
+$\left(2\right)$si $cc=c_{p}$ entonces todos los autovalores son
+simples, o sea $\dim\left\{ \phi_{n}\in C_{\mathbb{R}}^{2}\left[a,b\right]|L\phi_{n}=\lambda_{n}\phi_{n},\phi_{n}\in cc\right\} =1$
+
+si $cc=c_{p}$ entonces $\dim\left\{ \ker\left(L-\lambda I\right)\right\} <\infty,\ \forall n$
+
+$\left(3\right)\exists w\left(t\right)>0$ un peso tal que $\left\{ \phi_{n}\right\} _{n=1}^{\infty}$
+es BON en $L^{2}\left(\left[a,b\right],w\left(t\right)dt\right)$.
+En particular, $\left\langle \phi_{n},\phi_{m}\right\rangle _{w}=\int_{a}^{b}\phi_{n}\left(t\right)\phi_{m}\left(t\right)w\left(t\right)dt=0,\forall n\neq m$
+
+y $w\left(t\right)$ es explícito, $w\left(t\right)=\frac{1}{a\left(t\right)}e^{\int_{a}^{t}\frac{b\left(s\right)}{a\left(s\right)}ds}$
+
+$\left(4\right)$ toda $f\in C^{2}\left(\left[a,b\right]\right)\cap cc$
+se puede escribir como $f\left(t\right)=\sum_{n=1}^{\infty}\left\langle f,\phi_{n}\right\rangle _{w}\phi_{n}\left(t\right),t\in\left[a,b\right]$
+con convergencia uniforme $\forall t\in\left[a,b\right]$
+\end{tcolorbox}
+
+\textbf{Nota: }se cumplen algunas propiedades más que asemejan $\left\{ \phi_{n}\right\} $
+a un sistema trigonométrico.
+
+$\left(5\right)$$\phi_{n}$ tiene exactamente $n-1$ ceros en $\left(a,b\right)$
+
+$\left(6\right)$\textbf{teorema de equiconvergencia:} si $f\in L^{1}\left[a,b\right]$,
+entonces $\overbrace{S_{N}}f\left(t\right)=\sum_{n=1}^{\infty}\left\langle f,\phi_{n}\right\rangle _{w}\phi_{n}\left(t\right)$
+cumple los mismos teoremas de convergencia que las SF usuales.
+
+$\left(7\right)$ \textbf{fórmula variacional de Rayleigh:} $\lambda_{n}=\min\left\{ \left\langle L\phi,\phi\right\rangle _{w}|\phi\in C^{2}\cap cc,\left\Vert \phi\right\Vert _{L_{w}^{2}}=1,\phi\perp\left\{ \phi_{1},...,\phi_{n-1}\right\} \right\} $
+y esto permite aproximar $\lambda_{n}$ numéricamente.
+
+\textbf{Nota:} en algunos problemas aparecen \textbf{operadores SL
+singulares}, o sea, puede ocurrir que $a\left(t_{0}\right)=0$ o bien
+$b\left(t\right),c\left(t\right)\rightarrow\infty$ en $t=t_{0}\in\left[a,b\right]$,
+o también que $\left[a,b\right]$ no sea compacto, como $\left(-\infty,\infty\right)$.
+
+\textbf{Ecuación de la membrana vibrante}
+
+Tenemos una membrana horizontal tensa, situada en $\Omega\subset\mathbb{R}^{2}$
+y fija en la $\partial\Omega$ que solo sufre pequeñas vibraciones
+verticales con densidad $\rho$ y tensión $\tau$ constantes $\left(c^{2}=\frac{\tau}{\rho}\right)$.
+
+Buscamos $u\left(t,x,y\right)$ la altura del punto $\left(x,y\right)\in\Omega$
+en tiempo $t$. Entonces $\begin{cases}
+u_{tt}=c^{2}\left(u_{xx}+u_{yy}\right) & t>0,\left(x,y\right)\in\Omega\\
+u\left(t,\cdot\right)_{|\partial\Omega}\equiv0
+\end{cases}$ sujeto a las condiciones iniciales $u\left(0,\cdot\right)=f,\ u_{t}\left(0,\cdot\right)=g$.
+Si la membrana es rectangular, entonces es $\left(x,y\right)\in R=\left[0,L_{1}\right]\times\left[0,L_{2}\right]$.
+
+Buscamos soluciones $u\left(t,x,y\right)=T\left(t\right)V\left(x,y\right)\implies T''V=c^{2}\left(TV_{xx}+TV_{yy}\right)=c^{2}T\Delta V\implies\frac{1}{c^{2}}\frac{T''}{T}=\frac{\Delta V}{V}\equiv cte=\mu$
+
+Por tanto quedan $\left(1\right)T''=c^{2}\mu T$ y $\left(2\right)\begin{cases}
+\Delta V=\mu V\\
+V_{|\partial R}\equiv0
+\end{cases}$ este último es el problema de autovalores del laplaciano. Empezamos
+por este problema, por SV: $V\left(x,y\right)=X\left(x\right)Y\left(y\right)\implies X''Y+XY''=\mu XY\implies\frac{X''}{X}+\frac{Y''}{Y}=\mu\implies\frac{X''}{X}=\mu-\frac{Y''}{Y}\equiv cte=\sigma$.
+
+Empezamos por $X$. caso $\sigma>0:$ $\begin{cases}
+X''=\sigma X\\
+X\left(0\right)=X\left(L_{1}\right)=0
+\end{cases}\implies X\left(x\right)=A\cosh\left(\sqrt{\sigma}x\right)+B\sinh\left(\sqrt{\sigma}x\right)\overset{cc}{\implies}A=B=0\#$
+
+caso $\sigma=0:$ $X\left(x\right)=A+Bx\overset{cc}{\implies}A=B=0\#$
+
+caso $\sigma=-\lambda^{2}<0:$ $\begin{cases}
+X''=-\lambda^{2}X\\
+X\left(0\right)=X\left(L_{1}\right)=0
+\end{cases}\implies X\left(x\right)=A\cos\left(\lambda x\right)+B\sin\left(\lambda x\right)\overset{cc}{\implies}\begin{cases}
+A=0\\
+B\sin\left(\lambda L_{1}\right)=0
+\end{cases}\implies\lambda=\frac{\pi n}{L_{1}},n=1,2,...$ y entonces $X_{n}\left(x\right)=\sin\left(\frac{n\pi x}{L_{1}}\right)$.
+
+Ahora $Y$, que es $\mu-\frac{Y''}{Y}=-\lambda^{2}\implies\begin{cases}
+Y''?\left(\mu+\lambda^{2}\right)Y\\
+Y\left(0\right)=Y\left(L_{2}\right)=0
+\end{cases}$. Los casos $\mu+\lambda^{2}\geq0\implies Y\equiv0\#$
+
+caso $\mu+\lambda^{2}=-\tau^{2}<0\implies Y\left(y\right)=A\cos\left(\tau y\right)+B\sin\left(\tau y\right)\overset{cc}{\implies}A=\left(0\right),\tau=\frac{\pi m}{L_{2}}\implies Y_{m}\left(y\right)=\sin\left(\frac{m\pi y}{L_{2}}\right),m=1,2,...$ 
+
+y uniendo ambas expresiones obtenemos el candidato a solución del
+problema de autovalores de $\Delta$ en $R$: 
+
+los autovalores son $\mu=-\rho_{n,m}^{2}=-\lambda_{n}^{2}-\tau_{m}^{2},\ m,n=1,2,...$
+y las autofunciones son $V_{n,m}\left(x,y\right)=\sin\left(\frac{n\pi x}{L_{1}}\right)\sin\left(\frac{m\pi y}{L_{2}}\right)$.
+
+Por último, resolvemos $T:$ tenemos $T''=c^{2}\mu T=-c^{2}\rho_{n,m}^{2}T\implies T\left(t\right)=A\cos\left(c\rho_{n,m}t\right)+B\sin\left(c\rho_{n,m}t\right)$
+y la solución final es
+
+$u\left(t,x,y\right)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty}\left[A_{n,m}\cos\left(c\rho_{n,m}t\right)+B_{n,m}\sin\left(c\rho_{n,m}t\right)\right]\sin\left(\frac{n\pi x}{L_{1}}\right)\sin\left(\frac{m\pi y}{L_{2}}\right)$.
+
+Los coeficientes se calculan con las condiciones iniciales:
+
+$t=0\implies f\left(x,y\right)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty}A_{nm}\sin\left(\frac{n\pi x}{L_{1}}\right)\sin\left(\frac{m\pi y}{L_{2}}\right)$
+(SF doble), y por ortogonalidad es
+
+$A_{n,m}=\frac{4}{L_{1}L_{2}}\int_{0}^{L_{1}}\int_{0}^{L_{2}}f\left(x,y\right)\sin\left(\frac{n\pi x}{L_{1}}\right)\sin\left(\frac{m\pi x}{L_{2}}\right)dydx$.
+
+Y análogamente $g\left(x,y\right)=u_{t}\left(0,x,y\right)=\sum_{n,m=1}^{\infty}c\rho_{n,m}B_{n,m}\sin\left(\frac{n\pi x}{L_{1}}\right)\sin\left(\frac{m\pi y}{L_{2}}\right)$
+y es
+
+$B_{n,m}=\frac{4}{c\rho_{n,m}L_{1}L_{2}}\int_{0}^{L_{1}}\int_{0}^{L_{2}}g\left(x,y\right)\sin\left(\frac{n\pi x}{L_{1}}\right)\sin\left(\frac{m\pi y}{L_{2}}\right)dydx$.
+
+\textbf{Nota:} el coeficiente $c\rho_{n,m}=c\sqrt{\left(\frac{n\pi}{L_{1}}\right)^{2}+\left(\frac{m\pi}{L_{2}}\right)^{2}}$
+se llama \textbf{frecuencia fundamental de vibración }(temporal) asociada
+a cada modo de vibración espacial $V_{n,m}$.
+
+\textbf{Funciones de Bessel}
+
+Para $\nu\in\mathbb{N}=\left\{ 0,1,2,...\right\} $, la ecuación $z^{2}f''\left(z\right)+zf'\left(z\right)+\left(z^{2}-\nu^{2}\right)f\left(z\right)=0,\ z\in\left(0,\infty\right)$
+tiene como soluciones $f\left(z\right)=AJ_{\nu}\left(z\right)+BY_{\nu}\left(z\right)$
+donde $J_{\nu}$ se denomina \textbf{función de Bessel de 1ª especie}
+y viene dada por 
+
+$J_{\nu}\left(z\right)=\sum_{j=0}^{\infty}\frac{\left(-1\right)^{j}}{j!\left(\nu+j\right)!}\left(\frac{z}{2}\right)^{\nu+2j}$
+
+En particular, se tiene $J_{0}\left(0\right)=1$ y $J_{\nu}\left(z\right)\thickapprox z^{\nu}\rightarrow0$
+si $z\rightarrow0$ (para $\nu>0$). Además, $Y_{\nu}\left(z\right)\overset{z\rightarrow0^{+}}{\rightarrow}\infty$
+y esta se denomina función de Bessel de 2ª especie.
+
+Solo usaremos $\nu\in\mathbb{N}$, pero las definiciones valen para
+todo $\nu\in\mathbb{R}$ tomando $\left(\nu+j\right)!=\Gamma\left(\nu+j+1\right),$
+$\Gamma\left(\alpha\right)=\int_{0}^{\infty}e^{-u}u^{\alpha-1}du,\alpha>0$.
+
+\begin{tcolorbox}
+\textbf{Lema 1:} \textbf{relación entre $\boldsymbol{J_{\nu},J_{\nu}^{'},J_{\nu+1}}$:
+$zJ_{\nu}^{'}\left(z\right)=\nu J_{\nu}\left(z\right)-zJ_{\nu+1}\left(z\right)$}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Lema 2: cálculo de $\boldsymbol{\left\Vert J_{\nu}\left(\lambda\cdot\right)\right\Vert _{r}^{2}}$:
+}$2\int_{0}^{1}J_{\nu}\left(\lambda r\right)^{2}rdr=\left(1-\frac{\nu^{2}}{\lambda^{2}}\right)J_{\nu}\left(\lambda\right)^{2}+J_{\nu}'\left(\lambda\right)^{2}$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Lema 3: fórmula de Sonine: }$\int_{0}^{1}\left(1-r^{2}\right)^{\mu}J_{\nu}\left(\lambda r\right)2^{\nu+1}dr=\frac{2^{\mu}\Gamma\left(\mu+1\right)}{\lambda^{\mu+1}}J_{\nu+\mu+1}\left(\lambda\right),\ \mu,\nu>-1$
+\end{tcolorbox}
+
+{*}{*}
+
+$J_{\nu}\left(x\right)$ no tiene expresión explícita, salvo los casos
+especiales $\nu\in\mathbb{Z}+\frac{1}{2}$, $J_{-\frac{1}{2}}\left(x\right)=\sqrt{\frac{2}{\pi}}\frac{\cos x}{\sqrt{x}}$
+y $J_{\frac{1}{2}}\left(x\right)=\sqrt{\frac{2}{\pi}}\frac{\sin x}{\sqrt{x}}$.
+Pero para $x\rightarrow\infty$ se sabe:
+
+\begin{tcolorbox}
+\textbf{Teorema 1:} $J_{\nu}\left(x\right)=\sqrt{\frac{2}{\pi}}\frac{\sin\left(x-\frac{\pi}{2}\nu+\frac{\pi}{4}\right)}{\sqrt{x}}+O\left(\frac{1}{x^{\frac{3}{2}}}\right)$
+si $x\rightarrow\infty$
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\textbf{Corolario: ${\cal Z}_{+}\left(J_{n}\right)=\left\{ \lambda_{1}<\lambda_{2}<\lambda_{3}<...\right\} $
+}con $\lambda_{m}\rightarrow\infty$
+\end{tcolorbox}
+
+Sea $G_{n}\left(x\right)=\sqrt{\frac{\pi}{2}}\sqrt{x}J_{n}\left(x\right)\overset{trm1}{=}\sin\left(x-\theta_{n}\right)+O\left(\frac{1}{x}\right)$
+con $\theta_{n}=\frac{n\pi}{2}-\frac{\pi}{4}$. Dado $\varepsilon>0,\exists M_{0}=M_{0}\left(n,\varepsilon\right)|\left|O\left(\frac{1}{x}\right)\right|\leq\varepsilon,\ \forall x\geq M_{0}$.
+Entonces
+
+$\sin\left(x-\theta_{n}\right)-\varepsilon\leq G_{n}\left(x\right)\leq\sin\left(x-\theta_{n}\right)+\varepsilon$,
+por lo que existe una raíz en cada intervalo $m\pi+\theta_{n}+\left(-2\varepsilon,2\varepsilon\right),m\geq M_{0}$
+y por tanto $J_{n}$ tiene infinitos ceros y pueden ordenarse de forma
+creciente.
+
+\textbf{Nota:}~denotaremos ${\cal Z}_{+}\left(J_{n}\right)=\left\{ s_{n,m}\right\} _{m=1}^{\infty}$
+y puede probarse que $s_{n,m}=\left(m+\frac{n}{2}-\frac{1}{4}\right)\pi+O\left(\frac{1}{m}\right)$
+si $m\rightarrow\infty$.
+
+\textbf{Sistema de Fourier-Bessel}
+
+Para $n\in\mathbb{N}$ consideramos el problema de SL singular $\begin{cases}
+R''\left(r\right)+\frac{1}{r}R'\left(r\right)-\frac{n^{2}}{r^{2}}R\left(r\right)=-\lambda^{2}R\left(r\right) & r\in\left(0,1\right)\\
+R\left(1\right)=0,\exists R\left(0^{+}\right) & CC
+\end{cases}$ 
+
+Este tiene solución general $R\left(r\right)=AJ_{n}\left(\lambda r\right)+BY_{n}\left(\lambda r\right)$
+y por las $CC$ es $B=0$ y $\lambda\in{\cal Z}_{+}\left(J_{n}\right)$
+con las autofunciones $\left\{ \phi_{m}\left(r\right)=J\left(s_{n,m}r\right):m=1,2,...\right\} $.
+
+\begin{tcolorbox}
+\textbf{Teorema 2:} el sistema $\left\{ \phi_{m}\left(r\right)\right\} _{m=1}^{\infty}$
+es una BOG de $L_{r}^{2}\left(0,1\right)$, es decir 
+
+$f\left(r\right)=L_{r}^{2}-\sum_{m=1}^{\infty}a_{m}\left(f\right)J_{n}\left(s_{n,m}r\right),\ a_{m}\left(f\right)=\frac{2\int_{0}^{1}f\left(r\right)J_{n}\left(s_{n,m}r\right)rdr}{J_{n+1}^{2}\left(s_{n,m}\right)}$
+
+Además, si $f\in C^{2}\left[0,1\right]$ con $f\left(1\right)=0$
+(y $f\left(0\right)=0$ si $n\neq0$) entonces la convergencia es
+uniforme $\forall r\in\left[0,1\right]$
+\end{tcolorbox}
+
+\textbf{La membrana circular}
+
+$\begin{cases}
+u_{tt}=c^{2}\Delta u & t>0,\left(x,y\right)\in\mathbb{D}\\
+u\left(t,\cdot\right)\equiv0 & en\ \partial\mathbb{D}\\
+u\left(0,\cdot\right)=f & u_{t}\left(0,\cdot\right)=g
+\end{cases}$ Buscamos soluciones $u\left(t,x,y\right)=T\left(t\right)V\left(x,y\right)\implies\frac{1}{c^{2}}\frac{T''}{T}=\frac{\Delta V}{V}\equiv cte=-\lambda^{2}$.
+
+Pasamos $V$ a polares $V\left(r\cos\theta,r\sin\theta\right)=R\left(r\right)\Theta\left(\theta\right)$
+y entonces es $R''\Theta+\frac{1}{r}R'\Theta+\frac{1}{r^{2}}R\Theta''=-\lambda^{2}R\Theta\implies\frac{r^{2}R''+rR'+\lambda^{2}r^{2}R}{R}=-\frac{\Theta''}{\Theta}\equiv cte=\mu^{2}$
+(se descartan los $<0$). Y obtenemos dos EDOs
+
+$\begin{cases}
+\Theta''=-\mu^{2}\Theta\\
+\Theta\left(0\right)=\Theta\left(2\pi\right) & \Theta'\left(0\right)=\Theta'\left(2\pi\right)
+\end{cases}\implies\Theta\left(\theta\right)=A\cos\left(\mu\theta\right)+B\sin\left(\mu\theta\right)\overset{cp}{\implies}\mu=n\in\mathbb{Z}\overset{simetr\acute{\imath}a}{\implies}\mu=n\in\mathbb{N}=\left\{ 0,1,...\right\} $
+
+$\begin{cases}
+r^{2}R''+rR'+\left(\lambda^{2}r^{2}-\mu^{2}\right)R=0 & \left(\mu=n\in\mathbb{N}\right)\\
+R\left(1\right)=0,\ \exists R\left(0^{+}\right)
+\end{cases}$ que es una ecuación de Bessel, con solución general $R\left(r\right)=AJ_{n}\left(\lambda r\right)+BY_{n}\left(\lambda r\right)$
+por las condiciones de contorno es $B=0$ y $J_{n}\left(\lambda\right)=0\implies\lambda\in{\cal Z}_{+}\left(J_{n}\right)=\left\{ s_{n,1}<s_{n,2}<...\right\} $.
+
+Por tanto, $\sigma\left(-\Delta,\mathbb{D},V_{|\mathbb{D}}=0\right)=\bigcup_{n=0}^{\infty}\left\{ s_{n,m}^{2}\right\} _{m=1}^{\infty}$
+(los autovalores del laplaciano en $\mathbb{D}$).
+
+Así, si $\lambda=\lambda_{n,m}=s_{n,m}$ entonces $R_{n,m}\left(r\right)=J_{n}\left(\lambda_{n,m}r\right),\ \Theta_{n}\left(\theta\right)=A_{n}\cos\left(n\theta\right)+B_{n}\sin\left(n\theta\right)$
+y es $V_{n,m}=R_{n,m}\Theta_{n}$, que son las autofunciones de $\Delta$.
+
+Además, $T_{n,m}=\alpha_{n,m}\cos\left(c\lambda_{n,m}t\right)+\beta_{n,m}\sin\left(c\lambda_{n,m}t\right)$.
+
+Por simplicidad, resolvemos la velocidad inicial $u_{r}\left(0,\cdot\right)\equiv0\implies T'\left(0\right)=0$
+y obtenemos la solución general
+
+$u\left(t,re^{i\theta}\right)=\sum_{n=0}^{\infty}\sum_{m=1}^{\infty}\cos\left(c\lambda_{n,m}t\right)J_{n}\left(\lambda_{n,m}r\right)\left[A_{n,m}\cos\left(n\theta\right)+B_{n,m}\sin\left(n\theta\right)\right]$.
+
+\textbf{Caso radial}
+
+$u\left(t,\cdot\right)=f\left(r\right)$, entonces la solución solo
+tiene $n=0$.
+
+$u\left(t,r\right)=\sum_{m=1}^{\infty}a_{m}\cos\left(cs_{m}t\right)J_{0}\left(s_{m}r\right)$
+con ${\cal Z}_{+}\left(J_{0}\right)=\left\{ s_{1}=2,41<s_{2}=5,52<s_{3}=8,65<...\right\} $
+(aproximadamente $\pi$-espaciadas)
+
+Para $t=0$ es $f\left(r\right)=\sum_{m=1}^{\infty}a_{m}J_{0}\left(s_{m}r\right)\implies a_{m}=\frac{\left\langle f,J_{0}\left(s_{m}\cdot\right)\right\rangle _{r}}{\left\Vert J_{0}\left(s_{m}\cdot\right)\right\Vert _{r}^{2}}=\frac{2}{J_{1}\left(s_{m}\right)^{2}}\int_{0}^{1}f\left(r\right)J_{0}\left(s_{m}r\right)rdr$
+
+\textbf{Aspecto de las vibraciones fundamentales}
+
+$u_{0,m}\left(t,r\right)=\cos\left(cs_{m}t\right)J_{0}\left(s_{m}r\right)$
+donde $cs_{m}$ es la \textbf{frecuencia temporal} y es $cs_{m}\approx cm\pi+cte$,
+por lo que la vibración aumenta con $m$. 
+
+\textbf{Caso general}
+
+$u\left(0,\cdot\right)=f\left(re^{i\theta}\right)$, entonces $u\left(t,re^{i\theta}\right)=\sum_{n=0}^{\infty}\sum_{m=1}^{\infty}\cos\left(c\lambda_{n,m}t\right)J_{n}\left(\lambda_{n,m}r\right)\left[A_{n,m}\cos\left(n\theta\right)+B_{n,m}\sin\left(n\theta\right)\right]$.
+
+Usando ortogonalidad, si $t=0$, entonces $f\left(re^{i\theta}\right)=\sum_{n=0}^{\infty}\sum_{m=1}^{\infty}J_{n}\left(\lambda_{n,m}r\right)\left[A_{n,m}\cos\left(n\theta\right)+B_{n,m}\sin\left(n\theta\right)\right]$
+y entonces es
+
+$A_{n,m}=\frac{2}{J_{n+1}^{2}\left(\lambda_{n,m}\right)}\int_{0}^{1}\int_{0}^{2\pi}f\left(re^{i\theta}\right)\cos\left(n\theta\right)\frac{d\theta}{\pi}J_{n}\left(\lambda_{n,m}r\right)rdr$
+
+$B_{n,m}=\frac{2}{J_{n+1}^{2}\left(\lambda_{n,m}\right)}\int_{0}^{1}\int_{0}^{2\pi}f\left(re^{i\theta}\right)\sin\left(n\theta\right)\frac{d\theta}{\pi}J_{n}\left(\lambda_{n,m}r\right)rdr$
+
+\textbf{PD en cilindro}
+
+\textbf{$\begin{cases}
+\Delta u=0\\
+u_{|\partial\Omega}=\varphi
+\end{cases}\Omega=\mathbb{D}\times\left(0,L\right)$ }supongamos $\varphi\equiv0$ en la tapa inferior y el lateral y
+que $\varphi\left(r,\theta,L\right)=f\left(r,\theta\right)$ es la
+temperatura de la tapa superior.
+
+Usamos coordenadas cilindricas $u\left(r,\theta,z\right)=u\left(r\cos\theta,r\sin\theta,z\right),0<r<1,\theta\in\left(0,2\pi\right),z\in\left(0,L\right)$.
+Queda
+
+$\begin{cases}
+\Delta u=u_{rr}+\frac{1}{r}u+u_{zz}=0\\
+u\left(r,\theta,0\right)=0 & u\left(1,\theta,z\right)=0
+\end{cases}$ y buscamos $u\left(r,\theta,z\right)=V\left(r,\theta\right)Z\left(z\right)$.
+Por tanto es $\left(V_{rr}+\frac{1}{r}V_{r}+\frac{1}{r^{2}}V_{\theta\theta}\right)Z+VZ''=0$,
+de donde $\frac{Z''}{Z}=-\frac{V_{rr}+\frac{1}{r}V_{r}+\frac{1}{r^{2}}V_{\theta\theta}}{V}\equiv cte=\mu$
+
+Y obtenemos dos ecuaciones $\begin{cases}
+Z''=\mu Z\\
+Z\left(0\right)=0
+\end{cases}$ y $\begin{cases}
+-\left(V_{rr}+\frac{1}{r}V_{r}+\frac{1}{r^{2}}V_{\theta\theta}\right)=\mu V\\
+V\left(1,\theta\right)\equiv0
+\end{cases}.$
+
+Empezamos por la segunda ecuación, que es $\begin{cases}
+-\Delta V=\mu V\\
+V_{|\partial\mathbb{D}}\equiv0
+\end{cases}$, que ya resolvimos y es $\mu=\lambda^{2}>0$ con $\lambda\in\bigcup_{n=0}^{\infty}\left\{ s_{n,m}\right\} _{m=1}^{\infty}$
+y si $\mu=s_{n,m}^{2}$ entonces $V_{n,m}\left(r,\theta\right)=J_{n}\left(s_{n,m}r\right)\left(A_{n,m}\cos\left(n\theta\right)+B_{n,m}\sin\left(n\theta\right)\right)$
+(en el \textbf{caso radial} solo queda $n=0$).
+
+Podemos también expresar, por simplicidad $V_{n,m}\left(r,\theta\right)=J_{\left|n\right|}\left(s_{n,m}r\right)e^{in\theta},n\in\mathbb{Z}$
+con $\left\{ s_{n,m}\right\} _{m=1}^{\infty}={\cal Z}\left(J_{\left|n\right|}\right)$.
+
+Entonces, para la otra ecuación $\begin{cases}
+Z''=\mu Z=s_{n,m}^{2}Z\\
+Z\left(0\right)=0
+\end{cases}$ es $Z_{n,m}\left(z\right)=\sinh\left(s_{n,m}z\right)$.
+
+Así, la solución general es $u\left(r,\theta,z\right)=\sum_{n\in\mathbb{Z}}\sum_{m=1}^{\infty}A_{n,m}\cdot\sinh\left(s_{n,m}z\right)J_{\left|n\right|}\left(s_{n,m}r\right)e^{in\theta}$.
+
+Y en $z=L$ es $f\left(r,\theta\right)=u\left(r,\theta,L\right)=\sum_{n\in\mathbb{Z}}\sum_{m\geq1}A_{n,m}\sinh\left(s_{n,m}L\right)J_{\left|n\right|}\left(s_{n,m}r\right)e^{in\theta}$
+y usando la ortogonalidad en $L^{2}\left(rdrd\theta\right)$ es 
+
+$A_{n,m}=\frac{1}{\sinh\left(s_{n,m}L\right)}\frac{2}{J_{\left|n\right|+1}\left(s_{n,m}\right)^{2}}\int_{0}^{1}\fint_{0}^{2\pi}f\left(r,\theta\right)J_{\left|n\right|}\left(s_{n,m}r\right)e^{-in\theta}d\theta rdr$.
+
+\textbf{Autovalores de $\boldsymbol{-\Delta}$}
+
+Sea $\Omega\subset\mathbb{R}^{d}$ acotado con $\partial\Omega$ regular,
+queremos determinar $\lambda\in\mathbb{C}$ tales que $\begin{cases}
+-\Delta u=\lambda u & en\ \Omega\\
+\left(a_{1}u+a_{2}\nabla u\cdot\overrightarrow{n}\right)_{|\partial\Omega}=0
+\end{cases}$ tenga una solución $u\in C^{2}\left(\Omega\right)\cap C^{1}\left(\overline{\Omega}\right)\setminus\left\{ 0\right\} $.
+O sea, $\lambda\in\sigma\left(-\Delta,\Omega,cc\right)$.
+
+Típicamente se consideran las cc $u_{|\partial\Omega}=0$ o $\nabla u\cdot\overrightarrow{n}_{|\partial\Omega}=0$
+o $\left(\nabla u\cdot\overrightarrow{n}+\gamma u\right)_{|\partial\Omega}=0,\gamma>0$.
+
+\begin{tcolorbox}
+\textbf{Teorema general}
+
+Sea $\Omega\subset\mathbb{R}^{d}$ acotado con $\partial\Omega\in C^{\infty}.$
+Consieramos $-\Delta u=\lambda u$ en $\Omega$ con cc estándar (Dirichlet,
+Neumann, Robin)
+
+$\left(1\right)$ Existen infinitos autovalores $\sigma\left(-\Delta,cc\right)=\left\{ \lambda_{n}\right\} _{n=1}^{\infty}$
+y se cumple $0\leq\lambda_{1}\leq\lambda_{2}\leq...\nnearrow\infty$.
+Además, $0\in\sigma\left(-\Delta,cc\right)\iff cc=c_{n}$
+
+$\left(2\right)$ Multiplicidad: $\dim E_{\lambda}=\dim\left\{ \phi:-\Delta\phi=\lambda\phi\right\} <\infty,\ \forall\lambda\in\sigma\left(-\Delta,cc\right)$
+
+$\left(3\right)$ Ortogonalidad: $E_{\lambda}\perp E_{\mu}$ si $\lambda\neq\mu$
+
+$\left(4\right)$ $\exists\left\{ \phi_{n}\right\} _{n=1}^{\infty}\subset C^{\infty}\left(\overline{\Omega}\right)$
+que forman BON de autovectores en $L^{2}\left(\Omega\right)$, o sea
+$f=L^{2}-\sum_{n=1}^{\infty}\left\langle f,\phi_{n}\right\rangle \phi_{n},\forall f\in L^{2}\left(\Omega\right)$.
+Además, si $f\in C^{\infty}\left(\overline{\Omega}\right)\cap cc$
+la convergencia es uniforme en todo $x\in\Omega$
+
+$\left(5\right)$Fórmula de Rayleigh (en el caso $c_{d}$):
+
+$\lambda_{n}=\min\left\{ \int_{\Omega}\left|\nabla\phi\right|^{2}:\phi\in C^{2}\left(\Omega\right)\cap C^{1}\left(\overline{\Omega}\right),\left\Vert \phi\right\Vert =1,\phi_{|\partial\Omega}\equiv0,\phi\perp\left\{ \phi_{1},...,\phi_{n-1}\right\} \right\} $ 
+\end{tcolorbox}
+
+Dem de $\left(3\right)$: $\int_{\Omega}\left(\Delta u\right)v-\int_{\Omega}u\left(\Delta v\right)\overset{Green2}{=}\int_{\partial\Omega}\left(\nabla u\cdot\overrightarrow{n}\right)v-u\left(\nabla v\cdot\overrightarrow{n}\right)\overset{u,v\in cc}{=}0$.
+Por tanto $\left\langle \Delta u,v\right\rangle =\left\langle u,\Delta v\right\rangle $
+y es autoadjunto. Entonces, si $\varphi\in E_{\lambda},\psi\in E_{\mu}$
+con $\lambda\neq\mu$, se tiene $\left(\mu-\lambda\right)\left\langle \varphi,\psi\right\rangle =\left\langle \Delta\varphi,\psi\right\rangle -\left\langle \varphi,\Delta\psi\right\rangle =0$.
+
+Dem de $\lambda\geq0$: $\lambda\left\langle \varphi,\varphi\right\rangle =\left\langle -\Delta\varphi,\varphi\right\rangle \overset{Green1}{=}-\int_{\partial\Omega}\nabla\varphi\cdot\overrightarrow{n}\varphi+\int_{\Omega}\left|\nabla\varphi\right|^{2}$.
+Ahora bien, $\int_{\partial\Omega}\nabla\varphi\cdot\overrightarrow{n}\varphi=\begin{cases}
+0 & c_{d},c_{n}\\
+\int_{\partial\Omega}\gamma u^{2} & c_{r}
+\end{cases}=\delta\left(\varphi\right)$, por lo que es $\lambda\left\langle \varphi,\varphi\right\rangle =\delta\left(\varphi\right)+\int_{\Omega}\left|\nabla\varphi\right|^{2}\geq0\implies\lambda\geq0$.
+
+Además, $\lambda=0\in\sigma\left(-\Delta\right)\iff\delta\left(\varphi\right)=0$
+y $\int_{\Omega}\left|\nabla\varphi\right|^{2}=0\implies\varphi\equiv cte\begin{cases}
+c_{d} & \#\\
+c_{n} & ok\\
+c_{r} & \#
+\end{cases}$
+
+Dem de $\left(5\right)$ en el caso $c_{d}$ y $n=1$: sea ${\cal A}=\left\{ \varphi\in C^{2}\left(\Omega\right)\cap C^{1}\left(\overline{\Omega}\right)|\varphi_{|\partial\Omega}\equiv0\right\} $. 
+
+\textbf{Lema:} suponer que existe $m=\min\left\{ \int_{\Omega}\left|\nabla\varphi\right|^{2}|\varphi\in{\cal A},\left\Vert \varphi\right\Vert _{2}=1\right\} $,
+entonces $m=\lambda_{1}$.
+
+Paso1: veamos que $m\leq\lambda,\forall\lambda\in\sigma\left(-\Delta\right)$.
+Si $\lambda\in\sigma\left(-\Delta\right)$ entonces tomo su autofunción
+asociada $\varphi\in{\cal A}:-\Delta\varphi=\lambda\varphi$ y $\left\Vert \varphi\right\Vert =1$.
+Entonces $\lambda=\lambda\left\langle \varphi,\varphi\right\rangle =\left\langle -\Delta\varphi,\varphi\right\rangle \overset{c_{d}+Green1}{=}\int_{\Omega}\left|\nabla\varphi\right|^{2}\overset{def}{\geq}m$.
+
+Paso2: basta probar que $m\in\sigma\left(-\Delta\right)$. Usamos
+la hipótesis de que $\exists\varphi\in{\cal A}$ con $\left\Vert \varphi\right\Vert =1$
+tal que $m=\int_{\Omega}\left|\nabla\varphi\right|^{2}=E\left(\varphi\right)$.
+Sea $\phi\in C_{c}^{\infty}\left(\Omega\right)$ entonces $\varphi+t\phi\in{\cal A},\forall t\in\mathbb{R}$
+y además $\exists\delta>0:\left\Vert \varphi+t\phi\right\Vert \neq0,t\in\left(-\delta,\delta\right)$
+por continuidad y $\left\Vert \varphi\right\Vert =1$. Tomamos $f\left(t\right)=\frac{\int_{\Omega}\left|\nabla\left(\varphi+t\phi\right)\right|^{2}}{\left\Vert \varphi+t\phi\right\Vert ^{2}}=\frac{\int_{\Omega}\left|\nabla\varphi\right|^{2}+t^{2}\int_{\Omega}\left|\nabla\phi\right|^{2}+2t\int_{\Omega}\nabla\varphi\nabla\phi}{\int\left|\varphi\right|^{2}+t^{2}\int\left|\phi\right|^{2}+2t\int\varphi\phi}\in{\cal D}\left(-\delta,\delta\right)$
+y además $f$ tiene un móinimo en $t=0$ con $f\left(0\right)=m$.
+Así,
+
+$0=f'\left(0\right)=2\frac{\left(t\int\left|\nabla\phi\right|^{2}+\int\nabla\varphi\nabla\phi\right)\left\Vert \varphi+t\phi\right\Vert ^{2}-\left\Vert \nabla\left(\varphi+t\phi\right)\right\Vert ^{2}\left(t\int\left|\phi\right|^{2}+\int\varphi\phi\right)}{\left\Vert \varphi+t\phi\right\Vert ^{2}}|_{t=0}=2\left(\int_{\Omega}\nabla\varphi\nabla\phi-\overset{=m}{\left(\int_{\Omega}\left|\nabla\varphi\right|^{2}\right)}\left(\int_{\Omega}\varphi\phi\right)\right)=$
+
+$\overset{Green1,\phi\in C_{c}^{\infty}\left(\Omega\right)}{=}2\left(\int_{\partial\Omega}\nabla\varphi\cdot\overrightarrow{n}\phi-\int_{\Omega}\Delta\varphi\phi-m\int_{\Omega}\varphi\phi\right)=-2\int_{\Omega}\left(\Delta\varphi+m\varphi\right)\phi=0$
+y esto $\forall\phi\in C_{c}^{\infty}\left(\Omega\right)\implies\Delta\varphi+m\varphi=0\implies m\in\sigma\left(-\Delta\right)$.
+
+\textbf{Corolario 1: ec calor en dominio $\boldsymbol{\Omega\subset\mathbb{R}^{d}}$}:
+sea $f\in C^{\infty}\left(\overline{\Omega}\right)$. Entonces la
+EDP $\begin{cases}
+u_{t}=k\Delta u & \left(t,x\right)\in\left(0,\infty\right)\times\Omega\\
+u\left(0,\cdot\right)=f & u\left(t,\cdot\right)\in cc
+\end{cases}$ tiene como solución clásica $u\left(t,x\right)=\sum_{n=1}^{\infty}e^{-k\lambda_{n}t}\left\langle f,\phi_{n}\right\rangle \phi_{n}\left(x\right),\ t>0,x\in\Omega$.
+
+\textbf{Corolario 2: ec ondas en dominio $\boldsymbol{\Omega\subset\mathbb{R}^{d}}$:}
+sea $f,g\in C^{\infty}\left(\overline{\Omega}\right)$. Entonces la
+EDP $\begin{cases}
+u_{tt}=c^{2}\Delta u & \left(t,x\right)\in\mathbb{R}\times\Omega\\
+u\left(0,\cdot\right)=f,u_{t}\left(0,\cdot\right)=g & u\left(t,\cdot\right)\in cc
+\end{cases}$ tiene como solución clásica $u\left(t,x\right)=\sum_{n=1}^{\infty}\left(\left\langle f,\phi_{n}\right\rangle \cos\left(ct\sqrt{\lambda_{n}}\right)+\frac{\left\langle g,\phi_{n}\right\rangle }{c\sqrt{\lambda n}}\sin\left(ct\sqrt{\lambda_{n}}\right)\right)\phi_{n}\left(x\right)$.
+
+\begin{tcolorbox}
+\textbf{Teorema de Weyl:} si $\Omega\subset\mathbb{R}^{d}$ entonces
+$\lambda_{n}\approx\frac{c_{d}n^{\frac{2}{d}}}{\left|\Omega\right|^{\frac{2}{d}}}$
+si $n\rightarrow\infty$ con $c_{d}=\frac{\left(2\pi\right)^{2}}{\left|B_{1}\left(0\right)\right|^{\frac{2}{d}}}$
+\end{tcolorbox}
+
+\textbf{APÉNDICE}
+
+$\cos\left(A+B\right)=\cos A\cos B-\sin A\sin B$, $\sin\left(A+B\right)=\sin\left(A\right)\cos\left(B\right)+\sin\left(B\right)\cos\left(A\right)$,
+$\sin^{2}\left(x\right)=\frac{1-\cos\left(2x\right)}{2}$
+
+
+\end{document}
