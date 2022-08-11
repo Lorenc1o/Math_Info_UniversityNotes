@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>388.0</x>
+			<y>14.0</y>
+			<label>Connected</label>
+		</state>
+		<state id="1" name="q1">
+			<x>391.0</x>
+			<y>280.0</y>
+			<label>Roomed</label>
+		</state>
+		<state id="2" name="q2">
+			<x>685.0</x>
+			<y>137.0</y>
+		</state>
+		<state id="3" name="q3">
+			<x>688.0</x>
+			<y>-20.0</y>
+		</state>
+		<state id="4" name="q4">
+			<x>244.0</x>
+			<y>196.0</y>
+		</state>
+		<state id="5" name="q5">
+			<x>87.0</x>
+			<y>23.0</y>
+			<label>Pre-Connected</label>
+			<initial/>
+		</state>
+		<state id="6" name="q6">
+			<x>234.0</x>
+			<y>-8.0</y>
+		</state>
+		<state id="7" name="q7">
+			<x>64.0</x>
+			<y>268.0</y>
+		</state>
+		<state id="8" name="q8">
+			<x>613.0</x>
+			<y>454.0</y>
+		</state>
+		<state id="9" name="q9">
+			<x>741.0</x>
+			<y>165.0</y>
+		</state>
+		<state id="10" name="q10">
+			<x>107.0</x>
+			<y>178.0</y>
+			<final/>
+		</state>
+		<state id="12" name="q12">
+			<x>749.0</x>
+			<y>351.0</y>
+		</state>
+		<state id="13" name="q13">
+			<x>102.0</x>
+			<y>438.0</y>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>1</from>
+			<to>12</to>
+			<read>rcv(ExpelUser)</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>7</to>
+			<read>rcv(Info)</read>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>0</to>
+			<read>snd(NickOk)</read>
+		</transition>
+		<transition>
+			<from>7</from>
+			<to>1</to>
+			<read>snd(InfoRes)</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>13</to>
+			<read>rcv(SendPrivateReq)</read>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>10</to>
+			<read>rcv(Quit)</read>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>6</to>
+			<read>rcv(Nick)</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>10</to>
+			<read>rcv(Quit)</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>0</to>
+			<read>snd(RoomOk) || snd(RoomAlreadyExisted)</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>rcv(Exit)</read>
+		</transition>
+		<transition>
+			<from>13</from>
+			<to>1</to>
+			<read>snd(SendPrivateRes)</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>0</to>
+			<read>snd(RoomListRes)</read>
+		</transition>
+		<transition>
+			<from>12</from>
+			<to>1</to>
+			<read>snd(UserExpelled) || Admin Events</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>3</to>
+			<read>rcv(CreateRoom) </read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>8</to>
+			<read>rcv(Ascenso)</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>1</to>
+			<read>snd(EnterOk)</read>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>5</to>
+			<read>Anything Different From Nick</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read>rcv(RoomList)</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>4</to>
+			<read>rcv(Enter)</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<controlx>373</controlx>
+			<controly>494</controly>
+			<read>rcv(SendPublicReq)</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>1</to>
+			<read>snd(RenameOk) || snd(RoomAlreadyExisted)</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>0</to>
+			<read>snd(EnterNo)</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>9</to>
+			<read>rcv(Rename)</read>
+		</transition>
+		<transition>
+			<from>8</from>
+			<to>1</to>
+			<read>snd(AdminOk) || Admin Events</read>
+		</transition>
+	</automaton>
+</structure>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>143.0</x>
+			<y>160.0</y>
+			<label>Pre-connection</label>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>429.0</x>
+			<y>233.0</y>
+			<label>Pre-Resgistration</label>
+		</state>
+		<state id="2" name="q2">
+			<x>816.0</x>
+			<y>171.0</y>
+			<label>off-room</label>
+		</state>
+		<state id="3" name="q3">
+			<x>285.0</x>
+			<y>111.0</y>
+		</state>
+		<state id="4" name="q4">
+			<x>441.0</x>
+			<y>52.0</y>
+		</state>
+		<state id="5" name="q5">
+			<x>657.0</x>
+			<y>225.0</y>
+		</state>
+		<state id="6" name="q6">
+			<x>929.0</x>
+			<y>85.0</y>
+		</state>
+		<state id="7" name="q7">
+			<x>1157.0</x>
+			<y>223.0</y>
+		</state>
+		<state id="8" name="q8">
+			<x>732.0</x>
+			<y>375.0</y>
+		</state>
+		<state id="9" name="q9">
+			<x>541.0</x>
+			<y>426.0</y>
+			<label>in-Room</label>
+		</state>
+		<state id="10" name="q10">
+			<x>193.0</x>
+			<y>789.0</y>
+		</state>
+		<state id="11" name="q11">
+			<x>352.0</x>
+			<y>774.0</y>
+		</state>
+		<state id="12" name="q12">
+			<x>517.0</x>
+			<y>761.0</y>
+		</state>
+		<state id="13" name="q13">
+			<x>693.0</x>
+			<y>706.0</y>
+		</state>
+		<state id="14" name="q14">
+			<x>829.0</x>
+			<y>639.0</y>
+		</state>
+		<state id="15" name="q15">
+			<x>911.0</x>
+			<y>539.0</y>
+		</state>
+		<state id="16" name="q16">
+			<x>629.0</x>
+			<y>77.0</y>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>9</from>
+			<to>2</to>
+			<read>snd(exit) || rcv(GTFO)</read>
+		</transition>
+		<transition>
+			<from>8</from>
+			<to>2</to>
+			<read>rcv(enterNo)</read>
+		</transition>
+		<transition>
+			<from>14</from>
+			<to>9</to>
+			<read>rcv(renameOk) || renameNo</read>
+		</transition>
+		<transition>
+			<from>13</from>
+			<to>9</to>
+			<read>rcv(history)</read>
+		</transition>
+		<transition>
+			<from>15</from>
+			<to>2</to>
+			<read>rcv(GTFO)</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>3</to>
+			<read>snd(consulta)</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>1</to>
+			<read>rcv(info)</read>
+		</transition>
+		<transition>
+			<from>15</from>
+			<to>9</to>
+			<read>rcv(out) || rcv(GTFONo)</read>
+		</transition>
+		<transition>
+			<from>10</from>
+			<to>9</to>
+			<read>rcv(sendOk) || rcv(sendNo)</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>6</to>
+			<read>snd(query_rooms)</read>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>1</to>
+			<read>snd(nick_dup)</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>4</to>
+			<read>timeout</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>15</to>
+			<read>snd(GTFO)</read>
+		</transition>
+		<transition>
+			<from>14</from>
+			<to>2</to>
+			<controlx>1425</controlx>
+			<controly>718</controly>
+			<read>rcv(GTFO)</read>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>2</to>
+			<read>rcv(nick_ok)</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>9</to>
+			<read>rcv(ascenso) || rcv(text) || rcv(in/out)</read>
+		</transition>
+		<transition>
+			<from>10</from>
+			<to>10</to>
+			<controlx>127</controlx>
+			<controly>894</controly>
+			<read>rcv(ascenso) || rcv(text) || rcv(in/out)</read>
+		</transition>
+		<transition>
+			<from>11</from>
+			<to>11</to>
+			<controlx>346</controlx>
+			<controly>964</controly>
+			<read>rcv(ascenso) || rcv(text) || rcv(in/out)</read>
+		</transition>
+		<transition>
+			<from>12</from>
+			<to>12</to>
+			<controlx>602</controlx>
+			<controly>908</controly>
+			<read>rcv(ascenso) || rcv(text) || rcv(in/out)</read>
+		</transition>
+		<transition>
+			<from>13</from>
+			<to>13</to>
+			<controlx>772</controlx>
+			<controly>831</controly>
+			<read>rcv(ascenso) || rcv(text) || rcv(in/out)</read>
+		</transition>
+		<transition>
+			<from>14</from>
+			<to>14</to>
+			<controlx>917</controlx>
+			<controly>746</controly>
+			<read>rcv(ascenso) || rcv(text) || rcv(in/out)</read>
+		</transition>
+		<transition>
+			<from>15</from>
+			<to>15</to>
+			<controlx>1048</controlx>
+			<controly>662</controly>
+			<read>rcv(ascenso) || rcv(text) || rcv(in/out)</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>16</to>
+			<read>snd(Quit)</read>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>2</to>
+			<read>rcv(room_list)</read>
+		</transition>
+		<transition>
+			<from>10</from>
+			<to>2</to>
+			<controlx>72</controlx>
+			<controly>440</controly>
+			<read>rcv(GTFO)</read>
+		</transition>
+		<transition>
+			<from>8</from>
+			<to>9</to>
+			<read>rcv(enter_Ok)</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>10</to>
+			<read>snd(send)</read>
+		</transition>
+		<transition>
+			<from>12</from>
+			<to>9</to>
+			<read>rcv(adminOk) || rcv(adminNo)</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>7</to>
+			<read>snd(createRoom)</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>3</to>
+			<read>snd(consulta)</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>13</to>
+			<read>snd(history)</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>16</to>
+			<read>snd(Quit)</read>
+		</transition>
+		<transition>
+			<from>11</from>
+			<to>9</to>
+			<read>rcv(info)</read>
+		</transition>
+		<transition>
+			<from>12</from>
+			<to>2</to>
+			<controlx>1977</controlx>
+			<controly>1065</controly>
+			<read>rcv(GTFO)</read>
+		</transition>
+		<transition>
+			<from>13</from>
+			<to>2</to>
+			<controlx>1763</controlx>
+			<controly>980</controly>
+			<read>rcv(GTFO)</read>
+		</transition>
+		<transition>
+			<from>7</from>
+			<to>2</to>
+			<read>rcv(createOK) || rcv(creatoNo)</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>11</to>
+			<read>snd(info)</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>5</to>
+			<read>snd(nick)</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>12</to>
+			<read>snd(admin)</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>0</to>
+			<read>rcv(no encontrado)</read>
+		</transition>
+		<transition>
+			<from>11</from>
+			<to>2</to>
+			<controlx>2179</controlx>
+			<controly>1091</controly>
+			<read>rcv(GTFO)</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>8</to>
+			<read>snd(enterRoom)</read>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>14</to>
+			<read>snd(rename)</read>
+		</transition>
+	</automaton>
+</structure>
