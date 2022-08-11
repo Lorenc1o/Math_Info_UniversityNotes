@@ -1,0 +1,72 @@
+n: 10, m: 2
+Tiempo de ejecución: 3e-06
+0 0
+n: 10, m: 4
+Tiempo de ejecución: 1e-06
+0 0
+n: 10, m: 6
+Tiempo de ejecución: 1e-06
+0 0
+n: 10, m: 8
+Tiempo de ejecución: 1e-06
+0 0
+n: 100, m: 20
+Tiempo de ejecución: 2e-06
+0 0
+n: 100, m: 40
+Tiempo de ejecución: 3e-06
+0 0
+n: 100, m: 60
+Tiempo de ejecución: 2e-06
+0 0
+n: 100, m: 80
+Tiempo de ejecución: 2e-06
+0 0
+n: 1000, m: 200
+Tiempo de ejecución: 1.4e-05
+0 0
+n: 1000, m: 400
+Tiempo de ejecución: 1.4e-05
+0 0
+n: 1000, m: 600
+Tiempo de ejecución: 4.1e-05
+0 0
+n: 1000, m: 800
+Tiempo de ejecución: 1.1e-05
+0 0
+n: 10000, m: 2000
+Tiempo de ejecución: 0.000132
+0 0
+n: 10000, m: 4000
+Tiempo de ejecución: 0.000128
+0 0
+n: 10000, m: 6000
+Tiempo de ejecución: 0.00011
+0 0
+n: 10000, m: 8000
+Tiempo de ejecución: 9e-05
+0 0
+n: 100000, m: 20000
+Tiempo de ejecución: 0.001193
+0 0
+n: 100000, m: 40000
+Tiempo de ejecución: 0.000926
+0 0
+n: 100000, m: 60000
+Tiempo de ejecución: 0.000832
+0 0
+n: 100000, m: 80000
+Tiempo de ejecución: 0.000746
+0 0
+n: 1000000, m: 200000
+Tiempo de ejecución: 0.009385
+0 0
+n: 1000000, m: 400000
+Tiempo de ejecución: 0.007644
+0 0
+n: 1000000, m: 600000
+Tiempo de ejecución: 0.007342
+0 0
+n: 1000000, m: 800000
+Tiempo de ejecución: 0.005967
+0 0

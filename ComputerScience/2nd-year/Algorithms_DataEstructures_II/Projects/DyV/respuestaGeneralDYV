@@ -1,0 +1,72 @@
+n: 10, m: 2
+Tiempo de ejecución: 2e-06
+1 1
+n: 10, m: 4
+Tiempo de ejecución: 1e-06
+0 1
+n: 10, m: 6
+Tiempo de ejecución: 1e-06
+0 0
+n: 10, m: 8
+Tiempo de ejecución: 1e-06
+0 0
+n: 100, m: 20
+Tiempo de ejecución: 5e-06
+20 2
+n: 100, m: 40
+Tiempo de ejecución: 4e-06
+48 3
+n: 100, m: 60
+Tiempo de ejecución: 2e-06
+0 2
+n: 100, m: 80
+Tiempo de ejecución: 2e-06
+6 3
+n: 1000, m: 200
+Tiempo de ejecución: 4.1e-05
+42 14
+n: 1000, m: 400
+Tiempo de ejecución: 3.6e-05
+12 20
+n: 1000, m: 600
+Tiempo de ejecución: 1.2e-05
+44 29
+n: 1000, m: 800
+Tiempo de ejecución: 9e-06
+38 34
+n: 10000, m: 2000
+Tiempo de ejecución: 0.000498
+1022 87
+n: 10000, m: 4000
+Tiempo de ejecución: 0.000409
+1534 175
+n: 10000, m: 6000
+Tiempo de ejecución: 0.000103
+907 259
+n: 10000, m: 8000
+Tiempo de ejecución: 8.6e-05
+406 312
+n: 100000, m: 20000
+Tiempo de ejecución: 0.004771
+76203 820
+n: 100000, m: 40000
+Tiempo de ejecución: 0.003893
+24638 1679
+n: 100000, m: 60000
+Tiempo de ejecución: 0.000934
+16904 2319
+n: 100000, m: 80000
+Tiempo de ejecución: 0.000747
+14057 3165
+n: 1000000, m: 200000
+Tiempo de ejecución: 0.043841
+799840 7847
+n: 1000000, m: 400000
+Tiempo de ejecución: 0.041215
+594589 15502
+n: 1000000, m: 600000
+Tiempo de ejecución: 0.0071
+384052 23457
+n: 1000000, m: 800000
+Tiempo de ejecución: 0.007171
+41089 30801
