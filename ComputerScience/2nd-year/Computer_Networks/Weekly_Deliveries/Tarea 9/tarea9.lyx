@@ -1,0 +1,464 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tarea 9 de Redes
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Subsubsection*
+1.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="6cm">
+<column alignment="left" valignment="middle" width="6cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Acción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tabla del conmutador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Enlaces implicados en conmutador
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PC_A envía una trama a PC_C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+El conmutador aprende que la dirección de PC_A está asociada al puerto 1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recibe por: puerto 1
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+linebreak
+\end_layout
+
+\end_inset
+
+ Envía a: Broadcast
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PC_C contesta a PC_A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+El conmutador aprende que la dirección de PC_C está asociada al puerto 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recibe por: puerto 3
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+linebreak
+\end_layout
+
+\end_inset
+
+ Envía a: puerto 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PC_D envía una trama a PC_C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+El conmutador aprende que la dirección de PC_D está asociada al puerto 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recibe por: puerto 4
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+linebreak
+\end_layout
+
+\end_inset
+
+ Envía a: puerto 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PC_C contesta con una trama PC_D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+El conmutador no aprende nada nuevo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recibe por: puerto 3
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+linebreak
+\end_layout
+
+\end_inset
+
+ Envía a: puerto 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+2.
+\end_layout
+
+\begin_layout Standard
+2a)
+\end_layout
+
+\begin_layout Itemize
+PC Wireshark:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+- MAC: 14:da:e9:df:5d:62
+\end_layout
+
+\begin_layout Description
+- IP: 155.54.223.137
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Otro PC:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+- MAC: 14:da:e9:df:5d:0e
+\end_layout
+
+\begin_layout Description
+- IP: 155.54.223.136
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Router:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+- MAC: 50:9a:4c:7c:e0:5f
+\end_layout
+
+\begin_layout Description
+- IP: 155.54.223.189
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+2b) 
+\end_layout
+
+\begin_layout Itemize
+ARP Request:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+- IP origen: 155.54.223.137
+\end_layout
+
+\begin_layout Description
+- IP destino: 155.54.223.136
+\end_layout
+
+\begin_layout Description
+- MAC origen: 14:da:e9:df:5d:62
+\end_layout
+
+\begin_layout Description
+- MAC destino: 00:00:00:00:00:00
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+ARP Reply:
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+- IP origen: 155.54.223.136
+\end_layout
+
+\begin_layout Description
+- IP destino: 155.54.223.137
+\end_layout
+
+\begin_layout Description
+- MAC origen: 14:da:e9:df:5d:0e
+\end_layout
+
+\begin_layout Description
+- MAC destino: 14:da:e9:df:5d:62
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+2c) 
+\end_layout
+
+\begin_layout Description
+- ARP request: ff:ff:ff:ff:ff:ff
+\end_layout
+
+\begin_layout Description
+- ARP reply: 14:da:e9:df:5d:62
+\end_layout
+
+\begin_layout Standard
+El valor tipo tiene valor 0x0806, que significa que el paquete utiliza el
+ protocolo ARP.
+\end_layout
+
+\begin_layout Standard
+2d)
+\end_layout
+
+\begin_layout Itemize
+IP destino: 155.54.1.1
+\end_layout
+
+\begin_layout Itemize
+MAC destino: 50:9a:4c:7c:e0:5f
+\end_layout
+
+\begin_layout Standard
+No coinciden, según nuestra tabla ARP esta MAC es la del router al que estamos
+ conectados.
+ La razón de esto es que, a pesar de que conocemos la IP a la que queremos
+ acceder (la del servidor DNS), no podemos conocer la MAC, pues solo podemos
+ conocer las MAC de los hosts de nuestra red.
+ Es el router el que se encargaráde dirigir el paquete de forma correcta,
+ aunque es probable que este tampoco conozca la MAC del servidor al que
+ queremos acceder, sino la de otro router iontermedio.
+ ARP solo tiene poder en una subred.
+\end_layout
+
+\begin_layout Standard
+2e) La IP es 138.100.200.6.
+\end_layout
+
+\begin_layout Standard
+No podemos conocer la MAC, como hemos explicado en el apartado anterior,
+ ya que no pertenecemos a la misma subred.
+\end_layout
+
+\begin_layout Standard
+La del servidor DNS tampoco, por la misma razón.
+\end_layout
+
+\end_body
+\end_document

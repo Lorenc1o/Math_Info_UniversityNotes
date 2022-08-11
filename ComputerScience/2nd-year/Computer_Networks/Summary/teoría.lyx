@@ -1,0 +1,3599 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Teoría de Redes
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Section
+Introducción a las redes de ordenadores
+\end_layout
+
+\begin_layout Subsection
+La red Internet
+\end_layout
+
+\begin_layout Subsubsection
+Componentes de Internet
+\end_layout
+
+\begin_layout Standard
+\align left
+Internet está conformado por millones de dispositivos, conocidos como hosts
+ o sistemas finales, que ejecutan aplicaciones de red distribuidas.
+ Estos dispositivos están conectados mediante enlaces de comunicación (cobre,
+ fibra, radio), cada uno con un ancho de banda determinado.
+\end_layout
+
+\begin_layout Standard
+\align left
+También forman parte de esta red los equipos de interconexión, como son
+ los routers y los conmutadores, cuya misión es el almacenamiento, procesamiento
+ y reenvío de paquetes.
+\end_layout
+
+\begin_layout Subsubsection
+Hosts o Sistemas Finales
+\end_layout
+
+\begin_layout Standard
+\align left
+Los hosts o sistemas finales ejecutan aplicaciones de red distribuidas,
+ se encuentran en el extremo de la red, los hay de diferentes tipos (ordenadores
+, smartphones,...).
+\end_layout
+
+\begin_layout Standard
+Hay dos modelos de aplicaciones de red, que son el modelo cliente/servidor
+ y el Peer-to-Peer (P2P).
+\end_layout
+
+\begin_layout Subsubsection
+Arquitectura de una aplicación cliente/servidor
+\end_layout
+
+\begin_layout Standard
+\align left
+El 
+\series bold
+servidor 
+\series default
+procesa peticiones de los clientes.
+ El host siempre está online, su dirección IP es estática y es común el
+ uso de granjas de servidores.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los 
+\series bold
+clientes 
+\series default
+se comunican con el servidor pero no directamente entre sí, están conectados
+ intermitentemente y sus direcciones IP son dinámicas.
+\end_layout
+
+\begin_layout Subsubsection
+Arquitectura de una aplicación P2P
+\end_layout
+
+\begin_layout Standard
+No hay un servidor siempre online, sino una red de peers, que se comunican
+ directamente entre sí,están intermitente conectados y tiene direcciones
+ IP dinámicas.
+ Es inherentemente escalable, aunque su gestión es compleja.
+\end_layout
+
+\begin_layout Subsubsection
+Tipos de redes de acceso
+\end_layout
+
+\begin_layout Standard
+\align left
+Las redes pueden ser de acceso residencial, institucional o móvil.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se diferencian unas de otras por el ancho de banda, la calidad de servicio
+ (ancho de banda garantizado, latencia máxima acotada o servicio de seguridad)
+ y el hecho de ser una red dedicada o una compartida.
+\end_layout
+
+\begin_layout Paragraph
+Redes de acceso residencial
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+ADSL (Assymetrix Digital Subscriber Line): 
+\series default
+utiliza la red telefónica convencional pero con posibilidad de combinar
+ datos y voz simultáneamente.
+ Restringe la longitud de enlace.
+ Soporta hasta 3.3 Mbps en el canal ascendente y 24 Mbps en el descendente.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+HFC (Hybric Fiber Coaxial): 
+\series default
+la red de cable y fibra una el hogar con el router del ISP (Internet Service
+ Provider).
+ Soporta hasta 216 Mbps en el canal ascendente y 1600 Mbps en el descendente.
+ A diferencia del ADSL, el enlace hasta el router es compartido y su longitud
+ no es un factor determinante.
+ El despliegue lo hacen las compañías.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+WiMAX (Worldwide Interoperability for Microwave Access): 
+\series default
+utiliza ondas de radio para la transmisión.
+ Alcanza hasta 70 Mbps en teoría, pero en realidad unos 20 Mbps.
+\end_layout
+
+\begin_layout Paragraph
+Redes de acceso institucional
+\end_layout
+
+\begin_layout Standard
+\align left
+Son redes privadas pertenecientes a una empresa u organismo, también conocidas
+ como intranet.
+\end_layout
+
+\begin_layout Standard
+\align left
+La configuración habitual consta de un router que da salida a la red Internet,
+ hosts conectados entre sí mediante conmutadores que usan la tecnología
+ Ethernet, y se utilizan puntos de acceso apra dar cobertura inalámbrica.
+\end_layout
+
+\begin_layout Subsubsection
+Medios de transmisión
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Par trenzado:
+\series default
+ pares de hilos de cobre dispuestos de forma helicoidal cubiertos por un
+ aislante de plástico.
+ Ampliamente utilizado en redes basadas en la tecnología Ethernet.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cable coaxial:
+\series default
+ núcleo de cobre recubierto por aislante envuelto en un conductor externo.
+ Medio de transmisión originalmente empleado por las redes Ethernet y por
+ las redes de TV por cable.
+ Mayor coste, velocidad de transmisión e inmunidad al ruido que el par trenzado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Fibra óptica: 
+\series default
+la presencia/ausencia de luz codifica un bit.
+ Se compone de un núcleo de fibra de vidrio de alta densidad, revestido
+ con cristal o plástico de baja densidad.
+ Es más costoso, más rápido y con mayor inmunidad al ruido, y con menor
+ atenuación que el par trenzado y el cable coaxial.
+ Es la opción preferida para los enlaces más largos.
+\end_layout
+
+\begin_layout Itemize
+Otros medios no cableados, como microondas.
+\end_layout
+
+\begin_layout Subsubsection
+Interconexión de routers
+\end_layout
+
+\begin_layout Standard
+\align left
+Existen miles de redes interconectadas.
+ Los mensajes se dividen en paquetes, que son almacenados, procesados y
+ reenviados por los routers.
+ Normalmente un paquete atraviesa varias redes hasta alcanzar su destino.
+\end_layout
+
+\begin_layout Standard
+\align left
+Hay dos formas de transportar los paquetes:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Conmutación de paquetes
+\series default
+: cada paquete se encamina en cada router de manera independiente, la entrega
+ de los paquetes puede ser fuera de orden y no ofrece garantía alguna de
+ calidad de servicio.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Conmutación de circuitos virtuales
+\series default
+: se establece una ruta fija para cada circuito que siguen todos los paquetes.
+ La entrega de los paquetes se realizan en orden y con calidad de servicio
+ garantizada.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ambas modalidades requieren algoritmos de encaminamiento.
+\end_layout
+
+\begin_layout Subsection
+Conceptos básicos
+\end_layout
+
+\begin_layout Subsubsection
+Modos de comunicación
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Símplex: 
+\series default
+unidireccional.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Semi-dúplex: 
+\series default
+bidireccional no simultánea.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Full-dúplex: 
+\series default
+bidireccional simultánea.
+\end_layout
+
+\begin_layout Subsubsection
+Configuración del enlace
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Punto a punto: 
+\series default
+canal de comunicación individual entre pares de hosts.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Multipunto o difusión: 
+\series default
+canal de comunicación compartido.
+ Requiere de asignación del canal, estática o dinámica, y de arbitraje,
+ centralizado o distribuido.
+ Presenta diversas formas o topologías, como la malla, la estrella, la bus,
+ o la anillo.
+\end_layout
+
+\begin_layout Subsubsection
+Escala de red
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Redes de área local (LAN):
+\series default
+ son redes privadas que abarcan pocos km.
+ Configuradas como difusión (10/100/1000 Mbps), con una topología en anillo,
+ bus o estrella, aunque su pequeño tamaño permite usar diseños específicos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Redes de área extensa (WAN): 
+\series default
+son redes públicas y/o comerciales, que abarcan muchos km.
+ Configuradas como punto a punto (>1Gbps).
+ El encaminamiento y la congestión son problemas a tener en cuenta, además,
+ la topología es irregular.
+\end_layout
+
+\begin_layout Subsection
+Arquitectura de red
+\end_layout
+
+\begin_layout Subsubsection
+Necesidad de protocolos
+\end_layout
+
+\begin_layout Standard
+\align left
+Los protocolos de comunicación garantizan la interoperabilidad de los interlocut
+ores.
+ Un protocolo define el formato y el orden de los mensajes que se intercambian,
+ y als aciones realizadas al enviar/recibir cada mensaje.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Protocolo: 
+\series default
+tanto los hosts como los equipos de interconexión siguen protocolos.
+ Un protocolo debe tener una esècificación que defina sin ambigüedad los
+ tipos de mensajes intercambiados, la sintaxis y semántica de los mensajes,
+ y las reglas para determinar qué hacer, cuándo y cómo cada vez que se envía
+ o recibe un tipo de mensaje concreto.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los protocolos pueden ser de dominio público, definidos en RFCs (Request
+ For Comments), o de propietarios, en cuyo caso su especificación no es
+ conocida.
+\end_layout
+
+\begin_layout Subsubsection
+Necesidad de arquitecturas de red
+\end_layout
+
+\begin_layout Standard
+\align left
+Las redes son muy complejas, ya que tiene muchos componentes distintos,
+ por lo que resulta consejable estructurar las redes en capas, ya que una
+ estructura explícita permite identificar los componentes y sus relaciones
+ en sistemas complejos, la modularización facilita el mantenimiento y la
+ actualización, y los cambios en implementación de un servicio en una capa
+ son transparentes para el resto del sistema.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Principios de la división en capas: 
+\series default
+una capa realiza un conjunto de tareas relacionadas.
+ Además, cada capa proporciona servicios a al capa superior, usando únicamente
+ servicios de la capa inferior a través de una interfaz.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Las entidades en la misma capa pero en diferenteshosts reciben el nombre
+ de procesos pares, que dialogan entre sí mediante un protocolo.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+El conjunto de capas y protocolos usados en cada capa se denomina arquitectura
+ de red.
+\end_layout
+
+\begin_layout Subsubsection
+Arquitectura de capas de internet
+\end_layout
+
+\begin_layout Paragraph
+Arquitectura TCP/IP:
+\end_layout
+
+\begin_layout Standard
+Tiene diversos niveles, de menor a mayor profundidad:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Aplicación
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Transporte: 
+\series default
+se encarga de la transferencia de segmentos entre procesos, del control
+ del flujo y la recuperación de errores, así como del control de la congestión.
+ Protocolos TCP (Transmission Control Protocol) y UDP (User Datagram Protocol).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Red: 
+\series default
+encaminamiento de paquetes entre el host origen y el host destino mediante
+ algoritmos de encaminamiento.
+ Protocolos IP (Internet Protocol), RIP (Routing Information Protocol),
+ OSPF (Open Shortest Path First) y BGP (Border Gateway Protocol).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Enlace: 
+\series default
+envía de tramas entre hosts y routers conectados directamente, hay detección
+ de errores.
+ Protcolo Ethernet, WiFi, PPP.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Física: 
+\series default
+transmisión de un flujo de bits entre hosts y routers conectados directamente
+ sobre un enlace físico.
+\end_layout
+
+\begin_layout Paragraph
+Arquitectura de capas de ISO/OSI (Open System Interconnection)
+\end_layout
+
+\begin_layout Standard
+El modelo OSI incluye dos niveles adicionales entre aplicación y transporte.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Presentación: 
+\series default
+interpretación y tratamiento de los datos, cifrado, compresión y codificación.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Sesión: 
+\series default
+sincronización y recuperación de los datos.
+\end_layout
+
+\begin_layout Standard
+En la pila TCP/IP estas funciones corresponden al nivel de aplicación.
+\end_layout
+
+\begin_layout Subsubsection
+Encapsulación e independencia entre capas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Comunicación horizontal entre capas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Comunicación vertical entre capas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+ATM
+\end_layout
+
+\begin_layout Standard
+\align left
+ATM (Asynchronous Transfer Mode) es una arquitectura basada en la conmutación
+ de circuitos virtuales.
+ Proporciona un servicio orientado a conexión, utiliza celdas de tamaño
+ fijo de 53 bytes (5 de encabezado y 48 de datos), cada conexión es un flujo
+ de celdas y maneja todo tipo de tráfico (servicio de transporte de tráfico
+ en tiempo real y de no tiempo real).
+ Además, gestiona la calidad del servicio.
+\end_layout
+
+\begin_layout Standard
+\align left
+Su arquitectura es extendida a 3 dimensiones:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Capas: 
+\series default
+AAL (Application Adaption Layer) permite a otros protocolos utilizar ATM,
+ ATM gestiona conexiones y celdas, y la capa física.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Los planos
+\series default
+, de usuario o de control.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+La gestión de los planos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+El nivel de transporte
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+\align left
+El objetivo del nivel de transporte es proporcionar un servicio de comunicación
+ lógica entre procesos en hosts distintos a través de la red.
+\end_layout
+
+\begin_layout Standard
+\align left
+Este nivel involucra solo a los hosts 
+\series bold
+emisor
+\series default
+, que fragmenta los mensajes de las aplicaciones en segmentos y se los pasa
+ al nivel de red, y 
+\series bold
+receptor
+\series default
+, que reensambla los segmentos de los mensajes y se los entrega a la aplicacione
+s.
+\end_layout
+
+\begin_layout Standard
+\align left
+Las funciones del nivel de transporte son:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Comunicación de extremo a extremo: servicio de comunicación lógica entre
+ procesos que se ejecutan en hosts distintos.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Multiplexión y demultiplexión: identificar los procesos emisor y receptor
+ sin ambigüedad.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Detección de errores: identificar y descartar segmentos erróneos.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Segmentación y reensamblaje: fragmentar y reensamblar la información del
+ nivel de aplicación para ajustarse al tamaño máximo de trama del nivel
+ de enlace.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Control de flujo: regular el tráfico para evitar que un emisor rápido inunde
+ a un receptor lento.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Recuperación de errores: resovler situaciones anómalas.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Control de la congestión: evitar que se saturen enlaces o equipos de interconexi
+ón.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los protocolos utilizan el servicio de encaminamiento de paquetes entre
+ hosts proporcionados por el nivel de red.
+ Los 
+\series bold
+protocolos de transporte disponibles en internet
+\series default
+ son 
+\series bold
+TCP 
+\series default
+(Transmission Control Protocol), con entrega garantizada y en orden de los
+ segmentos, control de flujo y de la congestión y recuperación de errores,
+ y 
+\series bold
+UDP 
+\series default
+(User Datagram Protocol), con entrega no garantizada y desordenada de los
+ segmentos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Ninguno de ellos ofrece garantías de latencia o de ancho de banda.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los 
+\series bold
+servicios proporcionados al nivel de aplicación 
+\series default
+son 
+\series bold
+orientado a conexión, confiable 
+\series default
+(TCP), y 
+\series bold
+sin conexión, no confiable 
+\series default
+(UDP).
+\end_layout
+
+\begin_layout Subsection
+Multiplexión y demultiplexión
+\end_layout
+
+\begin_layout Standard
+\align left
+Es una extensión del servicio de entrega de host a host que proporciona
+ el nivel de red a un servicio de entrega de proceso a proceso para el nivel
+ de aplicación.
+ El nivel de transporte tiene la responsabilidad de entregar los segmentos
+ recibidos al proceso correcto.
+\end_layout
+
+\begin_layout Standard
+\align left
+La 
+\series bold
+multiplexión 
+\series default
+consiste en obtener información de los distintos sockets, crear los segmentos
+ y pasarlos al nivel de red.
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+demultiplexión 
+\series default
+consiste en entregar los segmentos procedentes del nivel de red a los sockets
+ apropiados.
+\end_layout
+
+\begin_layout Subsubsection
+Direccionamiento de procesos
+\end_layout
+
+\begin_layout Standard
+Cada paquete IP recibido por un host tiene direcciones IP de origen (S)
+ y de destino (D).
+ Cada paquete IP transporta un segmento TCP o UDP.
+ Cada segmento tiene números de puerto origen y de puerto destino.
+ El host utiliza las direcciones IP y los números de puerto para entregar
+ el segmento a socket apropiado.
+ UDP (IP D, Port D), TCP (IP D, Port D, IP S, Port S).
+\end_layout
+
+\begin_layout Subsection
+Protocolo UDP
+\end_layout
+
+\begin_layout Standard
+\align left
+Protocolo del nivel de transporte que solo incorpora las funciones de multiplexi
+ón/demultiplexión y detección de errores.
+ Proporciona servicio best effort del nivel de transporte, lo que significa
+ que la entrefa no está garantizada, ni el orden de entrega tampoco.
+ Es un protocolo sin conexión, es decir, no hay negociación alguna entre
+ emisor y receptor, y cada segmento UDP se trata de forma independiente.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se trata de un protocolo multipunto, un proceso puede enviar y recibir informaci
+ón a o desde otros procesos con el mismo socket.
+\end_layout
+
+\begin_layout Subsubsection
+Campos del segmento UDP
+\end_layout
+
+\begin_layout Standard
+\align left
+Está formado por dos partes, que son una cabecera de controlo y los datos
+ del nivel de aplicación.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Campos de la cabecera: 
+\series default
+puertos del proceso emisor y del proceso receptor del segmento.
+ Longitud del segmento UDP incluyendo la cabecera.
+ Checksum para detección de errores.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Detección de errores: 
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Cálculo del checksum: 
+\series default
+tratar los contenidos del segmento como una secuencia de enteros de 16 bits.
+ El checksum es la suma en complemento a 1 de todos los enteros de l secuencia.
+ El emisor incluye el checksum calculado en el campo correspondiente del
+ segmento.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Comprobación del checksum: 
+\series default
+el receptor calcula el checksum de la misma forma, si ambos coinciden, no
+ hubo errores durante la transmisión del mensaje, en otro caso, el segmento
+ se descarta.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Razones para usar UDP frente a TCP: 
+\series default
+la aplicación tiene más control acerca de cómo se envía la información.
+ No hay control de flujo ni recuperación de errores, lo que evita la retransmisi
+ón de segmentos perdidos o erróneos.
+ Tampoco hay control de la congestión, por lo que se puede enviar a la velocidad
+ deseada.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se elimina el retraso asociado a establecer la conexión.
+\end_layout
+
+\begin_layout Standard
+\align left
+No se necesita guardar el estado de la conexión.
+ Normalmente un servidor de aplicaciones podrá atender a más clientes si
+ usa UDP que con TCP.
+\end_layout
+
+\begin_layout Standard
+\align left
+La cabecera del segmento es menor, y por tanto la eficiencia mayor.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+UDP en la práctica: 
+\series default
+es habitual su uso para aplicaciones multimedia en tiempo real o que usan
+ streaming.
+ También se usa para DNS (Domain Name Service), DHCP (Dynamic Host Configuration
+ Protocol), SNMP (Simple Network Management Protocol) o RIP (Routing Information
+ Protocol).
+\end_layout
+
+\begin_layout Standard
+\align left
+En caso de que se requiera un servicio de transmisión confiable basado en
+ UDP, los mecanismos para garantizarla deben incluirse en el nivel de aplicación.
+\end_layout
+
+\begin_layout Subsection
+Principios de la comunicación confiable
+\end_layout
+
+\begin_layout Standard
+Un protocolo confiable debe proveer un servicio que garantice que ningún
+ bit será modificado o se perderá, y que aseguro que todos los bits se entregará
+n en el destino en el mismo orden en que fueron enviados, considerando que
+ la capa inferior es un canal punto a punto no confiable.
+\end_layout
+
+\begin_layout Standard
+Protocolo rdt (reliable data transfer)
+\end_layout
+
+\begin_layout Subsubsection
+Primitivas de envío y recepción
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+rdt_send():
+\series default
+ usada por la capa superior para que los datos sean entregados a la capa
+ superior del receptor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+udt_send(): 
+\series default
+usada por rdt para enviar un segmento por el canal no confiable al receptor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+rdt_rcv():
+\series default
+ usada por la capa inferior cuando llega un segmento por el canal no confiable
+ al receptor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+deliver_data(): 
+\series default
+usada por rdt para entregar datos a loa aplicación.
+\end_layout
+
+\begin_layout Subsubsection
+rdt 1.0: Canal confiable
+\end_layout
+
+\begin_layout Standard
+\align left
+Supongamos que el canal subyacente es confiable, no hay errores de bits
+ y no hay pérdida de segmentos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Basta que el emisor envíe datos a través del canal subyacente y que el receptor
+ los lea.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+rdt 2.0: Canal con errores de bits
+\end_layout
+
+\begin_layout Standard
+\align left
+Ahora el canal subyacente puede alterar los bits del segmento, pero no hay
+ pérdida de segmentos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Utilizaremos un mecanismo de checksum para detectar esto.
+\end_layout
+
+\begin_layout Standard
+\align left
+Mecanismos básicos para recuperación de errores:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+ACKs (Asentimientos):
+\series default
+ el receptor indica explícitamente que el segmento se recibió correctamente.
+ El emisor no enviará otro segmento hasta recibir un ACK.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+NAKs (Rechazos):
+\series default
+ el receptor indica explícitamente que el segmento contenía errores.
+ El emisor retransmite el mismo segmento si recibe un NAK.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted5.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+rdt 2.0 tiene un fallo bastante grave, pues si un ACK o un NAK se corrompen,
+ el emisor no sabŕa realmente qué pasó en el receptor, por lo que el emisor
+ no puede retransmitir un segmento porque el receptor lo podría procesar
+ aún siendo un duplicado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Hace falta un mecanismo adicional (rtd 2.1), en el que el emisor añadirá
+ un número de secuencia a cada segmento, transmitirá de nuevo el segmento
+ si el ACK o el NAK se han visto afectados por un error, y el receptor descartar
+á los segmentos duplicados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted6.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted7.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+rtd 3.0: Canal con errores y pérdidas de bits
+\end_layout
+
+\begin_layout Standard
+\align left
+El canal subyacente también puede perder segmentos.
+ Ahora, el checksum, los números de secuencia, los ACKs y las retransmisiones
+ no son suficientes.
+\end_layout
+
+\begin_layout Standard
+\align left
+Necesitamos otro mecanismo adicional: el emisor espera durante un tiempo
+ razonable el ACK (timeout), el segmento se retransmite si no llega el ACK
+ durante ese tiempo, si los datos o el ACK solo se retrasan, la retransmisión
+ generará duplicados que pueden detectarse mediante los números de secuencia
+ de los segmentos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted8.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Eficiencia de rdt 3.0 sin errores
+\end_layout
+
+\begin_layout Standard
+\align left
+Es un protocolo de parada y espera (stop and wait), lo que quiere decir
+ que el emisor espera una confirmación por cada segmento transmitido y el
+ siguiente segmento se envía solo cuando se recibe su confirmación.
+ Así, el tiempo total para transmitir un segmento y su confirmación es:
+\begin_inset Formula 
+\[
+T=t_{prop}+t_{seg}+t_{proc}+t_{prop}+t_{ack}+t_{proc}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Siendo 
+\begin_inset Formula $t_{prop}:$
+\end_inset
+
+ tiempo de propagación, 
+\begin_inset Formula $t_{seg}:$
+\end_inset
+
+ tiempo de transmisión de un segmento, 
+\begin_inset Formula $t_{proc}:$
+\end_inset
+
+ tiempo de procesamiento de un segmento o ACK, 
+\begin_inset Formula $t_{ack}:$
+\end_inset
+
+ tiempo de retransmisión de un ACK.
+\end_layout
+
+\begin_layout Standard
+\align left
+Tiene como ventaja la simplicidad, pues cada segmento se transmite y confirma
+ individualmente.
+ Y como desventaja la ineficiencia, por la espera entre sucesivos envíos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se define 
+\series bold
+utilización o eficiencia del protocolo
+\series default
+ como:
+\begin_inset Formula 
+\[
+U=\frac{t_{info}}{T}=\frac{t_{info}}{2t_{prop}+2t_{proc}+t_{seg}+t_{ack}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $t_{prop}=\frac{d}{V_{prop}}$
+\end_inset
+
+, d=distancia del enlace, 
+\begin_inset Formula $V_{prop}=$
+\end_inset
+
+velocidad de propagación
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $t_{seg}=\frac{L}{V_{trans}}$
+\end_inset
+
+, L=longitud del segmento, 
+\begin_inset Formula $V_{trans}=$
+\end_inset
+
+velocidad de transmisión
+\end_layout
+
+\begin_layout Standard
+\align left
+Si se conoce el tamaño de la cabecera del protocolo (h), entonces 
+\begin_inset Formula $t_{info}$
+\end_inset
+
+ es el tiempo necesario para transmitir solo los datos del segmento (L-h),
+ sin la cabecera.
+ Si no se conoce, entonces 
+\begin_inset Formula $t_{info}=t_{seg}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Uso de técnicas de ventana deslizante
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Protocolo de ventana deslizante (sliding-window): 
+\series default
+el emisor puede enviar varios segmentos antes de recibir una confirmación,
+ lo que permite aprovechar más eficientemente el canal.
+ El emisor guarda copias de los segmentos enviados hasta que recibe el ACK
+ correspondiente.
+ El receptor puede confirmar la recepción de uno o más segmentos en cualquier
+ momento mediante un ACK.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+-Mecanismo de control de flujo: 
+\series default
+el número máximo de segmentos enviados pendientes de confirmación se conoce
+ como ventana.
+ Esta limitación evita que un emisor rápido inunde a un receptor lento.
+\end_layout
+
+\begin_layout Standard
+\align left
+Este protocolo requiere un esquema de numeración de los datos y los ACKs
+ para realizar un seguimieento de los segmentos enviados y recibidos.
+ Cada segmento de datos incluye un número de secuencia y cada ACK debe incluir
+ información acerca de cuántos segmentos está confirmando.
+\end_layout
+
+\begin_layout Standard
+\align left
+El emisor también dispone de uno o más temporizadores para recuperarse de
+ las pérdidas de segmentos.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Eficiencia de la ventana deslizante sin errores
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\[
+U=\frac{N\cdot t_{info}}{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+donde N es el número de segmentos que se pueden enviar sin esperar confirmación.
+\end_layout
+
+\begin_layout Subsection
+Protocolo TCP
+\end_layout
+
+\begin_layout Standard
+\align left
+Ofrece un servicio confiable del nivel de transporte, la información no
+ puede perderse y siempre se entrega en orden al nivel de aplicación.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es un protocolo orientado a conexión, en el que el emisor inicia una negociación
+ con el receptor para establecer la conexión.
+ Es punto a punto con transmisión full-dúplex, con un solo emisor y un solo
+ receptor (IP D, Port D, IP S, Port S), en el que el flujo de información
+ es bidireccional en cada conexión.
+\end_layout
+
+\begin_layout Standard
+\align left
+El control de flujo y recuperación de errores están basados en técnicas
+ de ventana deslizante.
+ Solo se implementa en sistemas finales.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Campos del segmento TCP:
+\end_layout
+
+\begin_layout Standard
+\align left
+Está formado por dos partes, que son la 
+\series bold
+cabecera de control
+\series default
+, y los 
+\series bold
+datos del nivel de aplicación.
+
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Hay una longitud máxima del segmento, MSS (Maximum Segment Size), que se
+ define como el tamaño máximo del campo de datos y está condicionado por
+ las capas inferiores.
+ Si los datos de la aplicación no caben en un segmento se generan varios.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Cabecera:
+\end_layout
+
+\begin_layout Itemize
+\align left
+Puertos del proceso emisor y del receptor.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Número de secuencia y número de confirmación.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Head Len indica la longitud de la cabecera en palabras de 32 bits.
+\end_layout
+
+\begin_layout Itemize
+\align left
+Flags (ACK confirmación, SYN establecer conexión, RST restaurar conexión,
+ FIN cerrar conexión).
+\end_layout
+
+\begin_layout Itemize
+\align left
+La ventana del receptor se utiliza para control de flujo.
+\end_layout
+
+\begin_layout Itemize
+Checksum.
+\end_layout
+
+\begin_layout Subsubsection
+Conexiones TCP
+\end_layout
+
+\begin_layout Standard
+\align left
+Tanto el emisor como el receptor deben establecer una conexión antes de
+ comenzar el intercambio de datos procedentes del nivel de aplicación.
+ El propósito de este establecimiento es inicializar los parámetros relativos
+ a al recuperación de errores, como son los campos de número de secuencia
+ y de confirmación, inicializar los parámetros relativos al control de flujo,
+ o sea, el valor del campo Ventana del receptor en ambos sentidos, y reservar
+ buffer para la ventana deslizante en ambos sentidos.
+\end_layout
+
+\begin_layout Standard
+\align left
+El 
+\series bold
+establecimiento
+\series default
+ se lleva a cabo en tres fases:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+El cliente envía un segmento SYN al servidor, en el que especifica el número
+ de secuencia inicial del cliente y no incluye datos.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+El servidor recibe el SYN y recibe con un SYN ACK, reserva los buffers necesario
+s y especifica el número de secuencia inicial del servidor.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+El cliente recibe el SYN ACK y responde con ACK, reserva los buffers necesarios,
+ y ya puede incluir datos para el servidor.
+\end_layout
+
+\begin_layout Standard
+\align left
+El 
+\series bold
+cierre 
+\series default
+consiste en cuatro pasos:
+\end_layout
+
+\begin_layout Enumerate
+\align left
+El cliente envía un segmento FIN al servidor.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+El servidor recibe el FIN, cierra la conexión, responde con ACK, y envía
+ un FIN.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+El cliente recibe el FIN y responde con un ACK.
+ El cliente espera algún tiempo antes de cerrar la conexión, si el ACK se
+ pierde, el servidor enviaría de nuevo un FIN.
+\end_layout
+
+\begin_layout Enumerate
+\align left
+El servidor recibe el ACK y cierra la conexión.
+\end_layout
+
+\begin_layout Standard
+\align left
+Tanto el emisor como el receptor liberan todos los recursos asociados a
+ la conexión cuando la cierran.
+\end_layout
+
+\begin_layout Subsubsection
+Números de secuencia y confirmaciones
+\end_layout
+
+\begin_layout Standard
+\align left
+TCP considera los datos como un flujo de bytes ordenados.
+ Los números de secuencia están relacionados con los bytes transmitidos,
+ no con el número de segmentos.
+ El número de secuencia de un segmento corresponde al primer byte de dicho
+ segmento, por lo que el número de secuencia del siguiente segmento depende
+ del número de bytes transmitidos anteriormente.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los números de confirmación también están relacionados con los bytes recibidos.
+ El número de confirmación de un segmento indica el número de secuencia
+ del byte que se está esperando.
+ Las confirmaciones pueden ser acumulativas, o sea, se pueden confirmar
+ varios segmentos simultáneamente.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si se recibe un segmento fuera de orden, el receptor puede optar por descartarlo
+ o almacenarlo en espera de los anteriores.
+\end_layout
+
+\begin_layout Subsubsection
+Estimación del temporizador
+\end_layout
+
+\begin_layout Standard
+\align left
+Debe ser mayor que el RTT (Round-Trip Time, el tiempo de ida y vuelta) necesario
+ para que un segmento pueda llegar a su destino y se reciba su confirmación.
+ El RTT varía en función del camino seguido por los paquetes.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si fuera demasiado bajo, se podrían producir retransmisiones innecesarias
+ y si fuera demasiado alto se reaccionaría lentamente ante las pérdidas
+ de segmentos.
+\end_layout
+
+\begin_layout Standard
+\align left
+TCP lleva a cabo una estimación constante del RTT.
+ Se mide el tiempo transcurrido desde que se envía un paquete hasta que
+ se recibe su ACK.
+ Como los valores obtenidos fluctuan, se calcula la media teniendo en cuenta
+ los valores recientes.
+\end_layout
+
+\begin_layout Subsubsection
+Funcionamiento del emisor
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+\align left
+Al recibir datos desde el nivel de aplicación se crea un segmento con el
+ número de secuencia apropiado y se envía.
+ Se inicia el temporizador si está detenido.
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+\align left
+Si expira el temporizador, se retransmite solo el segmento asociado al temporiza
+dor y se reinicia este.
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+\align left
+Si se recibe un ACK:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Si se están confirmando segmentos aún no confirmados se actualiza el buffer
+ de emisión de acuerdo con la confirmación y se reinicia el temporizador
+ si aún quedan segmentos pendientes de confirmación.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+\align left
+Si se trata de un ACK repetido por 4ª vez se asume que el segmento se ha
+ perdido y se reenvía sin esperar a que venza el temporizador.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+También existen ACKs selectivos, aunque su uso es opcional.
+\end_layout
+
+\begin_layout Subsubsection
+Control de flujo
+\end_layout
+
+\begin_layout Standard
+\align left
+El buffer de recepción de una conexión TCP es finito y la aplicación que
+ lee el buffer puede ser lenta.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+El control de flujo sincroniza la velocidad de emisión con la frecuencia
+ de lectura del buffer de recepción.
+\end_layout
+
+\begin_layout Standard
+\align left
+El receptor informa del espacio disponible en el buffer mediante el campo
+ 
+\series bold
+Ventana del receptor
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+El emisor limita la cantidad de bytes sin confirmar evitando así el desbordamien
+to de dicho buffer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+El nivel de red
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+\align left
+El 
+\series bold
+objetivo
+\series default
+ del nivel de red es proporcionar un servicio de encaminamiento de paquetes
+ entre hosts a través de la red.
+ Este nivel involucra a hosts y routers.
+\end_layout
+
+\begin_layout Standard
+\align left
+El emisor encapsula los segmentos en paquetes.
+\end_layout
+
+\begin_layout Standard
+\align left
+El router almacena el paquete, examina su cabecera y lo reenvía.
+\end_layout
+
+\begin_layout Standard
+\align left
+El receptor entrega los segmentos al nivel de transporte.
+\end_layout
+
+\begin_layout Standard
+\align left
+Las 
+\series bold
+funciones 
+\series default
+del nivel de red son transportar paquetes desde un host origen hasta un
+ host destino a través de la red, determinar la trayectoria más apropiada
+ para los paquetes a través de la red (depende de la topología, el algoritmo
+ de encaminamiento y es necesario un esquema de direccionamiento lógico
+ uniforme), evitar la congestión de enlaces y equipos de interconexión,
+ interconectar subredes tecnológicamente distintas y aislar el nivel de
+ transporte de las tecnologías de las subredes que atraviesa el paquete.
+\end_layout
+
+\begin_layout Subsubsection
+Calidad de servicio en el nivel de red
+\end_layout
+
+\begin_layout Standard
+\align left
+Define las características del servicio de transporte de paquetes entre
+ un host origen y un host destino.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se consideran servicios deseables para paquetes inidividuales la entrega
+ garantizada y con un retraso máximo acotado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Son servicios deseables para flujos de paquetes la entrega en orden, un
+ ancho de banda mínimo garantizado, una fluctuación del retardo máximo entre
+ paquetes acotada y servicios de seguridad.
+\end_layout
+
+\begin_layout Standard
+\align left
+Internet proporciona por defecto un único tipo de servicio, el best effort,
+ o sea, no se garantiza ningún servicio.
+\end_layout
+
+\begin_layout Subsubsection
+Servicios y protocolos del nivel de red
+\end_layout
+
+\begin_layout Standard
+\align left
+Los protocolos utilizan el servicio de transmisión de tramas entre nodos
+ conectados directamente proporcionado por el nivel de enlace.
+\end_layout
+
+\begin_layout Standard
+\align left
+Algunos protocolos de red disponibles en internet son IP (Internet Protocol),
+ con entrega no garantizada y posiblemente desordenada de los paquetes,
+ sin garantías de latencia ni de ancho de banda, y ATM (Asynchronous Transfer
+ Mode), que ofrece varios niveles de calidad de servicio.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los servicios proporcionados al nivel de transporte pueden ser orientados
+ a conexión y confiables (subred de circuitos virtuales), o sin conexión
+ y no confiables(subred de paquetes).
+\end_layout
+
+\begin_layout Subsection
+Organización interna de la red
+\end_layout
+
+\begin_layout Standard
+\align left
+Hay dos categorías principales de organización: las 
+\series bold
+redes de datagramas 
+\series default
+(proporcionan un servicio de red sin conexión) y las 
+\series bold
+redes de circuitos virtuales 
+\series default
+(proporcionan un servicio de red orientado a conexión).
+\end_layout
+
+\begin_layout Standard
+\align left
+Los servicios del nivel de red son análogos a los servicios del nivel de
+ transporte pero con ciertas diferencias, como que el servicio es host a
+ host, no proceso a proceso; no hay elección, cada red implementa uno u
+ otro; y la implementaciń del servicio se realiza en el núcleo de la red,
+ no en los sistemas finales.
+\end_layout
+
+\begin_layout Subsubsection
+Circuitos virtuales
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Establecimiento del circuito virtual:
+\end_layout
+
+\begin_layout Enumerate
+Se establece una ruta fija entre el host origen y el host destino para todos
+ los paquetes.
+\end_layout
+
+\begin_layout Enumerate
+El encaminamiento se realiza una sola vez.
+\end_layout
+
+\begin_layout Enumerate
+Cada router reserva ciertos recursos internos para mantener el estado de
+ todos los circuitos virtuales que pasan por él.
+\end_layout
+
+\begin_layout Enumerate
+Además, cada router también puede dedicar algunos recursos en los puertos
+ que atraviesa el circuito virtual en exclusiva.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Flujo de paquetes entre host origen y destino: 
+\series default
+todos los paquetes siguen la misma ruta.
+ Para ello, cada paquete contiene un identificador de circuito virtual.
+ Cada router mantiene una tabla de reenvío que asocia (Puerto de entrada,
+ Id CV) con (Puerto de salida, Id CV).
+ Los paquetes son modificados en cada router, pues los identificadores tienen
+ un significado local.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Liberación del circuito virtual: 
+\series default
+se eliminan las entradas de las tablas de reenvío y los recursos asociados
+ al circuito virtual en todos los routers que atraviesa.
+\end_layout
+
+\begin_layout Subsubsection
+Red de datagramas
+\end_layout
+
+\begin_layout Standard
+\align left
+Cada paquete se encamina de forma independiente, de forma que no se establece
+ una ruta fija entre cada par de hosts, sino que cada paquete contiene la
+ dirección del host origen y la dirección del host destino, y cada router
+ mantiene una tabla de encaminamiento que asocia un puerto de salida a cada
+ posible dirección de destino.
+ Esta tabla no es estática, sino que puede variar con la topología, los
+ fallos en la red,...
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Tampoco se almacena información asociada a los flujos de datagramas transportado
+s en los routers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="33text%">
+<column alignment="center" valignment="top" width="33text%">
+<column alignment="center" valignment="top" width="33text%">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Comparación entre datagramas y CVs
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Datagramas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Circuitos Virtuales
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Establecimiento CV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Innecesario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requerido
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Direccionamiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dirección completa de origen y destino en cada paquete
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Identificador de canal virtual en cada paquete
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Encaminamiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cada paquete de forma independiente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Todos los paquetes siguen la misma ruta
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Información estado (router)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Innecesario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cada CV requiere una entrada en la tabla de reenvío
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Liberación CV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Innecesario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requerida
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Control de errores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Los paquetes erróneos se descartan
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Factible
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Control de congestión
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Difícil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Factible
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Calidad de servicio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Difícil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Factible
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tolerancia a fallos (router)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Posible si existen rutas alternativas entre host origen y destino
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Imposible, si cae un nodo del CV cae todo el CV
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Complejidad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mayor en los hosts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mayor en los routers
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Protocolo IP (Internet Protocol)
+\end_layout
+
+\begin_layout Standard
+Diseñado para la interconexión de LANs, subredes o sistemas autónomos mediante
+ la retransmisión de datagramas desde el host origen hasta el host destino
+\end_layout
+
+\begin_layout Subsubsection
+Campos del paquete IP
+\end_layout
+
+\begin_layout Itemize
+VER: versión
+\end_layout
+
+\begin_layout Itemize
+HLEN: longitud de la cabecera en múltiplos de 32 bits
+\end_layout
+
+\begin_layout Itemize
+DS (Differential Services): para diferenciar el tipo de datos
+\end_layout
+
+\begin_layout Itemize
+Total Length: hasta 65535 B
+\end_layout
+
+\begin_layout Itemize
+Time To Live (TTL): tiempo de vida del paquete en saltos, se le resta uno
+ en cada router, y si es 0 el paquete se descarta, informando con un paquete
+ ICMP (Time Exceeded)
+\end_layout
+
+\begin_layout Itemize
+Protocol: indica el protocolo de transporte usado
+\end_layout
+
+\begin_layout Itemize
+Header Checksum: suma de comprobación de la cabecera
+\end_layout
+
+\begin_layout Itemize
+Direcciones IP de origen y de destino
+\end_layout
+
+\begin_layout Itemize
+Opciones: no suelen usarse
+\end_layout
+
+\begin_layout Subsubsection
+Fundamentos del direccionamiento
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Interfaces:
+\end_layout
+
+\begin_layout Standard
+\align left
+Un host puede estar conectado a distintas redes.
+ La conexión entre un host y un medio física recibe el nombre de interfaz.
+\end_layout
+
+\begin_layout Standard
+\align left
+Un router tiene tantas interfaces como enlaces físicos a los que esté conectado.
+ El protocolo IP requiere que cadaa interfaz disponga de su propia dirección
+ IP, por tanto, debe pensarse en una dirección IP como un identificador
+ de una interfaz, y no del equipo al cual pertenece la interfaz.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Direccionamiento IP:
+\end_layout
+
+\begin_layout Standard
+\align left
+Cada interfaz de red tiene asignada una dirección IP de 32 bits, que suele
+ expresarse como 4 números entre 0 y 255 separados por puntos.
+ Las direcciones IP públicas son únicas, son asignadas por el ICANN (Internet
+ Corporation for Assigned Names and Numbers).
+\end_layout
+
+\begin_layout Standard
+\align left
+Una dirección IP se compone de dos partes: la 
+\series bold
+dirección de red 
+\series default
+(netid) y la 
+\series bold
+dirección de host 
+\series default
+(hostid).
+\end_layout
+
+\begin_layout Standard
+\align left
+Hay direcciones especiales reservadas, que no se usan para hosts, como son
+ la 
+\series bold
+dirección de red 
+\series default
+(hostid es 0s) y la 
+\series bold
+dirección de broadcast 
+\series default
+(hostid es 1s).
+\end_layout
+
+\begin_layout Standard
+\align left
+Puede usarse el 
+\series bold
+direccionamiento basado en clases 
+\series default
+(classful addressing), que tiene las clases:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted9.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Sin embargo, el 
+\series bold
+direccionamiento CIDR 
+\series default
+(Classless InterDomain Routing) permite un mayor aprovechamiento del espacio
+ de direcciones IP.
+ En este esquema, cada dirección IP se expresa como a.b.c.d/x siendo x el número
+ de bits de la máscara de red.
+\end_layout
+
+\begin_layout Standard
+\align left
+Con CIDR, los routers deben almacenar también la máscara de red porque no
+ es posible deducirla de la clase de las direcciones.
+\end_layout
+
+\begin_layout Subsubsection
+Asignación de direcciones IP
+\end_layout
+
+\begin_layout Standard
+\align left
+La configuración de un host conta de tres valores principales, que son la
+ dirección IP del host, la máscara de subred y la dirección IP de un router
+ (router por defecto o gateway).
+\end_layout
+
+\begin_layout Standard
+\align left
+La especificación de estos valores puede realziarse mediante una configuración
+ manual hecha por un administrador o mediante 
+\series bold
+DHCP
+\series default
+ (Dynamic Host Configuration Protocol).
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Asignación de direcciones mediante DHCP:
+\end_layout
+
+\begin_layout Standard
+\align left
+DHCP es un protocolo de configuración dinámica de hosts que automatiza la
+ asignación de los valores TCP/IP desde un servidor DHCP.
+ El administrador puede especificar parámetros de TCP/IP globales y específicos
+ de subredes de forma centralizada en el servidor.
+ La mayoría de los router pueden reenviar als solicitudes de configuración
+ de DHCP.
+ No es necesario disponer de servidores DHCP en cada subred.
+\end_layout
+
+\begin_layout Subsubsection
+Enrutamiento IP entre dos hosts
+\end_layout
+
+\begin_layout Standard
+\align left
+Si dos hosts se encuentran en la misma subred, pueden comunicarse directamente.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Si dos hosts no se encuentran en la misma subred, el host origen envía el
+ paquete al router por defecto.
+ Todos los equipos deben saber la dirección IP del router por defecto al
+ que enviarán todos los paquetes destinados a una subred diferente a la
+ que encuentran.
+ La dirección IP de destino del paquete es la del host destino.
+\end_layout
+
+\begin_layout Standard
+\align left
+Cuanto un router recibe una trama, extrae el paquete IP y lo procesa, si
+ la dirección IP de destino del paquete es distinta a la suya, reenviará
+ el paquete en base a su tabla de encaminamiento.
+\end_layout
+
+\begin_layout Standard
+Los paquetes pasan de un router a otro hasta llegar al que está conectado
+ directamente a la subred destino.
+\end_layout
+
+\begin_layout Subsubsection
+NAT: Network Address Translation
+\end_layout
+
+\begin_layout Standard
+\align left
+La necesidad de conectar un número variable de dispositivos de una misma
+ red local a Internet cuando solo se dispone de una única IP pública hace
+ necesaria la búsqueda de una solución, el NAT.
+\end_layout
+
+\begin_layout Standard
+\align left
+El ISP no proporciona un rango de direcciones sino solo una IP para todos
+ los dispositivos de la red local, ya que 32 bits no son suficientes para
+ asignar direcciones IP públicas a todas las interfaces de red de internet.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se pueden agregar nuevos dispositivos y/o modificar las direcciones IP de
+ los dispositivos de la red local de manera transparente, se puede cambiar
+ de ISP sin cambiar las direcciones IP de los dispositivos de la red local.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los dispositivos de la red local no son direccionables, es decir, visibles
+ desde Internet (enmascaramiento).
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Implementación de NAT: 
+\series default
+el router actúa como traductor de direcciones y puertos entre la red Internet
+ y la red de área local.
+ Para los datagramas salientes, reemplaza el par (IP origen, puerto X) por
+ (IP pública, puerto Y), de forma que los clientes/servidores remotos responderá
+n usando el par (IP pública, puerto Y) como dirección IP y puerto destino.
+\end_layout
+
+\begin_layout Standard
+\align left
+Además, almacena en la tabla de traducciones NAT cada una de las asociaciones
+ entre direcciones junto a los correspondientes puertos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para los paquetes entrantes, sustituye la dirección de destino y el puerto
+ de destino por los correspondientes valores guardados en la tabla de traduccion
+es NAT.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los dispositivos de la red de área local pueden utilziar los siguientes
+ rangos de IPs falsas: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16.
+\end_layout
+
+\begin_layout Standard
+\align left
+169.254.9.9/16 se utiliza en ausencia de otro mecanismo de asignación de direccione
+s (auto IP).
+\end_layout
+
+\begin_layout Subsubsection
+NAT inverso
+\end_layout
+
+\begin_layout Standard
+\align left
+¿Qué sucede si un cliente quiere conectarse a un servidor que se ejecuta
+ en un host con IP privada? En principio no puede, pues la única dirección
+ visible desde internet es la dirección pública.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para solucionar esto puede reservarse algún puerto del router para ese servidor,
+ de forma que cualquier paquete que llegue a ese puerto, se redirija al
+ servidor.
+ Sería algo así como una entrada permanente en la tabla NAT de traducciones.
+\end_layout
+
+\begin_layout Subsubsection
+Protocolo ICMP (Internet Control Message Protocol)
+\end_layout
+
+\begin_layout Standard
+IP puede fallar al intentar entregar un paquete, pero no permite al emisor
+ detectar estos problemas ni conocer el estado de la red.
+ ICMP es un protocolo diseñado para informar a un host de posibles errores
+ o del estado de la red.
+ Los paquetes ICMP viajan detro de paquetes IP pero su destino es la capa
+ de red del host origen.
+ El identificador de protocolo para el paquete IP es 1.
+ El nivel de red del receptor puede informar a los niveles superiores para
+ que tomen medidas correctivas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Tipos de paquetes ICMP:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Destination Unreachable (Type=3): 
+\series default
+puede ser Net Unreachable (Code=0), Host Unreachable (Code=1), Protocol
+ Unreachable (Code=2), Port Unreachable (Code=3) o Fragmentation needed
+ and DF set (Code=4).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Redirect (Type=5)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Echo Request (Type=8) / Reply (Type=0): 
+\series default
+identifier contiene el identificador para determinar correspondencia entre
+ peticiones y respuestas, y sequence number es un contador.
+ Se usa en la implementación de ping.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Time exceeded (Type=11): 
+\series default
+TTL exceeded in transit (Code=0) o Fragment reassembly time exceeded (Code=1).
+ Usado en la implementación de traceroute.
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+El nivel de enlace: Redes de área local (LAN)
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+\align left
+El 
+\series bold
+objetivo 
+\series default
+del nivel de enlace
+\series bold
+ 
+\series default
+es proporcionar un servicio de envío de tramas entre nodos conectados directamen
+te.
+ Este nivel involucra a hosts y router (nodos).
+ Un 
+\series bold
+nodo emisor
+\series default
+ encapsula los paquetes en tramas y las envía a través del enlace.
+ Un 
+\series bold
+nodo receptor
+\series default
+ entrega los paquetes al nivel de red.
+\end_layout
+
+\begin_layout Standard
+\align left
+Existen distintos tipos de protocolos de enlace.
+\end_layout
+
+\begin_layout Standard
+\align left
+Las 
+\series bold
+funciones 
+\series default
+son proporcionar un servicio de comunicación entre nodos adyacentes sobre
+ un único enlace físico, sincronización de tramas, identificando el comienzo
+ y final de cada una; coordinar la comunicación, repartiendo el enlace entre
+ varios nodos, mediante mecanismos de control de acceso al medio y esquemas
+ de direccionamiento físico; detectar y corregir tramas erróneas; controlar
+ el flujo y recuperar errores.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Protocolos:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Ethernet (802.3): 
+\series default
+entrega no garantizada de las tramas y control de flujo opcional.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+WiFi (802.11): 
+\series default
+entrega garantizada de tramas (solo en el medio inalámbrico), control de
+ flujo obligatorio de parada y espera y establecimiento de asociaciones
+\end_layout
+
+\begin_layout Standard
+\align left
+Ninguno ofrece garantías de latencia o ancho de banda.
+\end_layout
+
+\begin_layout Standard
+\align left
+El servicio proporcionado al nivel de red es sin conexión y no confiable.
+\end_layout
+
+\begin_layout Subsubsection
+Arquitectura IEEE 802
+\end_layout
+
+\begin_layout Standard
+Define una arquitectura específica para redes LAN y PAN.
+ Los protocolos de nivel 3 o superiores son comunes con OSI y los protocolos
+ de niveles inferiores son específicos para LAN.
+\end_layout
+
+\begin_layout Subsubsection
+Funciones de IEEE 802
+\end_layout
+
+\begin_layout Standard
+\align left
+Las funciones de la subcapa MAC IEEE 802 son la sincronización de trama,
+ la detección de errores y el control de acceso al medio de comunicación.
+\end_layout
+
+\begin_layout Standard
+\align left
+Las funciones de la capa física IEEE 802 son la generación/eliminación del
+ preámbulo y sincronización de bit, la transmisión/recepción de bits, la
+ especificación del medio de transmisión y la topología y la codificación/decodi
+ficación de señales.
+\end_layout
+
+\begin_layout Subsection
+Direccionamiento de enlace
+\end_layout
+
+\begin_layout Subsubsection
+Direcciones MAC
+\end_layout
+
+\begin_layout Standard
+\align left
+Se usan para hacer llegar una trama desde una interfaz a otra interfaz conectada
+ al mismo enlace.
+\end_layout
+
+\begin_layout Standard
+\align left
+Son de 48 bits, y cada tarjeta de red tiene una dirección MAC única preasignada
+ que se puede modificar por software.
+\end_layout
+
+\begin_layout Standard
+\align left
+La asignación de direcciones MAC la gestiona IEEE.
+\end_layout
+
+\begin_layout Subsubsection
+Protocolo ARP (Address Resolution Protocol)
+\end_layout
+
+\begin_layout Standard
+Las direcciones IP no pueden usarse para enviar paquetes porque el nivel
+ de enlace requiere direcciones MAC.
+\end_layout
+
+\begin_layout Standard
+El protocolo ARP permite a un equipo obtener la dirección MAC de otro a
+ través de su IP.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted10.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted11.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Redes cableadas de área local
+\end_layout
+
+\begin_layout Subsubsection
+Tipos de redes de área local
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+LANs de ordenadores personales: 
+\series default
+surgen con la necesidad de interconectar entre sí los PCs y los servidores.
+ Ofrecen servicios centralizados de almacenamiento y procesamiento y compartició
+n de recursos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+LANs de grandes equipos: 
+\series default
+por la necesidad de interconectar servidores, supercomputadores y/o dispositivos
+ de almacenamiento masivo.
+ La velocidad de transmisión es un requerimiento crítico.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+LANs troncales (backbone): 
+\series default
+necesidad de interconectar varias LAN.
+ La fiabilidad es un requerimiento crítico y presentan una mayor velocidad
+ de transmisión que las LAN tradicionales
+\end_layout
+
+\begin_layout Standard
+En todas las LAN la dispersión geográfica es limitada.
+\end_layout
+
+\begin_layout Subsubsection
+Control de acceso al medio
+\end_layout
+
+\begin_layout Standard
+\align left
+Hay dos tipos de configuración del enlace de transmisión:
+\end_layout
+
+\begin_layout Standard
+\align left
+Es 
+\series bold
+punto a punto 
+\series default
+si son solo dos equipos interconectados directamente.
+ En este caso la estación destino de una trama es conocida y el medio de
+ transmisión está siempre disponible si es full-dúplex o debe alternarse
+ si es semi-dúplex.
+\end_layout
+
+\begin_layout Standard
+\align left
+Es 
+\series bold
+multipunto 
+\series default
+o 
+\series bold
+difusión 
+\series default
+cuando hay dos o más equipos compartiendo medio.
+ Hay varias alternativas a la hora de repartir el canal de transmisión:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Asignación estática de canal:
+\series default
+ se divide el enlace en varios canales de manera predeterminada.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Asignación dinámica del canal: 
+\series default
+manejo de colisiones, se hace por acceso aleatorio o por contienda.
+\end_layout
+
+\begin_layout Standard
+\align left
+La asignación estática es ineficiente en las LAN porque el número de transmisore
+s es elevado y variable, por lo que es difícil predecir cuántos deben compartir
+ el canal.
+ Además, el tráfico es a ráfagas, lo que dificulta anticipar cuántos bytes
+ transmite cada host.
+\end_layout
+
+\begin_layout Standard
+\align left
+El acceso aleatorio o por contienda, sin embargo, requiere mecanismos de
+ control para gestionar el acceso al enlace y resolver los problemas derivados
+ de las colisiones.
+\end_layout
+
+\begin_layout Description
+\align left
+CSMA: 
+\series bold
+(Carrier Sense Multiple Access) 
+\series default
+Permite el acceso múltiple con detección de portador.
+ Cada estación escucha el canal antes de transmitir, si el canal está ocupado,
+ la estación espera.
+ Si se produce una colisión, cada estación espera un tiempo aleatorio (backoff)
+ y vuelve a intentarlo.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+CSMA 1-persistente: 
+\series default
+la estación escucha el canal continuamente, si el canal está libre, la estación
+ transmite la trama; si está ocupado, la estación espera a que quede libre
+ y vuelve a intentarlo.
+ Este mecanismo es bueno para redes en las que la carga no es muy elevada,
+ puesto que evita tiempos de espera innecesarios, aunque resulta ineficiente
+ si no pueden detectarse colisiones.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+CSMA no persistente: 
+\series default
+la estación escucha el canal, si está libre transmite la trama; si está
+ ocupado, la estación espera un tiempo aleatorio y vuelve a intentarlo.
+ Esta configuración es apropiada para canales más saturados y soporta mejor
+ los entornos en los que no se pueden detectar colisiones.
+\end_layout
+
+\begin_layout Description
+\align left
+CSMA/CD: 
+\series bold
+(CSMA/Collision Detection) 
+\series default
+Con CSMA la trama se transmite por completo incluso cuando se produce una
+ colisión.
+ Con CSMA/CD se escucha el medio mientras se transmite la trama para detectar
+ una posible colisión.
+ Si se produce una colisión, cada estación detiene la transmisión de la
+ trama en curso, transmite una señal de perturbación (jam) para asegurar
+ que las restantes estaciones detectan la colisión y espera un tiempo aleatorio
+ para volver a intentarlo.
+\end_layout
+
+\begin_layout Subsubsection
+Ethernet
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Nivel físico: 
+\series default
+velocidad de transmisión de 10 Mbps.
+ Diferentes tipos de cableado, al menos de 25 MHz de ancho de banda.
+ Normalmente configurado con topología de bus o en estrella y con codificación
+ Manchester.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Nivel de enlace: 
+\series default
+la trama Ethernet contiene un campo con la longitud y el tipo de mensaje
+ y otro para la detección de errores.
+ Para el control de acceso al medio se utiliza CSMA/CD 1-persistente, por
+ la posibilidad de relleno en el campo de datos de la trama para detección
+ de colisiones.
+ Se usa un espacio entre tramas y un algoritmo de retroceso exponencial
+ binario para el cálculo del backoff.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Formato de la trama Ethernet:
+\end_layout
+
+\begin_layout Enumerate
+Preámbulo (7 bytes con 10101010 para sincronización de bit)
+\end_layout
+
+\begin_layout Enumerate
+Guión de inicio (SFD, Start Frame Delimiter, 1 byte con 10101011)
+\end_layout
+
+\begin_layout Enumerate
+Direcciones MAC destino y origen
+\end_layout
+
+\begin_layout Enumerate
+Longitud/tipo
+\end_layout
+
+\begin_layout Enumerate
+Relleno (padding)
+\end_layout
+
+\begin_layout Enumerate
+Checksum
+\end_layout
+
+\begin_layout Subsubsection
+Fast Ethernet
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Nivel físico: 
+\series default
+velocidad de transmisión de 100 Mbps, con diferentes tipos de cableado y
+ codificaciones.
+ Usa la topología en estrella con conmutador y par trenzado con 125 MHz
+ de ancho de banda.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Nivel de enlace: 
+\series default
+formato de la trama y control de acceso al medio idénticos a Ethernet
+\end_layout
+
+\begin_layout Standard
+La idea clave es la reducción del tiempo de bit de 100 a 10 ns.
+ Actualmente es la Ethernet más extendida.
+ Usa codificación 
+\series bold
+Bipolar 
+\series default
+o codificación 
+\series bold
+por bloques 4B/5B.
+\end_layout
+
+\begin_layout Subsubsection
+Gigabit Ethernet
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Nivel físico: 
+\series default
+velocidad de transmisión de 1000Mbps, con diferentes tipos de cableado y
+ topología en estrella con conmutador.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Nivel de enlace: 
+\series default
+formato de la trama Ethernet con extensión de portadora y control de acceso
+ al medio de Ethernet con ráfagas de tramas.
+\end_layout
+
+\begin_layout Standard
+La idea clave es la reducción del tiempo de bit de 10 a 1ns.
+ Es una alternativa popular como LAN troncal.
+\end_layout
+
+\begin_layout Subsubsection
+Equipos de interconexión
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nivel físico:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Concentrados (hub):
+\series default
+ retransmite la señal entrante por todas las líneas de salida.
+ Los dominios de colisión y broadcast son únicos.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nivel de enlace:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Conmutador (Switch): 
+\series default
+retransmite la trama entrante por la línea de salida apropiada (autoaprendizaje).
+ Hay un dominio de colisión por puerto, aunque el dominio de broadcast es
+ único.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Conmutador VLAN: 
+\series default
+es un conmutador con capacidad de crear LAN virtuales.
+ Hay un dominio de colisión por puerto, y un dominio de broadcast por VLAN.
+\end_layout
+
+\begin_layout Subsubsection
+Ethernet conmutada
+\end_layout
+
+\begin_layout Standard
+Está basada en el uso de par trenzado y conmutadores, lo que divide el dominio
+ de colisión.
+ No aumenta la velocidad, pero proporciona paralelismo.
+ Los conmutadores pueden tener puertos con diferentes capacidades y velocidades
+ de transmisión.
+ Si los enlaces son full-dúplex no hay colisiones.
+\end_layout
+
+\begin_layout Subsubsection
+Transmisión de señales
+\end_layout
+
+\begin_layout Standard
+\align left
+Las señales pueden ser analógicas, si pueden tomar cualquier valor dentro
+ de un rango, o digitales, cuando toman un número limitado de valores.
+\end_layout
+
+\begin_layout Standard
+\align left
+Una señal simple no transporta información, sino que debe ser manipulada
+ introduciendo cambios identificables por el receptor, representativos de
+ la información transmitida, para ello se usan esquemas de codificación.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Transmisión digital: 
+\series default
+datos analógicos o digitales codificados en señal digital.
+ La transmisión de datos se realiza mediante diferentes esquemas de codificación
+, que intentarán minimizar el ancho de banda requerido, el coste y la complejida
+d, facilitar la sincronización y la detección de errores, y maximizar la
+ inmunidad frente al ruido y las interferencias.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los parámetros básicos de una señalización digital son la temporización
+ de un bit y el nivel de señal asociado a cada valor del bit.
+\end_layout
+
+\begin_layout Standard
+\align left
+Y los factores que caracterizan la señalización digital son el espectro
+ de la señal (ancho de banda requerido y presencia de componente continua),
+ capacidad de sincronización de la señal y detección de errores en el receptor,
+ inmunidad frente a ruido e interferencias y el coste y la complejidad.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Codificación Manchester: 
+\series default
+es una codificación polar, que funciona invirtiendo la polaridad en mitad
+ de cada intervalo de bit.
+ Se utliza en tecnología Ethernet a 10Mbps.
+ Presenta como ventajas la eliminación de componente continua, la sincronización
+ en cada bit y la detección de errores, pero necesita alta potencia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted12.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Codificación bipolar: 
+\series default
+usa tres niveles de voltaje.
+ La línea en estado ocioso codifica un 0, y para codificar 1's se alterna
+ entre positivo y negativo.
+ Elimina la componente continua, pero las secuencias largas de 0's pueden
+ ser un problema, pues podría desincronizarse el reloj.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted13.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Codificación or bloques 4B/5B: 
+\series default
+cada 4 bits de datos se codifican con 5 bits de código.
+ El código resultante 4B/5B se codifica con bipolar.
+ Máximo de tres 0's por cada 5 bits de código para facilitar la sincronización
+ y compensar la DC.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted14.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+VLANs
+\end_layout
+
+\begin_layout Standard
+\align left
+Un conmutador con soporte VLAN puede definir múltiples LAN virtuales sobre
+ la misma infraestructura.
+ Puede agrupar puertos operando como varios conmutadores virtuales diferentes,
+ dividiendo el dominio de broadcast.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Ventajas de las VLAN:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Flexibilidad: 
+\series default
+están constituidas por distintos hosts independientemente de su situación
+ física dentro de la LAN de una organización.
+ Los usuarios y recursos pueden ubicarse donde más convenga.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Simplificación de la administración: 
+\series default
+el cambio de ubicación de un usuario no implica reconfigurar el router,
+ basta reconfigurar el puerto.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Eficiencia y seguridad: 
+\series default
+se reduce el tráfico broadcast a lugares innecesarios.
+ Las VLAN con más tráfico broadcast no saturan al resto.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Coste:
+\series default
+ reduce el número de conmutadores y routers necesarios.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Topologías VLAN: 
+\series default
+cada VLAN identifica a una subred IP diferente.
+ El tráfico entre VLANs pasa siempre por el router.
+\end_layout
+
+\begin_layout Standard
+\align left
+Si una VLAN se extiende más allá de los límites de un único conmutador,
+ ¿cómo podemos conocer a qué VLAN pertenecen las tramas que circulan entre
+ ambos?
+\end_layout
+
+\begin_layout Standard
+\align left
+La solución es IEEE 802.1Q, que define dos tipos de enlaces:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Trunk: 
+\series default
+cuando se necesita distinguir a qué VLAN pertenece una trama, tagged frames.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Access: 
+\series default
+cuando las tramas no son etiquetadas, pues no es necesario.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los enlaces entre los hosts y el conmutador pueden ser trunk o access.
+\end_layout
+
+\begin_layout Standard
+\align left
+Los enlaces entre los routers y el conmutador deben ser trunk si pertenecen
+ a más de una VLAN.
+\end_layout
+
+\begin_layout Standard
+\align left
+Para etiquetar las rtamas en 802.1Q se amplía el formato de la trama Ethernet,
+ añadiendo el campo VID (VLAN Id), y un nuevo tipo de trama.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Conmutadores VLAN: 
+\series default
+el conmutador determina la VLAN de las tramas entrantes.
+ Se habla de etiquetado explícito cuando el identificador está en la propia
+ trama, y de etiquetado implícito cuando se obtiene a partir de una tabla
+ interna con entradas <Puerto, VID>, que pueden ser estáticas (habitualmente)
+ o dinámicas.
+\end_layout
+
+\begin_layout Standard
+\align left
+En función del puerto de salida el conmutador etiquetará las tramas o no.
+\end_layout
+
+\begin_layout Subsection
+Redes inalámbricas de área local (WLAN)
+\end_layout
+
+\begin_layout Standard
+Presentan como ventajas la flexibilidad, la fácil instalación y el bajo
+ coste, y como desventajas la menor calidad de servicio y un empeoramiento
+ de la seguridad.
+\end_layout
+
+\begin_layout Subsubsection
+Arquitecturas WLAN
+\end_layout
+
+\begin_layout Standard
+\align left
+Los dispositivos WLAN son las 
+\series bold
+estaciones (STA) 
+\series default
+(host con interfaz inalámbrica) y los 
+\series bold
+puntos de acceso (AP) 
+\series default
+(posibilita la comunicación inalámbrica entre dos o más STAs.
+\end_layout
+
+\begin_layout Standard
+\align left
+También existen las 
+\series bold
+WLAN independientes 
+\series default
+(IBSS, Independent Basic Service Set) que son redes ad-hoc entre estaciones,
+ sin necesidad de APs.
+\end_layout
+
+\begin_layout Standard
+\align left
+Están también las 
+\series bold
+WLAN de infraestructura
+\series default
+, que pueden ser:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Basic Service Set (BSS): 
+\series default
+grupo de STAs que utilizan el mismo AP.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Extended Service Set (ESS): 
+\series default
+grupo de BSS conectados entre sí mediante un sistema de distribuciñon (DS).
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Sistema de distribución (DS): 
+\series default
+red de interconexión entre los BSS.
+ Puede ser también inalámbrica (WDS, Wireless DS).
+\end_layout
+
+\begin_layout Subsubsection
+Control de acceso al medio inalámbrico (CSMA/CA)
+\end_layout
+
+\begin_layout Standard
+\align left
+En redes inalámbricas, es difícil detectar colisiones, pues la señal recibida
+ es mucho ,ás débil que la transmitida, por lo que la comparación es compleja.
+ Las colisiones se producen en el receptor pero no necesariamente en el
+ emisor (estaciones ocultas).
+\end_layout
+
+\begin_layout Standard
+\align left
+Se intentan evitar usando CSMA/CA (CSMA/Collision Avoidance) en lugar de
+ CSMA/CD
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+CSMA/Collision Avoidance: 
+\series default
+acceso múltiple con detección de portadora y prevención de colisiones.
+ Intenta evitar las colisiones mediante dos estrategias: el espacio entre
+ tramas y el envío no persistente.
+\end_layout
+
+\begin_layout Standard
+\align left
+Se envían confirmaciones para asegurar que no se produjo una colisión y
+ que la trama fue recibida correctamente.
+ Se utiliza en la subcapa MAC de WiFi.
+\end_layout
+
+\begin_layout Subsubsection
+Subcapa MAC de WiFi
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Envío de paquetes unicast (CSMA/CA): 
+\series default
+la estación debe esperar DIFS antes de enviar trama.
+ El receptor confirma que la trama se recibió correctamente (CRC) con un
+ ACK tras esperar SIFS.
+ En caso de error se retrnasmite la trama, es un protocolo de parada y espera.
+ La retransmisión implica reiniciar el algoritmo.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Modo de operación en 802.11: 
+\series default
+las STAs tienen que asociarse con los puntos de acceso.
+ Para ello, los APs envían tramas beacon periódicamente con información
+ de su BSS.
+ Los STAs escanean los canales buscando tramas de beacon.
+ Seleccionancon qué AP se asocian por orden de preferencia del usuario y
+ de mayor potencia de señal.
+ Se autentican frente al AP elegido y se asocian a este.
+ El AP necesita reservar recursos para mantener la conexión.
+ A continuación pueden enviar tráfico TCP/IP.
+\end_layout
+
+\begin_layout Subsubsection
+Codificación analógica
+\end_layout
+
+\begin_layout Standard
+\align left
+Codificación basada en una señal de frecuencia constante: 
+\series bold
+portadora
+\series default
+.
+ La transmisión de datos se realiza modificando parámetros de la portadora,
+ esto se llama 
+\series bold
+modulación.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Modulaciones de una sola componente:
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Modulación en amplitud (ASK):
+\series default
+ una distinta amplitud para cada valor de bit.
+ Muy sensible a cambios de voltaje.
+ Se usa en líneas de fibra óptica.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Modulación de frecuencia (FSK): 
+\series default
+distinta frecuencia para cada valor de bit.
+ Es menos sensible a cambios de voltaje pero limitada por al potencia.
+ Se utiliza en tecnologías como Bluetooth 5.0.
+\end_layout
+
+\begin_layout Itemize
+\align left
+
+\series bold
+Modulación de fase (PSK): 
+\series default
+distinta fase para cada valor de bit.
+ Las variaciones de fase son fácilmente identificables.
+\end_layout
+
+\begin_layout Standard
+\align left
+La 
+\series bold
+velocidad de transmisión (
+\begin_inset Formula $\boldsymbol{V_{T}}$
+\end_inset
+
+) 
+\series default
+es el número de bits transmitidos por unidad de tiempo.
+\end_layout
+
+\begin_layout Standard
+\align left
+La 
+\series bold
+velocidad de modulación (
+\begin_inset Formula $\boldsymbol{V_{M}}$
+\end_inset
+
+) 
+\series default
+es el número máximo de cambios por unidad de tiempo, se mide en Baudios.
+ Cada cambio de estado podría codificar varios bits.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $V_{M}=\frac{1}{T_{e}}$
+\end_inset
+
+ , siendo 
+\begin_inset Formula $T_{e}$
+\end_inset
+
+ el tiempo de duración de cada estado.
+\end_layout
+
+\begin_layout Standard
+\align left
+Por otro lado, 
+\begin_inset Formula $V_{T}=\frac{log_{2}n}{T_{e}}=V_{M}\cdot log_{2}n$
+\end_inset
+
+ , siendo n el número de estados.
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Modulación en varias componentes: 
+\series default
+el ancho de banda limita FSK, pero no la combinación entre ASK y PSK.
+ Si hay X variaciones en fase, Y variaciones en amplitud (para cada fase),
+ entonces habrá X
+\begin_inset Formula $\cdot$
+\end_inset
+
+Y estados distintos.
+\end_layout
+
+\begin_layout Standard
+\align left
+Una buena elección de X e Y proporciona resistencia al ruido y robusted
+ ante errores.
+\end_layout
+
+\begin_layout Standard
+\align left
+Pueden representarse gráficamente mediante diagramas de constelación
+\end_layout
+
+\end_body
+\end_document
