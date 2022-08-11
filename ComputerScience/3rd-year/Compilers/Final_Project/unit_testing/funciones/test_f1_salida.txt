@@ -1,0 +1,42 @@
+############################
+.data
+
+# STRINGS ##################
+# IDENTIFIERS ##############
+_y.b:
+	.word 0
+_y_b:
+	.word 0
+############################
+.text
+.globl main
+_y:
+	addiu $sp,$sp,-16
+	sw $t0,12($sp)
+	sw $t1,8($sp)
+	sw $t2,4($sp)
+	sw $ra,0($sp)
+	move $v0,$zero
+	li $t0,1
+	add $t1,$a0,$t0
+	sw $t1,_y.b
+	lw $t0,_y.b
+	li $t1,2
+	mul $t2,$t0,$t1
+	move $v0,$t2
+	lw $ra,0($sp)
+	lw $t2,4($sp)
+	lw $t1,8($sp)
+	lw $t0,12($sp)
+	addiu $sp,$sp,16
+	jr $ra
+main:
+	li $t0,0
+	move $a0,$t0
+	jal _y
+	move $t0,$v0
+	li $v0,1
+	move $a0,$t0
+	syscall
+	li $v0,10
+	syscall

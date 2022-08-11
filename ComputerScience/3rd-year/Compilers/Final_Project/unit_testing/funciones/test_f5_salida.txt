@@ -1,0 +1,5 @@
+Error in line 5: a is constant
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0
+Errores semanticos: 1

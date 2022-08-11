@@ -1,0 +1,6 @@
+Error en linea 6: identificador a redefinido
+Error en linea 7: identificador a redefinido
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0
+Errores semanticos: 2

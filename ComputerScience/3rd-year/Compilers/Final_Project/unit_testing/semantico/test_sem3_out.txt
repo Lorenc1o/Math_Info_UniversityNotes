@@ -1,0 +1,7 @@
+Error en linea 7: identificador x no declarado
+Error en linea 8: identificador y no declarado
+Error en linea 9: identificador z no declarado
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0
+Errores semanticos: 3

@@ -1,0 +1,6 @@
+Error en linea 7: identificador b es constante
+Error en linea 8: identificador b es constante
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0
+Errores semanticos: 2

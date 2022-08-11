@@ -1,0 +1,3 @@
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0

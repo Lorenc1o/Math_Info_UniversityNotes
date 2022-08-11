@@ -1,0 +1,102 @@
+----------------------
+Token: PROGRAM
+Token: ID ; lexema: test1
+Token: PARI
+Token: PARD
+Token: PYC
+Token: VAR
+Token: ID ; lexema: a
+Token: COMA
+Token: ID ; lexema: b
+Token: COMA
+Token: ID ; lexema: c
+Token: DOSP
+Token: INTEGER
+Token: PYC
+Token: CONST
+Token: ID ; lexema: d
+Token: ASIG
+Token: NUM ; lexema: 10
+Token: COMA
+Token: ID ; lexema: e
+Token: ASIG
+Token: NUM ; lexema: 0
+Token: PYC
+Token: BEGIN
+Token: WRITE
+Token: PARI
+Token: STRING ; lexema: "Inicio del \"programa\"\n"
+Token: PARD
+Token: PYC
+Token: ID ; lexema: a
+Token: ASIG
+Token: NUM ; lexema: 0
+Token: PYC
+Token: ID ; lexema: b
+Token: ASIG
+Token: NUM ; lexema: 0
+Token: PYC
+Token: ID ; lexema: c
+Token: ASIG
+Token: NUM ; lexema: 5
+Token: MAS
+Token: NUM ; lexema: 2
+Token: MENOS
+Token: NUM ; lexema: 2
+Token: PYC
+Token: IF
+Token: PARI
+Token: ID ; lexema: a
+Token: PARD
+Token: THEN
+Token: WRITE
+Token: PARI
+Token: STRING ; lexema: "a"
+Token: COMA
+Token: STRING ; lexema: "\n"
+Token: PARD
+Token: ELSE
+Token: IF
+Token: PARI
+Token: ID ; lexema: b
+Token: PARD
+Token: THEN
+Token: WRITE
+Token: PARI
+Token: STRING ; lexema: "No a y b\n"
+Token: PARD
+Token: ELSE
+Token: WHILE
+Token: PARI
+Token: ID ; lexema: c
+Token: PARD
+Token: DO
+Token: BEGIN
+Token: WRITE
+Token: PARI
+Token: STRING ; lexema: "c = "
+Token: COMA
+Token: ID ; lexema: c
+Token: COMA
+Token: STRING ; lexema: "\n"
+Token: PARD
+Token: PYC
+Token: ID ; lexema: c
+Token: ASIG
+Token: ID ; lexema: c
+Token: MENOS
+Token: NUM ; lexema: 2
+Token: MAS
+Token: NUM ; lexema: 1
+Token: END
+Token: PYC
+Token: WRITE
+Token: PARI
+Token: STRING ; lexema: "Final"
+Token: COMA
+Token: STRING ; lexema: "\n"
+Token: PARD
+Token: END
+Token: PUNTO
+----------------------
+Errores lexicos: 0

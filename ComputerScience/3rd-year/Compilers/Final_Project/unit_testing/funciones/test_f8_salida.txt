@@ -1,0 +1,6 @@
+Error in line 9: function y has 1 arguments instead of 0
+Error in line 10: function b not declared
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0
+Errores semanticos: 2

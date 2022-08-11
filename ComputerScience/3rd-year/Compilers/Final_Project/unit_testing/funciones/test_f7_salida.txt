@@ -1,0 +1,6 @@
+Error in line 3: too many arguments in function declaration (max is 4)
+Error in line 9: function y not declared
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0
+Errores semanticos: 2

@@ -1,0 +1,6 @@
+Error in line 4: a already defined
+Error in line 14: b already defined
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0
+Errores semanticos: 2

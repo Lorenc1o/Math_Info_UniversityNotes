@@ -1,0 +1,29 @@
+----------------------
+Token: PROGRAM
+Token: ID ; lexema: test2
+Token: PARI
+Token: PARD
+Token: PYC
+Token: CONST
+Token: ID ; lexema: a
+Token: ASIG
+ERROR: entero demasiado grande en linea 7: 123456789012
+Token: NUM ; lexema: 123456789012
+Token: PYC
+Token: BEGIN
+ERROR: identificador demasiado largo en linea 11: _123456789012345678
+Token: ID ; lexema: _123456789012345678
+Token: ASIG
+Token: NUM ; lexema: 1
+Token: PYC
+Token: WRITE
+Token: PARI
+ERROR: caracteres no validos en linea 14: #@$%&
+Token: PARD
+Token: PYC
+Token: WRITE
+Token: PARI
+ERROR: cadena sin cerrar en linea 17
+ERROR: comentario no cerrado iniciado en linea 20
+----------------------
+Errores lexicos: 5

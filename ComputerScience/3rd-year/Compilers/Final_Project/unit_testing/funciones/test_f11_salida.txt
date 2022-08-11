@@ -1,0 +1,94 @@
+############################
+.data
+
+# STRINGS ##################
+$str0:
+	.asciiz "b == "
+$str1:
+	.asciiz "\n"
+$str2:
+	.asciiz "b == "
+$str3:
+	.asciiz "\n"
+# IDENTIFIERS ##############
+_siguiente.c:
+	.word 0
+_b:
+	.word 0
+############################
+.text
+.globl main
+_siguiente:
+	addiu $sp,$sp,-16
+	sw $t0,12($sp)
+	sw $t1,8($sp)
+	sw $t2,4($sp)
+	sw $ra,0($sp)
+	move $v0,$zero
+	beqz $a0,$l1
+	li $t0,1
+	sub $t1,$a0,$t0
+	move $a0,$t1
+	jal _siguiente
+	move $t0,$v0
+	li $t1,1
+	add $t2,$t0,$t1
+	move $v0,$t2
+	j $l0
+$l1:
+	li $t0,1
+	move $v0,$t0
+$l0:
+	lw $ra,0($sp)
+	lw $t2,4($sp)
+	lw $t1,8($sp)
+	lw $t0,12($sp)
+	addiu $sp,$sp,16
+	jr $ra
+main:
+	li $t0,5
+	move $a0,$t0
+	jal _siguiente
+	move $t0,$v0
+	sw $t0,_b
+$l3:
+	lw $t0,_b
+	beqz $t0,$l2
+	la $a0,$str0
+	li $v0,4
+	syscall
+	lw $t1,_b
+	li $v0,1
+	move $a0,$t1
+	syscall
+	la $a0,$str1
+	li $v0,4
+	syscall
+	lw $t1,_b
+	li $t2,1
+	sub $t3,$t1,$t2
+	sw $t3,_b
+	j $l3
+$l2:
+	li $t0,1
+	sw $t0,_b
+$l5:
+	li $t1,10
+	lw $t0,_b
+	bgt $t0,$t1,$l4
+	la $a0,$str2
+	li $v0,4
+	syscall
+	lw $t2,_b
+	li $v0,1
+	move $a0,$t2
+	syscall
+	la $a0,$str3
+	li $v0,4
+	syscall
+	addiu $t0,1
+	sw $t0,_b
+	j $l5
+$l4:
+	li $v0,10
+	syscall

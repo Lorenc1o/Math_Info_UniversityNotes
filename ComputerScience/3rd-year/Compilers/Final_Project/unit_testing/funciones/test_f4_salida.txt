@@ -1,0 +1,5 @@
+Error in line 4: variable y has same identifier as function
+----------------------
+Errores lexicos: 0
+Errores sintacticos: 0
+Errores semanticos: 1
