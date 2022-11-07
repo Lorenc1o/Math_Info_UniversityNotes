@@ -1,0 +1,295 @@
+; Fri Nov 19 18:09:53 CET 2021
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot tiene-ondaR
+		(type INSTANCE)
+;+		(allowed-classes OndaR)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot indicios
+		(type INSTANCE)
+;+		(allowed-classes IndicioDiagn%C3%B3stico)
+		(create-accessor read-write))
+	(single-slot fin
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot duracion
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaT
+		(type INSTANCE)
+;+		(allowed-classes OndaT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inicio
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaS
+		(type INSTANCE)
+;+		(allowed-classes OndaS)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pulsaciones
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot altura
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaP
+		(type INSTANCE)
+;+		(allowed-classes OndaP)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ciclo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaQ
+		(type INSTANCE)
+;+		(allowed-classes OndaQ)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Componente "Elementos identificables en un ECG."
+	(is-a USER)
+	(role abstract)
+	(single-slot duracion
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ciclo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Onda "Una desviación positiva o negativa de la línea de base que indica un evento eléctrico específico. https://www.healio.com/cardiology/learn-the-heart/ecg-review/ecg-interpretation-tutorial/introduction-to-the-ecg"
+	(is-a Componente)
+	(role abstract)
+	(single-slot fin
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot altura
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inicio
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass OndaP "Primera onda del ciclo. Indica la despolarización auricular."
+	(is-a Onda)
+	(role concrete))
+
+(defclass OndaQ "Segunda onda del ciclo y primera del complejo QRS."
+	(is-a Onda)
+	(role concrete))
+
+(defclass OndaR "Tercera onda del ciclo y segunda del complejo QRS."
+	(is-a Onda)
+	(role concrete))
+
+(defclass OndaS "Cuarta onda del ciclo y tercera del complejo QRS."
+	(is-a Onda)
+	(role concrete))
+
+(defclass OndaT "Quinta onda del ciclo. Indica la repolarización ventricular."
+	(is-a Onda)
+	(role concrete))
+
+(defclass Complejo "Conjunto de ondas."
+	(is-a Componente)
+	(role abstract))
+
+(defclass ComplejoQRS "Combinación de las ondas Q, R y S. Representa la despolarización ventricular."
+	(is-a Complejo)
+	(role concrete)
+	(single-slot tiene-ondaS
+		(type INSTANCE)
+;+		(allowed-classes OndaS)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaR
+		(type INSTANCE)
+;+		(allowed-classes OndaR)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaQ
+		(type INSTANCE)
+;+		(allowed-classes OndaQ)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Segmento "Longitud de la línea, normalmente isoeléctrica a la misma amplitud que la línea base, que une dos ondas."
+	(is-a Componente)
+	(role abstract))
+
+(defclass SegmentoPR "Línea que une las ondas P y Q."
+	(is-a Segmento)
+	(role concrete)
+	(single-slot tiene-ondaP
+		(type INSTANCE)
+;+		(allowed-classes OndaP)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaQ
+		(type INSTANCE)
+;+		(allowed-classes OndaQ)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass SegmentoST "Línea que une las ondas S y T."
+	(is-a Segmento)
+	(role concrete)
+	(single-slot tiene-ondaS
+		(type INSTANCE)
+;+		(allowed-classes OndaS)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaT
+		(type INSTANCE)
+;+		(allowed-classes OndaT)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Intervalo "Porción del electrocardiograma que incluye un segmento y una o más ondas."
+	(is-a Componente)
+	(role abstract))
+
+(defclass IntervaloRR "Porción del electrocardiograma que incluye desde el inicio de una onda R hasta el final de la onda Q del siguiente ciclo."
+	(is-a Intervalo)
+	(role concrete)
+	(single-slot tiene-ondaR
+		(type INSTANCE)
+;+		(allowed-classes OndaR)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaQ
+		(type INSTANCE)
+;+		(allowed-classes OndaQ)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass IntervaloPR "Porción del electrocardiograma que incluye desde el inicio de la onda P hasta el inicio de la onda Q."
+	(is-a Intervalo)
+	(role concrete)
+	(single-slot tiene-ondaP
+		(type INSTANCE)
+;+		(allowed-classes OndaP)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaQ
+		(type INSTANCE)
+;+		(allowed-classes OndaQ)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass IntervaloQT "Porción del electrocardiograma que incluye desde el inicio de la onda Q hasta el final de la onda T."
+	(is-a Intervalo)
+	(role concrete)
+	(single-slot tiene-ondaT
+		(type INSTANCE)
+;+		(allowed-classes OndaT)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tiene-ondaQ
+		(type INSTANCE)
+;+		(allowed-classes OndaQ)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass RitmoCard%C3%ADaco "Número de veces que se contrae el corazón durante un minuto."
+	(is-a USER)
+	(role concrete)
+	(single-slot pulsaciones
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Diagn%C3%B3stico "Enfermedades cardiovasculares."
+	(is-a USER)
+	(role abstract)
+	(single-slot ciclo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot indicios
+		(type INSTANCE)
+;+		(allowed-classes IndicioDiagn%C3%B3stico)
+		(create-accessor read-write)))
+
+(defclass Hipopotasemia "Concentración sérica de potasio < 3,5 mEq/L (< 3,5 mmol/L) causada por una deficiencia en los depósitos corporales totales de potasio o por una movilización anormal del potasio hacia el interior de las células. https://www.msdmanuals.com/es-es/professional/trastornos-endocrinol%C3%B3gicos-y-metab%C3%B3licos/trastornos-electrol%C3%ADticos/hipopotasemia"
+	(is-a Diagn%C3%B3stico)
+	(role concrete))
+
+(defclass Hipocalcemia "Bajo nivel de calcio en la sangre."
+	(is-a Diagn%C3%B3stico)
+	(role concrete))
+
+(defclass InfartoAgudoMiocardio "Muerte de células cardíacas provocada por la isquemia resultante del desequilibrio entre la demanda y el aporte de riego sanguíneo por la circulación coronaria."
+	(is-a Diagn%C3%B3stico)
+	(role concrete))
+
+(defclass IsquemiaCoronaria "Reducción del flujo sanguíneo en la circulación coronaria a través de las arterias coronarias."
+	(is-a Diagn%C3%B3stico)
+	(role concrete))
+
+(defclass Bradicardia "Un ritmo sinusal inferior a 60/min."
+	(is-a Diagn%C3%B3stico)
+	(role concrete))
+
+(defclass Taquicardia "Un ritmo sinusal superior a 100/min."
+	(is-a Diagn%C3%B3stico)
+	(role concrete))
+
+(defclass Contracci%C3%B3nVentricularPrematura "Una contracción ventricular que se produce anormalmente pronto."
+	(is-a Diagn%C3%B3stico)
+	(role concrete))
+
+(defclass Sano "Diagnóstico de un paciente sano."
+	(is-a Diagn%C3%B3stico)
+	(role concrete))
+
+(defclass IndicioDiagn%C3%B3stico "Patrones encontrados en los componentes del ECG que permiten realizar diangósticos."
+	(is-a USER)
+	(role abstract)
+	(single-slot ciclo
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass OndaTHiperaguda "Detección de una onda T especialmente elevada"
+	(is-a IndicioDiagn%C3%B3stico)
+	(role concrete))
+
+(defclass OndaTInvertida "Detección de una onda T anormalmente invertida (<-1.0mm)\nhttps://en.wikipedia.org/wiki/T_wave#Inverted_T_wave"
+	(is-a IndicioDiagn%C3%B3stico)
+	(role concrete))
+
+(defclass IntervaloPRAlargado "Detección de un intervalo PR anormalmente largo (>200ms)\nhttps://en.wikipedia.org/wiki/PR_interval"
+	(is-a IndicioDiagn%C3%B3stico)
+	(role concrete))
+
+(defclass IntervaloQTAlargado "Detección de un intervalo QT anormalmente largo (>440ms)\nhttps://litfl.com/qt-interval-ecg-library/"
+	(is-a IndicioDiagn%C3%B3stico)
+	(role concrete))
+
+(defclass DemasiadoRitmoBaby "Detección de un ritmo cardíaco demasiado elevado (>100 pulsaciones por minuto)\nhttp://www.bem.fi/book/19/19.htm"
+	(is-a IndicioDiagn%C3%B3stico)
+	(role concrete))
+
+(defclass TeFaltaRitmoAmigo "Detección de un ritmo cardíaco demasiado lento (<60 pulsaciones por minuto)\nhttp://www.bem.fi/book/19/19.htm"
+	(is-a IndicioDiagn%C3%B3stico)
+	(role concrete))

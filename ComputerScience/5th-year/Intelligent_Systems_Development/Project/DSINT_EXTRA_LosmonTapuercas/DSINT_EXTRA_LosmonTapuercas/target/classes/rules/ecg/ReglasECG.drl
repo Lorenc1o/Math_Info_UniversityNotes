@@ -1,0 +1,76 @@
+package rules.ecg;
+
+//list any import classes here.
+import ecg_extra.*;
+
+//declare any global variables here
+
+rule "Creacion segmento PR"
+agenda-group "Inicializacion"
+    when
+        $p: OndaP()
+        $q: OndaQ(ciclo == $p.getCiclo())
+    then
+        insert(new SegmentoPR($p.getCiclo(), $p, $q, $q.getInicio() - $p.getFin()));  
+end
+
+rule "Creacion segmento ST"
+agenda-group "Inicializacion"
+	when 
+		$s: OndaS()
+		$t: OndaT(ciclo == $s.getCiclo())	
+	then
+		insert(new SegmentoST($t.getCiclo(), $s, $t, $t.getInicio() - $s.getFin()));
+end
+
+rule "Creacion Intervalo PR"
+agenda-group "Inicializacion"
+	when 
+		$p: OndaP()
+		$q: OndaQ(ciclo == $p.getCiclo())
+	then
+		insert(new IntervaloPR($p.getCiclo(), $p, $q,  $q.getInicio() - $p.getInicio()));
+end
+
+rule "Creacion de Intervalo RR"
+agenda-group "Inicializacion"	
+	when
+		$r1: OndaR()
+		$r2: OndaR($r1.getCiclo() + 1 == ciclo)
+		
+	then
+		insert(new IntervaloRR($r1.getCiclo(), $r1, $r2, $r2.getInicio() - $r1.getInicio()));
+end
+
+rule "Creacion de Intervalo QT"
+agenda-group "Inicializacion"	
+	when
+		$q: OndaQ()
+		$t: OndaT($q.getCiclo() == ciclo)
+	then
+		insert(new IntervaloQT($q.getCiclo(), $q, $t, $t.getFin() - $q.getInicio()));
+end
+
+rule "Creacion de Complejo QRS"
+agenda-group "Inicializacion"	
+	when
+		$q: OndaQ()
+		$r: OndaR(ciclo == $q.getCiclo())
+		$s: OndaS(ciclo == $r.getCiclo())
+	then
+		insert(new ComplejoQRS($q.getCiclo(), $q, $r, $s, $s.getFin()- $q.getInicio()));
+end
+
+//Queries
+
+query "ObtenerPulsaciones"
+	$result: RitmoCardiaco()
+end
+
+query "ObtenerDuracionIQT"
+	$result: IntervaloQT()
+end
+
+query "ObtenerAlturaOndaT"
+	$result: OndaT()
+end

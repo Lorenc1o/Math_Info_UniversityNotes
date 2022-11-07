@@ -1,0 +1,2360 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 3cm
+\headsep 3cm
+\footskip 2cm
+\secnumdepth 2
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Ejercicios de Evaluación Bloques 1 y 2
+\end_layout
+
+\begin_layout Date
+Noviembre 2021
+\end_layout
+
+\begin_layout Author
+Jose Antonio Lorencio Abril
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cuestión 1.
+\end_layout
+
+\begin_layout Standard
+En función de su accesibilidad, el conocimiento puede ser dividido entre
+ 
+\series bold
+Conocimiento Tácito 
+\series default
+y 
+\series bold
+Conocimiento Explícito
+\series default
+.
+ El alumno deberá definir cada uno de los tipos anteriores, elegir un dominio
+ de conocimiento cualquiera y describir algún ejemplo de cada uno de los
+ tipos anteriores.
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+conocimiento tácito 
+\series default
+(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kimble2013"
+literal "false"
+
+\end_inset
+
+) es aquel que:
+\end_layout
+
+\begin_layout Itemize
+No es articulable: no puede describirse en términos proposicionales (enunciados
+ verbales); o
+\end_layout
+
+\begin_layout Itemize
+Es implítico: es articulable, pero su descripción entraña dificultades
+\end_layout
+
+\begin_layout Standard
+Normalmente es adquirido a través de la experiencia.
+ Además, dado que no puede observarse desde el exterior, e incluso es posible
+ que ni siquiera el poseedor del conocimiento tácito sea capaz de identificarlo,
+ se ve como un conocimiento de difícil identificación y medida.
+\end_layout
+
+\begin_layout Standard
+Como ejemplo, podemos pensar en algún momento de nuestras vidas en el que
+ hayamos participado en juegos en equipo, sobre todo durante un largo período
+ de tiempo.
+ Centrándome en fútbol, que practiqué mucho en la adolescencia, un efecto
+ que se produce cuando juegas mucho con la misma gente es que, en función
+ de la situación del partido y de la jugada, sabes aproximadamente donde
+ está cada compañero, si va a desmarcarse e incluso si debes intentar pasarle
+ el balón o no.
+ Este conocimiento ha sido adquirido por la sucesión de muchas jugadas similares.
+ Muchas veces es posible dar un buen pase sin mirar, y es muy difícil describir
+ qué te hizo llegar a la conclusión de que era correcto.
+ De igual forma, este conocimiento implícito, en ocasiones proporciona malos
+ resultados, cuando lo que crees que va a hacer tu compañero difiere de
+ lo que realmente hace.
+ Esta situación errónea, de alguna forma, contribuye a tu 'base de datos'
+ personal y será menos probable que vuelva a ocurrir el mismo malentendido.
+ Todo esto sucede de forma subconsciente, realmente no estás pensando activament
+e en qué hace cada compañero, simplemente lo 'sabes'.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el 
+\series bold
+conocimiento explícito 
+\series default
+(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DAVIES20018126"
+literal "false"
+
+\end_inset
+
+) es aquel cuyo poseedor puede explicitar por medio de enunciados verbales.
+ Es de esta forma que el conocimiento explícito puede en ocasiones definirse
+ como aquel que no es explícito.
+ No obstante, estas definiciones tienen el problema de la subjetividad,
+ dado que la facilidad e incluso la posibilidad de verbalización del conocimient
+o, depende de la persona que lo posea.
+\end_layout
+
+\begin_layout Standard
+Completando el ejemplo anterior, podríamos hacer que ese proceso explicado
+ de inferencia que se hace de forma implícita, como es el caso de una jugada
+ ensayada, que ha sido planeada y practicada, cada uno sabe y comprende
+ su función en la jugada.
+ En esa situación, sabes por qué sabes dónde están tu compañeros.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cuestión 2
+\end_layout
+
+\begin_layout Standard
+Responde brevemente a las siguientes preguntas:
+\end_layout
+
+\begin_layout Enumerate
+Supón que hemos definido una ontología para representar todos los conceptos
+ relacionados con un mundial de baloncesto y que dicha ontología ha sido
+ desarrollada en Protégé.
+ ¿Cómo podemos evitar que se pueda declarar que un jugador pueda ser incluido
+ en la plantilla de dos equipos diferentes?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Para responder tanto esta como las siguientes preguntas voy a usar la informació
+n de 
+\series bold
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stanford"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Podemos introducir la siguiente restricción:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+(forall ?jugador 
+\end_layout
+
+\begin_layout Plain Layout
+
+	(<(number-of-slot-values juega_en ?equipo) 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Otra forma sería simplemente establecer en el slot juega_en una cardinalidad
+ máxima de 2.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Supongamos que queremos realizar una ontología sobre coches.
+ En dicha ontología se representas los distintos tipos de coches, que en
+ nuestro caso serán; sedán, monovolumen, SUV y deportivo, como subclases
+ de coche.
+ ¿Es correcto definir una relación en dicha ontología que tenga como dominio
+ las clases sedán, monovolumen, SUV y coche? Justifica tu respuesta.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+No es correcto, puesto que si coche está en el dominio, entonces lo heredarán
+ todas sus subclases.
+ Entonces, dependiendo de nuestra intención, hay dos formas de hacer esto
+ correctamente:
+\end_layout
+
+\begin_layout Itemize
+Si queremos que todas las subclases de coche estén en el dominio de la relación,
+ entonces únicamente pondremos a coche en el dominio
+\end_layout
+
+\begin_layout Itemize
+Si, por el contrario, solo queremos que algunas subclases estén en el dominio
+ de la relación, entonces no pondremos a coche en el dominio, en el que
+ únicamente estarán las subclases que deseamos que estén en el dominio de
+ la relación
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Supón que hemos definido una ontología para representar todos los conceptos
+ relacionados con un mundial de baloncesto y que dicha ontología ha sido
+ desarrollada en Protégé.
+ Si se definen clases que indican en qué posición debe jugar cada jugador
+ (base, escolta, aleto o pivot), ¿cómo se podría permitir desde la ontología
+ declarar jugadores que puedan jugar en varias posiciones?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Es como el apartado 1, puede hacerse estableciendo una restricción o simplemente
+ indicando una cardinalidad 1 a n.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cuestión 3
+\end_layout
+
+\begin_layout Standard
+En clase se han mencionado distintas librerías de ontologías de libre acceso.
+ El alumno deberá escoger una ontología y poner un ejemplo de cada uno de
+ los elementos constitutivos de las ontologías (clases, propiedades, relaciones,
+ ...).
+ Se deberá escoger una ontología lo más completa posible en función de los
+ elementos constitutivos que utiliza.
+\end_layout
+
+\begin_layout Standard
+He elegido una ontología de la Protégé Ontology Library (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Library"
+literal "false"
+
+\end_inset
+
+), concretamente una ontología sobre una biblioteca (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ayeshabanu79"
+literal "false"
+
+\end_inset
+
+).
+ Observamos los siguientes elementos:
+\end_layout
+
+\begin_layout Itemize
+Clases: son los elementos fundamentales de una ontología, y son una descripción
+ formal de una entidad del dominio que se quiere modelar.
+ Las clases pueden tener subclases, que concreticen el concepto.
+ En nuestro caso, podemos ver en la siguiente figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ejemplos-de-clases"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ la clase LibraryMember, junto con las subclases de la misma.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ontoLibClases.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ejemplos-de-clases"
+
+\end_inset
+
+Ejemplos de clases de una ontología
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Clases abstractas: son clases de las que no se pueden crear instancias.
+ Deben ser concretizadas en subclases que no sean abstractas.
+ En el ejemplo anterior, LibraryMember es una clase abstracta, al igual
+ que lo es Student.
+\end_layout
+
+\begin_layout Itemize
+Instancias: representan objetos concretos del dominio pertenecientes a una
+ clase.
+ Por ejemplo, encontramos a Rajini, que es una instancia de un alumno de
+ la clase UGStudent:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ontoLibInstancia.png
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ejemplo-instancia"
+
+\end_inset
+
+Ejemplo de una instancia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Propiedades (atributos o slots): representan características utilizadas
+ para incrementar el detalle en la descripción de una clase y sus instancias,
+ pero no tienen suficiente fuerza conceptual par representar una clase por
+ sí mismas.
+ Siguiendo nuestro ejemplo, encontramos la propiedad isBorrowedBy, con Dominio
+ en Book y con Rango en Student:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ontoLibPropiedad.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ejemplo-propiedad"
+
+\end_inset
+
+Ejemplo propiedad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Relaciones: representan asociaciones entre clases de un dominio.
+ En nuestro ejemplo, la clase ResearchScholar está relacionada con la clase
+ OnlineJournal mediante la relación Browse:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ontoLibRelacion.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ejemplo-relación"
+
+\end_inset
+
+Ejemplo relación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Funciones: son relaciones en las que uno de los elementos es único, dados
+ los demás elementos.
+ En el caso de esta ontología, vemos, por ejemplo, la relación Use, que
+ identifica a un LibraryMember que usa un InternetAndWebService:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ontoLibFuncion.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo función
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Restricción: definen propiedades de las relaciones y los conceptos.
+ Por ejemplo, en la figura anterior, encontramos la restricción InverseOf.
+ Esto quiere decir que si X Use Y, entonces Y isUsedBy X.
+ Es una restricción sobre ambas relaciones.
+ Esta restricción además es la que nos asegura que Use es un ejemplo de
+ función.
+\end_layout
+
+\begin_layout Itemize
+Axiomas: permiten modelar sentencias que siempre son ciertas y que no pueden
+ ser modeladas con todos los elementos anteriores.
+ Para necesitar axiomas es probable que la ontología deba tener cierto grado
+ de complejidad, y la ontología de la librería no tiene axiomas, hasta donde
+ yo he visto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cuestión 4
+\end_layout
+
+\begin_layout Standard
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ejemplo-de-la"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ se muestra un ejemplo de una ontología sobre coches para la que se han
+ definido los siguientes axiomas:
+\begin_inset Formula 
+\begin{equation}
+\exists x,\left(coche\left(x\right)\ \lor\ \lnot coche\left(x\right)\right)
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\forall x,\left(monovolumen\left(x\right)\rightarrow\exists y,\left(float\left(y\right)\ \land\ coche\left(x\right)\ \land\ longitud\left(x,y\right)\ \land\ y>4,5\right)\right)
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\exists x,\left(monovolumen\left(x\right)\ \land\ longitud\left(x,5\right)\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pegado1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ejemplo-de-la"
+
+\end_inset
+
+Ejemplo de la ontología sobre coches
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Responder:
+\end_layout
+
+\begin_layout Enumerate
+Enumera los posibles errores en el diseño de la ontología e indica cómo
+ los corregirías
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tal y como está el diagrama, un Coche es una parte de un Motor de Combustión,
+ tiene mucho más sentido que sea al revés.
+ Para arreglarlo basta cambiar el sentido de la flecha.
+ Ahora todas las subclases de coche comparten esta relación por herencia.
+\end_layout
+
+\begin_layout Itemize
+Camión_Frigorífico tiene la propiedad 
+\begin_inset Formula $Tiene\_Cilindrada$
+\end_inset
+
+, que está en Motor de Combustión, y que tras el cambio anterior todas comparten.
+ Esta propiedad la eliminaríamos de Camión_Frigorífico.
+ Además, Motor de Combustión le asigna un valor fijo a esta variable, sería
+ más correcto indicar que es un float, y luego se asigne el valor correspondient
+e en las subclases.
+ 
+\end_layout
+
+\begin_layout Itemize
+La clase Monovolumen tiene la propiedad 
+\begin_inset Formula $N\ Puertas$
+\end_inset
+
+, que no está definida en ninguna de las demás subclases, ni en la superclase.
+ Esta propiedad, por tanto, no es muy útil tal y como se está usando.
+ Probablemente sería mejor pasarla a la clase Coche, y que cada subclase
+ le asignase un valor concreto correspondiente.
+\end_layout
+
+\begin_layout Itemize
+Presenta varios errores de notación, pues se hace uso de distintos idiomas
+ y no se nombran los elementos de forma uniforme en cuanto al manejo de
+ minúsculas y mayúsculas, o los espacios.
+ Arreglarlo es sencillo, basta unificar la notación, por ejemplo escribiendo
+ todo en español, empezando por mayúscula y escribiendo los espacios como
+ '_'.
+\end_layout
+
+\begin_layout Itemize
+El tipo de peso es probable que no tenga mucho sentido, ya que los coches
+ pesan bastante y no se va a dar uso de los decimales.
+ Es mejor ponerlo como entero.
+\end_layout
+
+\begin_layout Itemize
+Las subclases no deberían definir el color, ya que un mismo modelo de coche
+ puede estar disponible en varios colores, esto debe hacerse en las instancias.
+\end_layout
+
+\begin_layout Itemize
+Según los axiomas, deberíamos definir el atributo longitud, como float.
+\end_layout
+
+\begin_layout Standard
+Una vez identificados estos fallos, los corregimos y la ontología queda
+ como en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ontología-sobre-coches"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ontoCoches.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ontología-sobre-coches"
+
+\end_inset
+
+Ontología sobre coches corregida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En los siguientes apartados trabajaremos sobre esta ontología.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+¿Qué dirías sobre la corrección de los axiomas de la antología? Añade dos
+ axiomas más que sean consistentes con la ontología.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\exists x,\left(coche\left(x\right)\ \lor\ \lnot coche\left(x\right)\right)$
+\end_inset
+
+: esto es una tautología, por lo que su inclusión como axioma es innecesario.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall x,\left(monovolumen\left(x\right)\rightarrow\exists y,\left(float\left(y\right)\ \land\ coche\left(x\right)\ \land\ longitud\left(x,y\right)\ \land\ y>4,5\right)\right)$
+\end_inset
+
+: este axioma es casi correcto, establece una restricción sobre la longitud
+ de los monovolúmenes.
+ Sobra comprobar 
+\begin_inset Formula $coche\left(x\right)$
+\end_inset
+
+ ya que si 
+\begin_inset Formula $x$
+\end_inset
+
+ es un monovolumen, entonces 
+\begin_inset Formula $x$
+\end_inset
+
+ es coche por la herencia.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\exists x,\left(monovolumen\left(x\right)\ \land\ longitud\left(x,5\right)\right)$
+\end_inset
+
+: este axioma es correcto, aunque es un poco extraño pedir que existe un
+ monovolumen con una longitud concreta dentro de la ontología.
+\end_layout
+
+\begin_layout Standard
+Y podemos añadir los siguientes axiomas adicionales:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall x,\left(coche\left(x\right)\rightarrow\exists y,\left(Motor\_de\_Combustion\left(y\right)\land Parte\_de\left(x,y\right)\right)\right)$
+\end_inset
+
+: este axioma indica que para todo 
+\begin_inset Formula $x$
+\end_inset
+
+ coche, existe un motor de combustión 
+\begin_inset Formula $y$
+\end_inset
+
+ que es parte de 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall x,\left(coche\left(x\right)\rightarrow\exists y,\left(integer\left(y\right)\land Num\_Puertas\left(x,y\right)\land y<6\right)\right)$
+\end_inset
+
+: los deportivos tienen menos de 6 puertas.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+¿Cómo se podría corregir y extender la ontología?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Parece un poco extraño identificar un camión como un tipo de coche, por
+ lo que parece adecuado añadir una clase Vehículo, de la que hereden Coche,
+ Camión y los demás vehículos que deseemos contemplar en la ontología.
+ El resultado final puede verse en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ontología-sobre-vehículos"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ontoCochesFin.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ontología-sobre-vehículos"
+
+\end_inset
+
+Ontología sobre vehículos resultante tras corregir y extender la ontología
+ inicial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cuestión 5
+\end_layout
+
+\begin_layout Standard
+Desarrollar los ciclos de funcionamiento de un SBR, utilizando su red RETE,
+ que tiene el siguiente conjunto de reglas:
+\end_layout
+
+\begin_layout Itemize
+R1: 
+\begin_inset Formula $\left(A\ B\right)\land\left(C\ ?x\right)\rightarrow Añadir\left(\left(I\ ?x\right)\right)\land Añadir\left(\left(D\ ?x\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+R2: 
+\begin_inset Formula $\left(C\ ?x\right)\land\left(E\ B\right)\rightarrow Suprimir\left(\left(A\ B\right)\right)\land Añadir\left(\left(I\ ?x\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+R3: 
+\begin_inset Formula $\left(A\ B\right)\land\left(C\ ?x\right)\land\left(D\ ?y\right)\rightarrow Suprimir\left(\left(D\ ?y\right)\right)\land Suprimir\left(\left(E\ B\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+R4: 
+\begin_inset Formula $\left(G\ K\right)\land\left(H\ J\right)\land\left(L\ M\right)\rightarrow Suprimir\left(\left(H\ J\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+R5: 
+\begin_inset Formula $\left(H\ J\right)\land\left(D\ ?x\right)\land\left(I\ ?z\right)\rightarrow Suprimir\left(\left(H\ J\right)\right)\land Suprimir\left(\left(C\ ?x\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Construir la red RETE que lo representa
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Basándome en lo explicado en teoría (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Palma"
+literal "false"
+
+\end_inset
+
+), he construido la siguiente red RETE:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename RETE0.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Red RETE para el ejercicio 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+¿Cuál será el conjunto de conflicto (CC) resultante para la siguiente base
+ de hechos inicial?
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+h_{1}=\left(10\ \left(A\ B\right)\right) & h_{2}=\left(11\ \left(C\ D\right)\right) & h_{3}=\left(14\ \left(C\ E\right)\right)\\
+h_{4}=\left(8\ \left(E\ B\right)\right) & h_{5}=\left(15\ \left(D\ F\right)\right) & h_{6}=\left(5\ \left(G\ K\right)\right)\\
+h_{7}=\left(7\ \left(H\ J\right)\right) & h_{8}=\left(9\ \left(L\ M\right)\right) & h_{9}=\left(13\ \left(I\ E\right)\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Al añadir los hechos, la red RETE anterior se transforma en la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename RETE1.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Red RETE tras añadir los hechos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A partir de dicho CC y considerando que estamos en el ciclo 16, desarrollar
+ los siguientes ciclos de ejecución, partiendo de la hipótesis de que no
+ se ha ejecutado ninguna instanciación del conjunto de conflictos y teniendo
+ en cuenta la siguiente regla para la resolución de conflictos:
+\begin_inset Formula 
+\[
+\left(PR\bullet E\right)\rightarrow\left(P\bullet A\right)\rightarrow AB
+\]
+
+\end_inset
+
+ Entendiendo la antigüedad como el elemento más antiguo, y definiéndose
+ la prioridad entre las reglas como:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+R2,R3>R4
+\end_layout
+
+\begin_layout Itemize
+R4,R5>R1
+\end_layout
+
+\begin_layout Standard
+Partimos el conjunto conflicto inicial 
+\begin_inset Formula 
+\[
+CC_{0}=\left(R1_{1},R1_{2},R2_{1},R2_{2},R3_{1},R3_{2},R4,R5\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Según el enunciado del ejercicio, no se ha instanciado ninguna regla aún,
+ por tanto, el principio de refracción no elimina ninguna regla del conjunto
+ de conflicto, por tanto
+\begin_inset Formula 
+\[
+CC_{PR}=CC_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Al aplicar la especificidad, obtenemos
+\begin_inset Formula 
+\[
+CC_{E}=\left(R2_{1},R2_{2}R3_{1},R3_{2},R4,R5\right)
+\]
+
+\end_inset
+
+ Por tanto
+\begin_inset Formula 
+\[
+CC_{1}=CC_{PR}\cap CC_{E}=CC_{E}=\left(R2_{1},R2_{2},R3_{1},R3_{2},R4,R5\right)
+\]
+
+\end_inset
+
+ Aplicamos la prioridad dada en el enunciado, y queda
+\begin_inset Formula 
+\[
+CC_{P}=\left(R2_{1},R2_{2},R3_{1},R3_{2},R5\right)
+\]
+
+\end_inset
+
+ y por la antigüedad, dado que es 
+\begin_inset Formula $A\left(R2_{1}\right)=16-8=8,A\left(R2_{2}\right)=8,A\left(R3_{1}\right)=6,A\left(R3_{2}\right)=6,A\left(R4\right)=11,A\left(R5\right)=9$
+\end_inset
+
+, por tanto
+\begin_inset Formula 
+\[
+CC_{A}=\left(R3_{1},R3_{2}\right)
+\]
+
+\end_inset
+
+ y entonces
+\begin_inset Formula 
+\[
+CC_{2}=\left(R3_{1},R3_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por último, aplicamos el criterio de arbitrariedad y elegimos, por ejemplo
+ 
+\begin_inset Formula $R3_{1}$
+\end_inset
+
+.
+ De modo que
+\begin_inset Formula 
+\[
+CC=\left(R3_{1}\right)
+\]
+
+\end_inset
+
+ como 
+\begin_inset Formula $\left|CC\right|=1$
+\end_inset
+
+, se detiene el algoritmo de equiparación y se dispara esta única regla,
+ R3: 
+\begin_inset Formula $\left(A\ B\right)\land\left(C\ ?x\right)\land\left(D\ ?y\right)\rightarrow Suprimir\left(\left(D\ ?y\right)\right)\land Suprimir\left(\left(E\ B\right)\right)$
+\end_inset
+
+.
+ Entonces, se introducen los nuevos hechos 
+\begin_inset Formula $\left(-\left(17\ \left(D\ F\right)\right)\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\left(-\left(17\ \left(E\ B\right)\right)\right)$
+\end_inset
+
+.
+ Así, el nuevo árbol RETE queda:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename RETE2.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:RETE2"
+
+\end_inset
+
+Red RETE al aplicar 
+\begin_inset Formula $R3_{1}$
+\end_inset
+
+.
+ Como solo se ejecutan supresiones, lo único que se hace es eliminar los
+ hechos marcados por la regla, y todo lo que arrasten.
+ Marco en granate todo lo que quedaría eliminado 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Al eliminarlos definitivamente vemos la siguiente imagen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename RETE3.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Red RETE al eliminar los elementos marcados en granate en 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:RETE2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y tenemos
+\begin_inset Formula 
+\[
+CC_{0}=\left(R1_{1},R1_{2},R4\right)
+\]
+
+\end_inset
+
+ Por el principio de refracción , como ninguna de estas reglas ha sido ejecutada
+ antes, no se cambia nada:
+\begin_inset Formula 
+\[
+CC_{PR}=\left(R1_{1},R1_{2},R_{4}\right)
+\]
+
+\end_inset
+
+ y por especificidad:
+\begin_inset Formula 
+\[
+CC_{E}=\left(R1_{1},R1_{2},R4\right)
+\]
+
+\end_inset
+
+ por lo que
+\begin_inset Formula 
+\[
+CC_{1}=\left(R1_{1},R1_{2},R4\right)
+\]
+
+\end_inset
+
+ Por la prioridad es
+\begin_inset Formula 
+\[
+CC_{P}=\left(R4\right)
+\]
+
+\end_inset
+
+ y por la antigüedad, como 
+\begin_inset Formula $A\left(R1_{1}\right)=18-10=8,A\left(R1_{2}\right)=8,A\left(R4\right)=11$
+\end_inset
+
+ es
+\begin_inset Formula 
+\[
+CC_{A}=\left(R1_{1},R1_{2}\right)
+\]
+
+\end_inset
+
+ y así
+\begin_inset Formula 
+\[
+CC_{2}=\emptyset
+\]
+
+\end_inset
+
+ y como 
+\begin_inset Formula $\left|CC\right|=0$
+\end_inset
+
+, se detiene el algoritmo.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cuestión 6
+\end_layout
+
+\begin_layout Standard
+Considérese las siguientes reglas de MYCIN:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+R1: 
+\end_layout
+
+\end_inset
+
+ SI: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+el cultivo se localiza en la sangre, y
+\end_layout
+
+\begin_layout Enumerate
+la identidad del organismo no se conoce con total certeza (función NOTDEFINITE),
+ y
+\end_layout
+
+\begin_layout Enumerate
+la tinción del organismo es gramnegativa, y
+\end_layout
+
+\begin_layout Enumerate
+la morfología del organismo es de tipo bastoncillo, y
+\end_layout
+
+\begin_layout Enumerate
+el paciente presenta quemaduras serias,
+\end_layout
+
+\begin_layout Standard
+ENTONCES: Existe una débil evidencia (.5) de que el organismo es un pseudomonas.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+R2: 
+\end_layout
+
+\end_inset
+
+ SI:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El cultivo se localiza en la sangre, y
+\end_layout
+
+\begin_layout Enumerate
+el paciente presenta eczemas gangrenosos en la piel,
+\end_layout
+
+\begin_layout Standard
+ENTONCES: Existen pruebas que sugieren (.4) que el organismo es un pseudomonas
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+R4: 
+\end_layout
+
+\end_inset
+
+ SI:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Si la identidad del organismo no es conocida con total certeza (función
+ NOTDEFIS), y
+\end_layout
+
+\begin_layout Enumerate
+si la tinción del cultivo es gramnegativa, y
+\end_layout
+
+\begin_layout Enumerate
+la morfología del organismo es de tipo bastoncillo, y
+\end_layout
+
+\begin_layout Enumerate
+el organismo es aerobio
+\end_layout
+
+\begin_layout Standard
+ENTONCES: Existe una fuerte evidencia (.7) que el organismo es una enterobacteria.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+R3: 
+\end_layout
+
+\end_inset
+
+ SI:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Si la tinción del cultivo es gramnegativa, y
+\end_layout
+
+\begin_layout Enumerate
+la morfología del organismo es de tipo bastoncillo, y
+\end_layout
+
+\begin_layout Enumerate
+el paciente ha estado expuesto a contagio
+\end_layout
+
+\begin_layout Standard
+ENTONCES: Existen pruebas que sugieren (.7) que el organismo es un peudomonas
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+y que la base de hechos contiene las siguientes evidencias:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{1}=$
+\end_inset
+
+El paciente presenta quemaduras serias, 
+\begin_inset Formula $CF=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{2}=$
+\end_inset
+
+La morfología es de tipo bastoncillo con 
+\begin_inset Formula $CF=0.4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{3}=$
+\end_inset
+
+El cultivo se localiza en la sangre, 
+\begin_inset Formula $CF=0.3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{4}=$
+\end_inset
+
+El paciente presenta eczemas gangrenosos en la piel con 
+\begin_inset Formula $CF=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{5}=$
+\end_inset
+
+La tinción es gramnegativa, 
+\begin_inset Formula $CF=0.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{6}=$
+\end_inset
+
+El paciente ha estado expuesto a contagio, 
+\begin_inset Formula $CF=0.4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E_{7}=$
+\end_inset
+
+El paciente ha estado expuesto a contagio, 
+\begin_inset Formula $CF=0.8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Con qué factor de certeza podemos afirmar que elorganismo es un pseudomonas
+ o una enterobacteria?
+\end_layout
+
+\begin_layout Standard
+Tal y como hemos visto en teoría (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Palma2021"
+literal "false"
+
+\end_inset
+
+), vamos a calcular los factores de certeza, a partir de los hechos suministrado
+s.
+ 
+\end_layout
+
+\begin_layout Standard
+Primero, vemos que 
+\begin_inset Formula $E_{6}$
+\end_inset
+
+ y 
+\begin_inset Formula $E_{7}$
+\end_inset
+
+ proporcionan un factor de certeza sobre la misma conclusión, por tanto,
+ podemos combinarlos en 
+\begin_inset Formula $E_{8}=$
+\end_inset
+
+El paciente ha estado expuesto a contagio, 
+\begin_inset Formula $CF=CF_{6}+CF_{7}-CF_{6}CF_{7}=0.88$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Además, como la identidad del organismo es totalmente desconocida 
+\begin_inset Formula $\left(FC=0\right)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $NOTDEFINITE=TRUE$
+\end_inset
+
+.
+ Así:
+\end_layout
+
+\begin_layout Standard
+Respecto a la regla R1 tenemos
+\begin_inset Formula 
+\[
+R1:\left(E_{2}\ 0.3\right)\land NOTDEFINITE\land\left(E_{5}\ 0.5\right)\land\left(E_{2}\ 0.4\right)\land\left(E_{1}\ 1\right)\qquad ENTONCES\ \left(Pseudomonas\ 0.5\right)
+\]
+
+\end_inset
+
+ como 
+\begin_inset Formula $NOTDEFINITE=TRUE$
+\end_inset
+
+, entonces es
+\begin_inset Formula 
+\[
+R1:\left(E_{2}\ 0.3\right)\land\left(E_{5}\ 0.5\right)\land\left(E_{2}\ 0.4\right)\land\left(E_{1}\ 1\right)\qquad ENTONCES\ \left(Pseudomonas\ 0.5\right)
+\]
+
+\end_inset
+
+ y entonces
+\begin_inset Formula 
+\[
+CF_{pseudomonas,R1}=\min\left\{ 0.3,0.5,0.4,1\right\} \cdot0.5=0.3\cdot0.5=0.15
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La regla R2 se dispara con los hechos:
+\begin_inset Formula 
+\[
+R2:\left(E_{2}\ 0.3\right)\land\left(E_{4}\ 1\right)\qquad ENTONCES\ \left(Pseudomonas\ 0.4\right)
+\]
+
+\end_inset
+
+ Para la conjunción es 
+\begin_inset Formula $CF_{\land}=\min\left\{ 0.3,1\right\} =0.3$
+\end_inset
+
+ y el de la conclusión 
+\begin_inset Formula 
+\[
+CF_{pseudomonas,R2}=CF_{\land}\cdot CF_{2}=0.3\cdot0.4=0.12
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La regla R3 se dispara con los hechos:
+\begin_inset Formula 
+\[
+R3:\left(E_{5}\ 0.5\right)\land\left(E_{2}\ 0.4\right)\land\left(E_{8}\ 0.88\right)\qquad ENTONCES\ \left(Pseudomonas\ 0.7\right)
+\]
+
+\end_inset
+
+ Para la conjunción es 
+\begin_inset Formula $CF_{\land}=\min\left\{ 0.5,0.4,0.88\right\} =0.4$
+\end_inset
+
+, por lo que el de la conclusión es 
+\begin_inset Formula 
+\[
+CF_{pseudomonas,R3}=CF_{\land}\cdot CF_{3}=0.4\cdot0.7=0.28
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya tenemos toda la evidencia acerca de que el organismo es pseudomonas,
+ falta combinarla.
+ El organismo 
+\series bold
+es un pseudomonas con un factor de certeza
+\series default
+ de
+\begin_inset Formula 
+\[
+FC_{pseudomonas}=FC_{pseudomonas,R1}+FC_{pseudomonas,R2}+FC_{pseudomonas,R3}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+-FC_{pseudomonas,R1}\cdot FC_{pseudomonas,R2}-FC_{pseudomonas,R1}\cdot FC_{pseudomonas,R3}-FC_{pseudomonas,R2}\cdot FC_{pseudomonas,R3}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
++FC_{pseudomonas,R1}\cdot FC_{pseudomonas,R2}\cdot FC_{pseudomonas,R3}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=0.15+0.12+0.28-0.15\cdot0.12-0.15\cdot0.28-0.28\cdot0.12+0.15\cdot0.12\cdot0.28=0.46144
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por último, para la regla R4, dado que no tenemos información sobre la identidad
+ del organismo, es
+\series bold
+ 
+\begin_inset Formula $NOTDEFIS=NIL$
+\end_inset
+
+
+\series default
+, por lo que la regla no se evalúa y es 
+\begin_inset Formula $FC_{enterobacteria}=FC_{enterobacteia,R4}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por tanto, el factor de certeza que pide el enunciado es:
+\begin_inset Formula 
+\[
+CF_{pseudomonas\lor enterobacteria}=0.46144+0=0.46144
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cuestión 7
+\end_layout
+
+\begin_layout Standard
+Una de las herramientas más conocidas para el desarrollo de sistemas expertos
+ es CLIPS (C Language Integrated Production Systems).
+\end_layout
+
+\begin_layout Enumerate
+¿Cómo es la estrategia para la resolución de conflictos de CLIPS? Describe
+ el proceso y cada una de las técnicas utilizadas.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A la hora de hacer funcionar un SBR, existe la posibilidad de que se cumplan
+ los antecedentes de distintas reglas.
+ El conjunto de reglas que pueden ser ejecutadas, dados los hechos actuales,
+ se denomina 
+\series bold
+conjunto conflicto
+\series default
+, y es relevante diseñar una buena forma de elección de la siguiente regla
+ a ejecutar.
+\end_layout
+
+\begin_layout Standard
+Según el Manual de Referencia de CLIPS (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Riley"
+literal "false"
+
+\end_inset
+
+), CLIPS denomina 
+\series bold
+agenda
+\series default
+ al conjunto conflicto, que contiene las reglas activadas (aquellas que
+ pueden ser ejecutadas), ordenadas por prioridad.
+ La primera regla en la agenda será la siguiente en ser ejecutada, y el
+ orden y la prioridad se determinan en base a las siguientes normas:
+\end_layout
+
+\begin_layout Enumerate
+Reglas activadas recientemente se colocan por encima de todas las reglas
+ con menor prioridad, y por debajo de aquellas con prioridad mayor
+\end_layout
+
+\begin_layout Enumerate
+Dada una regla, la estrategia de resolución actual es usada para determinar
+ su posición entre las demás reglas con la misma prioidad
+\end_layout
+
+\begin_layout Enumerate
+Si una regla se activa por la misma inserción o eliminación de un hecho,
+ y los pasos (a) y (b) no son capaces de determinar la posición de esta,
+ entonces la regla se coloca arbitrariamente en relación con las otras reglas
+ con las que fue activada.
+\end_layout
+
+\begin_layout Standard
+Para el punto (b), CLIPS proporciona siete estrategias de resolución de
+ conflictos:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estrategia en profundidad:
+\series default
+ una regla activada se posiciona por encima de todas las reglas de la misma
+ prioridad.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estrategia en anchura:
+\series default
+ las reglas activadas se posicionan debajo de todas las reglas de igual
+ prioridad.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estrategia de simplicidad:
+\series default
+ se define la 
+\series bold
+especifidad de una regla
+\series default
+ está determinada por la cantidad de comparaciones que deben ser comprobadas
+ en el LHS de una regla.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La estrategia de simplicidad posiciona las reglas activadas por encima de
+ todas aquellas reglas con la misma prioridad y con mayor o igual especifidad.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estrategia de complejidad:
+\series default
+ de las reglas con la misma prioridad, las reglas activadas se posicionan
+ por encima de todas las reglas con menor o igual especificidad.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estrategia LEX: 
+\series default
+de entre las reglas con la misma prioridad, las que se activan se sitúan
+ utilizando la estrategia LEX de la herramienta OPS5.
+ Esta consta de las siguientes normas:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+i)
+\end_layout
+
+\end_inset
+
+ Se usa cómo de recientes son las instancias de patrones que activaron la
+ regla.
+ Cada hecho e instancia se marca con un 'time tag' para indicar su novedad
+ con respecto a los demás hechos e instancias.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+ii)
+\end_layout
+
+\end_inset
+
+ Las instancias de patrones asociadas a cada regla se ordenan en orden decrecien
+te.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+iii)
+\end_layout
+
+\end_inset
+
+ Una activación con una instancia de patrón más reciente se coloca antes
+ que las activaciones con instancias de patrones menos recientes.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+iv)
+\end_layout
+
+\end_inset
+
+ Si una activación tiene más instancias de patrones que otra y los time
+ tags son todos iguales, entonces la activación con más time tags se coloca
+ antes en la agenda.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+v)
+\end_layout
+
+\end_inset
+
+ Si dos activaciones tienen la misma novedad, la activación con mayor especifici
+dad se posiciona por encima.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estrategia MEA:
+\series default
+ entre las reglas con la misma prioridad, las que se activan se colocan
+ usando la estrategia MEA de la herramienta OPS5.
+ Hace lo siguiente:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+i)
+\end_layout
+
+\end_inset
+
+ El time tag de la entidad patrón asociado al primer patrón se usa para
+ determinar dónde colocar la activación.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+ii)
+\end_layout
+
+\end_inset
+
+ Una activación que tiene un primer patrón con un time tag mayor que el
+ time tag del primer patrón de otra activación se coloca antes en la agenda.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+iii)
+\end_layout
+
+\end_inset
+
+ Si ambas activaciones tienen el mismo time tag asociado al primer patrón,
+ entonces se utiliza la estrategia LEX.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Estrategia aleatoria:
+\series default
+ a cada activación de una regla se le asigna un número aleatorio que se
+ usa para determinar su posición entre las activaciones de igual prioridad.
+\end_layout
+
+\begin_layout Standard
+Además, es importante destacar que CLIPS mantiene el 
+\series bold
+principio de refracción
+\series default
+, es decir, impide que una regla ya ejecutada se ejecute con el mismo conjunto
+ de antecedentes.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+¿A qué estrategias de resolución de conflictos de las vistas en clase correspond
+ería cada una de ellas?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La estrategia general de selección de la regla con prioridad más alta se
+ corresponde con la estrategia vista en teoría 
+\series bold
+basada también en prioridad
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Donde podemos observar las demás técnicas vistas en clase (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Palma"
+literal "false"
+
+\end_inset
+
+) es en aquellas situaciones en las que la prioridad de dos reglas coincide.
+ Observamos:
+\end_layout
+
+\begin_layout Enumerate
+La 
+\series bold
+selección arbitraria
+\series default
+ es la estrategia aleatoria.
+\end_layout
+
+\begin_layout Enumerate
+La 
+\series bold
+selección de la primera regla
+\series default
+ es la estrategia en anchura.
+\end_layout
+
+\begin_layout Enumerate
+La 
+\series bold
+selección de la regla más específica
+\series default
+ es la estrategia de complejidad.
+\end_layout
+
+\begin_layout Enumerate
+La 
+\series bold
+selección de la regla con el elemento añadido más recientemente
+\series default
+ se corresponde con la estrategia MEA.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Seleccionar una nueva regla
+\series default
+, esto lo hace para mantener el principio de refracción, pero no se corresponde
+ con una estrategia explícita de CLIPS (no podemos elegir que esto deje
+ de hacerse, y tampoco tendría mucho sentido en la gran mayoría de casos).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Seleccionar todas las reglas:
+\series default
+ CLIPS no utiliza esta estrategia de resolución de conflictos.
+\end_layout
+
+\begin_layout Standard
+Las demás estrategias que usa CLIPS no las hemos estudiado en teoría, la
+ estrategia en profundidad, de simplicidad y LEX, pero no son más que variantes
+ simples de las que ya hemos mencionado antes.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "BibDSINT_B12"
+options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

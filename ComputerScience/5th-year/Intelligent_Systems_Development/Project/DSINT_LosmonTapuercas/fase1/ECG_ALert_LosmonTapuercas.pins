@@ -1,0 +1,257 @@
+; Fri Nov 19 18:09:53 CET 2021
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([ComplejoQRS] of  %3ASTANDARD-CLASS
+
+	(%3ASLOT-CONSTRAINTS [ECG_ALert_Class2]))
+
+([ECG_ALert_Class0] of  Sano
+
+	(ciclo 10))
+
+([ECG_ALert_Class1] of  RitmoCard%C3%ADaco
+
+	(pulsaciones 120))
+
+([ECG_ALert_Class10000] of  SegmentoPR
+
+	(ciclo 2)
+	(duracion 5)
+	(tiene-ondaP [ECG_ALert_Class10001])
+	(tiene-ondaQ [ECG_ALert_Class20016]))
+
+([ECG_ALert_Class10001] of  OndaP
+
+	(altura 0.27989623)
+	(ciclo 1)
+	(duracion 5)
+	(fin 100)
+	(inicio 0))
+
+([ECG_ALert_Class10002] of  OndaQ
+
+	(altura -0.070103765)
+	(ciclo 1)
+	(duracion 5)
+	(fin 220)
+	(inicio 190))
+
+([ECG_ALert_Class10003] of  OndaR
+
+	(altura 3.0758796)
+	(ciclo 2)
+	(duracion 5)
+	(fin 15)
+	(inicio 10))
+
+([ECG_ALert_Class10004] of  OndaS
+
+	(altura -1.0298963)
+	(ciclo 1)
+	(duracion 5)
+	(fin 280)
+	(inicio 250))
+
+([ECG_ALert_Class10005] of  OndaT
+
+	(altura 0.42587963)
+	(ciclo 2)
+	(duracion 5)
+	(fin 2030)
+	(inicio 1860))
+
+([ECG_ALert_Class10006] of  SegmentoPR
+
+	(ciclo 1)
+	(duracion 10)
+	(tiene-ondaP [ECG_ALert_Class10001])
+	(tiene-ondaQ [ECG_ALert_Class10002]))
+
+([ECG_ALert_Class10007] of  SegmentoST
+
+	(ciclo 1)
+	(duracion 10)
+	(tiene-ondaS [ECG_ALert_Class10004])
+	(tiene-ondaT [ECG_ALert_Class10005]))
+
+([ECG_ALert_Class10008] of  ComplejoQRS
+
+	(ciclo 1)
+	(duracion 10)
+	(tiene-ondaQ [ECG_ALert_Class10002])
+	(tiene-ondaR [ECG_ALert_Class10003])
+	(tiene-ondaS [ECG_ALert_Class10004]))
+
+([ECG_ALert_Class10010] of  Bradicardia
+
+	(ciclo 10))
+
+([ECG_ALert_Class10011] of  Contracci%C3%B3nVentricularPrematura
+
+	(ciclo 10))
+
+([ECG_ALert_Class10012] of  Hipocalcemia
+
+	(ciclo 10))
+
+([ECG_ALert_Class10013] of  Hipopotasemia
+
+	(ciclo 10))
+
+([ECG_ALert_Class10014] of  InfartoAgudoMiocardio
+
+	(ciclo 10))
+
+([ECG_ALert_Class10015] of  IsquemiaCoronaria
+
+	(ciclo 10))
+
+([ECG_ALert_Class10016] of  Taquicardia
+
+	(ciclo 10))
+
+([ECG_ALert_Class10017] of  IntervaloPR
+
+	(ciclo 1)
+	(duracion 20)
+	(tiene-ondaP [ECG_ALert_Class10001])
+	(tiene-ondaQ [ECG_ALert_Class10002]))
+
+([ECG_ALert_Class10018] of  IntervaloQT
+
+	(ciclo 1)
+	(duracion 20)
+	(tiene-ondaQ [ECG_ALert_Class10002])
+	(tiene-ondaT [ECG_ALert_Class10005]))
+
+([ECG_ALert_Class10019] of  IntervaloRR
+
+	(ciclo 1)
+	(duracion 20)
+	(tiene-ondaQ [ECG_ALert_Class10002])
+	(tiene-ondaR [ECG_ALert_Class10020]))
+
+([ECG_ALert_Class10020] of  OndaR
+
+	(altura 3.0298963)
+	(ciclo 1)
+	(duracion 5)
+	(fin 250)
+	(inicio 220))
+
+([ECG_ALert_Class2] of  %3APAL-CONSTRAINT
+
+	(%3APAL-DESCRIPTION "El complejo QRS se compone de las ondas Q, R y S de su mismo ciclo.")
+	(%3APAL-NAME "complejo-ciclos-constraint")
+	(%3APAL-RANGE "(defrange ?complex :FRAME ComplejoQRS)\n(defrange ?ondaQ :FRAME OndaQ)\n(defrange ?ondaR :FRAME OndaR)\n(defrange ?ondaS :FRAME OndaS)")
+	(%3APAL-STATEMENT "(forall ?complex (forall ?ondaQ (forall ?ondaR (forall ?ondaS (<=>  (and (tiene-ondaQ ?complex ?ondaQ) (tiene-ondaR ?complex ?ondaR) (tiene-ondaS ?complex ?ondaS) (own-slot-not-null ciclo ?complex) (own-slot-not-null ciclo ?ondaQ) (own-slot-not-null ciclo ?ondaR) (own-slot-not-null ciclo ?ondaS) ) (and (= (ciclo ?complex) (ciclo ?ondaQ)) (= (ciclo ?complex) (ciclo ?ondaR)) (= (ciclo ?complex) (ciclo ?ondaS)) ) ) ) ) ) )"))
+
+([ECG_ALert_Class20002] of  %3APAL-CONSTRAINT
+
+	(%3APAL-DESCRIPTION "El inicio de una onda ocurre antes de su fin.")
+	(%3APAL-NAME "onda-inicio-fin-constraint")
+	(%3APAL-RANGE "(defrange ?onda :FRAME Onda)")
+	(%3APAL-STATEMENT "(forall ?onda\n        (< (inicio ?onda) (fin ?onda))\n)"))
+
+([ECG_ALert_Class20003] of  %3APAL-CONSTRAINT
+
+	(%3APAL-DESCRIPTION "La duración de un intervalo QT coincide con la diferencia entre el final de la onda T y el inicio de la onda Q que la componen.")
+	(%3APAL-NAME "intervaloQT-duracion-constraint")
+	(%3APAL-RANGE "(defrange ?interval :FRAME IntervaloQT)\n(defrange ?ondaQ :FRAME OndaQ)\n(defrange ?ondaT :FRAME OndaT)")
+	(%3APAL-STATEMENT "(forall ?interval (forall ?ondaQ (forall ?ondaT (=>  (and (tiene-ondaQ ?interval ?ondaQ) (tiene-ondaT ?interval ?ondaT) (own-slot-not-null duracion ?interval) (own-slot-not-null inicio ?ondaQ) (own-slot-not-null fin ?ondaT) ) (= (duracion ?interval) (- (fin ?ondaT) (inicio ?ondaQ)) ) ) ) ) )"))
+
+([ECG_ALert_Class20004] of  %3APAL-CONSTRAINT
+
+	(%3APAL-DESCRIPTION "La duración de una onda debe coincidir con la diferencia entre su fin y su inicio.")
+	(%3APAL-NAME "onda-duracion-constraint")
+	(%3APAL-RANGE "(defrange ?onda :FRAME Onda)")
+	(%3APAL-STATEMENT "(forall ?onda\n        (= (duracion ?onda) (- (fin ?onda) (inicio ?onda)))\n)"))
+
+([ECG_ALert_Class20007] of  OndaTHiperaguda
+
+	(ciclo 10))
+
+([ECG_ALert_Class20008] of  OndaTInvertida
+
+	(ciclo 10))
+
+([ECG_ALert_Class20009] of  IntervaloPRAlargado
+
+	(ciclo 10))
+
+([ECG_ALert_Class20010] of  IntervaloQTAlargado
+
+	(ciclo 10))
+
+([ECG_ALert_Class20011] of  DemasiadoRitmoBaby
+
+	(ciclo 10))
+
+([ECG_ALert_Class20012] of  TeFaltaRitmoAmigo
+
+	(ciclo 10))
+
+([ECG_ALert_Class20015] of  IntervaloPR
+
+	(ciclo 1)
+	(duracion 10)
+	(tiene-ondaP [ECG_ALert_Class10001])
+	(tiene-ondaQ [ECG_ALert_Class20016]))
+
+([ECG_ALert_Class20016] of  OndaQ
+
+	(altura 2.0)
+	(ciclo 2)
+	(duracion 20)
+	(fin 1)
+	(inicio 3))
+
+([ECG_ALert_Class20018] of  %3APAL-CONSTRAINT
+
+	(%3APAL-NAME "intervaloQT-ciclos-constraint")
+	(%3APAL-RANGE "(defrange ?interval :FRAME IntervaloQT)\n(defrange ?ondaQ :FRAME OndaQ)\n(defrange ?ondaT :FRAME OndaT)")
+	(%3APAL-STATEMENT "(forall ?interval (forall ?ondaQ (forall ?ondaT (<=>  (and (tiene-ondaQ ?interval ?ondaQ) (tiene-ondaT ?interval ?ondaT) (own-slot-not-null ciclo ?interval) (own-slot-not-null ciclo ?ondaQ) (own-slot-not-null ciclo ?ondaT) ) (and (= (ciclo ?interval) (ciclo ?ondaQ)) (= (ciclo ?interval) (ciclo ?ondaT)) ) ) ) ) )"))
+
+([ECG_ALert_Class3] of  %3APAL-CONSTRAINT
+
+	(%3APAL-NAME "intervaloPR-ciclos-constraint")
+	(%3APAL-RANGE "(defrange ?interval :FRAME IntervaloPR)\n(defrange ?ondaP :FRAME OndaP)\n(defrange ?ondaQ :FRAME OndaQ)")
+	(%3APAL-STATEMENT "(forall ?interval (forall ?ondaP (forall ?ondaQ (<=>  (and (tiene-ondaP ?interval ?ondaP) (tiene-ondaQ ?interval ?ondaQ) (own-slot-not-null ciclo ?interval) (own-slot-not-null ciclo ?ondaP) (own-slot-not-null ciclo ?ondaQ) ) (and (= (ciclo ?interval) (ciclo ?ondaP)) (= (ciclo ?interval) (ciclo ?ondaQ)) ) ) ) ) )"))
+
+([ECG_ALert_Class4] of  %3APAL-CONSTRAINT
+
+	(%3APAL-NAME "intervaloRR-ciclos-constraint")
+	(%3APAL-RANGE "(defrange ?interval :FRAME IntervaloRR)\n(defrange ?ondaR :FRAME OndaR)\n(defrange ?ondaQ :FRAME OndaQ)")
+	(%3APAL-STATEMENT "(forall ?interval (forall ?ondaR (forall ?ondaQ (=>  (and (tiene-ondaR ?interval ?ondaR) (tiene-ondaQ ?interval ?ondaQ) (own-slot-not-null ciclo ?interval) (own-slot-not-null ciclo ?ondaR) (own-slot-not-null ciclo ?ondaQ) ) (and (= (ciclo ?interval) (ciclo ?ondaR)) (= (+ 1 (ciclo ?interval)) (ciclo ?ondaQ)) ) ) ) ) )"))
+
+([ECG_ALert_Class5] of  %3APAL-CONSTRAINT
+
+	(%3APAL-NAME "sgementoPR-ciclos-constraint")
+	(%3APAL-RANGE "(defrange ?seg :FRAME SegmentoPR)\n(defrange ?ondaP :FRAME OndaP)\n(defrange ?ondaQ :FRAME OndaQ)")
+	(%3APAL-STATEMENT "(forall ?seg (forall ?ondaP (forall ?ondaQ (<=>  (and (tiene-ondaP ?seg ?ondaP) (tiene-ondaQ ?seg ?ondaQ) (own-slot-not-null ciclo ?seg) (own-slot-not-null ciclo ?ondaP) (own-slot-not-null ciclo ?ondaQ) ) (and (= (ciclo ?seg) (ciclo ?ondaP)) (= (ciclo ?seg) (ciclo ?ondaQ)) ) ) ) ) )"))
+
+([IntervaloPR] of  %3ASTANDARD-CLASS
+
+	(%3ASLOT-CONSTRAINTS [ECG_ALert_Class3]))
+
+([IntervaloQT] of  %3ASTANDARD-CLASS
+
+	(%3ASLOT-CONSTRAINTS
+		[ECG_ALert_Class20018]
+		[ECG_ALert_Class20003]))
+
+([IntervaloRR] of  %3ASTANDARD-CLASS
+
+	(%3ASLOT-CONSTRAINTS [ECG_ALert_Class4]))
+
+([Onda] of  %3ASTANDARD-CLASS
+
+	(%3ASLOT-CONSTRAINTS
+		[ECG_ALert_Class20002]
+		[ECG_ALert_Class20004]))
+
+([SegmentoPR] of  %3ASTANDARD-CLASS
+
+	(%3ASLOT-CONSTRAINTS [ECG_ALert_Class5]))

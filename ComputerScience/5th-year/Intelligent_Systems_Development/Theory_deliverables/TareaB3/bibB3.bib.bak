@@ -1,0 +1,47 @@
+% Encoding: UTF-8
+
+@Unpublished{PalmaConjuntosBorrosos,
+  author = {Jose T. Palma},
+  note   = {Apuntes de Clase de la asignatura 'Desarrollo de Sistemas Inteligentes'},
+  title  = {Conjuntos Borrosos},
+  year   = {2013},
+}
+
+@Unpublished{PalmaLogicaBorrosa,
+  author = {Jose T. Palma},
+  note   = {Apuntes de Clase de la asignatura 'Desarrollo de Sistemas Inteligentes'},
+  title  = {Logica e Inferencia Borrosos},
+  year   = {2017},
+}
+
+@Unpublished{BotiaConjuntosBorrosos,
+  author = {Juan A. Botia},
+  note   = {Ejercicios de clase de la asignatura 'Desarrollo de Sistemas Inteligentes'},
+  title  = {Ejercicios ejemplo de Conjuntos Borrosos},
+  month  = nov,
+  year   = {2021},
+}
+
+@Unpublished{BotiaPalmaImplicaciones,
+  author = {Juan A. Botia, Jose T. Palma},
+  note   = {Ejercicios de clase de la asignatura 'Desarrollo de Sistemas Inteligentes'},
+  title  = {Tipos de implicaciones y DOF},
+  month  = dec,
+  year   = {2020},
+}
+
+@Article{Stanford,
+  author  = {Stanford},
+  journal = {An Introduction to Philosophy},
+  title   = {The Law of Excluded Middle},
+  note    = {https://web.stanford.edu/~bobonich/glances%20ahead/IV.excluded.middle.html},
+  url     = {https://web.stanford.edu/~bobonich/glances ahead/IV.excluded.middle.html},
+}
+
+@Unpublished{PalmaInferencia,
+  author = {Jose T. Palma},
+  note   = {Apuntes de Clase de la asignatura 'Desarrollo de Sistemas Inteligentes'},
+  title  = {Sistemas de Inferencia Borrosa},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

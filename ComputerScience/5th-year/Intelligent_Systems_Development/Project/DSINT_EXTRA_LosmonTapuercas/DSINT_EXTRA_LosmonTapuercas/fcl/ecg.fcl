@@ -1,0 +1,148 @@
+FUNCTION_BLOCK bradicardia_taquicardia
+
+VAR_INPUT
+	ritmo : REAL;
+END_VAR
+
+VAR_OUTPUT
+	taquicardia : REAL;
+	bradicardia : REAL;
+END_VAR
+
+FUZZIFY ritmo	
+	TERM bajo := (40, 1) (80, 0);
+	TERM normal := (60, 0) (80, 1) (100, 0);
+	TERM alto := (80, 0) (120, 1);
+END_FUZZIFY
+
+DEFUZZIFY taquicardia
+	TERM falso := (0, 1) (1, 0);
+	TERM verdadero := (0, 0) (1, 1);
+	METHOD : COG;
+	DEFAULT := 0;
+END_DEFUZZIFY
+
+DEFUZZIFY bradicardia
+	TERM falso := (0, 1) (1, 0);
+	TERM verdadero := (0, 0) (1, 1);
+	METHOD : COG;
+	DEFAULT := 0;
+END_DEFUZZIFY
+
+RULEBLOCK No1
+	AND : MIN;
+	ACT : MIN;
+	ACCU : MAX;
+
+	RULE 1: IF ritmo IS bajo THEN bradicardia IS verdadero;
+	RULE 2: IF ritmo IS normal OR ritmo IS alto THEN bradicardia IS falso;
+
+	RULE 3: IF ritmo IS alto THEN taquicardia IS verdadero;
+	RULE 4: IF ritmo IS normal OR ritmo IS bajo THEN taquicardia IS falso;
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
+
+
+FUNCTION_BLOCK hipocalcemia
+
+VAR_INPUT
+	duracionQT : REAL;
+END_VAR
+
+VAR_OUTPUT
+	hipocalcemia : REAL;
+END_VAR
+
+FUZZIFY duracionQT
+	TERM normal := (430, 1) (470, 0);
+	TERM larga := (430, 0) (480, 1);
+END_FUZZIFY
+
+DEFUZZIFY hipocalcemia
+	TERM falso := (0, 1) (1, 0);
+	TERM verdadero := (0, 0) (1, 1);
+	METHOD : COG;
+	DEFAULT := 0;
+END_DEFUZZIFY
+
+RULEBLOCK No1
+	AND : MIN;
+	ACT : MIN;
+	ACCU : MAX;
+
+	RULE 1: IF duracionQT IS larga THEN hipocalcemia IS verdadero;
+	RULE 2: IF duracionQT IS normal THEN hipocalcemia IS falso;
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
+
+
+FUNCTION_BLOCK hipopotasemia
+
+VAR_INPUT
+	alturaT : REAL;
+END_VAR
+
+VAR_OUTPUT
+	hipopotasemia : REAL;
+END_VAR
+
+FUZZIFY alturaT	
+	TERM baja := (-5, 1) (5, 0);
+	TERM normal := (-2, 0) (2, 1) (6, 0);
+	TERM alta := (4, 0) (10, 1);
+END_FUZZIFY
+
+DEFUZZIFY hipopotasemia
+	TERM falso := (0, 1) (1, 0);
+	TERM verdadero := (0, 0) (1, 1);
+	METHOD : COG;
+	DEFAULT := 0;
+END_DEFUZZIFY
+
+RULEBLOCK No1
+	AND : MIN;
+	ACT : MIN;
+	ACCU : MAX;
+
+	RULE 1: IF alturaT IS baja THEN hipopotasemia IS verdadero;
+	RULE 2: IF alturaT IS normal OR alturaT IS alta THEN hipopotasemia IS falso;
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
+
+
+FUNCTION_BLOCK infartoAgudoMiocardio
+
+VAR_INPUT
+	alturaT : REAL;
+END_VAR
+
+VAR_OUTPUT
+	infartoAgudoMiocardio : REAL;
+END_VAR
+
+FUZZIFY alturaT	
+	TERM baja := (-5, 1) (5, 0);
+	TERM normal := (-2, 0) (2, 1) (6, 0);
+	TERM alta := (4, 0) (10, 1);
+END_FUZZIFY
+
+DEFUZZIFY infartoAgudoMiocardio
+	TERM falso := (0, 1) (1, 0);
+	TERM verdadero := (0, 0) (1, 1);
+	METHOD : COG;
+	DEFAULT := 0;
+END_DEFUZZIFY
+
+RULEBLOCK No1
+	AND : MIN;
+	ACT : MIN;
+	ACCU : MAX;
+
+	RULE 1: IF alturaT IS alta THEN infartoAgudoMiocardio IS verdadero;
+	RULE 2: IF alturaT IS normal OR alturaT IS baja THEN infartoAgudoMiocardio IS falso;
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK

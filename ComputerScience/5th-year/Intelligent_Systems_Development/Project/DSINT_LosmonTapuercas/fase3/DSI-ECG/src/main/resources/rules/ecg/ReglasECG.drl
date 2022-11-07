@@ -1,0 +1,185 @@
+//created on: 212 oct. 2001
+package rules.ecg;
+
+//list any import classes here.
+import ecg.*;
+
+//declare any global variables here
+
+rule "Creacion segmento PR"
+agenda-group "Inicializacion"
+    when
+        $p: OndaP()
+        $q: OndaQ(ciclo == $p.getCiclo())
+    then
+        insert(new SegmentoPR($p.getCiclo(), $p, $q, $q.getInicio() - $p.getFin()));
+        
+end
+
+rule "Creacion segmento ST"
+agenda-group "Inicializacion"
+	when 
+		$s: OndaS()
+		$t: OndaT(ciclo == $s.getCiclo())	
+	then
+		insert(new SegmentoST($t.getCiclo(), $s, $t, $t.getInicio() - $s.getFin()));
+end
+
+rule "Creacion Intervalo PR"
+agenda-group "Inicializacion"
+	when 
+		$p: OndaP()
+		$q: OndaQ(ciclo == $p.getCiclo())
+	then
+		insert(new IntervaloPR($p.getCiclo(), $p, $q,  $q.getInicio() - $p.getInicio()));
+end
+
+rule "Creacion de Intervalo RR"
+agenda-group "Inicializacion"	
+	when
+		$r1: OndaR()
+		$r2: OndaR($r1.getCiclo() + 1 == ciclo)
+		
+	then
+		insert(new IntervaloRR($r1.getCiclo(), $r1, $r2, $r2.getInicio() - $r1.getInicio()));
+end
+
+rule "Creacion de Intervalo QT"
+agenda-group "Inicializacion"	
+	when
+		$q: OndaQ()
+		$t: OndaT($q.getCiclo() == ciclo)
+	then
+		insert(new IntervaloQT($q.getCiclo(), $q, $t, $t.getFin() - $q.getInicio()));
+end
+
+rule "Creacion de Complejo QRS"
+agenda-group "Inicializacion"	
+	when
+		$q: OndaQ()
+		$r: OndaR(ciclo == $q.getCiclo())
+		$s: OndaS(ciclo == $r.getCiclo())
+	then
+		insert(new ComplejoQRS($q.getCiclo(), $q, $r, $s, $s.getFin()- $q.getInicio()));
+end
+
+// Creacion de indicios de diagnóstico
+
+rule "Deteccion OndaTInvertida"
+agenda-group "DeteccionIndicios"
+	when
+		$t: OndaT(altura<0)
+	then
+		insert(new OndaTInvertida($t.getCiclo()));
+end
+ 	
+rule "Deteccion IntervaloPRAlargado"
+agenda-group "DeteccionIndicios"
+	when 
+		$pr: IntervaloPR(duracion > 200)
+	then 
+		insert(new IntervaloPRAlargado($pr.getCiclo()));	
+end
+
+rule "Deteccion OndaTHiperaguda"	
+agenda-group "DeteccionIndicios"
+	when 
+		$t: OndaT(altura > 8)
+	then
+		insert(new OndaTHiperaguda($t.getCiclo()));
+end
+
+rule "Deteccion IntervaloQTAlargado"
+agenda-group "DeteccionIndicios"
+	when
+		$qt: IntervaloQT(duracion > 440)
+	then
+		insert(new IntervaloQTAlargado($qt.getCiclo()));
+end
+
+rule "Deteccion DemasiadoRitmoBaby"
+agenda-group "DeteccionIndicios"	
+	when
+		$r: RitmoCardiaco(pulsaciones > 100)
+	then
+		insert (new DemasiadoRitmoBaby(0));
+end
+
+rule "Deteccion TeFaltaRitmoAmigo"
+agenda-group "DeteccionIndicios"	
+	when
+		$r: RitmoCardiaco(pulsaciones < 60)
+	then
+		insert (new TeFaltaRitmoAmigo(0));
+end
+
+//Enfermedades
+
+rule "Deteccion Braquicardia"
+agenda-group "DeteccionEnfermedades"
+	when 
+		$tfra: TeFaltaRitmoAmigo()
+	then
+		insert (new Braquicardia($tfra.getCiclo(), $tfra));
+end
+
+rule "Deteccion Hipocalcemia"
+agenda-group "DeteccionEnfermedades"
+	when 
+		$iqta: IntervaloQTAlargado()
+	then
+		insert (new Hipocalcemia($iqta.getCiclo(), $iqta));
+end
+
+rule "Deteccion Taquicardia"
+agenda-group "DeteccionEnfermedades"	
+	when
+		$drb: DemasiadoRitmoBaby()
+	then
+		insert (new Taquicardia($drb.getCiclo(), $drb));
+end
+
+rule "Deteccion Hipopotasemia por Onda T invertida"
+agenda-group "DeteccionEnfermedades"	
+	when
+		$ti: OndaTInvertida()
+	then
+		insert (new Hipopotasemia($ti.getCiclo(), $ti));
+end
+
+rule "Deteccion Hipopotasemia por Intervalo PR alargado"
+agenda-group "DeteccionEnfermedades"	
+	when
+		$ipra: IntervaloPRAlargado()
+	then
+		insert (new Hipopotasemia($ipra.getCiclo(), $ipra));
+end
+
+rule "Deteccion InfartoAgudoMiocardio"
+agenda-group "DeteccionEnfermedades"
+	when 
+		$t: OndaTHiperaguda()
+	then
+		insert (new InfartoAgudoMiocardio($t.getCiclo(), $t));
+end
+
+//Si no hay ninguna enfermedad detectada, estamos sanos
+
+rule "Sano"
+agenda-group "DeteccionEnfermedades" salience -1
+	when
+		not (exists (Diagnostico()))
+	then
+		insert (new Sano(0));
+end
+
+//Tomamos solo la primera instancia de cada enfermedad detectada
+
+rule "Impresion"
+agenda-group "Impresion"
+	when
+		$d: Diagnostico()
+		not (Diagnostico(getClass() == $d.getClass() , ciclo < $d.getCiclo()))
+	then
+		System.out.println($d.toString());
+end
